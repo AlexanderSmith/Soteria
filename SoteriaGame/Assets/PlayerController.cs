@@ -14,4 +14,9 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         myMovementComponents.Move(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"), moveSpeed, this.transform);
 	}
+
+    void OnCollisionEnter(Collision coll)
+    {
+        
+    }
 }
