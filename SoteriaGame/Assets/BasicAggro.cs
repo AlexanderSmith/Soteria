@@ -2,6 +2,12 @@
 using System.Collections;
 
 public class BasicAggroSystem {
+    public Movement moveSystem;
+
+    public BasicAggroSystem()
+    {
+        moveSystem = new Movement();
+    }
 
      public void AggroCheckAndBasicMove (float lookAtDistance, float attackRange, Transform target, Transform seeker) 
      {
@@ -20,7 +26,8 @@ public class BasicAggroSystem {
          }
          if(distance < attackRange)
          {
-             target.position += target.forward * Time.deltaTime * 0.3f;//arb speed
+             moveSystem.Move(target.forward, 0.3f, seeker);
+             //target.position += target.forward * Time.deltaTime * 0.3f;//arb speed
              seeker.renderer.material.color = Color.red;
          }
      }
