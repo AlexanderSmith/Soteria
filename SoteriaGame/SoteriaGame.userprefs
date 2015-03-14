@@ -1,0 +1,33 @@
+﻿<Properties>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\PersistentData\PersistentDataFile.cs">
+    <Files>
+      <File FileName="Assets\PersistentData\PersistentDataID.cs" Line="15" Column="2" />
+      <File FileName="Assets\PersistentData\PersistentDataHdr.cs" Line="9" Column="58" />
+      <File FileName="Assets\PersistentData\ISerializable.cs" Line="57" Column="36" />
+      <File FileName="Assets\PersistentData\PersistentDataManager.cs" Line="21" Column="2" />
+      <File FileName="Assets\PersistentData\PersistentDataID.cs" Line="8" Column="40" />
+      <File FileName="Assets\PersistentData\PersistentDataReader.cs" Line="3" Column="1" />
+      <File FileName="Assets\PersistentData\PersistentDataWriter.cs" Line="111" Column="3" />
+      <File FileName="Assets\PersistentData\CoolPlayerDataTest.cs" Line="23" Column="1" />
+      <File FileName="Assets\PersistentData\PersistentDataFile.cs" Line="40" Column="1" />
+      <File FileName="Assets\PersistentData\ManagerTest.cs" Line="10" Column="1" />
+      <File FileName="Assets\Tools\Singleton.cs" Line="103" Column="1" />
+      <File FileName="Assets\Logging\Logger.cs" Line="41" Column="28" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="D:\alexander-dev\SoteriaSrc\SoteriaGame\Assets\Tools\Singleton.cs" line="39" />
+      <Breakpoint file="D:\alexander-dev\SoteriaSrc\SoteriaGame\Assets\Logging\Logger.cs" line="354" />
+      <Breakpoint file="D:\alexander-dev\SoteriaSrc\SoteriaGame\Assets\Tools\Singleton.cs" line="78" />
+      <Breakpoint file="D:\alexander-dev\SoteriaSrc\SoteriaGame\Assets\Logging\Logger.cs" line="352" />
+      <Breakpoint file="D:\alexander-dev\SoteriaSrc\SoteriaGame\Assets\Logging\LogTest.cs" line="16" />
+      <Breakpoint file="D:\alexander-dev\SoteriaSrc\SoteriaGame\Assets\Logging\LogTest.cs" line="13" />
+      <Breakpoint file="D:\alexander-dev\SoteriaSrc\SoteriaGame\Assets\Logging\Logger.cs" line="327" />
+      <Breakpoint file="D:\alexander-dev\SoteriaSrc\SoteriaGame\Assets\Tools\Singleton.cs" line="103" />
+      <Breakpoint file="D:\alexander-dev\SoteriaSrc\SoteriaGame\Assets\Logging\LogTest.cs" line="11" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
