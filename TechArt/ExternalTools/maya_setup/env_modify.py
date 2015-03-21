@@ -3,7 +3,7 @@
 
 """Environment modification to Maya to setup custom modules for Soteria
 
-.. module:: ExternalTools.maya_setup.env_modify
+.. module:: maya_setup.env_modify
     :platform: Unix, Linux
 
 .. moduleauthor:: wbondie
