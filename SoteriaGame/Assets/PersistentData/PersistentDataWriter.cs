@@ -2,6 +2,11 @@ using UnityEngine;
 using System;
 using System.IO;
 
+/*
+ * Probably going to convert this to byte[] buffer (probably 1K)
+ * to so we can do one single read/write flush
+ */
+
 public class PersistentDataWriter
 {
 	private BinaryWriter m_InternalWriter;
@@ -19,6 +24,7 @@ public class PersistentDataWriter
 	{
 		set
 		{
+			//one-time set
 			if(m_InternalWriter == null)
 				m_InternalWriter = value;
 		}

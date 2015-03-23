@@ -56,6 +56,6 @@ public abstract class ISerializable : MonoBehaviour
 	 * Use the Read'X'() functions of the passed in PersistentDataReader
 	 * in order to read your data from the current save file
 	 */
-	public abstract void DeSerialize(PersistentDataReader reader);
+	public abstract void Deserialize(PersistentDataReader reader);
 }
 

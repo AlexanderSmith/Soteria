@@ -4,6 +4,13 @@ using System.IO;
 using System.Text;
 using System;
 
+public enum PersistentDataFileID
+{
+	E_SAVE_FILE_0,
+	E_SAVE_FILE_1,
+	E_SAVE_FILE_2
+}
+
 public class PersistentDataFile
 {
 	private List<PersistentDataHdr> m_DataHdrs;
@@ -12,13 +19,21 @@ public class PersistentDataFile
 	private int m_FileSize;
 	private int m_Id;
 
-	public PersistentDataFile(DateTime timeCreated, string path, int filesize, int id)
+	public PersistentDataFile(DateTime timeCreated, string path, int filesize)
 	{
 		m_DataHdrs = new List<PersistentDataHdr> ();
 		m_FileCreated = timeCreated;
 		m_FileName = path;
 		m_FileSize = filesize;
-		m_Id = id;
+		m_Id = PrivGetID();
+	}
+
+	public int ID
+	{
+		get
+		{
+			return m_Id;
+		}
 	}
 
 
@@ -45,6 +60,11 @@ public class PersistentDataFile
 		}
 	}
 
+	private int PrivGetID()
+	{
+		return 0;
+	}
+
 	public void Open()
 	{
 	}
@@ -56,6 +76,16 @@ public class PersistentDataFile
 	public void GetPersitentDataReader(out PersistentDataReader reader)
 	{
 		reader = null;
+		FileStream loadFile = File.Open (this.FileName, FileMode.Open);
+
+		if (loadFile != null)
+		{
+			reader = new PersistentDataReader();
+			reader.InternalReader = new BinaryReader(loadFile);
+
+			if(m_DataHdrs == null)
+				m_DataHdrs = reader.GetPeristentDataHdrs();
+		}
 	}
 
 	public void GetPersitentDataWriter(out PersistentDataWriter writer)
@@ -95,13 +125,13 @@ public class PersistentDataFile
 	{
 	}
 
-	public static PersistentDataFile CreateNewPersistentDataFile(string path, string ext, int id)
+	public static PersistentDataFile CreateNewPersistentDataFile(string path, string ext)
 	{
 		StringBuilder builder = new StringBuilder ();
 
 		//can think of a better name convention later
 		builder.Append (path);
-		builder.Append ("/Soteria_GameSave_" + id.ToString ());
+		builder.Append ("/Soteria_GameSave_");// + id.ToString ());
 		builder.Append (ext);
 
 		FileStream newFile = File.Create (builder.ToString ());
@@ -109,7 +139,7 @@ public class PersistentDataFile
 		FileInfo info = new FileInfo (newFile.Name);
 
 		newFile.Close ();
-		return new PersistentDataFile (info.CreationTime, info.FullName, (int) info.Length, id);
+		return new PersistentDataFile (info.CreationTime, info.FullName, (int) info.Length);
 	}
 
 }

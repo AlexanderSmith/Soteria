@@ -19,6 +19,9 @@ public class PersistentDataManager : Singleton<PersistentDataManager>
 	//the extension I'm giving the save files, subject to change
 	private static readonly string PERSISTENTDATA_EXT = ".dat";
 
+	//number of "save slots," subject to change
+	private static readonly int PERSISTENTDATA_MAX_FILE_COUNT = 3;
+
 	private List<PersistentDataFile> m_CurrSaveFiles;
 	private List<ISerializable> m_Serializables;
 	private PersistentDataFile m_SaveFileInUse; 
@@ -51,7 +54,7 @@ public class PersistentDataManager : Singleton<PersistentDataManager>
 				//in place for save files, this works for now
 				if(Path.GetExtension(f.FullName) == PersistentDataManager.PERSISTENTDATA_EXT)
 				{
-					fileList.Add(new PersistentDataFile(f.CreationTime, f.FullName, (int)f.Length, 0));
+					fileList.Add(new PersistentDataFile(f.CreationTime, f.FullName, (int)f.Length));
 				}
 			}		
 		}
@@ -94,6 +97,39 @@ public class PersistentDataManager : Singleton<PersistentDataManager>
 			Instance.m_SaveFileInUse = files [0];
 	}
 
+	public static void Load(int id)
+	{
+		if (id >= PERSISTENTDATA_MAX_FILE_COUNT)
+			Logger.LogError ("Save File Errors", 
+			                 "Persistent Data File with ID " + id.ToString () + 
+			                 "! Should not have ID greater than " + 
+			                 PERSISTENTDATA_MAX_FILE_COUNT.ToString () + "!", false);
+
+		List<PersistentDataFile> files = Instance.m_CurrSaveFiles;
+
+		PersistentDataFile loadFile = files.Find (file => file.ID == id);
+
+		if (loadFile == null)
+			Logger.LogError ("Save File Errors", 
+			                 "Persistent Data File with ID " + id.ToString () + " not found at " + 
+			                 PERSISTENTDATA_PATH, false);
+
+		else
+		{
+			PersistentDataReader reader;
+			loadFile.GetPersitentDataReader(out reader);
+			ISerializable[] serializables = (ISerializable[]) FindObjectsOfType(typeof(ISerializable));
+
+			foreach(ISerializable s in serializables)
+			{
+				s.Deserialize(reader);
+			}
+
+			reader.Dispose();
+			loadFile.Dispose();
+		}
+	}
+
 	/*
 	 * Save
 	 * 
@@ -115,7 +151,7 @@ public class PersistentDataManager : Singleton<PersistentDataManager>
 		//new game?
 		if (Instance.m_SaveFileInUse == null) 
 		{
-			saveFile = PersistentDataFile.CreateNewPersistentDataFile (PERSISTENTDATA_PATH, PERSISTENTDATA_EXT, 0);
+			saveFile = PersistentDataFile.CreateNewPersistentDataFile (PERSISTENTDATA_PATH, PERSISTENTDATA_EXT);
 			Instance.m_CurrSaveFiles.Add (saveFile);
 			Instance.m_SaveFileInUse = saveFile;
 		} 
@@ -142,7 +178,7 @@ public class PersistentDataManager : Singleton<PersistentDataManager>
 	protected override void VOnDestroy()
 	{
 		//currently here for quick dirty testing
-		PersistentDataManager.Save ();
+		//PersistentDataManager.Save ();
 	}
 }
 

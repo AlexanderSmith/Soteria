@@ -22,9 +22,17 @@ public class CoolPlayerDataTest : ISerializable
 		writer.Write (m_ID);
 	}
 
-	public override void DeSerialize(PersistentDataReader reader)
+	public override void Deserialize(PersistentDataReader reader)
 	{
 
+	}
+
+	public override string ToString ()
+	{
+		return "CoolPlayerDataTest:\n" +
+			   "\tPosition: " + m_Position.ToString () + "\n" +
+			   "\tName: " + m_NameStr + "\n" +
+			   "\tID: " + m_ID.ToString() + "\n";
 	}
 }
 
