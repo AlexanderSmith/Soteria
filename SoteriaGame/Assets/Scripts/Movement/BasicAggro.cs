@@ -34,7 +34,8 @@ public class BasicAggroSystem {
 		}
 		if (distance <= overwhelmRange)
 		{
-			target.gameObject.SendMessage("Overwhelm", seeker);
+            target.GetComponent<PCController>().EnableEncounterMovement();
+			target.GetComponent<EncounterMovementController>().Overwhelm(seeker);
 		}
     }
 }
