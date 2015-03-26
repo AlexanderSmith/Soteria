@@ -15,7 +15,7 @@ public class CollisionEvent : MonoBehaviour {
 
     void OnCollisionExit(Collision coll)
     {
-//        Debug.Log("HIT " + coll.gameObject.name);
         rigidbody.velocity = new Vector3(0, 0, 0);
+		rigidbody.angularVelocity = new Vector3 (0,0,0);
     }
 }

@@ -10,15 +10,27 @@ public class BasicEnemyController : MonoBehaviour {
 
     BasicAggroSystem aggroManager;
 
+	private bool staystill; 
+
+
 	// Use this for initialization
 	void Awake() {
 		target = GameObject.Find ("Player");
         aggroManager = new BasicAggroSystem();
+		staystill = false;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-        aggroManager.AggroCheckAndBasicMove(lookAtDistance, attackRange, overwhelmRange, target.transform, this.transform);
+		if (!staystill)
+		{
+        	aggroManager.AggroCheckAndBasicMove(lookAtDistance, attackRange, overwhelmRange, target.transform, this.transform);
+		}
+	}
+
+	public void EndEncounter (bool status)
+	{
+		staystill = status;
 	}
 }
