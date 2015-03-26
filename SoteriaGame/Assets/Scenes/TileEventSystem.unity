@@ -144,6 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Priority: 3
   ignoreReversedGraphics: 1
   blockingObjects: 0
   m_BlockingMask:
@@ -511,6 +512,8 @@ GameObject:
   - 65: {fileID: 619391265}
   - 114: {fileID: 619391271}
   - 114: {fileID: 619391270}
+  - 114: {fileID: 619391273}
+  - 114: {fileID: 619391272}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -613,14 +616,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6a5fdffe9b6bc84a968daf3a9cda2ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: .5
-  numSoteriaStatues: 5
+--- !u!114 &619391272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619391264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1a785edea3a3804cad611161f24e0f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numSoteriaStatues: 2
   soteriaStatuePrefab: {fileID: 181762, guid: fef1a5f1b3dd1c04a937e708a1370ce1, type: 2}
   fearResidue: 0
-  playerRotation: -10
-  forcedRotation: .25
-  gameOverTimer: 10
-  Coins: 0
+  playerRotation: 20
+  forcedRotation: 10
+  gameOverTimer: 30
+  Coins: 1
+--- !u!114 &619391273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 619391264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09dd6d3416d679246a4881fc8ee050c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 1
+  playerRotation: 0
 --- !u!1001 &630415047
 Prefab:
   m_ObjectHideFlags: 0
