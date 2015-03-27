@@ -77,7 +77,7 @@ public class EncounterMovementController : MonoBehaviour {
         overwhelmedRotation = enemy.rotation;
 
         this.transform.rotation = overwhelmedRotation;
-        Debug.Log(this.transform.rotation);
+        //Debug.Log(this.transform.rotation);
         currentState = State.Overwhelmed;
         CheckEscape();
     }
@@ -90,9 +90,9 @@ public class EncounterMovementController : MonoBehaviour {
             //Create Soteria Statue prefab if player has statues in inventory
             Vector3 normal = this.transform.forward;
             normal.Normalize();
-            GameObject statue = Instantiate(soteriaStatuePrefab,
-                                            new Vector3(10 * normal.x + this.transform.position.x, this.transform.position.y, 10 * normal.z + this.transform.position.z),
-                                            this.transform.rotation) as GameObject;
+            //GameObject statue = Instantiate(soteriaStatuePrefab,
+            //                                new Vector3(10 * normal.x + this.transform.position.x, this.transform.position.y, 10 * normal.z + this.transform.position.z),
+            //                                this.transform.rotation) as GameObject;
             //Debug.Log("normal " + normal);
         }
     }
@@ -107,6 +107,7 @@ public class EncounterMovementController : MonoBehaviour {
             GameObject Enemy = GameObject.Find("Enemy");
             Enemy.gameObject.SendMessage("EndEncounter", true);
             this.currentState = State.Dead;
+			PlayerOverwhelmed();
         }
     }
 
@@ -149,10 +150,10 @@ public class EncounterMovementController : MonoBehaviour {
         }
     }
 
-    void OnGUI()
-    {
-        Event e = Event.current;
-        if (e.button == 1 && e.isMouse)
-            UseCoin();
-    }
+//    void OnGUI()
+//    {
+//        Event e = Event.current;
+//        if (e.button == 1 && e.isMouse)
+//            UseCoin();
+//    }
 }

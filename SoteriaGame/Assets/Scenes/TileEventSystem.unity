@@ -73,6 +73,7 @@ NavMeshSettings:
     minRegionArea: 2
     widthInaccuracy: 16.666666
     heightInaccuracy: 10
+    tileSizeHint: 0
   m_NavMesh: {fileID: 0}
 --- !u!1 &42071346
 GameObject:
@@ -144,9 +145,8 @@ MonoBehaviour:
   m_Script: {fileID: 1301386320, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Priority: 3
-  ignoreReversedGraphics: 1
-  blockingObjects: 0
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -316,7 +316,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 40
+  orthographic size: 20
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -702,6 +702,10 @@ Prefab:
       propertyPath: m_LocalPosition.x
       value: 39.7999992
       objectReference: {fileID: 0}
+    - target: {fileID: 5431584, guid: f9505a09d1fc0e44cb3a06d9d6781bcb, type: 2}
+      propertyPath: m_IsKinematic
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f9505a09d1fc0e44cb3a06d9d6781bcb, type: 2}
   m_RootGameObject: {fileID: 619391264}
@@ -795,7 +799,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &752039980
 RectTransform:
   m_ObjectHideFlags: 0
@@ -922,6 +926,50 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 94.5615082, y: 10.5597496, z: 11.367568}
   m_Center: {x: 4.30359364, y: .702981353, z: -5.18380594}
+--- !u!1 &848348258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 848348260}
+  - 114: {fileID: 848348259}
+  m_Layer: 0
+  m_Name: GUI Soteria Statue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &848348259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 848348258}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c2f01a19368944198d291bf5bef218, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  xOffset: 50
+  yOffset: 140
+  statue: {fileID: 2800000, guid: 7798d779e933ae243b80d7fad4d0467e, type: 3}
+  safetyLight: {fileID: 1852531125}
+  player: {fileID: 619391269}
+--- !u!4 &848348260
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 848348258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 40, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
 --- !u!1 &870206162
 GameObject:
   m_ObjectHideFlags: 0
@@ -1301,7 +1349,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: .5, y: .5}
   m_AnchorMax: {x: .5, y: .5}
-  m_AnchoredPosition: {x: -108.400002, y: 43.7369995}
+  m_AnchoredPosition: {x: -454, y: 208}
   m_SizeDelta: {x: 203.300003, y: 53.6119995}
   m_Pivot: {x: .5, y: .5}
 --- !u!114 &1320314841
@@ -1331,7 +1379,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Left Click on <PLAYER> to fight Shadows.
 
-    Right Click to use Coin!'
+    Left Click on Soteria Statue to escape.'
 --- !u!222 &1320314842
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1684,6 +1732,69 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 94.5615082, y: 10.5597496, z: 11.367568}
   m_Center: {x: 4.30359364, y: .702981353, z: -5.18380594}
+--- !u!1 &1852531124
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1852531126}
+  - 108: {fileID: 1852531125}
+  m_Layer: 0
+  m_Name: Safety Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!108 &1852531125
+Light:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1852531124}
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Type: 0
+  m_Color: {r: .986206889, g: 1, b: 0, a: 1}
+  m_Intensity: 8
+  m_Range: 25
+  m_SpotAngle: 60
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_Strength: 1
+    m_Bias: .0500000007
+    m_Softness: 4
+    m_SoftnessFade: 1
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_ActuallyLightmapped: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_Lightmapping: 1
+  m_ShadowSamples: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
+  m_IndirectIntensity: 1
+  m_AreaSize: {x: 1, y: 1}
+--- !u!4 &1852531126
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1852531124}
+  m_LocalRotation: {x: .707106829, y: 0, z: 0, w: .707106829}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
 --- !u!1 &1889769534
 GameObject:
   m_ObjectHideFlags: 0
