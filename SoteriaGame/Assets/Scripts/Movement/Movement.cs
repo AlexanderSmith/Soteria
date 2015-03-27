@@ -4,10 +4,9 @@ using System.Collections;
 public class Movement {
 
     public void Move(Vector3 input, float speed, Transform whatToTransform)
-    {
-        whatToTransform.rigidbody.velocity = new Vector3(0, 0, 0);
+    {		
         whatToTransform.rigidbody.MovePosition((input * speed) + whatToTransform.position);
-        
+
         MakeTransformLookAtMoveDirection(whatToTransform, input);
     }
 
