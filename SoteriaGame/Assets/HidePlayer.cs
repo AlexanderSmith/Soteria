@@ -19,7 +19,7 @@ public class HidePlayer : MonoBehaviour {
 	{
 		if (Other.gameObject.name.Equals("Player"))
 		{
-			Other.GetComponent<PCController>().currentState = State.Hidden;
+			//Other.GetComponent<PCController>().currentState = State.Hidden;
 		//	Debug.Log ("Enter");
 		}
 	}
@@ -28,7 +28,7 @@ public class HidePlayer : MonoBehaviour {
 	{
 		if (Other.gameObject.name.Equals("Player"))
 		{
-			Other.GetComponent<PCController>().currentState = State.Hidden;
+			//Other.GetComponent<PCController>().currentState = State.Hidden;
 		//	Debug.Log ("Stay");
 		}
 	}
@@ -36,7 +36,7 @@ public class HidePlayer : MonoBehaviour {
 	{ 
 		if (Other.gameObject.name.Equals("Player"))
 		{
-			Other.GetComponent<PCController>().currentState = State.Normal;
+			//Other.GetComponent<PCController>().currentState = State.Normal;
 		//	Debug.Log ("Exit");
 		}
 	}

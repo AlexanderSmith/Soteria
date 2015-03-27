@@ -14,9 +14,9 @@ public class BasicAggroSystem {
     public void AggroCheckAndBasicMove (float lookAtDistance, float attackRange, float overwhelmRange, Transform target, Transform seeker) 
     {
 		Player = GameObject.Find("Player");
-		Debug.Log(Player.GetComponent<PCController>().currentState);
-		if ( Player.GetComponent<PCController>().currentState != State.Hidden)
-		{
+		//Debug.Log(Player.GetComponent<PCController>().currentState);
+		//if ( Player.GetComponent<PCController>().currentState != State.Hidden)
+		//{
 			Texture CurrenTexture;
 			float distance = Vector3.Distance(target.position, seeker.position);
 			if (distance < lookAtDistance)
@@ -40,6 +40,6 @@ public class BasicAggroSystem {
 			{
 				target.gameObject.SendMessage("Overwhelm", seeker);
 			}
-		}
+		//}
     }
 }
