@@ -83,6 +83,8 @@ public class EncounterMovementController : MonoBehaviour {
     {
         if (currentState != State.Overwhelmed)
         {
+            Debug.Log("OV");
+            this.GetComponent<PCController>().EnableEncounterMovement();
             enemyRoation = enemy.rotation;
 
             overwhelmedRotation = enemy.rotation;
@@ -95,8 +97,6 @@ public class EncounterMovementController : MonoBehaviour {
             this.transform.rotation = overwhelmedRotation;
             //Debug.Log(this.transform.rotation);
             currentState = State.Overwhelmed;
-            CheckEscape();
-            this.GetComponent<PCController>().EnableEncounterMovement();
         }
     }
 

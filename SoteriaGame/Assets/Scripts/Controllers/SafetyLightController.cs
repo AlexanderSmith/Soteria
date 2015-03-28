@@ -40,7 +40,6 @@ public class SafetyLightController : MonoBehaviour {
                 //Debug.Log ("Normalized: " + normal);
                 this.transform.position = new Vector3(5 * normal.x + player.position.x, this.transform.position.y, 5 * normal.z + player.position.z);
 			}
-            Debug.Log(Vector3.Distance(this.transform.position, safeArea.transform.position));
             if (Vector3.Distance(this.transform.position, safeArea.transform.position) <= 1.0f)
             {
                 this.light.enabled = false;
