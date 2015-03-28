@@ -20,4 +20,8 @@ public class StandardMovementController : MonoBehaviour {
     {
         myMovementComponents.Move(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")), moveSpeed, this.transform);
     }
+
+    void OnMouseDown()
+    {
+    }
 }

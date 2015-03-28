@@ -5,7 +5,6 @@ public class EncounterMovementController : MonoBehaviour {
 
     public int numSoteriaStatues;
     public Object soteriaStatuePrefab;
-    public int fearResidue;
     public float playerRotation;
     public float forcedRotation;
     public float gameOverTimer;
@@ -14,10 +13,14 @@ public class EncounterMovementController : MonoBehaviour {
     Quaternion overwhelmedRotation;
     Movement myMovementComponents;
 
+    GameObject enemyAttacker;
+
     private Quaternion enemyRoation;
+    private int overComingCounters = 0;
 
     enum State
     {
+        Normal,
         Overwhelmed,
         Dead,
         Free
@@ -25,11 +28,11 @@ public class EncounterMovementController : MonoBehaviour {
     State currentState;
 	// Use this for initialization
 	void Start () {
-	
+	    currentState = State.Normal;
 	}
 
     void Awake() {
-        currentState = State.Overwhelmed;
+        currentState = State.Normal;
     }
 	
 	// Update is called once per frame
@@ -38,20 +41,29 @@ public class EncounterMovementController : MonoBehaviour {
         {
             GameOverTimer();
 
-            float angle = Quaternion.Angle(this.transform.rotation, overwhelmedRotation);
+            //float angle = Quaternion.Angle(this.transform.rotation, overwhelmedRotation);
 
-            if (angle > 5)
+            if (this.transform.rotation != overwhelmedRotation && !Input.GetKeyDown(KeyCode.Space))
             {
-                Debug.Log("TOO LARGE -- TOO LARGE");
-                this.transform.RotateAround(this.transform.position, Vector3.up, forcedRotation);
+                this.transform.Rotate(Vector3.up, forcedRotation);
+            //    Debug.Log("TOO LARGE -- TOO LARGE");
+            //    this.transform.RotateAround(this.transform.position, Vector3.up, forcedRotation);
             }
 
-            GameObject Enemy = GameObject.Find("Enemy");
+            //GameObject Enemy = GameObject.Find("Enemy");
 
-            angle = 10;
-            if (Vector3.Angle(this.transform.forward, Enemy.transform.position - this.transform.position) < angle)
+            //angle = 10;
+            Ray ray = new Ray(transform.position, transform.forward);
+            RaycastHit hit;
+            Debug.DrawRay(this.transform.position, ray.direction);
+            if (this.transform.rotation != overwhelmedRotation && Input.GetKeyDown(KeyCode.Space))// Physics.Raycast(ray, out hit, 100))
             {
-                currentState = State.Free;
+               // Debug.Log(hit.collider.name);
+               // if (hit.collider.name == "Enemy")
+               // {
+                OverCome();
+                    
+               // }
             }
         }
 
@@ -67,19 +79,35 @@ public class EncounterMovementController : MonoBehaviour {
 
     void OnMouseDown()
     {
-        this.transform.RotateAround(this.transform.position, Vector3.up, playerRotation);
+        if (this.enabled)
+        {
+            Debug.Log("Mouse Down In Encounter");
+            this.transform.Rotate(Vector3.up, playerRotation);
+        }
     }
 
     public void Overwhelm(Transform enemy)
     {
-        enemyRoation = enemy.rotation;
+        if (currentState != State.Overwhelmed)
+        {
+            enemyRoation = enemy.rotation;
 
-        overwhelmedRotation = enemy.rotation;
+            overwhelmedRotation = enemy.rotation;
 
-        this.transform.rotation = overwhelmedRotation;
-        //Debug.Log(this.transform.rotation);
-        currentState = State.Overwhelmed;
-        CheckEscape();
+            enemyAttacker = enemy.gameObject;
+            this.transform.rotation = overwhelmedRotation;
+            //Debug.Log(this.transform.rotation);
+            currentState = State.Overwhelmed;
+            CheckEscape();
+        }
+    }
+
+    void OverCome()
+    {
+        gameObject.GetComponent<PCController>().EnableStandardMovement();
+        //Eventually will call enemy death script funtion mostlikely so there is a nice disipation and stuff. 
+        Destroy(enemyAttacker);
+        currentState = State.Normal;
     }
 
     void CheckEscape()
@@ -142,6 +170,7 @@ public class EncounterMovementController : MonoBehaviour {
             if (Enemy != null)
                 Destroy(Enemy.gameObject);
             gameObject.GetComponent<PCController>().EnableStandardMovement();
+            currentState = State.Normal;
             GameObject Statue = GameObject.Find("SoteriaStatue(Clone)");
             if (Statue != null)
                 Destroy(Statue);
