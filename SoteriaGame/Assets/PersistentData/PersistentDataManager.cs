@@ -2,6 +2,35 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
 
+public class PersistentDataSaveSlot
+{
+	private PersistentDataFileID m_Id;
+	private bool m_bFileExists;
+
+	public PersistentDataSaveSlot(PersistentDataFileID id, bool fileExists)
+	{
+		m_Id = id;
+		m_bFileExists = fileExists;
+	}
+
+	public PersistentDataFileID SaveSlotID
+	{
+		get
+		{
+			return m_Id;
+		}
+	}
+
+	public bool ExistingSaveFile
+	{
+		get
+		{
+			return m_bFileExists;
+		}
+	}
+
+}
+
 /*
  * class PersistentDataManager <Singleton>
  * 
@@ -22,24 +51,28 @@ public class PersistentDataManager : Singleton<PersistentDataManager>
 	//number of "save slots," subject to change
 	private static readonly int PERSISTENTDATA_MAX_FILE_COUNT = 3;
 
-	private List<PersistentDataFile> m_CurrSaveFiles;
+	private Dictionary<PersistentDataFileID, PersistentDataFile> m_CurrSaveFiles;
 	private List<ISerializable> m_Serializables;
-	private PersistentDataFile m_SaveFileInUse; 
+	private PersistentDataFileID m_SaveFileSlotInUse; 
 
 	private void Awake()
 	{
 		m_CurrSaveFiles = this.PrivGetSaveFiles ();
 		m_Serializables = new List<ISerializable> ();
-		m_SaveFileInUse = null;
+		m_SaveFileSlotInUse = PersistentDataFileID.E_SAVE_FILE_NA;
 	}
 
-	private List<PersistentDataFile> PrivGetSaveFiles()
+	private Dictionary<PersistentDataFileID, PersistentDataFile> PrivGetSaveFiles()
 	{
 		//this function will return a new list regardless,
 		//even if its Count == 0, I don't want to deal will nulls
 		//and we'll have to initialize one down the road regardless
 
-		List<PersistentDataFile> fileList = new List<PersistentDataFile>();
+		Dictionary<PersistentDataFileID, PersistentDataFile> fileList = new Dictionary<PersistentDataFileID, PersistentDataFile>();
+
+		fileList [PersistentDataFileID.E_SAVE_FILE_0] = null;
+		fileList [PersistentDataFileID.E_SAVE_FILE_1] = null;
+		fileList [PersistentDataFileID.E_SAVE_FILE_2] = null;
 
 		DirectoryInfo info = new DirectoryInfo (PERSISTENTDATA_PATH);
 
@@ -48,13 +81,24 @@ public class PersistentDataManager : Singleton<PersistentDataManager>
 
 		if (files.Length > 0) 
 		{
+			PersistentDataFile newFile = null;
 			foreach (FileInfo f in files)
 			{
 				//until there's a real naming convention
 				//in place for save files, this works for now
 				if(Path.GetExtension(f.FullName) == PersistentDataManager.PERSISTENTDATA_EXT)
 				{
-					fileList.Add(new PersistentDataFile(f.CreationTime, f.FullName, (int)f.Length));
+					newFile = new PersistentDataFile(f.CreationTime, f.FullName, (int)f.Length);
+
+					if(newFile.ID == PersistentDataFileID.E_SAVE_FILE_NA)
+					{
+						//handle..
+					}
+
+					else
+					{
+						fileList[newFile.ID] = newFile;
+					}
 				}
 			}		
 		}
@@ -79,6 +123,42 @@ public class PersistentDataManager : Singleton<PersistentDataManager>
 	}
 
 	/*
+	 * IsSaveSlotEmpty
+	 * 
+	 * PersistentDataFileID id
+	 * 
+	 * Returns true if "save slot" corrsponding to passed in ID
+	 * already holds a save file, false otherwise
+	 * 
+	 */
+	public static bool IsSaveSlotEmpty(PersistentDataFileID id)
+	{
+		bool success = Instance.m_CurrSaveFiles [id] == null ? true : false;
+
+		return success;
+	}
+
+	/*
+	 * GetCurrentSaveSlot
+	 * 
+	 * Returns enum of currently selected save slot if there is one
+	 * otherwise, return NA
+	 * 
+	 */
+	public static PersistentDataSaveSlot GetCurrentSaveSlot()
+	{
+		bool fileExists = false;
+
+		if(Instance.m_SaveFileSlotInUse != PersistentDataFileID.E_SAVE_FILE_NA)
+		{
+			if(Instance.m_CurrSaveFiles[Instance.m_SaveFileSlotInUse] != null)
+				fileExists = true;
+		}
+
+		return new PersistentDataSaveSlot(Instance.m_SaveFileSlotInUse, fileExists);
+	}
+
+	/*
 	 * SetCurrentSaveFile
 	 * 
 	 * Allows someone to set the current save file
@@ -89,25 +169,26 @@ public class PersistentDataManager : Singleton<PersistentDataManager>
 	 * to set the current save file being played.
 	 * Maybe some info passed on a gui event callback?
 	 */
-	public static void SetCurrentSaveFile()
+	public static void SetCurrentSaveSlot(PersistentDataFileID id)
 	{
-		List<PersistentDataFile> files = Instance.m_CurrSaveFiles;
+		if (id == PersistentDataFileID.E_SAVE_FILE_NA)
+			Logger.LogError ("Save File Errors", 
+			                 "Persistent Data File with ID " + PersistentDataFileID.E_SAVE_FILE_NA.ToString () + 
+			                 "! Not a valid arugment!", false);
 
-		if (files.Count > 0)
-			Instance.m_SaveFileInUse = files [0];
+		Instance.m_SaveFileSlotInUse = id;
 	}
 
-	public static void Load(int id)
+	public static void Load(PersistentDataFileID id)
 	{
-		if (id >= PERSISTENTDATA_MAX_FILE_COUNT)
+		if (id == PersistentDataFileID.E_SAVE_FILE_NA)
 			Logger.LogError ("Save File Errors", 
-			                 "Persistent Data File with ID " + id.ToString () + 
-			                 "! Should not have ID greater than " + 
-			                 PERSISTENTDATA_MAX_FILE_COUNT.ToString () + "!", false);
+			                 "Persistent Data File with ID " + PersistentDataFileID.E_SAVE_FILE_NA.ToString () + 
+			                 "! Not a valid arugment!", false);
 
-		List<PersistentDataFile> files = Instance.m_CurrSaveFiles;
+		Dictionary<PersistentDataFileID, PersistentDataFile> files = Instance.m_CurrSaveFiles;
 
-		PersistentDataFile loadFile = files.Find (file => file.ID == id);
+		PersistentDataFile loadFile = files [id];
 
 		if (loadFile == null)
 			Logger.LogError ("Save File Errors", 
@@ -148,30 +229,28 @@ public class PersistentDataManager : Singleton<PersistentDataManager>
 	{
 		PersistentDataFile saveFile = null;
 
-		//new game?
-		if (Instance.m_SaveFileInUse == null) 
+		PersistentDataManager pDataMan = Instance;
+
+		//empty save slot?
+		if (pDataMan.m_CurrSaveFiles[pDataMan.m_SaveFileSlotInUse]== null) 
 		{
 			saveFile = PersistentDataFile.CreateNewPersistentDataFile (PERSISTENTDATA_PATH, PERSISTENTDATA_EXT);
-			Instance.m_CurrSaveFiles.Add (saveFile);
-			Instance.m_SaveFileInUse = saveFile;
+			pDataMan.m_CurrSaveFiles[pDataMan.m_SaveFileSlotInUse] = saveFile;
+			//Instance.m_CurrSaveFiles.Add (saveFile);
+			//Instance.m_SaveFileInUse = saveFile;
 		} 
 		else 
 		{
-			saveFile = Instance.m_SaveFileInUse;
+			saveFile = pDataMan.m_CurrSaveFiles[pDataMan.m_SaveFileSlotInUse];
 		}
 
-		PersistentDataWriter writer;
+		//PersistentDataWriter writer;
 
-		saveFile.GetPersitentDataWriter (out writer);
+//		saveFile.GetPersitentDataWriter (out writer);
 
 
 		ISerializable[] serializables = (ISerializable[]) FindObjectsOfType(typeof(ISerializable));
-		foreach (ISerializable s in serializables) 
-		{
-			s.Serialize(writer);
-		}
-
-		writer.Dipose ();
+		saveFile.Save(serializables, "Chapter 1", "Checkpoint 1");
 		saveFile.Dispose ();
 	}
 

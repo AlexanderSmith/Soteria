@@ -22,7 +22,7 @@ public class PersistentDataReader
 		}
 	}
 
-	public List<PersistentDataHdr> GetPeristentDataHdrs()
+	public List<PersistentDataItemHdr> GetPeristentDataHdrs()
 	{
 		return null;
 	}
@@ -41,6 +41,16 @@ public class PersistentDataReader
 	public float ReadFloat()
 	{
 		return m_InternalReader.ReadSingle ();
+	}
+
+	public bool ReadBool()
+	{
+		return m_InternalReader.ReadBoolean ();
+	}
+
+	public char ReadChar()
+	{
+		return m_InternalReader.ReadChar ();
 	}
 	
 	public double ReadDouble()

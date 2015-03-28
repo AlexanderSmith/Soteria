@@ -9,7 +9,10 @@ using System.Collections;
  */
 public enum PersistentDataID
 {
-	E_MISSING_ID = 0,
+	E_DOG,
+	E_CAT,
+	E_FISH,
+	E_COOL_PLAYER_DATA,
 
-	E_COOL_PLAYER_DATA
+	E_MISSING_ID = -1
 }

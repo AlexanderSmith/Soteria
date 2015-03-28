@@ -40,6 +40,9 @@ public abstract class ISerializable : MonoBehaviour
 	 * 
 	 * Use the overloaded Write() function of the passed in PersistentDataWriter
 	 * in order to write your data to the current save file
+	 * 
+	 * Just call Write()..I could make another wrapper to abstract this further
+	 * but we're all programmers here. Don't prematurely call Dispose() on the writer object..
 	 */
 	public abstract void Serialize(PersistentDataWriter writer);
 

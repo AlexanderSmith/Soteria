@@ -8,27 +8,31 @@ public enum PersistentDataFileID
 {
 	E_SAVE_FILE_0,
 	E_SAVE_FILE_1,
-	E_SAVE_FILE_2
+	E_SAVE_FILE_2,
+
+	E_SAVE_FILE_NA = -1
 }
 
 public class PersistentDataFile
 {
-	private List<PersistentDataHdr> m_DataHdrs;
-	private DateTime m_FileCreated;
+	private List<PersistentDataItemHdr> m_DataHdrs;
+	private PersistentDataFileHdr m_FileHdr;
+	private PersistentDataFileID m_Id;
+	private DateTime m_LastModified;
 	private string m_FileName;
 	private int m_FileSize;
-	private int m_Id;
 
 	public PersistentDataFile(DateTime timeCreated, string path, int filesize)
 	{
-		m_DataHdrs = new List<PersistentDataHdr> ();
-		m_FileCreated = timeCreated;
+		m_DataHdrs = new List<PersistentDataItemHdr> ();
+		m_FileHdr = PrivGetFileHdr ();
+		m_LastModified = timeCreated;
 		m_FileName = path;
 		m_FileSize = filesize;
 		m_Id = PrivGetID();
 	}
 
-	public int ID
+	public PersistentDataFileID ID
 	{
 		get
 		{
@@ -37,11 +41,11 @@ public class PersistentDataFile
 	}
 
 
-	public DateTime DateTimeCreated
+	public DateTime LastModified
 	{
 		get
 		{
-			return m_FileCreated;
+			return m_LastModified;
 		}
 	}
 
@@ -60,13 +64,53 @@ public class PersistentDataFile
 		}
 	}
 
-	private int PrivGetID()
+	private PersistentDataFileHdr PrivGetFileHdr()
 	{
-		return 0;
+		PersistentDataFileHdr hdr = PersistentDataFileHdr.GetEmptyHdr ();
+
+		return hdr;
 	}
 
-	public void Open()
+	private PersistentDataFileID PrivGetID()
 	{
+		FileStream file = File.Open (this.FileName, FileMode.Open);
+		PersistentDataFileID id = PersistentDataFileID.E_SAVE_FILE_NA;
+
+		using(file)
+		{
+			if(file.Length > 0)
+			{
+				PersistentDataReader reader = new PersistentDataReader();
+				reader.InternalReader = new BinaryReader(file);
+
+				//temporary is for debugging purposes
+				//Monodevelop on my machine won't let me view enum
+				//values in the debugger for some stupid reason
+				int idInt = reader.ReadInt32();
+				id = (PersistentDataFileID) idInt;
+
+				reader.Dispose();
+			}
+
+			else
+			{
+				PersistentDataSaveSlot currSaveSlot = PersistentDataManager.GetCurrentSaveSlot();
+				id = currSaveSlot.SaveSlotID;
+			}
+		}
+
+		return id;
+	}
+
+	private void PrivWriteToDisk(PersistentDataWriter writer)
+	{	
+		FileStream saveFile = File.Open (this.FileName, FileMode.Truncate);
+
+		using (saveFile)
+		{
+			byte[] buffer = writer.AsArray();
+			saveFile.Write (buffer, 0, buffer.Length);
+		}
 	}
 
 	public void Dispose()
@@ -80,9 +124,9 @@ public class PersistentDataFile
 
 		if (loadFile != null)
 		{
+
 			reader = new PersistentDataReader();
 			reader.InternalReader = new BinaryReader(loadFile);
-
 			if(m_DataHdrs == null)
 				m_DataHdrs = reader.GetPeristentDataHdrs();
 		}
@@ -93,32 +137,46 @@ public class PersistentDataFile
 		writer = null;
 
 		FileStream saveFile = File.Open (this.FileName, FileMode.Open);
-		
-		if (saveFile != null) 
+
+		using (saveFile)
 		{
-			writer = new PersistentDataWriter();
-			writer.InternalWriter = new BinaryWriter(saveFile);
+			if (saveFile != null) 
+			{
+				writer = new PersistentDataWriter();
+				//writer.InternalWriter = new BinaryWriter(saveFile);
+			}
 		}
 	}
 
-	public void SaveSerializables(ISerializable[] serializables)
+	public void Save(ISerializable[] serializables, string chapter, string checkpoint)
 	{
-		PersistentDataHdr hdr = PersistentDataHdr.GetEmptyHdr ();
+		//data header for entire file
+		PersistentDataFileHdr fileHdr = PersistentDataFileHdr.GetEmptyHdr ();
+		fileHdr.m_CurrChapter = chapter;
+		fileHdr.m_Checkpoint = checkpoint;
+		fileHdr.m_Id = this.ID;
+
+		//data header for each individual serializable
+		PersistentDataItemHdr dataItemHdr = PersistentDataItemHdr.GetEmptyHdr ();
 
 		PersistentDataWriter writer;
 		this.GetPersitentDataWriter (out writer);
 
+		writer.WritePersistentDataFileHdr (fileHdr, true);
+
 		foreach (ISerializable s in serializables) 
 		{
-			writer.WritePersistentDataHdr(hdr, false);
+			writer.WritePersistentDataHdr(dataItemHdr, false);
 			s.Serialize(writer);
 			writer.SeekToLatestHdr();
 
-			hdr.m_PersistentItemID = s.PersistentDataId;
-			hdr.m_NumItems = writer.NumItemsWritten;
-			hdr.m_SaveDataSize = writer.ItemTotalInBytes;
-			writer.WritePersistentDataHdr(hdr, true);
+			dataItemHdr.m_PersistentItemID = s.PersistentDataId;
+			dataItemHdr.m_NumItems = writer.NumItemsWritten;
+			dataItemHdr.m_SaveDataSize = writer.ItemTotalInBytes;
+			writer.WritePersistentDataHdr(dataItemHdr, true);
 		}
+
+		PrivWriteToDisk(writer);
 	}
 
 	public void LoadSerializables(ISerializable[] serializables)
