@@ -43,7 +43,7 @@ public class EncounterMovementController : MonoBehaviour {
 
             //float angle = Quaternion.Angle(this.transform.rotation, overwhelmedRotation);
 
-            if (this.transform.rotation != overwhelmedRotation && !Input.GetKeyDown(KeyCode.Space))
+            if (this.transform.rotation != overwhelmedRotation && !Input.GetKeyDown(KeyCode.Space) && overComingCounters < 15)
             {
                 this.transform.Rotate(Vector3.up, forcedRotation);
             //    Debug.Log("TOO LARGE -- TOO LARGE");
@@ -60,7 +60,7 @@ public class EncounterMovementController : MonoBehaviour {
             if (Vector3.Dot(this.transform.forward, enemyAttacker.transform.forward) < -0.95f && Input.GetKeyDown(KeyCode.Space))//this.transform.rotation == directionNeededToOverCome)// Physics.Raycast(ray, out hit, 100))
             {
                 overComingCounters++;
-                if(overComingCounters > 50)
+                if(overComingCounters > 30)
                // Debug.Log(hit.collider.name);
                // if (hit.collider.name == "Enemy")
                // {
