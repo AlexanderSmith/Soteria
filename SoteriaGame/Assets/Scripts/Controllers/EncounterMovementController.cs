@@ -5,6 +5,7 @@ public class EncounterMovementController : MonoBehaviour {
 
     public int numSoteriaStatues;
     public Object soteriaStatuePrefab;
+    public SceneFadeInOut fearFadeOutTextureController;
     public float playerRotation;
     public float forcedRotation;
     public float gameOverTimer;
@@ -41,32 +42,21 @@ public class EncounterMovementController : MonoBehaviour {
         {
             GameOverTimer();
 
-            //float angle = Quaternion.Angle(this.transform.rotation, overwhelmedRotation);
-
             if (this.transform.rotation != overwhelmedRotation && !Input.GetKeyDown(KeyCode.Space) && overComingCounters < 15)
             {
                 this.transform.Rotate(Vector3.up, forcedRotation);
-            //    Debug.Log("TOO LARGE -- TOO LARGE");
-            //    this.transform.RotateAround(this.transform.position, Vector3.up, forcedRotation);
             }
 
-            //GameObject Enemy = GameObject.Find("Enemy");
-
-            //angle = 10;
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             Debug.DrawRay(this.transform.position, ray.direction);
-            Debug.Log(Vector3.Dot(this.transform.forward, enemyAttacker.transform.forward));
             if (Vector3.Dot(this.transform.forward, enemyAttacker.transform.forward) < -0.95f && Input.GetKeyDown(KeyCode.Space))//this.transform.rotation == directionNeededToOverCome)// Physics.Raycast(ray, out hit, 100))
             {
                 overComingCounters++;
-                if(overComingCounters > 30)
-               // Debug.Log(hit.collider.name);
-               // if (hit.collider.name == "Enemy")
-               // {
-                OverCome();
-                    
-               // }
+                if (overComingCounters > 30)
+                {
+                    OverCome();
+                }
             }
         }
 
@@ -135,6 +125,7 @@ public class EncounterMovementController : MonoBehaviour {
     void GameOverTimer()
     {
         gameOverTimer -= Time.deltaTime;
+        fearFadeOutTextureController.FadeToBlack();
         if (gameOverTimer <= 0)
         {
             overwhelmedRotation = enemyRoation;
