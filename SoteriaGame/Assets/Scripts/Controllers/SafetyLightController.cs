@@ -39,7 +39,7 @@ public class SafetyLightController : MonoBehaviour {
                 normal.Normalize();
                 //Debug.Log ("Normalized: " + normal);
                 this.transform.position = new Vector3(5 * normal.x + player.position.x, this.transform.position.y, 5 * normal.z + player.position.z);
-                if (!player.GetComponent<EncounterMovementController>().enabled)
+                if (player.GetComponent<EncounterMovementController>().GetCurrentState() == EncounterMovementController.EncounterState.Normal)
                 {
                     this.light.enabled = false;
                 }

@@ -19,26 +19,25 @@ public class EncounterMovementController : MonoBehaviour {
     private Quaternion enemyRoation, directionNeededToOverCome;
     private int overComingCounters = 0;
 
-    enum State
+    public enum EncounterState
     {
         Normal,
         Overwhelmed,
         Dead,
         Free
     };
-    State currentState;
+    EncounterState currentState;
 	// Use this for initialization
 	void Start () {
-	    currentState = State.Normal;
+        currentState = EncounterState.Normal;
 	}
 
     void Awake() {
-        currentState = State.Normal;
     }
 	
 	// Update is called once per frame
 	void Update () {
-        if (currentState == State.Overwhelmed)
+        if (currentState == EncounterState.Overwhelmed)
         {
             GameOverTimer();
 
@@ -59,15 +58,6 @@ public class EncounterMovementController : MonoBehaviour {
                 }
             }
         }
-
-        if (currentState == State.Free)
-        {
-            Vector3 speed = new Vector3(0.2f, 0.0f, 0.2f);
-            speed.x *= this.transform.forward.x;
-            speed.z *= this.transform.forward.z;
-
-            this.transform.position += (speed);
-        }
     }
 
     void OnMouseDown()
@@ -81,7 +71,7 @@ public class EncounterMovementController : MonoBehaviour {
 
     public void Overwhelm(Transform enemy)
     {
-        if (currentState != State.Overwhelmed)
+        if (currentState != EncounterState.Overwhelmed)
         {
             Debug.Log("OV");
             this.GetComponent<PCController>().EnableEncounterMovement();
@@ -96,7 +86,7 @@ public class EncounterMovementController : MonoBehaviour {
             enemyAttacker = enemy.gameObject;
             this.transform.rotation = overwhelmedRotation;
             //Debug.Log(this.transform.rotation);
-            currentState = State.Overwhelmed;
+            currentState = EncounterState.Overwhelmed;
         }
     }
 
@@ -105,13 +95,13 @@ public class EncounterMovementController : MonoBehaviour {
         gameObject.GetComponent<PCController>().EnableStandardMovement();
         //Eventually will call enemy death script funtion mostlikely so there is a nice disipation and stuff. 
         Destroy(enemyAttacker);
-        currentState = State.Normal;
+        currentState = EncounterState.Normal;
     }
 
     public void CheckEscape()
     {
         enemyAttacker.GetComponent<BasicEnemyController>().EndEncounter(true);
-        currentState = State.Normal;
+        currentState = EncounterState.Free;
         StartCoroutine(EnableEncounter());
     }
 
@@ -125,7 +115,7 @@ public class EncounterMovementController : MonoBehaviour {
             this.transform.rotation = overwhelmedRotation;
             GameObject Enemy = GameObject.Find("Enemy");
             Enemy.gameObject.SendMessage("EndEncounter", true);
-            this.currentState = State.Dead;
+            this.currentState = EncounterState.Dead;
 			PlayerOverwhelmed();
         }
     }
@@ -161,7 +151,7 @@ public class EncounterMovementController : MonoBehaviour {
             if (Enemy != null)
                 Destroy(Enemy.gameObject);
             gameObject.GetComponent<PCController>().EnableStandardMovement();
-            currentState = State.Normal;
+            currentState = EncounterState.Normal;
             GameObject Statue = GameObject.Find("SoteriaStatue(Clone)");
             if (Statue != null)
                 Destroy(Statue);
@@ -175,10 +165,10 @@ public class EncounterMovementController : MonoBehaviour {
         yield return new WaitForSeconds(3f);
 
         enemyAttacker.GetComponent<BasicEnemyController>().EndEncounter(false);
-    }//    void OnGUI()
-//    {
-//        Event e = Event.current;
-//        if (e.button == 1 && e.isMouse)
-//            UseCoin();
-//    }
+    }
+
+    public EncounterState GetCurrentState()
+    {
+        return currentState;
+    }
 }
