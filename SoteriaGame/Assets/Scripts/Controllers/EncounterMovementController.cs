@@ -58,6 +58,8 @@ public class EncounterMovementController : MonoBehaviour {
             Debug.DrawRay(this.transform.position, ray.direction);
             if (this.transform.rotation != overwhelmedRotation && Input.GetKeyDown(KeyCode.Space))// Physics.Raycast(ray, out hit, 100))
             {
+                overComingCounters++;
+                if(overComingCounters > 50)
                // Debug.Log(hit.collider.name);
                // if (hit.collider.name == "Enemy")
                // {

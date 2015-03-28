@@ -505,7 +505,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numSoteriaStatues: 2
   soteriaStatuePrefab: {fileID: 181762, guid: fef1a5f1b3dd1c04a937e708a1370ce1, type: 2}
-  playerRotation: 60
+  playerRotation: 30
   forcedRotation: -1
   gameOverTimer: 30
   Coins: 1
