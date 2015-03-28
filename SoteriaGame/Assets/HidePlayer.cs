@@ -19,8 +19,8 @@ public class HidePlayer : MonoBehaviour {
 	{
 		if (Other.gameObject.name.Equals("Player"))
 		{
-			//Other.GetComponent<PCController>().currentState = State.Hidden;
-		//	Debug.Log ("Enter");
+			Other.GetComponent<EncounterMovementController>().SetCurrentState(EncounterMovementController.EncounterState.Hidden);
+		    Debug.Log ("Enter");
 		}
 	}
 	
@@ -28,16 +28,17 @@ public class HidePlayer : MonoBehaviour {
 	{
 		if (Other.gameObject.name.Equals("Player"))
 		{
-			//Other.GetComponent<PCController>().currentState = State.Hidden;
-		//	Debug.Log ("Stay");
+            Other.GetComponent<EncounterMovementController>().SetCurrentState(EncounterMovementController.EncounterState.Hidden);
+		    Debug.Log ("Stay");
 		}
 	}
 	void OnTriggerExit(Collider Other) 
 	{ 
 		if (Other.gameObject.name.Equals("Player"))
 		{
-			//Other.GetComponent<PCController>().currentState = State.Normal;
-		//	Debug.Log ("Exit");
+            Other.GetComponent<EncounterMovementController>().SetCurrentState(EncounterMovementController.EncounterState.Normal);
+            this.GetComponent<SafetyLightController>().DisableSafetyLight();
+		    Debug.Log ("Exit");
 		}
 	}
 }

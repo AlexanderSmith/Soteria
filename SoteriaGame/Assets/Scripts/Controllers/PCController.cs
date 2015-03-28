@@ -3,6 +3,7 @@ using System.Collections;
 
 public class PCController : MonoBehaviour {
 
+    public GameObject button;
     StandardMovementController stdMovement;
     EncounterMovementController encMovement;
 
@@ -21,6 +22,7 @@ public class PCController : MonoBehaviour {
     {
         stdMovement.enabled = false;
         encMovement.enabled = true;
+
     }
 
     public void EnableStandardMovement()

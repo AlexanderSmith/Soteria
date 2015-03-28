@@ -22,6 +22,7 @@ public class EncounterMovementController : MonoBehaviour {
     public enum EncounterState
     {
         Normal,
+        Hidden,
         Overwhelmed,
         Dead,
         Free
@@ -170,5 +171,10 @@ public class EncounterMovementController : MonoBehaviour {
     public EncounterState GetCurrentState()
     {
         return currentState;
+    }
+
+    public void SetCurrentState(EncounterState e)
+    {
+        currentState = e;
     }
 }

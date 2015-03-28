@@ -17,19 +17,12 @@ public class SafetyLightController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		currentState = State.Finding;	
+		currentState = State.Finding;
+        FindNextClosest();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (currentState == State.Finding) 
-		{
-			FindNextClosest ();	
-		}
-
-		if (currentState == State.Moving) 
-		{
-            
 			this.transform.position = Vector3.MoveTowards(this.transform.position, safeArea.transform.position, Time.deltaTime * lightSpeed);
 			if (Vector3.Distance(this.transform.position, player.transform.position) >= 15.0f)
 			{
@@ -41,14 +34,13 @@ public class SafetyLightController : MonoBehaviour {
                 this.transform.position = new Vector3(5 * normal.x + player.position.x, this.transform.position.y, 5 * normal.z + player.position.z);
                 if (player.GetComponent<EncounterMovementController>().GetCurrentState() == EncounterMovementController.EncounterState.Normal)
                 {
-                    this.light.enabled = false;
+                    DisableSafetyLight();
                 }
 			}
             if (Vector3.Distance(this.transform.position, safeArea.transform.position) <= 1.0f)
             {
-                this.light.enabled = false;
+                DisableSafetyLight();
             }
-		}
 	}
 
 	void FindNextClosest()
@@ -56,4 +48,30 @@ public class SafetyLightController : MonoBehaviour {
 		safeArea = GameObject.FindWithTag ("SafeArea");
 		currentState = State.Moving;
 	}
+
+    public void EnableSafetyLight()
+    {
+        this.light.enabled = true;
+        this.collider.enabled = true;
+    }
+
+    public void DisableSafetyLight()
+    {
+        this.light.enabled = false;
+        this.collider.enabled = false;
+    }
+
+    public void OnPress()
+    {
+        this.GetComponent<SafetyLightController>().EnableSafetyLight();
+        Vector3 normal = player.forward;
+        //Debug.Log ("Player pos: " + player.position);
+        //Debug.Log ("Player normal: " + player.forward);
+        normal.Normalize();
+        //Debug.Log ("Normalized: " + normal);
+        this.transform.position = new Vector3(5 * normal.x + player.position.x, 10, 5 * normal.z + player.position.z);
+        //Debug.Log ("Light pos: " + safetyLight.transform.position);
+        player.GetComponent<PCController>().EnableStandardMovement();
+        player.GetComponent<EncounterMovementController>().CheckEscape();
+    }
 }
