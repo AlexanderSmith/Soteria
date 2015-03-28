@@ -15,7 +15,7 @@ public class EncounterMovementController : MonoBehaviour {
 
     GameObject enemyAttacker;
 
-    private Quaternion enemyRoation;
+    private Quaternion enemyRoation, directionNeededToOverCome;
     private int overComingCounters = 0;
 
     enum State
@@ -56,7 +56,8 @@ public class EncounterMovementController : MonoBehaviour {
             Ray ray = new Ray(transform.position, transform.forward);
             RaycastHit hit;
             Debug.DrawRay(this.transform.position, ray.direction);
-            if (this.transform.rotation != overwhelmedRotation && Input.GetKeyDown(KeyCode.Space))// Physics.Raycast(ray, out hit, 100))
+            Debug.Log(Vector3.Dot(this.transform.forward, enemyAttacker.transform.forward));
+            if (Vector3.Dot(this.transform.forward, enemyAttacker.transform.forward) < -0.95f && Input.GetKeyDown(KeyCode.Space))//this.transform.rotation == directionNeededToOverCome)// Physics.Raycast(ray, out hit, 100))
             {
                 overComingCounters++;
                 if(overComingCounters > 50)
@@ -95,6 +96,10 @@ public class EncounterMovementController : MonoBehaviour {
             enemyRoation = enemy.rotation;
 
             overwhelmedRotation = enemy.rotation;
+
+            directionNeededToOverCome = Quaternion.LookRotation(transform.position - enemy.position, Vector3.forward);
+            directionNeededToOverCome.x = 0.0f;
+            directionNeededToOverCome.z = 0.0f;
 
             enemyAttacker = enemy.gameObject;
             this.transform.rotation = overwhelmedRotation;
