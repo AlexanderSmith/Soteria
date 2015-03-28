@@ -39,7 +39,6 @@ public class SceneFadeInOut : MonoBehaviour {
     {
         // Lerp the colour of the texture between itself and black.
         guiTexture.color = Color.Lerp(guiTexture.color, Color.black, fadeSpeed * Time.deltaTime);
-        Debug.Log(guiTexture.color);
         toGoToClear = false;
     }
 }

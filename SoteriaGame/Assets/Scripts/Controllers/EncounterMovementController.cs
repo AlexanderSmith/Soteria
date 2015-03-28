@@ -96,6 +96,7 @@ public class EncounterMovementController : MonoBehaviour {
             //Debug.Log(this.transform.rotation);
             currentState = State.Overwhelmed;
             CheckEscape();
+            this.GetComponent<PCController>().EnableEncounterMovement();
         }
     }
 
@@ -107,19 +108,11 @@ public class EncounterMovementController : MonoBehaviour {
         currentState = State.Normal;
     }
 
-    void CheckEscape()
+    public void CheckEscape()
     {
-        if (numSoteriaStatues > 0)
-        {
-            numSoteriaStatues -= 1;
-            //Create Soteria Statue prefab if player has statues in inventory
-            Vector3 normal = this.transform.forward;
-            normal.Normalize();
-            //GameObject statue = Instantiate(soteriaStatuePrefab,
-            //                                new Vector3(10 * normal.x + this.transform.position.x, this.transform.position.y, 10 * normal.z + this.transform.position.z),
-            //                                this.transform.rotation) as GameObject;
-            //Debug.Log("normal " + normal);
-        }
+        enemyAttacker.GetComponent<BasicEnemyController>().EndEncounter(true);
+        currentState = State.Normal;
+        StartCoroutine(EnableEncounter());
     }
 
     void GameOverTimer()
@@ -177,7 +170,12 @@ public class EncounterMovementController : MonoBehaviour {
         }
     }
 
-//    void OnGUI()
+    IEnumerator EnableEncounter()
+    {
+        yield return new WaitForSeconds(3f);
+
+        enemyAttacker.GetComponent<BasicEnemyController>().EndEncounter(false);
+    }//    void OnGUI()
 //    {
 //        Event e = Event.current;
 //        if (e.button == 1 && e.isMouse)

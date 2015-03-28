@@ -33,6 +33,8 @@ public class GUISoteriaStatue : MonoBehaviour {
 			//Debug.Log ("Normalized: " + normal);
 			safetyLight.transform.position = new Vector3(5 * normal.x + player.position.x, lightOffset, 5 * normal.z + player.position.z);
 			//Debug.Log ("Light pos: " + safetyLight.transform.position);
+            player.GetComponent<PCController>().EnableStandardMovement();
+            player.GetComponent<EncounterMovementController>().CheckEscape();
 		}
 	}
 }

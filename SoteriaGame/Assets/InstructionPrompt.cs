@@ -18,7 +18,7 @@ public class InstructionPrompt : MonoBehaviour {
 		{
 		//	Debug.Log ("OH yEAH");
 			
-			this.GetComponent<Text>().text = "Hide Behind the Wall to Avoid the Shadow Creatures!";
+			//this.GetComponent<Text>().text = "Hide Behind the Wall to Avoid the Shadow Creatures!";
 			this.gameObject.SetActive(true);
 			if (timeDelay == 0) timeDelay = 5;	
 		}

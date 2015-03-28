@@ -3,6 +3,7 @@ using System.Collections;
 
 public class SafetyLightController : MonoBehaviour {
 
+    public Transform player;
 	GameObject safeArea;
 
 	public enum State
@@ -12,7 +13,7 @@ public class SafetyLightController : MonoBehaviour {
 	};
 	State currentState;
 
-	float lightSpeed = 1f;
+	float lightSpeed = 2.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -28,11 +29,22 @@ public class SafetyLightController : MonoBehaviour {
 
 		if (currentState == State.Moving) 
 		{
+            
 			this.transform.position = Vector3.MoveTowards(this.transform.position, safeArea.transform.position, Time.deltaTime * lightSpeed);
-			if (Vector3.Distance(this.transform.position, safeArea.transform.position) <= 2f)
+			if (Vector3.Distance(this.transform.position, player.transform.position) >= 15.0f)
 			{
-				currentState = State.Finding;
+                Vector3 normal = player.forward;
+                //Debug.Log ("Player pos: " + player.position);
+                //Debug.Log ("Player normal: " + player.forward);
+                normal.Normalize();
+                //Debug.Log ("Normalized: " + normal);
+                this.transform.position = new Vector3(5 * normal.x + player.position.x, this.transform.position.y, 5 * normal.z + player.position.z);
 			}
+            Debug.Log(Vector3.Distance(this.transform.position, safeArea.transform.position));
+            if (Vector3.Distance(this.transform.position, safeArea.transform.position) <= 1.0f)
+            {
+                this.light.enabled = false;
+            }
 		}
 	}
 
