@@ -4,8 +4,9 @@
 TagManager:
   tags:
   - 
-  - Soteria Statue
+  - SoteriaStatue
   - InstructionPrompt
+  - SafeArea
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
