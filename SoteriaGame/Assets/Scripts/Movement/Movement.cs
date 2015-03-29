@@ -7,6 +7,7 @@ public class Movement {
     {
         whatToTransform.rigidbody.velocity = new Vector3(0, 0, 0);
         whatToTransform.rigidbody.MovePosition((input * speed) + whatToTransform.position);
+        whatToTransform.position = new Vector3(whatToTransform.rigidbody.position.x, 0.5f, whatToTransform.rigidbody.position.z);
         
         MakeTransformLookAtMoveDirection(whatToTransform, input);
     }
