@@ -36,8 +36,12 @@ public class Dog : ISerializable
 	
 	public override void Deserialize(PersistentDataReader reader)
 	{
-		
+		Name = reader.ReadString ();
+		m_Tag = reader.ReadInt32 ();
+		m_IsBarking = reader.ReadBool ();
 	}
+
+
 	public override string ToString ()
 	{
 		return "Name: " + Name + "\n" +

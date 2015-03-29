@@ -38,7 +38,9 @@ public class Cat : ISerializable
 	
 	public override void Deserialize(PersistentDataReader reader)
 	{
-		
+		d = reader.ReadDouble ();
+		f = reader.ReadFloat ();
+		c = reader.ReadChar ();
 	}
 
 	public override string ToString ()

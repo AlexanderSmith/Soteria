@@ -179,34 +179,29 @@ public class PersistentDataManager : Singleton<PersistentDataManager>
 		Instance.m_SaveFileSlotInUse = id;
 	}
 
-	public static void Load(PersistentDataFileID id)
+	public static void Load()
 	{
-		if (id == PersistentDataFileID.E_SAVE_FILE_NA)
+		if (Instance.m_SaveFileSlotInUse == PersistentDataFileID.E_SAVE_FILE_NA)
 			Logger.LogError ("Save File Errors", 
 			                 "Persistent Data File with ID " + PersistentDataFileID.E_SAVE_FILE_NA.ToString () + 
 			                 "! Not a valid arugment!", false);
 
 		Dictionary<PersistentDataFileID, PersistentDataFile> files = Instance.m_CurrSaveFiles;
 
-		PersistentDataFile loadFile = files [id];
+		PersistentDataFile loadFile = files [Instance.m_SaveFileSlotInUse];
 
 		if (loadFile == null)
 			Logger.LogError ("Save File Errors", 
-			                 "Persistent Data File with ID " + id.ToString () + " not found at " + 
+			                 "Persistent Data File with ID " + Instance.m_SaveFileSlotInUse.ToString () + " not found at " + 
 			                 PERSISTENTDATA_PATH, false);
 
 		else
 		{
-			PersistentDataReader reader;
-			loadFile.GetPersitentDataReader(out reader);
+			//PersistentDataReader reader;
+			//loadFile.GetPersitentDataReader(out reader);
 			ISerializable[] serializables = (ISerializable[]) FindObjectsOfType(typeof(ISerializable));
 
-			foreach(ISerializable s in serializables)
-			{
-				s.Deserialize(reader);
-			}
-
-			reader.Dispose();
+			loadFile.Load(serializables);
 			loadFile.Dispose();
 		}
 	}
@@ -234,7 +229,7 @@ public class PersistentDataManager : Singleton<PersistentDataManager>
 		//empty save slot?
 		if (pDataMan.m_CurrSaveFiles[pDataMan.m_SaveFileSlotInUse]== null) 
 		{
-			saveFile = PersistentDataFile.CreateNewPersistentDataFile (PERSISTENTDATA_PATH, PERSISTENTDATA_EXT);
+			saveFile = PersistentDataFile.CreateNewPersistentDataFile (PERSISTENTDATA_PATH, PERSISTENTDATA_EXT, pDataMan.m_SaveFileSlotInUse);
 			pDataMan.m_CurrSaveFiles[pDataMan.m_SaveFileSlotInUse] = saveFile;
 			//Instance.m_CurrSaveFiles.Add (saveFile);
 			//Instance.m_SaveFileInUse = saveFile;

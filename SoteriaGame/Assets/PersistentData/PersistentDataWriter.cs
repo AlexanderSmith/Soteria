@@ -91,9 +91,10 @@ public class PersistentDataWriter
 
 	public void WritePersistentDataFileHdr(PersistentDataFileHdr hdr, bool reset)
 	{
+		this.Write ((int)hdr.m_Id);
+		this.Write (hdr.m_NumDataItemHdrs);
 		this.Write (hdr.m_CurrChapter);
 		this.Write (hdr.m_Checkpoint);
-		this.Write ((int)hdr.m_Id);
 
 		//if(reset)
 			//this.Reset();
@@ -146,7 +147,7 @@ public class PersistentDataWriter
 	public void Write(char c)
 	{
 		InternalWriter.Write (c);
-		m_ItemTotalInBytes += sizeof(char);
+		m_ItemTotalInBytes += 1; //explain later
 		++m_NumItemsWritten;
 	}
 
@@ -173,10 +174,11 @@ public class PersistentDataWriter
 
 		byte[] strBytes = utf8.GetBytes (s);
 
+		InternalWriter.Write (strBytes.Length);
 		InternalWriter.Write (strBytes);
 
 		++m_NumItemsWritten;
-		m_ItemTotalInBytes += strBytes.Length;
+		m_ItemTotalInBytes += (strBytes.Length + sizeof(int));
 	}
 
 	public void Write(Vector2 v)

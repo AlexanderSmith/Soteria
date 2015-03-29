@@ -17,12 +17,14 @@ public struct PersistentDataFileHdr
 	//this is all dummy info just for prototyping
 	public string m_CurrChapter;
 	public string m_Checkpoint;
+	public int m_NumDataItemHdrs;
 	public PersistentDataFileID m_Id;
 
-	public PersistentDataFileHdr(string chapter, string checkpoint, PersistentDataFileID id)
+	public PersistentDataFileHdr(string chapter, string checkpoint, int numDataItemHdrs, PersistentDataFileID id)
 	{
 		this.m_CurrChapter = chapter;
 		this.m_Checkpoint = checkpoint;
+		this.m_NumDataItemHdrs = numDataItemHdrs;
 		this.m_Id = id;
 	}
 
@@ -33,6 +35,7 @@ public struct PersistentDataFileHdr
 
 		hdr.m_CurrChapter = "";
 		hdr.m_Checkpoint = "";
+		hdr.m_NumDataItemHdrs = 0;
 		hdr.m_Id = PersistentDataFileID.E_SAVE_FILE_NA;
 
 		return hdr;
@@ -51,7 +54,7 @@ public struct PersistentDataItemHdr
 	public PersistentDataID m_PersistentItemID;
 	public int m_NumItems;
 	public int m_SaveDataSize;	
-
+	public byte[] m_HdrData;
 	/*
 	 * C# prefers to just zero everything out for structs
 	 * so default ctors are not allowed for structs
@@ -65,7 +68,7 @@ public struct PersistentDataItemHdr
 		hdr.m_PersistentItemID = PersistentDataID.E_MISSING_ID;
 		hdr.m_NumItems = 0;
 		hdr.m_SaveDataSize = 0;
-
+		hdr.m_HdrData = null;
 		return hdr;
 	}
 

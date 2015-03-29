@@ -36,7 +36,9 @@ public class Fish : ISerializable
 	
 	public override void Deserialize(PersistentDataReader reader)
 	{
-		
+		m = reader.ReadMat4x4 ();
+		v = reader.ReadVec4 ();
+		q = reader.ReadQuat ();
 	}
 
 	public override string ToString ()

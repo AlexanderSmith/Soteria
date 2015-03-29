@@ -25,18 +25,18 @@ public class PersistentDataFile
 	public PersistentDataFile(DateTime timeCreated, string path, int filesize)
 	{
 		m_DataHdrs = new List<PersistentDataItemHdr> ();
-		m_FileHdr = PrivGetFileHdr ();
 		m_LastModified = timeCreated;
 		m_FileName = path;
 		m_FileSize = filesize;
-		m_Id = PrivGetID();
+
+		m_FileHdr = PrivGetFileHdr ();
 	}
 
 	public PersistentDataFileID ID
 	{
 		get
 		{
-			return m_Id;
+			return m_FileHdr.m_Id;
 		}
 	}
 
@@ -55,48 +55,62 @@ public class PersistentDataFile
 		{
 			return m_FileName;
 		}
-
-		set
-		{
-			//one-time set
-			if(m_FileName == null)
-				m_FileName = value;
-		}
 	}
 
 	private PersistentDataFileHdr PrivGetFileHdr()
 	{
 		PersistentDataFileHdr hdr = PersistentDataFileHdr.GetEmptyHdr ();
 
+		FileInfo fileInfo = new FileInfo (this.FileName);
+
+		if(fileInfo.Length > 0)
+		{
+			PersistentDataReader reader = new PersistentDataReader(this.FileName);
+			//reader.InternalReader = new BinaryReader(file);
+			
+			//temporary is for debugging purposes
+			//Monodevelop on my machine won't let me view enum
+			//values in the debugger for some stupid reason
+			
+			//int intID = reader.ReadInt32();
+			//id = (PersistentDataFileID) intID;
+			hdr = reader.GetPersistentFileHdr();
+			reader.Dispose();
+		}
+		
+		else
+		{
+			PersistentDataSaveSlot currSaveSlot = PersistentDataManager.GetCurrentSaveSlot();
+			hdr.m_Id = currSaveSlot.SaveSlotID;
+		}
+
 		return hdr;
 	}
 
 	private PersistentDataFileID PrivGetID()
 	{
-		FileStream file = File.Open (this.FileName, FileMode.Open);
+		FileInfo fileInfo = new FileInfo (this.FileName);
 		PersistentDataFileID id = PersistentDataFileID.E_SAVE_FILE_NA;
 
-		using(file)
+		if(fileInfo.Length > 0)
 		{
-			if(file.Length > 0)
-			{
-				PersistentDataReader reader = new PersistentDataReader();
-				reader.InternalReader = new BinaryReader(file);
+			PersistentDataReader reader = new PersistentDataReader(this.FileName);
+			//reader.InternalReader = new BinaryReader(file);
 
-				//temporary is for debugging purposes
-				//Monodevelop on my machine won't let me view enum
-				//values in the debugger for some stupid reason
-				int idInt = reader.ReadInt32();
-				id = (PersistentDataFileID) idInt;
+			//temporary is for debugging purposes
+			//Monodevelop on my machine won't let me view enum
+			//values in the debugger for some stupid reason
 
-				reader.Dispose();
-			}
+			//int intID = reader.ReadInt32();
+			//id = (PersistentDataFileID) intID;
+			this.m_FileHdr = reader.GetPersistentFileHdr();
+			reader.Dispose();
+		}
 
-			else
-			{
-				PersistentDataSaveSlot currSaveSlot = PersistentDataManager.GetCurrentSaveSlot();
-				id = currSaveSlot.SaveSlotID;
-			}
+		else
+		{
+			PersistentDataSaveSlot currSaveSlot = PersistentDataManager.GetCurrentSaveSlot();
+			id = currSaveSlot.SaveSlotID;
 		}
 
 		return id;
@@ -117,22 +131,16 @@ public class PersistentDataFile
 	{
 	}
 
-	public void GetPersitentDataReader(out PersistentDataReader reader)
+	public void GetPersistentDataReader(out PersistentDataReader reader)
 	{
-		reader = null;
-		FileStream loadFile = File.Open (this.FileName, FileMode.Open);
 
-		if (loadFile != null)
-		{
+		reader = new PersistentDataReader(this.FileName);
+		//if(m_DataHdrs == null)
+			//m_DataHdrs = reader.GetPersistentDataHdrs();
 
-			reader = new PersistentDataReader();
-			reader.InternalReader = new BinaryReader(loadFile);
-			if(m_DataHdrs == null)
-				m_DataHdrs = reader.GetPeristentDataHdrs();
-		}
 	}
 
-	public void GetPersitentDataWriter(out PersistentDataWriter writer)
+	public void GetPersistentDataWriter(out PersistentDataWriter writer)
 	{
 		writer = null;
 
@@ -154,13 +162,14 @@ public class PersistentDataFile
 		PersistentDataFileHdr fileHdr = PersistentDataFileHdr.GetEmptyHdr ();
 		fileHdr.m_CurrChapter = chapter;
 		fileHdr.m_Checkpoint = checkpoint;
+		fileHdr.m_NumDataItemHdrs = serializables.Length;
 		fileHdr.m_Id = this.ID;
 
 		//data header for each individual serializable
 		PersistentDataItemHdr dataItemHdr = PersistentDataItemHdr.GetEmptyHdr ();
 
 		PersistentDataWriter writer;
-		this.GetPersitentDataWriter (out writer);
+		this.GetPersistentDataWriter (out writer);
 
 		writer.WritePersistentDataFileHdr (fileHdr, true);
 
@@ -179,17 +188,45 @@ public class PersistentDataFile
 		PrivWriteToDisk(writer);
 	}
 
-	public void LoadSerializables(ISerializable[] serializables)
+	public void Load(ISerializable[] serializables)
 	{
+		PersistentDataReader reader;
+		this.GetPersistentDataReader (out reader);
+
+		this.m_FileHdr = reader.GetPersistentFileHdr ();
+
+		PersistentDataItemHdr dataItemHdr;
+
+
+		for(int i = 0; i < this.m_FileHdr.m_NumDataItemHdrs && reader.GetNextPersistentDataHdr(out dataItemHdr); ++i)
+		{
+			m_DataHdrs.Add(dataItemHdr);
+		}
+
+		foreach (PersistentDataItemHdr hdr in m_DataHdrs)
+		{
+			reader.CurrHdrData = hdr.m_HdrData;
+
+			ISerializable[] matches = Array.FindAll<ISerializable>(serializables,s => s.PersistentDataId == hdr.m_PersistentItemID);
+
+			foreach(ISerializable s in matches)
+			{
+				s.Deserialize(reader);
+				reader.ResetOffsets();
+			}
+		}
+
+		reader.Dispose ();
 	}
 
-	public static PersistentDataFile CreateNewPersistentDataFile(string path, string ext)
+	public static PersistentDataFile CreateNewPersistentDataFile(string path, string ext, PersistentDataFileID id)
 	{
 		StringBuilder builder = new StringBuilder ();
 
 		//can think of a better name convention later
 		builder.Append (path);
-		builder.Append ("/Soteria_GameSave_");// + id.ToString ());
+		builder.Append ("/Soteria_GameSave_");
+		builder.Append (id.ToString ());
 		builder.Append (ext);
 
 		FileStream newFile = File.Create (builder.ToString ());

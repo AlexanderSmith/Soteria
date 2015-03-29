@@ -66,9 +66,9 @@ public class ManagerTest : MonoBehaviour
 		bool isEmptySlot1 = PersistentDataManager.IsSaveSlotEmpty (PersistentDataFileID.E_SAVE_FILE_1);
 		bool isEmptySlot2 = PersistentDataManager.IsSaveSlotEmpty (PersistentDataFileID.E_SAVE_FILE_2);
 
-		GUI.Label (new Rect (120, 40, 80, 20), isEmptySlot0 ? "Empty" : "Not Available");
-		GUI.Label (new Rect (120, 70, 80, 20), isEmptySlot1 ? "Empty" : "Not Available");
-		GUI.Label (new Rect (120, 100, 80, 20), isEmptySlot2 ? "Empty" : "Not Available");
+		GUI.Label (new Rect (120, 40, 80, 20), isEmptySlot0 ? "Empty" : "Loadable");
+		GUI.Label (new Rect (120, 70, 80, 20), isEmptySlot1 ? "Empty" : "Loadable");
+		GUI.Label (new Rect (120, 100, 80, 20), isEmptySlot2 ? "Empty" : "Loadable");
 	}
 
 	private void SetCurrSelectedFileLabels()
@@ -90,6 +90,19 @@ public class ManagerTest : MonoBehaviour
 				PersistentDataManager.Save();
 				m_DataSaved = true;
 
+			}
+		}
+
+		else if(currSaveSlot.ExistingSaveFile)
+		{
+			GUI.Label (new Rect (250, 30, 300, 40), "Save File Found! Would You Like To Load?\n" + currSaveSlot.SaveSlotID.ToString()/*We can print something prettier later..*/ );
+			
+			if(GUI.Button(new Rect(250, 80, 80, 30), "Yes"))
+			{
+				PersistentDataManager.SetCurrentSaveSlot(currSaveSlot.SaveSlotID);
+				PersistentDataManager.Load();
+				//m_DataSaved = true;
+				
 			}
 		}
 	}
