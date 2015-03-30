@@ -1,0 +1,241 @@
+fileFormatVersion: 2
+guid: 13f1948a381dab64c8f6bdd1878f3f13
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: camera1
+    100002: group2
+    100004: group3
+    100006: group4
+    100008: group5
+    100010: group6
+    100012: //RootNode
+    100014: meshes1_1
+    100016: meshes3
+    100018: player1_1
+    100020: player3_1
+    100022: player3_3
+    100024: player9
+    100026: player9 1
+    100028: transform1
+    100030: transform2
+    100032: transform3
+    100034: transform4
+    100036: transform5
+    100038: transform6
+    100040: transform7
+    100042: vest
+    400000: camera1
+    400002: group2
+    400004: group3
+    400006: group4
+    400008: group5
+    400010: group6
+    400012: //RootNode
+    400014: meshes1_1
+    400016: meshes3
+    400018: player1_1
+    400020: player3_1
+    400022: player3_3
+    400024: player9
+    400026: player9 1
+    400028: transform1
+    400030: transform2
+    400032: transform3
+    400034: transform4
+    400036: transform5
+    400038: transform6
+    400040: transform7
+    400042: vest
+    2300000: player9
+    3300000: player9
+    4300000: player9
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 3
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 0
+  copyAvatar: 0
+  humanDescription:
+    human:
+    - boneName: group5
+      humanName: Hips
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: group6
+      humanName: Spine
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    - boneName: transform6
+      humanName: RightShoulder
+      limit:
+        min: {x: 0, y: 0, z: 0}
+        max: {x: 0, y: 0, z: 0}
+        value: {x: 0, y: 0, z: 0}
+        length: 0
+        modified: 0
+    skeleton:
+    - name: MainCharacterModel(Clone)
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: camera1
+      position: {x: -.00575851649, y: 4.62357855, z: 7.92516565}
+      rotation: {x: -.183012709, y: -.683012724, z: .183012709, w: .683012724}
+      scale: {x: 6.65812874, y: 6.65812826, z: 6.65812874}
+      transformModified: 1
+    - name: group2
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1.09745991, y: 1.09745991, z: 1.09745991}
+      transformModified: 1
+    - name: group3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: group4
+      position: {x: -0, y: .0106751407, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: group5
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: group6
+      position: {x: -.0087886909, y: .0117207682, z: -.000183166208}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: meshes1_1
+      position: {x: 4.88518692e-09, y: -.000644930871, z: .000183166208}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0961930379, y: .0961930379, z: .0961930379}
+      transformModified: 1
+    - name: transform4
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: meshes3
+      position: {x: 4.88518692e-09, y: -.000644930871, z: .000183166208}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0931361839, y: .0931361839, z: .0931361839}
+      transformModified: 1
+    - name: transform5
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: player1_1
+      position: {x: 4.88518692e-09, y: -.000644930871, z: .000183166208}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0931361839, y: .0931361839, z: .0931361839}
+      transformModified: 1
+    - name: transform6
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: player3_1
+      position: {x: 4.88518692e-09, y: -.000644930871, z: .000183166208}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0931361839, y: .0931361839, z: .0931361839}
+      transformModified: 1
+    - name: transform1
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: player3_3
+      position: {x: 4.88518692e-09, y: -.000644930871, z: .000183166208}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0931361839, y: .0931361839, z: .0931361839}
+      transformModified: 1
+    - name: transform2
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: player9 1
+      position: {x: 4.88518692e-09, y: -.000644930871, z: .000183166208}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0931361839, y: .0931361839, z: .0931361839}
+      transformModified: 1
+    - name: transform7
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: vest
+      position: {x: 4.88518692e-09, y: -.000644930871, z: .000183166208}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: .0931361839, y: .0931361839, z: .0931361839}
+      transformModified: 1
+    - name: transform3
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    - name: player9
+      position: {x: -.00964523572, y: .0128630716, z: -.000201017625}
+      rotation: {x: 0, y: -0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+      transformModified: 1
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 3
+  additionalBone: 0
+  userData: 
