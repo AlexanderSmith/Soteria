@@ -21,7 +21,14 @@ public class StandardMovementController : MonoBehaviour {
     void Update()
     {
         myMovementComponents.Move(new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical")), moveSpeed, this.transform);
-		animator.SetFloat("Speed", Input.GetAxis("Horizontal"));
+		if (Input.GetAxis("Horizontal") != 0.0f || Input.GetAxis("Vertical") != 0.0f)
+		{
+			animator.SetBool("Moving", true);
+		}
+		else
+		{
+			animator.SetBool("Moving", false);
+		}
     }
 
 //    void OnMouseDown()
