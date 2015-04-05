@@ -1,0 +1,423 @@
+fileFormatVersion: 2
+guid: 4ec761a6b465dd541b6a5ac8c9b5c566
+ModelImporter:
+  serializedVersion: 16
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: cluster1Handle
+    100004: cluster2Handle
+    100006: cluster3Handle
+    100008: cluster4Handle
+    100010: curve1
+    100012: Global_Ctrl
+    100014: group11
+    100016: group12
+    100018: group13
+    100020: group14
+    100022: group7
+    100024: group8
+    100026: group8 1
+    100028: Hat_Jnt
+    100030: Head_Jnt
+    100032: joint10
+    100034: joint11
+    100036: joint12
+    100038: joint13
+    100040: joint14
+    100042: joint3
+    100044: joint4
+    100046: joint5
+    100048: joint6
+    100050: joint7
+    100052: joint9
+    100054: L_Ankle_Jnt
+    100056: L_Ball_Jnt
+    100058: L_Clavicle_Jnt
+    100060: L_Clavicle_Offset
+    100062: L_Clavivle_Ctrl
+    100064: L_Elbow_Ctrl
+    100066: L_Elbow_Offset
+    100068: L_Hip_Jnt
+    100070: L_Knee_Aim
+    100072: L_Knee_Aim1
+    100074: L_Knee_Jnt
+    100076: L_Shoulder_Ctrl
+    100078: L_Shoulder_Jnt
+    100080: L_Shoulder_Offset
+    100082: L_wrist_Ctrl
+    100084: L_Wrist_Jnt
+    100086: L_Wrist_Offset
+    100088: LFoot_Ctrl
+    100090: LowerSpine_Ctrl
+    100092: LowerSpine_Offset
+    100094: Neck01_Jnt
+    100096: Neck02_Jnt
+    100098: Neck03_Jnt
+    100100: Neck_Ctrl
+    100102: Neck_Offset
+    100104: pasted__polySurface39
+    100106: player10
+    100108: polySurface1
+    100110: polySurface10
+    100112: polySurface11
+    100114: polySurface12
+    100116: polySurface12 1
+    100118: polySurface13
+    100120: polySurface14
+    100122: polySurface14 1
+    100124: polySurface15
+    100126: polySurface16
+    100128: polySurface16 1
+    100130: polySurface17
+    100132: polySurface17 1
+    100134: polySurface18
+    100136: polySurface18 1
+    100138: polySurface19
+    100140: polySurface20
+    100142: polySurface20 1
+    100144: polySurface21
+    100146: polySurface21 1
+    100148: polySurface22
+    100150: polySurface22 1
+    100152: polySurface23
+    100154: polySurface23 1
+    100156: polySurface24
+    100158: polySurface24 1
+    100160: polySurface25
+    100162: polySurface26
+    100164: polySurface27
+    100166: polySurface28
+    100168: polySurface29
+    100170: polySurface3
+    100172: polySurface30
+    100174: polySurface31
+    100176: polySurface32
+    100178: polySurface33
+    100180: polySurface34
+    100182: polySurface35
+    100184: polySurface36
+    100186: polySurface37
+    100188: polySurface38
+    100190: polySurface40
+    100192: polySurface5
+    100194: polySurface6
+    100196: polySurface7
+    100198: polySurface9
+    100200: R_Clavicle_Jnt
+    100202: R_Clavicle_Offset1
+    100204: R_Clavivle_Ctrl
+    100206: R_Elbow_Ctrl
+    100208: R_Elbow_Jnt
+    100210: R_Elbow_Offset
+    100212: R_Foot_Ctrl
+    100214: R_Shoulder_Ctrl
+    100216: R_Shoulder_Jnt
+    100218: R_Shoulder_Offset
+    100220: R_wrist_Ctrl
+    100222: R_Wrist_Jnt
+    100224: R_Wrist_Offset
+    100226: Root_Ctrl
+    100228: Root_Jnt
+    100230: transform10
+    100232: transform11
+    100234: transform12
+    100236: transform13
+    100238: transform14
+    100240: transform15
+    100242: transform16
+    100244: transform17
+    100246: transform18
+    100248: transform19
+    100250: transform20
+    100252: transform21
+    100254: transform22
+    100256: transform23
+    100258: transform8
+    100260: transform9
+    100262: UpperSpine_Ctrl
+    100264: UpperSpine_Offset
+    400000: //RootNode
+    400002: cluster1Handle
+    400004: cluster2Handle
+    400006: cluster3Handle
+    400008: cluster4Handle
+    400010: curve1
+    400012: Global_Ctrl
+    400014: group11
+    400016: group12
+    400018: group13
+    400020: group14
+    400022: group7
+    400024: group8
+    400026: group8 1
+    400028: Hat_Jnt
+    400030: Head_Jnt
+    400032: joint10
+    400034: joint11
+    400036: joint12
+    400038: joint13
+    400040: joint14
+    400042: joint3
+    400044: joint4
+    400046: joint5
+    400048: joint6
+    400050: joint7
+    400052: joint9
+    400054: L_Ankle_Jnt
+    400056: L_Ball_Jnt
+    400058: L_Clavicle_Jnt
+    400060: L_Clavicle_Offset
+    400062: L_Clavivle_Ctrl
+    400064: L_Elbow_Ctrl
+    400066: L_Elbow_Offset
+    400068: L_Hip_Jnt
+    400070: L_Knee_Aim
+    400072: L_Knee_Aim1
+    400074: L_Knee_Jnt
+    400076: L_Shoulder_Ctrl
+    400078: L_Shoulder_Jnt
+    400080: L_Shoulder_Offset
+    400082: L_wrist_Ctrl
+    400084: L_Wrist_Jnt
+    400086: L_Wrist_Offset
+    400088: LFoot_Ctrl
+    400090: LowerSpine_Ctrl
+    400092: LowerSpine_Offset
+    400094: Neck01_Jnt
+    400096: Neck02_Jnt
+    400098: Neck03_Jnt
+    400100: Neck_Ctrl
+    400102: Neck_Offset
+    400104: pasted__polySurface39
+    400106: player10
+    400108: polySurface1
+    400110: polySurface10
+    400112: polySurface11
+    400114: polySurface12
+    400116: polySurface12 1
+    400118: polySurface13
+    400120: polySurface14
+    400122: polySurface14 1
+    400124: polySurface15
+    400126: polySurface16
+    400128: polySurface16 1
+    400130: polySurface17
+    400132: polySurface17 1
+    400134: polySurface18
+    400136: polySurface18 1
+    400138: polySurface19
+    400140: polySurface20
+    400142: polySurface20 1
+    400144: polySurface21
+    400146: polySurface21 1
+    400148: polySurface22
+    400150: polySurface22 1
+    400152: polySurface23
+    400154: polySurface23 1
+    400156: polySurface24
+    400158: polySurface24 1
+    400160: polySurface25
+    400162: polySurface26
+    400164: polySurface27
+    400166: polySurface28
+    400168: polySurface29
+    400170: polySurface3
+    400172: polySurface30
+    400174: polySurface31
+    400176: polySurface32
+    400178: polySurface33
+    400180: polySurface34
+    400182: polySurface35
+    400184: polySurface36
+    400186: polySurface37
+    400188: polySurface38
+    400190: polySurface40
+    400192: polySurface5
+    400194: polySurface6
+    400196: polySurface7
+    400198: polySurface9
+    400200: R_Clavicle_Jnt
+    400202: R_Clavicle_Offset1
+    400204: R_Clavivle_Ctrl
+    400206: R_Elbow_Ctrl
+    400208: R_Elbow_Jnt
+    400210: R_Elbow_Offset
+    400212: R_Foot_Ctrl
+    400214: R_Shoulder_Ctrl
+    400216: R_Shoulder_Jnt
+    400218: R_Shoulder_Offset
+    400220: R_wrist_Ctrl
+    400222: R_Wrist_Jnt
+    400224: R_Wrist_Offset
+    400226: Root_Ctrl
+    400228: Root_Jnt
+    400230: transform10
+    400232: transform11
+    400234: transform12
+    400236: transform13
+    400238: transform14
+    400240: transform15
+    400242: transform16
+    400244: transform17
+    400246: transform18
+    400248: transform19
+    400250: transform20
+    400252: transform21
+    400254: transform22
+    400256: transform23
+    400258: transform8
+    400260: transform9
+    400262: UpperSpine_Ctrl
+    400264: UpperSpine_Offset
+    2300000: pasted__polySurface39
+    2300002: polySurface1
+    2300004: polySurface12
+    2300006: polySurface12 1
+    2300008: polySurface13
+    2300010: polySurface14
+    2300012: polySurface14 1
+    2300014: polySurface16
+    2300016: polySurface16 1
+    2300018: polySurface17
+    2300020: polySurface17 1
+    2300022: polySurface18
+    2300024: polySurface18 1
+    2300026: polySurface20
+    2300028: polySurface20 1
+    2300030: polySurface21
+    2300032: polySurface21 1
+    2300034: polySurface22
+    2300036: polySurface22 1
+    2300038: polySurface23
+    2300040: polySurface23 1
+    2300042: polySurface24
+    2300044: polySurface24 1
+    2300046: polySurface25
+    2300048: polySurface28
+    2300050: polySurface29
+    2300052: polySurface30
+    2300054: polySurface31
+    2300056: polySurface33
+    2300058: polySurface36
+    2300060: polySurface37
+    2300062: polySurface40
+    3300000: pasted__polySurface39
+    3300002: polySurface1
+    3300004: polySurface12
+    3300006: polySurface12 1
+    3300008: polySurface13
+    3300010: polySurface14
+    3300012: polySurface14 1
+    3300014: polySurface16
+    3300016: polySurface16 1
+    3300018: polySurface17
+    3300020: polySurface17 1
+    3300022: polySurface18
+    3300024: polySurface18 1
+    3300026: polySurface20
+    3300028: polySurface20 1
+    3300030: polySurface21
+    3300032: polySurface21 1
+    3300034: polySurface22
+    3300036: polySurface22 1
+    3300038: polySurface23
+    3300040: polySurface23 1
+    3300042: polySurface24
+    3300044: polySurface24 1
+    3300046: polySurface25
+    3300048: polySurface28
+    3300050: polySurface29
+    3300052: polySurface30
+    3300054: polySurface31
+    3300056: polySurface33
+    3300058: polySurface36
+    3300060: polySurface37
+    3300062: polySurface40
+    4300000: polySurface13
+    4300002: polySurface18
+    4300004: polySurface17
+    4300006: polySurface12
+    4300008: polySurface16
+    4300010: polySurface14
+    4300012: polySurface18
+    4300014: polySurface17
+    4300016: polySurface16
+    4300018: polySurface12
+    4300020: polySurface14
+    4300022: pasted__polySurface39
+    4300024: polySurface40
+    4300026: polySurface37
+    4300028: polySurface31
+    4300030: polySurface33
+    4300032: polySurface36
+    4300034: polySurface24
+    4300036: polySurface20
+    4300038: polySurface23
+    4300040: polySurface22
+    4300042: polySurface21
+    4300044: polySurface24
+    4300046: polySurface20
+    4300048: polySurface23
+    4300050: polySurface22
+    4300052: polySurface21
+    4300054: polySurface1
+    4300056: polySurface25
+    4300058: polySurface28
+    4300060: polySurface30
+    4300062: polySurface29
+    7400000: Take 001
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 

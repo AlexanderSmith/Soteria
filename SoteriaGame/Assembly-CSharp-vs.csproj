@@ -52,6 +52,8 @@
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\CollisionEvent.cs" />
      <Compile Include="Assets\Scripts\Controllers\BasicEnemyController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\ButtonController.cs" />
+     <Compile Include="Assets\Scripts\Controllers\ButtonMode.cs" />
      <Compile Include="Assets\Scripts\Controllers\Clickable.cs" />
      <Compile Include="Assets\Scripts\Controllers\EncounterMovementController.cs" />
      <Compile Include="Assets\Scripts\Controllers\FearResidueController.cs" />
