@@ -1,8 +1,10 @@
- using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class GameDirector: MonoBehaviour {
+
+    private static GameDirector _instance;
 
     public int tilewidth    = 100;
     public int tileheight   = 100;
@@ -49,7 +51,31 @@ public class GameDirector: MonoBehaviour {
 		//loadMainTexture();
         //GenerateTiles();
 		//spawnEnemy ();
+
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
 	}
+
+    static GameDirector Instance
+    {
+        get
+        {
+            if (_instance == null)
+            {
+                GameObject gameDirectorObject = GameObject.Find("Game Director");
+                _instance = gameDirectorObject.GetComponent<GameDirector>();
+            }
+            return _instance;
+        }
+    }
+
 	void loadMainTexture()
 	{
 		mainTexture = Resources.Load(texturename) as Texture2D;
@@ -105,6 +131,11 @@ public class GameDirector: MonoBehaviour {
     {
         findCurrentTile();
 		startTileEvent();
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            LevelManager.LoadNextLevel();
+        }
+        
     }
 
     void findCurrentTile()
