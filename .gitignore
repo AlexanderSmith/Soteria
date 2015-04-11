@@ -45,4 +45,7 @@ Art/Concept_Art/shadow_creatures/Iconr
 Art/reference_art/Iconr
 Art/reference_art/City references /Iconr
 TechArt/ExternalTools/.coverage
-SoteriaGame/Library/
+SoteriaGame/[Ll]ibrary/
+SoteriaGame/[Tt]emp/
+SoteriaGame/[Oo]bj/
+SoteriaGame/[Bb]uild/
