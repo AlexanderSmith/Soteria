@@ -12,7 +12,10 @@ public class InputManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-	
+		if (Input.GetKeyDown ("1")) {
+			Debug.Log("1 Pressed");
+			Application.LoadLevel(0);
+		}
 	}
 
 	public void Initialize()

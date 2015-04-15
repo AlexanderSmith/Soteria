@@ -9,8 +9,10 @@ public class GameDirector : MonoBehaviour {
 	
 #region Managers
 
-	private AudioManager _audioManager;
-	private InputManager _inputManager;
+	private AudioManager     _audioManager;
+	private InputManager     _inputManager;
+	private HUDManager       _HUDManager;
+	private EncounterManager _EncounterManager;
 
 #endregion
 
@@ -55,6 +57,10 @@ public class GameDirector : MonoBehaviour {
 		_audioManager.Initialize();
 		_inputManager = this.gameObject.AddComponent<InputManager>();
 		_inputManager.Initialize();
+		_HUDManager = this.gameObject.AddComponent<HUDManager> ();
+		_HUDManager.Initialize();
+		_EncounterManager = this.gameObject.AddComponent<EncounterManager> ();
+		_EncounterManager.Initialize();
 	}
 }
 
