@@ -13,27 +13,29 @@ public class HUDManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	    //IF STATEMANAGER IS IN ENCOUNTER MODE
-        //PULSE COIN AND FADE
 	}
 
 	public void Initialize()
 	{
         instructionText = (Instantiate(Resources.Load("Prefabs/GUIText")) as GameObject).guiText;
         coin = (Instantiate(Resources.Load("Prefabs/GUITexture")) as GameObject).guiTexture;
+        fadeTexture = (Instantiate(Resources.Load("Prefabs/GUITexture")) as GameObject).guiTexture;
 
-        instructionText.transform.position = new Vector3(0.1f, 0.9f, 0);
+        instructionText.transform.position = new Vector3(0.01f, 0.95f, 0);
         instructionText.text = "Test";
   
-        coin.transform.position = new Vector3(0.1f, 0.1f, 0);
+        coin.transform.position = new Vector3(0.09f, 0.16f, 0);
+        coin.transform.localScale = new Vector3(0.175f, 0.35f, 0.1f);
         coin.texture = (Texture)Resources.Load("GUI/Soteria_coin");
         coin.gameObject.AddComponent<ButtonController>();
-        
+
+        fadeTexture.texture = (Texture)Resources.Load("GUI/FadeTexture");
+        fadeTexture.gameObject.AddComponent<SceneFadeInOut>();
 	}
 
     public void EnableEncounterView()
     {
-        //fadeTexture.enabled = true;
+        fadeTexture.GetComponent<SceneFadeInOut>().toGoToClear = false;
         coin.enabled = true;
         coin.GetComponent<ButtonController>().Pulsing = true;
         instructionText.enabled = false;
@@ -44,6 +46,6 @@ public class HUDManager : MonoBehaviour {
         instructionText.enabled = true;
         coin.enabled = true;
         coin.GetComponent<ButtonController>().Pulsing = false;
-        //fadeTexture.enabled = false;
+        fadeTexture.GetComponent<SceneFadeInOut>().toGoToClear = true;
     }
 }

@@ -33,12 +33,16 @@ public class PulseButtonMode : ButtonMode
 	private static readonly float PULSE_INTERVAL = 3.0f;
 
 	private Light m_PulseLight;
+    private Texture m_PulseTexture;
+    private Texture m_NormalTexture;
 	private Vector3 m_ScaleFactor;
+    private Vector3 m_OrginalScale;
 	private float m_fTimeElapsed;
 
 	public PulseButtonMode(ButtonController controller)
 		:base(controller)
 	{
+        m_NormalTexture = (Texture)Resources.Load("GUI/Soteria_coin");
 		m_ScaleFactor = new Vector3 (0.1f, 0.1f, 0.1f);
 		m_fTimeElapsed = 0.0f;
 	}
@@ -50,6 +54,7 @@ public class PulseButtonMode : ButtonMode
 
 	public override void VOnSwitch ()
 	{
+        m_Owner.guiTexture.texture = m_NormalTexture;
 	}
 
 	private void Pulse()
@@ -81,9 +86,12 @@ public class PulseButtonMode : ButtonMode
 
 public class IdleButtonMode : ButtonMode
 {
+    private Texture m_PulseTexture;
+
 	public IdleButtonMode(ButtonController controller)
 		:base(controller)
 	{
+        m_PulseTexture = (Texture)Resources.Load("GUI/CoinTrans");
 	}
 	
 	public override void VOnUpdate ()
@@ -91,6 +99,7 @@ public class IdleButtonMode : ButtonMode
 	}
 	public override void VOnSwitch ()
 	{
+        m_Owner.guiTexture.texture = m_PulseTexture;
 	}
 }
 
