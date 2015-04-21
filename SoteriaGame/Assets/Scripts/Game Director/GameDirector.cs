@@ -12,7 +12,8 @@ public class GameDirector : MonoBehaviour {
 	private AudioManager     _audioManager;
 	private InputManager     _inputManager;
 	private HUDManager       _HUDManager;
-	private EncounterManager _EncounterManager;
+	private EncounterManager _encounterManager;
+    private StateManager     _stateManager;
 
 #endregion
 
@@ -59,8 +60,28 @@ public class GameDirector : MonoBehaviour {
 		_inputManager.Initialize();
 		_HUDManager = this.gameObject.AddComponent<HUDManager> ();
 		_HUDManager.Initialize();
-		_EncounterManager = this.gameObject.AddComponent<EncounterManager> ();
-		_EncounterManager.Initialize();
-	}
+		_encounterManager = this.gameObject.AddComponent<EncounterManager> ();
+		_encounterManager.Initialize();
+        _stateManager = this.gameObject.AddComponent<StateManager>();
+        _stateManager.Initialize();
+    }
+
+#region EncounterManager
+
+    public void StopEncounterMode()
+    {
+        _stateManager.gameState = StateManager.GameStates.Normal;
+        _HUDManager.EnableNormalView();
+        _encounterManager.enabled = false;
+    }
+
+
+    public void StartEncounterMode()
+    {
+        _stateManager.gameState = StateManager.GameStates.Encounter;
+        _HUDManager.EnableEncounterView();
+        _encounterManager.enabled = true;
+    }
+#endregion
 }
 

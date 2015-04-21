@@ -19,21 +19,23 @@ public class HUDManager : MonoBehaviour {
 
 	public void Initialize()
 	{
-        instructionText = Instantiate(Resources.Load("GUIText.prefab")) as GUIText;
-        coin = Instantiate(Resources.Load("GUITexture.prefab")) as GUITexture;
+        instructionText = (Instantiate(Resources.Load("Prefabs/GUIText")) as GameObject).guiText;
+        coin = (Instantiate(Resources.Load("Prefabs/GUITexture")) as GameObject).guiTexture;
 
-        instructionText.transform.position = new Vector3(0.1f, 0.1f, 0);
+        instructionText.transform.position = new Vector3(0.1f, 0.9f, 0);
         instructionText.text = "Test";
-        
-        coin.transform.position = new Vector3(0.1f, 0.9f, 0);
-        coin.texture = (Texture)Resources.Load("GUI/Soteria_coin.png");
+  
+        coin.transform.position = new Vector3(0.1f, 0.1f, 0);
+        coin.texture = (Texture)Resources.Load("GUI/Soteria_coin");
+        coin.gameObject.AddComponent<ButtonController>();
         
 	}
 
     public void EnableEncounterView()
     {
-        fadeTexture.enabled = true;
+        //fadeTexture.enabled = true;
         coin.enabled = true;
+        coin.GetComponent<ButtonController>().Pulsing = true;
         instructionText.enabled = false;
     }
 
@@ -41,6 +43,7 @@ public class HUDManager : MonoBehaviour {
     {
         instructionText.enabled = true;
         coin.enabled = true;
-        fadeTexture.enabled = false;
+        coin.GetComponent<ButtonController>().Pulsing = false;
+        //fadeTexture.enabled = false;
     }
 }

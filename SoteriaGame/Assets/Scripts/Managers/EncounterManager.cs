@@ -5,7 +5,7 @@ public class EncounterManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        StartCoroutine(KickOffEncounter());
 	}
 	
 	// Update is called once per frame
@@ -17,4 +17,24 @@ public class EncounterManager : MonoBehaviour {
 	{
 		
 	}
+
+    void StopEncounter()
+    {
+        this.gameObject.GetComponent<GameDirector>().StopEncounterMode();
+    }
+
+    void StartEncounter()
+    {
+        this.gameObject.GetComponent<GameDirector>().StartEncounterMode();
+    }
+
+    IEnumerator KickOffEncounter()
+    {
+        yield return new WaitForSeconds(5);
+        Debug.Log("Started");
+        StartEncounter();
+        yield return new WaitForSeconds(5);
+        StopEncounter();
+        Debug.Log("Stoped");
+    }
 }
