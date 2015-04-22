@@ -7,21 +7,24 @@ public class InputManager : MonoBehaviour
 	List<KeyCode> _input = new List<KeyCode>();
 	public int QTE_Delay = 3;
 	private Timer _inputTimer;
+	private TimersType _timertype;
 	
 	// Use this for initialization
 	void Awake () 
 	{
 		this.enabled = false;
+		this._timertype = TimersType.Input;
+
 	}
 	
 	// Update is called once per frame
 	public void Update () 
 	{
-		ProcessInput();
-		if (_inputTimer.ElapsedTime() >= QTE_Delay)
+		this.ProcessInput();
+		if (this._inputTimer.ElapsedTime() >= this.QTE_Delay)
 		{
-			_inputTimer.ResetTimer();
-			PurgeInputList();
+			this._inputTimer.ResetTimer();
+			this.PurgeInputList();
 		}
 	}
 
@@ -33,27 +36,26 @@ public class InputManager : MonoBehaviour
 			this.AddToInputList(KeyCode.Space);
 
 		if (inputpressed)
-			_inputTimer.StartTimer();
+			this._inputTimer.StartTimer();
 	}
 
 	private void PurgeInputList()
 	{
-		if (_input.Count > 0)
+		if (this._input.Count > 0)
 		{
-			_input.Clear();	
-			_inputTimer.StopTimer();
+			this._input.Clear();	
+			this._inputTimer.StopTimer();
 		}
 	}
 
 	private void AddToInputList(KeyCode inKey)
 	{
-		_inputTimer.ResetTimer();
-		_input.Add(inKey);
+		this._inputTimer.ResetTimer();
+		this._input.Add(inKey);
 	}
 	
 	public void Initialize()
 	{
-		_inputTimer = this.gameObject.GetComponent<Timer>();
-
+		this._inputTimer = TimerManager.instance.Attach(this._timertype);
 	}
 }

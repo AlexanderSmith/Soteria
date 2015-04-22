@@ -2,15 +2,14 @@
 using System.Collections;
 
 public class GameDirector : MonoBehaviour {
-
-//	private Player _player;
+	
 	protected static GameDirector _instance;
 	
 #region Managers
 
 	private AudioManager _audioManager;
 	private InputManager _inputManager;
-	private Timer _timer;
+	private TimerManager _timerManager;
 
 #endregion
 
@@ -30,34 +29,31 @@ public class GameDirector : MonoBehaviour {
 		{
 			_instance = this;
 			this.InitializeManagers();
-			DontDestroyOnLoad(this); //Keep the instance going between scenes
+			this.DontDestroyOnLoad(this); //Keep the instance going between scenes
 		}
 		else
 		{
 			if(this != _instance)
-				Destroy(this.gameObject);
+				this.Destroy(this.gameObject);
 		}
 	}
 	
 	// Update is called once per frame
 	private void  Update () 
 	{
-		_inputManager.Update();
-		_audioManager.Update();
-
-		_timer.Update();
+		this._inputManager.Update();
+		this._audioManager.Update();
+		this._timerManager.Update();
 	}
 	private void InitializeManagers()
 	{
 		//This is problematic (AddComponent)-> it forces the script to be a component and uses the 
 		// Update function automatically each frame, only solution not use MonoBehavior <-- not so simple
-		_timer = this.gameObject.AddComponent<Timer>();
-		_audioManager = this.gameObject.AddComponent<AudioManager>();
-		_audioManager.Initialize();
-		_inputManager = this.gameObject.AddComponent<InputManager>();
-		_inputManager.Initialize();
-
-
+		this._timerManager = this.gameObject.GetComponent<TimerManager>();
+		this._audioManager = this.gameObject.AddComponent<AudioManager>();
+		this._audioManager.Initialize();
+		this._inputManager = this.gameObject.AddComponent<InputManager>();
+		this._inputManager.Initialize();
 	}
 }
 
