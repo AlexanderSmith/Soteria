@@ -28,6 +28,7 @@ public class HUDManager : MonoBehaviour {
         coin.transform.localScale = new Vector3(0.175f, 0.35f, 0.1f);
         coin.texture = (Texture)Resources.Load("GUI/Soteria_coin");
         coin.gameObject.AddComponent<ButtonController>();
+        coin.gameObject.GetComponent<ButtonController>().Initialize(this);
 
         fadeTexture.texture = (Texture)Resources.Load("GUI/FadeTexture");
         fadeTexture.gameObject.AddComponent<SceneFadeInOut>();
@@ -47,5 +48,10 @@ public class HUDManager : MonoBehaviour {
         coin.enabled = true;
         coin.GetComponent<ButtonController>().Pulsing = false;
         fadeTexture.GetComponent<SceneFadeInOut>().toGoToClear = true;
+    }
+
+    public void SafteyLightButtonHit()
+    {
+        gameObject.GetComponent<GameDirector>().TakeSafteyLight();
     }
 }

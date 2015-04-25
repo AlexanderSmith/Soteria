@@ -30,7 +30,7 @@ public abstract class ButtonMode
  */
 public class PulseButtonMode : ButtonMode
 {
-	private static readonly float PULSE_INTERVAL = 3.0f;
+	private static readonly float PULSE_INTERVAL = 0.5f;
 
 	private Light m_PulseLight;
     private Texture m_PulseTexture;
@@ -43,7 +43,7 @@ public class PulseButtonMode : ButtonMode
 		:base(controller)
 	{
         m_NormalTexture = (Texture)Resources.Load("GUI/Soteria_coin");
-		m_ScaleFactor = new Vector3 (0.1f, 0.1f, 0.1f);
+		m_ScaleFactor = new Vector3 (0.2f, 0.3f, 0.1f);
 		m_fTimeElapsed = 0.0f;
 	}
 
@@ -91,6 +91,7 @@ public class IdleButtonMode : ButtonMode
 	public IdleButtonMode(ButtonController controller)
 		:base(controller)
 	{
+        m_Owner.transform.localScale = new Vector3(0.2f, 0.3f, 0.1f);
         m_PulseTexture = (Texture)Resources.Load("GUI/CoinTrans");
 	}
 	

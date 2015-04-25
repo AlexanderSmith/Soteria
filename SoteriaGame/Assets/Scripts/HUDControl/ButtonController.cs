@@ -11,7 +11,7 @@ using System.Collections;
  */
 public class ButtonController : MonoBehaviour
 {
-
+    HUDManager myManager;
     ButtonMode m_ButtonMode;
     bool m_bIsPulsing;
 
@@ -22,11 +22,22 @@ public class ButtonController : MonoBehaviour
         this.Pulsing = false;
     }
 
+    //Give the controller a call back to the HUDManager so it can make the appropriate calls to the game director for a click event. 
+    public void Initialize(HUDManager manager)
+    {
+        myManager = manager;
+    }
+
     // Update is called once per frame
     void Update()
     {
         //hide derived implementation
         m_ButtonMode.VOnUpdate();
+
+        if (this.guiTexture.HitTest(Input.mousePosition) && Input.GetMouseButtonDown(0))
+        {
+            OnMouseDown();
+        }
     }
 
     //helper
@@ -34,6 +45,11 @@ public class ButtonController : MonoBehaviour
     {
         m_ButtonMode.VOnSwitch();
         m_ButtonMode = mode;
+    }
+
+    void OnMouseDown()
+    {
+        myManager.SafteyLightButtonHit();
     }
 
 	//bool Pulsing

@@ -30,11 +30,7 @@ public class EncounterManager : MonoBehaviour {
 
     IEnumerator KickOffEncounter()
     {
-        yield return new WaitForSeconds(5);
-        Debug.Log("Started");
         StartEncounter();
-        yield return new WaitForSeconds(5);
-        StopEncounter();
-        Debug.Log("Stoped");
+        return null;
     }
 }

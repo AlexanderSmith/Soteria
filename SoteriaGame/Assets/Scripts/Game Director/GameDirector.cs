@@ -82,6 +82,12 @@ public class GameDirector : MonoBehaviour {
         _HUDManager.EnableEncounterView();
         _encounterManager.enabled = true;
     }
+
+    public void TakeSafteyLight()
+    {
+        StopEncounterMode();
+        Debug.Log("Exiting Encounter Mode");
+    }
 #endregion
 }
 
