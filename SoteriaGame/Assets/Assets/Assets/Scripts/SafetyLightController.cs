@@ -4,7 +4,8 @@ using System.Collections;
 public class SafetyLightController : MonoBehaviour {
 
     public Transform player;
-	GameObject safeArea;
+	Transform safeArea;
+	GameObject[] listOfSafeAreas;
 
 	public enum State
 	{
@@ -13,17 +14,19 @@ public class SafetyLightController : MonoBehaviour {
 	};
 	State currentState;
 
-	float lightSpeed = 2.0f;
+	float lightSpeed = 5.0f;
 
 	// Use this for initialization
 	void Start () {
 		currentState = State.Finding;
-        FindNextClosest();
+		listOfSafeAreas = GameObject.FindGameObjectsWithTag ("SafeArea");
+        safeArea = FindNextClosest(listOfSafeAreas);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-			this.transform.position = Vector3.MoveTowards(this.transform.position, safeArea.transform.position, Time.deltaTime * lightSpeed);
+			this.transform.position = Vector3.MoveTowards(this.transform.position, new Vector3(safeArea.position.x, this.transform.position.y, safeArea.position.z), 
+		                                              Time.deltaTime * lightSpeed);
 			if (Vector3.Distance(this.transform.position, player.transform.position) >= 15.0f)
 			{
                 Vector3 normal = player.forward;
@@ -37,16 +40,33 @@ public class SafetyLightController : MonoBehaviour {
                     DisableSafetyLight();
                 }
 			}
-            if (Vector3.Distance(this.transform.position, safeArea.transform.position) <= 1.0f)
+            if (Vector3.Distance(new Vector3(this.transform.position.x, 0, this.transform.position.z), safeArea.position) <= 1.0f)
             {
                 DisableSafetyLight();
             }
 	}
 
-	void FindNextClosest()
+	Transform FindNextClosest(GameObject[] listOfSafeAreas)
 	{
-		safeArea = GameObject.FindWithTag ("SafeArea");
+		Transform closestSafe = null;
+		float closest = Mathf.Infinity;
+		Vector3 currentPos = this.transform.position;
+		Vector3 toTarget;
+		float distSqredToTarget;
+
+		foreach (GameObject gObj in listOfSafeAreas)
+		{
+			toTarget = gObj.transform.position - currentPos;
+			distSqredToTarget = toTarget.sqrMagnitude;
+			if (distSqredToTarget < closest)
+			{
+				closest = distSqredToTarget;
+				closestSafe = gObj.transform;
+			}
+		}
+
 		currentState = State.Moving;
+		return closestSafe;
 	}
 
     public void EnableSafetyLight()
@@ -69,7 +89,7 @@ public class SafetyLightController : MonoBehaviour {
         //Debug.Log ("Player normal: " + player.forward);
         normal.Normalize();
         //Debug.Log ("Normalized: " + normal);
-        this.transform.position = new Vector3(5 * normal.x + player.position.x, 10, 5 * normal.z + player.position.z);
+        this.transform.position = new Vector3(5 * normal.x + player.position.x, this.transform.position.y, 5 * normal.z + player.position.z);
         //Debug.Log ("Light pos: " + safetyLight.transform.position);
         player.GetComponent<PCController>().EnableStandardMovement();
         player.GetComponent<EncounterMovementController>().CheckEscape();
