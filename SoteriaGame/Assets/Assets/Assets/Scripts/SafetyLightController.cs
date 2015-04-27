@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SafetyLightController : MonoBehaviour {
+public class SafetyLightController : MonoBehaviour{
 
     public Transform player;
 	Transform safeArea;
@@ -19,31 +19,28 @@ public class SafetyLightController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		currentState = State.Finding;
-		listOfSafeAreas = GameObject.FindGameObjectsWithTag ("SafeArea");
-        safeArea = FindNextClosest(listOfSafeAreas);
+		//listOfSafeAreas = GameObject.FindGameObjectsWithTag ("SafeArea");
+        //safeArea = FindNextClosest(listOfSafeAreas);
 	}
 	
 	// Update is called once per frame
-	void Update () {
-			this.transform.position = Vector3.MoveTowards(this.transform.position, new Vector3(safeArea.position.x, this.transform.position.y, safeArea.position.z), 
-		                                              Time.deltaTime * lightSpeed);
-			if (Vector3.Distance(this.transform.position, player.transform.position) >= 15.0f)
-			{
-                Vector3 normal = player.forward;
+	void Update () 
+	{
+//			this.transform.position = Vector3.MoveTowards(this.transform.position, new Vector3(safeArea.position.x, this.transform.position.y, safeArea.position.z), 
+//		                                              Time.deltaTime * lightSpeed);
+		if (Vector3.Distance(this.transform.position, player.transform.position) >= 15.0f)
+		{
+        	Vector3 normal = player.forward;
                 //Debug.Log ("Player pos: " + player.position);
                 //Debug.Log ("Player normal: " + player.forward);
-                normal.Normalize();
+            normal.Normalize();
                 //Debug.Log ("Normalized: " + normal);
-                this.transform.position = new Vector3(5 * normal.x + player.position.x, this.transform.position.y, 5 * normal.z + player.position.z);
-                if (player.GetComponent<EncounterMovementController>().GetCurrentState() == EncounterMovementController.EncounterState.Normal)
-                {
-                    DisableSafetyLight();
-                }
-			}
-            if (Vector3.Distance(new Vector3(this.transform.position.x, 0, this.transform.position.z), safeArea.position) <= 1.0f)
-            {
-                DisableSafetyLight();
-            }
+                //this.transform.position = new Vector3(5 * normal.x + player.position.x, this.transform.position.y, 5 * normal.z + player.position.z);
+                //if (player.GetComponent<EncounterMovementController>().GetCurrentState() == EncounterMovementController.EncounterState.Normal)
+                //{
+                //    DisableSafetyLight();
+                //}
+		}
 	}
 
 	Transform FindNextClosest(GameObject[] listOfSafeAreas)
