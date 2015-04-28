@@ -4,7 +4,9 @@ using System.Collections.Generic;
 
 public class InputManager : MonoBehaviour
 {
-	List<KeyCode> _input = new List<KeyCode>();
+	List<Button> _buttonTypes = new List<Button>();
+	List<Button> _input = new List<Button>();
+
 	public int QTE_Delay = 3;
 	private Timer _inputTimer;
 	private TimersType _timertype;
@@ -14,6 +16,12 @@ public class InputManager : MonoBehaviour
 	{
 		this.enabled = false;
 		this._timertype = TimersType.Input;
+
+		//CreateButtonList//
+		_buttonTypes.Add( new Button( ButtonType.LeftArrow, new LeftCommand()) ); //LeftArrow
+		_buttonTypes.Add( new Button( ButtonType.RightArrow, new RightCommnad()) ); //RightArrow
+		_buttonTypes.Add( new Button( ButtonType.UpArrow, new UpCommand())  ); //UpArrow
+		_buttonTypes.Add( new Button( ButtonType.DownArrow, new DownCommand())  ); //DownArrow
 
 	}
 	
@@ -30,10 +38,14 @@ public class InputManager : MonoBehaviour
 
 	private void ProcessInput()
 	{
-		bool inputpressed;
+		bool inputpressed = false;
 
-		if (inputpressed = Input.GetKeyDown( KeyCode.Space))
-			this.AddToInputList(KeyCode.Space);
+		if (Input.GetKeyDown( KeyCode.LeftArrow))
+		{	
+			inputpressed = true;
+			this._buttonTypes[(int)ButtonType.LeftArrow].execute( GameDirector.instance.getPlayer() );
+			this.AddToInputList(this._buttonTypes[(int)ButtonType.LeftArrow]);
+		}
 
 		if (inputpressed)
 			this._inputTimer.StartTimer();
@@ -48,10 +60,10 @@ public class InputManager : MonoBehaviour
 		}
 	}
 
-	private void AddToInputList(KeyCode inKey)
+	private void AddToInputList(Button inButton)
 	{
 		this._inputTimer.ResetTimer();
-		this._input.Add(inKey);
+		this._input.Add(inButton);
 	}
 	
 	public void Initialize()

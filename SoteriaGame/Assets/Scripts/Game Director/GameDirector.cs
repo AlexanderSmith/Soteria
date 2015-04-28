@@ -3,7 +3,8 @@ using System.Collections;
 
 public class GameDirector : MonoBehaviour {
 	
-	protected static GameDirector _instance;
+	private static GameDirector _instance;
+	private Player _player;
 	
 #region Managers
 
@@ -54,6 +55,11 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.Initialize();
 		this._inputManager = this.gameObject.AddComponent<InputManager>();
 		this._inputManager.Initialize();
+	}
+
+	public Player getPlayer()
+	{
+		return _player;
 	}
 }
 
