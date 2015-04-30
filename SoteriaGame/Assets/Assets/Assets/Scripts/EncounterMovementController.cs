@@ -72,6 +72,7 @@ public class EncounterMovementController : MonoBehaviour {
 
     public void Overwhelm(Transform enemy)
     {
+		enemyAttacker = enemy.gameObject;
         if (currentState != EncounterState.Overwhelmed)
         {
             Debug.Log("OV");
@@ -84,7 +85,7 @@ public class EncounterMovementController : MonoBehaviour {
             directionNeededToOverCome.x = 0.0f;
             directionNeededToOverCome.z = 0.0f;
 
-            enemyAttacker = enemy.gameObject;
+            
             this.transform.rotation = overwhelmedRotation;
             //Debug.Log(this.transform.rotation);
             currentState = EncounterState.Overwhelmed;
