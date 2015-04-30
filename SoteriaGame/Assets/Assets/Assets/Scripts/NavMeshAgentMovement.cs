@@ -9,11 +9,16 @@ public class NavMeshAgentMovement : MonoBehaviour
 	GameObject safetyLight;
 	GameObject player;
 
+	void Awake()
+	{
+		agent = GetComponent<NavMeshAgent> ();
+	}
+
 	// Use this for initialization
 	void Start ()
 	{
 		agent = GetComponent<NavMeshAgent> ();
-		agent.enabled = true;
+		//agent.enabled = true;
 		//player = GameObject.Find ("Player");
 		//agent.transform.position = player.transform.position;
 		listOfSafeAreas = GameObject.FindGameObjectsWithTag ("SafeArea");
@@ -24,6 +29,7 @@ public class NavMeshAgentMovement : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		agent = GetComponent<NavMeshAgent> ();
 		agent.SetDestination (safeArea.position);
 		if (Vector3.Distance(new Vector3(this.transform.position.x, 0, this.transform.position.z), safeArea.position) <= 1.0f)
 		{
