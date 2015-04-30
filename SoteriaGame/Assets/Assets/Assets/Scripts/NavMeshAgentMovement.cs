@@ -9,31 +9,37 @@ public class NavMeshAgentMovement : MonoBehaviour
 	GameObject safetyLight;
 	GameObject player;
 
+	enum State
+	{
+		neutral,
+		moving,
+	};
+
+	State currentState = State.neutral;
+
 	void Awake()
 	{
 		agent = GetComponent<NavMeshAgent> ();
+		DisableAgent ();
 	}
 
 	// Use this for initialization
 	void Start ()
 	{
-		agent = GetComponent<NavMeshAgent> ();
-		//agent.enabled = true;
-		//player = GameObject.Find ("Player");
-		//agent.transform.position = player.transform.position;
-		listOfSafeAreas = GameObject.FindGameObjectsWithTag ("SafeArea");
-		safeArea = FindNearestSafeArea (listOfSafeAreas);
-		safetyLight = GameObject.Find ("Safety Light");
 	}
 	
 	// Update is called once per frame
 	void Update ()
 	{
-		agent = GetComponent<NavMeshAgent> ();
-		agent.SetDestination (safeArea.position);
-		if (Vector3.Distance(new Vector3(this.transform.position.x, 0, this.transform.position.z), safeArea.position) <= 1.0f)
+		if (currentState == State.moving)
 		{
-			safetyLight.SendMessage("DisableSafetyLight");
+			agent.SetDestination (safeArea.position);
+			if (Vector3.Distance(new Vector3(this.transform.position.x, 0, this.transform.position.z), safeArea.position) <= 1.0f)
+			{
+				safetyLight.SendMessage("DisableSafetyLight");
+				currentState = State.neutral;
+				DisableAgent();
+			}
 		}
 	}
 
@@ -57,5 +63,21 @@ public class NavMeshAgentMovement : MonoBehaviour
 		}
 
 		return closestSafe;
+	}
+
+	void EnableAgent()
+	{
+		agent.enabled = true;
+		currentState = State.moving;
+		listOfSafeAreas = GameObject.FindGameObjectsWithTag ("SafeArea");
+		safeArea = FindNearestSafeArea (listOfSafeAreas);
+		safetyLight = GameObject.Find ("Safety Light");
+		player = GameObject.FindWithTag ("Player");
+		this.transform.position = player.transform.position;
+	}
+
+	void DisableAgent()
+	{
+		agent.enabled = false;
 	}
 }
