@@ -15,7 +15,7 @@ public class BasicEnemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake() {
-		target = GameObject.Find ("Player");
+		target = GameObject.FindWithTag("Player");
         aggroManager = new BasicAggroSystem();
 		staystill = false;
 	}
