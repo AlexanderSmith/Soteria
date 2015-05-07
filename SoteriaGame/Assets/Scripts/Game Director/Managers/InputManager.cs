@@ -8,6 +8,7 @@ public class InputManager : MonoBehaviour
 	List<Button> _input = new List<Button>();
 
 	public int QTE_Delay = 3;
+
 	private Timer _inputTimer;
 	private TimersType _timertype;
 	
@@ -42,13 +43,31 @@ public class InputManager : MonoBehaviour
 
 		if (Input.GetKeyDown( KeyCode.LeftArrow))
 		{	
-			inputpressed = true;
-			this._buttonTypes[(int)ButtonType.LeftArrow].execute( GameDirector.instance.getPlayer() );
-			this.AddToInputList(this._buttonTypes[(int)ButtonType.LeftArrow]);
+			inputpressed = executeInternalInput((int)ButtonType.LeftArrow, (Object) GameDirector.instance.getPlayer() );
 		}
 
 		if (inputpressed)
 			this._inputTimer.StartTimer();
+	}
+
+
+
+	public void executeExternalInput(int inButtonType, Object inActor = null)
+	{
+		executeExternalInput(inButtonType, inActor);
+	}
+
+	private bool executeInternalInput(int inButtonType, Object inActor = null)
+	{
+		return executeInput(inButtonType, inActor);
+	}
+
+	private bool executeInput(int inButtonType, Object inActor = null)
+	{
+		this._buttonTypes[inButtonType].execute( inActor );
+		this.AddToInputList(this._buttonTypes[inButtonType]);
+
+		return true;
 	}
 
 	private void PurgeInputList()
@@ -70,4 +89,6 @@ public class InputManager : MonoBehaviour
 	{
 		this._inputTimer = TimerManager.instance.Attach(this._timertype);
 	}
+
+
 }

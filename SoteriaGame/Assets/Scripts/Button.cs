@@ -22,10 +22,7 @@ public class Button
 	//for later use!
 	private Command _OldAction;
 
-	Button()
-	{
-	
-	}
+	private Button() {}
 
 	public Button(ButtonType inType, Command inCommand)
 	{
@@ -33,9 +30,16 @@ public class Button
 		this._action = inCommand;
 	}
 
-	public void execute(Object inPlayer) //Shouled be player but can be anything else!
+	public void execute(Object inActor = null) //Shouled be player but can be anything else!
 	{
-		_action.execute(inPlayer);
+		if (inActor == null)
+			_action.execute();
+		else
+			_action.execute(inActor);
 	}
 
+	public ButtonType getButtonType()
+	{
+		return _type;
+	}
 }
