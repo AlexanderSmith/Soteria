@@ -3,13 +3,15 @@ using System.Collections;
 
 public class HUDManager : MonoBehaviour {
 
-    private GUIText instructionText;
-    private GUITexture coin;
-    private GUITexture fadeTexture;
+   // private GUIText instructionText;
+    private GameObject _coin;
+    private GameObject _fade;
+	private GameObject _HUDCanvas;
 
 	// Use this for initialization
 	void Awake () {
 		this.enabled = false;
+		_HUDCanvas = GameObject.Find("HUD");
 	}
 	
 	// Update is called once per frame
@@ -22,42 +24,39 @@ public class HUDManager : MonoBehaviour {
 		/// we can try prototyping it later and on and see if it's worth it.
 
 		//Initialize Instruction Text
-        instructionText = (Instantiate(Resources.Load("Prefabs/GUIText")) as GameObject).guiText;
-        instructionText.transform.position = new Vector3(0.01f, 0.95f, 0);
-        instructionText.text = "Test";
-  
+     //   instructionText = (Instantiate(Resources.Load("Prefabs/GUIText")) as GameObject).guiText;
+      //  instructionText.transform.position = new Vector3(0.01f, 0.95f, 0);
+       // instructionText.text = "Test";
+  	
+
 		//Initialize Coin
-		coin = (Instantiate(Resources.Load("Prefabs/GUITexture")) as GameObject).guiTexture;
-        coin.transform.position = new Vector3(0.09f, 0.16f, 0);
-        coin.transform.localScale = new Vector3(0.175f, 0.35f, 0.1f);
-        coin.texture = (Texture)Resources.Load("GUI/Soteria_coin");
-        coin.gameObject.AddComponent<ButtonController>();
-        coin.gameObject.GetComponent<ButtonController>().Initialize(this);
+		_coin = _HUDCanvas.transform.Find("Coin").gameObject;
+		_coin.GetComponent<ButtonController>().Initialize(this);
 
 		//Initialize Fade out/in texture
-		fadeTexture = (Instantiate(Resources.Load("Prefabs/GUITexture")) as GameObject).guiTexture;
-        fadeTexture.texture = (Texture)Resources.Load("GUI/FadeTexture");
-        fadeTexture.gameObject.AddComponent<SceneFadeInOut>();
+		_fade = _HUDCanvas.transform.Find("BlackFade").gameObject;
+
+
 	}
 
     public void EnableEncounterView()
     {
-        fadeTexture.GetComponent<SceneFadeInOut>().toGoToClear = false;
-        coin.enabled = true;
-        coin.GetComponent<ButtonController>().Pulsing = true;
-        instructionText.enabled = false;
+		_coin.SetActive(true);
+		_coin.GetComponent<ButtonController>().Pulsing = true;
+		_fade.GetComponent<SceneFadeInOut>().toGoToClear = false;
+        //instructionText.enabled = false;
     }
 
     public void EnableNormalView()
     {
-        instructionText.enabled = true;
-        coin.enabled = true;
-        coin.GetComponent<ButtonController>().Pulsing = false;
-        fadeTexture.GetComponent<SceneFadeInOut>().toGoToClear = true;
+//        instructionText.enabled = true;
+		_coin.SetActive(true);
+		_coin.GetComponent<ButtonController>().Pulsing = false;
+		_fade.GetComponent<SceneFadeInOut>().toGoToClear = true;
     }
 
     public void SafteyLightButtonHit()
     {
-        gameObject.GetComponent<GameDirector>().TakeSafteyLight(); //This feels weird here but may be the only place to call it from, we'll see later.
+        this.gameObject.GetComponent<GameDirector>().TakeSafteyLight(); //This feels weird here but may be the only place to call it from, we'll see later.
     }
 }

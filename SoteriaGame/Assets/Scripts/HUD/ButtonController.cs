@@ -19,7 +19,7 @@ public class ButtonController : MonoBehaviour
     public void Start()
     {
 		this.m_ButtonMode = new IdleButtonMode(this);
-        this.Pulsing = false;
+        this.Pulsing = true;
     }
 
     //Give the controller a call back to the HUDManager so it can make the appropriate calls to the game director for a click event. 
@@ -33,11 +33,8 @@ public class ButtonController : MonoBehaviour
     {
         //hide derived implementation
 		this.m_ButtonMode.VOnUpdate();
+		//Removed the If ONMouse click statement I used the one in the Inspector in on the coin object.
 
-        if (this.guiTexture.HitTest(Input.mousePosition) && Input.GetMouseButtonDown(0))
-        {
-			this.OnMouseDown();
-        }
     }
 
     //helper
@@ -47,8 +44,9 @@ public class ButtonController : MonoBehaviour
 		this.m_ButtonMode = mode;
     }
 
-    void OnMouseDown()
+    public void SafetyLightButtonHit()
     {
+		///This can be removed completely and use the Director from the OnClick event in the inspector.
 		this._hudmanager.SafteyLightButtonHit();
     }
 

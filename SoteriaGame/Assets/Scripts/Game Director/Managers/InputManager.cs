@@ -49,9 +49,7 @@ public class InputManager : MonoBehaviour
 		if (inputpressed)
 			this._inputTimer.StartTimer();
 	}
-
-
-
+	
 	public void executeExternalInput(int inButtonType, Object inActor = null)
 	{
 		executeExternalInput(inButtonType, inActor);

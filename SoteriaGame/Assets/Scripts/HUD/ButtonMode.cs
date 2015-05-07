@@ -33,17 +33,15 @@ public class PulseButtonMode : ButtonMode
 	private static readonly float PULSE_INTERVAL = 0.5f;
 
 	private Light 	m_PulseLight;
-    private Texture m_PulseTexture;
-    private Texture m_NormalTexture;
+    private Sprite m_NormalTexture;
 	private Vector3 m_ScaleFactor;
-    private Vector3 m_OrginalScale;
 	private float 	m_fTimeElapsed;
 
 	public PulseButtonMode(ButtonController controller)
 		:base(controller)
 	{
-		this.m_NormalTexture = (Texture)Resources.Load("GUI/Soteria_coin");
-		this.m_ScaleFactor = new Vector3 (0.2f, 0.3f, 0.1f);
+		this.m_NormalTexture = Resources.Load("GUI/Soteria_coin", typeof(Sprite)) as Sprite;
+		this.m_ScaleFactor = new Vector3 (1.2f, 1.3f, 1.0f);
 		this.m_fTimeElapsed = 0.0f;
 	}
 
@@ -54,7 +52,7 @@ public class PulseButtonMode : ButtonMode
 
 	public override void VOnSwitch ()
 	{
-        m_Owner.guiTexture.texture = m_NormalTexture;
+		m_Owner.gameObject.GetComponent<Image>().sprite = m_NormalTexture;
 	}
 
 	private void Pulse()
@@ -85,20 +83,20 @@ public class PulseButtonMode : ButtonMode
 
 public class IdleButtonMode : ButtonMode
 {
-    private Texture m_PulseTexture;
+	private Sprite m_PulseTexture;
 
 	public IdleButtonMode(ButtonController controller)
 		:base(controller)
 	{
-        m_Owner.transform.localScale = new Vector3(0.2f, 0.3f, 0.1f);
-		this.m_PulseTexture = (Texture)Resources.Load("GUI/CoinTrans");
+		m_Owner.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+		this.m_PulseTexture = Resources.Load("GUI/CoinTrans", typeof(Sprite)) as Sprite;
 	}
 	
 	public override void VOnUpdate () {}
 
 	public override void VOnSwitch ()
 	{
-        m_Owner.guiTexture.texture = m_PulseTexture;
+        m_Owner.gameObject.GetComponent<Image>().sprite = m_PulseTexture;
 	}
 }
 

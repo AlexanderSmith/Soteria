@@ -74,6 +74,7 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager = this.gameObject.AddComponent<EncounterManager> ();
 		this._stateManager = this.gameObject.AddComponent<StateManager>();
 
+		this._timerManager.Initialize(); // quick hack -> this should work automatically weird....
 		this._audioManager.Initialize();
 		this._inputManager.Initialize();
 		this._HUDManager.Initialize();
@@ -88,20 +89,23 @@ public class GameDirector : MonoBehaviour {
 	/// After this build we'll have to start using events base on
 	/// the what's happening in the game.
 	/// </summary>
-	public void StopEncounterMode()
-	{
-		this._stateManager.gameState = StateManager.GameStates.Normal;
-		this._HUDManager.EnableNormalView();
-		this._encounterManager.enabled = false;
-	}
-	
-	public void StartEncounterMode()
-	{
-		this._stateManager.gameState = StateManager.GameStates.Encounter;
-		this._HUDManager.EnableEncounterView();
-		this._encounterManager.enabled = true;
-	}
+	/// 
 
+	public void UpdateEncounterState(bool inStatus)
+	{
+		if (inStatus)
+		{
+			this._stateManager.ChangeGameState(GameStates.Encounter);
+			this._HUDManager.EnableEncounterView();
+
+		}
+		else
+		{
+			this._stateManager.ChangeGameState(GameStates.Normal);
+			this._HUDManager.EnableNormalView();
+		}
+
+	}
 	/// <summary>
 	/// Do we want to stop the ecounter with the safety light or just
 	/// Change the sate so that the player is in "escape" mode or
@@ -109,7 +113,7 @@ public class GameDirector : MonoBehaviour {
 	/// </summary>
 	public void TakeSafteyLight()
 	{
-		StopEncounterMode();
+		this._encounterManager.DeActivateEncounter();
 		Debug.Log("Exiting Encounter Mode");
 	}
 }

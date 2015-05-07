@@ -46,8 +46,10 @@ public class TimerManager: MonoBehaviour
 			if(this != _instance)
 				Destroy(this.gameObject);
 		}
+
+
 	}
-	private void Initialize()
+	public void Initialize()
 	{
 		this.enabled = false; //force update from game director no matter what.
 		int count = Enum.GetNames(typeof(TimersType)).Length;

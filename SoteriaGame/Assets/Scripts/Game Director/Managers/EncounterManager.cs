@@ -1,25 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+
+/// <summary>
+/// Encounter manager.
+/// 
+/// Possible Additions: 
+/// Set the Encounter States -> what's the state of the player: winning, losing, escaping ecc.
+/// 
+/// </summary>
+
+
 public class EncounterManager : MonoBehaviour {
+
+	private bool _startEnc;
+	private bool _encActive;
 
 	// Use this for initialization
 	void Awake ()
 	{
-		enabled = false;
+		this.enabled = false;
+
+		this._encActive = false;
+		this._startEnc = false;
 	}
 
-	void Start()
-	{
-		//Commented this out as it was giving an error!
-		//StartCoroutine(KickOffEncounter()); 
-		StartEncounter();
-	}
-	
 	// Update is called once per frame
 	public void Update () 
 	{
-		Start();
+		if (this._startEnc && !this._encActive)
+			this.UpdateEncounter(true);
+		else if (this._encActive && !this._startEnc)
+			this.UpdateEncounter(false);
 	}
 
 	public void Initialize()
@@ -27,19 +39,19 @@ public class EncounterManager : MonoBehaviour {
 		
 	}
 
-    void StopEncounter()
-    {
-        this.gameObject.GetComponent<GameDirector>().StopEncounterMode();
+    private void UpdateEncounter(bool inStatus)
+	{
+		this._encActive = inStatus;
+		GameDirector.instance.UpdateEncounterState(this._encActive);
     }
 
-    void StartEncounter()
-    {
-        this.gameObject.GetComponent<GameDirector>().StartEncounterMode();
-    }
+	public void ActivateEncounter()
+	{
+		this._startEnc = true;
+	}
 
-    IEnumerator KickOffEncounter()
-    {
-        StartEncounter();
-        return null;
-    }
+	public void DeActivateEncounter()
+	{
+		this._startEnc = false;
+	}
 }

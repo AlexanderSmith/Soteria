@@ -1,21 +1,18 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class SceneFadeInOut : MonoBehaviour {
 
     public float fadeSpeed = 1.5f;          // Speed that the screen fades to and from black.
     public bool toGoToClear;
+	private Color _color;
     
 	void Awake()
 	{
-		// Set the texture so that it is the the size of the screen and covers it.
-		this.guiTexture.pixelInset = new Rect(0f, 0f, Screen.width, Screen.height);
+		_color = Color.clear;
+		toGoToClear = true;
 	}
-
-	void Start()
-    {
-		this.guiTexture.color = Color.clear;
-    }
 
     void Update()
     {
@@ -29,13 +26,15 @@ public class SceneFadeInOut : MonoBehaviour {
     public void FadeToClear()
     {
         // Lerp the colour of the texture between itself and transparent.
-		this. guiTexture.color = Color.Lerp(guiTexture.color, Color.clear, fadeSpeed * Time.deltaTime);
+		this._color = Color.Lerp(_color, Color.clear, fadeSpeed * Time.deltaTime);
+		this.gameObject.GetComponent<Image>().color = _color;
     }
 
 
     public void FadeToBlack()
     {
         // Lerp the colour of the texture between itself and black.
-		this.guiTexture.color = Color.Lerp(guiTexture.color, Color.black, fadeSpeed * Time.deltaTime);
+		this._color = Color.Lerp(_color, Color.black, fadeSpeed * Time.deltaTime);
+		this.gameObject.GetComponent<Image>().color = _color;
     }
 }
