@@ -13,45 +13,36 @@ using System.Collections;
 
 public class EncounterManager : MonoBehaviour {
 
-	private bool _startEnc;
-	private bool _encActive;
-
-	// Use this for initialization
-	void Awake ()
-	{
-		this.enabled = false;
-
-		this._encActive = false;
-		this._startEnc = false;
-	}
-
-	// Update is called once per frame
-	public void Update () 
-	{
-		if (this._startEnc && !this._encActive)
-			this.UpdateEncounter(true);
-		else if (this._encActive && !this._startEnc)
-			this.UpdateEncounter(false);
-	}
-
-	public void Initialize()
-	{
-		
-	}
-
-    private void UpdateEncounter(bool inStatus)
-	{
-		this._encActive = inStatus;
-		GameDirector.instance.UpdateEncounterState(this._encActive);
+    IEnumerator KickOffEncounter()
+    {
+        StartEncounter();
+        return null;
     }
 
-	public void ActivateEncounter()
-	{
-		this._startEnc = true;
-	}
+    // Use this for initialization
+    void Start()
+    {
+        StartCoroutine(KickOffEncounter());
+    }
 
-	public void DeActivateEncounter()
-	{
-		this._startEnc = false;
-	}
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void Initialize()
+    {
+
+    }
+
+    public void StopEncounter()
+    {
+        this.gameObject.GetComponent<GameDirector>().StopEncounterMode();
+    }
+
+    public void StartEncounter()
+    {
+        this.gameObject.GetComponent<GameDirector>().StartEncounterMode();
+    }
 }

@@ -50,7 +50,7 @@ public class TimerManager: MonoBehaviour
 	public void Initialize()
 	{
 		this.enabled = false; //force update from game director no matter what.
-		int count = Enum.GetNames(typeof(TimersType)).Length;
+        int count = 3;// Enum.GetNames(typeof(TimersType)).Length;
 		this._timersList.Capacity = count; //Set the Size (it cannot be modified)
 		for (int i=0; i<count; ++i)
 			this._timersList.Insert(i, new Timer());
@@ -66,7 +66,7 @@ public class TimerManager: MonoBehaviour
 	//Use this to attach it to a specific class ( a class that has a 
 	public Timer Attach(TimersType intype)
 	{
-		return this._timersList[(int)intype];
+		return this._timersList.ToArray()[(int)intype];
 	}
 }
 

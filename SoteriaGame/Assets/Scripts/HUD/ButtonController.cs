@@ -19,7 +19,7 @@ public class ButtonController : MonoBehaviour
     public void Start()
     {
 		this.m_ButtonMode = new IdleButtonMode(this);
-        this.Pulsing = true;
+        this.Pulsing = false;
     }
 
     //Give the controller a call back to the HUDManager so it can make the appropriate calls to the game director for a click event. 

@@ -4,14 +4,13 @@ using System.Collections;
 public class HUDManager : MonoBehaviour {
 
    // private GUIText instructionText;
-    private GameObject _coin;
-    private GameObject _fade;
+    private ButtonController _coinController;
+    private SceneFadeInOut _fade;
 	private GameObject _HUDCanvas;
 
 	// Use this for initialization
 	void Awake () {
 		this.enabled = false;
-		_HUDCanvas = GameObject.Find("HUD");
 	}
 	
 	// Update is called once per frame
@@ -27,32 +26,42 @@ public class HUDManager : MonoBehaviour {
      //   instructionText = (Instantiate(Resources.Load("Prefabs/GUIText")) as GameObject).guiText;
       //  instructionText.transform.position = new Vector3(0.01f, 0.95f, 0);
        // instructionText.text = "Test";
-  	
+        GameObject HUDElementStarter;
+        if (HUDElementStarter = GameObject.Find("StartingHUDElements"))
+        {
+            foreach(string item in HUDElementStarter.GetComponent<ListContainer>()._list)
+            {
+                Instantiate(Resources.Load("Prefabs/"+item));
+            }
+        }
+        else
+        {
+            _HUDCanvas = (Instantiate(Resources.Load("Prefabs/HUD")) as GameObject);
+            _coinController = _HUDCanvas.GetComponentInChildren<ButtonController>();
+            _coinController.Initialize(this);
 
-		//Initialize Coin
-		_coin = _HUDCanvas.transform.Find("Coin").gameObject;
-		_coin.GetComponent<ButtonController>().Initialize(this);
+            //Initialize Coin
+            //_coin = _HUDCanvas.transform.Find("Coin").gameObject;
+            //_coin.GetComponent<ButtonController>().Initialize(this);
 
-		//Initialize Fade out/in texture
-		_fade = _HUDCanvas.transform.Find("BlackFade").gameObject;
-
+            //Initialize Fade out/in texture
+            _fade = _HUDCanvas.GetComponentInChildren<SceneFadeInOut>();
+        }
 
 	}
 
     public void EnableEncounterView()
     {
-		_coin.SetActive(true);
-		_coin.GetComponent<ButtonController>().Pulsing = true;
-		_fade.GetComponent<SceneFadeInOut>().toGoToClear = false;
+        _coinController.Pulsing = true;
+		_fade.toGoToClear = false;
         //instructionText.enabled = false;
     }
 
     public void EnableNormalView()
     {
 //        instructionText.enabled = true;
-		_coin.SetActive(true);
-		_coin.GetComponent<ButtonController>().Pulsing = false;
-		_fade.GetComponent<SceneFadeInOut>().toGoToClear = true;
+        _coinController.Pulsing = false;
+		_fade.toGoToClear = true;
     }
 
     public void SafteyLightButtonHit()
