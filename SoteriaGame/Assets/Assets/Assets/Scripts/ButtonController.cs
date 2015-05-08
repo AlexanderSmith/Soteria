@@ -11,6 +11,7 @@ using System.Collections;
  */
 public class ButtonController : MonoBehaviour {
 	
+	HUDManager myManager;
 	ButtonMode m_ButtonMode;
 	bool m_bIsPulsing;
 
@@ -20,7 +21,12 @@ public class ButtonController : MonoBehaviour {
 		m_ButtonMode = new IdleButtonMode (this);
 		this.Pulsing = false;
 	}
-	
+
+	public void Initialize(HUDManager manager)
+	{
+		myManager = manager;
+	}
+
 	// Update is called once per frame
 	void Update () 
 	{
@@ -67,5 +73,10 @@ public class ButtonController : MonoBehaviour {
 				this.SetButtonMode(newMode);
 			}
 		}
+	}
+
+	void OnMouseDown()
+	{
+		myManager.SafteyLightButtonHit();
 	}
 }
