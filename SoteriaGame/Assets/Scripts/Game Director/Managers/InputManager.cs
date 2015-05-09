@@ -36,6 +36,11 @@ public class InputManager : MonoBehaviour
 			this.PurgeInputList();
 		}
 	}
+	
+	public int getPressCount()
+	{
+		return _input.Count;
+	}
 
 	private void ProcessInput()
 	{
@@ -47,7 +52,11 @@ public class InputManager : MonoBehaviour
 		}
 
 		if (inputpressed)
-			this._inputTimer.StartTimer();
+			this._inputTimer.StartTimer ();
+		/*else
+			if (this._input.Count > 0)
+				this._input.RemoveAt (0);
+				*/
 	}
 
 

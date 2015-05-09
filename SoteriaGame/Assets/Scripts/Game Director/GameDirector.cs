@@ -8,9 +8,9 @@ public class GameDirector : MonoBehaviour {
 	
 #region Managers
 
-	private AudioManager _audioManager;
-	private InputManager _inputManager;
-	private TimerManager _timerManager;
+	private AudioManager     _audioManager;
+	private InputManager     _inputManager;
+	private TimerManager 	 _timerManager;
 	private HUDManager       _HUDManager;
 	private EncounterManager _encounterManager;
 	private StateManager     _stateManager;
@@ -81,9 +81,16 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.Initialize();
 		this._stateManager.Initialize();
 	}
+#region InputManager Methods
 
+	public int GetQTECount()
+	{
+		return this._inputManager.getPressCount ();
+	}
 
+#endregion
 
+#region EncounterManager Methods
 	/// <summary>
 	/// add these in the encounter manager later on!
 	/// After this build we'll have to start using events base on
@@ -106,6 +113,7 @@ public class GameDirector : MonoBehaviour {
 		}
 
 	}
+	
 	/// <summary>
 	/// Do we want to stop the ecounter with the safety light or just
 	/// Change the sate so that the player is in "escape" mode or
@@ -116,5 +124,25 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.DeActivateEncounter();
 		Debug.Log("Exiting Encounter Mode");
 	}
+#endregion
+
+#region AudioManager Methods
+	public void PlayAudioClip(AudioID inAID)
+	{
+		this._audioManager.PlayAudio(inAID);
+	}
+	public void AddAudioClip(string inClipName, AudioID inAID, GameObject inGameObj = null)
+	{
+		this._audioManager.AddAudioSource (inClipName, inAID, inGameObj);
+	}
+
+		//Parameters Methods
+		//Remove Audio Clip
+		//Silence Audio Clip
+		//Clone Auio Clip
+		//Is Done playing Clip
+		//Queue Clips
+
+#endregion
 }
 
