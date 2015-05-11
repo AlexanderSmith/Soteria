@@ -77,6 +77,7 @@ public class GameDirector : MonoBehaviour {
         _stateManager.ChangeGameState(GameStates.Normal);
         _HUDManager.EnableNormalView();
         _encounterManager.enabled = false;
+        this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
     }
 
 
