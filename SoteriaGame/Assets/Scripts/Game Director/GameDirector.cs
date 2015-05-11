@@ -4,16 +4,16 @@ using System.Collections;
 public class GameDirector : MonoBehaviour {
 	
 	private static GameDirector _instance;
-	private Player _player = null;
+	private GameObject _player;
 	
 #region Managers
 
-	private AudioManager     _audioManager;
-	private InputManager     _inputManager;
-	private TimerManager 	 _timerManager;
-	private HUDManager       _HUDManager;
-	private EncounterManager _encounterManager;
-	private StateManager     _stateManager;
+	private AudioManager     	_audioManager;
+	private InputManager     	_inputManager;
+	private TimerManager 		_timerManager;
+	private HUDManager       	_HUDManager;
+	private EncounterManager 	_encounterManager;
+	private StateManager     	_stateManager;
 
 #endregion
 	
@@ -26,7 +26,7 @@ public class GameDirector : MonoBehaviour {
 		}
 	}
 
-	public Player getPlayer()
+	public GameObject getPlayer()
 	{
 		return _player;
 	}
@@ -60,6 +60,8 @@ public class GameDirector : MonoBehaviour {
 	}
 	private void InitializeManagers()
 	{
+		///Find Player:
+		this._player = GameObject.Find("Player");
 		// This is problematic (AddComponent)-> it forces the script to be a component and uses the 
 		// Update function automatically each frame, only solution not use MonoBehavior <-- not so simple
 		//-----
@@ -131,15 +133,28 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._audioManager.PlayAudio(inAID);
 	}
+	/// <summary>
+	/// Adds the audio clip Programmatically.
+	/// </summary>
 	public void AddAudioClip(string inClipName, AudioID inAID, GameObject inGameObj = null)
 	{
 		this._audioManager.AddAudioSource (inClipName, inAID, inGameObj);
 	}
 
-		//Parameters Methods
+	/// <summary>
+	/// Attachs the audio source that was added to another object from the inspector 
+	/// so that the manager can control it.
+	/// </summary>
+	public void AttachAudioSource( AudioSource inAudioSrc,GameObject inGameObj, string inName)
+	{
+		this._audioManager.AttachAudioSource (inAudioSrc,inGameObj,inName);
+	}
+	///Other Stuff to Add.
+	/// --->
+		//set Parameters Methods
 		//Remove Audio Clip
 		//Silence Audio Clip
-		//Clone Auio Clip
+		//Clone Audio Clip
 		//Is Done playing Clip
 		//Queue Clips
 

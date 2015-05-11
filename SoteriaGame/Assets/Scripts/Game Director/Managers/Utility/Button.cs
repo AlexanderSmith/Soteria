@@ -9,7 +9,8 @@ public enum ButtonType
 	LeftArrow = 0,
 	RightArrow,
 	UpArrow,
-	DownArrow
+	DownArrow,
+	SpaceBar
 }
 /// <summary>
 /// Button type and action related to the key pressed, oldaction is needed for the swap (keeping track of its original use).
@@ -22,11 +23,14 @@ public class Button
 	//for later use!
 	private Command _OldAction;
 
+	private float _time;
+
 	private Button() {}
 
-	public Button(ButtonType inType, Command inCommand)
+	public Button(ButtonType inType, Command inCommand, float inT)
 	{
 		this._type = inType;
+		this._time = inT;
 		this._action = inCommand;
 	}
 
@@ -42,4 +46,18 @@ public class Button
 	{
 		return _type;
 	}
+
+	public bool Killit()
+	{
+		int x = 0;
+		x++;
+	
+		if ( (Time.time - _time ) > InputManager.QTE_Delay)
+		{
+			return true;
+		}
+
+		return false;
+	}
+
 }

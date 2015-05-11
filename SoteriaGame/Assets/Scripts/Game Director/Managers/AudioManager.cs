@@ -37,6 +37,18 @@ public class AudioManager : MonoBehaviour
 		this._audioSourceList.Add (new AudioSourceWrapper(inGameObj, audioSrc, inAID));
 	}
 
+	public void AttachAudioSource( AudioSource inAudioSrc, GameObject inGameObj, string inName)
+	{
+		AudioID  aID = this.getIDByName(inName);
+		this._audioSourceList.Add (new AudioSourceWrapper(inGameObj, inAudioSrc, aID));
+	}
+
+	//I need to test this one!!
+	public AudioID getIDByName(string inName)
+	{
+		return ((AudioID)System.Enum.Parse(typeof(AudioID), inName));
+	}
+
 	public void Initialize()
 	{
 
@@ -78,7 +90,7 @@ public class AudioSourceWrapper
 	private AudioSourceWrapper(){}
 
 	public AudioSourceWrapper(GameObject inGameObj, AudioSource inAudioSrc, AudioID inAID)
-	{
+	{	
 		this._gameobj = inGameObj;
 		this._audiosrc = inAudioSrc;
 		this._aID = inAID;
@@ -91,7 +103,10 @@ public class AudioSourceWrapper
 
 	public void playClip()
 	{
-		this._audiosrc.Play();
+		//not sure if this affects the 3Dness of audio
+		//second call seems better to me.
+		//this._audiosrc.Play();
+		this._gameobj.GetComponent<AudioSource>().Play();
 	}
 
 
