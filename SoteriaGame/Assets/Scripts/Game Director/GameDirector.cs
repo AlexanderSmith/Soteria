@@ -77,7 +77,7 @@ public class GameDirector : MonoBehaviour {
         _stateManager.ChangeGameState(GameStates.Normal);
         _HUDManager.EnableNormalView();
         _encounterManager.enabled = false;
-        this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
+        //this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
     }
 
 
@@ -92,6 +92,7 @@ public class GameDirector : MonoBehaviour {
     {
         StopEncounterMode();
         Debug.Log("Exiting Encounter Mode");
+		_encounterManager.InitializeSafetyLight();
     }
     #endregion
 }
