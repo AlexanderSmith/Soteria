@@ -18,7 +18,9 @@ public class EncounterManager : MonoBehaviour {
 	float overwhelmRange;
 	GameObject[] enemies;
 	GameObject safetyLight;
-
+	/********************************************************************************
+	//Make enum for enemy state to use for switch statements in CheckPlayerDistance()
+	********************************************************************************/
 //    IEnumerator KickOffEncounter()
 //    {
 //        StartEncounter();
@@ -93,8 +95,13 @@ public class EncounterManager : MonoBehaviour {
 		safetyLight.GetComponentInChildren<SafetyLightController> ().Initialize ();
 	}
 
-	public float GetAttackRange()
-	{
-		return this.attackRange;
-	}
+//	public float GetOverwhelmRange()
+//	{
+//		return this.overwhelmRange;
+//	}
+//
+//	public float GetAttackRange()
+//	{
+//		return this.attackRange;
+//	}
 }

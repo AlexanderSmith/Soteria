@@ -102,7 +102,8 @@ public class EncounterMovementController : MonoBehaviour {
     {
         enemyAttacker.GetComponent<BasicEnemyController>().EndEncounter(true);
         currentState = EncounterState.Free;
-        StartCoroutine(EnableEncounter());
+		this.GetComponent<PCController>().EnableStandardMovement();
+        //StartCoroutine(EnableEncounter());
     }
 
     void GameOverTimer()
@@ -160,12 +161,12 @@ public class EncounterMovementController : MonoBehaviour {
 //        }
 //    }
 
-    IEnumerator EnableEncounter()
-    {
-        yield return new WaitForSeconds(3f);
-
-        enemyAttacker.GetComponent<BasicEnemyController>().EndEncounter(false);
-    }
+//    IEnumerator EnableEncounter()
+//    {
+//        //yield return new WaitForSeconds(3f);
+//
+//        //enemyAttacker.GetComponent<BasicEnemyController>().EndEncounter(false);
+//    }
 
     public EncounterState GetCurrentState()
     {

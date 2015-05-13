@@ -26,6 +26,7 @@ public class PCController : MonoBehaviour {
 
     public void EnableEncounterMovement()
     {
+		Debug.Log ("Encounter Movement");
         stdMovement.enabled = false;
         encMovement.enabled = true;
 
@@ -35,6 +36,7 @@ public class PCController : MonoBehaviour {
 
     public void EnableStandardMovement()
     {
+		Debug.Log ("Standard Movement");
         stdMovement.enabled = true;
         encMovement.enabled = false;
 

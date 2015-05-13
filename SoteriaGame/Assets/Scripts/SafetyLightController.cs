@@ -7,6 +7,7 @@ public class SafetyLightController : MonoBehaviour{
 	Transform safeArea;
 	GameObject agent;
 	GameObject currentEnemy;
+	bool playerInLight;
 
 	// Use this for initialization
 	void Start () {
@@ -35,9 +36,9 @@ public class SafetyLightController : MonoBehaviour{
 		agent = GameObject.FindWithTag ("SafetyLight Agent");
 		agent.GetComponent<SafetyLightAgentMovement> ().EnableAgent ();
         EnableSafetyLight();
-        player.GetComponent<PCController>().EnableStandardMovement();
+        //player.GetComponent<PCController>().EnableStandardMovement();
         player.GetComponent<EncounterMovementController>().CheckEscape();
-		currentEnemy.gameObject.rigidbody.AddForce(-currentEnemy.gameObject.transform.forward * 1.0f, ForceMode.Impulse);
+		//currentEnemy.gameObject.rigidbody.AddForce(-currentEnemy.gameObject.transform.forward * 1.0f, ForceMode.Impulse);
     }
 
 	void OnTriggerEnter(Collider enemy)
@@ -45,7 +46,7 @@ public class SafetyLightController : MonoBehaviour{
 		if (enemy.gameObject.tag == "Enemy")
 		{
 			//Debug.Log(enemy.tag);
-			enemy.gameObject.rigidbody.AddForce(-enemy.gameObject.transform.forward * 1.0f, ForceMode.Impulse);
+			//Senemy.gameObject.rigidbody.AddForce(-enemy.gameObject.transform.forward * 1.0f, ForceMode.Impulse);
 		}
 	}
 

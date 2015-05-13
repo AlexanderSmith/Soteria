@@ -50,20 +50,16 @@ public class BasicEnemyController : MonoBehaviour {
 	{
 		CurrentTexture = Resources.Load("ShadowCreature_Attack") as Texture;
 		this.renderer.material.mainTexture = CurrentTexture;
-		if (distance <= encounterManager.GetAttackRange())
-		{
-			this.transform.position = this.transform.position;
-		}
-		else
-		{
+
 			agent.SetDestination (player.transform.position);
-		}
+			Debug.Log("Enemy chasing");
 	}
 
 	public void OverwhelmPlayer()
 	{
 		CurrentTexture = Resources.Load("ShadowCreature_Attack") as Texture;
 		this.renderer.material.mainTexture = CurrentTexture;
+		agent.Stop();
 		player.GetComponent<EncounterMovementController>().Overwhelm(this.transform);
 	}
 

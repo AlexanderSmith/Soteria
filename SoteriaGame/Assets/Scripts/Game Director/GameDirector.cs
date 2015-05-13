@@ -90,8 +90,8 @@ public class GameDirector : MonoBehaviour {
 
     public void TakeSafteyLight()
     {
-        StopEncounterMode();
-        Debug.Log("Exiting Encounter Mode");
+        //StopEncounterMode();
+        //Debug.Log("Exiting Encounter Mode");
 		_encounterManager.InitializeSafetyLight();
     }
     #endregion
