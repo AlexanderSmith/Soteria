@@ -62,8 +62,8 @@ public class EncounterManager : MonoBehaviour {
 	{
 		if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= overwhelmRange)
 		{
-			enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
 			StartEncounter(enemy);
+			this.gameObject.GetComponent<GameDirector>().StartEncounterMode();
 		}
 		else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= attackRange)
 		{
@@ -86,6 +86,7 @@ public class EncounterManager : MonoBehaviour {
 
     public void StartEncounter(GameObject enemy)
     {
+		enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
         this.gameObject.GetComponent<GameDirector>().StartEncounterMode();
 		safetyLight.GetComponentInChildren<SafetyLightController> ().CurrentEnemy(enemy);
     }

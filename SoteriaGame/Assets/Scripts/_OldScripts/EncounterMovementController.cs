@@ -16,6 +16,7 @@ public class EncounterMovementController : MonoBehaviour {
 
     private Quaternion enemyRoation, directionNeededToOverCome;
     private int overComingCounters = 0;
+	private StateManager gameStateController;
 
     public enum EncounterState
     {
@@ -29,6 +30,11 @@ public class EncounterMovementController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         currentState = EncounterState.Normal;
+	}
+
+	public void Initialize(StateManager stateMan)
+	{
+		gameStateController = stateMan;
 	}
 
     void Awake() {
@@ -70,8 +76,9 @@ public class EncounterMovementController : MonoBehaviour {
 
     public void Overwhelm(Transform enemy)
     {
+		Debug.Log ("TryingToOverwhelm " + gameStateController.GameState());
 		enemyAttacker = enemy.gameObject;
-        if (currentState != EncounterState.Overwhelmed)
+		if (gameStateController.GameState() != GameStates.Encounter && gameStateController.GameState() != GameStates.Hidden)
         {
             Debug.Log("OV");
             this.GetComponent<PCController>().EnableEncounterMovement();
@@ -86,11 +93,10 @@ public class EncounterMovementController : MonoBehaviour {
             
             this.transform.rotation = overwhelmedRotation;
             //Debug.Log(this.transform.rotation);
-            currentState = EncounterState.Overwhelmed;
         }
     }
 
-    void OverCome()
+    public void OverCome()
     {
         gameObject.GetComponent<PCController>().EnableStandardMovement();
         //Eventually will call enemy death script funtion mostlikely so there is a nice disipation and stuff. 
