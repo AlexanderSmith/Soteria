@@ -4,7 +4,7 @@ using System.Collections;
 public class GameDirector : MonoBehaviour {
 
     protected static GameDirector _instance;
-    private Player _player;
+    private GameObject _player = null;
 
     #region Managers
 
@@ -26,8 +26,13 @@ public class GameDirector : MonoBehaviour {
         }
     }
 
-    public Player GetPlayer()
+    public GameObject GetPlayer()
     {
+		if (_player == null) 
+		{
+			_player = GameObject.Find("Player");
+			_player.GetComponent<EncounterMovementController>().Initialize(_stateManager);
+		}
         return _player;
     }
 
@@ -38,6 +43,7 @@ public class GameDirector : MonoBehaviour {
         {
             _instance = this;
             this.InitializeManagers();
+			this.GetPlayer();
             DontDestroyOnLoad(this); //Keep the instance going between scenes
         }
         else
@@ -76,7 +82,7 @@ public class GameDirector : MonoBehaviour {
     {
         _stateManager.ChangeGameState(GameStates.Normal);
         _HUDManager.EnableNormalView();
-        _encounterManager.enabled = false;
+		_player.GetComponent<EncounterMovementController> ().OverCome ();
         //this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
     }
 
@@ -85,12 +91,12 @@ public class GameDirector : MonoBehaviour {
     {
         _stateManager.ChangeGameState(GameStates.Encounter);
         _HUDManager.EnableEncounterView();
-        _encounterManager.enabled = true;
     }
 
     public void TakeSafteyLight()
     {
-        //StopEncounterMode();
+        StopEncounterMode();
+		_stateManager.ChangeGameState (GameStates.Hidden);
         //Debug.Log("Exiting Encounter Mode");
 		_encounterManager.InitializeSafetyLight();
     }

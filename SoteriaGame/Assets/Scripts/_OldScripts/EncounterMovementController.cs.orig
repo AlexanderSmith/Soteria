@@ -78,7 +78,11 @@ public class EncounterMovementController : MonoBehaviour {
     {
 		Debug.Log ("TryingToOverwhelm " + gameStateController.GameState());
 		enemyAttacker = enemy.gameObject;
+<<<<<<< HEAD
         if (currentState != EncounterState.Overwhelmed && !lightOn)
+=======
+		if (gameStateController.GameState() != GameStates.Encounter && gameStateController.GameState() != GameStates.Hidden)
+>>>>>>> 27bf892f54eb80f24ab20d8cd87f91b51bb5fb69
         {
             Debug.Log("OV");
             this.GetComponent<PCController>().EnableEncounterMovement();
@@ -93,7 +97,6 @@ public class EncounterMovementController : MonoBehaviour {
             
             this.transform.rotation = overwhelmedRotation;
             //Debug.Log(this.transform.rotation);
-            currentState = EncounterState.Overwhelmed;
         }
     }
 
