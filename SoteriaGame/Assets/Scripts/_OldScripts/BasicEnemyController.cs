@@ -55,12 +55,12 @@ public class BasicEnemyController : MonoBehaviour {
 			Debug.Log("Enemy chasing");
 	}
 
-	public void OverwhelmPlayer()
+	public void OverwhelmPlayer(bool lightOn)
 	{
 		CurrentTexture = Resources.Load("ShadowCreature_Attack") as Texture;
 		this.renderer.material.mainTexture = CurrentTexture;
 		agent.Stop();
-		player.GetComponent<EncounterMovementController>().Overwhelm(this.transform);
+		player.GetComponent<EncounterMovementController>().Overwhelm(this.transform, lightOn);
 	}
 
 	public void Unaware()

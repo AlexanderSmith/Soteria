@@ -18,6 +18,7 @@ public class EncounterManager : MonoBehaviour {
 	float overwhelmRange;
 	GameObject[] enemies;
 	GameObject safetyLight;
+	bool lightOn = false;
 	/********************************************************************************
 	//Make enum for enemy state to use for switch statements in CheckPlayerDistance()
 	********************************************************************************/
@@ -62,8 +63,8 @@ public class EncounterManager : MonoBehaviour {
 	{
 		if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= overwhelmRange)
 		{
-			enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
 			StartEncounter(enemy);
+			enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer(lightOn);
 		}
 		else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= attackRange)
 		{
@@ -82,6 +83,7 @@ public class EncounterManager : MonoBehaviour {
     public void StopEncounter()
     {
         this.gameObject.GetComponent<GameDirector>().StopEncounterMode();
+		lightOn = false;
     }
 
     public void StartEncounter(GameObject enemy)
@@ -93,6 +95,7 @@ public class EncounterManager : MonoBehaviour {
 	public void InitializeSafetyLight()
 	{
 		safetyLight.GetComponentInChildren<SafetyLightController> ().Initialize ();
+		lightOn = true;
 	}
 
 //	public float GetOverwhelmRange()

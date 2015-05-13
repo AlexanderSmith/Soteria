@@ -68,10 +68,10 @@ public class EncounterMovementController : MonoBehaviour {
         }
     }
 
-    public void Overwhelm(Transform enemy)
+    public void Overwhelm(Transform enemy, bool lightOn)
     {
 		enemyAttacker = enemy.gameObject;
-        if (currentState != EncounterState.Overwhelmed)
+        if (currentState != EncounterState.Overwhelmed && !lightOn)
         {
             Debug.Log("OV");
             this.GetComponent<PCController>().EnableEncounterMovement();
