@@ -53,6 +53,11 @@ public class GameDirector : MonoBehaviour {
         }
     }
 
+	private void OnLevelWasLoaded()
+	{
+		InitializeManagers ();
+	}
+
     // Update is called once per frame
     private void Update()
     {

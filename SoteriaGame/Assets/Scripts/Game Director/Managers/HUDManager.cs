@@ -11,6 +11,7 @@ public class HUDManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		this.enabled = false;
+		_HUDCanvas = null;
 	}
 	
 	// Update is called once per frame
@@ -34,7 +35,7 @@ public class HUDManager : MonoBehaviour {
                 Instantiate(Resources.Load("Prefabs/"+item));
             }
         }
-        else
+		else if(_HUDCanvas != null)
         {
             _HUDCanvas = (Instantiate(Resources.Load("Prefabs/HUD")) as GameObject);
             _coinController = _HUDCanvas.GetComponentInChildren<ButtonController>();

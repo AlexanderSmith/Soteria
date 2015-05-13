@@ -31,7 +31,13 @@ public class EncounterManager : MonoBehaviour {
     void Start()
     {
 //        StartCoroutine(KickOffEncounter());
+		Initialize ();
     }
+
+	void Awake()
+	{
+		Initialize ();
+	}
 
     // Update is called once per frame
     void Update()
