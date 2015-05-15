@@ -13,45 +13,139 @@ using System.Collections;
 
 public class EncounterManager : MonoBehaviour {
 
-	private bool _startEnc;
-	private bool _encActive;
+	float lookAtDistance;
+	float attackRange;
+	float overwhelmRange;
+	GameObject[] enemies;
+	GameObject safetyLight;
+	bool lightOn = false;
+	bool cooldown = false;
+	float timer = 20.0f;
 
-	// Use this for initialization
-	void Awake ()
+	enum EncounterState
 	{
-		this.enabled = false;
+		Active,
+		ActiveLight,
+		Inactive,
+	};
 
-		this._encActive = false;
-		this._startEnc = false;
-	}
+	EncounterState currentState;
+//    IEnumerator KickOffEncounter()
+//    {
+//        StartEncounter();
+//        return null;
+//    }
 
-	// Update is called once per frame
-	public void Update () 
-	{
-		if (this._startEnc && !this._encActive)
-			this.UpdateEncounter(true);
-		else if (this._encActive && !this._startEnc)
-			this.UpdateEncounter(false);
-	}
-
-	public void Initialize()
-	{
-		
-	}
-
-    private void UpdateEncounter(bool inStatus)
-	{
-		this._encActive = inStatus;
-		GameDirector.instance.UpdateEncounterState(this._encActive);
+    // Use this for initialization
+    void Start()
+    {
+//        StartCoroutine(KickOffEncounter());
     }
 
-	public void ActivateEncounter()
+    // Update is called once per frame
+    void Update()
+    {
+		if (cooldown)
+		{
+			LightCooldown();
+		}
+    }
+
+    public void Initialize()
+    {
+		lookAtDistance = 25.0f;
+		attackRange = 15.0f;
+		overwhelmRange = 5.0f;
+		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		LinkToEnemy();
+		safetyLight = GameObject.FindGameObjectWithTag("SafetyLight Agent");
+		currentState = EncounterState.Inactive;
+		//Debug.Log (safetyLight.name);
+    }
+
+	void LinkToEnemy()
 	{
-		this._startEnc = true;
+		foreach (GameObject enemy in enemies) 
+		{
+			enemy.GetComponent<BasicEnemyController>().Initialize(this);
+		}
 	}
 
-	public void DeActivateEncounter()
+	public void CheckPlayerDistance(GameObject enemy)
 	{
-		this._startEnc = false;
+		if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= overwhelmRange)
+		{
+			Encounter(enemy);
+			enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer(lightOn);
+		}
+		else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= attackRange)
+		{
+			enemy.GetComponent<BasicEnemyController>().ChasePlayer();
+		}
+		else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= lookAtDistance)
+		{
+			enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
+		}
+		else
+		{
+			enemy.GetComponent<BasicEnemyController>().Unaware();
+		}
 	}
+
+	public void Encounter(GameObject enemy)
+	{
+		if (currentState == EncounterState.Inactive)
+		{
+			currentState = EncounterState.Active;
+			StartEncounter();
+		}
+		safetyLight.GetComponentInChildren<SafetyLightController> ().CurrentEnemy(enemy);
+	}
+
+    public void StopEncounter()
+    {
+        this.gameObject.GetComponent<GameDirector>().StopEncounterMode();
+		lightOn = false;
+		currentState = EncounterState.Inactive;
+    }
+
+    public void StartEncounter()
+    {
+        this.gameObject.GetComponent<GameDirector>().StartEncounterMode(cooldown);
+    }
+
+	public void InitializeSafetyLight()
+	{
+		safetyLight.GetComponentInChildren<SafetyLightController>().Initialize(this);
+		lightOn = true;
+		currentState = EncounterState.ActiveLight;
+	}
+
+	public void KillSafetyLight()
+	{
+		safetyLight.GetComponentInChildren<SafetyLightController>().DisableSafetyLight();
+		cooldown = true;
+		//Debug.Log ("Killing light");
+	}
+
+	void LightCooldown()
+	{
+		timer -= Time.deltaTime;
+		if (timer <= 0.0f)
+		{
+			timer = 20.0f;
+			cooldown = false;
+			this.gameObject.GetComponent<GameDirector>().LightReset();
+		}
+	}
+
+//	public float GetOverwhelmRange()
+//	{
+//		return this.overwhelmRange;
+//	}
+//
+//	public float GetAttackRange()
+//	{
+//		return this.attackRange;
+//	}
 }

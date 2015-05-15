@@ -2,12 +2,14 @@
 using System.Collections;
 
 public class GameDirector : MonoBehaviour {
-	
-	private static GameDirector _instance;
-	private GameObject _player;
-	
-#region Managers
 
+    protected static GameDirector _instance;
+    private GameObject _player = null;
+
+    #region Managers
+
+    private AudioManager _audioManager;
+    private InputManager _inputManager;
 	private AudioManager     	_audioManager;
 	private InputManager     	_inputManager;
 	private TimerManager 		_timerManager;
@@ -15,21 +17,27 @@ public class GameDirector : MonoBehaviour {
 	private EncounterManager 	_encounterManager;
 	private StateManager     	_stateManager;
 
-#endregion
-	
-	public static GameDirector instance
-	{
-		get {
-			if (_instance == null)
-				_instance = GameObject.FindObjectOfType<GameDirector>();
-			return (GameDirector)(_instance);
-		}
-	}
+    #endregion
 
-	public GameObject getPlayer()
-	{
-		return _player;
-	}
+    public static GameDirector instance
+    {
+        get
+        {
+            if (_instance == null)
+                _instance = GameObject.FindObjectOfType<GameDirector>();
+            return (GameDirector)(_instance);
+        }
+    }
+
+    public GameObject GetPlayer()
+    {
+		if (_player == null) 
+		{
+			_player = GameObject.FindWithTag("Player");
+			_player.GetComponent<EncounterMovementController>().Initialize(_stateManager);
+		}
+        return _player;
+    }
 
 	// Use this for initialization
 	private void Awake () 
@@ -57,11 +65,9 @@ public class GameDirector : MonoBehaviour {
 		this._timerManager.Update();
 		this._encounterManager.Update(); //No update happening we can remove it later on
 
-	}
-	private void InitializeManagers()
-	{
-		///Find Player:
-		this._player = GameObject.Find("Player");
+    }
+    private void InitializeManagers()
+    {
 		// This is problematic (AddComponent)-> it forces the script to be a component and uses the 
 		// Update function automatically each frame, only solution not use MonoBehavior <-- not so simple
 		//-----
@@ -91,6 +97,14 @@ public class GameDirector : MonoBehaviour {
 	}
 
 #endregion
+    public void StopEncounterMode()
+    {
+        _stateManager.ChangeGameState(GameStates.Normal);
+        _HUDManager.EnableNormalView();
+		_player.GetComponent<EncounterMovementController> ().OverCome ();
+		_encounterManager.KillSafetyLight();
+        //this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
+    }
 
 #region EncounterManager Methods
 	/// <summary>
@@ -100,33 +114,33 @@ public class GameDirector : MonoBehaviour {
 	/// </summary>
 	/// 
 
-	public void UpdateEncounterState(bool inStatus)
-	{
-		if (inStatus)
+    public void StartEncounterMode(bool lightCooldown)
+    {
+		if (_stateManager.GameState() != GameStates.Encounter) 
 		{
-			this._stateManager.ChangeGameState(GameStates.Encounter);
-			this._HUDManager.EnableEncounterView();
-
+			_stateManager.ChangeGameState (GameStates.Encounter);
 		}
-		else
+		if (!lightCooldown)
 		{
-			this._stateManager.ChangeGameState(GameStates.Normal);
-			this._HUDManager.EnableNormalView();
+			_HUDManager.EnableEncounterView();
 		}
+	}
 
-	}
-	
-	/// <summary>
-	/// Do we want to stop the ecounter with the safety light or just
-	/// Change the sate so that the player is in "escape" mode or
-	/// something like that. We'll discuss this later on.
-	/// </summary>
-	public void TakeSafteyLight()
+    public void TakeSafteyLight()
+    {
+        //StopEncounterMode();
+		_stateManager.ChangeGameState (GameStates.InLight);
+        //Debug.Log("Switching from encounter to safety light mode");
+		_encounterManager.InitializeSafetyLight();
+    }
+
+	public void LightReset()
 	{
-		this._encounterManager.DeActivateEncounter();
-		Debug.Log("Exiting Encounter Mode");
+		if (_stateManager.GameState () == GameStates.Encounter)
+		{
+			_HUDManager.EnableEncounterView();
+		}
 	}
-#endregion
 
 #region AudioManager Methods
 	public void PlayAudioClip(AudioID inAID)

@@ -4,6 +4,8 @@ using System.Collections;
 public enum GameStates
 {
 	Normal,
+	Hidden,
+	InLight,
 	Encounter,
 	Pause
 }
@@ -28,15 +30,23 @@ public class StateManager : MonoBehaviour {
 		switch(inState)
 		{
 		case GameStates.Normal:
-				if (gameState != inState) SwitchToNormal();
+			if (gameState != inState) SwitchToNormal();
 			break;
 		case GameStates.Encounter:
-				if (gameState != inState) SwitchToEncounter();
+			if (gameState != inState) SwitchToEncounter();
 			break;
 		case GameStates.Pause:
-				if (gameState != inState) SwitchToPause();
+			if (gameState != inState) SwitchToPause();
+			break;
+		case GameStates.InLight:
+			if (gameState != inState) SwitchToInLight();
 			break;
 		}
+	}
+
+	public GameStates GameState()
+	{
+		return gameState;
 	}
 
 	private void SwitchToEncounter()
@@ -55,5 +65,10 @@ public class StateManager : MonoBehaviour {
 	{
 
 		gameState = GameStates.Pause;
+	}
+
+	private void SwitchToInLight()
+	{
+		gameState = GameStates.InLight;
 	}
 }
