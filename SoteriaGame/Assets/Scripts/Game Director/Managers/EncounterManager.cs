@@ -113,8 +113,14 @@ public class EncounterManager : MonoBehaviour {
 
 	public void InitializeSafetyLight()
 	{
-		safetyLight.GetComponentInChildren<SafetyLightController> ().Initialize ();
+		safetyLight.GetComponentInChildren<SafetyLightController>().Initialize(this);
 		lightOn = true;
+	}
+
+	public void KillSafetyLight()
+	{
+		safetyLight.GetComponentInChildren<SafetyLightController>().DisableSafetyLight();
+		Debug.Log ("Killing light");
 	}
 
 //	public float GetOverwhelmRange()

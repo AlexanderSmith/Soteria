@@ -30,7 +30,7 @@ public class GameDirector : MonoBehaviour {
     {
 		if (_player == null) 
 		{
-			_player = GameObject.Find("Player");
+			_player = GameObject.FindWithTag("Player");
 			_player.GetComponent<EncounterMovementController>().Initialize(_stateManager);
 		}
         return _player;
@@ -83,6 +83,7 @@ public class GameDirector : MonoBehaviour {
         _stateManager.ChangeGameState(GameStates.Normal);
         _HUDManager.EnableNormalView();
 		_player.GetComponent<EncounterMovementController> ().OverCome ();
+		_encounterManager.KillSafetyLight();
         //this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
     }
 
@@ -101,7 +102,7 @@ public class GameDirector : MonoBehaviour {
         //StopEncounterMode();
 		_stateManager.ChangeGameState (GameStates.InLight);
 		_HUDManager.EnableSafetyLightView ();
-        Debug.Log("Switching from encounter to safety light mode");
+        //Debug.Log("Switching from encounter to safety light mode");
 		_encounterManager.InitializeSafetyLight();
     }
     #endregion

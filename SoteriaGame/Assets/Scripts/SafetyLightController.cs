@@ -8,6 +8,7 @@ public class SafetyLightController : MonoBehaviour{
 	GameObject agent;
 	GameObject currentEnemy;
 	bool playerInLight;
+	EncounterManager encounterManager;
 
 	// Use this for initialization
 	void Start () {
@@ -31,13 +32,14 @@ public class SafetyLightController : MonoBehaviour{
         this.collider.enabled = false;
     }
 
-    public void Initialize()
+    public void Initialize(EncounterManager manager)
     {
 		agent = GameObject.FindWithTag ("SafetyLight Agent");
 		agent.GetComponent<SafetyLightAgentMovement> ().EnableAgent ();
         EnableSafetyLight();
         //player.GetComponent<PCController>().EnableStandardMovement();
         player.GetComponent<EncounterMovementController>().CheckEscape();
+		encounterManager = manager;
     }
 
 	void OnTriggerEnter(Collider enemy)
@@ -46,6 +48,16 @@ public class SafetyLightController : MonoBehaviour{
 		{
 			//Debug.Log(enemy.tag);
 			enemy.gameObject.GetComponent<BasicEnemyController>().PushBack();
+		}
+	}
+
+	void OnTriggerExit(Collider player)
+	{
+		if (player.gameObject.tag == "Player")
+		{
+			Debug.Log("player exiting");
+			Debug.Log (encounterManager.name);
+			encounterManager.StopEncounter();
 		}
 	}
 
