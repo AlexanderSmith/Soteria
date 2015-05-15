@@ -64,6 +64,13 @@ public class HUDManager : MonoBehaviour {
 		//_fade.toGoToClear = true;
     }
 
+	public void EnableSafetyLightView()
+	{
+		//Debug.Log ("In light view");
+		_coinController.Pulsing = false;
+		//_fade.toGoToClear = true;
+	}
+
     public void SafteyLightButtonHit()
     {
         this.gameObject.GetComponent<GameDirector>().TakeSafteyLight(); //This feels weird here but may be the only place to call it from, we'll see later.

@@ -7,6 +7,7 @@ public class BasicEnemyController : MonoBehaviour {
 	private EncounterManager encounterManager;
 	private NavMeshAgent agent;
 	private float distance = 0.0f;
+	private float pushBack = 100.0f;
 
 //    BasicAggroSystem aggroManager;
 //
@@ -21,6 +22,9 @@ public class BasicEnemyController : MonoBehaviour {
 		agent = GetComponent<NavMeshAgent> ();
         //aggroManager = new BasicAggroSystem();
 		//staystill = false;
+		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Unaware") as Texture;
+
+		this.renderer.material.mainTexture = CurrentTexture;
 	}
 	
 	// Update is called once per frame
@@ -41,14 +45,14 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void LookAtPlayer()
 	{
-		CurrentTexture = Resources.Load("ShadowCreatureAlert") as Texture;
+		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Alert") as Texture;
 		this.renderer.material.mainTexture = CurrentTexture;
 		this.transform.LookAt(player.transform.position);
 	}
 
 	public void ChasePlayer()
 	{
-		CurrentTexture = Resources.Load("ShadowCreature_Attack") as Texture;
+		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;
 		this.renderer.material.mainTexture = CurrentTexture;
 
 			agent.SetDestination (player.transform.position);
@@ -57,7 +61,7 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void OverwhelmPlayer(bool lightOn)
 	{
-		CurrentTexture = Resources.Load("ShadowCreature_Attack") as Texture;
+		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;
 		this.renderer.material.mainTexture = CurrentTexture;
 		agent.Stop();
 		player.GetComponent<EncounterMovementController>().Overwhelm(this.transform, lightOn);
@@ -65,12 +69,17 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void Unaware()
 	{
-		CurrentTexture = Resources.Load("ShadowCreature Unaware") as Texture;
+		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Unaware") as Texture;
 		this.renderer.material.mainTexture = CurrentTexture;
 	}
 
 	public float GetDistance()
 	{
 		return this.distance;
+	}
+
+	public void PushBack()
+	{
+		this.gameObject.rigidbody.AddForce(-this.gameObject.transform.forward * pushBack, ForceMode.Impulse);
 	}
 }

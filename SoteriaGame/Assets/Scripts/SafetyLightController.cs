@@ -38,7 +38,6 @@ public class SafetyLightController : MonoBehaviour{
         EnableSafetyLight();
         //player.GetComponent<PCController>().EnableStandardMovement();
         player.GetComponent<EncounterMovementController>().CheckEscape();
-		//currentEnemy.gameObject.rigidbody.AddForce(-currentEnemy.gameObject.transform.forward * 1.0f, ForceMode.Impulse);
     }
 
 	void OnTriggerEnter(Collider enemy)
@@ -46,7 +45,7 @@ public class SafetyLightController : MonoBehaviour{
 		if (enemy.gameObject.tag == "Enemy")
 		{
 			//Debug.Log(enemy.tag);
-			//Senemy.gameObject.rigidbody.AddForce(-enemy.gameObject.transform.forward * 1.0f, ForceMode.Impulse);
+			enemy.gameObject.GetComponent<BasicEnemyController>().PushBack();
 		}
 	}
 

@@ -22,6 +22,15 @@ public class EncounterManager : MonoBehaviour {
 	/********************************************************************************
 	//Make enum for enemy state to use for switch statements in CheckPlayerDistance()
 	********************************************************************************/
+
+	enum EncounterState
+	{
+		Active,
+		ActiveLight,
+		Inactive,
+	};
+
+	EncounterState currentState;
 //    IEnumerator KickOffEncounter()
 //    {
 //        StartEncounter();
@@ -48,6 +57,7 @@ public class EncounterManager : MonoBehaviour {
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		LinkToEnemy();
 		safetyLight = GameObject.FindGameObjectWithTag("SafetyLight Agent");
+		currentState = EncounterState.Inactive;
 		//Debug.Log (safetyLight.name);
     }
 
@@ -63,7 +73,7 @@ public class EncounterManager : MonoBehaviour {
 	{
 		if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= overwhelmRange)
 		{
-			StartEncounter(enemy);
+			Encounter(enemy);
 			enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer(lightOn);
 		}
 		else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= attackRange)
@@ -80,16 +90,25 @@ public class EncounterManager : MonoBehaviour {
 		}
 	}
 
+	public void Encounter(GameObject enemy)
+	{
+		if (currentState == EncounterState.Inactive)
+		{
+			currentState = EncounterState.Active;
+			StartEncounter();
+		}
+		safetyLight.GetComponentInChildren<SafetyLightController> ().CurrentEnemy(enemy);
+	}
+
     public void StopEncounter()
     {
         this.gameObject.GetComponent<GameDirector>().StopEncounterMode();
 		lightOn = false;
     }
 
-    public void StartEncounter(GameObject enemy)
+    public void StartEncounter()
     {
         this.gameObject.GetComponent<GameDirector>().StartEncounterMode();
-		safetyLight.GetComponentInChildren<SafetyLightController> ().CurrentEnemy(enemy);
     }
 
 	public void InitializeSafetyLight()

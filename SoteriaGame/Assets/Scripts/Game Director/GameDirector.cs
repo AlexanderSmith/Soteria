@@ -89,15 +89,19 @@ public class GameDirector : MonoBehaviour {
 
     public void StartEncounterMode()
     {
-        _stateManager.ChangeGameState(GameStates.Encounter);
-        _HUDManager.EnableEncounterView();
+		if (_stateManager.GameState() != GameStates.Encounter) 
+		{
+			_stateManager.ChangeGameState (GameStates.Encounter);
+			_HUDManager.EnableEncounterView();
+		}
     }
 
     public void TakeSafteyLight()
     {
-        StopEncounterMode();
-		_stateManager.ChangeGameState (GameStates.Hidden);
-        //Debug.Log("Exiting Encounter Mode");
+        //StopEncounterMode();
+		_stateManager.ChangeGameState (GameStates.InLight);
+		_HUDManager.EnableSafetyLightView ();
+        Debug.Log("Switching from encounter to safety light mode");
 		_encounterManager.InitializeSafetyLight();
     }
     #endregion

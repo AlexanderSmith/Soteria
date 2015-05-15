@@ -5,6 +5,7 @@ public enum GameStates
 {
 	Normal,
 	Hidden,
+	InLight,
 	Encounter,
 	Pause
 }
