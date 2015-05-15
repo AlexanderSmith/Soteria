@@ -61,7 +61,7 @@ public class GameDirector : MonoBehaviour {
 		this._inputManager.Update();
 		this._audioManager.Update(); //No update happening we can remove it later on
 		this._timerManager.Update();
-		this._encounterManager.Update(); //No update happening we can remove it later on
+		//this._encounterManager.Update(); //No update happening we can remove it later on
 
     }
     private void InitializeManagers()
@@ -95,6 +95,14 @@ public class GameDirector : MonoBehaviour {
 	}
 
 #endregion
+
+	#region EncounterManager Methods
+	/// <summary>
+	/// add these in the encounter manager later on!
+	/// After this build we'll have to start using events base on
+	/// the what's happening in the game.
+	/// </summary>
+	/// 
     public void StopEncounterMode()
     {
         _stateManager.ChangeGameState(GameStates.Normal);
@@ -103,14 +111,6 @@ public class GameDirector : MonoBehaviour {
 		_encounterManager.KillSafetyLight();
         //this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
     }
-
-#region EncounterManager Methods
-	/// <summary>
-	/// add these in the encounter manager later on!
-	/// After this build we'll have to start using events base on
-	/// the what's happening in the game.
-	/// </summary>
-	/// 
 
     public void StartEncounterMode(bool lightCooldown)
     {
@@ -139,6 +139,7 @@ public class GameDirector : MonoBehaviour {
 			_HUDManager.EnableEncounterView();
 		}
 	}
+#endregion
 
 #region AudioManager Methods
 	public void PlayAudioClip(AudioID inAID)
@@ -170,6 +171,6 @@ public class GameDirector : MonoBehaviour {
 		//Is Done playing Clip
 		//Queue Clips
 
-#endregion
+	#endregion
 }
 

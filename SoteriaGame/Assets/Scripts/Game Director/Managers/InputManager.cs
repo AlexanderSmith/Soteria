@@ -59,7 +59,7 @@ public class InputManager : MonoBehaviour
 
 		if (Input.GetKeyDown( KeyCode.Space))
 		{	
-			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.getPlayer() );
+			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
 		}
 
 		if (inputpressed)

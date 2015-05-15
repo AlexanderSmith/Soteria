@@ -11,9 +11,9 @@ public class HUDManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		this.enabled = false;
-
-		if (_HUDCanvas == null)
-			_HUDCanvas = Instantiate(Resources.Load("Prefabs/HUD")) as GameObject;
+//
+//		if (_HUDCanvas == null)
+//			_HUDCanvas = Instantiate(Resources.Load("Prefabs/HUD")) as GameObject;
 	}
 	
 	// Update is called once per frame
