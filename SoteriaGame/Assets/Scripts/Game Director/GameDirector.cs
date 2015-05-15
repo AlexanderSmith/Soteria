@@ -8,8 +8,6 @@ public class GameDirector : MonoBehaviour {
 
     #region Managers
 
-    private AudioManager _audioManager;
-    private InputManager _inputManager;
 	private AudioManager     	_audioManager;
 	private InputManager     	_inputManager;
 	private TimerManager 		_timerManager;
