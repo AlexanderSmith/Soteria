@@ -11,9 +11,6 @@ public class HUDManager : MonoBehaviour {
 	// Use this for initialization
 	void Awake () {
 		this.enabled = false;
-//
-//		if (_HUDCanvas == null)
-//			_HUDCanvas = Instantiate(Resources.Load("Prefabs/HUD")) as GameObject;
 	}
 	
 	// Update is called once per frame
@@ -21,6 +18,14 @@ public class HUDManager : MonoBehaviour {
 
 	public void Initialize()
 	{
+		/// Let's have another discussion later on if we want to use GUITExtures
+		/// or UI elements. Not sure how easy it is to access the different stuff.
+		/// we can try prototyping it later and on and see if it's worth it.
+
+		//Initialize Instruction Text
+     //   instructionText = (Instantiate(Resources.Load("Prefabs/GUIText")) as GameObject).guiText;
+      //  instructionText.transform.position = new Vector3(0.01f, 0.95f, 0);
+       // instructionText.text = "Test";
         GameObject HUDElementStarter;
         if (HUDElementStarter = GameObject.Find("StartingHUDElements"))
         {
@@ -34,6 +39,7 @@ public class HUDManager : MonoBehaviour {
             _HUDCanvas = (Instantiate(Resources.Load("Prefabs/HUD")) as GameObject);
             _coinController = _HUDCanvas.GetComponentInChildren<ButtonController>();
             _coinController.Initialize(this);
+
             //Initialize Coin
             //_coin = _HUDCanvas.transform.Find("Coin").gameObject;
             //_coin.GetComponent<ButtonController>().Initialize(this);
@@ -70,6 +76,4 @@ public class HUDManager : MonoBehaviour {
         this.gameObject.GetComponent<GameDirector>().TakeSafteyLight(); //This feels weird here but may be the only place to call it from, we'll see later.
 		EnableSafetyLightView ();
     }
-
-
 }

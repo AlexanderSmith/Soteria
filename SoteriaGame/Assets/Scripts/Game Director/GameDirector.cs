@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GameDirector : MonoBehaviour {
 
-    protected static GameDirector _instance;
+    private static GameDirector _instance;
     private GameObject _player = null;
 
     #region Managers
@@ -37,41 +37,36 @@ public class GameDirector : MonoBehaviour {
         return _player;
     }
 
-	// Use this for initialization
-	private void Awake () 
-	{
-		if(_instance == null)
-		{
-			_instance = this;
-			this.InitializeManagers();
-			this.DontDestroyOnLoad(this); //Keep the instance going between scenes
-		}
-		else
-		{
-			if(this != _instance)
-				this.Destroy(this.gameObject);
-		}
-	}
-	
-	// Update is called once per frame
-	private void  Update () 
-	{
+    // Use this for initialization
+    private void Awake()
+    {
+        if (_instance == null)
+        {
+            _instance = this;
+            this.InitializeManagers();
+			this.GetPlayer();
+            DontDestroyOnLoad(this); //Keep the instance going between scenes
+        }
+        else
+        {
+            if (this != _instance)
+                Destroy(this.gameObject);
+        }
+    }
+
+    // Update is called once per frame
+    private void Update()
+    {
 		this._stateManager.Update(); //No update happening we can remove it later on
 		this._HUDManager.Update(); //No update happening we can remove it later on
 		this._inputManager.Update();
 		this._audioManager.Update(); //No update happening we can remove it later on
 		this._timerManager.Update();
-		//this._encounterManager.Update(); //No update happening we can remove it later on
-
     }
     private void InitializeManagers()
     {
-		// This is problematic (AddComponent)-> it forces the script to be a component and uses the 
-		// Update function automatically each frame, only solution not use MonoBehavior <-- not so simple
-		//-----
-		// solved this by setting enable to false in the awake function (this will stop  the start fuction from getting called)
-		// setting update to public and calling update manually from the game director. Updates should be left to a minimum we'll
-		// start using events soon.
+        //This is problematic (AddComponent)-> it forces the script to be a component and uses the 
+        // Update function automatically each frame, only solution not use MonoBehavior <-- not so simple
 
 		this._timerManager = this.gameObject.GetComponent<TimerManager>();
 		this._audioManager = this.gameObject.AddComponent<AudioManager>();
@@ -79,30 +74,33 @@ public class GameDirector : MonoBehaviour {
 		this._HUDManager = this.gameObject.AddComponent<HUDManager> ();
 		this._encounterManager = this.gameObject.AddComponent<EncounterManager> ();
 		this._stateManager = this.gameObject.AddComponent<StateManager>();
-
+		
 		this._timerManager.Initialize(); //->quick hack, needs to change later.
 		this._audioManager.Initialize();
 		this._inputManager.Initialize();
 		this._HUDManager.Initialize();
 		this._encounterManager.Initialize();
 		this._stateManager.Initialize();
-	}
-#region InputManager Methods
+        
+    }
 
+	#region InputManager Methods
+	
 	public int GetQTECount()
 	{
 		return this._inputManager.getPressCount ();
 	}
 
-#endregion
+	public bool GetBool()
+	{
+		return true;
+	}
+	
+	#endregion
 
-	#region EncounterManager Methods
-	/// <summary>
-	/// add these in the encounter manager later on!
-	/// After this build we'll have to start using events base on
-	/// the what's happening in the game.
-	/// </summary>
-	/// 
+
+    #region EncounterManager
+
     public void StopEncounterMode()
     {
         _stateManager.ChangeGameState(GameStates.Normal);
@@ -111,6 +109,7 @@ public class GameDirector : MonoBehaviour {
 		_encounterManager.KillSafetyLight();
         //this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
     }
+
 
     public void StartEncounterMode(bool lightCooldown)
     {
@@ -139,9 +138,10 @@ public class GameDirector : MonoBehaviour {
 			_HUDManager.EnableEncounterView();
 		}
 	}
-#endregion
 
-#region AudioManager Methods
+    #endregion
+
+	#region AudioManager Methods
 	public void PlayAudioClip(AudioID inAID)
 	{
 		this._audioManager.PlayAudio(inAID);
@@ -153,7 +153,7 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._audioManager.AddAudioSource (inClipName, inAID, inGameObj);
 	}
-
+	
 	/// <summary>
 	/// Attachs the audio source that was added to another object from the inspector 
 	/// so that the manager can control it.
@@ -164,13 +164,13 @@ public class GameDirector : MonoBehaviour {
 	}
 	///Other Stuff to Add.
 	/// --->
-		//set Parameters Methods
-		//Remove Audio Clip
-		//Silence Audio Clip
-		//Clone Audio Clip
-		//Is Done playing Clip
-		//Queue Clips
-
+	//set Parameters Methods
+	//Remove Audio Clip
+	//Silence Audio Clip
+	//Clone Audio Clip
+	//Is Done playing Clip
+	//Queue Clips
+	
 	#endregion
 }
 
