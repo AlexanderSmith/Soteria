@@ -3,16 +3,17 @@ using System.Collections;
 
 public class GameDirector : MonoBehaviour {
 
-    protected static GameDirector _instance;
+    private static GameDirector _instance;
     private GameObject _player = null;
 
     #region Managers
 
-    private AudioManager _audioManager;
-    private InputManager _inputManager;
-    private HUDManager _HUDManager;
-    private EncounterManager _encounterManager;
-    private StateManager _stateManager;
+	private AudioManager     	_audioManager;
+	private InputManager     	_inputManager;
+	private TimerManager 		_timerManager;
+	private HUDManager       	_HUDManager;
+	private EncounterManager 	_encounterManager;
+	private StateManager     	_stateManager;
 
     #endregion
 
@@ -56,25 +57,47 @@ public class GameDirector : MonoBehaviour {
     // Update is called once per frame
     private void Update()
     {
-
+		this._stateManager.Update(); //No update happening we can remove it later on
+		this._HUDManager.Update(); //No update happening we can remove it later on
+		this._inputManager.Update();
+		this._audioManager.Update(); //No update happening we can remove it later on
+		this._timerManager.Update();
     }
     private void InitializeManagers()
     {
         //This is problematic (AddComponent)-> it forces the script to be a component and uses the 
         // Update function automatically each frame, only solution not use MonoBehavior <-- not so simple
 
-        _stateManager = this.gameObject.AddComponent<StateManager>();
-        _stateManager.Initialize();
-        _audioManager = this.gameObject.AddComponent<AudioManager>();
-        _audioManager.Initialize();
-        //_inputManager = this.gameObject.AddComponent<InputManager>();
-        //_inputManager.Initialize();
-        _HUDManager = this.gameObject.AddComponent<HUDManager>();
-        _HUDManager.Initialize();
-        _encounterManager = this.gameObject.AddComponent<EncounterManager>();
-        _encounterManager.Initialize();
+		this._timerManager = this.gameObject.GetComponent<TimerManager>();
+		this._audioManager = this.gameObject.AddComponent<AudioManager>();
+		this._inputManager = this.gameObject.AddComponent<InputManager>();
+		this._HUDManager = this.gameObject.AddComponent<HUDManager> ();
+		this._encounterManager = this.gameObject.AddComponent<EncounterManager> ();
+		this._stateManager = this.gameObject.AddComponent<StateManager>();
+		
+		this._timerManager.Initialize(); //->quick hack, needs to change later.
+		this._audioManager.Initialize();
+		this._inputManager.Initialize();
+		this._HUDManager.Initialize();
+		this._encounterManager.Initialize();
+		this._stateManager.Initialize();
         
     }
+
+	#region InputManager Methods
+	
+	public int GetQTECount()
+	{
+		return this._inputManager.getPressCount ();
+	}
+
+	public bool GetBool()
+	{
+		return true;
+	}
+	
+	#endregion
+
 
     #region EncounterManager
 
@@ -117,5 +140,37 @@ public class GameDirector : MonoBehaviour {
 	}
 
     #endregion
+
+	#region AudioManager Methods
+	public void PlayAudioClip(AudioID inAID)
+	{
+		this._audioManager.PlayAudio(inAID);
+	}
+	/// <summary>
+	/// Adds the audio clip Programmatically.
+	/// </summary>
+	public void AddAudioClip(string inClipName, AudioID inAID, GameObject inGameObj = null)
+	{
+		this._audioManager.AddAudioSource (inClipName, inAID, inGameObj);
+	}
+	
+	/// <summary>
+	/// Attachs the audio source that was added to another object from the inspector 
+	/// so that the manager can control it.
+	/// </summary>
+	public void AttachAudioSource( AudioSource inAudioSrc,GameObject inGameObj, string inName)
+	{
+		this._audioManager.AttachAudioSource (inAudioSrc,inGameObj,inName);
+	}
+	///Other Stuff to Add.
+	/// --->
+	//set Parameters Methods
+	//Remove Audio Clip
+	//Silence Audio Clip
+	//Clone Audio Clip
+	//Is Done playing Clip
+	//Queue Clips
+	
+	#endregion
 }
 
