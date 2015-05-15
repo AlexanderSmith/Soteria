@@ -16,7 +16,6 @@ public class InputManager : MonoBehaviour
 	void Awake () 
 	{
 		this.enabled = false;
-		this._timertype = TimersType.Input;
 
 		//CreateButtonList//
 		_buttonTypes.Add( new Button( ButtonType.LeftArrow, new LeftCommand()) ); //LeftArrow
@@ -43,7 +42,7 @@ public class InputManager : MonoBehaviour
 
 		if (Input.GetKeyDown( KeyCode.LeftArrow))
 		{	
-			inputpressed = executeInternalInput((int)ButtonType.LeftArrow, (Object) GameDirector.instance.getPlayer() );
+			inputpressed = executeInternalInput((int)ButtonType.LeftArrow, (Object) GameDirector.instance.GetPlayer() );
 		}
 
 		if (inputpressed)
@@ -87,6 +86,7 @@ public class InputManager : MonoBehaviour
 	
 	public void Initialize()
 	{
+        this._timertype = TimersType.Input;
 		this._inputTimer = TimerManager.instance.Attach(this._timertype);
 	}
 

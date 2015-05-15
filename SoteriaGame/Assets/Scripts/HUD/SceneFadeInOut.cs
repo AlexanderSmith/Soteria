@@ -26,7 +26,7 @@ public class SceneFadeInOut : MonoBehaviour {
     public void FadeToClear()
     {
         // Lerp the colour of the texture between itself and transparent.
-		this._color = Color.Lerp(_color, Color.clear, fadeSpeed * Time.deltaTime);
+		this._color = Color.Lerp(_color, Color.clear, 2 * Time.deltaTime);
 		this.gameObject.GetComponent<Image>().color = _color;
     }
 
