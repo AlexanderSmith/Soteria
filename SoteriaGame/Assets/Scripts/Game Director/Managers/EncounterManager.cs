@@ -19,9 +19,8 @@ public class EncounterManager : MonoBehaviour {
 	GameObject[] enemies;
 	GameObject safetyLight;
 	bool lightOn = false;
-	/********************************************************************************
-	//Make enum for enemy state to use for switch statements in CheckPlayerDistance()
-	********************************************************************************/
+	bool cooldown = false;
+	float timer = 20.0f;
 
 	enum EncounterState
 	{
@@ -46,7 +45,10 @@ public class EncounterManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-
+		if (cooldown)
+		{
+			LightCooldown();
+		}
     }
 
     public void Initialize()
@@ -104,23 +106,37 @@ public class EncounterManager : MonoBehaviour {
     {
         this.gameObject.GetComponent<GameDirector>().StopEncounterMode();
 		lightOn = false;
+		currentState = EncounterState.Inactive;
     }
 
     public void StartEncounter()
     {
-        this.gameObject.GetComponent<GameDirector>().StartEncounterMode();
+        this.gameObject.GetComponent<GameDirector>().StartEncounterMode(cooldown);
     }
 
 	public void InitializeSafetyLight()
 	{
 		safetyLight.GetComponentInChildren<SafetyLightController>().Initialize(this);
 		lightOn = true;
+		currentState = EncounterState.ActiveLight;
 	}
 
 	public void KillSafetyLight()
 	{
 		safetyLight.GetComponentInChildren<SafetyLightController>().DisableSafetyLight();
-		Debug.Log ("Killing light");
+		cooldown = true;
+		//Debug.Log ("Killing light");
+	}
+
+	void LightCooldown()
+	{
+		timer -= Time.deltaTime;
+		if (timer <= 0.0f)
+		{
+			timer = 20.0f;
+			cooldown = false;
+			this.gameObject.GetComponent<GameDirector>().LightReset();
+		}
 	}
 
 //	public float GetOverwhelmRange()
