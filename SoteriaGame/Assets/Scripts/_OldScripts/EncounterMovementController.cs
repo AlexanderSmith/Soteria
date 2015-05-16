@@ -46,22 +46,22 @@ public class EncounterMovementController : MonoBehaviour {
         {
             GameOverTimer();
 
-            if (this.transform.rotation != overwhelmedRotation && !Input.GetKeyDown(KeyCode.Space) && overComingCounters < 15)
-            {
-                this.transform.Rotate(Vector3.up, forcedRotation);
-            }
-
-            Ray ray = new Ray(transform.position, transform.forward);
-            RaycastHit hit;
-            Debug.DrawRay(this.transform.position, ray.direction);
-            if (Vector3.Dot(this.transform.forward, enemyAttacker.transform.forward) < -0.95f && Input.GetKeyDown(KeyCode.Space))//this.transform.rotation == directionNeededToOverCome)// Physics.Raycast(ray, out hit, 100))
-            {
-                overComingCounters++;
-                if (overComingCounters > 30)
-                {
-                    OverCome();
-                }
-            }
+//            if (this.transform.rotation != overwhelmedRotation && !Input.GetKeyDown(KeyCode.Space) && overComingCounters < 15)
+//            {
+//                this.transform.Rotate(Vector3.up, forcedRotation);
+//            }
+//
+//            Ray ray = new Ray(transform.position, transform.forward);
+//            RaycastHit hit;
+//            Debug.DrawRay(this.transform.position, ray.direction);
+//            if (Vector3.Dot(this.transform.forward, enemyAttacker.transform.forward) < -0.95f && Input.GetKeyDown(KeyCode.Space))//this.transform.rotation == directionNeededToOverCome)// Physics.Raycast(ray, out hit, 100))
+//            {
+//                overComingCounters++;
+//                if (overComingCounters > 30)
+//                {
+//                    OverCome();
+//                }
+//            }
         }
     }
 
@@ -82,16 +82,16 @@ public class EncounterMovementController : MonoBehaviour {
         {
             Debug.Log("OV");
             this.GetComponent<PCController>().EnableEncounterMovement();
-            enemyRoation = enemy.rotation;
-
-            overwhelmedRotation = enemy.rotation;
-
-            directionNeededToOverCome = Quaternion.LookRotation(transform.position - enemy.position, Vector3.forward);
-            directionNeededToOverCome.x = 0.0f;
-            directionNeededToOverCome.z = 0.0f;
-
-            
-            this.transform.rotation = overwhelmedRotation;
+//            enemyRoation = enemy.rotation;
+//
+//            overwhelmedRotation = enemy.rotation;
+//
+//            directionNeededToOverCome = Quaternion.LookRotation(transform.position - enemy.position, Vector3.forward);
+//            directionNeededToOverCome.x = 0.0f;
+//            directionNeededToOverCome.z = 0.0f;
+//
+//            
+//            this.transform.rotation = overwhelmedRotation;
             //Debug.Log(this.transform.rotation);
             currentState = EncounterState.Overwhelmed;
         }

@@ -98,6 +98,7 @@ public class EncounterManager : MonoBehaviour {
 		{
 			currentState = EncounterState.Active;
 			StartEncounter();
+			GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().AddFear();
 		}
 		safetyLight.GetComponentInChildren<SafetyLightController> ().CurrentEnemy(enemy);
 	}
@@ -107,6 +108,7 @@ public class EncounterManager : MonoBehaviour {
         this.gameObject.GetComponent<GameDirector>().StopEncounterMode();
 		lightOn = false;
 		currentState = EncounterState.Inactive;
+		GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().RemoveFear();
     }
 
     public void StartEncounter()
@@ -119,6 +121,7 @@ public class EncounterManager : MonoBehaviour {
 		safetyLight.GetComponentInChildren<SafetyLightController>().Initialize(this);
 		lightOn = true;
 		currentState = EncounterState.ActiveLight;
+		GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().RemoveFear();
 	}
 
 	public void KillSafetyLight()

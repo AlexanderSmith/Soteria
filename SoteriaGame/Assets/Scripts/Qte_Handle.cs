@@ -21,4 +21,14 @@ public class Qte_Handle : MonoBehaviour {
 
 		//_QteAnim.SetBool("Encounter", GameDirector.instance.GetBool());
 	}
+
+	public void AddFear()
+	{
+		_QteAnim.SetBool("Encounter", true);
+	}
+
+	public void RemoveFear()
+	{
+		_QteAnim.SetBool("Encounter", false);
+	}
 }
