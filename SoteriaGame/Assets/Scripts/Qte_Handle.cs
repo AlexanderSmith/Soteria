@@ -19,6 +19,6 @@ public class Qte_Handle : MonoBehaviour {
 		this.QTECount = GameDirector.instance.GetQTECount();
 		_QteAnim.SetInteger("QTECount", QTECount);
 
-		_QteAnim.SetBool("Encounter", GameDirector.instance.GetBool());
+		//_QteAnim.SetBool("Encounter", GameDirector.instance.GetBool());
 	}
 }

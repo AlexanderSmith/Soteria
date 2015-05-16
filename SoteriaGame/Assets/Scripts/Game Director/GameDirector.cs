@@ -27,13 +27,17 @@ public class GameDirector : MonoBehaviour {
         }
     }
 
-    public GameObject GetPlayer()
-    {
+
+	public void InitializePlayer()
+	{
 		if (_player == null) 
 		{
 			_player = GameObject.FindWithTag("Player");
 			_player.GetComponent<EncounterMovementController>().Initialize(_stateManager);
 		}
+	}
+    public GameObject GetPlayer()
+    {
         return _player;
     }
 
@@ -44,7 +48,6 @@ public class GameDirector : MonoBehaviour {
         {
             _instance = this;
             this.InitializeManagers();
-			this.GetPlayer();
             DontDestroyOnLoad(this); //Keep the instance going between scenes
         }
         else
@@ -81,6 +84,8 @@ public class GameDirector : MonoBehaviour {
 		this._HUDManager.Initialize();
 		this._encounterManager.Initialize();
 		this._stateManager.Initialize();
+
+		this.InitializePlayer ();
         
     }
 
