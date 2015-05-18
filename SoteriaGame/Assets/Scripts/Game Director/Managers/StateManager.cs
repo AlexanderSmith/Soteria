@@ -71,4 +71,9 @@ public class StateManager : MonoBehaviour {
 	{
 		gameState = GameStates.InLight;
 	}
+
+	public GameStates getCurrentState()
+	{
+		return this.gameState;
+	}
 }

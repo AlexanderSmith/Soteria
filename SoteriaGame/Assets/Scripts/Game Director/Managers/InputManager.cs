@@ -9,6 +9,7 @@ public class InputManager : MonoBehaviour
 	
 	private Timer _inputTimer;
 	private TimersType _timertype;
+	private bool _isqtemode;
 	
 	public static int QTE_Delay = 3;
 	
@@ -17,7 +18,8 @@ public class InputManager : MonoBehaviour
 	{
 		this.enabled = false;
 		this._timertype = TimersType.Input;
-		
+		this._isqtemode = false;
+
 		//CreateButtonList//
 		_buttonTypes.Add( 	new LeftCommand()  ); //LeftArrow
 		_buttonTypes.Add( 	new RightCommnad() ); //RightArrow
@@ -30,21 +32,37 @@ public class InputManager : MonoBehaviour
 	// Update is called once per frame
 	public void Update () 
 	{
-		this.ProcessInput();
-		if (this._inputTimer.ElapsedTime() >= QTE_Delay)
+		if (GameDirector.instance.GetCurrentGameState() == GameStates.Encounter)
+			_isqtemode = true;
+		else
+			_isqtemode = false;	
+
+
+
+		if (_isqtemode == true)
 		{
-			for (int i = 0; i < this._input.Count; i++)
+			this.ProcessQTEInput();
+
+			if (this._inputTimer.ElapsedTime() >= QTE_Delay)
 			{
-				if (this._input[i].Killit())
+				for (int i = 0; i < this._input.Count; i++)
 				{
-					this._input.RemoveAt(i);
-					break;
+					if (this._input[i].Killit())
+					{
+						this._input.RemoveAt(i);
+						break;
+					}
 				}
+				
+				if (_input.Count == 0)
+					this._inputTimer.ResetTimer();
 			}
+		}
+		else
+		{
+			this.ProcessInput();
 			
-			if (_input.Count == 0)
-				this._inputTimer.ResetTimer();
-			//this.PurgeInputList();
+			this.PurgeInputList();
 		}
 	}
 	
@@ -52,35 +70,32 @@ public class InputManager : MonoBehaviour
 	{
 		return _input.Count;
 	}
-	
-	private void ProcessInput()
-	{
-		bool inputpressed = false;
-		
-		if (Input.GetKey( KeyCode.Space))
-		{	
-			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
-		}
-		if (Input.GetKey( KeyCode.UpArrow))
-		{	
-			inputpressed = executeInternalInput((int)ButtonType.UpArrow, (Object) GameDirector.instance.GetPlayer() );
-		}
-		if (Input.GetKey( KeyCode.DownArrow))
-		{	
-			inputpressed = executeInternalInput((int)ButtonType.DownArrow, (Object) GameDirector.instance.GetPlayer() );
-		}
-		if (Input.GetKey( KeyCode.LeftArrow))
-		{	
-			inputpressed = executeInternalInput((int)ButtonType.LeftArrow, (Object) GameDirector.instance.GetPlayer() );
-		}
-		if (Input.GetKey( KeyCode.RightArrow))
-		{	
-			inputpressed = executeInternalInput((int)ButtonType.RightArrow, (Object) GameDirector.instance.GetPlayer() );
-		}
 
-		
+	private void ProcessQTEInput()
+	{	
+		bool inputpressed = false;
+
+		if (Input.GetKeyDown(KeyCode.Space))
+			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
+
 		if (inputpressed)
 			this._inputTimer.StartTimer ();
+	}
+	private void ProcessInput()
+	{
+		ButtonType buttonType = ButtonType.None;
+
+		if (Input.GetKey( KeyCode.UpArrow))
+			buttonType = ButtonType.UpArrow;
+		if (Input.GetKey( KeyCode.DownArrow))
+			buttonType = ButtonType.DownArrow;
+		if (Input.GetKey( KeyCode.LeftArrow))
+			buttonType = ButtonType.LeftArrow;
+		if (Input.GetKey( KeyCode.RightArrow))
+			buttonType = ButtonType.RightArrow;
+	
+		if (buttonType != ButtonType.None)
+			executeInternalInput((int)buttonType, (Object) GameDirector.instance.GetPlayer() );
 	}
 	
 	public void executeExternalInput(int inButtonType, Object inActor = null)
@@ -97,7 +112,9 @@ public class InputManager : MonoBehaviour
 	{
 		Button Temp = new Button( (ButtonType)inButtonType, _buttonTypes[inButtonType], Time.time);
 		Temp.execute(inActor);
-		this.AddToInputList( Temp );
+
+		if (this._isqtemode)
+			this.AddToInputList( Temp );
 		
 		return true;
 	}
@@ -120,5 +137,10 @@ public class InputManager : MonoBehaviour
 	public void Initialize()
 	{
 		this._inputTimer = TimerManager.instance.Attach(this._timertype);
+	}
+
+	public bool isQTEMode()
+	{
+		return this._isqtemode;
 	}
 }

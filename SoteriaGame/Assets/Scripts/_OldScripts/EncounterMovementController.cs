@@ -10,7 +10,6 @@ public class EncounterMovementController : MonoBehaviour {
     public int Coins;
 
     Quaternion overwhelmedRotation;
-    Movement myMovementComponents;
 
     GameObject enemyAttacker;
 

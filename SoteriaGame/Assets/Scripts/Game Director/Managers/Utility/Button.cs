@@ -10,7 +10,8 @@ public enum ButtonType
 	RightArrow,
 	UpArrow,
 	DownArrow,
-	SpaceBar
+	SpaceBar,
+	None
 }
 /// <summary>
 /// Button type and action related to the key pressed, oldaction is needed for the swap (keeping track of its original use).
