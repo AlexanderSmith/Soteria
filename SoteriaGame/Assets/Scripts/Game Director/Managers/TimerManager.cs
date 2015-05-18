@@ -12,6 +12,7 @@ using System;
 public enum TimersType
 {
 	Generic = 0,
+	Encounter,
 	Input,
 	Puzzle
 }
@@ -50,9 +51,8 @@ public class TimerManager: MonoBehaviour
 	public void Initialize()
 	{
 		this.enabled = false; //force update from game director no matter what.
-        int count = 3;// Enum.GetNames(typeof(TimersType)).Length;
-		this._timersList.Capacity = count; //Set the Size (it cannot be modified)
-		for (int i=0; i<count; ++i)
+		this._timersList.Capacity = Enum.GetNames(typeof(TimersType)).Length; //Set the Size (it cannot be modified)
+		for (int i=0; i<this._timersList.Capacity; ++i)
 			this._timersList.Insert(i, new Timer());
 			
 	}

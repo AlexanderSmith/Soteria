@@ -11,7 +11,8 @@ public class LeftCommand : Command
 {
 	public override void execute (Object actor)
 	{
-		((Player)actor).DOSOMETHING();
+		((GameObject)actor).GetComponent<Player>().Move();
+		Debug.Log ("Left");
 	}
 
 	public override void execute () {}
@@ -21,7 +22,8 @@ public class RightCommnad : Command
 {
 	public override void execute (Object actor)
 	{
-		((Player)actor).DOSOMETHING();
+		((GameObject)actor).GetComponent<Player>().Move();
+		Debug.Log ("Right");
 	}
 
 	public override void execute () {}
@@ -31,7 +33,8 @@ public class UpCommand : Command
 {
 	public override void execute (Object actor)
 	{
-		((Player)actor).DOSOMETHING();
+		((GameObject)actor).GetComponent<Player>().Move();
+		Debug.Log ("Up");
 	}
 
 	public override void execute () {}
@@ -41,7 +44,8 @@ public class DownCommand : Command
 {
 	public override void execute (Object actor)
 	{
-		((Player)actor).DOSOMETHING();
+		((GameObject)actor).GetComponent<Player>().Move();
+		Debug.Log ("Down");
 	}
 
 	public override void execute () {}

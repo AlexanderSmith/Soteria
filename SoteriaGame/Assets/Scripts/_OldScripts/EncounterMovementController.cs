@@ -28,7 +28,8 @@ public class EncounterMovementController : MonoBehaviour {
     };
     EncounterState currentState;
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
         currentState = EncounterState.Normal;
 	}
 
@@ -37,31 +38,13 @@ public class EncounterMovementController : MonoBehaviour {
 		gameStateController = stateMan;
 	}
 
-    void Awake() {
-    }
-	
-	// Update is called once per frame
-	void Update () {
+    void Awake() {}
+
+	void Update () 
+	{
         if (currentState == EncounterState.Overwhelmed)
         {
             GameOverTimer();
-
-//            if (this.transform.rotation != overwhelmedRotation && !Input.GetKeyDown(KeyCode.Space) && overComingCounters < 15)
-//            {
-//                this.transform.Rotate(Vector3.up, forcedRotation);
-//            }
-//
-//            Ray ray = new Ray(transform.position, transform.forward);
-//            RaycastHit hit;
-//            Debug.DrawRay(this.transform.position, ray.direction);
-//            if (Vector3.Dot(this.transform.forward, enemyAttacker.transform.forward) < -0.95f && Input.GetKeyDown(KeyCode.Space))//this.transform.rotation == directionNeededToOverCome)// Physics.Raycast(ray, out hit, 100))
-//            {
-//                overComingCounters++;
-//                if (overComingCounters > 30)
-//                {
-//                    OverCome();
-//                }
-//            }
         }
     }
 
@@ -77,22 +60,12 @@ public class EncounterMovementController : MonoBehaviour {
     public void Overwhelm(Transform enemy, bool lightOn)
     {
 		Debug.Log ("TryingToOverwhelm " + gameStateController.GameState());
+
 		enemyAttacker = enemy.gameObject;
         if (currentState != EncounterState.Overwhelmed && !lightOn)
         {
             Debug.Log("OV");
             this.GetComponent<PCController>().EnableEncounterMovement();
-//            enemyRoation = enemy.rotation;
-//
-//            overwhelmedRotation = enemy.rotation;
-//
-//            directionNeededToOverCome = Quaternion.LookRotation(transform.position - enemy.position, Vector3.forward);
-//            directionNeededToOverCome.x = 0.0f;
-//            directionNeededToOverCome.z = 0.0f;
-//
-//            
-//            this.transform.rotation = overwhelmedRotation;
-            //Debug.Log(this.transform.rotation);
             currentState = EncounterState.Overwhelmed;
         }
     }
@@ -100,8 +73,6 @@ public class EncounterMovementController : MonoBehaviour {
     public void OverCome()
     {
         gameObject.GetComponent<PCController>().EnableStandardMovement();
-        //Eventually will call enemy death script funtion mostlikely so there is a nice disipation and stuff. 
-//        Destroy(enemyAttacker);
         currentState = EncounterState.Normal;
     }
 
@@ -110,13 +81,12 @@ public class EncounterMovementController : MonoBehaviour {
         enemyAttacker.GetComponent<BasicEnemyController>().EndEncounter(true);
         currentState = EncounterState.Free;
 		this.GetComponent<PCController>().EnableStandardMovement();
-        //StartCoroutine(EnableEncounter());
     }
 
     void GameOverTimer()
     {
         gameOverTimer -= Time.deltaTime;
-        //fearFadeOutTextureController.FadeToBlack();
+        
         if (gameOverTimer <= 0)
         {
             overwhelmedRotation = enemyRoation;
@@ -128,52 +98,7 @@ public class EncounterMovementController : MonoBehaviour {
         }
     }
 
-    void PlayerOverwhelmed()
-    {
-        //Application.LoadLevel("TileEventSystem");
-    }
-
-//    void OnCollisionEnter(Collision other)
-//    {
-//        if (other.gameObject.name.Equals("SoteriaStatue(Clone)"))
-//        {
-//            PlayerOverwhelmed();
-//        }
-//
-//        if (other.gameObject.name.Equals("Enemy"))
-//        {
-//            Destroy(other.gameObject);
-//            gameObject.GetComponent<PCController>().EnableStandardMovement();
-//            GameObject Statue = GameObject.Find("SoteriaStatue(Clone)");
-//            if (Statue != null)
-//                Destroy(Statue);
-//
-//            gameOverTimer = 10;
-//        }
-//    }
-//    void UseCoin()
-//    {
-//        if (Coins > 0)
-//        {
-//            GameObject Enemy = GameObject.Find("Enemy");
-//            if (Enemy != null)
-//                Destroy(Enemy.gameObject);
-//            gameObject.GetComponent<PCController>().EnableStandardMovement();
-//            currentState = EncounterState.Normal;
-//            //GameObject Statue = GameObject.Find("SoteriaStatue(Clone)");
-//            //if (Statue != null)
-//               // Destroy(Statue);
-//
-//            gameOverTimer = 10;
-//        }
-//    }
-
-//    IEnumerator EnableEncounter()
-//    {
-//        //yield return new WaitForSeconds(3f);
-//
-//        //enemyAttacker.GetComponent<BasicEnemyController>().EndEncounter(false);
-//    }
+    void PlayerOverwhelmed(){}
 
     public EncounterState GetCurrentState()
     {

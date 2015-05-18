@@ -57,10 +57,27 @@ public class InputManager : MonoBehaviour
 	{
 		bool inputpressed = false;
 		
-		if (Input.GetKeyDown( KeyCode.Space))
+		if (Input.GetKey( KeyCode.Space))
 		{	
 			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
 		}
+		if (Input.GetKey( KeyCode.UpArrow))
+		{	
+			inputpressed = executeInternalInput((int)ButtonType.UpArrow, (Object) GameDirector.instance.GetPlayer() );
+		}
+		if (Input.GetKey( KeyCode.DownArrow))
+		{	
+			inputpressed = executeInternalInput((int)ButtonType.DownArrow, (Object) GameDirector.instance.GetPlayer() );
+		}
+		if (Input.GetKey( KeyCode.LeftArrow))
+		{	
+			inputpressed = executeInternalInput((int)ButtonType.LeftArrow, (Object) GameDirector.instance.GetPlayer() );
+		}
+		if (Input.GetKey( KeyCode.RightArrow))
+		{	
+			inputpressed = executeInternalInput((int)ButtonType.RightArrow, (Object) GameDirector.instance.GetPlayer() );
+		}
+
 		
 		if (inputpressed)
 			this._inputTimer.StartTimer ();
