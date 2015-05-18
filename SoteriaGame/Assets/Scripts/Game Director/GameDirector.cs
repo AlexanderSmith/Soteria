@@ -103,6 +103,14 @@ public class GameDirector : MonoBehaviour {
 	
 	#endregion
 
+	#region StateManager
+
+	public GameStates GetCurrentGameState()
+	{
+		return this._stateManager.getCurrentState();
+	}
+
+	#endregion
 
     #region EncounterManager
 
