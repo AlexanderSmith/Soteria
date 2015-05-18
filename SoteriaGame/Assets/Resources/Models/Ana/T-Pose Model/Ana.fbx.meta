@@ -224,6 +224,7 @@ ModelImporter:
     100436: transform1
     100438: UpperSpine_Ctrl
     100440: UpperSpine_Offset
+    100442: pasted__pasted__BaseLambert2
     400000: Ana_Geo4
     400002: //RootNode
     400004: curve1
@@ -445,6 +446,7 @@ ModelImporter:
     400436: transform1
     400438: UpperSpine_Ctrl
     400440: UpperSpine_Offset
+    400442: pasted__pasted__BaseLambert2
     2300000: Rhai10_Geo
     2300002: Rhair01_Geo
     2300004: Rhair02_Geo
@@ -458,6 +460,7 @@ ModelImporter:
     2300020: Rhair11_Geo
     2300022: Rhair12_Geo
     2300024: Rhair13_Geo
+    2300026: pasted__pasted__BaseLambert2
     3300000: Rhai10_Geo
     3300002: Rhair01_Geo
     3300004: Rhair02_Geo
@@ -471,6 +474,7 @@ ModelImporter:
     3300020: Rhair11_Geo
     3300022: Rhair12_Geo
     3300024: Rhair13_Geo
+    3300026: pasted__pasted__BaseLambert2
     4300000: Ana_Geo4
     4300002: Rhair12_Geo
     4300004: Rhair11_Geo
@@ -485,6 +489,7 @@ ModelImporter:
     4300022: Rhair03_Geo
     4300024: Rhair02_Geo
     4300026: Rhair01_Geo
+    4300028: pasted__pasted__BaseLambert2
     9500000: //RootNode
     13700000: Ana_Geo4
   materials:
