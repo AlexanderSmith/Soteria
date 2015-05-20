@@ -142,6 +142,11 @@ public class EncounterManager : MonoBehaviour {
 		}
 	}
 
+	public void GetState()
+	{
+		return this.currentState;
+	}
+
 //	public float GetOverwhelmRange()
 //	{
 //		return this.overwhelmRange;
