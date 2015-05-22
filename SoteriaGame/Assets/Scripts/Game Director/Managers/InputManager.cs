@@ -12,6 +12,7 @@ public class InputManager : MonoBehaviour
 	private bool _isqtemode;
 	
 	public static int QTE_Delay = 3;
+	int keyPressCounter = 0;
 	
 	// Use this for initialization
 	void Awake () 
@@ -36,20 +37,20 @@ public class InputManager : MonoBehaviour
 		{
 			this.ProcessQTEInput();
 
-			if (this._inputTimer.ElapsedTime() >= QTE_Delay)
-			{
-				for (int i = 0; i < this._input.Count; i++)
-				{
-					if (this._input[i].Killit())
-					{
-						this._input.RemoveAt(i);
-						break;
-					}
-				}
-				
-				if (_input.Count == 0)
-					this._inputTimer.ResetTimer();
-			}
+//			if (this._inputTimer.ElapsedTime() >= QTE_Delay)
+//			{
+//				for (int i = 0; i < this._input.Count; i++)
+//				{
+//					if (this._input[i].Killit())
+//					{
+//						this._input.RemoveAt(i);
+//						break;
+//					}
+//				}
+//				
+//				if (_input.Count == 0)
+//					this._inputTimer.ResetTimer();
+//			}
 		}
 		else
 		{
@@ -62,7 +63,8 @@ public class InputManager : MonoBehaviour
 	
 	public int getPressCount()
 	{
-		return _input.Count;
+		//return _input.Count;
+		return keyPressCounter;
 	}
 
 	private void ProcessQTEInput()
@@ -70,10 +72,21 @@ public class InputManager : MonoBehaviour
 		bool inputpressed = false;
 
 		if (Input.GetKeyDown(KeyCode.Space))
+		{
 			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
-
-		if (inputpressed)
 			this._inputTimer.StartTimer ();
+			keyPressCounter++;
+		}
+//
+//		if (inputpressed)
+//			this._inputTimer.StartTimer ();
+		else
+		{
+			if (this._inputTimer.ElapsedTime() >= QTE_Delay)
+			{
+				keyPressCounter--;
+			}
+		}
 	}
 	private void ProcessInput()
 	{
@@ -138,7 +151,7 @@ public class InputManager : MonoBehaviour
 	public bool isQTEMode()
 	{
 		if (GameDirector.instance.GetCurrentGameState() == GameStates.Encounter && 
-		    GameDirector.instance.GetEncounterState() != EncounterManager.EncounterState.ActiveLight)
+		    GameDirector.instance.GetEncounterState() != EncounterManager.EncounterState.Active)
 			this._isqtemode = true;
 		else
 			this._isqtemode = false;	
