@@ -69,7 +69,6 @@ public class EncounterManager : MonoBehaviour
 		LinkToEnemy();
 		safetyLight = GameObject.FindGameObjectWithTag("SafetyLight Agent");
 		currentState = EncounterState.Inactive;
-		//Debug.Log (safetyLight.name);
     }
 
 	void LinkToEnemy()
@@ -110,7 +109,6 @@ public class EncounterManager : MonoBehaviour
 			GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().AddFear();
 			GameDirector.instance.GetPlayer().GetComponentInChildren<PCController>().EnableEncounterMovement();
 		}
-		safetyLight.GetComponentInChildren<SafetyLightController> ().CurrentEnemy(enemy);
 	}
 
     public void StopEncounter()
@@ -139,7 +137,6 @@ public class EncounterManager : MonoBehaviour
 	{
 		safetyLight.GetComponentInChildren<SafetyLightController>().DisableSafetyLight();
 		cooldown = true;
-		//Debug.Log ("Killing light");
 	}
 
 	void LightCooldown()
@@ -149,7 +146,7 @@ public class EncounterManager : MonoBehaviour
 		{
 			lightTimer = 20.0f;
 			cooldown = false;
-			this.gameObject.GetComponent<GameDirector>().LightReset();
+			GameDirector.instance.LightReset();
 		}
 	}
 

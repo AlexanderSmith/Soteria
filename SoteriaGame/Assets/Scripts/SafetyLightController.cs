@@ -3,12 +3,11 @@ using System.Collections;
 
 public class SafetyLightController : MonoBehaviour{
 
+	private EncounterManager encounterManager;
+	private GameObject agent;
     public Transform player;
-	Transform safeArea;
-	GameObject agent;
-	GameObject currentEnemy;
-	bool playerInLight;
-	EncounterManager encounterManager;
+	private Transform safeArea;
+	private bool playerInLight;
 
 	// Use this for initialization
 	void Start () {
@@ -38,7 +37,6 @@ public class SafetyLightController : MonoBehaviour{
 		agent.GetComponent<SafetyLightAgentMovement> ().EnableAgent ();
         EnableSafetyLight();
         GameDirector.instance.GetPlayer().GetComponentInChildren<PCController>().EnableStandardMovement();
-        //player.GetComponent<EncounterMovementController>().CheckEscape();
 		encounterManager = manager;
     }
 
@@ -46,7 +44,6 @@ public class SafetyLightController : MonoBehaviour{
 	{
 		if (enemy.gameObject.tag == "Enemy")
 		{
-			//Debug.Log(enemy.tag);
 			enemy.gameObject.GetComponent<BasicEnemyController>().PushBack();
 		}
 	}
@@ -55,14 +52,7 @@ public class SafetyLightController : MonoBehaviour{
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			Debug.Log("player exiting");
-			Debug.Log (encounterManager.name);
 			encounterManager.StopEncounter();
 		}
-	}
-
-	public void CurrentEnemy(GameObject enemy)
-	{
-		currentEnemy = enemy;
 	}
 }
