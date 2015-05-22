@@ -95,17 +95,19 @@ public class InputManager : MonoBehaviour
 		{	
 			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
 			keyPressCounter++;
+			this._inputTimer.StartTimer ();
 		}
 		else if ((Input.GetKeyDown(KeyCode.DownArrow) && keyPressCounter >= 20) ||
 		         ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) && keyPressCounter < 20))
 		{
 			keyPressCounter++;
+			this._inputTimer.StartTimer ();
 		}
 		else
 		{
 			if (this._inputTimer.ElapsedTime() >= QTE_Delay)
 			{
-				keyPressCounter--;
+				keyPressCounter = 0;
 			}
 		}
 	}
@@ -171,8 +173,8 @@ public class InputManager : MonoBehaviour
 
 	public bool isQTEMode()
 	{
-		if (GameDirector.instance.GetGameState() == GameStates.Encounter && 
-		    GameDirector.instance.GetEncounterState() != EncounterState.Active)
+		if (GameDirector.instance.GetGameState() == GameStates.Encounter || 
+		    GameDirector.instance.GetEncounterState() == EncounterState.Active)
 			this._isqtemode = true;
 		else
 			this._isqtemode = false;	

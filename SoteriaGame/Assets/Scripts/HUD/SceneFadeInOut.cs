@@ -4,7 +4,7 @@ using System.Collections;
 
 public class SceneFadeInOut : MonoBehaviour {
 
-    public float fadeSpeed = 1.5f;          // Speed that the screen fades to and from black.
+    public float fadeSpeed = 0.05f;          // Speed that the screen fades to and from black.
     public bool toGoToClear;
 	private Color _color;
     
