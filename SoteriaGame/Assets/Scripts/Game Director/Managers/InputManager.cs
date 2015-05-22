@@ -21,25 +21,18 @@ public class InputManager : MonoBehaviour
 		this._isqtemode = false;
 
 		//CreateButtonList//
-		_buttonTypes.Add( 	new LeftCommand()  ); //LeftArrow
-		_buttonTypes.Add( 	new RightCommnad() ); //RightArrow
-		_buttonTypes.Add( 	new UpCommand()    ); //UpArrow
-		_buttonTypes.Add(  	new DownCommand()  ); //DownArrow
-		_buttonTypes.Add(   new SpaceCommand() ); //Spacebar
+		_buttonTypes.Add( 	new LeftCommand()  ); //LeftArrow 	(A)
+		_buttonTypes.Add( 	new RightCommnad() ); //RightArrow 	(D)
+		_buttonTypes.Add( 	new UpCommand()    ); //UpArrow		(W)
+		_buttonTypes.Add(  	new DownCommand()  ); //DownArrow	(S)
+		_buttonTypes.Add(   new SpaceCommand() ); //Spacebar	
 		
 	}
 	
 	// Update is called once per frame
 	public void Update () 
 	{
-		if (GameDirector.instance.GetCurrentGameState() == GameStates.Encounter)
-			_isqtemode = true;
-		else
-			_isqtemode = false;	
-
-
-
-		if (_isqtemode == true)
+		if (this.isQTEMode())
 		{
 			this.ProcessQTEInput();
 
@@ -60,6 +53,7 @@ public class InputManager : MonoBehaviour
 		}
 		else
 		{
+
 			this.ProcessInput();
 			
 			this.PurgeInputList();
@@ -85,24 +79,26 @@ public class InputManager : MonoBehaviour
 	{
 		ButtonType buttonType = ButtonType.None;
 
-		if (Input.GetKey( KeyCode.UpArrow))
+		if (Input.GetKey( KeyCode.W))
 			buttonType = ButtonType.UpArrow;
-		if (Input.GetKey( KeyCode.DownArrow))
+		if (Input.GetKey( KeyCode.S))
 			buttonType = ButtonType.DownArrow;
-		if (Input.GetKey( KeyCode.LeftArrow))
+		if (Input.GetKey( KeyCode.A))
 			buttonType = ButtonType.LeftArrow;
-		if (Input.GetKey( KeyCode.RightArrow))
+		if (Input.GetKey( KeyCode.D))
 			buttonType = ButtonType.RightArrow;
-	
+
 		if (buttonType != ButtonType.None)
 			executeInternalInput((int)buttonType, (Object) GameDirector.instance.GetPlayer() );
 	}
-	
+
+	//Use it to process input from outside the Input Manager
 	public void executeExternalInput(int inButtonType, Object inActor = null)
 	{
 		executeExternalInput(inButtonType, inActor);
 	}
-	
+
+	//Use it to process input from Inside the Input Manager
 	private bool executeInternalInput(int inButtonType, Object inActor = null)
 	{
 		return executeInput(inButtonType, inActor);
@@ -113,7 +109,7 @@ public class InputManager : MonoBehaviour
 		Button Temp = new Button( (ButtonType)inButtonType, _buttonTypes[inButtonType], Time.time);
 		Temp.execute(inActor);
 
-		if (this._isqtemode)
+		if (this.isQTEMode())
 			this.AddToInputList( Temp );
 		
 		return true;
@@ -141,6 +137,12 @@ public class InputManager : MonoBehaviour
 
 	public bool isQTEMode()
 	{
+		if (GameDirector.instance.GetCurrentGameState() == GameStates.Encounter && 
+		    GameDirector.instance.GetEncounterState() != EncounterManager.EncounterState.ActiveLight)
+			this._isqtemode = true;
+		else
+			this._isqtemode = false;	
+
 		return this._isqtemode;
 	}
 }

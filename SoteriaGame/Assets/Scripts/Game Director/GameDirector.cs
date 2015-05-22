@@ -151,6 +151,11 @@ public class GameDirector : MonoBehaviour {
 			_HUDManager.EnableEncounterView();
 		}
 	}
+	
+	public EncounterManager.EncounterState GetEncounterState()
+	{
+		return this._encounterManager.getCurrentState();
+	}
 
     #endregion
 

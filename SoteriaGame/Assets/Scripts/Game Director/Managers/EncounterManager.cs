@@ -22,12 +22,22 @@ public class EncounterManager : MonoBehaviour {
 	bool cooldown = false;
 	float timer = 20.0f;
 
-	enum EncounterState
+	//////////////OMAR CHANGES //////////////////
+	public enum EncounterState
 	{
 		Active,
 		ActiveLight,
 		Inactive,
 	};
+
+
+	public EncounterState getCurrentState()
+	{
+		return this.currentState;
+	}
+
+	//////////////////END OF OMAR CHANGES//////////////
+
 
 	EncounterState currentState;
 //    IEnumerator KickOffEncounter()
