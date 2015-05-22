@@ -11,17 +11,21 @@ using System.Collections;
 /// </summary>
 
 
-public class EncounterManager : MonoBehaviour {
+public class EncounterManager : MonoBehaviour
+{
+	GameObject[] enemies;
+	GameObject safetyLight;
 
 	float lookAtDistance;
 	float attackRange;
 	float overwhelmRange;
-	GameObject[] enemies;
-	GameObject safetyLight;
+	float lightTimer = 20.0f;
+	float gameOverTimer = 30.0f;
+
+	int overcomeCounter = 0;
+
 	bool lightOn = false;
 	bool cooldown = false;
-	float timer = 20.0f;
-	int overcomeCounter = 0;
 	bool ableToOvercome = false;
 
 	public enum EncounterState
@@ -51,6 +55,10 @@ public class EncounterManager : MonoBehaviour {
 		{
 			LightCooldown();
 		}
+		if (currentState == EncounterState.Active)
+		{
+			GameOverTimer();
+		}
     }
 
     public void Initialize()
@@ -78,7 +86,7 @@ public class EncounterManager : MonoBehaviour {
 		if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= overwhelmRange)
 		{
 			Encounter(enemy);
-			enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer(lightOn);
+			enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer(/*lightOn*/);
 		}
 		else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= attackRange)
 		{
@@ -101,6 +109,7 @@ public class EncounterManager : MonoBehaviour {
 			currentState = EncounterState.Active;
 			StartEncounter();
 			GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().AddFear();
+			GameDirector.instance.GetPlayer().GetComponentInChildren<PCController>().EnableEncounterMovement();
 		}
 		safetyLight.GetComponentInChildren<SafetyLightController> ().CurrentEnemy(enemy);
 	}
@@ -116,7 +125,7 @@ public class EncounterManager : MonoBehaviour {
 
     public void StartEncounter()
     {
-        this.gameObject.GetComponent<GameDirector>().StartEncounterMode(cooldown);
+        GameDirector.instance.StartEncounterMode(cooldown);
     }
 
 	public void InitializeSafetyLight()
@@ -136,10 +145,10 @@ public class EncounterManager : MonoBehaviour {
 
 	void LightCooldown()
 	{
-		timer -= Time.deltaTime;
-		if (timer <= 0.0f)
+		lightTimer -= Time.deltaTime;
+		if (lightTimer <= 0.0f)
 		{
-			timer = 20.0f;
+			lightTimer = 20.0f;
 			cooldown = false;
 			this.gameObject.GetComponent<GameDirector>().LightReset();
 		}
@@ -175,5 +184,14 @@ public class EncounterManager : MonoBehaviour {
 	public void PlayerCanOvercome()
 	{
 		GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().Overcome();
+	}
+
+	void GameOverTimer()
+	{
+		gameOverTimer -= Time.deltaTime;
+		if (gameOverTimer <= 0.0f)
+		{
+			//inform GameDirector player dead
+		}
 	}
 }

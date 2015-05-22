@@ -37,8 +37,8 @@ public class SafetyLightController : MonoBehaviour{
 		agent = GameObject.FindWithTag ("SafetyLight Agent");
 		agent.GetComponent<SafetyLightAgentMovement> ().EnableAgent ();
         EnableSafetyLight();
-        //player.GetComponent<PCController>().EnableStandardMovement();
-        player.GetComponent<EncounterMovementController>().CheckEscape();
+        GameDirector.instance.GetPlayer().GetComponentInChildren<PCController>().EnableStandardMovement();
+        //player.GetComponent<EncounterMovementController>().CheckEscape();
 		encounterManager = manager;
     }
 
