@@ -53,7 +53,7 @@ public class HUDManager : MonoBehaviour {
     public void EnableEncounterView()
     {
         _coinController.Pulsing = true;
-		//_fade.toGoToClear = false;
+		_fade.toGoToClear = false;
         //instructionText.enabled = false;
     }
 
@@ -61,14 +61,14 @@ public class HUDManager : MonoBehaviour {
     {
 //        instructionText.enabled = true;
         _coinController.Pulsing = false;
-		//_fade.toGoToClear = true;
+		_fade.toGoToClear = true;
     }
 
 	public void EnableSafetyLightView()
 	{
 		//Debug.Log ("In light view");
 		_coinController.Pulsing = false;
-		//_fade.toGoToClear = true;
+		_fade.toGoToClear = true;
 	}
 
     public void SafteyLightButtonHit()
