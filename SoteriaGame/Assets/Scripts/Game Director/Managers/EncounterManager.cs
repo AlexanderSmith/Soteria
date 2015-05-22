@@ -21,8 +21,10 @@ public class EncounterManager : MonoBehaviour {
 	bool lightOn = false;
 	bool cooldown = false;
 	float timer = 20.0f;
+	int overcomeCounter = 0;
+	bool ableToOvercome = false;
 
-	enum EncounterState
+	public enum EncounterState
 	{
 		Active,
 		ActiveLight,
@@ -109,6 +111,7 @@ public class EncounterManager : MonoBehaviour {
 		lightOn = false;
 		currentState = EncounterState.Inactive;
 		GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().RemoveFear();
+		EncounterReset();
     }
 
     public void StartEncounter()
@@ -142,18 +145,35 @@ public class EncounterManager : MonoBehaviour {
 		}
 	}
 
-	public void GetState()
+	public EncounterState GetState()
 	{
 		return this.currentState;
 	}
 
-//	public float GetOverwhelmRange()
-//	{
-//		return this.overwhelmRange;
-//	}
-//
-//	public float GetAttackRange()
-//	{
-//		return this.attackRange;
-//	}
+	public void AddToOvercomeCounter()
+	{
+		overcomeCounter++;
+		if (overcomeCounter == 3)
+		{
+			ableToOvercome = true;
+			overcomeCounter = 0;
+		}
+	}
+
+	void EncounterReset()
+	{
+		overcomeCounter = 0;
+		ableToOvercome = false;
+		GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().ResetOvercome();
+	}
+
+	public bool GetOvercomeStatus()
+	{
+		return ableToOvercome;
+	}
+
+	public void PlayerCanOvercome()
+	{
+		GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().Overcome();
+	}
 }

@@ -119,12 +119,12 @@ public class EncounterMovementController : MonoBehaviour {
         //fearFadeOutTextureController.FadeToBlack();
         if (gameOverTimer <= 0)
         {
-            overwhelmedRotation = enemyRoation;
-            this.transform.rotation = overwhelmedRotation;
-            GameObject Enemy = GameObject.Find("Enemy");
-            Enemy.gameObject.SendMessage("EndEncounter", true);
-            this.currentState = EncounterState.Dead;
-			PlayerOverwhelmed();
+//            overwhelmedRotation = enemyRoation;
+//            this.transform.rotation = overwhelmedRotation;
+//            GameObject Enemy = GameObject.Find("Enemy");
+//            Enemy.gameObject.SendMessage("EndEncounter", true);
+//            this.currentState = EncounterState.Dead;
+//			PlayerOverwhelmed();
         }
     }
 

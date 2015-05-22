@@ -4,8 +4,6 @@ using System.Collections;
 public enum GameStates
 {
 	Normal,
-	Hidden,
-	InLight,
 	Encounter,
 	Pause
 }
@@ -38,9 +36,6 @@ public class StateManager : MonoBehaviour {
 		case GameStates.Pause:
 			if (gameState != inState) SwitchToPause();
 			break;
-		case GameStates.InLight:
-			if (gameState != inState) SwitchToInLight();
-			break;
 		}
 	}
 
@@ -65,10 +60,5 @@ public class StateManager : MonoBehaviour {
 	{
 
 		gameState = GameStates.Pause;
-	}
-
-	private void SwitchToInLight()
-	{
-		gameState = GameStates.InLight;
 	}
 }

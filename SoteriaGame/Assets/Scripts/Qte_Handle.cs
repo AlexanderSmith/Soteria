@@ -18,8 +18,16 @@ public class Qte_Handle : MonoBehaviour {
 	{
 		this.QTECount = GameDirector.instance.GetQTECount();
 		_QteAnim.SetInteger("QTECount", QTECount);
+	}
 
-		//_QteAnim.SetBool("Encounter", GameDirector.instance.GetBool());
+	public void Overcome()
+	{
+		_QteAnim.SetBool ("Overcome", true);
+	}
+
+	public void ResetOvercome()
+	{
+		_QteAnim.SetBool ("Overcome", false);
 	}
 
 	public void AddFear()

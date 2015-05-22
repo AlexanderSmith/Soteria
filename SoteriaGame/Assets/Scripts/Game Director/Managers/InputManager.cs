@@ -11,6 +11,7 @@ public class InputManager : MonoBehaviour
 	private TimersType _timertype;
 	
 	public static int QTE_Delay = 3;
+	int keyPressCounter = 0;
 	
 	// Use this for initialization
 	void Awake () 
@@ -50,16 +51,34 @@ public class InputManager : MonoBehaviour
 	
 	public int getPressCount()
 	{
-		return _input.Count;
+		int temp = keyPressCounter;
+		//return _input.Count;
+		if (keyPressCounter >= 20 && !GameDirector.instance.GetOvercomeBool())
+		{
+			keyPressCounter = 0;
+			GameDirector.instance.TryingToOvercome();
+		}
+		else
+		{
+			GameDirector.instance.AbleToOvercome();
+		}
+		return temp;
 	}
 	
 	private void ProcessInput()
 	{
 		bool inputpressed = false;
 		
-		if (Input.GetKeyDown( KeyCode.Space))
+		if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W)
+		     || Input.GetKeyDown(KeyCode.S)) && !GameDirector.instance.GetOvercomeBool())
 		{	
 			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
+			keyPressCounter++;
+		}
+		else if ((Input.GetKeyDown(KeyCode.DownArrow) && keyPressCounter >= 20) ||
+		        ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) && keyPressCounter < 20))
+		{
+			keyPressCounter++;
 		}
 		
 		if (inputpressed)

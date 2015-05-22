@@ -96,9 +96,14 @@ public class GameDirector : MonoBehaviour {
 		return this._inputManager.getPressCount ();
 	}
 
-	public bool GetBool()
+	public bool GetOvercomeBool()
 	{
-		return true;
+		return this._encounterManager.GetOvercomeStatus();
+	}
+
+	public void TryingToOvercome()
+	{
+		this._encounterManager.AddToOvercomeCounter();
 	}
 	
 	#endregion
@@ -131,7 +136,6 @@ public class GameDirector : MonoBehaviour {
     public void TakeSafteyLight()
     {
         //StopEncounterMode();
-		_stateManager.ChangeGameState (GameStates.InLight);
         //Debug.Log("Switching from encounter to safety light mode");
 		_encounterManager.InitializeSafetyLight();
     }
@@ -142,6 +146,11 @@ public class GameDirector : MonoBehaviour {
 		{
 			_HUDManager.EnableEncounterView();
 		}
+	}
+
+	public void AbleToOvercome()
+	{
+		this._encounterManager.PlayerCanOvercome();
 	}
 
     #endregion
