@@ -10,30 +10,29 @@ using System.Collections;
 /// 
 /// </summary>
 
+public enum EncounterState
+{
+	Active,
+	ActiveLight,
+	Inactive,
+};
 
 public class EncounterManager : MonoBehaviour
 {
-	GameObject[] enemies;
-	GameObject safetyLight;
+	private GameObject[] enemies;
+	private GameObject safetyLight;
 
-	float lookAtDistance;
-	float attackRange;
-	float overwhelmRange;
-	float lightTimer = 20.0f;
-	float gameOverTimer = 30.0f;
+	private float lookAtDistance;
+	private float attackRange;
+	private float overwhelmRange;
+	private float lightTimer = 20.0f;
+	private float gameOverTimer = 30.0f;
 
-	int overcomeCounter = 0;
+	private int overcomeCounter = 0;
 
-	bool lightOn = false;
-	bool cooldown = false;
-	bool ableToOvercome = false;
-
-	public enum EncounterState
-	{
-		Active,
-		ActiveLight,
-		Inactive,
-	};
+	private bool lightOn = false;
+	private bool cooldown = false;
+	private bool ableToOvercome = false;
 
 	EncounterState currentState;
 //    IEnumerator KickOffEncounter()
@@ -86,7 +85,7 @@ public class EncounterManager : MonoBehaviour
 		if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= overwhelmRange)
 		{
 			Encounter(enemy);
-			enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer(/*lightOn*/);
+			enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
 		}
 		else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= attackRange)
 		{
@@ -193,5 +192,14 @@ public class EncounterManager : MonoBehaviour
 		{
 			//inform GameDirector player dead
 		}
+	}
+
+	public bool CanUseToken()
+	{
+		if (currentState == EncounterState.Active && !cooldown)
+		{
+			return true;
+		}
+		return false;
 	}
 }

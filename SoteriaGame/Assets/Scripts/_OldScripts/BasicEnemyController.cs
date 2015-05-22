@@ -8,20 +8,13 @@ public class BasicEnemyController : MonoBehaviour {
 	private NavMeshAgent agent;
 	private float distance = 0.0f;
 	private float pushBack = 100.0f;
-
-//    BasicAggroSystem aggroManager;
-//
-//	private bool staystill; 
-	Texture CurrentTexture;
+	private Texture CurrentTexture;
 
 	// Use this for initialization
 	public void Initialize(EncounterManager encMan)
 	{
-		//player = GameObject.FindWithTag("Player");
 		encounterManager = encMan;
 		agent = GetComponent<NavMeshAgent> ();
-        //aggroManager = new BasicAggroSystem();
-		//staystill = false;
 		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Unaware") as Texture;
 
 		this.renderer.material.mainTexture = CurrentTexture;
@@ -30,10 +23,6 @@ public class BasicEnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-//		if (!staystill)
-//		{
-//        	aggroManager.AggroCheckAndBasicMove(lookAtDistance, attackRange, overwhelmRange, target.transform, this.transform);
-//		}
 		distance = Vector3.Distance(this.transform.position, player.transform.position);
 		encounterManager.CheckPlayerDistance(this.gameObject);
 	}
@@ -59,12 +48,11 @@ public class BasicEnemyController : MonoBehaviour {
 			Debug.Log("Enemy chasing");
 	}
 
-	public void OverwhelmPlayer(/*bool lightOn*/)
+	public void OverwhelmPlayer()
 	{
 		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;
 		this.renderer.material.mainTexture = CurrentTexture;
 		agent.Stop();
-		//player.GetComponent<EncounterMovementController>().Overwhelm(this.transform, lightOn);
 	}
 
 	public void Unaware()

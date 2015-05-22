@@ -142,15 +142,20 @@ public class GameDirector : MonoBehaviour {
 
 	public void LightReset()
 	{
-		if (_stateManager.GameState () == GameStates.Encounter)
+		if (this._stateManager.GameState () == GameStates.Encounter)
 		{
-			_HUDManager.EnableEncounterView();
+			this._HUDManager.EnableEncounterView();
 		}
 	}
 
 	public void AbleToOvercome()
 	{
 		this._encounterManager.PlayerCanOvercome();
+	}
+
+	public bool CanUseToken()
+	{
+		return this._encounterManager.CanUseToken ();
 	}
 
     #endregion
