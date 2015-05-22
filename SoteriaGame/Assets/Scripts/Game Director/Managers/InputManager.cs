@@ -64,22 +64,43 @@ public class InputManager : MonoBehaviour
 	public int getPressCount()
 	{
 		//return _input.Count;
-		return keyPressCounter;
+		int temp = keyPressCounter;
+		if (keyPressCounter >= 20 && !GameDirector.instance.GetOvercomeBool())
+		{
+			keyPressCounter = 0;
+			GameDirector.instance.TryingToOvercome();
+		}
+		else
+		{
+			GameDirector.instance.AbleToOvercome();
+		}
+		return temp;
 	}
 
 	private void ProcessQTEInput()
 	{	
 		bool inputpressed = false;
 
-		if (Input.GetKeyDown(KeyCode.Space))
-		{
-			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
-			this._inputTimer.StartTimer ();
-			keyPressCounter++;
-		}
+//		if (Input.GetKeyDown(KeyCode.Space))
+//		{
+//			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
+//			this._inputTimer.StartTimer ();
+//			keyPressCounter++;
+//		}
 //
 //		if (inputpressed)
 //			this._inputTimer.StartTimer ();
+		if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W)
+		     || Input.GetKeyDown(KeyCode.S)) && !GameDirector.instance.GetOvercomeBool())
+		{	
+			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
+			keyPressCounter++;
+		}
+		else if ((Input.GetKeyDown(KeyCode.DownArrow) && keyPressCounter >= 20) ||
+		         ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) && keyPressCounter < 20))
+		{
+			keyPressCounter++;
+		}
 		else
 		{
 			if (this._inputTimer.ElapsedTime() >= QTE_Delay)
@@ -150,8 +171,8 @@ public class InputManager : MonoBehaviour
 
 	public bool isQTEMode()
 	{
-		if (GameDirector.instance.GetCurrentGameState() == GameStates.Encounter && 
-		    GameDirector.instance.GetEncounterState() != EncounterManager.EncounterState.Active)
+		if (GameDirector.instance.GetGameState() == GameStates.Encounter && 
+		    GameDirector.instance.GetEncounterState() != EncounterState.Active)
 			this._isqtemode = true;
 		else
 			this._isqtemode = false;	

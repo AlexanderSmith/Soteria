@@ -27,7 +27,6 @@ public class GameDirector : MonoBehaviour {
         }
     }
 
-
 	public void InitializePlayer()
 	{
 		if (_player == null) 
@@ -66,6 +65,7 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.Update(); //No update happening we can remove it later on
 		this._timerManager.Update();
     }
+
     private void InitializeManagers()
     {
         //This is problematic (AddComponent)-> it forces the script to be a component and uses the 
@@ -85,8 +85,7 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.Initialize();
 		this._stateManager.Initialize();
 
-		this.InitializePlayer ();
-        
+		this.InitializePlayer ();    
     }
 
 	#region InputManager Methods
@@ -96,32 +95,42 @@ public class GameDirector : MonoBehaviour {
 		return this._inputManager.getPressCount ();
 	}
 
-	public bool GetBool()
+	public bool GetOvercomeBool()
 	{
-		return true;
+		return this._encounterManager.GetOvercomeStatus();
+	}
+	
+	public void TryingToOvercome()
+	{
+		this._encounterManager.AddToOvercomeCounter();
 	}
 	
 	#endregion
 
 	#region StateManager
 
-	public GameStates GetCurrentGameState()
+	public GameStates GetGameState()
 	{
-		return this._stateManager.getCurrentState();
+		return this._stateManager.GameState();
 	}
 
 	#endregion
 
     #region EncounterManager
 
-    public void StopEncounterMode()
-    {
-        _stateManager.ChangeGameState(GameStates.Normal);
-        _HUDManager.EnableNormalView();
-		_player.GetComponent<EncounterMovementController> ().OverCome ();
+	public EncounterState GetEncounterState()
+	{
+		return this._encounterManager.GetState();
+	}
+
+	public void StopEncounterMode()
+	{
+		_stateManager.ChangeGameState(GameStates.Normal);
+		_HUDManager.EnableNormalView();
+		_player.GetComponent<PCController> ().EnableStandardMovement ();
 		_encounterManager.KillSafetyLight();
-        //this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
-    }
+		//this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
+	}
 
 
     public void StartEncounterMode(bool lightCooldown)
@@ -138,9 +147,8 @@ public class GameDirector : MonoBehaviour {
 
     public void TakeSafteyLight()
     {
-        //StopEncounterMode();
-		_stateManager.ChangeGameState (GameStates.InLight);
-        //Debug.Log("Switching from encounter to safety light mode");
+		//StopEncounterMode();
+		//Debug.Log("Switching from encounter to safety light mode");
 		_encounterManager.InitializeSafetyLight();
     }
 
@@ -151,10 +159,15 @@ public class GameDirector : MonoBehaviour {
 			_HUDManager.EnableEncounterView();
 		}
 	}
-	
-	public EncounterManager.EncounterState GetEncounterState()
+
+	public void AbleToOvercome()
 	{
-		return this._encounterManager.getCurrentState();
+		this._encounterManager.PlayerCanOvercome();
+	}
+	
+	public bool CanUseToken()
+	{
+		return this._encounterManager.CanUseToken ();
 	}
 
     #endregion

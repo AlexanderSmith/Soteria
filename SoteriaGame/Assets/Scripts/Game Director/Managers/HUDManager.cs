@@ -73,7 +73,10 @@ public class HUDManager : MonoBehaviour {
 
     public void SafteyLightButtonHit()
     {
-        this.gameObject.GetComponent<GameDirector>().TakeSafteyLight(); //This feels weird here but may be the only place to call it from, we'll see later.
-		EnableSafetyLightView ();
+		if (GameDirector.instance.CanUseToken ())
+		{
+			GameDirector.instance.TakeSafteyLight (); //This feels weird here but may be the only place to call it from, we'll see later.
+			EnableSafetyLightView ();
+		}
     }
 }

@@ -11,8 +11,8 @@ public abstract class Command
 
 	protected void MovePlayer(Player inPlayer)
 	{
-		if(	GameDirector.instance.GetCurrentGameState() != GameStates.Encounter || 
-		   	GameDirector.instance.GetEncounterState() == EncounterManager.EncounterState.ActiveLight)
+		if(	GameDirector.instance.GetGameState() != GameStates.Encounter || 
+		   	GameDirector.instance.GetEncounterState() == EncounterState.ActiveLight)
 		{
 
 			inPlayer.Move();
