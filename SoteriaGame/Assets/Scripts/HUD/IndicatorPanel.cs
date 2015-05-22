@@ -98,7 +98,6 @@ public class IndicatorPanel : MonoBehaviour {
         else
         {
             output = Instantiate(Resources.Load("Prefabs/" + indicatorPrefab) as GameObject) as GameObject;
-            output.transform.parent = transform;
             indicatorPool.Add(output);
         }
 
@@ -117,7 +116,6 @@ public class IndicatorPanel : MonoBehaviour {
         else
         {
             output = Instantiate(Resources.Load("Prefabs/" + arrowPrefab) as GameObject) as GameObject;
-            output.transform.parent = transform;
             arrowPool.Add(output);
         }
 
