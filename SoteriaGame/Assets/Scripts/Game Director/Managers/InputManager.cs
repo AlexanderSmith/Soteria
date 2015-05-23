@@ -23,7 +23,7 @@ public class InputManager : MonoBehaviour
 
 		//CreateButtonList//
 		_buttonTypes.Add( 	new LeftCommand()  ); //LeftArrow 	(A)
-		_buttonTypes.Add( 	new RightCommnad() ); //RightArrow 	(D)
+		_buttonTypes.Add( 	new RightCommand() ); //RightArrow 	(D)
 		_buttonTypes.Add( 	new UpCommand()    ); //UpArrow		(W)
 		_buttonTypes.Add(  	new DownCommand()  ); //DownArrow	(S)
 		_buttonTypes.Add(   new SpaceCommand() ); //Spacebar	

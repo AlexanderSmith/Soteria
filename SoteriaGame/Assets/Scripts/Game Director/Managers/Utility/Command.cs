@@ -30,7 +30,7 @@ public class LeftCommand : Command
 	public override void execute () {}
 }
 
-public class RightCommnad : Command
+public class RightCommand : Command
 {
 	public override void execute (Object actor)
 	{
