@@ -67,8 +67,6 @@ public class InputManager : MonoBehaviour
 		int temp = keyPressCounter;
 		if (keyPressCounter >= 20 && !GameDirector.instance.GetOvercomeBool())
 		{
-			Debug.Log("resetting key press counter");
-			keyPressCounter = 0;
 			GameDirector.instance.TryingToOvercome();
 		}
 		else
@@ -82,15 +80,14 @@ public class InputManager : MonoBehaviour
 	{	
 		bool inputpressed = false;
 
-		if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W)
-		     || Input.GetKeyDown(KeyCode.S)) && !GameDirector.instance.GetOvercomeBool())
+		if (Input.GetKeyDown(KeyCode.DownArrow) && !GameDirector.instance.GetOvercomeBool())
 		{	
 			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
 			keyPressCounter++;
 			this._inputTimer.StartTimer ();
 		}
-		else if ((Input.GetKeyDown(KeyCode.DownArrow) && keyPressCounter >= 20) ||
-		         ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) && keyPressCounter < 20))
+		else if ((Input.GetKeyDown(KeyCode.Space) && keyPressCounter >= 20) ||
+		         (Input.GetKeyDown(KeyCode.DownArrow) && keyPressCounter < 20))
 		{
 			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
 			keyPressCounter++;
