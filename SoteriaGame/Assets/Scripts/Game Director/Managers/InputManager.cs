@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
 	private Timer _inputTimer;
 	private TimersType _timertype;
 	private bool _isqtemode;
+	private bool preLinger = false;
 	
 	public static int QTE_Delay = 3;
 	int keyPressCounter = 0;
@@ -36,40 +37,23 @@ public class InputManager : MonoBehaviour
 		if (this.isQTEMode())
 		{
 			this.ProcessQTEInput();
-
-//			if (this._inputTimer.ElapsedTime() >= QTE_Delay)
-//			{
-//				for (int i = 0; i < this._input.Count; i++)
-//				{
-//					if (this._input[i].Killit())
-//					{
-//						this._input.RemoveAt(i);
-//						break;
-//					}
-//				}
-//				
-//				if (_input.Count == 0)
-//					this._inputTimer.ResetTimer();
-//			}
 		}
 		else
 		{
-
-			this.ProcessInput();
-			
+			this.ProcessInput();			
 			this.PurgeInputList();
 		}
 	}
 	
-	public int getPressCount()
+	public int GetPressCount()
 	{
-		//return _input.Count;
 		int temp = keyPressCounter;
-		if (keyPressCounter >= 20 && !GameDirector.instance.GetOvercomeBool())
+		if (keyPressCounter >= 20 && !GameDirector.instance.GetOvercomeBool() && !preLinger)
 		{
 			GameDirector.instance.TryingToOvercome();
+			preLinger = true;
 		}
-		else
+		else if (GameDirector.instance.GetOvercomeBool())
 		{
 			GameDirector.instance.AbleToOvercome();
 		}
@@ -82,14 +66,14 @@ public class InputManager : MonoBehaviour
 
 		if (Input.GetKeyDown(KeyCode.DownArrow) && !GameDirector.instance.GetOvercomeBool())
 		{	
-			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
+			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer());
 			keyPressCounter++;
 			this._inputTimer.StartTimer ();
 		}
-		else if ((Input.GetKeyDown(KeyCode.Space) && keyPressCounter >= 20) ||
-		         (Input.GetKeyDown(KeyCode.DownArrow) && keyPressCounter < 20))
+		else if ((Input.GetKeyDown(KeyCode.Space) && keyPressCounter >= 20 && !preLinger) ||
+		         (Input.GetKeyDown(KeyCode.DownArrow) && keyPressCounter < 20 && !preLinger))
 		{
-			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
+			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer());
 			keyPressCounter++;
 			this._inputTimer.StartTimer ();
 		}
@@ -98,6 +82,7 @@ public class InputManager : MonoBehaviour
 			if (this._inputTimer.ElapsedTime() >= QTE_Delay)
 			{
 				keyPressCounter = 0;
+				preLinger = false;
 			}
 		}
 	}
@@ -136,7 +121,7 @@ public class InputManager : MonoBehaviour
 		Temp.execute(inActor);
 
 		if (this.isQTEMode())
-			this.AddToInputList( Temp );
+			this.AddToInputList(Temp);
 		
 		return true;
 	}
@@ -152,7 +137,10 @@ public class InputManager : MonoBehaviour
 	
 	private void AddToInputList(Button inButton)
 	{
-		this._inputTimer.ResetTimer();
+		if ((keyPressCounter <= 20 && !GameDirector.instance.GetOvercomeBool()) || (keyPressCounter <= 30 && GameDirector.instance.GetOvercomeBool()))
+		{
+			this._inputTimer.ResetTimer();
+		}
 		this._input.Add(inButton);
 	}
 	

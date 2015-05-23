@@ -91,7 +91,7 @@ public class GameDirector : MonoBehaviour {
 	
 	public int GetQTECount()
 	{
-		return this._inputManager.getPressCount ();
+		return this._inputManager.GetPressCount ();
 	}
 
 	public bool GetOvercomeBool()
@@ -111,6 +111,11 @@ public class GameDirector : MonoBehaviour {
 	public GameStates GetGameState()
 	{
 		return this._stateManager.GameState();
+	}
+
+	public void ChangeGameState(GameStates state)
+	{
+		this._stateManager.ChangeGameState (state);
 	}
 
 	#endregion
@@ -165,7 +170,6 @@ public class GameDirector : MonoBehaviour {
 
 	public bool CanUseToken()
 	{
-		return this._encounterManager.CanUseToken ();
 		return this._encounterManager.CanUseToken ();
 	}
 
