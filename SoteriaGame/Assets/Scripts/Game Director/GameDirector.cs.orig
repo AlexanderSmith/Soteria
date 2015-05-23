@@ -96,12 +96,21 @@ public class GameDirector : MonoBehaviour {
 	}
 
 	public bool GetOvercomeBool()
+<<<<<<< HEAD
 	{
 		return this._encounterManager.GetOvercomeStatus();
 	}
 	
 	public void TryingToOvercome()
 	{
+=======
+	{
+		return this._encounterManager.GetOvercomeStatus();
+	}
+
+	public void TryingToOvercome()
+	{
+>>>>>>> origin/EncounterPassThree
 		this._encounterManager.AddToOvercomeCounter();
 	}
 	
@@ -118,6 +127,7 @@ public class GameDirector : MonoBehaviour {
 
     #region EncounterManager
 
+<<<<<<< HEAD
 	public EncounterState GetEncounterState()
 	{
 		return this._encounterManager.GetState();
@@ -127,6 +137,12 @@ public class GameDirector : MonoBehaviour {
 	{
 		_stateManager.ChangeGameState(GameStates.Normal);
 		_HUDManager.EnableNormalView();
+=======
+    public void StopEncounterMode()
+    {
+        _stateManager.ChangeGameState(GameStates.Normal);
+        _HUDManager.EnableNormalView();
+>>>>>>> origin/EncounterPassThree
 		_player.GetComponent<PCController> ().EnableStandardMovement ();
 		_encounterManager.KillSafetyLight();
 		//this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
@@ -147,8 +163,13 @@ public class GameDirector : MonoBehaviour {
 
     public void TakeSafteyLight()
     {
+<<<<<<< HEAD
 		//StopEncounterMode();
 		//Debug.Log("Switching from encounter to safety light mode");
+=======
+        //StopEncounterMode();
+        //Debug.Log("Switching from encounter to safety light mode");
+>>>>>>> origin/EncounterPassThree
 		_encounterManager.InitializeSafetyLight();
     }
 
@@ -164,10 +185,13 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._encounterManager.PlayerCanOvercome();
 	}
+<<<<<<< HEAD
+	
+=======
 
+>>>>>>> origin/EncounterPassThree
 	public bool CanUseToken()
 	{
-		return this._encounterManager.CanUseToken ();
 		return this._encounterManager.CanUseToken ();
 	}
 

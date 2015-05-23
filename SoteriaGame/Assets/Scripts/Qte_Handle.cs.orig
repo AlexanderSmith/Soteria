@@ -18,13 +18,26 @@ public class Qte_Handle : MonoBehaviour {
 	{
 		this.QTECount = GameDirector.instance.GetQTECount();
 		_QteAnim.SetInteger("QTECount", QTECount);
+<<<<<<< HEAD
+=======
+	}
+
+	public void Overcome()
+	{
+		_QteAnim.SetBool ("Overcome", true);
+	}
+
+	public void ResetOvercome()
+	{
+		_QteAnim.SetBool ("Overcome", false);
+>>>>>>> origin/EncounterPassThree
 	}
 	
 	public void Overcome()
 	{
 		_QteAnim.SetBool ("Overcome", true);
 	}
-
+	
 	public void ResetOvercome()
 	{
 		_QteAnim.SetBool ("Overcome", false);

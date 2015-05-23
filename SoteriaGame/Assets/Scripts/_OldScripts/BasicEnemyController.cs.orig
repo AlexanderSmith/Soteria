@@ -2,14 +2,18 @@
 using System.Collections;
 
 public class BasicEnemyController : MonoBehaviour {
-
+	
 	public GameObject player;
 	private EncounterManager encounterManager;
 	private NavMeshAgent agent;
 	private float distance = 0.0f;
 	private float pushBack = 100.0f;
 	private Texture CurrentTexture;
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> origin/EncounterPassThree
 	// Use this for initialization
 	public void Initialize(EncounterManager encMan)
 	{
@@ -47,7 +51,11 @@ public class BasicEnemyController : MonoBehaviour {
 		agent.SetDestination (player.transform.position);
 		Debug.Log("Enemy chasing");
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> origin/EncounterPassThree
 	public void OverwhelmPlayer()
 	{
 		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;

@@ -22,11 +22,19 @@ public class InputManager : MonoBehaviour
 		this._isqtemode = false;
 
 		//CreateButtonList//
+<<<<<<< HEAD
 		_buttonTypes.Add( 	new LeftCommand()  ); //LeftArrow 	(A)
 		_buttonTypes.Add( 	new RightCommand() ); //RightArrow 	(D)
 		_buttonTypes.Add( 	new UpCommand()    ); //UpArrow		(W)
 		_buttonTypes.Add(  	new DownCommand()  ); //DownArrow	(S)
 		_buttonTypes.Add(   new SpaceCommand() ); //Spacebar	
+=======
+		_buttonTypes.Add( 	new LeftCommand()  ); //LeftArrow
+		_buttonTypes.Add( 	new RightCommand() ); //RightArrow
+		_buttonTypes.Add( 	new UpCommand()    ); //UpArrow
+		_buttonTypes.Add(  	new DownCommand()  ); //DownArrow
+		_buttonTypes.Add(   new SpaceCommand() ); //Spacebar
+>>>>>>> origin/EncounterPassThree
 		
 	}
 	
@@ -63,8 +71,13 @@ public class InputManager : MonoBehaviour
 	
 	public int getPressCount()
 	{
+<<<<<<< HEAD
 		//return _input.Count;
 		int temp = keyPressCounter;
+=======
+		int temp = keyPressCounter;
+		//return _input.Count;
+>>>>>>> origin/EncounterPassThree
 		if (keyPressCounter >= 20 && !GameDirector.instance.GetOvercomeBool())
 		{
 			keyPressCounter = 0;
@@ -80,9 +93,10 @@ public class InputManager : MonoBehaviour
 	private void ProcessQTEInput()
 	{	
 		bool inputpressed = false;
+<<<<<<< HEAD
 
-		if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W)
-		     || Input.GetKeyDown(KeyCode.S)) && !GameDirector.instance.GetOvercomeBool())
+//		if (Input.GetKeyDown(KeyCode.Space))
+//		{
 //			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
 //			this._inputTimer.StartTimer ();
 //			keyPressCounter++;
@@ -90,16 +104,23 @@ public class InputManager : MonoBehaviour
 //
 //		if (inputpressed)
 //			this._inputTimer.StartTimer ();
+=======
+		
+>>>>>>> origin/EncounterPassThree
 		if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W)
 		     || Input.GetKeyDown(KeyCode.S)) && !GameDirector.instance.GetOvercomeBool())
 		{	
 			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
 			keyPressCounter++;
+<<<<<<< HEAD
 			this._inputTimer.StartTimer ();
+=======
+		}
 		else if ((Input.GetKeyDown(KeyCode.DownArrow) && keyPressCounter >= 20) ||
 		        ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) && keyPressCounter < 20))
 		{
 			keyPressCounter++;
+>>>>>>> origin/EncounterPassThree
 		}
 		else if ((Input.GetKeyDown(KeyCode.DownArrow) && keyPressCounter >= 20) ||
 		         ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) && keyPressCounter < 20))
