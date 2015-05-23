@@ -166,8 +166,8 @@ public class InputManager : MonoBehaviour
 
 	public bool isQTEMode()
 	{
-		if (GameDirector.instance.GetGameState() == GameStates.Encounter || 
-		    GameDirector.instance.GetEncounterState() == EncounterState.Active)
+		if (GameDirector.instance.GetGameState() == GameStates.Encounter && 
+		    GameDirector.instance.GetEncounterState() != EncounterState.ActiveLight)
 			this._isqtemode = true;
 		else
 			this._isqtemode = false;	
