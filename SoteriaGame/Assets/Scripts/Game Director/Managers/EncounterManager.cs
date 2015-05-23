@@ -108,7 +108,6 @@ public class EncounterManager : MonoBehaviour
 			currentState = EncounterState.Active;
 			StartEncounter();
 			GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().AddFear();
-			GameDirector.instance.GetPlayer().GetComponentInChildren<PCController>().EnableEncounterMovement();
 		}
 	}
 

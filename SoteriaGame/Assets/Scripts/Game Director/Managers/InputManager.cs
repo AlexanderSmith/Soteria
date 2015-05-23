@@ -83,23 +83,10 @@ public class InputManager : MonoBehaviour
 
 		if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W)
 		     || Input.GetKeyDown(KeyCode.S)) && !GameDirector.instance.GetOvercomeBool())
-//			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
-//			this._inputTimer.StartTimer ();
-//			keyPressCounter++;
-//		}
-//
-//		if (inputpressed)
-//			this._inputTimer.StartTimer ();
-		if ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W)
-		     || Input.GetKeyDown(KeyCode.S)) && !GameDirector.instance.GetOvercomeBool())
 		{	
 			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer() );
 			keyPressCounter++;
 			this._inputTimer.StartTimer ();
-		else if ((Input.GetKeyDown(KeyCode.DownArrow) && keyPressCounter >= 20) ||
-		        ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) && keyPressCounter < 20))
-		{
-			keyPressCounter++;
 		}
 		else if ((Input.GetKeyDown(KeyCode.DownArrow) && keyPressCounter >= 20) ||
 		         ((Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.S)) && keyPressCounter < 20))

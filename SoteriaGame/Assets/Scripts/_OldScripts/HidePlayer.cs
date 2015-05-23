@@ -19,7 +19,7 @@ public class HidePlayer : MonoBehaviour {
 	{
 		if (Other.gameObject.name.Equals("Player"))
 		{
-			Other.GetComponent<EncounterMovementController>().SetCurrentState(EncounterMovementController.EncounterState.Hidden);
+			//Other.GetComponent<EncounterMovementController>().SetCurrentState(EncounterMovementController.EncounterState.Hidden);
 		    Debug.Log ("Enter");
 		}
 	}
@@ -28,7 +28,7 @@ public class HidePlayer : MonoBehaviour {
 	{
 		if (Other.gameObject.name.Equals("Player"))
 		{
-            Other.GetComponent<EncounterMovementController>().SetCurrentState(EncounterMovementController.EncounterState.Hidden);
+            //Other.GetComponent<EncounterMovementController>().SetCurrentState(EncounterMovementController.EncounterState.Hidden);
 		    Debug.Log ("Stay");
 		}
 	}
@@ -36,7 +36,7 @@ public class HidePlayer : MonoBehaviour {
 	{ 
 		if (Other.gameObject.name.Equals("Player"))
 		{
-            Other.GetComponent<EncounterMovementController>().SetCurrentState(EncounterMovementController.EncounterState.Normal);
+            //Other.GetComponent<EncounterMovementController>().SetCurrentState(EncounterMovementController.EncounterState.Normal);
             this.GetComponent<SafetyLightController>().DisableSafetyLight();
 		    Debug.Log ("Exit");
 		}

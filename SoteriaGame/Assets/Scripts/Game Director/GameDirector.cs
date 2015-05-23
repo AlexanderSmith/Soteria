@@ -32,7 +32,6 @@ public class GameDirector : MonoBehaviour {
 		if (_player == null) 
 		{
 			_player = GameObject.FindWithTag("Player");
-			_player.GetComponent<EncounterMovementController>().Initialize(_stateManager);
 		}
 	}
     public GameObject GetPlayer()
@@ -127,7 +126,6 @@ public class GameDirector : MonoBehaviour {
 	{
 		_stateManager.ChangeGameState(GameStates.Normal);
 		_HUDManager.EnableNormalView();
-		_player.GetComponent<PCController> ().EnableStandardMovement ();
 		_encounterManager.KillSafetyLight();
 		//this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
 	}
