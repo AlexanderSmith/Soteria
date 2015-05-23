@@ -161,7 +161,6 @@ public class EncounterManager : MonoBehaviour
 		if (overcomeCounter == 3)
 		{
 			ableToOvercome = true;
-			overcomeCounter = 0;
 		}
 	}
 
