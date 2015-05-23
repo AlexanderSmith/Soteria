@@ -7,6 +7,7 @@ public class IndicatorPanel : MonoBehaviour {
     public string indicatorPrefab;
     public string arrowPrefab;
 
+
     List<GameObject> indicatorPool = new List<GameObject>();
     int indicatorPoolCursor = 0;
 
@@ -15,7 +16,6 @@ public class IndicatorPanel : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
-	
 	}
 	
 	// Update is called once per frame
@@ -39,7 +39,8 @@ public class IndicatorPanel : MonoBehaviour {
                screenPos.y > 0 && screenPos.y < Screen.height)
             {
                 GameObject spot = getIndicator();
-                spot.transform.localPosition = screenPos;    
+                spot.transform.localPosition = screenPos;   
+				spot.transform.parent = gameObject.transform;
             }
             else
             {
@@ -76,6 +77,7 @@ public class IndicatorPanel : MonoBehaviour {
                 GameObject myArrow = getArrow();
                 myArrow.transform.localPosition = screenPos;
                 myArrow.transform.localRotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
+				myArrow.transform.parent = gameObject.transform;
             }
         }
 
