@@ -15,12 +15,14 @@ public enum EncounterState
 	Active,
 	ActiveLight,
 	Inactive,
+	Lingering
 };
 
 public class EncounterManager : MonoBehaviour
 {
 	private GameObject[] enemies;
 	private GameObject safetyLight;
+	private GameObject currentEnemy;
 
 	private float lookAtDistance;
 	private float attackRange;
@@ -36,16 +38,9 @@ public class EncounterManager : MonoBehaviour
 
 	EncounterState currentState;
 
-//    IEnumerator KickOffEncounter()
-//    {
-//        StartEncounter();
-//        return null;
-//    }
-
     // Use this for initialization
     void Start()
     {
-//        StartCoroutine(KickOffEncounter());
     }
 
     // Update is called once per frame
@@ -106,7 +101,7 @@ public class EncounterManager : MonoBehaviour
 		if (currentState == EncounterState.Inactive)
 		{
 			currentState = EncounterState.Active;
-			StartEncounter();
+			StartEncounter(enemy);
 			GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().AddFear();
 		}
 	}
@@ -120,9 +115,10 @@ public class EncounterManager : MonoBehaviour
 		EncounterReset();
     }
 
-    public void StartEncounter()
+    public void StartEncounter(GameObject enemy)
     {
 		GameDirector.instance.StartEncounterMode(cooldown);
+		currentEnemy = enemy;
     }
 
 	public void InitializeSafetyLight()
@@ -164,6 +160,14 @@ public class EncounterManager : MonoBehaviour
 		}
 	}
 
+	public void SubtractFromOvercomeCounter()
+	{
+		if (overcomeCounter > 0)
+		{
+			overcomeCounter--;
+		}
+	}
+
 	void EncounterReset()
 	{
 		overcomeCounter = 0;
@@ -197,5 +201,11 @@ public class EncounterManager : MonoBehaviour
 			return true;
 		}
 		return false;
+	}
+
+	public void PlayerOvercame()
+	{
+		StopEncounter();
+		Destroy(currentEnemy);
 	}
 }

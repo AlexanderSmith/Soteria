@@ -94,16 +94,6 @@ public class GameDirector : MonoBehaviour {
 		return this._inputManager.GetPressCount ();
 	}
 
-	public bool GetOvercomeBool()
-	{
-		return this._encounterManager.GetOvercomeStatus();
-	}
-	
-	public void TryingToOvercome()
-	{
-		this._encounterManager.AddToOvercomeCounter();
-	}
-	
 	#endregion
 
 	#region StateManager
@@ -134,7 +124,6 @@ public class GameDirector : MonoBehaviour {
 		_encounterManager.KillSafetyLight();
 		//this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
 	}
-
 
     public void StartEncounterMode(bool lightCooldown)
     {
@@ -171,6 +160,37 @@ public class GameDirector : MonoBehaviour {
 	public bool CanUseToken()
 	{
 		return this._encounterManager.CanUseToken ();
+	}
+
+	public bool GetOvercomeBool()
+	{
+		return this._encounterManager.GetOvercomeStatus();
+	}
+	
+	public void TryingToOvercome()
+	{
+		this._encounterManager.AddToOvercomeCounter();
+	}
+
+	public void FailedToLinger()
+	{
+		this._encounterManager.SubtractFromOvercomeCounter();
+		ResetLinger();
+	}
+
+	public void BeginLingering()
+	{
+		this._player.GetComponent<Player>().BeginLingering();
+	}
+
+	public void ResetLinger()
+	{
+		this._player.GetComponent<Player>().ResetLinger();
+	}
+
+	public void PlayerOvercame()
+	{
+		this._encounterManager.PlayerOvercame();
 	}
 
     #endregion
