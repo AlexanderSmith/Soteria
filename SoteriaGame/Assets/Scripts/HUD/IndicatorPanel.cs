@@ -34,12 +34,15 @@ public class IndicatorPanel : MonoBehaviour {
             Vector3 screenPos = Camera.main.WorldToScreenPoint(gObj.transform.position);
             Color color = Color.red;
 
+            Rect screenPosPixelInset = new Rect(screenPos.x, screenPos.y, 0, 0);
+
             if (screenPos.z > 0 &&
                screenPos.x > 0 && screenPos.x < Screen.width &&
                screenPos.y > 0 && screenPos.y < Screen.height)
             {
                 GameObject spot = getIndicator();
-                spot.transform.localPosition = screenPos;    
+
+                spot.GetComponent<GUITexture>().pixelInset = screenPosPixelInset;    
             }
             else
             {
@@ -74,11 +77,11 @@ public class IndicatorPanel : MonoBehaviour {
 
                 screenPos += screenCenter;
                 GameObject myArrow = getArrow();
-                myArrow.transform.localPosition = screenPos;
+                myArrow.GetComponent<GUITexture>().pixelInset = screenPosPixelInset;    
                 myArrow.transform.localRotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
             }
         }
-
+        cleanPool();
     }
 
     void resetPool()
