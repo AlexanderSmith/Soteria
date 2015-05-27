@@ -41,15 +41,15 @@ public class InputManager : MonoBehaviour
 		{
 			this.ProcessQTEInput();
 			this._inputTimer.StartTimer();
+			if (preLinger)
+			{
+				LingerTimer();
+			}
 		}
 		else
 		{
 			this.ProcessInput();			
 			this.PurgeInputList();
-		}
-		if (preLinger)
-		{
-			LingerTimer();
 		}
 	}
 	
@@ -66,15 +66,6 @@ public class InputManager : MonoBehaviour
 //			GameDirector.instance.AbleToOvercome();
 //		}
 		//******************************************************************/
-		if (GameDirector.instance.GetOvercomeBool())
-		{
-			GameDirector.instance.AbleToOvercome();
-			if (keyPressCounter > 10)
-			{
-				GameDirector.instance.PlayerOvercame();
-				Debug.Log("player wins");
-			}
-		}
 		return keyPressCounter;
 	}
 
@@ -118,22 +109,26 @@ public class InputManager : MonoBehaviour
 			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer());
 			keyPressCounter++;
 			this._inputTimer.ResetTimer();
+			GameDirector.instance.ClearFromBlack();
 		}
-//		else if (GameDirector.instance.GetOvercomeBool() && Input.GetKeyDown(KeyCode.Space))
-//		{
-//			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer());
-//			keyPressCounter++;
-//			this._inputTimer.ResetTimer();
-//		}
 		else if (preLinger)
 		{
 			if (this._inputTimer.ElapsedTime() >= intialLinger)
 			{
 				keyPressCounter = 0;
 				preLinger = false;
-				Debug.Log("false from elapsed time");
 				GameDirector.instance.FailedToLinger();
 				LingerSame();
+			}
+		}
+
+		if (GameDirector.instance.GetOvercomeBool())
+		{
+			GameDirector.instance.AbleToOvercome();
+			if (keyPressCounter > 10)
+			{
+				GameDirector.instance.PlayerOvercame();
+				//Debug.Log("player wins");
 			}
 		}
 		//*************************************************************************************************************/

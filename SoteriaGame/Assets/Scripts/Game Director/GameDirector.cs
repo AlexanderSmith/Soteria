@@ -120,6 +120,7 @@ public class GameDirector : MonoBehaviour {
 	public void StopEncounterMode()
 	{
 		_stateManager.ChangeGameState(GameStates.Normal);
+		Debug.Log ("Clearing black from enabling normal view");
 		_HUDManager.EnableNormalView();
 		_encounterManager.KillSafetyLight();
 		//this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
@@ -134,6 +135,12 @@ public class GameDirector : MonoBehaviour {
 		if (!lightCooldown)
 		{
 			_HUDManager.EnableEncounterView();
+			Debug.Log ("Black from encounter start");
+		}
+		else
+		{
+			Debug.Log ("Black from encounter start no pulse");
+			FadeToBlack();
 		}
 	}
 
@@ -149,6 +156,7 @@ public class GameDirector : MonoBehaviour {
 		if (this._stateManager.GameState () == GameStates.Encounter)
 		{
 			this._HUDManager.EnableEncounterView();
+			Debug.Log ("Black from light reset");
 		}
 	}
 
@@ -186,11 +194,26 @@ public class GameDirector : MonoBehaviour {
 	public void ResetLinger()
 	{
 		this._player.GetComponent<Player>().ResetLinger();
+		Debug.Log ("Black from reseting linger");
+		FadeToBlack();
 	}
 
 	public void PlayerOvercame()
 	{
 		this._encounterManager.PlayerOvercame();
+		this._stateManager.ChangeGameState(GameStates.Normal);
+	}
+
+	public void FadeToBlack()
+	{
+		Debug.Log ("Going black");
+		this._HUDManager.FadeToBlack();
+	}
+
+	public void ClearFromBlack()
+	{
+		Debug.Log ("Going clear");
+		this._HUDManager.ClearFromBlack();
 	}
 
     #endregion
