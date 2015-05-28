@@ -75,9 +75,13 @@ public class IndicatorPanel : MonoBehaviour {
                     screenPos = new Vector3(-screenBounds.y / m, -screenBounds.y, 0);
                 }
 
+                Camera cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(); 
+
                 screenPos += screenCenter;
+                screenPos.z = cam.nearClipPlane;
+                Debug.Log(screenPos);
                 GameObject myArrow = getArrow();
-                myArrow.GetComponent<GUITexture>().pixelInset = screenPosPixelInset;    
+                myArrow.transform.position = cam.ScreenToWorldPoint(screenPos);
                 myArrow.transform.localRotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
             }
         }
