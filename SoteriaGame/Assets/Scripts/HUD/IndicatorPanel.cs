@@ -60,6 +60,7 @@ public class IndicatorPanel : MonoBehaviour {
                 Vector3 playerToAreaOfInterest = gObj.transform.position - playerPos;
                 float zAngle = Mathf.Acos((Vector3.Dot(playerPos, playerToAreaOfInterest)) / (playerPos.magnitude * playerToAreaOfInterest.magnitude));
 
+                Debug.Log(cam.transform.localRotation);
                 myArrow.transform.localRotation = new Quaternion(cam.transform.localRotation[0], cam.transform.localRotation[1], zAngle, cam.transform.localRotation[3]);
 
                 //screenPos = Camera.main.WorldToScreenPoint(gObj.transform.position);
