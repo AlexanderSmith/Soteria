@@ -33,7 +33,7 @@ public class GameDirector : MonoBehaviour {
 		if (_player == null) 
 		{
 			_player = GameObject.FindWithTag("Player");
-			_player.GetComponent<EncounterMovementController>().Initialize(_stateManager);
+			//_player.GetComponent<EncounterMovementController>().Initialize(_stateManager);
 		}
 	}
     public GameObject GetPlayer()

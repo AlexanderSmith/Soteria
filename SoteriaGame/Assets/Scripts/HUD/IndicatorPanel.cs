@@ -6,6 +6,7 @@ public class IndicatorPanel : MonoBehaviour {
 
     public string indicatorPrefab;
     public string arrowPrefab;
+    public Vector3 screenPositionOffsetFromCenter;
 
     List<GameObject> indicatorPool = new List<GameObject>();
     int indicatorPoolCursor = 0;
@@ -46,43 +47,59 @@ public class IndicatorPanel : MonoBehaviour {
             }
             else
             {
-                if (screenPos.z < 0)
-                {
-                    screenPos *= -1;
-                }
-
                 Vector3 screenCenter = new Vector3(Screen.width, Screen.height, 0) / 2;
 
-                screenPos = screenCenter;
+                Camera cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 
-                float angle = Mathf.Atan2(screenPos.y, screenPos.x);
-                angle -= 90 * Mathf.Deg2Rad;
-
-                float cos = Mathf.Cos(angle);
-                float sin = -Mathf.Sin(angle);
-                screenPos = screenCenter + new Vector3(sin * 150, cos * 150, 0);
-
-                float m = cos / sin;
-
-                Vector3 screenBounds = screenCenter * 0.9f;
-
-                if (cos > 0)
-                {
-                    screenPos = new Vector3(screenBounds.y / m, screenBounds.y, 0);
-                }
-                else
-                {
-                    screenPos = new Vector3(-screenBounds.y / m, -screenBounds.y, 0);
-                }
-
-                Camera cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(); 
-
-                screenPos += screenCenter;
-                screenPos.z = cam.nearClipPlane;
-                Debug.Log(screenPos);
                 GameObject myArrow = getArrow();
+                screenPos = screenCenter + screenPositionOffsetFromCenter;
+
                 myArrow.transform.position = cam.ScreenToWorldPoint(screenPos);
-                myArrow.transform.localRotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
+
+                Vector3 playerPos = GameObject.FindGameObjectWithTag("Player").transform.position;
+                Vector3 playerToAreaOfInterest = gObj.transform.position - playerPos;
+                float zAngle = Mathf.Acos((Vector3.Dot(playerPos, playerToAreaOfInterest)) / (playerPos.magnitude * playerToAreaOfInterest.magnitude));
+
+                myArrow.transform.localRotation = new Quaternion(cam.transform.localRotation[0], cam.transform.localRotation[1], zAngle, cam.transform.localRotation[3]);
+
+                //screenPos = Camera.main.WorldToScreenPoint(gObj.transform.position);
+                //if (screenPos.z < 0)
+                //{
+                //    screenPos *= -1;
+                //}
+
+                //Vector3 screenCenter = new Vector3(Screen.width, Screen.height, 0) / 2;
+
+                //screenPos = screenCenter;
+
+                //float angle = Mathf.Atan2(screenPos.y, screenPos.x);
+                //angle -= 90 * Mathf.Deg2Rad;
+
+                //float cos = Mathf.Cos(angle);
+                //float sin = -Mathf.Sin(angle);
+                //screenPos = screenCenter + new Vector3(sin * 150, cos * 150, 0);
+
+                //float m = cos / sin;
+
+                //Vector3 screenBounds = screenCenter * 0.9f;
+
+                //if (cos > 0)
+                //{
+                //    screenPos = new Vector3(screenBounds.y / m, screenBounds.y, 0);
+                //}
+                //else
+                //{
+                //    screenPos = new Vector3(-screenBounds.y / m, -screenBounds.y, 0);
+                //}
+
+                //Camera cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(); 
+
+                //screenPos += screenCenter;
+                //screenPos.z = cam.nearClipPlane;
+                //Debug.Log(screenPos);
+                //GameObject myArrow = getArrow();
+                //myArrow.transform.position = cam.ScreenToWorldPoint(screenPos);
+                //myArrow.transform.localRotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
             }
         }
         cleanPool();
