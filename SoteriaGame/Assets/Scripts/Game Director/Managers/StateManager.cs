@@ -5,6 +5,7 @@ public enum GameStates
 {
 	Normal,
 	Encounter,
+	Hidden,
 	Pause
 }
 
@@ -33,6 +34,9 @@ public class StateManager : MonoBehaviour {
 		case GameStates.Encounter:
 			if (gameState != inState) SwitchToEncounter();
 			break;
+		case GameStates.Hidden:
+			if (gameState != inState) SwitchToHidden();
+			break;
 		case GameStates.Pause:
 			if (gameState != inState) SwitchToPause();
 			break;
@@ -54,6 +58,11 @@ public class StateManager : MonoBehaviour {
 	{
 
 		gameState = GameStates.Normal;
+	}
+
+	private void SwitchToHidden()
+	{
+		gameState = GameStates.Hidden;
 	}
 
 	private void SwitchToPause()

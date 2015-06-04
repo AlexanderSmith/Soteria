@@ -43,7 +43,6 @@ public class BasicEnemyController : MonoBehaviour {
 	{
 		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;
 		this.renderer.material.mainTexture = CurrentTexture;
-		
 		agent.SetDestination (player.transform.position);
 		Debug.Log("Enemy chasing");
 	}

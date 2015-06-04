@@ -91,19 +91,9 @@ public class GameDirector : MonoBehaviour {
 	
 	public int GetQTECount()
 	{
-		return this._inputManager.getPressCount ();
+		return this._inputManager.GetPressCount ();
 	}
 
-	public bool GetOvercomeBool()
-	{
-		return this._encounterManager.GetOvercomeStatus();
-	}
-	
-	public void TryingToOvercome()
-	{
-		this._encounterManager.AddToOvercomeCounter();
-	}
-	
 	#endregion
 
 	#region StateManager
@@ -111,6 +101,11 @@ public class GameDirector : MonoBehaviour {
 	public GameStates GetGameState()
 	{
 		return this._stateManager.GameState();
+	}
+
+	public void ChangeGameState(GameStates state)
+	{
+		this._stateManager.ChangeGameState (state);
 	}
 
 	#endregion
@@ -125,11 +120,11 @@ public class GameDirector : MonoBehaviour {
 	public void StopEncounterMode()
 	{
 		_stateManager.ChangeGameState(GameStates.Normal);
+		Debug.Log ("Clearing black from enabling normal view");
 		_HUDManager.EnableNormalView();
 		_encounterManager.KillSafetyLight();
 		//this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
 	}
-
 
     public void StartEncounterMode(bool lightCooldown)
     {
@@ -140,6 +135,12 @@ public class GameDirector : MonoBehaviour {
 		if (!lightCooldown)
 		{
 			_HUDManager.EnableEncounterView();
+			Debug.Log ("Black from encounter start");
+		}
+		else
+		{
+			Debug.Log ("Black from encounter start no pulse");
+			FadeToBlack();
 		}
 	}
 
@@ -155,6 +156,7 @@ public class GameDirector : MonoBehaviour {
 		if (this._stateManager.GameState () == GameStates.Encounter)
 		{
 			this._HUDManager.EnableEncounterView();
+			Debug.Log ("Black from light reset");
 		}
 	}
 
@@ -166,7 +168,52 @@ public class GameDirector : MonoBehaviour {
 	public bool CanUseToken()
 	{
 		return this._encounterManager.CanUseToken ();
-		return this._encounterManager.CanUseToken ();
+	}
+
+	public bool GetOvercomeBool()
+	{
+		return this._encounterManager.GetOvercomeStatus();
+	}
+	
+	public void TryingToOvercome()
+	{
+		this._encounterManager.AddToOvercomeCounter();
+	}
+
+	public void FailedToLinger()
+	{
+		this._encounterManager.SubtractFromOvercomeCounter();
+		ResetLinger();
+	}
+
+	public void BeginLingering()
+	{
+		this._player.GetComponent<Player>().BeginLingering();
+	}
+
+	public void ResetLinger()
+	{
+		this._player.GetComponent<Player>().ResetLinger();
+		Debug.Log ("Black from reseting linger");
+		FadeToBlack();
+	}
+
+	public void PlayerOvercame()
+	{
+		this._encounterManager.PlayerOvercame();
+		this._stateManager.ChangeGameState(GameStates.Normal);
+	}
+
+	public void FadeToBlack()
+	{
+		Debug.Log ("Going black");
+		this._HUDManager.FadeToBlack();
+	}
+
+	public void ClearFromBlack()
+	{
+		Debug.Log ("Going clear");
+		this._HUDManager.ClearFromBlack();
 	}
 
     #endregion

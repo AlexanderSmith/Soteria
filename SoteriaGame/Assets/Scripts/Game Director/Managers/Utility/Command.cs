@@ -1,9 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-
-
-
 public abstract class Command 
 {
 	public abstract void execute(Object actor);
@@ -11,8 +8,9 @@ public abstract class Command
 
 	protected void MovePlayer(Player inPlayer)
 	{
-		if(	GameDirector.instance.GetGameState() == GameStates.Normal || 
-		   	GameDirector.instance.GetEncounterState() != EncounterState.Active)
+		if(GameDirector.instance.GetGameState() == GameStates.Normal ||
+		   GameDirector.instance.GetGameState() == GameStates.Hidden ||
+		   GameDirector.instance.GetEncounterState() != EncounterState.Active)
 		{
 
 			inPlayer.Move();
