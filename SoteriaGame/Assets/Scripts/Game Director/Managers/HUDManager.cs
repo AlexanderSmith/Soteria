@@ -47,13 +47,12 @@ public class HUDManager : MonoBehaviour {
             //Initialize Fade out/in texture
             _fade = _HUDCanvas.GetComponentInChildren<SceneFadeInOut>();
         }
-
 	}
 
     public void EnableEncounterView()
     {
         _coinController.Pulsing = true;
-		_fade.toGoToClear = false;
+		FadeToBlack();
         //instructionText.enabled = false;
     }
 
@@ -61,13 +60,23 @@ public class HUDManager : MonoBehaviour {
     {
 //        instructionText.enabled = true;
         _coinController.Pulsing = false;
-		_fade.toGoToClear = true;
+		ClearFromBlack();
     }
 
 	public void EnableSafetyLightView()
 	{
 		//Debug.Log ("In light view");
 		_coinController.Pulsing = false;
+		ClearFromBlack();
+	}
+
+	public void FadeToBlack()
+	{
+		_fade.toGoToClear = false;
+	}
+
+	public void ClearFromBlack()
+	{
 		_fade.toGoToClear = true;
 	}
 

@@ -50,4 +50,13 @@ public class Player : MonoBehaviour
 		}
 	}
 
+	public void BeginLingering()
+	{
+		this._animator.SetBool("PreOvercome", true);
+	}
+
+	public void ResetLinger()
+	{
+		this._animator.SetBool("PreOvercome", false);
+	}
 }
