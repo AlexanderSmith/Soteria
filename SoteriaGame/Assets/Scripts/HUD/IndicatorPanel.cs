@@ -7,7 +7,6 @@ public class IndicatorPanel : MonoBehaviour {
     public string indicatorPrefab;
     public string arrowPrefab;
 
-
     List<GameObject> indicatorPool = new List<GameObject>();
     int indicatorPoolCursor = 0;
 
@@ -16,6 +15,7 @@ public class IndicatorPanel : MonoBehaviour {
     
 	// Use this for initialization
 	void Start () {
+	
 	}
 	
 	// Update is called once per frame
@@ -34,13 +34,15 @@ public class IndicatorPanel : MonoBehaviour {
             Vector3 screenPos = Camera.main.WorldToScreenPoint(gObj.transform.position);
             Color color = Color.red;
 
+            Rect screenPosPixelInset = new Rect(screenPos.x, screenPos.y, 0, 0);
+
             if (screenPos.z > 0 &&
                screenPos.x > 0 && screenPos.x < Screen.width &&
                screenPos.y > 0 && screenPos.y < Screen.height)
             {
                 GameObject spot = getIndicator();
-                spot.transform.localPosition = screenPos;   
-				spot.transform.parent = gameObject.transform;
+
+                spot.GetComponent<GUITexture>().pixelInset = screenPosPixelInset;    
             }
             else
             {
@@ -73,14 +75,17 @@ public class IndicatorPanel : MonoBehaviour {
                     screenPos = new Vector3(-screenBounds.y / m, -screenBounds.y, 0);
                 }
 
+                Camera cam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>(); 
+
                 screenPos += screenCenter;
+                screenPos.z = cam.nearClipPlane;
+                Debug.Log(screenPos);
                 GameObject myArrow = getArrow();
-                myArrow.transform.localPosition = screenPos;
+                myArrow.transform.position = cam.ScreenToWorldPoint(screenPos);
                 myArrow.transform.localRotation = Quaternion.Euler(0, 0, angle * Mathf.Rad2Deg);
-				myArrow.transform.parent = gameObject.transform;
             }
         }
-
+        cleanPool();
     }
 
     void resetPool()
