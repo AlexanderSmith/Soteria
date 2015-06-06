@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1cacc363a6aacb0449131b0c3e0e5cc1
+guid: a51a803627629d744a7ab3ceba7bc70c
 ModelImporter:
   serializedVersion: 16
   fileIDToRecycleName:
@@ -92,152 +92,157 @@ ModelImporter:
     100172: D_Wrist_Jntq
     100174: Global_Ctrl
     100176: Global_Offset
-    100178: group17
-    100180: group18
-    100182: group20
-    100184: group22
-    100186: group33
-    100188: group34
-    100190: group35
-    100192: group36
-    100194: group37
-    100196: group38
-    100198: group42
-    100200: group43
-    100202: group43 1
-    100204: group43 2
-    100206: group44
-    100208: group44 1
-    100210: group44 2
-    100212: group45
-    100214: group46
-    100216: group48
-    100218: group49
-    100220: group50
-    100222: group51
-    100224: group52
-    100226: group53
-    100228: group54
-    100230: group55
-    100232: group56
-    100234: group57
-    100236: group58
-    100238: group59
-    100240: group60
-    100242: group61
-    100244: group62
-    100246: group63
-    100248: group64
-    100250: group65
-    100252: group66
-    100254: group67
-    100256: group68
-    100258: group69
-    100260: group70
-    100262: group71
-    100264: group72
-    100266: group73
-    100268: group74
-    100270: group75
-    100272: group76
-    100274: group77
-    100276: group78
-    100278: group79
-    100280: group8
-    100282: Hat
-    100284: Head
-    100286: Head_Ctrl
-    100288: Head_Offset
-    100290: Jaw_Jnt
-    100292: joint10
-    100294: joint10 1
-    100296: joint10 2
-    100298: joint13
-    100300: joint14
-    100302: joint15
-    100304: joint16
-    100306: joint19
-    100308: joint20
-    100310: joint21
-    100312: joint22
-    100314: joint23
-    100316: joint24
-    100318: joint25
-    100320: joint26
-    100322: joint27
-    100324: joint28
-    100326: joint29
-    100328: joint3
-    100330: joint30
-    100332: joint31
-    100334: joint32
-    100336: joint33
-    100338: joint34
-    100340: joint35
-    100342: joint37
-    100344: joint38
-    100346: joint39
-    100348: joint4
-    100350: joint40
-    100352: joint41
-    100354: joint41 1
-    100356: joint41 2
-    100358: joint42
-    100360: joint42 1
-    100362: joint42 2
-    100364: joint43
-    100366: joint44
-    100368: joint45
-    100370: joint46
-    100372: joint46 1
-    100374: joint46 2
-    100376: joint47
-    100378: joint47 1
-    100380: joint47 2
-    100382: joint48
-    100384: joint49
-    100386: joint5
-    100388: joint5 1
-    100390: joint5 2
-    100392: joint6
-    100394: joint7
-    100396: LowerSpine_Ctrl
-    100398: LowerSpine_Offset
-    100400: MidSpine_Ctrl
-    100402: MidSpine_Offset
-    100404: Neck01
-    100406: Neck02
-    100408: Neck02_Ctrl
-    100410: Neck02_Offset
-    100412: Neck03
-    100414: Neck03_Ctrl
-    100416: Neck03_Offset
-    100418: Neck_Ctrl
-    100420: Neck_Offset
-    100422: nurbsCircle2
-    100424: nurbsCircle2 1
-    100426: nurbsCircle2 2
-    100428: nurbsCircle2 3
-    100430: nurbsCircle2 4
-    100432: nurbsCircle2 5
-    100434: pasted__Eye1
-    100436: pasted__Eye2
-    100438: pasted__EyeGRP
-    100440: Root_Ctrl
-    100442: RootCtrl_Offset
-    100444: ShadowCreature
-    100446: //RootNode
-    100448: Spine01
-    100450: Spine02
-    100452: Spine03
-    100454: Spine04
-    100456: Spine05
-    100458: Spine06
-    100460: Spine07
-    100462: Spine_Curve
-    100464: transform1
-    100466: UpperSpine_Ctrl
-    100468: UpperSpine_Offset
+    100178: group
+    100180: group17
+    100182: group18
+    100184: group2
+    100186: group20
+    100188: group21
+    100190: group22
+    100192: group33
+    100194: group34
+    100196: group35
+    100198: group36
+    100200: group37
+    100202: group38
+    100204: group42
+    100206: group43
+    100208: group43 1
+    100210: group43 2
+    100212: group44
+    100214: group44 1
+    100216: group44 2
+    100218: group45
+    100220: group46
+    100222: group48
+    100224: group49
+    100226: group50
+    100228: group51
+    100230: group52
+    100232: group53
+    100234: group54
+    100236: group55
+    100238: group56
+    100240: group57
+    100242: group58
+    100244: group59
+    100246: group60
+    100248: group61
+    100250: group62
+    100252: group63
+    100254: group64
+    100256: group65
+    100258: group66
+    100260: group67
+    100262: group68
+    100264: group69
+    100266: group70
+    100268: group71
+    100270: group72
+    100272: group73
+    100274: group74
+    100276: group75
+    100278: group76
+    100280: group77
+    100282: group78
+    100284: group79
+    100286: group8
+    100288: Hat
+    100290: Head
+    100292: Head_Ctrl
+    100294: Head_Offset
+    100296: Jaw_Jnt
+    100298: joint10
+    100300: joint10 1
+    100302: joint10 2
+    100304: joint13
+    100306: joint14
+    100308: joint15
+    100310: joint16
+    100312: joint19
+    100314: joint20
+    100316: joint21
+    100318: joint22
+    100320: joint23
+    100322: joint24
+    100324: joint25
+    100326: joint26
+    100328: joint27
+    100330: joint28
+    100332: joint29
+    100334: joint3
+    100336: joint30
+    100338: joint31
+    100340: joint32
+    100342: joint33
+    100344: joint34
+    100346: joint35
+    100348: joint37
+    100350: joint38
+    100352: joint39
+    100354: joint4
+    100356: joint40
+    100358: joint41
+    100360: joint41 1
+    100362: joint41 2
+    100364: joint42
+    100366: joint42 1
+    100368: joint42 2
+    100370: joint43
+    100372: joint44
+    100374: joint45
+    100376: joint46
+    100378: joint46 1
+    100380: joint46 2
+    100382: joint47
+    100384: joint47 1
+    100386: joint47 2
+    100388: joint48
+    100390: joint49
+    100392: joint5
+    100394: joint5 1
+    100396: joint5 2
+    100398: joint6
+    100400: joint7
+    100402: left
+    100404: LowerSpine_Ctrl
+    100406: LowerSpine_Offset
+    100408: MidSpine_Ctrl
+    100410: MidSpine_Offset
+    100412: Neck01
+    100414: Neck02
+    100416: Neck02_Ctrl
+    100418: Neck02_Offset
+    100420: Neck03
+    100422: Neck03_Ctrl
+    100424: Neck03_Offset
+    100426: Neck_Ctrl
+    100428: Neck_Offset
+    100430: nurbsCircle2
+    100432: nurbsCircle2 1
+    100434: nurbsCircle2 2
+    100436: nurbsCircle2 3
+    100438: nurbsCircle2 4
+    100440: nurbsCircle2 5
+    100442: pasted__Eye1
+    100444: pasted__Eye2
+    100446: pasted__EyeGRP
+    100448: Root_Ctrl
+    100450: RootCtrl_Offset
+    100452: ShadowCreature
+    100454: //RootNode
+    100456: Spine01
+    100458: Spine02
+    100460: Spine03
+    100462: Spine04
+    100464: Spine05
+    100466: Spine06
+    100468: Spine07
+    100470: Spine_Curve
+    100472: SpineIK_Handle
+    100474: transform1
+    100476: UpperSpine_Ctrl
+    100478: UpperSpine_Offset
     400000: A_Clavicle_Jnt
     400002: A_Clavicle_Offset
     400004: A_Shoulder_Jnt
@@ -327,152 +332,157 @@ ModelImporter:
     400172: D_Wrist_Jntq
     400174: Global_Ctrl
     400176: Global_Offset
-    400178: group17
-    400180: group18
-    400182: group20
-    400184: group22
-    400186: group33
-    400188: group34
-    400190: group35
-    400192: group36
-    400194: group37
-    400196: group38
-    400198: group42
-    400200: group43
-    400202: group43 1
-    400204: group43 2
-    400206: group44
-    400208: group44 1
-    400210: group44 2
-    400212: group45
-    400214: group46
-    400216: group48
-    400218: group49
-    400220: group50
-    400222: group51
-    400224: group52
-    400226: group53
-    400228: group54
-    400230: group55
-    400232: group56
-    400234: group57
-    400236: group58
-    400238: group59
-    400240: group60
-    400242: group61
-    400244: group62
-    400246: group63
-    400248: group64
-    400250: group65
-    400252: group66
-    400254: group67
-    400256: group68
-    400258: group69
-    400260: group70
-    400262: group71
-    400264: group72
-    400266: group73
-    400268: group74
-    400270: group75
-    400272: group76
-    400274: group77
-    400276: group78
-    400278: group79
-    400280: group8
-    400282: Hat
-    400284: Head
-    400286: Head_Ctrl
-    400288: Head_Offset
-    400290: Jaw_Jnt
-    400292: joint10
-    400294: joint10 1
-    400296: joint10 2
-    400298: joint13
-    400300: joint14
-    400302: joint15
-    400304: joint16
-    400306: joint19
-    400308: joint20
-    400310: joint21
-    400312: joint22
-    400314: joint23
-    400316: joint24
-    400318: joint25
-    400320: joint26
-    400322: joint27
-    400324: joint28
-    400326: joint29
-    400328: joint3
-    400330: joint30
-    400332: joint31
-    400334: joint32
-    400336: joint33
-    400338: joint34
-    400340: joint35
-    400342: joint37
-    400344: joint38
-    400346: joint39
-    400348: joint4
-    400350: joint40
-    400352: joint41
-    400354: joint41 1
-    400356: joint41 2
-    400358: joint42
-    400360: joint42 1
-    400362: joint42 2
-    400364: joint43
-    400366: joint44
-    400368: joint45
-    400370: joint46
-    400372: joint46 1
-    400374: joint46 2
-    400376: joint47
-    400378: joint47 1
-    400380: joint47 2
-    400382: joint48
-    400384: joint49
-    400386: joint5
-    400388: joint5 1
-    400390: joint5 2
-    400392: joint6
-    400394: joint7
-    400396: LowerSpine_Ctrl
-    400398: LowerSpine_Offset
-    400400: MidSpine_Ctrl
-    400402: MidSpine_Offset
-    400404: Neck01
-    400406: Neck02
-    400408: Neck02_Ctrl
-    400410: Neck02_Offset
-    400412: Neck03
-    400414: Neck03_Ctrl
-    400416: Neck03_Offset
-    400418: Neck_Ctrl
-    400420: Neck_Offset
-    400422: nurbsCircle2
-    400424: nurbsCircle2 1
-    400426: nurbsCircle2 2
-    400428: nurbsCircle2 3
-    400430: nurbsCircle2 4
-    400432: nurbsCircle2 5
-    400434: pasted__Eye1
-    400436: pasted__Eye2
-    400438: pasted__EyeGRP
-    400440: Root_Ctrl
-    400442: RootCtrl_Offset
-    400444: ShadowCreature
-    400446: //RootNode
-    400448: Spine01
-    400450: Spine02
-    400452: Spine03
-    400454: Spine04
-    400456: Spine05
-    400458: Spine06
-    400460: Spine07
-    400462: Spine_Curve
-    400464: transform1
-    400466: UpperSpine_Ctrl
-    400468: UpperSpine_Offset
+    400178: group
+    400180: group17
+    400182: group18
+    400184: group2
+    400186: group20
+    400188: group21
+    400190: group22
+    400192: group33
+    400194: group34
+    400196: group35
+    400198: group36
+    400200: group37
+    400202: group38
+    400204: group42
+    400206: group43
+    400208: group43 1
+    400210: group43 2
+    400212: group44
+    400214: group44 1
+    400216: group44 2
+    400218: group45
+    400220: group46
+    400222: group48
+    400224: group49
+    400226: group50
+    400228: group51
+    400230: group52
+    400232: group53
+    400234: group54
+    400236: group55
+    400238: group56
+    400240: group57
+    400242: group58
+    400244: group59
+    400246: group60
+    400248: group61
+    400250: group62
+    400252: group63
+    400254: group64
+    400256: group65
+    400258: group66
+    400260: group67
+    400262: group68
+    400264: group69
+    400266: group70
+    400268: group71
+    400270: group72
+    400272: group73
+    400274: group74
+    400276: group75
+    400278: group76
+    400280: group77
+    400282: group78
+    400284: group79
+    400286: group8
+    400288: Hat
+    400290: Head
+    400292: Head_Ctrl
+    400294: Head_Offset
+    400296: Jaw_Jnt
+    400298: joint10
+    400300: joint10 1
+    400302: joint10 2
+    400304: joint13
+    400306: joint14
+    400308: joint15
+    400310: joint16
+    400312: joint19
+    400314: joint20
+    400316: joint21
+    400318: joint22
+    400320: joint23
+    400322: joint24
+    400324: joint25
+    400326: joint26
+    400328: joint27
+    400330: joint28
+    400332: joint29
+    400334: joint3
+    400336: joint30
+    400338: joint31
+    400340: joint32
+    400342: joint33
+    400344: joint34
+    400346: joint35
+    400348: joint37
+    400350: joint38
+    400352: joint39
+    400354: joint4
+    400356: joint40
+    400358: joint41
+    400360: joint41 1
+    400362: joint41 2
+    400364: joint42
+    400366: joint42 1
+    400368: joint42 2
+    400370: joint43
+    400372: joint44
+    400374: joint45
+    400376: joint46
+    400378: joint46 1
+    400380: joint46 2
+    400382: joint47
+    400384: joint47 1
+    400386: joint47 2
+    400388: joint48
+    400390: joint49
+    400392: joint5
+    400394: joint5 1
+    400396: joint5 2
+    400398: joint6
+    400400: joint7
+    400402: left
+    400404: LowerSpine_Ctrl
+    400406: LowerSpine_Offset
+    400408: MidSpine_Ctrl
+    400410: MidSpine_Offset
+    400412: Neck01
+    400414: Neck02
+    400416: Neck02_Ctrl
+    400418: Neck02_Offset
+    400420: Neck03
+    400422: Neck03_Ctrl
+    400424: Neck03_Offset
+    400426: Neck_Ctrl
+    400428: Neck_Offset
+    400430: nurbsCircle2
+    400432: nurbsCircle2 1
+    400434: nurbsCircle2 2
+    400436: nurbsCircle2 3
+    400438: nurbsCircle2 4
+    400440: nurbsCircle2 5
+    400442: pasted__Eye1
+    400444: pasted__Eye2
+    400446: pasted__EyeGRP
+    400448: Root_Ctrl
+    400450: RootCtrl_Offset
+    400452: ShadowCreature
+    400454: //RootNode
+    400456: Spine01
+    400458: Spine02
+    400460: Spine03
+    400462: Spine04
+    400464: Spine05
+    400466: Spine06
+    400468: Spine07
+    400470: Spine_Curve
+    400472: SpineIK_Handle
+    400474: transform1
+    400476: UpperSpine_Ctrl
+    400478: UpperSpine_Offset
     2300000: pasted__Eye1
     2300002: pasted__Eye2
     3300000: pasted__Eye1
@@ -480,7 +490,7 @@ ModelImporter:
     4300000: ShadowCreature
     4300002: pasted__Eye1
     4300004: pasted__Eye2
-    7400000: Creature_idle
+    7400000: Take 001
     9500000: //RootNode
     13700000: ShadowCreature
   materials:
@@ -500,17 +510,17 @@ ModelImporter:
     extraExposedTransformPaths: []
     clipAnimations:
     - serializedVersion: 16
-      name: Creature_idle
+      name: Take 001
       takeName: Take 001
-      firstFrame: 1
-      lastFrame: 240
+      firstFrame: 100
+      lastFrame: 399
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
       cycleOffset: 0
       loop: 0
-      loopTime: 0
-      loopBlend: 0
+      loopTime: 1
+      loopBlend: 1
       loopBlendOrientation: 0
       loopBlendPositionY: 0
       loopBlendPositionXZ: 0
@@ -521,14 +531,7 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events:
-      - time: 0
-        functionName: NewEvent
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
-        messageOptions: 0
+      events: []
       transformMask:
       - path: 
         weight: 1
@@ -853,6 +856,8 @@ ModelImporter:
       - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint49/joint46
           2/joint47 2/joint5 2
         weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/group2
+        weight: 1
       - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset
         weight: 1
       - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2
@@ -1065,6 +1070,9 @@ ModelImporter:
       - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
           1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt/D_Forearm_Jnt/D_Wrist_Jntq/joint22/joint24/joint25/joint26/joint27
         weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/group21
+        weight: 1
       - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group37
         weight: 1
       - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group37/cluster5Handle
@@ -1115,16 +1123,22 @@ ModelImporter:
         weight: 1
       - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/Spine01/Spine02/Spine03/Spine04/Spine05/Spine06/Spine07
         weight: 1
+      - path: group
+        weight: 1
+      - path: left
+        weight: 1
       - path: ShadowCreature
         weight: 1
       - path: Spine_Curve
+        weight: 1
+      - path: SpineIK_Handle
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: .00999999978
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1
