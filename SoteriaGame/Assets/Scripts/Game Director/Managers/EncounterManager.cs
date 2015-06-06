@@ -71,7 +71,12 @@ public class EncounterManager : MonoBehaviour
 	{
 		foreach (GameObject enemy in enemies) 
 		{
-			enemy.GetComponent<BasicEnemyController>().Initialize(this);
+			Debug.Log(enemy.name);
+			BasicEnemyController temp = enemy.GetComponent<BasicEnemyController>();
+
+
+			if (temp != null)
+				temp.Initialize(this);
 		}
 	}
 

@@ -10,7 +10,11 @@ public class BasicEnemyController : MonoBehaviour {
 	private float pushBack = 100.0f;
 	//private Texture CurrentTexture;
 	private Animator anim;
-	
+
+	public void Start()
+	{
+		Debug.Log ("BASIC ENEMY");
+	}
 	// Use this for initialization
 	public void Initialize(EncounterManager encMan)
 	{
@@ -53,7 +57,8 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void OverwhelmPlayer()
 	{
-		anim.SetBool ("Aggro", true);
+	//	anim.SetBool ("Moving", false);
+		anim.SetBool ("Overpower", true);
 //		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;
 //		this.renderer.material.mainTexture = CurrentTexture;
 		agent.Stop();
