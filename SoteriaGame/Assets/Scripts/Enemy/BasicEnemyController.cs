@@ -10,6 +10,7 @@ public class BasicEnemyController : MonoBehaviour {
 	private float pushBack = 100.0f;
 	//private Texture CurrentTexture;
 	private Animator anim;
+	public bool dead = false;
 	
 	// Use this for initialization
 	public void Initialize(EncounterManager encMan)
@@ -43,7 +44,7 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void ChasePlayer()
 	{
-		anim.SetBool ("Moving", true);
+		anim.SetBool ("Aggro", true);
 		anim.SetBool ("Alert", false);
 //		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;
 //		this.renderer.material.mainTexture = CurrentTexture;
@@ -53,7 +54,7 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void OverwhelmPlayer()
 	{
-		anim.SetBool ("Aggro", true);
+		//anim.SetBool ("Overpower", true);
 //		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;
 //		this.renderer.material.mainTexture = CurrentTexture;
 		agent.Stop();
@@ -78,5 +79,28 @@ public class BasicEnemyController : MonoBehaviour {
 	public void PushBack()
 	{
 		this.gameObject.rigidbody.AddForce(-this.gameObject.transform.forward * pushBack, ForceMode.Impulse);
+	}
+
+	public void Overpower()
+	{
+		anim.SetBool ("Overpower", true);
+	}
+
+	public void ResetOverpower()
+	{
+		anim.SetBool ("Overpower", false);
+	}
+
+	public void Cower()
+	{
+		anim.SetBool ("Cower", true);
+		dead = true;
+		anim.SetBool ("Aggro", false);
+		anim.SetBool ("Overpower", false);
+	}
+
+	public void DestroyMe()
+	{
+		encounterManager.DestroyMe ();
 	}
 }

@@ -194,26 +194,38 @@ public class GameDirector : MonoBehaviour {
 	public void ResetLinger()
 	{
 		this._player.GetComponent<Player>().ResetLinger();
-		Debug.Log ("Black from reseting linger");
+		//Debug.Log ("Black from reseting linger");
 		FadeToBlack();
+		ResetOverpower ();
 	}
 
 	public void PlayerOvercame()
 	{
 		this._encounterManager.PlayerOvercame();
 		this._stateManager.ChangeGameState(GameStates.Normal);
+		this._encounterManager.Cower ();
 	}
 
 	public void FadeToBlack()
 	{
-		Debug.Log ("Going black");
+		//Debug.Log ("Going black");
 		this._HUDManager.FadeToBlack();
 	}
 
 	public void ClearFromBlack()
 	{
-		Debug.Log ("Going clear");
+		//Debug.Log ("Going clear");
 		this._HUDManager.ClearFromBlack();
+	}
+
+	public void Overpower()
+	{
+		this._encounterManager.Overpower ();
+	}
+
+	public void ResetOverpower()
+	{
+		this._encounterManager.ResetOverpower ();
 	}
 
     #endregion

@@ -510,7 +510,643 @@ ModelImporter:
     animationScaleError: .5
     animationWrapMode: 0
     extraExposedTransformPaths: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 237
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events:
+      - time: 1
+        functionName: DestroyMe
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: b2315713782d8e24d910b092ac786a39,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      transformMask:
+      - path: 
+        weight: 1
+      - path: directionalLight1
+        weight: 1
+      - path: Global_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/group36
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/group36/cluster1Handle
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/group35
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/group35/cluster2Handle
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/group34
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/group34/cluster3Handle
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39/joint40
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39/joint40/joint41
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39/joint40/joint41/joint42
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39/joint40/joint41/joint42/joint10
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39/joint43
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39/joint43/joint41
+          1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39/joint43/joint41
+          1/joint42 1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39/joint43/joint41
+          1/joint42 1/joint10 1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39/joint44
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39/joint44/joint41
+          2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39/joint44/joint41
+          2/joint42 2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Clavicle_Jnt/B_Shoulder_Jnt/B_Bicep_Jnt/B_Elbow_Jnt/B_Forearm_Jnt/B_Wrist_Jntq/joint39/joint44/joint41
+          2/joint42 2/joint10 2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group42
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group42/curve2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group42/curve2/group43
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group42/curve2/group43/curve2
+          6
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group42/curve2/group43/curve2
+          6/group44
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group42/curve2/group43/curve2
+          6/group44/curve2 17
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group45
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group45/curve2
+          1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group45/curve2
+          1/group43 1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group45/curve2
+          1/group43 1/curve2 7
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group45/curve2
+          1/group43 1/curve2 7/group44 1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group45/curve2
+          1/group43 1/curve2 7/group44 1/curve2 18
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group46
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group46/curve2
+          2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group46/curve2
+          2/group43 2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group46/curve2
+          2/group43 2/curve2 8
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group46/curve2
+          2/group43 2/curve2 8/group44 2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/B_Wrist_Offset/B_Wrist_Ctrl/group46/curve2
+          2/group43 2/curve2 8/group44 2/curve2 19
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/group75
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/B_Elbow_Offset/B_Elbow_Ctrl/group75/curve4
+          2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/group73
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/B_Clavicle_Offset/B_Clavicle_Ctrl/B_Shoulder_Offset/B_Shoulder_Ctrl/group73/curve4
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15/joint14
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15/joint14/joint16
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15/joint14/joint16/joint29
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15/joint14/joint16/joint29/joint13
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15/joint30
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15/joint30/joint31
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15/joint30/joint31/joint32
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15/joint30/joint31/joint32/joint33
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15/joint34
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15/joint34/joint35
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15/joint34/joint35/joint37
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Clavicle_Jnt/C_Shoulder_Jnt/C_Bicep_Jnt/C_Elbow_Jnt/C_Forearm_Jnt/C_Wrist_Jnt/joint15/joint34/joint35/joint37/joint38
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group58
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group58/curve2
+          3
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group58/curve2
+          3/group64
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group58/curve2
+          3/group64/curve2 9
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group58/curve2
+          3/group64/curve2 9/group65
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group58/curve2
+          3/group64/curve2 9/group65/curve2 20
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group66
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group66/curve2
+          4
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group66/curve2
+          4/group67
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group66/curve2
+          4/group67/curve2 10
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group66/curve2
+          4/group67/curve2 10/group68
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group66/curve2
+          4/group67/curve2 10/group68/curve2 21
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group71
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group71/curve2
+          5
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group71/curve2
+          5/group69
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group71/curve2
+          5/group69/curve2 11
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group71/curve2
+          5/group69/curve2 11/group70
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/C_Wrist_Offset/C_Wrist_Ctrl/group71/curve2
+          5/group69/curve2 11/group70/curve2 22
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/group72
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/C_Elbow_Offset/C_Elbow_Ctrl/group72/curve4
+          3
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/group74
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/C_Clavicle_Offset/C_Clavicle_Ctrl/C_Shoulder_Offset/C_Shoulder_Ctrl/group74/curve4
+          1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/group38
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/group38/cluster4Handle
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint45
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint45/joint46
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint45/joint46/joint47
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint45/joint46/joint47/joint5
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint48
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint48/joint46
+          1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint48/joint46
+          1/joint47 1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint48/joint46
+          1/joint47 1/joint5 1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint49
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint49/joint46
+          2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint49/joint46
+          2/joint47 2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/A_Shoulder_Jnt/joint7/joint3/joint6/joint28/joint4/joint49/joint46
+          2/joint47 2/joint5 2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Clavicle_Jnt/group2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group49
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group49/curve2 12
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group49/curve2 12/group50
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group49/curve2 12/group50/curve2 23
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group49/curve2 12/group50/curve2 23/group54
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group49/curve2 12/group50/curve2 23/group54/curve2
+          28
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group51
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group51/curve2 13
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group51/curve2 13/group52
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group51/curve2 13/group52/curve2 24
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group51/curve2 13/group52/curve2 24/group53
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group51/curve2 13/group52/curve2 24/group53/curve2
+          29
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group57
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group57/curve2 14
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group57/curve2 14/group56
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group57/curve2 14/group56/curve2 25
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group57/curve2 14/group56/curve2 25/group55
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group18/nurbsCircle2 4/group57/curve2 14/group56/curve2 25/group55/curve2
+          30
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group76
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group22/nurbsCircle2
+          2/group76/curve4 6
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group79
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/A_Clavicle_Offset/curve1/A_Shoulder_Offset/nurbsCircle2/group79/curve4
+          4
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5/group48
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5/group48/curve2
+          15
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5/group48/curve2
+          15/group59
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5/group48/curve2
+          15/group59/curve2 26
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5/group48/curve2
+          15/group59/curve2 26/group60
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5/group48/curve2
+          15/group59/curve2 26/group60/curve2 31
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5/group61
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5/group61/curve2
+          16
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5/group61/curve2
+          16/group62
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5/group61/curve2
+          16/group62/curve2 27
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5/group61/curve2
+          16/group62/curve2 27/group63
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group17/nurbsCircle2 5/group61/curve2
+          16/group62/curve2 27/group63/curve2 32
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group78
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group20/nurbsCircle2 3/group78/curve4 7
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group77
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/group33/nurbsCircle2 1/group77/curve4 5
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt/D_Forearm_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt/D_Forearm_Jnt/D_Wrist_Jntq
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt/D_Forearm_Jnt/D_Wrist_Jntq/joint22
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt/D_Forearm_Jnt/D_Wrist_Jntq/joint22/joint21
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt/D_Forearm_Jnt/D_Wrist_Jntq/joint22/joint21/joint20
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt/D_Forearm_Jnt/D_Wrist_Jntq/joint22/joint21/joint20/joint19
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt/D_Forearm_Jnt/D_Wrist_Jntq/joint22/joint21/joint20/joint19/joint23
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt/D_Forearm_Jnt/D_Wrist_Jntq/joint22/joint24
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt/D_Forearm_Jnt/D_Wrist_Jntq/joint22/joint24/joint25
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt/D_Forearm_Jnt/D_Wrist_Jntq/joint22/joint24/joint25/joint26
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/D_Bicep_Jnt/D_Elbow_Jnt/D_Forearm_Jnt/D_Wrist_Jntq/joint22/joint24/joint25/joint26/joint27
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group8/curve1
+          1/transform1/D_Clavicle_Jnt/D_Shoulder_Jnt/group21
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group37
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group37/cluster5Handle
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Head_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Head_Offset/Head_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck01
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck01/Neck02
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck01/Neck02/Neck03
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck01/Neck02/Neck03/Head
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck01/Neck02/Neck03/Head/Hat
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck01/Neck02/Neck03/Head/Jaw_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck01/Neck02/Neck03/Head/Jaw_Jnt/Chin_Jnt
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck01/Neck02/Neck03/Head/pasted__EyeGRP
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck01/Neck02/Neck03/Head/pasted__EyeGRP/pasted__Eye1
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck01/Neck02/Neck03/Head/pasted__EyeGRP/pasted__Eye2
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck02_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck02_Offset/Neck02_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck02_Offset/Neck02_Ctrl/Neck03_Offset
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/LowerSpine_Offset/LowerSpine_Ctrl/MidSpine_Offset/MidSpine_Ctrl/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Neck02_Offset/Neck02_Ctrl/Neck03_Offset/Neck03_Ctrl
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/Spine01
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/Spine01/Spine02
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/Spine01/Spine02/Spine03
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/Spine01/Spine02/Spine03/Spine04
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/Spine01/Spine02/Spine03/Spine04/Spine05
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/Spine01/Spine02/Spine03/Spine04/Spine05/Spine06
+        weight: 1
+      - path: Global_Offset/Global_Ctrl/RootCtrl_Offset/Root_Ctrl/Spine01/Spine02/Spine03/Spine04/Spine05/Spine06/Spine07
+        weight: 1
+      - path: group
+        weight: 1
+      - path: left
+        weight: 1
+      - path: ShadowCreature
+        weight: 1
+      - path: Spine_Curve
+        weight: 1
+      - path: SpineIK_Handle
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
     isReadable: 1
   meshes:
     lODScreenPercentages: []
