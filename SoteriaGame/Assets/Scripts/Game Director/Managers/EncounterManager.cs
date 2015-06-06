@@ -78,7 +78,7 @@ public class EncounterManager : MonoBehaviour
 
 	public void CheckPlayerDistance(GameObject enemy)
 	{
-		if (enemy.GetComponent<BasicEnemyController>().dead == false)
+		if (enemy.GetComponent<BasicEnemyController>().dead == false && GameDirector.instance.GetGameState() != GameStates.Hidden)
 		{
 			if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= overwhelmRange)
 			{
