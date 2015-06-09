@@ -59,4 +59,21 @@ public class Player : MonoBehaviour
 	{
 		this._animator.SetBool("PreOvercome", false);
 	}
+
+	public void HideDown()
+	{
+		this._animator.SetBool ("HideDown", true);
+	}
+
+	public void HideUp()
+	{
+		this._animator.SetBool ("HideDown", false);
+		this._animator.SetBool ("HideIdle", false);
+		this._animator.SetBool ("HideUp", true);
+	}
+
+	public void HideIdle()
+	{
+		this._animator.SetBool ("HideIdle", true);
+	}
 }

@@ -102,6 +102,7 @@ public class InputManager : MonoBehaviour
 			GameDirector.instance.TryingToOvercome();
 			preLinger = true;
 			GameDirector.instance.BeginLingering();
+			GameDirector.instance.Overpower();
 			this._inputTimer.ResetTimer();
 		}
 		else if (Input.GetKeyDown(KeyCode.Space) && preLinger)

@@ -71,29 +71,33 @@ public class EncounterManager : MonoBehaviour
 	{
 		foreach (GameObject enemy in enemies) 
 		{
+			Debug.Log(enemy.name);
 			enemy.GetComponent<BasicEnemyController>().Initialize(this);
 		}
 	}
 
 	public void CheckPlayerDistance(GameObject enemy)
 	{
-		if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= overwhelmRange)
+		if (enemy.GetComponent<BasicEnemyController>().dead == false && GameDirector.instance.GetGameState() != GameStates.Hidden)
 		{
-			Encounter(enemy);
-			//Debug.Log ("Distance" + enemy.GetComponent<BasicEnemyController>().GetDistance());
-			enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
-		}
-		else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= attackRange)
-		{
-			enemy.GetComponent<BasicEnemyController>().ChasePlayer();
-		}
-		else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= lookAtDistance)
-		{
-			enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
-		}
-		else
-		{
-			enemy.GetComponent<BasicEnemyController>().Unaware();
+			if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= overwhelmRange)
+			{
+				Encounter(enemy);
+				//Debug.Log ("Distance" + enemy.GetComponent<BasicEnemyController>().GetDistance());
+				enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
+			}
+			else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= attackRange)
+			{
+				enemy.GetComponent<BasicEnemyController>().ChasePlayer();
+			}
+			else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= lookAtDistance)
+			{
+				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
+			}
+			else
+			{
+				enemy.GetComponent<BasicEnemyController>().Unaware();
+			}
 		}
 	}
 
@@ -207,6 +211,25 @@ public class EncounterManager : MonoBehaviour
 	public void PlayerOvercame()
 	{
 		StopEncounter();
+	}
+
+	public void DestroyMe()
+	{
 		Destroy(currentEnemy);
+	}
+
+	public void Overpower()
+	{
+		currentEnemy.GetComponent<BasicEnemyController> ().Overpower ();
+	}
+
+	public void ResetOverpower()
+	{
+		currentEnemy.GetComponent<BasicEnemyController> ().ResetOverpower ();
+	}
+
+	public void Cower()
+	{
+		currentEnemy.GetComponent<BasicEnemyController> ().Cower ();
 	}
 }
