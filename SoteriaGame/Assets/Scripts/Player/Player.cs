@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
 
 	public void HideDown()
 	{
+		this._animator.SetBool ("HideUp", false);
 		this._animator.SetBool ("HideDown", true);
 	}
 
@@ -74,6 +75,7 @@ public class Player : MonoBehaviour
 
 	public void HideIdle()
 	{
+		this._animator.SetBool ("HideUp", false);
 		this._animator.SetBool ("HideIdle", true);
 	}
 }
