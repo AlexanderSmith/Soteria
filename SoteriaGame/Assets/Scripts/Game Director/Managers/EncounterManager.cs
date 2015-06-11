@@ -228,6 +228,11 @@ public class EncounterManager : MonoBehaviour
 		currentEnemy.GetComponent<BasicEnemyController> ().ResetOverpower ();
 	}
 
+	public void NextOPStage()
+	{
+		currentEnemy.GetComponent<BasicEnemyController> ().NextOPStage ();
+	}
+
 	public void Cower()
 	{
 		currentEnemy.GetComponent<BasicEnemyController> ().Cower ();

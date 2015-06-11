@@ -196,7 +196,7 @@ public class GameDirector : MonoBehaviour {
 		this._player.GetComponent<Player>().ResetLinger();
 		//Debug.Log ("Black from reseting linger");
 		FadeToBlack();
-		ResetOverpower ();
+		//ResetOverpower ();
 	}
 
 	public void PlayerOvercame()
@@ -226,6 +226,11 @@ public class GameDirector : MonoBehaviour {
 	public void ResetOverpower()
 	{
 		this._encounterManager.ResetOverpower ();
+	}
+
+	public void NextOPStage()
+	{
+		this._encounterManager.NextOPStage ();
 	}
 
     #endregion

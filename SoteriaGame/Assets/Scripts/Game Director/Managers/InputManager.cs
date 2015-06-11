@@ -217,7 +217,8 @@ public class InputManager : MonoBehaviour
 			lingerDuration = 2.0f + lingerLonger;
 			keyPressCounter = 0;
 			preLinger = false;
-			Debug.Log("False from linger timer reset");
+			GameDirector.instance.NextOPStage();
+			//Debug.Log("False from linger timer reset");
 			GameDirector.instance.ResetLinger();
 		}
 	}

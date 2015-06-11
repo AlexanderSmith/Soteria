@@ -11,6 +11,7 @@ public class BasicEnemyController : MonoBehaviour {
 	//private Texture CurrentTexture;
 	private Animator anim;
 	public bool dead = false;
+	private int opCounter = 1;
 	
 	// Use this for initialization
 	public void Initialize(EncounterManager encMan)
@@ -67,6 +68,7 @@ public class BasicEnemyController : MonoBehaviour {
 		anim.SetBool ("Overpower", false);
 		anim.SetBool ("Moving", false);
 		anim.SetBool ("Cower", false);
+		opCounter = 1;
 //		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Unaware") as Texture;
 //		this.renderer.material.mainTexture = CurrentTexture;
 	}
@@ -83,12 +85,25 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void Overpower()
 	{
-		anim.SetBool ("Overpower", true);
+		switch (opCounter)
+		{
+		case 1:
+			anim.SetBool ("Overpower", true);
+			break;
+		case 2:
+			anim.SetBool ("OP 2", true);
+			break;
+		case 3:
+			anim.SetBool ("OP 3", true);
+			break;
+		}
 	}
 
 	public void ResetOverpower()
 	{
 		anim.SetBool ("Overpower", false);
+		anim.SetBool ("OP 2", false);
+		anim.SetBool ("OP 3", false);
 	}
 
 	public void Cower()
@@ -97,10 +112,16 @@ public class BasicEnemyController : MonoBehaviour {
 		dead = true;
 		anim.SetBool ("Aggro", false);
 		anim.SetBool ("Overpower", false);
+		opCounter = 1;
 	}
 
 	public void DestroyMe()
 	{
 		encounterManager.DestroyMe ();
+	}
+
+	public void NextOPStage()
+	{
+		opCounter++;
 	}
 }
