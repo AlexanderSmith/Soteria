@@ -25,7 +25,7 @@ public class BasicEnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		distance = Vector3.Distance(this.transform.position, player.transform.position);
+		distance = Vector3.Distance(this.transform.position, player.transform.position);	
 		encounterManager.CheckPlayerDistance(this.gameObject);
 	}
 	

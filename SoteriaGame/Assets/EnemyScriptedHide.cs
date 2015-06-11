@@ -10,7 +10,7 @@ public class EnemyScriptedHide : MonoBehaviour {
 	void Start () 
 	{
 		Player = GameObject.FindWithTag("Player");
-		Enemy = GameObject.FindWithTag("Enemy");
+		Enemy = GameObject.Find("Enemy-Scripted");
 		EnemyTarget = GameObject.FindWithTag("EnemyTarget");
 
 		EnemyTarget.transform.position = new Vector3 ( EnemyTarget.transform.position.x,
@@ -24,7 +24,7 @@ public class EnemyScriptedHide : MonoBehaviour {
 		if (Enemy != null)
 		{
 			Enemy.transform.position = new Vector3 (  Enemy.transform.position.x,
-			                                          1.0f,
+			                                          0.5f,
 			                                          Enemy.transform.position.z );
 
 			if (Enemy.transform.position.Equals(EnemyTarget.transform.position))
