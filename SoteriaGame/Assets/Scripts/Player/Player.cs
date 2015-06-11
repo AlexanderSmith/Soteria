@@ -19,7 +19,6 @@ public class Player : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
 	{
-		this.transform.position = new Vector3(this.transform.position.x, 0.5f, this.transform.position.z);
 		this._animator.SetBool("Moving", false);
 		this.ApplyDirection();
 	}
