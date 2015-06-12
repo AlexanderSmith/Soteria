@@ -71,9 +71,9 @@ public class SafetyLightAgentMovement : MonoBehaviour
 		currentState = State.moving;
 		listOfSafeAreas = GameObject.FindGameObjectsWithTag ("SafeArea");
 		safetyLight = GameObject.FindWithTag ("Safety Light");
-		Debug.Log(safetyLight.name);
+		//Debug.Log(safetyLight.name);
 		player = GameObject.FindWithTag ("Player");
-		this.transform.position = player.transform.position;
+		this.gameObject.transform.position = player.transform.position;
 		safeArea = FindNearestSafeArea (listOfSafeAreas);
 	}
 

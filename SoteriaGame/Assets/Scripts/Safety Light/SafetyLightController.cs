@@ -5,7 +5,7 @@ public class SafetyLightController : MonoBehaviour{
 
 	private EncounterManager encounterManager;
 	private GameObject agent;
-	public Transform player;
+	//public Transform player;
 	private Transform safeArea;
 	private bool playerInLight;
 
