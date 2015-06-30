@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 	{
 		this.transform.rigidbody.velocity = new Vector3(0, 0, 0);
 		this.transform.rigidbody.MovePosition((inDirection * this.moveSpeed) + this.transform.rigidbody.position);
-		this.transform.rigidbody.position = new Vector3( this.transform.rigidbody.position.x, 0.5f, this.transform.rigidbody.rigidbody.position.z);
+		this.transform.rigidbody.position = new Vector3( this.transform.rigidbody.position.x, this.transform.rigidbody.position.y, this.transform.rigidbody.position.z);
 
 		this._direction = inDirection;
 	}
