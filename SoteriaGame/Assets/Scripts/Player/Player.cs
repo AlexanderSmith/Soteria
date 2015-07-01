@@ -23,6 +23,16 @@ public class Player : MonoBehaviour
 		this.ApplyDirection();
 	}
 
+//	void FixedUpdate()
+//	{
+//		Vector3 moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
+//		//moveDirection = Camera.main.transform.TransformDirection(moveDirection);
+//		moveDirection.y = 0;
+//		
+//		
+//		rigidbody.MovePosition(rigidbody.position + moveDirection * moveSpeed * Time.deltaTime);
+//	}
+
 	public void Move()
 	{
 		Vector3 Direction = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
