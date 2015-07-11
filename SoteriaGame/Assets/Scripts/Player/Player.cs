@@ -6,49 +6,33 @@ public class Player : MonoBehaviour
 {
 	public float moveSpeed = 0.15f;
 	public float rotationSpeed = 20.0f;
-	private Animator _animator;
 	public float MoveAngleCorrection = 45.0f;
-	private Vector3 _direction;
 
-	// Use this for initialization
-	void Start () 
+	private Animator _animator;
+	private Vector3 _direction;
+	
+	void Start ()
 	{
 		this._animator = this.gameObject.GetComponent<Animator>();
 	}
-	
-	// Update is called once per frame
-	void Update () 
+
+	void FixedUpdate () 
 	{
 		this._animator.SetBool("Moving", false);
-		this.ApplyDirection();
+//		this.ApplyDirection();
 	}
-
-//	void FixedUpdate()
-//	{
-//		Vector3 moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0, Input.GetAxisRaw("Vertical"));
-//		//moveDirection = Camera.main.transform.TransformDirection(moveDirection);
-//		moveDirection.y = 0;
-//		
-//		
-//		rigidbody.MovePosition(rigidbody.position + moveDirection * moveSpeed * Time.deltaTime);
-//	}
 
 	public void Move()
 	{
-		Vector3 Direction = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
-		Direction = Quaternion.AngleAxis (this.MoveAngleCorrection, Vector3.up) * Direction;
-	
-		this.ApplyMovement(Direction);
-
+		Vector3 moveDir = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
+		this.ApplyMovement(moveDir);
+		this.ApplyDirection();
 		this._animator.SetBool("Moving", true);
 	}
 	
 	public void ApplyMovement(Vector3 inDirection)
 	{
-		this.transform.rigidbody.velocity = new Vector3(0, 0, 0);
-		this.transform.rigidbody.MovePosition((inDirection * this.moveSpeed) + this.transform.rigidbody.position);
-		this.transform.rigidbody.position = new Vector3( this.transform.rigidbody.position.x, this.transform.rigidbody.position.y, this.transform.rigidbody.position.z);
-
+		this.transform.rigidbody.MovePosition((inDirection * this.moveSpeed * Time.deltaTime) + this.transform.rigidbody.position);
 		this._direction = inDirection;
 	}
 
@@ -56,7 +40,9 @@ public class Player : MonoBehaviour
 	{
 		if (this._direction != Vector3.zero)
 		{	
-			this.transform.rotation = Quaternion.Slerp(this.transform.rigidbody.rotation, Quaternion.LookRotation(this._direction),Time.deltaTime * 20.0f);
+			Quaternion targetRot = Quaternion.LookRotation (this._direction, Vector3.up);
+			Quaternion rot = Quaternion.Lerp (this.rigidbody.rotation, targetRot, rotationSpeed * Time.deltaTime);
+			this.rigidbody.MoveRotation (rot);
 		}
 	}
 
