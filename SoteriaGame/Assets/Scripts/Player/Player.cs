@@ -19,14 +19,13 @@ public class Player : MonoBehaviour
 	void FixedUpdate () 
 	{
 		this._animator.SetBool("Moving", false);
-//		this.ApplyDirection();
+		this.ApplyDirection();
 	}
 
 	public void Move()
 	{
 		Vector3 moveDir = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
 		this.ApplyMovement(moveDir);
-		this.ApplyDirection();
 		this._animator.SetBool("Moving", true);
 	}
 	
@@ -44,6 +43,11 @@ public class Player : MonoBehaviour
 			Quaternion rot = Quaternion.Lerp (this.rigidbody.rotation, targetRot, rotationSpeed * Time.deltaTime);
 			this.rigidbody.MoveRotation (rot);
 		}
+	}
+
+	public void Encounter()
+	{
+
 	}
 
 	public void BeginLingering()

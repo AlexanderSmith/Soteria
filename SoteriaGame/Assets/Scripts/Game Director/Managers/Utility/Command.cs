@@ -15,6 +15,10 @@ public abstract class Command
 
 			inPlayer.Move();
 		}
+		else
+		{
+			inPlayer.Encounter();
+		}
 	}
 }
 
