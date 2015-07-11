@@ -10,10 +10,22 @@ public class Player : MonoBehaviour
 
 	private Animator _animator;
 	private Vector3 _direction;
+
+	private IPlayerAction currentAction;
+
+	private enum PlayerState
+	{
+		normal,
+		encounter,
+	};
+
+	private PlayerState currentState;
 	
 	void Start ()
 	{
 		this._animator = this.gameObject.GetComponent<Animator>();
+		currentAction = new PlayerNormal();
+		currentState = PlayerState.normal;
 	}
 
 	void FixedUpdate () 
