@@ -2,5 +2,5 @@
 
 public interface IPlayerAction
 {
-	void PlayerAction(GameObject player);
+	void PlayerAction(Player player);
 }

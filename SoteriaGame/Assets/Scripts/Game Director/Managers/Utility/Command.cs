@@ -8,17 +8,17 @@ public abstract class Command
 
 	protected void MovePlayer(Player inPlayer)
 	{
-		if(GameDirector.instance.GetGameState() == GameStates.Normal ||
-		   GameDirector.instance.GetGameState() == GameStates.Hidden ||
-		   GameDirector.instance.GetEncounterState() != EncounterState.Active)
-		{
-
-			inPlayer.Move();
-		}
-		else
-		{
-			inPlayer.Encounter();
-		}
+//		if(GameDirector.instance.GetGameState() == GameStates.Normal ||
+//		   GameDirector.instance.GetGameState() == GameStates.Hidden ||
+//		   GameDirector.instance.GetEncounterState() != EncounterState.Active)
+//		{
+//
+//			inPlayer.Move();
+//		}
+//		else
+//		{
+//			inPlayer.Encounter();
+//		}
 	}
 }
 

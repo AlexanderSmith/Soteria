@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
 	private float intialLinger = 1.0f;
 	private float lingerDuration = 2.0f;
 	private int lingerLonger = 0;
-	
+
 	// Use this for initialization
 	void Awake () 
 	{
@@ -31,7 +31,6 @@ public class InputManager : MonoBehaviour
 		_buttonTypes.Add( 	new UpCommand()    ); //UpArrow		(W)
 		_buttonTypes.Add(  	new DownCommand()  ); //DownArrow	(S)
 		_buttonTypes.Add(   new SpaceCommand() ); //Spacebar	
-		
 	}
 	
 	// Update is called once per frame
@@ -48,7 +47,7 @@ public class InputManager : MonoBehaviour
 		}
 		else
 		{
-			this.ProcessInput();			
+			this.ProcessInput();
 			this.PurgeInputList();
 		}
 	}
