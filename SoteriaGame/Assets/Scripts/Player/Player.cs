@@ -12,11 +12,13 @@ public class Player : MonoBehaviour
 	private Vector3 _direction;
 
 	private IPlayerAction _currentAction;
+	private IPlayerAction normalAction = new PlayerActionNormal();
+	private IPlayerAction encounterAction = new PlayerActionEncounter();
 
 	private enum PlayerState
 	{
-		normal,
-		encounter,
+		NORMAL,
+		ENCOUNTER,
 	};
 
 	private PlayerState _currentState;
@@ -24,8 +26,8 @@ public class Player : MonoBehaviour
 	void Start ()
 	{
 		this._animator = this.gameObject.GetComponent<Animator>();
-		this.SwitchPlayerAction(new PlayerActionNormal());
-		this._currentState = PlayerState.normal;
+		PlayerActionNormal();
+		this._currentState = PlayerState.NORMAL;
 	}
 
 	void FixedUpdate () 
@@ -68,6 +70,16 @@ public class Player : MonoBehaviour
 		this._currentAction = newAction;
 	}
 
+	public void PlayerActionEncounter()
+	{
+		this.SwitchPlayerAction(encounterAction);
+	}
+
+	public void PlayerActionNormal()
+	{
+		this.SwitchPlayerAction(normalAction);
+	}
+
 	public void Moving()
 	{
 		this._animator.SetBool ("Moving", true);
@@ -100,5 +112,26 @@ public class Player : MonoBehaviour
 	{
 		this._animator.SetBool ("HideUp", false);
 		this._animator.SetBool ("HideIdle", true);
+	}
+
+	public void Overcome()
+	{
+		this._animator.SetBool ("Overcome", true);
+	}
+	
+	public void ResetEncounter()
+	{
+		this._animator.SetBool ("Overcome", false);
+		this._animator.SetBool("PreOvercome", false);
+	}
+	
+	public void AddFear()
+	{
+		this._animator.SetBool("Encounter", true);
+	}
+	
+	public void RemoveFear()
+	{
+		this._animator.SetBool("Encounter", false);
 	}
 }

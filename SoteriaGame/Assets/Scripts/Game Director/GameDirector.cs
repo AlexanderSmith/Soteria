@@ -120,35 +120,38 @@ public class GameDirector : MonoBehaviour {
 	public void StopEncounterMode()
 	{
 		_stateManager.ChangeGameState(GameStates.Normal);
-		Debug.Log ("Clearing black from enabling normal view");
+		//Debug.Log ("Clearing black from enabling normal view");
 		_HUDManager.EnableNormalView();
-		_encounterManager.KillSafetyLight();
+		GetPlayer().GetComponent<Player>().PlayerActionNormal();
 		//this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
 	}
 
-    public void StartEncounterMode(bool lightCooldown)
+    public void StartEncounterMode()
     {
 		if (_stateManager.GameState() != GameStates.Encounter) 
 		{
 			_stateManager.ChangeGameState (GameStates.Encounter);
 		}
-		if (!lightCooldown)
-		{
-			_HUDManager.EnableEncounterView();
-			Debug.Log ("Black from encounter start");
-		}
-		else
-		{
-			Debug.Log ("Black from encounter start no pulse");
-			FadeToBlack();
-		}
+
+		_HUDManager.EnableEncounterView();
+		GetPlayer().GetComponent<Player>().PlayerActionEncounter();
+//		if (!lightCooldown)
+//		{
+//			_HUDManager.EnableEncounterView();
+//			Debug.Log ("Black from encounter start");
+//		}
+//		else
+//		{
+//			Debug.Log ("Black from encounter start no pulse");
+//			FadeToBlack();
+//		}
+
 	}
 
     public void TakeSafteyLight()
     {
-		//StopEncounterMode();
-		//Debug.Log("Switching from encounter to safety light mode");
-		_encounterManager.InitializeSafetyLight();
+		StopEncounterMode();
+		/*Teleport to town center*/
     }
 
 	public void LightReset()
@@ -165,10 +168,10 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.PlayerCanOvercome();
 	}
 
-	public bool CanUseToken()
-	{
-		return this._encounterManager.CanUseToken ();
-	}
+//	public bool CanUseToken()
+//	{
+//		return this._encounterManager.CanUseToken ();
+//	}
 
 	public bool GetOvercomeBool()
 	{
@@ -203,7 +206,6 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._encounterManager.PlayerOvercame();
 		this._stateManager.ChangeGameState(GameStates.Normal);
-		this._encounterManager.Cower ();
 	}
 
 	public void FadeToBlack()

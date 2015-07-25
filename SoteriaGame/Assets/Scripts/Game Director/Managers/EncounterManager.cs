@@ -12,10 +12,9 @@ using System.Collections;
 
 public enum EncounterState
 {
-	Active,
-	ActiveLight,
-	Inactive,
-	Lingering
+	ACTIVE,
+	INACTIVE,
+	LINGERING
 };
 
 public class EncounterManager : MonoBehaviour
@@ -50,7 +49,7 @@ public class EncounterManager : MonoBehaviour
 		{
 			LightCooldown();
 		}
-		if (currentState == EncounterState.Active)
+		if (currentState == EncounterState.ACTIVE)
 		{
 			GameOverTimer();
 		}
@@ -58,13 +57,13 @@ public class EncounterManager : MonoBehaviour
 
     public void Initialize()
     {
-		lookAtDistance = 25.0f;
-		attackRange = 15.0f;
-		overwhelmRange = 5.0f;
+		lookAtDistance = 45.0f;
+		attackRange = 35.0f;
+		overwhelmRange = 15.0f;
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		LinkToEnemy();
 		safetyLight = GameObject.FindGameObjectWithTag("SafetyLight Agent");
-		currentState = EncounterState.Inactive;
+		currentState = EncounterState.INACTIVE;
     }
 
 	void LinkToEnemy()
@@ -103,36 +102,35 @@ public class EncounterManager : MonoBehaviour
 
 	public void Encounter(GameObject enemy)
 	{
-		if (currentState == EncounterState.Inactive)
+		if (currentState == EncounterState.INACTIVE)
 		{
-			currentState = EncounterState.Active;
+			currentState = EncounterState.ACTIVE;
 			StartEncounter(enemy);
-			GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().AddFear();
+			GameDirector.instance.GetPlayer().GetComponent<Player>().AddFear();
 		}
 	}
 
     public void StopEncounter()
     {
 		GameDirector.instance.StopEncounterMode();
-		lightOn = false;
-		currentState = EncounterState.Inactive;
-		GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().RemoveFear();
+		this.Cower();
+		currentState = EncounterState.INACTIVE;
+		GameDirector.instance.GetPlayer().GetComponent<Player>().RemoveFear();
 		EncounterReset();
     }
 
     public void StartEncounter(GameObject enemy)
     {
-		GameDirector.instance.StartEncounterMode(cooldown);
+		GameDirector.instance.StartEncounterMode();
 		currentEnemy = enemy;
     }
 
-	public void InitializeSafetyLight()
-	{
-		safetyLight.GetComponentInChildren<SafetyLightController>().Initialize(this);
-		lightOn = true;
-		currentState = EncounterState.ActiveLight;
-		GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().RemoveFear();
-	}
+//	public void InitializeSafetyLight()
+//	{
+//		safetyLight.GetComponentInChildren<SafetyLightController>().Initialize(this);
+//		lightOn = true;
+//		GameDirector.instance.GetPlayer().GetComponent<Player>().RemoveFear();
+//	}
 
 	public void KillSafetyLight()
 	{
@@ -177,7 +175,7 @@ public class EncounterManager : MonoBehaviour
 	{
 		overcomeCounter = 0;
 		ableToOvercome = false;
-		GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().ResetOvercome();
+		GameDirector.instance.GetPlayer().GetComponent<Player>().ResetEncounter();
 	}
 
 	public bool GetOvercomeStatus()
@@ -187,7 +185,7 @@ public class EncounterManager : MonoBehaviour
 
 	public void PlayerCanOvercome()
 	{
-		GameDirector.instance.GetPlayer().GetComponentInChildren<Qte_Handle>().Overcome();
+		GameDirector.instance.GetPlayer().GetComponent<Player>().Overcome();
 	}
 
 	void GameOverTimer()
@@ -199,14 +197,14 @@ public class EncounterManager : MonoBehaviour
 		}
 	}
 
-	public bool CanUseToken()
-	{
-		if (currentState == EncounterState.Active && !cooldown)
-		{
-			return true;
-		}
-		return false;
-	}
+//	public bool CanUseToken()
+//	{
+//		if (currentState == EncounterState.ACTIVE && !cooldown)
+//		{
+//			return true;
+//		}
+//		return false;
+//	}
 
 	public void PlayerOvercame()
 	{
