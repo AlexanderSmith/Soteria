@@ -47,8 +47,11 @@ public class ButtonController : MonoBehaviour
 
     public void SafetyLightButtonHit()
     {
-		///This can be removed completely and use the Director from the OnClick event in the inspector.
-		this._hudmanager.SafteyLightButtonHit();
+		if (GameDirector.instance.GetGameState() == GameStates.Encounter)
+		{
+			///This can be removed completely and use the Director from the OnClick event in the inspector.
+			this._hudmanager.SafteyLightButtonHit();
+		}
     }
 
 	//bool Pulsing

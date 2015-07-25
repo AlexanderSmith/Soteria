@@ -7,28 +7,43 @@ public class PlayerActionEncounter : IPlayerAction
 	private Timer _encounterTimer;
 	private TimersType _timerType = TimersType.Encounter;
 	private bool _isqtemode;
-	private bool _preLinger = false;
+	private bool _preLinger;
 
-	private int _keyPressCounter = 0;
-	public float intialLinger = 1.0f;
-	public float baseDuration = 2.0f;
-	public float lingerDuration = 2.0f;
-	private int _lingerLonger = 0;
+	private int _keyPressCounter;
+	public float intialLinger;
+	public float baseDuration;
+	public float lingerDuration;
+	private int _lingerLonger;
 
 	public void PlayerAction(Player inPlayer)
 	{
+		this.InitializeValues(inPlayer);
 		this.ProcessInput();
-		this.InitializeTimer();
-		this._encounterTimer.StartTimer();
 		if (_preLinger)
 		{
 			this.LingerTimer();
 		}
 	}
 
+	public void InitializeValues(Player inPlayer)
+	{
+		if (!inPlayer.encounterVariables)
+		{
+			this._preLinger = false;
+			this._keyPressCounter = 0;
+			this.intialLinger = 1.0f;
+			this.baseDuration = 2.0f;
+			this.lingerDuration = 2.0f;
+			this._lingerLonger = 0;
+			this.InitializeTimer();
+			inPlayer.FlipEncounterBool();
+		}
+	}
+
 	private void InitializeTimer()
 	{
 		this._encounterTimer = TimerManager.instance.Attach(this._timerType);
+		this._encounterTimer.StartTimer();
 	}
 
 	private void ProcessInput()
