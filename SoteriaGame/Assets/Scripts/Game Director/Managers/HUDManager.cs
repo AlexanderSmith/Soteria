@@ -90,11 +90,12 @@ public class HUDManager : MonoBehaviour {
 
     public void SafteyLightButtonHit()
     {
-		if (GameDirector.instance.CanUseToken ())
-		{
-			GameDirector.instance.TakeSafteyLight (); //This feels weird here but may be the only place to call it from, we'll see later.
-			EnableSafetyLightView ();
-		}
+		GameDirector.instance.TakeSafteyLight();
+//		if (GameDirector.instance.CanUseToken ())
+//		{
+//			GameDirector.instance.TakeSafteyLight (); //This feels weird here but may be the only place to call it from, we'll see later.
+//			EnableSafetyLightView ();
+//		}
     }
 
     private void CycleDiaglogueGUI(bool value)

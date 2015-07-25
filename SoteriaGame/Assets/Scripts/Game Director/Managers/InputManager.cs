@@ -17,7 +17,7 @@ public class InputManager : MonoBehaviour
 	private float intialLinger = 1.0f;
 	private float lingerDuration = 2.0f;
 	private int lingerLonger = 0;
-	
+
 	// Use this for initialization
 	void Awake () 
 	{
@@ -31,26 +31,25 @@ public class InputManager : MonoBehaviour
 		_buttonTypes.Add( 	new UpCommand()    ); //UpArrow		(W)
 		_buttonTypes.Add(  	new DownCommand()  ); //DownArrow	(S)
 		_buttonTypes.Add(   new SpaceCommand() ); //Spacebar	
-		
 	}
 	
 	// Update is called once per frame
 	public void Update () 
 	{
-		if (this.isQTEMode())
-		{
-			this.ProcessQTEInput();
-			this._inputTimer.StartTimer();
-			if (preLinger)
-			{
-				LingerTimer();
-			}
-		}
-		else
-		{
-			this.ProcessInput();			
-			this.PurgeInputList();
-		}
+//		if (this.isQTEMode())
+//		{
+//			this.ProcessQTEInput();
+//			this._inputTimer.StartTimer();
+//			if (preLinger)
+//			{
+//				LingerTimer();
+//			}
+//		}
+//		else
+//		{
+//			this.ProcessInput();
+//			this.PurgeInputList();
+//		}
 	}
 	
 	public int GetPressCount()
@@ -199,8 +198,8 @@ public class InputManager : MonoBehaviour
 
 	public bool isQTEMode()
 	{
-		if (GameDirector.instance.GetGameState() == GameStates.Encounter && 
-		    GameDirector.instance.GetEncounterState() != EncounterState.ActiveLight)
+		if (GameDirector.instance.GetGameState() == GameStates.Encounter) /*&& 
+		    GameDirector.instance.GetEncounterState() != EncounterState.ActiveLight)*/
 			this._isqtemode = true;
 		else
 			this._isqtemode = false;	

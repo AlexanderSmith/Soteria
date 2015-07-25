@@ -4,50 +4,85 @@ using System.Collections;
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour 
 {
-	public float moveSpeed = 0.15f;
+	public float moveSpeed = 5.0f;
 	public float rotationSpeed = 20.0f;
-	private Animator _animator;
 	public float MoveAngleCorrection = 45.0f;
+
+	private Animator _animator;
 	private Vector3 _direction;
 
-	// Use this for initialization
-	void Start () 
+	private IPlayerAction _currentAction;
+	private IPlayerAction normalAction = new PlayerActionNormal();
+	private IPlayerAction encounterAction = new PlayerActionEncounter();
+
+	private enum PlayerState
+	{
+		NORMAL,
+		ENCOUNTER,
+	};
+
+	private PlayerState _currentState;
+	
+	void Start ()
 	{
 		this._animator = this.gameObject.GetComponent<Animator>();
+		PlayerActionNormal();
+		this._currentState = PlayerState.NORMAL;
 	}
-	
-	// Update is called once per frame
-	void Update () 
+
+	void FixedUpdate () 
 	{
 		this._animator.SetBool("Moving", false);
-		this.ApplyDirection();
+		//this.ApplyDirection();
+		this._currentAction.PlayerAction(this);
 	}
 
-	public void Move()
-	{
-		Vector3 Direction = new Vector3 (Input.GetAxis ("Horizontal"), 0, Input.GetAxis ("Vertical"));
-		Direction = Quaternion.AngleAxis (this.MoveAngleCorrection, Vector3.up) * Direction;
-	
-		this.ApplyMovement(Direction);
+//	public void Move()
+//	{
+//		Vector3 moveDir = new Vector3 (Input.GetAxisRaw ("Horizontal"), 0, Input.GetAxisRaw ("Vertical"));
+//		this.ApplyMovement(moveDir);
+//		this._animator.SetBool("Moving", true);
+//	}
+//	
+//	public void ApplyMovement(Vector3 inDirection)
+//	{
+//		this.transform.rigidbody.MovePosition((inDirection * this.moveSpeed * Time.deltaTime) + this.transform.rigidbody.position);
+//		this._direction = inDirection;
+//	}
+//
+//	private void ApplyDirection()
+//	{
+//		if (this._direction != Vector3.zero)
+//		{	
+//			Quaternion targetRot = Quaternion.LookRotation (this._direction, Vector3.up);
+//			Quaternion rot = Quaternion.Lerp (this.rigidbody.rotation, targetRot, rotationSpeed * Time.deltaTime);
+//			this.rigidbody.MoveRotation (rot);
+//		}
+//	}
 
-		this._animator.SetBool("Moving", true);
+	public void Encounter()
+	{
+
 	}
-	
-	public void ApplyMovement(Vector3 inDirection)
-	{
-		this.transform.rigidbody.velocity = new Vector3(0, 0, 0);
-		this.transform.rigidbody.MovePosition((inDirection * this.moveSpeed) + this.transform.rigidbody.position);
-		this.transform.rigidbody.position = new Vector3( this.transform.rigidbody.position.x, 0.5f, this.transform.rigidbody.rigidbody.position.z);
 
-		this._direction = inDirection;
+	private void SwitchPlayerAction(IPlayerAction newAction)
+	{
+		this._currentAction = newAction;
 	}
 
-	private void ApplyDirection()
+	public void PlayerActionEncounter()
 	{
-		if (this._direction != Vector3.zero)
-		{	
-			this.transform.rotation = Quaternion.Slerp(this.transform.rigidbody.rotation, Quaternion.LookRotation(this._direction),Time.deltaTime * 20.0f);
-		}
+		this.SwitchPlayerAction(encounterAction);
+	}
+
+	public void PlayerActionNormal()
+	{
+		this.SwitchPlayerAction(normalAction);
+	}
+
+	public void Moving()
+	{
+		this._animator.SetBool ("Moving", true);
 	}
 
 	public void BeginLingering()
@@ -77,5 +112,26 @@ public class Player : MonoBehaviour
 	{
 		this._animator.SetBool ("HideUp", false);
 		this._animator.SetBool ("HideIdle", true);
+	}
+
+	public void Overcome()
+	{
+		this._animator.SetBool ("Overcome", true);
+	}
+	
+	public void ResetEncounter()
+	{
+		this._animator.SetBool ("Overcome", false);
+		this._animator.SetBool("PreOvercome", false);
+	}
+	
+	public void AddFear()
+	{
+		this._animator.SetBool("Encounter", true);
+	}
+	
+	public void RemoveFear()
+	{
+		this._animator.SetBool("Encounter", false);
 	}
 }
