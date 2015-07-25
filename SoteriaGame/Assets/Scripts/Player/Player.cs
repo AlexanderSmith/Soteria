@@ -4,7 +4,7 @@ using System.Collections;
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour 
 {
-	public float moveSpeed = 0.15f;
+	public float moveSpeed = 5.0f;
 	public float rotationSpeed = 20.0f;
 	public float MoveAngleCorrection = 45.0f;
 
@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
 	void Start ()
 	{
 		this._animator = this.gameObject.GetComponent<Animator>();
-		this.SwitchPlayerAction(new PlayerNormal());
+		this.SwitchPlayerAction(new PlayerActionNormal());
 		this._currentState = PlayerState.normal;
 	}
 

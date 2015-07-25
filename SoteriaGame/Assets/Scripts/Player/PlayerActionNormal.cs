@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class PlayerNormal : IPlayerAction
+public class PlayerActionNormal : IPlayerAction
 {
 	private Vector3 _camForward;
 	private Vector3 _camRight;
