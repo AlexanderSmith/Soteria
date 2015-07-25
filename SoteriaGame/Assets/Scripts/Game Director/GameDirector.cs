@@ -204,6 +204,7 @@ public class GameDirector : MonoBehaviour {
 
 	public void PlayerOvercame()
 	{
+		GetPlayer().GetComponent<Player>().Overcome();
 		this._encounterManager.PlayerOvercame();
 		this._stateManager.ChangeGameState(GameStates.Normal);
 	}

@@ -23,10 +23,9 @@ public class EncounterManager : MonoBehaviour
 	private GameObject safetyLight;
 	private GameObject currentEnemy;
 
-	private float lookAtDistance;
-	private float attackRange;
-	private float overwhelmRange;
-	private float lightTimer = 20.0f;
+	public float lookAtDistance = 45.0f;
+	public float attackRange = 35.0f;
+	public float overwhelmRange = 15.0f;
 	private float gameOverTimer = 30.0f;
 
 	private int overcomeCounter = 0;
@@ -45,10 +44,10 @@ public class EncounterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (cooldown)
-		{
-			LightCooldown();
-		}
+//		if (cooldown)
+//		{
+//			LightCooldown();
+//		}
 		if (currentState == EncounterState.ACTIVE)
 		{
 			GameOverTimer();
@@ -57,9 +56,6 @@ public class EncounterManager : MonoBehaviour
 
     public void Initialize()
     {
-		lookAtDistance = 45.0f;
-		attackRange = 35.0f;
-		overwhelmRange = 15.0f;
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		LinkToEnemy();
 		safetyLight = GameObject.FindGameObjectWithTag("SafetyLight Agent");
@@ -138,16 +134,16 @@ public class EncounterManager : MonoBehaviour
 		cooldown = true;
 	}
 
-	void LightCooldown()
-	{
-		lightTimer -= Time.deltaTime;
-		if (lightTimer <= 0.0f)
-		{
-			lightTimer = 20.0f;
-			cooldown = false;
-			GameDirector.instance.LightReset();
-		}
-	}
+//	void LightCooldown()
+//	{
+//		lightTimer -= Time.deltaTime;
+//		if (lightTimer <= 0.0f)
+//		{
+//			lightTimer = 20.0f;
+//			cooldown = false;
+//			GameDirector.instance.LightReset();
+//		}
+//	}
 
 	public EncounterState GetState()
 	{
