@@ -10,8 +10,15 @@ public class BasicEnemyController : MonoBehaviour {
 	private float pushBack = 100.0f;
 	//private Texture CurrentTexture;
 	private Animator anim;
-	public bool dead = false;
+	private bool dead = false;
 	private int opCounter = 1;
+
+	public Transform[] patrolLocations;
+	private int _patrolIndex = 0;
+	private float _chaseSpeed = 10.0f;
+	private float _patrolSpeed = 5.0f;
+	private float _patrolTimer = 0.0f;
+	public float waitTime = 5.0f;
 	
 	// Use this for initialization
 	public void Initialize(EncounterManager encMan)
@@ -27,7 +34,7 @@ public class BasicEnemyController : MonoBehaviour {
 	void Update () 
 	{
 		distance = Vector3.Distance(this.transform.position, player.transform.position);	
-		encounterManager.CheckPlayerDistance(this.gameObject);
+		encounterManager.CheckPlayerDistance(this.gameObject, this.dead);
 	}
 	
 	public void EndEncounter (bool status)
@@ -45,12 +52,13 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void ChasePlayer()
 	{
+		agent.speed = _chaseSpeed;
 		anim.SetBool ("Aggro", true);
 		anim.SetBool ("Alert", false);
 //		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;
 //		this.renderer.material.mainTexture = CurrentTexture;
 		agent.SetDestination (player.transform.position);
-		Debug.Log("Enemy chasing");
+		//Debug.Log("Enemy chasing");
 	}
 	
 	public void OverwhelmPlayer()
@@ -63,12 +71,32 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void Unaware()
 	{
+		agent.speed = _patrolSpeed;
 		anim.SetBool ("Aggro", false);
 		anim.SetBool ("Alert", false);
 		anim.SetBool ("Overpower", false);
-		anim.SetBool ("Moving", false);
 		anim.SetBool ("Cower", false);
 		opCounter = 1;
+		anim.SetBool ("Moving", true);
+		if (agent.remainingDistance < agent.stoppingDistance)
+		{
+			anim.SetBool ("Moving", false);
+			_patrolTimer += Time.deltaTime;
+			if (_patrolTimer >= waitTime)
+			{
+				if (_patrolIndex == patrolLocations.Length - 1)
+				{
+					_patrolIndex = 0;
+				}
+				else
+				{
+					_patrolIndex++;
+				}
+				_patrolTimer = 0.0f;
+			}
+		}
+
+		agent.destination = patrolLocations [_patrolIndex].position;
 //		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Unaware") as Texture;
 //		this.renderer.material.mainTexture = CurrentTexture;
 	}
