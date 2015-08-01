@@ -71,32 +71,40 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void Unaware()
 	{
-		agent.speed = _patrolSpeed;
 		anim.SetBool ("Aggro", false);
 		anim.SetBool ("Alert", false);
 		anim.SetBool ("Overpower", false);
 		anim.SetBool ("Cower", false);
 		opCounter = 1;
-		anim.SetBool ("Moving", true);
-		if (agent.remainingDistance < agent.stoppingDistance)
+		if (patrolLocations.Length > 0)
+		{
+			anim.SetBool ("Moving", true);
+			agent.speed = _patrolSpeed;
+			if (agent.remainingDistance < agent.stoppingDistance)
+			{
+				anim.SetBool ("Moving", false);
+				_patrolTimer += Time.deltaTime;
+				if (_patrolTimer >= waitTime)
+				{
+					if (_patrolIndex == patrolLocations.Length - 1)
+					{
+						_patrolIndex = 0;
+					}
+					else
+					{
+						_patrolIndex++;
+					}
+					_patrolTimer = 0.0f;
+				}
+			}
+
+			agent.destination = patrolLocations [_patrolIndex].position;
+		}
+		else
 		{
 			anim.SetBool ("Moving", false);
-			_patrolTimer += Time.deltaTime;
-			if (_patrolTimer >= waitTime)
-			{
-				if (_patrolIndex == patrolLocations.Length - 1)
-				{
-					_patrolIndex = 0;
-				}
-				else
-				{
-					_patrolIndex++;
-				}
-				_patrolTimer = 0.0f;
-			}
 		}
 
-		agent.destination = patrolLocations [_patrolIndex].position;
 //		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Unaware") as Texture;
 //		this.renderer.material.mainTexture = CurrentTexture;
 	}
