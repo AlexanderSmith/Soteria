@@ -92,6 +92,10 @@ public class EncounterManager : MonoBehaviour
 				enemy.GetComponent<BasicEnemyController>().Unaware();
 			}
 		}
+		else
+		{
+			enemy.GetComponent<BasicEnemyController>().Unaware();
+		}
 	}
 
 	public void Encounter(GameObject enemy)
