@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
 	public float moveSpeed = 5.0f;
 	public float rotationSpeed = 20.0f;
 	public float MoveAngleCorrection = 45.0f;
+	public bool encounterVariables = false;
 
 	private Animator _animator;
 	private Vector3 _direction;
@@ -60,9 +61,21 @@ public class Player : MonoBehaviour
 //		}
 //	}
 
-	public void Encounter()
+	private void PrivateFlipEncounterBool()
 	{
+		if (!this.encounterVariables)
+		{
+			this.encounterVariables = true;
+		}
+		else
+		{
+			this.encounterVariables = false;
+		}
+	}
 
+	public void FlipEncounterBool()
+	{
+		this.PrivateFlipEncounterBool ();
 	}
 
 	private void SwitchPlayerAction(IPlayerAction newAction)
@@ -123,6 +136,7 @@ public class Player : MonoBehaviour
 	{
 		this._animator.SetBool ("Overcome", false);
 		this._animator.SetBool("PreOvercome", false);
+		this.FlipEncounterBool();
 	}
 	
 	public void AddFear()

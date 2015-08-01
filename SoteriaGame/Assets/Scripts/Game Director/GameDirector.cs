@@ -23,6 +23,7 @@ public class GameDirector : MonoBehaviour {
         {
             if (_instance == null)
                 _instance = GameObject.FindObjectOfType<GameDirector>();
+			DontDestroyOnLoad(_instance.gameObject);
             return (GameDirector)(_instance);
         }
     }
@@ -152,16 +153,17 @@ public class GameDirector : MonoBehaviour {
     {
 		StopEncounterMode();
 		/*Teleport to town center*/
+		this.gameObject.AddComponent<LevelManager>().SetActiveLevel("FixingLight");
     }
 
-	public void LightReset()
-	{
-		if (this._stateManager.GameState () == GameStates.Encounter)
-		{
-			this._HUDManager.EnableEncounterView();
-			Debug.Log ("Black from light reset");
-		}
-	}
+//	public void LightReset()
+//	{
+//		if (this._stateManager.GameState () == GameStates.Encounter)
+//		{
+//			this._HUDManager.EnableEncounterView();
+//			Debug.Log ("Black from light reset");
+//		}
+//	}
 
 	public void AbleToOvercome()
 	{

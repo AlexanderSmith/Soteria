@@ -20,7 +20,6 @@ public enum EncounterState
 public class EncounterManager : MonoBehaviour
 {
 	private GameObject[] enemies;
-	private GameObject safetyLight;
 	private GameObject currentEnemy;
 
 	public float lookAtDistance = 45.0f;
@@ -58,7 +57,6 @@ public class EncounterManager : MonoBehaviour
     {
 		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		LinkToEnemy();
-		safetyLight = GameObject.FindGameObjectWithTag("SafetyLight Agent");
 		currentState = EncounterState.INACTIVE;
     }
 
@@ -71,9 +69,9 @@ public class EncounterManager : MonoBehaviour
 		}
 	}
 
-	public void CheckPlayerDistance(GameObject enemy)
+	public void CheckPlayerDistance(GameObject enemy, bool inDead)
 	{
-		if (enemy.GetComponent<BasicEnemyController>().dead == false && GameDirector.instance.GetGameState() != GameStates.Hidden)
+		if (!inDead && GameDirector.instance.GetGameState() != GameStates.Hidden)
 		{
 			if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= overwhelmRange)
 			{
@@ -128,11 +126,11 @@ public class EncounterManager : MonoBehaviour
 //		GameDirector.instance.GetPlayer().GetComponent<Player>().RemoveFear();
 //	}
 
-	public void KillSafetyLight()
-	{
-		safetyLight.GetComponentInChildren<SafetyLightController>().DisableSafetyLight();
-		cooldown = true;
-	}
+//	public void KillSafetyLight()
+//	{
+//		safetyLight.GetComponentInChildren<SafetyLightController>().DisableSafetyLight();
+//		cooldown = true;
+//	}
 
 //	void LightCooldown()
 //	{
