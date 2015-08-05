@@ -97,13 +97,16 @@ public class BasicEnemyController : MonoBehaviour {
 					_patrolTimer = 0.0f;
 				}
 			}
-			
+
 			agent.destination = patrolLocations [_patrolIndex].position;
 		}
 		else
 		{
 			anim.SetBool ("Moving", false);
 		}
+
+//		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Unaware") as Texture;
+//		this.renderer.material.mainTexture = CurrentTexture;
 	}
 	
 	public float GetDistance()
