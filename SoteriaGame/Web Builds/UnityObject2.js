@@ -92,25 +92,31 @@ var UnityObject2 = function (config) {
         kJava = "java",
         kClickOnce = "clickonce", //not used anymore?
         wasMissing = false,             //identifies if this is a install attempt, or if the plugin was already installed
-		unityObject = null,				//The <embed> or <object> for the webplayer. This can be used for webPlayer communication.
+        unityObject = null,             //The <embed> or <object> for the webplayer. This can be used for webPlayer communication.
         //kApplet = "_applet",
         //kBanner = "_banner",
 
         cfg = {
-            pluginName              : "Unity Player",
-            pluginMimeType          : "application/vnd.unity",
-            baseDownloadUrl         : baseDomain + "download_webplayer-3.x/",
-            fullInstall             : false,
-            autoInstall             : false,
-            enableJava              : true,
-            enableJVMPreloading     : false,
-            enableClickOnce         : true,
-            enableUnityAnalytics    : false,
-            enableGoogleAnalytics   : true,
-            params                  : {},
-            attributes              : {},
-            referrer                : null,
-            debugLevel              : 0
+            pluginName                      : "Unity Player",
+            pluginMimeType                  : "application/vnd.unity",
+            baseDownloadUrl                 : baseDomain + "download_webplayer-3.x/",
+            fullInstall                     : false,
+            autoInstall                     : false,
+            enableJava                      : true,
+            enableJVMPreloading             : false,
+            enableClickOnce                 : true,
+            enableUnityAnalytics            : false,
+            enableGoogleAnalytics           : true,
+            enableBrowserDeprecatedWarning  : true,
+            params                          : {},
+            attributes                      : {},
+            referrer                        : null,
+            debugLevel                      : 0,
+            pluginVersionChecker            : {
+                container   : jQuery("body")[0],
+                hide        : true,
+                id          : "version-checker"
+            }
         };
 
     // Merge in the given configuration and override defaults.
@@ -196,27 +202,20 @@ var UnityObject2 = function (config) {
      */
     function _getPluginVersion(callback, versions) {
         
-        var b = doc.getElementsByTagName("body")[0];
+        var b = cfg.pluginVersionChecker.container;
         var ue = doc.createElement("object");
         var i = 0;
         
         if (b && ue) {
             ue.setAttribute("type", cfg.pluginMimeType);
-            ue.style.visibility = "hidden";
+            ue.setAttribute("id", cfg.pluginVersionChecker.id);
+            if (cfg.pluginVersionChecker.hide)
+                ue.style.visibility = "hidden";
             b.appendChild(ue);
-            var count = 0;
             
             (function () {
                 if (typeof ue.GetPluginVersion === "undefined") {
-                    
-                    if (count++ < 10) {
-                        
-                        setTimeout(arguments.callee, 10);
-                    } else {
-                        
-                        b.removeChild(ue);
-                        callback(null);
-                    }
+                    setTimeout(arguments.callee, 100);
                 } else {
                     
                     var v = {};
@@ -242,10 +241,10 @@ var UnityObject2 = function (config) {
     }
         
     /**
-	 * Retrieves windows installer name
+     * Retrieves windows installer name
      * @private
      */        
-	function _getWinInstall() {
+    function _getWinInstall() {
         var url = "";
 
         if (ua.x64) {
@@ -254,36 +253,36 @@ var UnityObject2 = function (config) {
             url = cfg.fullInstall ? "UnityWebPlayerFull.exe" : "UnityWebPlayer.exe";
         }
         
-		if (cfg.referrer !== null) {
+        if (cfg.referrer !== null) {
             
-			url += "?referrer=" + cfg.referrer;
-		}
-		return url;
-	}
+            url += "?referrer=" + cfg.referrer;
+        }
+        return url;
+    }
 
     /**
-	 * Retrieves mac plugin package name
+     * Retrieves mac plugin package name
      * @private
      */
-	function _getOSXInstall() {
+    function _getOSXInstall() {
         
-		var url = "UnityPlayer.plugin.zip";
+        var url = "UnityPlayer.plugin.zip";
         
-		if (cfg.referrer != null) {
+        if (cfg.referrer != null) {
             
-			url += "?referrer=" + cfg.referrer;
-		}
-		return url;
-	}
+            url += "?referrer=" + cfg.referrer;
+        }
+        return url;
+    }
 
     /**
-	 * retrieves installer name
+     * retrieves installer name
      * @private
      */
-	function _getInstaller() {
+    function _getInstaller() {
         
-		return cfg.baseDownloadUrl + (ua.win ? _getWinInstall() : _getOSXInstall() );
-	}    
+        return cfg.baseDownloadUrl + (ua.win ? _getWinInstall() : _getOSXInstall() );
+    }    
 
     /**
      * sets plugin status
@@ -340,7 +339,7 @@ var UnityObject2 = function (config) {
                 wk : /webkit/i.test(a) ? parseFloat(a.replace(/^.*webkit\/(\d+(\.\d+)?).*$/i, "$1")) : false,
                 x64 : /win64/i.test(a) && /x64/i.test(a),
                 moz : /mozilla/i.test(a) ? parseFloat(a.replace(/^.*mozilla\/([0-9]+(\.[0-9]+)?).*$/i, "$1")) : 0,
-				mobile: /ipad/i.test(p) || /iphone/i.test(p) || /ipod/i.test(p) || /android/i.test(a) || /windows phone/i.test(a)
+                mobile: /ipad/i.test(p) || /iphone/i.test(p) || /ipod/i.test(p) || /android/i.test(a) || /windows phone/i.test(a)
             };
             
             ua.clientBrand = ua.ch ? 'ch' : ua.ff ? 'ff' : ua.sf ? 'sf' : ua.ie ? 'ie' : ua.op ? 'op' : '??';
@@ -735,7 +734,7 @@ var UnityObject2 = function (config) {
     /**
      * @private
      */
-	function _createObjectElement(attributes, params, elementToReplace) {
+    function _createObjectElement(attributes, params, elementToReplace) {
         
         var i,
             at,
@@ -743,154 +742,154 @@ var UnityObject2 = function (config) {
             ue,
             pe;
         
-		if (ua.win && ua.ie) {
+        if (ua.win && ua.ie) {
             
-			at = "";
+            at = "";
             
-			for (i in attributes) {
+            for (i in attributes) {
                 
-				at += ' ' + i + '="' + attributes[i] + '"';
-			}
+                at += ' ' + i + '="' + attributes[i] + '"';
+            }
             
-			pt = "";
+            pt = "";
             
-			for (i in params) {
+            for (i in params) {
                 
-				pt += '<param name="' + i + '" value="' + params[i] + '" />';
-			}
+                pt += '<param name="' + i + '" value="' + params[i] + '" />';
+            }
             
-			elementToReplace.outerHTML = '<object' + at + '>' + pt + '</object>';
+            elementToReplace.outerHTML = '<object' + at + '>' + pt + '</object>';
             
-		} else {
+        } else {
             
-			ue = doc.createElement("object");
+            ue = doc.createElement("object");
             
-			for (i in attributes) {
+            for (i in attributes) {
                 
-				ue.setAttribute(i, attributes[i]);
-			}
+                ue.setAttribute(i, attributes[i]);
+            }
             
-			for (i in params) {
+            for (i in params) {
                 
-				pe = doc.createElement("param");
-				pe.name = i;
-				pe.value = params[i];
-				ue.appendChild(pe);
-			}
+                pe = doc.createElement("param");
+                pe.name = i;
+                pe.value = params[i];
+                ue.appendChild(pe);
+            }
             
-			elementToReplace.parentNode.replaceChild(ue, elementToReplace);
-		}
-	}
-	
+            elementToReplace.parentNode.replaceChild(ue, elementToReplace);
+        }
+    }
+    
     /**
      * @private
      */    
-	function _checkImage(img) {
+    function _checkImage(img) {
         
-		// img element not in the DOM yet
-		if (typeof img == "undefined") {
+        // img element not in the DOM yet
+        if (typeof img == "undefined") {
             
-			return false;
-		}
+            return false;
+        }
         
-		if (!img.complete) {
+        if (!img.complete) {
             
-			return false;
-		}
+            return false;
+        }
         
-		// some browsers always return true in img.complete, for those
-		// we can check naturalWidth
-		if (typeof img.naturalWidth != "undefined" && img.naturalWidth == 0) {
+        // some browsers always return true in img.complete, for those
+        // we can check naturalWidth
+        if (typeof img.naturalWidth != "undefined" && img.naturalWidth == 0) {
             
-			return false;
-		}
+            return false;
+        }
         
-		// no other way of checking, assuming it is ok
-		return true;
-	}
+        // no other way of checking, assuming it is ok
+        return true;
+    }
 
     /**
      * @private
      */
-	function _preloadJVMWhenReady(id) {
+    function _preloadJVMWhenReady(id) {
         
-		var needToWait = false;
+        var needToWait = false;
         
-		for (var i = 0; i < imagesToWaitFor.length; i++) {
-			if (!imagesToWaitFor[i]) {
-				continue;
-			}
-			var img = doc.images[imagesToWaitFor[i]];
-			if (!_checkImage(img)) {
-				needToWait = true;
-			}
-			else {
-				imagesToWaitFor[i] = null;
-			}
-		}
-		if (needToWait) {
-			// check again in 100ms
-			setTimeout(arguments.callee, 100);
-		}
-		else {
-			// preload after a small delay, to make sure
-			// the images have actually rendered
-			setTimeout(function () {
-				_preloadJVM(id);
-			}, 100);
-		}
-	}
+        for (var i = 0; i < imagesToWaitFor.length; i++) {
+            if (!imagesToWaitFor[i]) {
+                continue;
+            }
+            var img = doc.images[imagesToWaitFor[i]];
+            if (!_checkImage(img)) {
+                needToWait = true;
+            }
+            else {
+                imagesToWaitFor[i] = null;
+            }
+        }
+        if (needToWait) {
+            // check again in 100ms
+            setTimeout(arguments.callee, 100);
+        }
+        else {
+            // preload after a small delay, to make sure
+            // the images have actually rendered
+            setTimeout(function () {
+                _preloadJVM(id);
+            }, 100);
+        }
+    }
 
 
-	/**
+    /**
      *  preloads the JVM and the Java Plug-in
      *  @private
      */       
-	function _preloadJVM(id) {
+    function _preloadJVM(id) {
         
-		var re = doc.getElementById(id);
+        var re = doc.getElementById(id);
         
-		if (!re) {
+        if (!re) {
             
-			re = doc.createElement("div");
-			var lastBodyElem = doc.body.lastChild;
-			doc.body.insertBefore(re, lastBodyElem.nextSibling);
-		}
+            re = doc.createElement("div");
+            var lastBodyElem = doc.body.lastChild;
+            doc.body.insertBefore(re, lastBodyElem.nextSibling);
+        }
         
-		var codebase = cfg.baseDownloadUrl + "3.0/jws/";
+        var codebase = cfg.baseDownloadUrl + "3.0/jws/";
         
-		var a = {
-			id : id,
-			type : "application/x-java-applet",
-			code : "JVMPreloader",
-			width : 1,
-			height : 1,
-			name : "JVM Preloader"
-		};
+        var a = {
+            id : id,
+            type : "application/x-java-applet",
+            code : "JVMPreloader",
+            width : 1,
+            height : 1,
+            name : "JVM Preloader"
+        };
         
-		var p = {
-			context : id,
-			codebase : codebase,
-			classloader_cache : false,
-			scriptable : true,
-			mayscript : true
-		};
+        var p = {
+            context : id,
+            codebase : codebase,
+            classloader_cache : false,
+            scriptable : true,
+            mayscript : true
+        };
         
-		_createObjectElement(a, p, re);
+        _createObjectElement(a, p, re);
         jQuery('#' + id).show();
-		//setVisibility(id, true);
-	}
-	
+        //setVisibility(id, true);
+    }
+    
     /**
-	 * launches java installer
+     * launches java installer
      * @private
      */    
-	function _doJavaInstall(id) {
+    function _doJavaInstall(id) {
         
-		triedJavaInstall = true;
-		_setSessionCookie(triedJavaCookie, triedJavaInstall);
-		var re = doc.getElementById(id);
-		var appletID = id + "_applet_" + instanceNumber;
+        triedJavaInstall = true;
+        _setSessionCookie(triedJavaCookie, triedJavaInstall);
+        var re = doc.getElementById(id);
+        var appletID = id + "_applet_" + instanceNumber;
         
         applets[appletID] = {
             attributes : cfg.attributes,
@@ -899,142 +898,142 @@ var UnityObject2 = function (config) {
             broken : cfg.broken
         };        
         
-		var applet = applets[appletID];
+        var applet = applets[appletID];
         
-		var a = {
-			id : appletID,
-			type : "application/x-java-applet",
-			archive : cfg.baseDownloadUrl + "3.0/jws/UnityWebPlayer.jar",
-			code : "UnityWebPlayer",
-			width : 1,
-			height : 1,
-			name : "Unity Web Player"
-		};
+        var a = {
+            id : appletID,
+            type : "application/x-java-applet",
+            archive : cfg.baseDownloadUrl + "3.0/jws/UnityWebPlayer.jar",
+            code : "UnityWebPlayer",
+            width : 1,
+            height : 1,
+            name : "Unity Web Player"
+        };
         
-		if (ua.win && ua.ff) {
+        if (ua.win && ua.ff) {
             
-			a["style"] = "visibility: hidden;";
-		}
+            a["style"] = "visibility: hidden;";
+        }
         
-		var p = {
-			context : appletID,
-			jnlp_href : cfg.baseDownloadUrl + "3.0/jws/UnityWebPlayer.jnlp",
-			classloader_cache : false,
-			installer : _getInstaller(),
-			image : baseDomain + "installation/unitylogo.png",
-			centerimage : true,
-			boxborder : false,
-			scriptable : true,
-			mayscript : true
-		};
+        var p = {
+            context : appletID,
+            jnlp_href : cfg.baseDownloadUrl + "3.0/jws/UnityWebPlayer.jnlp",
+            classloader_cache : false,
+            installer : _getInstaller(),
+            image : baseDomain + "installation/unitylogo.png",
+            centerimage : true,
+            boxborder : false,
+            scriptable : true,
+            mayscript : true
+        };
         
-		for (var i in applet.params) {
+        for (var i in applet.params) {
             
-			if (i == "src") {
+            if (i == "src") {
                 
-				continue;
-			}
+                continue;
+            }
             
-			if (applet.params[i] != Object.prototype[i]) {
+            if (applet.params[i] != Object.prototype[i]) {
                 
-				p[i] = applet.params[i];
+                p[i] = applet.params[i];
                 
-				if (i.toLowerCase() == "logoimage") {
+                if (i.toLowerCase() == "logoimage") {
                     
-					p["image"] = applet.params[i];
-				}
-				else if (i.toLowerCase() == "backgroundcolor") {
+                    p["image"] = applet.params[i];
+                }
+                else if (i.toLowerCase() == "backgroundcolor") {
                     
-					p["boxbgcolor"] = "#" + applet.params[i];
-				}
-				else if (i.toLowerCase() == "bordercolor") {
+                    p["boxbgcolor"] = "#" + applet.params[i];
+                }
+                else if (i.toLowerCase() == "bordercolor") {
                     
-					// there's no way to specify border color
-					p["boxborder"] = true;
-				}
-				else if (i.toLowerCase() == "textcolor") {
+                    // there's no way to specify border color
+                    p["boxborder"] = true;
+                }
+                else if (i.toLowerCase() == "textcolor") {
                     
-					p["boxfgcolor"] = "#" + applet.params[i];
-				}
-			}
-		}
+                    p["boxfgcolor"] = "#" + applet.params[i];
+                }
+            }
+        }
 
-		// Create a dummy div element in the unityPlayer div
-		// so that it can be replaced with the 1x1 px applet.
-		// The applet will be resized when it has fully loaded,
-		// see appletStarted().
-		var divToBeReplacedWithApplet = doc.createElement("div");
-		re.appendChild(divToBeReplacedWithApplet);
-		_createObjectElement(a, p, divToBeReplacedWithApplet);
+        // Create a dummy div element in the unityPlayer div
+        // so that it can be replaced with the 1x1 px applet.
+        // The applet will be resized when it has fully loaded,
+        // see appletStarted().
+        var divToBeReplacedWithApplet = doc.createElement("div");
+        re.appendChild(divToBeReplacedWithApplet);
+        _createObjectElement(a, p, divToBeReplacedWithApplet);
         jQuery('#' + id).show();
-		//setVisibility(appletID, true);
-	}
-	
+        //setVisibility(appletID, true);
+    }
+    
     /**
      * @private
      */    
-	function _jvmPreloaded(id) {
+    function _jvmPreloaded(id) {
         
-		// timeout prevents crash on ie
-		setTimeout(function () {
+        // timeout prevents crash on ie
+        setTimeout(function () {
             
-			var re = doc.getElementById(id);
+            var re = doc.getElementById(id);
             
-			if (re) {
-				re.parentNode.removeChild(re);
-			}
-		}, 0);
-	}
-	
+            if (re) {
+                re.parentNode.removeChild(re);
+            }
+        }, 0);
+    }
+    
     /**
      * @private
      */    
-	function _appletStarted(id) {
-		// set the size of the applet to the one from cloned attributes
-		var applet = applets[id],
+    function _appletStarted(id) {
+        // set the size of the applet to the one from cloned attributes
+        var applet = applets[id],
             appletElement = doc.getElementById(id),
             childNode;
 
-		// the applet might have already finished by now
-		if (!appletElement) {
-		
+        // the applet might have already finished by now
+        if (!appletElement) {
+        
             return;
         }
-		
-		appletElement.width = applet.attributes["width"] || 600;
-		appletElement.height = applet.attributes["height"] || 450;
-
-		// remove all the siblings of the applet
-		var parentNode = appletElement.parentNode;
-		var childNodeList = parentNode.childNodes;
         
-		for (var i = 0; i < childNodeList.length; i++) {
+        appletElement.width = applet.attributes["width"] || 600;
+        appletElement.height = applet.attributes["height"] || 450;
+
+        // remove all the siblings of the applet
+        var parentNode = appletElement.parentNode;
+        var childNodeList = parentNode.childNodes;
+        
+        for (var i = 0; i < childNodeList.length; i++) {
             
-			childNode = childNodeList[i];
-			// Compare the child node with our applet element only if
-			// it has the same type. Doing the comparison in other cases just
-			// jumps out of the loop.
-			if (childNode.nodeType == 1 && childNode != appletElement) {
-			
+            childNode = childNodeList[i];
+            // Compare the child node with our applet element only if
+            // it has the same type. Doing the comparison in other cases just
+            // jumps out of the loop.
+            if (childNode.nodeType == 1 && childNode != appletElement) {
+            
                 parentNode.removeChild(childNode);
             }
-		}
-	}	 
+        }
+    }    
     
     
-	// java installation callback
-	function _javaInstallDoneCallback(id, success, errormessage) {
+    // java installation callback
+    function _javaInstallDoneCallback(id, success, errormessage) {
         
         debug('_javaInstallDoneCallback', id, success, errormessage);                   
         //console.log('javaInstallDoneCallback', id, success, errormessage);                   
         
-		if (!success) {
+        if (!success) {
             
-			//var applet = applets[id];
-			_setPluginStatus(kError, kJava, errormessage);
-			//createMissingUnity(id, applet.attributes, applet.params, applet.callback, applet.broken, kJava, errormessage);
-		}
-	}    
+            //var applet = applets[id];
+            _setPluginStatus(kError, kJava, errormessage);
+            //createMissingUnity(id, applet.attributes, applet.params, applet.callback, applet.broken, kJava, errormessage);
+        }
+    }    
     
     /* Java Install - END */
     
@@ -1071,15 +1070,153 @@ var UnityObject2 = function (config) {
      * appends px to the value if it's a plain number
      * @private
      */
-	function _appendPX(value) {
+    function _appendPX(value) {
         
-		if (/^[-+]?[0-9]+$/.test(value)) {
-			value += "px";
-		}
-		return value;
-	}
+        if (/^[-+]?[0-9]+$/.test(value)) {
+            value += "px";
+        }
+        return value;
+    }
 
+    /**
+     * detects unity web player.
+     * @public
+     * callback - accepts two parameters.
+     *            first one contains "installed", "missing", "broken" or "unsupported" value.
+     *            second one returns requested unity versions. plugin version is included as well.
+     * versions - array of unity versions to detect.
+     */
+    function _detectUnityInternal (callback, versions) {
 
+       // console.debug('detectUnity this:', this);
+        var self = this;
+
+        var status = kMissing;
+        var data;
+        nav.plugins.refresh();
+        
+        if (ua.clientBrand === "??" || ua.clientPlatform === "???" || ua.mobile ) {
+            status = kUnsupported;
+        } else if (ua.op && ua.mac) { // Opera on MAC is unsupported
+
+            status = kUnsupported;
+            data = "OPERA-MAC";
+        } else if (
+            typeof nav.plugins != "undefined" 
+            && nav.plugins[cfg.pluginName] 
+            && typeof nav.mimeTypes != "undefined" 
+            && nav.mimeTypes[cfg.pluginMimeType] 
+            && nav.mimeTypes[cfg.pluginMimeType].enabledPlugin
+        ) {
+
+            status = kInstalled;
+
+            // make sure web player is compatible with 64-bit safari
+            if (ua.sf && /Mac OS X 10_6/.test(nav.appVersion)) {
+
+                _getPluginVersion(function (version) {
+
+                    if (!version || !version.plugin) {
+
+                        status = kBroken;
+                        data = "OSX10.6-SFx64";
+                    }
+
+                    callback(status, lastType, data, version);
+                }, versions);
+
+                return;
+            } else if (ua.mac && ua.ch) { // older versions have issues on chrome
+
+                    _getPluginVersion(function (version) {
+
+                        if (version && (_getNumericUnityVersion(version.plugin) <= _getNumericUnityVersion("2.6.1f3"))) {
+                            status = kBroken;
+                            data = "OSX-CH-U<=2.6.1f3";
+                        }
+
+                        callback(status, lastType, data, version);
+                    }, versions);
+
+                    return;
+            } else if (versions) {
+
+                    _getPluginVersion(function (version) {
+                        callback(status, lastType, data, version);
+                    }, versions);
+                    return;
+            }
+        } else if (ua.ie) {
+            var activeXSupported = false;
+            try {
+                if (ActiveXObject.prototype != null) {
+                    activeXSupported = true;
+                }
+            } catch(e) {}
+
+            if (!activeXSupported) {
+                status = kUnsupported;
+                data = "ActiveXFailed";
+            } else {
+                status = kMissing;
+                try {
+                    var uo = new ActiveXObject("UnityWebPlayer.UnityWebPlayer.1");
+                    var pv = uo.GetPluginVersion();
+
+                    if (versions) {
+                        var v = {};
+                        for (var i = 0; i < versions.length; ++i) {
+                            v[versions[i]] = uo.GetUnityVersion(versions[i]);
+                        }
+                        v.plugin = pv;
+                    }
+
+                    status = kInstalled;
+                    // 2.5.0 auto update has issues on vista and later
+                    if (pv == "2.5.0f5") {
+                        var m = /Windows NT \d+\.\d+/.exec(nav.userAgent);
+                        if (m && m.length > 0) {
+                            var wv = parseFloat(m[0].split(' ')[2]);
+                            if (wv >= 6) {
+                                status = kBroken;
+                                data = "WIN-U2.5.0f5";
+                            }
+                        }
+                    }
+                } catch(e) {}
+            }
+        }
+        callback(status, lastType, data, v);
+    }
+
+    /**
+     * Detects unity web player. But doesn't modify the current UnityObject instance, and doesn't send analytics.
+     * @public
+     * callback - accepts two parameters.
+     *            first one contains "installed", "missing", "broken" or "unsupported" value.
+     *            second one returns requested unity versions. plugin version is included as well.
+     * versions - array of unity versions to detect.
+     */
+    function _detectUnityNoAnalytics (callback, versions) {
+        _detectUnityInternal(function(status, lastType, data, v){
+            callback(status, v);
+        }, versions);
+    }
+
+    /**
+     * Detects unity web player. Also modify the current UnityObject instance, and sends analytics.
+     * @public
+     * callback - accepts two parameters.
+     *            first one contains "installed", "missing", "broken" or "unsupported" value.
+     *            second one returns requested unity versions. plugin version is included as well.
+     * versions - array of unity versions to detect.
+     */
+    function _detectUnityWithAnalytics (callback, versions) {
+        _detectUnityInternal(function(status, lastType, data, v){
+            _setPluginStatus(status, lastType, data);
+            callback(status, v);
+        }, versions);
+    }
     
 
     var publicAPI = /** @lends UnityObject2.prototype */ {
@@ -1127,7 +1264,11 @@ var UnityObject2 = function (config) {
 
             debug('ua:', ua);
             //console.debug('initPlugin this:', this);
-            this.detectUnity(this.handlePluginStatus);  
+            //_detectUnityWithAnalytics(this.handlePluginStatus);
+            var self = this;
+            _detectUnityWithAnalytics(function(status, v){
+                self.handlePluginStatus(status, v);
+            });
         },        
      
 
@@ -1140,112 +1281,10 @@ var UnityObject2 = function (config) {
          * versions - optional array of unity versions to detect.
          */
         detectUnity: function (callback, versions) {
-
-           // console.debug('detectUnity this:', this);
             var self = this;
-
-            var status = kMissing;
-            var data;
-            nav.plugins.refresh();
-			
-			if (ua.clientBrand === "??" || ua.clientPlatform === "???" || ua.mobile ) {
-				status = kUnsupported;
-			} else if (ua.op && ua.mac) { // Opera on MAC is unsupported
-
-                status = kUnsupported;
-                data = "OPERA-MAC";
-            } else if (
-                typeof nav.plugins != "undefined" 
-                && nav.plugins[cfg.pluginName] 
-                && typeof nav.mimeTypes != "undefined" 
-                && nav.mimeTypes[cfg.pluginMimeType] 
-                && nav.mimeTypes[cfg.pluginMimeType].enabledPlugin
-            ) {
-
-                status = kInstalled;
-
-                // make sure web player is compatible with 64-bit safari
-                if (ua.sf && /Mac OS X 10_6/.test(nav.appVersion)) {
-
-                    _getPluginVersion(function (version) {
-
-                        if (!version || !version.plugin) {
-
-                            status = kBroken;
-                            data = "OSX10.6-SFx64";
-                        }
-
-                        _setPluginStatus(status, lastType, data);
-                        callback.call(self, status, version);
-                    }, versions);
-
-                    return;
-                } else if (ua.mac && ua.ch) { // older versions have issues on chrome
-
-                        _getPluginVersion(function (version) {
-
-                            if (version && (_getNumericUnityVersion(version.plugin) <= _getNumericUnityVersion("2.6.1f3"))) {
-                                status = kBroken;
-                                data = "OSX-CH-U<=2.6.1f3";
-                            }
-
-                            _setPluginStatus(status, lastType, data);
-                            callback.call(self, status, version);
-                        }, versions);
-
-                        return;
-                } else if (versions) {
-
-                        _getPluginVersion(function (version) {
-
-                            _setPluginStatus(status, lastType, data);
-                            callback.call(self, status, version);
-                        }, versions);
-                        return;
-                }
-            } else if (ua.ie) {
-                var activeXSupported = false;
-                try {
-                    if (ActiveXObject.prototype != null) {
-                        activeXSupported = true;
-                    }
-                } catch(e) {}
-
-                if (!activeXSupported) {
-                    status = kUnsupported;
-                    data = "ActiveXFailed";
-                } else {
-                    status = kMissing;
-                    try {
-                        var uo = new ActiveXObject("UnityWebPlayer.UnityWebPlayer.1");
-                        var pv = uo.GetPluginVersion();
-
-                        if (versions) {
-                            var v = {};
-                            for (var i = 0; i < versions.length; ++i) {
-                                v[versions[i]] = uo.GetUnityVersion(versions[i]);
-                            }
-                            v.plugin = pv;
-                        }
-
-                        status = kInstalled;
-                        // 2.5.0 auto update has issues on vista and later
-                        if (pv == "2.5.0f5") {
-                            var m = /Windows NT \d+\.\d+/.exec(nav.userAgent);
-                            if (m && m.length > 0) {
-                                var wv = parseFloat(m[0].split(' ')[2]);
-                                if (wv >= 6) {
-                                    status = kBroken;
-                                    data = "WIN-U2.5.0f5";
-                                }
-                            }
-                        }
-                    } catch(e) {}
-                }
-            }
-
-            _setPluginStatus(status, lastType, data);
-            callback.call(self, status, v);
+            _detectUnityNoAnalytics(function(status, v){
+                callback.call(self, status, v);
+            }, versions);
         },
 
 
@@ -1400,7 +1439,7 @@ var UnityObject2 = function (config) {
                 var $object = jQuery(tmpHtml);
                 targetEl.append( $object );
                 embeddedObjects.push( targetEl.attr('id') );
-				unityObject = $object[0];
+                unityObject = $object[0];
 
             } else {
 
@@ -1411,7 +1450,7 @@ var UnityObject2 = function (config) {
                         type: cfg.pluginMimeType,
                         width: width,
                         height: height,
-						firstFrameCallback: 'UnityObject2.instances[' + instanceNumber + '].firstFrameCallback();'
+                        firstFrameCallback: 'UnityObject2.instances[' + instanceNumber + '].firstFrameCallback();'
                     })
                     .attr(cfg.attributes)
                     .attr(cfg.params)
@@ -1421,10 +1460,10 @@ var UnityObject2 = function (config) {
                         height: _appendPX(height)
                     })
                     .appendTo( targetEl );
-					unityObject = $embed[0];
+                    unityObject = $embed[0];
             }
-			
-			//Auto focus the new object/embed, so players dont have to click it before using it.
+            
+            //Auto focus the new object/embed, so players dont have to click it before using it.
             //setTimeout is here to workaround a chrome bug.
             //we should not invoke focus on safari on mac. it causes some Input bugs.
             if (!ua.sf || !ua.mac) {
@@ -1438,7 +1477,7 @@ var UnityObject2 = function (config) {
                 callback();
             }
         },        
-        
+
         /**
          * Determine which installation method to use on the current platform, and return an array with their identifiers (i.e. 'ClickOnceIE', 'JavaInstall', 'Manual')
          * Take into account which previous methods might have been attempted (and failed) and skip to next best method.
@@ -1546,7 +1585,72 @@ var UnityObject2 = function (config) {
                 
                 if (pluginStatus === kMissing) {
                     
-                    payload.bestMethod = this.getBestInstallMethod();
+                    // We are dealing with Chrome v42 and newer
+                    var showDeprecated = ua.ch && (ua.ch_v > 41);
+					
+                    if (showDeprecated && cfg.enableBrowserDeprecatedWarning)
+                    {
+                        payload.pluginStatus = kUnsupported;
+                    
+                        // Query if the frame is already inserted
+                        var objDoc = doc.getElementById("ChromeMissingUnityPlayer");
+                        if (!objDoc)
+                        {
+                            var jDiv = $( "<div id='ChromeMissingUnityPlayer'>" );
+
+                            // Set frame properties and add it to the body.
+                            jDiv
+                                .css( "width", "100%" )
+                                .css( "height", "200px" )
+                                .css( "background", "#f9f8e6")
+                                .css( "background", "rgba(231,228,157,.25)")
+                                .css( "border-color", "#fcfbf1")
+                                .css( "border-color", "rgba(231,228,157,.15)")
+                                .css( "border-style", "solid")
+                                .css( "border-width", "5x")
+                                .css( "color", "#595959")
+                                .css( "color", "rgba(0,0,0,.65)")
+                                .css( "text-align", "left")
+                                .css( "padding", "10px")
+                                .appendTo( targetEl )
+                            ;
+                            
+                            var browserList = "";
+                            if (ua.win)
+                            {
+                                browserList = "<a href='http://windows.microsoft.com/en-us/internet-explorer/'>Internet Explorer</a>, <a href='http://www.mozilla.org/firefox'>Firefox</a> or <a href='http://www.opera.com/'>Opera</a>";
+                            }
+                            else
+                            {
+                                browserList = "<a href='http://www.mozilla.org/firefox'>Firefox</a>, <a href='https://www.apple.com/safari/'>Safari</a>";
+                            }
+
+                            var shownMessage = 
+                            "<img src='https://files.unity3d.com/UnityObject2/resources/other_browser.jpg' style='float: left; margin-right: 15px;' />" +
+                                "<div style='overflow:hidden;'>" +
+                                    "<div style='height:202px; display:inline-block; vertical-align:middle;'></div>" +
+                                    "<div style='display:inline-block;'>" +
+                                        "<div style='display:inline-block; vertical-align:middle;'>" +
+                                            "<span style='font-weight:bold; font-size: 1.1em;'>Sorry, Chrome can't run this app</span>" +
+                                            "<p>"+
+                                                "You are using a version of Chrome that does not currently support the Unity Web Player plugin needed to run this app.<br/>" +
+                                                "We recommend using another browser, such as " + browserList + ".<br/>" +
+                                                "Alternatively, you can enable NPAPI plugins at chrome://flags/#enable-npapi (requires browser relaunch)." +
+											"</p>" +
+											"<p>" +
+                                                "If you enabled the NPAPI flag and the plugin still does not work for you, try <a href=\"" + this.getPluginURL() + "\">manual install</a>." +
+                                            "</p>" +
+                                        "</div>" +
+                                    "</div>" +
+                                "</div>";
+
+                            jDiv.html(shownMessage);
+                        }
+                    }
+                    else
+                    {
+                        payload.bestMethod = this.getBestInstallMethod();
+                    }
                 }
                 
                 if (latestStatus !== pluginStatus) { //Execute only on state change
@@ -1574,7 +1678,7 @@ var UnityObject2 = function (config) {
         firstFrameCallback : function () {
             
             debug('*** firstFrameCallback (' + instanceNumber + ') ***');
-			pluginStatus = kFirst;
+            pluginStatus = kFirst;
             this.notifyProgress();
             
             /*
@@ -1642,41 +1746,41 @@ var UnityObject2 = function (config) {
          * Exposed private function
          * @public
          */
-		doJavaInstall : function (id) {
+        doJavaInstall : function (id) {
             
-			_doJavaInstall(id);
-		},
-		
+            _doJavaInstall(id);
+        },
+        
         /**
          * Exposed private function
          * @public
          */
-		jvmPreloaded : function (id) {
+        jvmPreloaded : function (id) {
             
-			_jvmPreloaded(id);
-		},
-		
+            _jvmPreloaded(id);
+        },
+        
         /**
          * Exposed private function
          * @public
          */
-		appletStarted : function (id) {
+        appletStarted : function (id) {
             
-			_appletStarted(id);
-		},
-		
+            _appletStarted(id);
+        },
+        
         /**
          * Exposed private function
          * @public
          */
-		javaInstallDoneCallback : function (id, success, errormessage) {
+        javaInstallDoneCallback : function (id, success, errormessage) {
 
-			_javaInstallDoneCallback(id, success, errormessage);
-		},
-		
-		getUnity: function() {
-			return unityObject;
-		}
+            _javaInstallDoneCallback(id, success, errormessage);
+        },
+        
+        getUnity: function() {
+            return unityObject;
+        }
     }
     
     // Internal store of each instance.
