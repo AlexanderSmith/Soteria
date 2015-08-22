@@ -96,41 +96,41 @@ public class InputManager : MonoBehaviour
 //		}*/
 
 		//*/ Single mash turning****************************************************************************************
-		if (Input.GetKeyDown(KeyCode.DownArrow) && !GameDirector.instance.GetOvercomeBool())
-		{
-			GameDirector.instance.TryingToOvercome();
-			preLinger = true;
-			GameDirector.instance.BeginLingering();
-			GameDirector.instance.Overpower();
-			this._inputTimer.ResetTimer();
-		}
-		else if (Input.GetKeyDown(KeyCode.Space) && preLinger)
-		{
-			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer());
-			keyPressCounter++;
-			this._inputTimer.ResetTimer();
-			GameDirector.instance.ClearFromBlack();
-		}
-		else if (preLinger)
-		{
-			if (this._inputTimer.ElapsedTime() >= intialLinger)
-			{
-				keyPressCounter = 0;
-				preLinger = false;
-				GameDirector.instance.FailedToLinger();
-				LingerSame();
-			}
-		}
-
-		if (GameDirector.instance.GetOvercomeBool())
-		{
-			GameDirector.instance.AbleToOvercome();
-			if (keyPressCounter > 10)
-			{
-				GameDirector.instance.PlayerOvercame();
-				//Debug.Log("player wins");
-			}
-		}
+//		if (Input.GetKeyDown(KeyCode.DownArrow) && !GameDirector.instance.GetOvercomeBool())
+//		{
+//			GameDirector.instance.TryingToOvercome();
+//			preLinger = true;
+//			GameDirector.instance.BeginLingering();
+//			GameDirector.instance.Overpower();
+//			this._inputTimer.ResetTimer();
+//		}
+//		else if (Input.GetKeyDown(KeyCode.Space) && preLinger)
+//		{
+//			inputpressed = executeInternalInput((int)ButtonType.SpaceBar, (Object) GameDirector.instance.GetPlayer());
+//			keyPressCounter++;
+//			this._inputTimer.ResetTimer();
+//			GameDirector.instance.ClearFromBlack();
+//		}
+//		else if (preLinger)
+//		{
+//			if (this._inputTimer.ElapsedTime() >= intialLinger)
+//			{
+//				keyPressCounter = 0;
+//				preLinger = false;
+//				GameDirector.instance.FailedToLinger();
+//				LingerSame();
+//			}
+//		}
+//
+//		if (GameDirector.instance.GetOvercomeBool())
+//		{
+//			GameDirector.instance.AbleToOvercome();
+//			if (keyPressCounter > 10)
+//			{
+//				GameDirector.instance.PlayerOvercame();
+//				//Debug.Log("player wins");
+//			}
+//		}
 		//*************************************************************************************************************/
 	}
 	private void ProcessInput()

@@ -73,17 +73,18 @@ public class EncounterManager : MonoBehaviour
 	{
 		if (!inDead && GameDirector.instance.GetGameState() != GameStates.Hidden)
 		{
-			if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= overwhelmRange)
+			float distance = enemy.GetComponent<BasicEnemyController>().GetDistance();
+			if (distance <= overwhelmRange)
 			{
 				Encounter(enemy);
 				//Debug.Log ("Distance" + enemy.GetComponent<BasicEnemyController>().GetDistance());
 				enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
 			}
-			else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= attackRange)
+			else if (distance <= attackRange)
 			{
 				enemy.GetComponent<BasicEnemyController>().ChasePlayer();
 			}
-			else if (enemy.GetComponent<BasicEnemyController>().GetDistance() <= lookAtDistance)
+			else if (distance <= lookAtDistance)
 			{
 				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
 			}
@@ -92,7 +93,7 @@ public class EncounterManager : MonoBehaviour
 				enemy.GetComponent<BasicEnemyController>().Unaware();
 			}
 		}
-		else
+		else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
 		{
 			enemy.GetComponent<BasicEnemyController>().Unaware();
 		}
@@ -110,10 +111,10 @@ public class EncounterManager : MonoBehaviour
 
     public void StopEncounter()
     {
-		GameDirector.instance.StopEncounterMode();
 		this.Cower();
 		currentState = EncounterState.INACTIVE;
 		GameDirector.instance.GetPlayer().GetComponent<Player>().RemoveFear();
+		GameDirector.instance.StopEncounterMode();
 		EncounterReset();
     }
 
