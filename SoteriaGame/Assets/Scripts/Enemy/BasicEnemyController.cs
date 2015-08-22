@@ -153,7 +153,7 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void DestroyMe()
 	{
-		encounterManager.DestroyMe ();
+		encounterManager.DestroyMe();
 	}
 
 	public void NextOPStage()
