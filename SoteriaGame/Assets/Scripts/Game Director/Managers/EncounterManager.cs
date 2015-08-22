@@ -26,6 +26,8 @@ public class EncounterManager : MonoBehaviour
 	public float attackRange = 35.0f;
 	public float overwhelmRange = 15.0f;
 	private float gameOverTimer = 30.0f;
+	private float hiddenTileDuration;
+	public float hiddenTileTimer = 5.0f;
 
 	private int overcomeCounter = 0;
 
@@ -38,6 +40,7 @@ public class EncounterManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+		this.hiddenTileDuration = this.hiddenTileTimer;
     }
 
     // Update is called once per frame
@@ -47,17 +50,17 @@ public class EncounterManager : MonoBehaviour
 //		{
 //			LightCooldown();
 //		}
-		if (currentState == EncounterState.ACTIVE)
+		if (this.currentState == EncounterState.ACTIVE)
 		{
-			GameOverTimer();
+			this.GameOverTimer();
 		}
     }
 
     public void Initialize()
     {
-		enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-		LinkToEnemy();
-		currentState = EncounterState.INACTIVE;
+		this.enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		this.LinkToEnemy();
+		this.currentState = EncounterState.INACTIVE;
     }
 
 	void LinkToEnemy()
@@ -71,12 +74,12 @@ public class EncounterManager : MonoBehaviour
 
 	public void CheckPlayerDistance(GameObject enemy, bool inDead)
 	{
-		if (!inDead && GameDirector.instance.GetGameState() != GameStates.Hidden)
+		float distance = enemy.GetComponent<BasicEnemyController>().GetDistance();
+		if (!inDead && GameDirector.instance.GetGameState() != GameStates.Hidden && GameDirector.instance.GetGameState() != GameStates.HiddenTile)
 		{
-			float distance = enemy.GetComponent<BasicEnemyController>().GetDistance();
 			if (distance <= overwhelmRange)
 			{
-				Encounter(enemy);
+				this.Encounter(enemy);
 				//Debug.Log ("Distance" + enemy.GetComponent<BasicEnemyController>().GetDistance());
 				enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
 			}
@@ -93,6 +96,14 @@ public class EncounterManager : MonoBehaviour
 				enemy.GetComponent<BasicEnemyController>().Unaware();
 			}
 		}
+		else if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
+		{
+			if (distance <= lookAtDistance)
+			{
+				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
+			}
+			this.TileTimer();
+		}
 		else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
 		{
 			enemy.GetComponent<BasicEnemyController>().Unaware();
@@ -101,10 +112,10 @@ public class EncounterManager : MonoBehaviour
 
 	public void Encounter(GameObject enemy)
 	{
-		if (currentState == EncounterState.INACTIVE)
+		if (this.currentState == EncounterState.INACTIVE)
 		{
-			currentState = EncounterState.ACTIVE;
-			StartEncounter(enemy);
+			this.currentState = EncounterState.ACTIVE;
+			this.StartEncounter(enemy);
 			GameDirector.instance.GetPlayer().GetComponent<Player>().AddFear();
 		}
 	}
@@ -112,16 +123,16 @@ public class EncounterManager : MonoBehaviour
     public void StopEncounter()
     {
 		this.Cower();
-		currentState = EncounterState.INACTIVE;
+		this.currentState = EncounterState.INACTIVE;
 		GameDirector.instance.GetPlayer().GetComponent<Player>().RemoveFear();
 		GameDirector.instance.StopEncounterMode();
-		EncounterReset();
+		this.EncounterReset();
     }
 
     public void StartEncounter(GameObject enemy)
     {
 		GameDirector.instance.StartEncounterMode();
-		currentEnemy = enemy;
+		this.currentEnemy = enemy;
     }
 
 //	public void InitializeSafetyLight()
@@ -155,31 +166,31 @@ public class EncounterManager : MonoBehaviour
 
 	public void AddToOvercomeCounter()
 	{
-		overcomeCounter++;
-		if (overcomeCounter == 3)
+		this.overcomeCounter++;
+		if (this.overcomeCounter == 3)
 		{
-			ableToOvercome = true;
+			this.ableToOvercome = true;
 		}
 	}
 
 	public void SubtractFromOvercomeCounter()
 	{
-		if (overcomeCounter > 0)
+		if (this.overcomeCounter > 0)
 		{
-			overcomeCounter--;
+			this.overcomeCounter--;
 		}
 	}
 
 	void EncounterReset()
 	{
-		overcomeCounter = 0;
-		ableToOvercome = false;
+		this.overcomeCounter = 0;
+		this.ableToOvercome = false;
 		GameDirector.instance.GetPlayer().GetComponent<Player>().ResetEncounter();
 	}
 
 	public bool GetOvercomeStatus()
 	{
-		return ableToOvercome;
+		return this.ableToOvercome;
 	}
 
 	public void PlayerCanOvercome()
@@ -189,8 +200,8 @@ public class EncounterManager : MonoBehaviour
 
 	void GameOverTimer()
 	{
-		gameOverTimer -= Time.deltaTime;
-		if (gameOverTimer <= 0.0f)
+		this.gameOverTimer -= Time.deltaTime;
+		if (this.gameOverTimer <= 0.0f)
 		{
 			//inform GameDirector player dead
 		}
@@ -207,7 +218,7 @@ public class EncounterManager : MonoBehaviour
 
 	public void PlayerOvercame()
 	{
-		StopEncounter();
+		this.StopEncounter();
 	}
 
 	public void DestroyMe()
@@ -217,21 +228,31 @@ public class EncounterManager : MonoBehaviour
 
 	public void Overpower()
 	{
-		currentEnemy.GetComponent<BasicEnemyController> ().Overpower ();
+		this.currentEnemy.GetComponent<BasicEnemyController> ().Overpower ();
 	}
 
 	public void ResetOverpower()
 	{
-		currentEnemy.GetComponent<BasicEnemyController> ().ResetOverpower ();
+		this.currentEnemy.GetComponent<BasicEnemyController> ().ResetOverpower ();
 	}
 
 	public void NextOPStage()
 	{
-		currentEnemy.GetComponent<BasicEnemyController> ().NextOPStage ();
+		this.currentEnemy.GetComponent<BasicEnemyController> ().NextOPStage ();
 	}
 
 	public void Cower()
 	{
-		currentEnemy.GetComponent<BasicEnemyController> ().Cower ();
+		this.currentEnemy.GetComponent<BasicEnemyController> ().Cower ();
+	}
+
+	private void TileTimer()
+	{
+		this.hiddenTileDuration -= Time.deltaTime;
+		if (this.hiddenTileDuration <= 0)
+		{
+			this.hiddenTileDuration = this.hiddenTileTimer;
+			GameDirector.instance.ChangeGameState(GameStates.Hidden);
+		}
 	}
 }

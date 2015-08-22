@@ -12,7 +12,7 @@ public class ObservatoryTile : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			GameDirector.instance.ChangeGameState(GameStates.Hidden);
+			GameDirector.instance.ChangeGameState(GameStates.HiddenTile);
 			this.GetComponentInChildren<Light>().color = Color.white;
 		}
 	}

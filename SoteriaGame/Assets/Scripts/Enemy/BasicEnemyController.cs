@@ -44,8 +44,7 @@ public class BasicEnemyController : MonoBehaviour {
 		}
 		else
 		{
-			//this.PushBack();
-			this.agent.Stop();
+			this.agent.Stop(false);
 			this.Stunned();
 		}
 	}
@@ -58,6 +57,7 @@ public class BasicEnemyController : MonoBehaviour {
 	public void LookAtPlayer()
 	{
 		anim.SetBool ("Alert", true);
+		this.agent.Stop(false);
 //		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Alert") as Texture;
 //		this.renderer.material.mainTexture = CurrentTexture;
 		this.transform.LookAt(player.transform.position);
@@ -65,6 +65,7 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void ChasePlayer()
 	{
+		agent.Resume();
 		agent.speed = _chaseSpeed;
 		anim.SetBool ("Aggro", true);
 		anim.SetBool ("Alert", false);
@@ -85,6 +86,7 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void Unaware()
 	{
+		agent.Resume();
 		anim.SetBool ("Aggro", false);
 		anim.SetBool ("Alert", false);
 		anim.SetBool ("Overpower", false);
@@ -187,6 +189,7 @@ public class BasicEnemyController : MonoBehaviour {
 		{
 			this.stunned = false;
 			this.stunDuration = stunTimer;
+			agent.Resume();
 		}
 	}
 }

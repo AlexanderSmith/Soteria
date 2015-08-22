@@ -146,10 +146,9 @@ public class GameDirector : MonoBehaviour {
 //			Debug.Log ("Black from encounter start no pulse");
 //			FadeToBlack();
 //		}
-
 	}
 
-    public void TakeSafteyLight()
+	public void TakeSafteyLight()
     {
 		StopEncounterMode();
 		/*Teleport to town center*/
