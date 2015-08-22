@@ -21,14 +21,14 @@ public class SafetyLightController : MonoBehaviour{
 
     public void EnableSafetyLight()
     {
-        this.light.enabled = true;
-        this.collider.enabled = true;
+        this.GetComponent<Light>().enabled = true;
+        this.GetComponent<Collider>().enabled = true;
     }
 
     public void DisableSafetyLight()
     {
-        this.light.enabled = false;
-        this.collider.enabled = false;
+        this.GetComponent<Light>().enabled = false;
+        this.GetComponent<Collider>().enabled = false;
     }
 
     public void Initialize(EncounterManager manager)

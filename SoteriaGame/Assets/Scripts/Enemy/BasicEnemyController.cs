@@ -116,7 +116,7 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void PushBack()
 	{
-		this.gameObject.rigidbody.AddForce(-this.gameObject.transform.forward * pushBack, ForceMode.Impulse);
+		this.gameObject.GetComponent<Rigidbody>().AddForce(-this.gameObject.transform.forward * pushBack, ForceMode.Impulse);
 	}
 
 	public void Overpower()

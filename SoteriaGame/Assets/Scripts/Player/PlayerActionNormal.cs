@@ -22,13 +22,13 @@ public class PlayerActionNormal : IPlayerAction
 
 		moveVect = (_camForward * _vertical) + (_camRight * _horizontal);
 		moveVect.y = 0;
-		inPlayer.gameObject.transform.rigidbody.MovePosition((moveVect * inPlayer.moveSpeed * Time.deltaTime) + inPlayer.gameObject.transform.rigidbody.position);
+		inPlayer.gameObject.transform.GetComponent<Rigidbody>().MovePosition((moveVect * inPlayer.moveSpeed * Time.deltaTime) + inPlayer.gameObject.transform.GetComponent<Rigidbody>().position);
 
 		if (moveVect != Vector3.zero)
 		{
 			Quaternion targetRot = Quaternion.LookRotation (moveVect);
-			Quaternion rot = Quaternion.Lerp (inPlayer.gameObject.transform.rigidbody.rotation, targetRot, inPlayer.rotationSpeed * Time.deltaTime);
-			inPlayer.gameObject.transform.rigidbody.MoveRotation (rot);
+			Quaternion rot = Quaternion.Lerp (inPlayer.gameObject.transform.GetComponent<Rigidbody>().rotation, targetRot, inPlayer.rotationSpeed * Time.deltaTime);
+			inPlayer.gameObject.transform.GetComponent<Rigidbody>().MoveRotation (rot);
 		}
 	}
 }
