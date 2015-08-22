@@ -80,7 +80,7 @@ public class PlayerActionEncounter : IPlayerAction
 			if (this._keyPressCounter > 10)
 			{
 				GameDirector.instance.PlayerOvercame();
-				//Debug.Log("player wins");
+				Debug.Log("player wins");
 			}
 		}
 		//*************************************************************************************************************/

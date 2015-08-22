@@ -146,10 +146,9 @@ public class GameDirector : MonoBehaviour {
 //			Debug.Log ("Black from encounter start no pulse");
 //			FadeToBlack();
 //		}
-
 	}
 
-    public void TakeSafteyLight()
+	public void TakeSafteyLight()
     {
 		StopEncounterMode();
 		/*Teleport to town center*/
@@ -236,6 +235,19 @@ public class GameDirector : MonoBehaviour {
 	public void NextOPStage()
 	{
 		this._encounterManager.NextOPStage ();
+	}
+
+	// Lantern stun on enemies within range
+	public void LanternUsed()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			if (Vector3.Distance(enemy.transform.position, this.GetPlayer().transform.position) <= 45.0f)
+			{
+				enemy.GetComponent<BasicEnemyController>().Stun();
+			}
+		}
 	}
 
     #endregion

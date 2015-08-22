@@ -6,6 +6,7 @@ public enum GameStates
 	Normal,
 	Encounter,
 	Hidden,
+	HiddenTile,
 	Pause
 }
 
@@ -37,6 +38,9 @@ public class StateManager : MonoBehaviour {
 		case GameStates.Hidden:
 			if (gameState != inState) SwitchToHidden();
 			break;
+		case GameStates.HiddenTile:
+			if (gameState != inState) SwitchToHiddenTile();
+			break;
 		case GameStates.Pause:
 			if (gameState != inState) SwitchToPause();
 			break;
@@ -63,6 +67,11 @@ public class StateManager : MonoBehaviour {
 	private void SwitchToHidden()
 	{
 		gameState = GameStates.Hidden;
+	}
+
+	private void SwitchToHiddenTile()
+	{
+		gameState = GameStates.HiddenTile;
 	}
 
 	private void SwitchToPause()

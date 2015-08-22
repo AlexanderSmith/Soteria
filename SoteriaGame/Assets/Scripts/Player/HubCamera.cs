@@ -18,6 +18,6 @@ public class HubCamera : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		transform.LookAt (player);
+		transform.LookAt (player.position + new Vector3(0, 5, 0));
 	}
 }

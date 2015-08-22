@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 566328d41672e4f4b9bab6e4d74f8aed
-timeCreated: 1440274767
-licenseType: Free
+guid: 2b0e79354f4239e46bc86aa86421511b
+timeCreated: 1440278101
+licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: polySurface2337
+    4300000: Ends3
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -34,7 +34,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: 100
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

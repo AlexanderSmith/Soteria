@@ -11,6 +11,7 @@ public class BasicEnemyController : MonoBehaviour {
 	//private Texture CurrentTexture;
 	private Animator anim;
 	private bool dead = false;
+	private bool stunned = false;
 	private int opCounter = 1;
 
 	public Transform[] patrolLocations;
@@ -19,6 +20,8 @@ public class BasicEnemyController : MonoBehaviour {
 	private float _patrolSpeed = 5.0f;
 	private float _patrolTimer = 0.0f;
 	public float waitTime = 5.0f;
+	private float stunDuration;
+	public float stunTimer = 1.0f;
 	
 	// Use this for initialization
 	public void Initialize(EncounterManager encMan)
@@ -26,6 +29,7 @@ public class BasicEnemyController : MonoBehaviour {
 		encounterManager = encMan;
 		agent = GetComponent<NavMeshAgent> ();
 		anim = GetComponent<Animator> ();
+		this.stunDuration = this.stunTimer;
 		//CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Unaware") as Texture;
 		//this.renderer.material.mainTexture = CurrentTexture;
 	}
@@ -33,8 +37,16 @@ public class BasicEnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		distance = Vector3.Distance(this.transform.position, player.transform.position);	
-		encounterManager.CheckPlayerDistance(this.gameObject, this.dead);
+		distance = Vector3.Distance(this.transform.position, player.transform.position);
+		if (!this.stunned)
+		{
+			encounterManager.CheckPlayerDistance(this.gameObject, this.dead);
+		}
+		else
+		{
+			this.agent.Stop(false);
+			this.Stunned();
+		}
 	}
 	
 	public void EndEncounter (bool status)
@@ -45,6 +57,7 @@ public class BasicEnemyController : MonoBehaviour {
 	public void LookAtPlayer()
 	{
 		anim.SetBool ("Alert", true);
+		this.agent.Stop(false);
 //		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Alert") as Texture;
 //		this.renderer.material.mainTexture = CurrentTexture;
 		this.transform.LookAt(player.transform.position);
@@ -52,9 +65,11 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void ChasePlayer()
 	{
+		agent.Resume();
 		agent.speed = _chaseSpeed;
 		anim.SetBool ("Aggro", true);
 		anim.SetBool ("Alert", false);
+		anim.SetBool ("Moving", false);
 //		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;
 //		this.renderer.material.mainTexture = CurrentTexture;
 		agent.SetDestination (player.transform.position);
@@ -71,6 +86,7 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void Unaware()
 	{
+		agent.Resume();
 		anim.SetBool ("Aggro", false);
 		anim.SetBool ("Alert", false);
 		anim.SetBool ("Overpower", false);
@@ -119,6 +135,11 @@ public class BasicEnemyController : MonoBehaviour {
 		this.gameObject.GetComponent<Rigidbody>().AddForce(-this.gameObject.transform.forward * pushBack, ForceMode.Impulse);
 	}
 
+	public void Stun()
+	{
+		this.stunned = true;
+	}
+
 	public void Overpower()
 	{
 		switch (opCounter)
@@ -146,18 +167,29 @@ public class BasicEnemyController : MonoBehaviour {
 	{
 		anim.SetBool ("Cower", true);
 		dead = true;
-		anim.SetBool ("Aggro", false);
-		anim.SetBool ("Overpower", false);
+		//anim.SetBool ("Aggro", false);
+		//anim.SetBool ("Overpower", false);
 		opCounter = 1;
 	}
 
 	public void DestroyMe()
 	{
-		encounterManager.DestroyMe ();
+		encounterManager.DestroyMe();
 	}
 
 	public void NextOPStage()
 	{
 		opCounter++;
+	}
+
+	private void Stunned()
+	{
+		this.stunDuration -= Time.deltaTime;
+		if (this.stunDuration <= 0)
+		{
+			this.stunned = false;
+			this.stunDuration = stunTimer;
+			agent.Resume();
+		}
 	}
 }
