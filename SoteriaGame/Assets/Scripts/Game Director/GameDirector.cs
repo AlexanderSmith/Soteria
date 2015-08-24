@@ -152,7 +152,7 @@ public class GameDirector : MonoBehaviour {
     {
 		StopEncounterMode();
 		/*Teleport to town center*/
-		this.gameObject.AddComponent<LevelManager>().SetActiveLevel("FixingLight");
+		this.gameObject.AddComponent<LevelManager>().SetActiveLevel("FullModelHub");
     }
 
 //	public void LightReset()

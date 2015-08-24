@@ -26,6 +26,10 @@ public class BasicEnemyController : MonoBehaviour {
 	// Use this for initialization
 	public void Initialize(EncounterManager encMan)
 	{
+		if (player == null)
+		{
+			player = GameObject.FindWithTag("Player");
+		}
 		encounterManager = encMan;
 		agent = GetComponent<NavMeshAgent> ();
 		anim = GetComponent<Animator> ();
@@ -81,7 +85,7 @@ public class BasicEnemyController : MonoBehaviour {
 		//anim.SetBool ("Overpower", true);
 //		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;
 //		this.renderer.material.mainTexture = CurrentTexture;
-		agent.Stop();
+		agent.Stop(false);
 	}
 	
 	public void Unaware()

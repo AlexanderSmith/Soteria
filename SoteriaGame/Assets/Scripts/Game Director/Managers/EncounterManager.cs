@@ -25,7 +25,7 @@ public class EncounterManager : MonoBehaviour
 	public float lookAtDistance = 45.0f;
 	public float attackRange = 35.0f;
 	public float overwhelmRange = 15.0f;
-	private float gameOverTimer = 30.0f;
+	public float gameOverTimer = 75.0f;
 	private float hiddenTileDuration;
 	public float hiddenTileTimer = 5.0f;
 
@@ -82,6 +82,7 @@ public class EncounterManager : MonoBehaviour
 				this.Encounter(enemy);
 				//Debug.Log ("Distance" + enemy.GetComponent<BasicEnemyController>().GetDistance());
 				enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
+				this.GameOverTimer();
 			}
 			else if (distance <= attackRange)
 			{
@@ -203,7 +204,8 @@ public class EncounterManager : MonoBehaviour
 		this.gameOverTimer -= Time.deltaTime;
 		if (this.gameOverTimer <= 0.0f)
 		{
-			//inform GameDirector player dead
+			GameDirector.instance.StopEncounterMode();
+			this.gameObject.AddComponent<LevelManager>().SetActiveLevel("HarborNoSwarm");
 		}
 	}
 
