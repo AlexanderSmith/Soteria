@@ -113,6 +113,11 @@ public class GameDirector : MonoBehaviour {
 
     #region EncounterManager
 
+	public EncounterManager GetEncounterManager()
+	{
+		return this._encounterManager;
+	}
+
 	public EncounterState GetEncounterState()
 	{
 		return this._encounterManager.GetState();
@@ -245,7 +250,14 @@ public class GameDirector : MonoBehaviour {
 		{
 			if (Vector3.Distance(enemy.transform.position, this.GetPlayer().transform.position) <= 45.0f)
 			{
-				enemy.GetComponent<BasicEnemyController>().Stun();
+				if (enemy.GetComponent<BasicEnemyController>() != null)
+				{
+					enemy.GetComponent<BasicEnemyController>().Stun();
+				}
+				else
+				{
+					enemy.GetComponent<EyeballShadowCreatureController>().Stun();
+				}
 			}
 		}
 	}
