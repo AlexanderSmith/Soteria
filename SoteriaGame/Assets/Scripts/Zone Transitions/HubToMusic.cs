@@ -7,7 +7,7 @@ public class HubToMusic : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			Application.LoadLevel("WalkThroughMusic");
+			Application.LoadLevel("MusicAct1Brick");
 		}
 	}
 }

@@ -7,7 +7,7 @@ public class HubToObservatory : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			Application.LoadLevel("WalkThroughObservatory");
+			Application.LoadLevel("ObservatoryDistrictPath1");
 		}
 	}
 }

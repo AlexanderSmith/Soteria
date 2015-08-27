@@ -7,7 +7,7 @@ public class HubToTheaterLeft : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			Application.LoadLevel("WalkThroughTheater");
+			Application.LoadLevel("TheaterDistrictAct1");
 		}
 	}
 }
