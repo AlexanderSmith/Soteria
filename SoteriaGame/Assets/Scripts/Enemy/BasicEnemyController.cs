@@ -16,8 +16,8 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public Transform[] patrolLocations;
 	private int _patrolIndex = 0;
-	private float _chaseSpeed = 10.0f;
-	private float _patrolSpeed = 5.0f;
+	public float chaseSpeed = 10.0f;
+	public float patrolSpeed = 5.0f;
 	private float _patrolTimer = 0.0f;
 	public float waitTime = 5.0f;
 	private float _stunDuration;
@@ -71,7 +71,7 @@ public class BasicEnemyController : MonoBehaviour {
 	public void ChasePlayer()
 	{
 		_agent.Resume();
-		_agent.speed = _chaseSpeed;
+		_agent.speed = chaseSpeed;
 		_anim.SetBool ("Aggro", true);
 		_anim.SetBool ("Alert", false);
 		_anim.SetBool ("Moving", false);
@@ -100,7 +100,7 @@ public class BasicEnemyController : MonoBehaviour {
 		if (patrolLocations.Length > 0)
 		{
 			_anim.SetBool ("Moving", true);
-			_agent.speed = _patrolSpeed;
+			_agent.speed = patrolSpeed;
 			if (_agent.remainingDistance < _agent.stoppingDistance)
 			{
 				_anim.SetBool ("Moving", false);
