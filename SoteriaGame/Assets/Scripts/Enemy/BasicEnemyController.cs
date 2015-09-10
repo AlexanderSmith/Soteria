@@ -22,6 +22,10 @@ public class BasicEnemyController : MonoBehaviour {
 	public float waitTime = 5.0f;
 	private float _stunDuration;
 	public float stunTimer = 1.0f;
+
+	private bool _playerVisible;
+	public float fieldOfVision = 90.0f;
+	private SphereCollider _sphereCollider;
 	
 	// Use this for initialization
 	public void Initialize(EncounterManager encMan)
@@ -34,23 +38,55 @@ public class BasicEnemyController : MonoBehaviour {
 		_agent = GetComponent<NavMeshAgent> ();
 		_anim = GetComponent<Animator> ();
 		this._stunDuration = this.stunTimer;
-		//CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Unaware") as Texture;
-		//this.renderer.material.mainTexture = CurrentTexture;
+		this._sphereCollider = this.gameObject.GetComponent<SphereCollider>();
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void Update() 
 	{
 		_distance = Vector3.Distance(this.transform.position, player.transform.position);
-		if (!this._stunned)
+		/*if (!this._stunned)
 		{
-			//_encounterManager.CheckPlayerDistance(this.gameObject, this._dead);
+			GameDirector.instance.GetEncounterManager().CheckPlayerDistance(this.gameObject, this._dead);
+		}
+		else*/
+		if (this._stunned)
+		{
+			this._agent.Stop(false);
+			this.Stunned();
+		}
+		else if (this._playerVisible)
+		{
+//			this.LookAtPlayer();
 			GameDirector.instance.GetEncounterManager().CheckPlayerDistance(this.gameObject, this._dead);
 		}
 		else
 		{
-			this._agent.Stop(false);
-			this.Stunned();
+			this.Unaware();
+		}
+	}
+
+	void OnTriggerStay(Collider player)
+	{
+		if (player.gameObject.tag == "Player")
+		{
+			this._playerVisible = false;
+
+			Vector3 direction = player.transform.position - this.gameObject.transform.position;
+			float angle = Vector3.Angle(direction, this.gameObject.transform.forward);
+
+			if(angle < fieldOfVision * 0.5f)
+			{
+				RaycastHit hit;
+
+				if(Physics.Raycast(this.gameObject.transform.position + this.gameObject.transform.up, direction.normalized, out hit, this._sphereCollider.radius))
+				{
+					if(hit.collider.gameObject == player)
+					{
+						this._playerVisible = true;
+					}
+				}
+			}
 		}
 	}
 	
@@ -63,8 +99,6 @@ public class BasicEnemyController : MonoBehaviour {
 	{
 		_anim.SetBool ("Alert", true);
 		this._agent.Stop(false);
-//		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Alert") as Texture;
-//		this.renderer.material.mainTexture = CurrentTexture;
 		this.transform.LookAt(player.transform.position);
 	}
 	
@@ -75,17 +109,12 @@ public class BasicEnemyController : MonoBehaviour {
 		_anim.SetBool ("Aggro", true);
 		_anim.SetBool ("Alert", false);
 		_anim.SetBool ("Moving", false);
-//		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;
-//		this.renderer.material.mainTexture = CurrentTexture;
 		_agent.SetDestination (player.transform.position);
 		//Debug.Log("Enemy chasing");
 	}
 	
 	public void OverwhelmPlayer()
 	{
-		//anim.SetBool ("Overpower", true);
-//		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Attack") as Texture;
-//		this.renderer.material.mainTexture = CurrentTexture;
 		_agent.Stop(false);
 	}
 	
@@ -125,9 +154,6 @@ public class BasicEnemyController : MonoBehaviour {
 		{
 			_anim.SetBool ("Moving", false);
 		}
-
-//		CurrentTexture = Resources.Load("Textures/_OldTextures/ShadowCreature Unaware") as Texture;
-//		this.renderer.material.mainTexture = CurrentTexture;
 	}
 	
 	public float GetDistance()
@@ -172,14 +198,11 @@ public class BasicEnemyController : MonoBehaviour {
 	{
 		_anim.SetBool ("Cower", true);
 		_dead = true;
-		//anim.SetBool ("Aggro", false);
-		//anim.SetBool ("Overpower", false);
 		_opCounter = 1;
 	}
 
 	public void DestroyMe()
 	{
-		//_encounterManager.DestroyMe();
 		GameDirector.instance.GetEncounterManager().DestroyMe();
 	}
 

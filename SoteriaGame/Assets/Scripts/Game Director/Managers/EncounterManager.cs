@@ -46,10 +46,6 @@ public class EncounterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-//		if (cooldown)
-//		{
-//			LightCooldown();
-//		}
 		if (this.currentState == EncounterState.ACTIVE)
 		{
 			this.GameOverTimer();
@@ -80,7 +76,6 @@ public class EncounterManager : MonoBehaviour
 			if (distance <= overwhelmRange)
 			{
 				this.Encounter(enemy);
-				//Debug.Log ("Distance" + enemy.GetComponent<BasicEnemyController>().GetDistance());
 				enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
 			}
 			else if (distance <= attackRange)
@@ -91,10 +86,10 @@ public class EncounterManager : MonoBehaviour
 			{
 				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
 			}
-			else
-			{
-				enemy.GetComponent<BasicEnemyController>().Unaware();
-			}
+//			else
+//			{
+//				enemy.GetComponent<BasicEnemyController>().Unaware();
+//			}
 		}
 		else if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
 		{

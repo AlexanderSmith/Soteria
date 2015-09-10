@@ -48,7 +48,6 @@ public class PlayerActionEncounter : IPlayerAction
 
 	private void ProcessInput()
 	{
-		//*/ Single mash turning****************************************************************************************
 		if (Input.GetKeyDown(KeyCode.DownArrow) && !GameDirector.instance.GetOvercomeBool())
 		{
 			GameDirector.instance.TryingToOvercome();
@@ -83,7 +82,6 @@ public class PlayerActionEncounter : IPlayerAction
 				Debug.Log("player wins");
 			}
 		}
-		//*************************************************************************************************************/
 	}
 
 	private void LingerTimer()
