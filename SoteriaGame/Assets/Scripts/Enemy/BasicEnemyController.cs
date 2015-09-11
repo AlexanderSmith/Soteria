@@ -26,6 +26,10 @@ public class BasicEnemyController : MonoBehaviour {
 	private bool _playerVisible;
 	public float fieldOfVision = 90.0f;
 	private SphereCollider _sphereCollider;
+
+	public float lookAtDistance = 45.0f;
+	public float attackRange = 35.0f;
+	public float overwhelmRange = 15.0f;
 	
 	// Use this for initialization
 	public void Initialize(EncounterManager encMan)
@@ -58,13 +62,64 @@ public class BasicEnemyController : MonoBehaviour {
 		else if (this._playerVisible)
 		{
 //			this.LookAtPlayer();
-			GameDirector.instance.GetEncounterManager().CheckPlayerDistance(this.gameObject, this._dead);
+//			GameDirector.instance.GetEncounterManager().CheckPlayerDistance(this.gameObject, this._dead);
+			if (this._distance <= this.overwhelmRange)
+			{
+				GameDirector.instance.GetEncounterManager().Encounter(this.gameObject);
+				this.OverwhelmPlayer();
+			}
+			else if (this._distance <= this.attackRange)
+			{
+				this.ChasePlayer();
+			}
+			else if (this._distance <= this.lookAtDistance)
+			{
+				this.LookAtPlayer();
+			}
+			else
+			{
+				this.Unaware();
+			}
 		}
 		else
 		{
 			this.Unaware();
 		}
 	}
+
+//	float distance = enemy.GetComponent<BasicEnemyController>().GetDistance();
+//	if (!inDead && GameDirector.instance.GetGameState() != GameStates.Hidden && GameDirector.instance.GetGameState() != GameStates.HiddenTile)
+//	{
+//		if (distance <= overwhelmRange)
+//		{
+//			this.Encounter(enemy);
+//			enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
+//		}
+//		else if (distance <= attackRange)
+//		{
+//			enemy.GetComponent<BasicEnemyController>().ChasePlayer();
+//		}
+//		else if (distance <= lookAtDistance)
+//		{
+//			enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
+//		}
+//		//			else
+//		//			{
+//		//				enemy.GetComponent<BasicEnemyController>().Unaware();
+//		//			}
+//	}
+//	else if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
+//	{
+//		if (distance <= lookAtDistance)
+//		{
+//			enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
+//		}
+//		this.TileTimer();
+//	}
+//	else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
+//	{
+//		enemy.GetComponent<BasicEnemyController>().Unaware();
+//	}
 
 	void OnTriggerStay(Collider player)
 	{
@@ -79,13 +134,31 @@ public class BasicEnemyController : MonoBehaviour {
 			{
 				RaycastHit hit;
 
-				if(Physics.Raycast(this.gameObject.transform.position + this.gameObject.transform.up, direction.normalized, out hit, this._sphereCollider.radius))
+				if(Physics.Raycast(this.gameObject.transform.position + this.gameObject.transform.up, direction, out hit, this._sphereCollider.radius))
 				{
-					if(hit.collider.gameObject == player)
+					if(hit.collider.gameObject.Equals(player.gameObject))
 					{
 						this._playerVisible = true;
+						if (this._distance <= this.overwhelmRange)
+						{
+							GameDirector.instance.GetEncounterManager().Encounter(this.gameObject);
+							this.OverwhelmPlayer();
+						}
+						else if (this._distance <= this.attackRange)
+						{
+							this.ChasePlayer();
+						}
+						else if (this._distance <= this.lookAtDistance)
+						{
+							this.LookAtPlayer();
+						}
+						else
+						{
+							this.Unaware();
+						}
 					}
 				}
+				//Debug.DrawRay(this.gameObject.transform.position + this.gameObject.transform.up, direction, Color.white, 200, false);
 			}
 		}
 	}

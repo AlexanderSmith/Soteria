@@ -70,39 +70,39 @@ public class EncounterManager : MonoBehaviour
 
 	public void CheckPlayerDistance(GameObject enemy, bool inDead)
 	{
-		float distance = enemy.GetComponent<BasicEnemyController>().GetDistance();
-		if (!inDead && GameDirector.instance.GetGameState() != GameStates.Hidden && GameDirector.instance.GetGameState() != GameStates.HiddenTile)
-		{
-			if (distance <= overwhelmRange)
-			{
-				this.Encounter(enemy);
-				enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
-			}
-			else if (distance <= attackRange)
-			{
-				enemy.GetComponent<BasicEnemyController>().ChasePlayer();
-			}
-			else if (distance <= lookAtDistance)
-			{
-				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
-			}
-//			else
+//		float distance = enemy.GetComponent<BasicEnemyController>().GetDistance();
+//		if (!inDead && GameDirector.instance.GetGameState() != GameStates.Hidden && GameDirector.instance.GetGameState() != GameStates.HiddenTile)
+//		{
+//			if (distance <= overwhelmRange)
 //			{
-//				enemy.GetComponent<BasicEnemyController>().Unaware();
+//				this.Encounter(enemy);
+//				enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
 //			}
-		}
-		else if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
-		{
-			if (distance <= lookAtDistance)
-			{
-				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
-			}
-			this.TileTimer();
-		}
-		else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
-		{
-			enemy.GetComponent<BasicEnemyController>().Unaware();
-		}
+//			else if (distance <= attackRange)
+//			{
+//				enemy.GetComponent<BasicEnemyController>().ChasePlayer();
+//			}
+//			else if (distance <= lookAtDistance)
+//			{
+//				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
+//			}
+////			else
+////			{
+////				enemy.GetComponent<BasicEnemyController>().Unaware();
+////			}
+//		}
+//		else if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
+//		{
+//			if (distance <= lookAtDistance)
+//			{
+//				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
+//			}
+//			this.TileTimer();
+//		}
+//		else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
+//		{
+//			enemy.GetComponent<BasicEnemyController>().Unaware();
+//		}
 	}
 
 	public void Encounter(GameObject enemy)
