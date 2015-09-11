@@ -28,10 +28,10 @@ public class EyeballShadowCreatureController : MonoBehaviour
 
 	void Update()
 	{
-		if (!this._stunned)
+		if (!this._stunned && GameDirector.instance.GetGameState() != GameStates.Hidden)
 		{
 			float distance = Vector3.Distance(this.transform.position, _player.transform.position);
-			if (!_dead && GameDirector.instance.GetGameState() != GameStates.Hidden)
+			if (!_dead)
 			{
 				if (distance <= _overwhelmRange)
 				{
@@ -43,6 +43,10 @@ public class EyeballShadowCreatureController : MonoBehaviour
 					this._agent.SetDestination(_player.transform.position);
 				}
 			}
+		}
+		else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
+		{
+			Destroy(this.gameObject);
 		}
 		else
 		{

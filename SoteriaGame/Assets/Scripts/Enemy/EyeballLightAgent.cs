@@ -26,6 +26,12 @@ public class EyeballLightAgent : MonoBehaviour
 		{
 			this.Patrolling();
 		}
+		else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
+		{
+			this._spotted = false;
+			this.gameObject.GetComponent<EyeballShadowCreatureSpawner>().Cancel();
+			this.GetComponentInChildren<EyeballLightController>().NormalColor();
+		}
 		else
 		{
 			this.Following();
@@ -66,7 +72,8 @@ public class EyeballLightAgent : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			this._spotted = true;
-			this.gameObject.GetComponent<EyeballShadowCreatureSpawner>().enabled = true;
+			this.gameObject.GetComponent<EyeballShadowCreatureSpawner>().Resume();
+			this.GetComponentInChildren<EyeballLightController>().AlarmColor();
 		}
 	}
 }
