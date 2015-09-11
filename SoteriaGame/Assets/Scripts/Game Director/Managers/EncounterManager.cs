@@ -101,8 +101,8 @@ public class EncounterManager : MonoBehaviour
 			if (distance <= lookAtDistance)
 			{
 				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
+				this.TileTimer();
 			}
-			this.TileTimer();
 		}
 		else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
 		{
