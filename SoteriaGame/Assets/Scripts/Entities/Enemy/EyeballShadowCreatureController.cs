@@ -8,7 +8,6 @@ public class EyeballShadowCreatureController : MonoBehaviour
 	private Animator _anim;
 	private bool _dead = false;
 	private bool _stunned = false;
-	private int _opCounter = 1;
 	private float _chaseSpeed = 10.0f;
 	private float _stunDuration;
 	public float stunTimer = 1.0f;
@@ -50,14 +49,14 @@ public class EyeballShadowCreatureController : MonoBehaviour
 		}
 		else
 		{
-			this._agent.Stop(false);
+			this._agent.Stop();
 			this.Stunned();
 		}
 	}
 
 	private void OverwhelmPlayer()
 	{
-		_agent.Stop(false);
+		_agent.Stop();
 	}
 
 	private void Stunned()

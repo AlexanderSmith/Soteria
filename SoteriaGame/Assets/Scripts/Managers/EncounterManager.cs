@@ -22,17 +22,12 @@ public class EncounterManager : MonoBehaviour
 	private GameObject[] enemies;
 	private GameObject currentEnemy;
 
-	public float lookAtDistance = 45.0f;
-	public float attackRange = 35.0f;
-	public float overwhelmRange = 15.0f;
-	private float gameOverTimer = 30.0f;
+	private float gameOverTimer = 15.0f;
 	private float hiddenTileDuration;
 	public float hiddenTileTimer = 5.0f;
 
 	private int overcomeCounter = 0;
 
-	private bool lightOn = false;
-	private bool cooldown = false;
 	private bool ableToOvercome = false;
 
 	EncounterState currentState;
@@ -64,44 +59,6 @@ public class EncounterManager : MonoBehaviour
 		foreach (GameObject enemy in enemies) 
 		{
 			enemy.GetComponent<BasicEnemyController>().Initialize();
-		}
-	}
-
-	public void CheckPlayerDistance(GameObject enemy, bool inDead)
-	{
-		float distance = enemy.GetComponent<BasicEnemyController>().GetDistance();
-		if (!inDead && GameDirector.instance.GetGameState() != GameStates.Hidden && GameDirector.instance.GetGameState() != GameStates.HiddenTile)
-		{
-			if (distance <= overwhelmRange)
-			{
-				this.Encounter(enemy);
-				//Debug.Log ("Distance" + enemy.GetComponent<BasicEnemyController>().GetDistance());
-				enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
-			}
-			else if (distance <= attackRange)
-			{
-				enemy.GetComponent<BasicEnemyController>().ChasePlayer();
-			}
-			else if (distance <= lookAtDistance)
-			{
-				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
-			}
-			else
-			{
-				enemy.GetComponent<BasicEnemyController>().Unaware();
-			}
-		}
-		else if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
-		{
-			if (distance <= lookAtDistance)
-			{
-				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
-			}
-			this.TileTimer();
-		}
-		else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
-		{
-			enemy.GetComponent<BasicEnemyController>().Unaware();
 		}
 	}
 
@@ -174,7 +131,8 @@ public class EncounterManager : MonoBehaviour
 		this.gameOverTimer -= Time.deltaTime;
 		if (this.gameOverTimer <= 0.0f)
 		{
-			//inform GameDirector player dead
+			GameDirector.instance.StopEncounterMode();
+			this.gameObject.AddComponent<LevelManager>().SetActiveLevel("HarborNoSwarm");
 		}
 	}
 
@@ -224,7 +182,7 @@ public class EncounterManager : MonoBehaviour
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		foreach (GameObject enemy in enemies)
 		{
-			if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= this.lookAtDistance)
+			if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= enemy.GetComponent<BasicEnemyController>().lookAtDistance)
 			{
 				if (enemy.GetComponent<BasicEnemyController>() != null)
 				{
