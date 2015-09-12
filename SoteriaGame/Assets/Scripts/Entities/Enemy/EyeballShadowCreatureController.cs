@@ -50,14 +50,14 @@ public class EyeballShadowCreatureController : MonoBehaviour
 		}
 		else
 		{
-			this._agent.Stop(false);
+			this._agent.Stop();
 			this.Stunned();
 		}
 	}
 
 	private void OverwhelmPlayer()
 	{
-		_agent.Stop(false);
+		_agent.Stop();
 	}
 
 	private void Stunned()

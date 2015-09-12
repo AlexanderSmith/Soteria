@@ -134,6 +134,22 @@ public class GameDirector : MonoBehaviour {
 		return this._encounterManager.GetState();
 	}
 
+	public void Encounter(GameObject enemy)
+	{
+		this._encounterManager.Encounter(enemy);
+	}
+
+	public void StartEncounterMode()
+	{
+		if (_stateManager.GameState() != GameStates.Encounter) 
+		{
+			_stateManager.ChangeGameState (GameStates.Encounter);
+		}
+		
+		//_HUDManager.EnableEncounterView();
+		GetPlayer().GetComponent<Player>().PlayerActionEncounter();
+	}
+
 	public void StopEncounterMode()
 	{
 		_stateManager.ChangeGameState(GameStates.Normal);
@@ -141,22 +157,13 @@ public class GameDirector : MonoBehaviour {
 		GetPlayer().GetComponent<Player>().PlayerActionNormal();
 	}
 
-    public void StartEncounterMode()
-    {
-		if (_stateManager.GameState() != GameStates.Encounter) 
-		{
-			_stateManager.ChangeGameState (GameStates.Encounter);
-		}
-
-		//_HUDManager.EnableEncounterView();
-		GetPlayer().GetComponent<Player>().PlayerActionEncounter();
-	}
-	
-	public void CheckPlayerDistance(GameObject inGameObject, bool inDead)
+	public void TakeSafteyLight()
 	{
-		this._encounterManager.CheckPlayerDistance(inGameObject, inDead);
+		StopEncounterMode();
+		/*Teleport to town center*/
+		this.gameObject.AddComponent<LevelManager>().SetActiveLevel("FullModelHub");
 	}
-	
+
 	public void KillEnemy()
 	{
 		this._encounterManager.DestroyMe();
@@ -216,24 +223,9 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.NextOPStage ();
 	}
 
-	// Lantern stun on enemies within range
-	public void LanternUsed()
+	public void UseLantern()
 	{
-		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-		foreach (GameObject enemy in enemies)
-		{
-			if (Vector3.Distance(enemy.transform.position, this.GetPlayer().transform.position) <= 45.0f)
-			{
-				if (enemy.GetComponent<BasicEnemyController>() != null)
-				{
-					enemy.GetComponent<BasicEnemyController>().Stun();
-				}
-				else
-				{
-					enemy.GetComponent<EyeballShadowCreatureController>().Stun();
-				}
-			}
-		}
+		this._encounterManager.LanternUsed();
 	}
 
     #endregion

@@ -17,7 +17,7 @@ public class LanternController : MonoBehaviour
 		if (GameDirector.instance.GetGameState() == GameStates.Normal)// && this._charged)
 		{
 			Debug.Log ("Lantern Used");
-			GameDirector.instance.LanternUsed();
+			GameDirector.instance.UseLantern();
 			//this._charged = false;
 		}
 	}

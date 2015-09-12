@@ -25,14 +25,12 @@ public class EncounterManager : MonoBehaviour
 	public float lookAtDistance = 45.0f;
 	public float attackRange = 35.0f;
 	public float overwhelmRange = 15.0f;
-	private float gameOverTimer = 30.0f;
+	private float gameOverTimer = 15.0f;
 	private float hiddenTileDuration;
 	public float hiddenTileTimer = 5.0f;
 
 	private int overcomeCounter = 0;
 
-	private bool lightOn = false;
-	private bool cooldown = false;
 	private bool ableToOvercome = false;
 
 	EncounterState currentState;
@@ -43,6 +41,13 @@ public class EncounterManager : MonoBehaviour
 		this.hiddenTileDuration = this.hiddenTileTimer;
     }
 
+	public void Initialize()
+	{
+		this.enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		this.LinkToEnemy();
+		this.currentState = EncounterState.INACTIVE;
+	}
+
     // Update is called once per frame
     void Update()
     {
@@ -50,13 +55,6 @@ public class EncounterManager : MonoBehaviour
 		{
 			this.GameOverTimer();
 		}
-    }
-
-    public void Initialize()
-    {
-		this.enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-		this.LinkToEnemy();
-		this.currentState = EncounterState.INACTIVE;
     }
 
 	void LinkToEnemy()
@@ -174,7 +172,8 @@ public class EncounterManager : MonoBehaviour
 		this.gameOverTimer -= Time.deltaTime;
 		if (this.gameOverTimer <= 0.0f)
 		{
-			//inform GameDirector player dead
+			GameDirector.instance.StopEncounterMode();
+			this.gameObject.AddComponent<LevelManager>().SetActiveLevel("HarborNoSwarm");
 		}
 	}
 
@@ -215,6 +214,26 @@ public class EncounterManager : MonoBehaviour
 		{
 			this.hiddenTileDuration = this.hiddenTileTimer;
 			GameDirector.instance.ChangeGameState(GameStates.Hidden);
+		}
+	}
+
+	// Lantern stun on enemies within range
+	public void LanternUsed()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= 45.0f)
+			{
+				if (enemy.GetComponent<BasicEnemyController>() != null)
+				{
+					enemy.GetComponent<BasicEnemyController>().Stun();
+				}
+				else
+				{
+					enemy.GetComponent<EyeballShadowCreatureController>().Stun();
+				}
+			}
 		}
 	}
 }
