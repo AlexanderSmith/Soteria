@@ -68,10 +68,10 @@ public class GameDirector : MonoBehaviour {
 		this._dialoguemanager = this.gameObject.GetComponent<DialogueManager> ();
 		
 		this._audioManager.Initialize();
-		this._HUDManager.Initialize();
+		//this._HUDManager.Initialize();
 		this._encounterManager.Initialize();
 		this._stateManager.Initialize();
-		this._dialoguemanager.Initialize ();
+		//this._dialoguemanager.Initialize ();
 
 		this.InitializePlayer ();    
     }
@@ -93,7 +93,7 @@ public class GameDirector : MonoBehaviour {
     private void Update()
     {
 		//Dialogue
-		this._dialoguemanager.Update();
+		//this._dialoguemanager.Update();
 	}
 
 	///////////////////////////////////////////////////////////////////
