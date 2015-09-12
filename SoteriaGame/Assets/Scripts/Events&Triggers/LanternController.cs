@@ -4,45 +4,26 @@ using System.Collections;
 
 public class LanternController : MonoBehaviour
 {
-	private bool _charged = false;
-	public int _uses = 1;
+	private bool _charged;
 
 	void Start()
 	{
-		Debug.Log (this._charged);
 		this._charged = true;
-		Debug.Log (this._charged);
-	}
-
-	void Update()
-	{
-//		if (!_charged)
-//			Debug.Log ("false");
 	}
 
 	public void LanternClicked()
 	{
-		//Debug.Log (this._charged);
 		// _charged bool not working as intended (semi-works while debugging, but not normally)
 		if (GameDirector.instance.GetGameState() == GameStates.Normal)// && this._charged)
 		{
-			this.UseLantern();
-		}
-	}
-
-	private void UseLantern()
-	{
-		if (this._charged)
-		{
-			GameDirector.instance.LanternUsed();
-			this._charged = false;
-			//this._uses--;
+			Debug.Log ("Lantern Used");
+			GameDirector.instance.UseLantern();
+			//this._charged = false;
 		}
 	}
 
 	public void RechargeLantern()
 	{
 		this._charged = true;
-		this._uses = 1;
 	}
 }
