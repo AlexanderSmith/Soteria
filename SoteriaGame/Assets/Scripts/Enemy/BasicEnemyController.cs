@@ -4,11 +4,8 @@ using System.Collections;
 public class BasicEnemyController : MonoBehaviour {
 
 	public GameObject player;
-	private EncounterManager _encounterManager;
 	private NavMeshAgent _agent;
 	private float _distance = 0.0f;
-	private float _pushBack = 100.0f;
-	//private Texture CurrentTexture;
 	private Animator _anim;
 	private bool _dead = false;
 	private bool _stunned = false;
@@ -34,13 +31,12 @@ public class BasicEnemyController : MonoBehaviour {
 	// Use this for initialization
 	public void Initialize(EncounterManager encMan)
 	{
-		if (player == null)
+		if (this.player == null)
 		{
-			player = GameObject.FindWithTag("Player");
+			this.player = GameObject.FindWithTag("Player");
 		}
-		_encounterManager = encMan;
-		_agent = GetComponent<NavMeshAgent> ();
-		_anim = GetComponent<Animator> ();
+		this._agent = GetComponent<NavMeshAgent> ();
+		this._anim = GetComponent<Animator> ();
 		this._stunDuration = this.stunTimer;
 		this._sphereCollider = this.gameObject.GetComponent<SphereCollider>();
 	}
@@ -56,7 +52,7 @@ public class BasicEnemyController : MonoBehaviour {
 		else*/
 		if (this._stunned)
 		{
-			this._agent.Stop(false);
+			this._agent.Stop();
 			this.Stunned();
 		}
 		else if (this._playerVisible)
@@ -86,40 +82,6 @@ public class BasicEnemyController : MonoBehaviour {
 			this.Unaware();
 		}
 	}
-
-//	float distance = enemy.GetComponent<BasicEnemyController>().GetDistance();
-//	if (!inDead && GameDirector.instance.GetGameState() != GameStates.Hidden && GameDirector.instance.GetGameState() != GameStates.HiddenTile)
-//	{
-//		if (distance <= overwhelmRange)
-//		{
-//			this.Encounter(enemy);
-//			enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
-//		}
-//		else if (distance <= attackRange)
-//		{
-//			enemy.GetComponent<BasicEnemyController>().ChasePlayer();
-//		}
-//		else if (distance <= lookAtDistance)
-//		{
-//			enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
-//		}
-//		//			else
-//		//			{
-//		//				enemy.GetComponent<BasicEnemyController>().Unaware();
-//		//			}
-//	}
-//	else if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
-//	{
-//		if (distance <= lookAtDistance)
-//		{
-//			enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
-//		}
-//		this.TileTimer();
-//	}
-//	else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
-//	{
-//		enemy.GetComponent<BasicEnemyController>().Unaware();
-//	}
 
 	void OnTriggerStay(Collider player)
 	{
@@ -163,80 +125,70 @@ public class BasicEnemyController : MonoBehaviour {
 		}
 	}
 	
-	public void EndEncounter (bool status)
-	{
-		//staystill = status;
-	}
-	
 	public void LookAtPlayer()
 	{
-		_anim.SetBool ("Alert", true);
-		this._agent.Stop(false);
+		this._anim.SetBool ("Alert", true);
+		this._agent.Stop();
 		this.transform.LookAt(player.transform.position);
 	}
 	
 	public void ChasePlayer()
 	{
-		_agent.Resume();
-		_agent.speed = _chaseSpeed;
-		_anim.SetBool ("Aggro", true);
-		_anim.SetBool ("Alert", false);
-		_anim.SetBool ("Moving", false);
-		_agent.SetDestination (player.transform.position);
+		this._agent.Resume();
+		this._agent.speed = _chaseSpeed;
+		this._anim.SetBool ("Aggro", true);
+		this._anim.SetBool ("Alert", false);
+		this._anim.SetBool ("Moving", false);
+		this._agent.SetDestination (player.transform.position);
 		//Debug.Log("Enemy chasing");
 	}
 	
 	public void OverwhelmPlayer()
 	{
-		_agent.Stop(false);
+		this._agent.Stop();
 	}
 	
 	public void Unaware()
 	{
-		_agent.Resume();
-		_anim.SetBool ("Aggro", false);
-		_anim.SetBool ("Alert", false);
-		_anim.SetBool ("Overpower", false);
-		_anim.SetBool ("Cower", false);
-		_opCounter = 1;
-		if (patrolLocations.Length > 0)
+		this._agent.Resume();
+		this._anim.SetBool ("Aggro", false);
+		this._anim.SetBool ("Alert", false);
+		this._anim.SetBool ("Overpower", false);
+		this._anim.SetBool ("Cower", false);
+		this._opCounter = 1;
+		if (this.patrolLocations.Length > 0)
 		{
-			_anim.SetBool ("Moving", true);
-			_agent.speed = _patrolSpeed;
-			if (_agent.remainingDistance < _agent.stoppingDistance)
+			this._anim.SetBool ("Moving", true);
+			this._agent.speed = this._patrolSpeed;
+			if (this._agent.remainingDistance < this._agent.stoppingDistance)
 			{
-				_anim.SetBool ("Moving", false);
-				_patrolTimer += Time.deltaTime;
-				if (_patrolTimer >= waitTime)
+				this._anim.SetBool ("Moving", false);
+				this._patrolTimer += Time.deltaTime;
+				if (this._patrolTimer >= this.waitTime)
 				{
-					if (_patrolIndex == patrolLocations.Length - 1)
+					if (this._patrolIndex == this.patrolLocations.Length - 1)
 					{
-						_patrolIndex = 0;
+						this._patrolIndex = 0;
 					}
 					else
 					{
-						_patrolIndex++;
+						this._patrolIndex++;
 					}
-					_patrolTimer = 0.0f;
+					this._patrolTimer = 0.0f;
 				}
 			}
 
-			_agent.destination = patrolLocations [_patrolIndex].position;
+			this._agent.destination = patrolLocations [_patrolIndex].position;
 		}
 		else
 		{
-			_anim.SetBool ("Moving", false);
+			this._anim.SetBool ("Moving", false);
 		}
 	}
 	
 	public float GetDistance()
 	{
 		return this._distance;
-	}
-	
-	public void PushBack()
-	{
-		this.gameObject.GetComponent<Rigidbody>().AddForce(-this.gameObject.transform.forward * _pushBack, ForceMode.Impulse);
 	}
 
 	public void Stun()
@@ -246,32 +198,32 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void Overpower()
 	{
-		switch (_opCounter)
+		switch (this._opCounter)
 		{
 		case 1:
-			_anim.SetBool ("Overpower", true);
+			this._anim.SetBool ("Overpower", true);
 			break;
 		case 2:
-			_anim.SetBool ("OP 2", true);
+			this._anim.SetBool ("OP 2", true);
 			break;
 		case 3:
-			_anim.SetBool ("OP 3", true);
+			this._anim.SetBool ("OP 3", true);
 			break;
 		}
 	}
 
 	public void ResetOverpower()
 	{
-		_anim.SetBool ("Overpower", false);
-		_anim.SetBool ("OP 2", false);
-		_anim.SetBool ("OP 3", false);
+		this._anim.SetBool ("Overpower", false);
+		this._anim.SetBool ("OP 2", false);
+		this._anim.SetBool ("OP 3", false);
 	}
 
 	public void Cower()
 	{
-		_anim.SetBool ("Cower", true);
-		_dead = true;
-		_opCounter = 1;
+		this._anim.SetBool ("Cower", true);
+		this._dead = true;
+		this._opCounter = 1;
 	}
 
 	public void DestroyMe()
@@ -281,7 +233,7 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void NextOPStage()
 	{
-		_opCounter++;
+		this._opCounter++;
 	}
 
 	private void Stunned()
@@ -291,7 +243,7 @@ public class BasicEnemyController : MonoBehaviour {
 		{
 			this._stunned = false;
 			this._stunDuration = stunTimer;
-			_agent.Resume();
+			this._agent.Resume();
 		}
 	}
 

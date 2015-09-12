@@ -34,7 +34,7 @@ public class LanternController : MonoBehaviour
 	{
 		if (this._charged)
 		{
-			GameDirector.instance.LanternUsed();
+			GameDirector.instance.UseLantern ();
 			this._charged = false;
 			//this._uses--;
 		}

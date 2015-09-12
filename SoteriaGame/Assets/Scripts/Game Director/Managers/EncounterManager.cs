@@ -68,43 +68,6 @@ public class EncounterManager : MonoBehaviour
 		}
 	}
 
-	public void CheckPlayerDistance(GameObject enemy, bool inDead)
-	{
-//		float distance = enemy.GetComponent<BasicEnemyController>().GetDistance();
-//		if (!inDead && GameDirector.instance.GetGameState() != GameStates.Hidden && GameDirector.instance.GetGameState() != GameStates.HiddenTile)
-//		{
-//			if (distance <= overwhelmRange)
-//			{
-//				this.Encounter(enemy);
-//				enemy.GetComponent<BasicEnemyController>().OverwhelmPlayer();
-//			}
-//			else if (distance <= attackRange)
-//			{
-//				enemy.GetComponent<BasicEnemyController>().ChasePlayer();
-//			}
-//			else if (distance <= lookAtDistance)
-//			{
-//				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
-//			}
-////			else
-////			{
-////				enemy.GetComponent<BasicEnemyController>().Unaware();
-////			}
-//		}
-//		else if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
-//		{
-//			if (distance <= lookAtDistance)
-//			{
-//				enemy.GetComponent<BasicEnemyController>().LookAtPlayer();
-//			}
-//			this.TileTimer();
-//		}
-//		else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
-//		{
-//			enemy.GetComponent<BasicEnemyController>().Unaware();
-//		}
-	}
-
 	public void Encounter(GameObject enemy)
 	{
 		if (this.currentState == EncounterState.INACTIVE)
@@ -129,30 +92,6 @@ public class EncounterManager : MonoBehaviour
 		GameDirector.instance.StartEncounterMode();
 		this.currentEnemy = enemy;
     }
-
-//	public void InitializeSafetyLight()
-//	{
-//		safetyLight.GetComponentInChildren<SafetyLightController>().Initialize(this);
-//		lightOn = true;
-//		GameDirector.instance.GetPlayer().GetComponent<Player>().RemoveFear();
-//	}
-
-//	public void KillSafetyLight()
-//	{
-//		safetyLight.GetComponentInChildren<SafetyLightController>().DisableSafetyLight();
-//		cooldown = true;
-//	}
-
-//	void LightCooldown()
-//	{
-//		lightTimer -= Time.deltaTime;
-//		if (lightTimer <= 0.0f)
-//		{
-//			lightTimer = 20.0f;
-//			cooldown = false;
-//			GameDirector.instance.LightReset();
-//		}
-//	}
 
 	public EncounterState GetState()
 	{
@@ -203,15 +142,6 @@ public class EncounterManager : MonoBehaviour
 		}
 	}
 
-//	public bool CanUseToken()
-//	{
-//		if (currentState == EncounterState.ACTIVE && !cooldown)
-//		{
-//			return true;
-//		}
-//		return false;
-//	}
-
 	public void PlayerOvercame()
 	{
 		this.StopEncounter();
@@ -249,6 +179,26 @@ public class EncounterManager : MonoBehaviour
 		{
 			this.hiddenTileDuration = this.hiddenTileTimer;
 			GameDirector.instance.ChangeGameState(GameStates.Hidden);
+		}
+	}
+
+	// Lantern stun on enemies within range
+	public void LanternUsed()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= this.lookAtDistance)
+			{
+				if (enemy.GetComponent<BasicEnemyController>() != null)
+				{
+					enemy.GetComponent<BasicEnemyController>().Stun();
+				}
+				else
+				{
+					enemy.GetComponent<EyeballShadowCreatureController>().Stun();
+				}
+			}
 		}
 	}
 }

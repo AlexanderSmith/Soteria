@@ -9,7 +9,6 @@ public class GameDirector : MonoBehaviour {
     #region Managers
 
 	private AudioManager     	_audioManager;
-	private InputManager     	_inputManager;
 	private TimerManager 		_timerManager;
 	private HUDManager       	_HUDManager;
 	private EncounterManager 	_encounterManager;
@@ -61,7 +60,6 @@ public class GameDirector : MonoBehaviour {
     {
 		this._stateManager.Update(); //No update happening we can remove it later on
 		this._HUDManager.Update(); //No update happening we can remove it later on
-		this._inputManager.Update();
 		this._audioManager.Update(); //No update happening we can remove it later on
 		this._timerManager.Update();
     }
@@ -73,29 +71,18 @@ public class GameDirector : MonoBehaviour {
 
 		this._timerManager = this.gameObject.GetComponent<TimerManager>();
 		this._audioManager = this.gameObject.AddComponent<AudioManager>();
-		this._inputManager = this.gameObject.AddComponent<InputManager>();
 		this._HUDManager = this.gameObject.AddComponent<HUDManager> ();
 		this._encounterManager = this.gameObject.AddComponent<EncounterManager> ();
 		this._stateManager = this.gameObject.AddComponent<StateManager>();
 		
 		this._timerManager.Initialize(); //->quick hack, needs to change later.
 		this._audioManager.Initialize();
-		this._inputManager.Initialize();
 		this._HUDManager.Initialize();
 		this._encounterManager.Initialize();
 		this._stateManager.Initialize();
 
 		this.InitializePlayer ();    
     }
-
-	#region InputManager Methods
-	
-	public int GetQTECount()
-	{
-		return this._inputManager.GetPressCount ();
-	}
-
-	#endregion
 
 	#region StateManager
 
@@ -129,7 +116,6 @@ public class GameDirector : MonoBehaviour {
 		//Debug.Log ("Clearing black from enabling normal view");
 		_HUDManager.EnableNormalView();
 		GetPlayer().GetComponent<Player>().PlayerActionNormal();
-		//this.gameObject.AddComponent<LevelManager>().SetActiveLevel("TestSceneWithArt");
 	}
 
     public void StartEncounterMode()
@@ -141,16 +127,6 @@ public class GameDirector : MonoBehaviour {
 
 		_HUDManager.EnableEncounterView();
 		GetPlayer().GetComponent<Player>().PlayerActionEncounter();
-//		if (!lightCooldown)
-//		{
-//			_HUDManager.EnableEncounterView();
-//			Debug.Log ("Black from encounter start");
-//		}
-//		else
-//		{
-//			Debug.Log ("Black from encounter start no pulse");
-//			FadeToBlack();
-//		}
 	}
 
 	public void TakeSafteyLight()
@@ -160,24 +136,10 @@ public class GameDirector : MonoBehaviour {
 		this.gameObject.AddComponent<LevelManager>().SetActiveLevel("FullModelHub");
     }
 
-//	public void LightReset()
-//	{
-//		if (this._stateManager.GameState () == GameStates.Encounter)
-//		{
-//			this._HUDManager.EnableEncounterView();
-//			Debug.Log ("Black from light reset");
-//		}
-//	}
-
 	public void AbleToOvercome()
 	{
 		this._encounterManager.PlayerCanOvercome();
 	}
-
-//	public bool CanUseToken()
-//	{
-//		return this._encounterManager.CanUseToken ();
-//	}
 
 	public bool GetOvercomeBool()
 	{
@@ -205,7 +167,6 @@ public class GameDirector : MonoBehaviour {
 		this._player.GetComponent<Player>().ResetLinger();
 		//Debug.Log ("Black from reseting linger");
 		FadeToBlack();
-		//ResetOverpower ();
 	}
 
 	public void PlayerOvercame()
@@ -242,24 +203,9 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.NextOPStage ();
 	}
 
-	// Lantern stun on enemies within range
-	public void LanternUsed()
+	public void UseLantern()
 	{
-		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-		foreach (GameObject enemy in enemies)
-		{
-			if (Vector3.Distance(enemy.transform.position, this.GetPlayer().transform.position) <= 45.0f)
-			{
-				if (enemy.GetComponent<BasicEnemyController>() != null)
-				{
-					enemy.GetComponent<BasicEnemyController>().Stun();
-				}
-				else
-				{
-					enemy.GetComponent<EyeballShadowCreatureController>().Stun();
-				}
-			}
-		}
+		this._encounterManager.LanternUsed();
 	}
 
     #endregion
