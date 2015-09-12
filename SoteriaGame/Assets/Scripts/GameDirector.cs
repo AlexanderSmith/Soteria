@@ -66,14 +66,14 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager = this.gameObject.GetComponent<EncounterManager> ();
 		this._stateManager = this.gameObject.GetComponent<StateManager>();
 		this._dialoguemanager = this.gameObject.GetComponent<DialogueManager> ();
+
+		this.InitializePlayer ();  
 		
 		this._audioManager.Initialize();
-		//this._HUDManager.Initialize();
+		this._HUDManager.Initialize();
 		this._encounterManager.Initialize();
 		this._stateManager.Initialize();
-		//this._dialoguemanager.Initialize ();
-
-		this.InitializePlayer ();    
+		this._dialoguemanager.Initialize ();  
     }
 	
 	public void InitializePlayer()

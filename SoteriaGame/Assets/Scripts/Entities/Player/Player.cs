@@ -16,19 +16,19 @@ public class Player : MonoBehaviour
 	private IPlayerAction normalAction = new PlayerActionNormal();
 	private IPlayerAction encounterAction = new PlayerActionEncounter();
 
-	private enum PlayerState
-	{
-		NORMAL,
-		ENCOUNTER,
-	};
-
-	private PlayerState _currentState;
+//	private enum PlayerState
+//	{
+//		NORMAL,
+//		ENCOUNTER,
+//	};
+//
+//	private PlayerState _currentState;
 	
 	void Start ()
 	{
 		this._animator = this.gameObject.GetComponent<Animator>();
 		PlayerActionNormal();
-		this._currentState = PlayerState.NORMAL;
+//		this._currentState = PlayerState.NORMAL;
 	}
 
 	void FixedUpdate () 

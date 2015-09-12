@@ -4,7 +4,6 @@ using System.Collections;
 public class FlyThroughSoteriaStatue : MonoBehaviour
 {
 	private GameObject _soteriaStatue;
-	private float _smooth = 20.0f;
 	public float distance = 15.0f;
 	private HarborCameraSwitch _cameraSwitch;
 

@@ -8,7 +8,6 @@ public class EyeballShadowCreatureController : MonoBehaviour
 	private Animator _anim;
 	private bool _dead = false;
 	private bool _stunned = false;
-	private int _opCounter = 1;
 	private float _chaseSpeed = 10.0f;
 	private float _stunDuration;
 	public float stunTimer = 1.0f;

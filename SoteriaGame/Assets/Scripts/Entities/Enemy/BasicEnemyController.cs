@@ -13,17 +13,17 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public Transform[] patrolLocations;
 	private int _patrolIndex = 0;
-	private float _chaseSpeed = 10.0f;
-	private float _patrolSpeed = 5.0f;
+	public float chaseSpeed = 10.0f;
+	public float patrolSpeed = 5.0f;
 	private float _patrolTimer = 0.0f;
 	public float waitTime = 5.0f;
 	private float _stunDuration;
-	public float stunTimer = 1.0f;
+	public float stunTimer = 5.0f;
 
 	private bool _playerVisible;
 	public float fieldOfVision = 90.0f;
 	private SphereCollider _sphereCollider;
-
+	
 	public float lookAtDistance = 45.0f;
 	public float attackRange = 35.0f;
 	public float overwhelmRange = 15.0f;
@@ -31,25 +31,20 @@ public class BasicEnemyController : MonoBehaviour {
 	// Use this for initialization
 	public void Initialize()
 	{
-		if (this.player == null)
+		if (player == null)
 		{
-			this.player = GameObject.FindWithTag("Player");
+			player = GameDirector.instance.GetPlayer();
 		}
-		this._agent = GetComponent<NavMeshAgent> ();
-		this._anim = GetComponent<Animator> ();
+		_agent = GetComponent<NavMeshAgent> ();
+		_anim = GetComponent<Animator> ();
+		this._sphereCollider = GetComponent<SphereCollider> ();
 		this._stunDuration = this.stunTimer;
-		this._sphereCollider = this.gameObject.GetComponent<SphereCollider>();
 	}
 	
 	// Update is called once per frame
-	void Update() 
+	void Update () 
 	{
 		_distance = Vector3.Distance(this.transform.position, player.transform.position);
-		/*if (!this._stunned)
-		{
-			GameDirector.instance.GetEncounterManager().CheckPlayerDistance(this.gameObject, this._dead);
-		}
-		else*/
 		if (this._stunned)
 		{
 			this._agent.Stop();
@@ -57,25 +52,23 @@ public class BasicEnemyController : MonoBehaviour {
 		}
 		else if (this._playerVisible)
 		{
-//			this.LookAtPlayer();
-//			GameDirector.instance.GetEncounterManager().CheckPlayerDistance(this.gameObject, this._dead);
-			if (this._distance <= this.overwhelmRange)
-			{
-				GameDirector.instance.Encounter(this.gameObject);
-				this.OverwhelmPlayer();
-			}
-			else if (this._distance <= this.attackRange)
-			{
-				this.ChasePlayer();
-			}
-			else if (this._distance <= this.lookAtDistance)
-			{
-				this.LookAtPlayer();
-			}
-			else
-			{
-				this.Unaware();
-			}
+//			if (this._distance <= this.overwhelmRange)
+//			{
+//				GameDirector.instance.Encounter(this.gameObject);
+//				this.OverwhelmPlayer();
+//			}
+//			else if (this._distance <= this.attackRange)
+//			{
+//				this.ChasePlayer();
+//			}
+//			else if (this._distance <= this.lookAtDistance)
+//			{
+//				this.LookAtPlayer();
+//			}
+//			else
+//			{
+//				this.Unaware();
+//			}
 		}
 		else
 		{
@@ -88,14 +81,14 @@ public class BasicEnemyController : MonoBehaviour {
 		if (player.gameObject.tag == "Player")
 		{
 			this._playerVisible = false;
-
+			
 			Vector3 direction = player.transform.position - this.gameObject.transform.position;
 			float angle = Vector3.Angle(direction, this.gameObject.transform.forward);
-
+			
 			if(angle < fieldOfVision * 0.5f)
 			{
 				RaycastHit hit;
-
+				
 				if(Physics.Raycast(this.gameObject.transform.position + this.gameObject.transform.up, direction, out hit, this._sphereCollider.radius))
 				{
 					if(hit.collider.gameObject.Equals(player.gameObject))
@@ -127,62 +120,62 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void LookAtPlayer()
 	{
-		this._anim.SetBool ("Alert", true);
+		_anim.SetBool ("Alert", true);
 		this._agent.Stop();
 		this.transform.LookAt(player.transform.position);
 	}
 	
 	public void ChasePlayer()
 	{
-		this._agent.Resume();
-		this._agent.speed = _chaseSpeed;
-		this._anim.SetBool ("Aggro", true);
-		this._anim.SetBool ("Alert", false);
-		this._anim.SetBool ("Moving", false);
-		this._agent.SetDestination (player.transform.position);
+		_agent.Resume();
+		_agent.speed = chaseSpeed;
+		_anim.SetBool ("Aggro", true);
+		_anim.SetBool ("Alert", false);
+		_anim.SetBool ("Moving", false);
+		_agent.SetDestination (player.transform.position);
 		//Debug.Log("Enemy chasing");
 	}
 	
 	public void OverwhelmPlayer()
 	{
-		this._agent.Stop();
+		_agent.Stop();
 	}
 	
 	public void Unaware()
 	{
-		this._agent.Resume();
-		this._anim.SetBool ("Aggro", false);
-		this._anim.SetBool ("Alert", false);
-		this._anim.SetBool ("Overpower", false);
-		this._anim.SetBool ("Cower", false);
-		this._opCounter = 1;
-		if (this.patrolLocations.Length > 0)
+		_agent.Resume();
+		_anim.SetBool ("Aggro", false);
+		_anim.SetBool ("Alert", false);
+		_anim.SetBool ("Overpower", false);
+		_anim.SetBool ("Cower", false);
+		_opCounter = 1;
+		if (patrolLocations.Length > 0)
 		{
-			this._anim.SetBool ("Moving", true);
-			this._agent.speed = this._patrolSpeed;
-			if (this._agent.remainingDistance < this._agent.stoppingDistance)
+			_anim.SetBool ("Moving", true);
+			_agent.speed = patrolSpeed;
+			if (_agent.remainingDistance < _agent.stoppingDistance)
 			{
-				this._anim.SetBool ("Moving", false);
-				this._patrolTimer += Time.deltaTime;
-				if (this._patrolTimer >= this.waitTime)
+				_anim.SetBool ("Moving", false);
+				_patrolTimer += Time.deltaTime;
+				if (_patrolTimer >= waitTime)
 				{
-					if (this._patrolIndex == this.patrolLocations.Length - 1)
+					if (_patrolIndex == patrolLocations.Length - 1)
 					{
-						this._patrolIndex = 0;
+						_patrolIndex = 0;
 					}
 					else
 					{
-						this._patrolIndex++;
+						_patrolIndex++;
 					}
-					this._patrolTimer = 0.0f;
+					_patrolTimer = 0.0f;
 				}
 			}
 
-			this._agent.destination = patrolLocations [_patrolIndex].position;
+			_agent.destination = patrolLocations [_patrolIndex].position;
 		}
 		else
 		{
-			this._anim.SetBool ("Moving", false);
+			_anim.SetBool ("Moving", false);
 		}
 	}
 	
@@ -198,32 +191,32 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void Overpower()
 	{
-		switch (this._opCounter)
+		switch (_opCounter)
 		{
 		case 1:
-			this._anim.SetBool ("Overpower", true);
+			_anim.SetBool ("Overpower", true);
 			break;
 		case 2:
-			this._anim.SetBool ("OP 2", true);
+			_anim.SetBool ("OP 2", true);
 			break;
 		case 3:
-			this._anim.SetBool ("OP 3", true);
+			_anim.SetBool ("OP 3", true);
 			break;
 		}
 	}
 
 	public void ResetOverpower()
 	{
-		this._anim.SetBool ("Overpower", false);
-		this._anim.SetBool ("OP 2", false);
-		this._anim.SetBool ("OP 3", false);
+		_anim.SetBool ("Overpower", false);
+		_anim.SetBool ("OP 2", false);
+		_anim.SetBool ("OP 3", false);
 	}
 
 	public void Cower()
 	{
-		this._anim.SetBool ("Cower", true);
-		this._dead = true;
-		this._opCounter = 1;
+		_anim.SetBool ("Cower", true);
+		_dead = true;
+		_opCounter = 1;
 	}
 
 	public void DestroyMe()
@@ -233,7 +226,7 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void NextOPStage()
 	{
-		this._opCounter++;
+		_opCounter++;
 	}
 
 	private void Stunned()
@@ -243,7 +236,7 @@ public class BasicEnemyController : MonoBehaviour {
 		{
 			this._stunned = false;
 			this._stunDuration = stunTimer;
-			this._agent.Resume();
+			_agent.Resume();
 		}
 	}
 
