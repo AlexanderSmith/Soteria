@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class BasicEnemyController : MonoBehaviour {
-	
+
 	public GameObject player;
 	private NavMeshAgent _agent;
 	private float _distance = 0.0f;
@@ -10,7 +10,7 @@ public class BasicEnemyController : MonoBehaviour {
 	private bool _dead = false;
 	private bool _stunned = false;
 	private int _opCounter = 1;
-	
+
 	public Transform[] patrolLocations;
 	private int _patrolIndex = 0;
 	private float _chaseSpeed = 10.0f;
@@ -19,11 +19,11 @@ public class BasicEnemyController : MonoBehaviour {
 	public float waitTime = 5.0f;
 	private float _stunDuration;
 	public float stunTimer = 1.0f;
-	
+
 	private bool _playerVisible;
 	public float fieldOfVision = 90.0f;
 	private SphereCollider _sphereCollider;
-	
+
 	public float lookAtDistance = 45.0f;
 	public float attackRange = 35.0f;
 	public float overwhelmRange = 15.0f;
@@ -55,47 +55,47 @@ public class BasicEnemyController : MonoBehaviour {
 			this._agent.Stop();
 			this.Stunned();
 		}
-//		else if (this._playerVisible)
-//		{
-//			//			this.LookAtPlayer();
-//			//			GameDirector.instance.GetEncounterManager().CheckPlayerDistance(this.gameObject, this._dead);
-//			if (this._distance <= this.overwhelmRange)
-//			{
-//				GameDirector.instance.Encounter(this.gameObject);
-//				this.OverwhelmPlayer();
-//			}
-//			else if (this._distance <= this.attackRange)
-//			{
-//				this.ChasePlayer();
-//			}
-//			else if (this._distance <= this.lookAtDistance)
-//			{
-//				this.LookAtPlayer();
-//			}
-//			else
-//			{
-//				this.Unaware();
-//			}
-//		}
+		else if (this._playerVisible)
+		{
+//			this.LookAtPlayer();
+//			GameDirector.instance.GetEncounterManager().CheckPlayerDistance(this.gameObject, this._dead);
+			if (this._distance <= this.overwhelmRange)
+			{
+				GameDirector.instance.Encounter(this.gameObject);
+				this.OverwhelmPlayer();
+			}
+			else if (this._distance <= this.attackRange)
+			{
+				this.ChasePlayer();
+			}
+			else if (this._distance <= this.lookAtDistance)
+			{
+				this.LookAtPlayer();
+			}
+			else
+			{
+				this.Unaware();
+			}
+		}
 		else
 		{
 			this.Unaware();
 		}
 	}
-	
+
 	void OnTriggerStay(Collider player)
 	{
 		if (player.gameObject.tag == "Player")
 		{
 			this._playerVisible = false;
-			
+
 			Vector3 direction = player.transform.position - this.gameObject.transform.position;
 			float angle = Vector3.Angle(direction, this.gameObject.transform.forward);
-			
+
 			if(angle < fieldOfVision * 0.5f)
 			{
 				RaycastHit hit;
-				
+
 				if(Physics.Raycast(this.gameObject.transform.position + this.gameObject.transform.up, direction, out hit, this._sphereCollider.radius))
 				{
 					if(hit.collider.gameObject.Equals(player.gameObject))
@@ -177,7 +177,7 @@ public class BasicEnemyController : MonoBehaviour {
 					this._patrolTimer = 0.0f;
 				}
 			}
-			
+
 			this._agent.destination = patrolLocations [_patrolIndex].position;
 		}
 		else
@@ -190,12 +190,12 @@ public class BasicEnemyController : MonoBehaviour {
 	{
 		return this._distance;
 	}
-	
+
 	public void Stun()
 	{
 		this._stunned = true;
 	}
-	
+
 	public void Overpower()
 	{
 		switch (this._opCounter)
@@ -211,31 +211,31 @@ public class BasicEnemyController : MonoBehaviour {
 			break;
 		}
 	}
-	
+
 	public void ResetOverpower()
 	{
 		this._anim.SetBool ("Overpower", false);
 		this._anim.SetBool ("OP 2", false);
 		this._anim.SetBool ("OP 3", false);
 	}
-	
+
 	public void Cower()
 	{
 		this._anim.SetBool ("Cower", true);
 		this._dead = true;
 		this._opCounter = 1;
 	}
-	
+
 	public void DestroyMe()
 	{
 		GameDirector.instance.KillEnemy();
 	}
-	
+
 	public void NextOPStage()
 	{
 		this._opCounter++;
 	}
-	
+
 	private void Stunned()
 	{
 		this._stunDuration -= Time.deltaTime;
@@ -246,7 +246,7 @@ public class BasicEnemyController : MonoBehaviour {
 			this._agent.Resume();
 		}
 	}
-	
+
 	public NavMeshAgent GetAgent()
 	{
 		return this._agent;
