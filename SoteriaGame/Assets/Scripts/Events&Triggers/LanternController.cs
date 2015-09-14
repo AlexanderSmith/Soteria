@@ -6,20 +6,20 @@ public class LanternController : MonoBehaviour
 {
 	private bool _charged = false;
 	public int _uses = 1;
-
+	
 	void Start()
 	{
 		Debug.Log (this._charged);
 		this._charged = true;
 		Debug.Log (this._charged);
 	}
-
+	
 	void Update()
 	{
-//		if (!_charged)
-//			Debug.Log ("false");
+		//		if (!_charged)
+		//			Debug.Log ("false");
 	}
-
+	
 	public void LanternClicked()
 	{
 		//Debug.Log (this._charged);
@@ -29,7 +29,7 @@ public class LanternController : MonoBehaviour
 			this.UseLantern();
 		}
 	}
-
+	
 	private void UseLantern()
 	{
 		if (this._charged)
@@ -39,7 +39,7 @@ public class LanternController : MonoBehaviour
 			//this._uses--;
 		}
 	}
-
+	
 	public void RechargeLantern()
 	{
 		this._charged = true;
