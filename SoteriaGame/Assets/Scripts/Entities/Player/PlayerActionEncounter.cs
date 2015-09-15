@@ -8,13 +8,13 @@ public class PlayerActionEncounter : IPlayerAction
 	private TimersType _timerType = TimersType.Encounter;
 	private bool _isqtemode;
 	private bool _preLinger;
-
+	
 	private int _keyPressCounter;
 	public float intialLinger;
 	public float baseDuration;
 	public float lingerDuration;
 	private int _lingerLonger;
-
+	
 	public void PlayerAction(Player inPlayer)
 	{
 		this.InitializeValues(inPlayer);
@@ -24,7 +24,7 @@ public class PlayerActionEncounter : IPlayerAction
 			this.LingerTimer();
 		}
 	}
-
+	
 	public void InitializeValues(Player inPlayer)
 	{
 		if (!inPlayer.encounterVariables)
@@ -35,17 +35,17 @@ public class PlayerActionEncounter : IPlayerAction
 			this.baseDuration = 2.0f;
 			this.lingerDuration = 2.0f;
 			this._lingerLonger = 0;
-			this.InitializeTimer();
+			//this.InitializeTimer();
 			inPlayer.FlipEncounterBool();
 		}
 	}
-
+	
 	private void InitializeTimer()
 	{
 		this._encounterTimer = TimerManager.instance.Attach(this._timerType);
 		this._encounterTimer.StartTimer();
 	}
-
+	
 	private void ProcessInput()
 	{
 		//*/ Single mash turning****************************************************************************************
@@ -55,17 +55,17 @@ public class PlayerActionEncounter : IPlayerAction
 			this._preLinger = true;
 			GameDirector.instance.BeginLingering();
 			GameDirector.instance.Overpower();
-			this._encounterTimer.ResetTimer();
+			//this._encounterTimer.ResetTimer();
 		}
 		else if (Input.GetKeyDown(KeyCode.Space) && _preLinger)
 		{
 			this._keyPressCounter++;
-			this._encounterTimer.ResetTimer();
+			//this._encounterTimer.ResetTimer();
 			GameDirector.instance.SetClearStatus(true);
 		}
 		else if (_preLinger)
 		{
-			if (this._encounterTimer.ElapsedTime() >= intialLinger)
+			//if (this._encounterTimer.ElapsedTime() >= intialLinger)
 			{
 				this._keyPressCounter = 0;
 				this._preLinger = false;
@@ -85,7 +85,7 @@ public class PlayerActionEncounter : IPlayerAction
 		}
 		//*************************************************************************************************************/
 	}
-
+	
 	private void LingerTimer()
 	{
 		this.lingerDuration -= Time.deltaTime;
@@ -100,7 +100,7 @@ public class PlayerActionEncounter : IPlayerAction
 			GameDirector.instance.ResetLinger();
 		}
 	}
-
+	
 	private void LingerSame()
 	{
 		this.lingerDuration = this.baseDuration + this._lingerLonger;
