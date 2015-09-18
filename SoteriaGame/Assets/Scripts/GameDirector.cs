@@ -15,7 +15,6 @@ public class GameDirector : MonoBehaviour {
     #region Managers
 
 	private AudioManager     	_audioManager;
-	private TimerManager 		_timerManager;
 	private HudManager       	_HUDManager;
 	private EncounterManager 	_encounterManager;
 	private StateManager     	_stateManager;
