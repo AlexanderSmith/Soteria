@@ -1,0 +1,149 @@
+fileFormatVersion: 2
+guid: 1123af04364e89b4997d2801b4edfda9
+timeCreated: 1442593525
+licenseType: Pro
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: Large_Sewer_Gate
+    100002: pCylinder31
+    100004: pCylinder32
+    100006: pCylinder33
+    100008: pCylinder34
+    100010: pCylinder35
+    100012: pCylinder36
+    100014: pCylinder37
+    100016: pCylinder38
+    100018: pCylinder39
+    100020: pCylinder40
+    100022: pCylinder41
+    100024: pCylinder42
+    100026: pCylinder43
+    100028: pCylinder44
+    100030: pCylinder45
+    100032: pCylinder46
+    100034: pCylinder47
+    100036: pCylinder48
+    100038: //RootNode
+    100040: transform72
+    100042: transform73
+    100044: transform74
+    100046: transform75
+    100048: transform76
+    100050: transform77
+    100052: transform78
+    100054: transform79
+    100056: transform80
+    100058: transform81
+    100060: transform82
+    100062: transform83
+    100064: transform84
+    100066: transform85
+    100068: transform86
+    100070: transform87
+    100072: transform88
+    100074: transform89
+    400000: Large_Sewer_Gate
+    400002: pCylinder31
+    400004: pCylinder32
+    400006: pCylinder33
+    400008: pCylinder34
+    400010: pCylinder35
+    400012: pCylinder36
+    400014: pCylinder37
+    400016: pCylinder38
+    400018: pCylinder39
+    400020: pCylinder40
+    400022: pCylinder41
+    400024: pCylinder42
+    400026: pCylinder43
+    400028: pCylinder44
+    400030: pCylinder45
+    400032: pCylinder46
+    400034: pCylinder47
+    400036: pCylinder48
+    400038: //RootNode
+    400040: transform72
+    400042: transform73
+    400044: transform74
+    400046: transform75
+    400048: transform76
+    400050: transform77
+    400052: transform78
+    400054: transform79
+    400056: transform80
+    400058: transform81
+    400060: transform82
+    400062: transform83
+    400064: transform84
+    400066: transform85
+    400068: transform86
+    400070: transform87
+    400072: transform88
+    400074: transform89
+    2300000: Large_Sewer_Gate
+    3300000: Large_Sewer_Gate
+    4300000: Large_Sewer_Gate
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
