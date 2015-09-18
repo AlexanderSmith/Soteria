@@ -5,7 +5,8 @@ using System.Collections;
 public class HudManager : MonoBehaviour {
 
 	private Image _fadeinout;
-	public float fadeSpeed = 1.5f;
+	public float blackSpeed = .15f;
+	public float clearSpeed = .15f;
 	public bool isToClear = true;
 
 	private GameObject _hudinterface;
@@ -142,11 +143,22 @@ public class HudManager : MonoBehaviour {
 
 	private void FadeToClear()
 	{
-		_fadeinout.color = Color.Lerp(_fadeinout.color, Color.clear, fadeSpeed * Time.deltaTime);
+		_fadeinout.color = Color.Lerp(_fadeinout.color, Color.clear, clearSpeed);
 	}
 	
 	private void FadeToBlack()
 	{
-		_fadeinout.color = Color.Lerp(_fadeinout.color, Color.black, fadeSpeed * Time.deltaTime);
+		_fadeinout.color = Color.Lerp(_fadeinout.color, Color.black, blackSpeed * Time.deltaTime);
+	}
+
+	public void EnableEncounterView()
+	{
+		this._fadeinout.gameObject.SetActive(true);
+	}
+	
+	public void DisableEncounterView()
+	{
+		this._fadeinout.gameObject.SetActive (false);
+		this.isToClear = true;
 	}
 }

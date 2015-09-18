@@ -144,18 +144,17 @@ public class GameDirector : MonoBehaviour {
 		if (_stateManager.GameState() != GameStates.Encounter) 
 		{
 			_stateManager.ChangeGameState (GameStates.Encounter);
-			SetClearStatus(false);
 		}
 		
-		//_HUDManager.EnableEncounterView();
+		_HUDManager.EnableEncounterView();
+		this.SetClearStatus(false);
 		GetPlayer().GetComponent<Player>().PlayerActionEncounter();
 	}
 
 	public void StopEncounterMode()
 	{
 		_stateManager.ChangeGameState(GameStates.Normal);
-		SetClearStatus (true);
-		//_HUDManager.DisableEncounterView();
+		_HUDManager.DisableEncounterView();
 		GetPlayer().GetComponent<Player>().PlayerActionNormal();
 	}
 

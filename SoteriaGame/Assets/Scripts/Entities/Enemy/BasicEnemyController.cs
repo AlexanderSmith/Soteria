@@ -91,7 +91,7 @@ public class BasicEnemyController : MonoBehaviour {
 				
 				if(Physics.Raycast(this.gameObject.transform.position + this.gameObject.transform.up, direction, out hit, this._sphereCollider.radius))
 				{
-					if(hit.collider.gameObject.Equals(player.gameObject))
+					if(hit.collider.gameObject.Equals(player.gameObject) && !this._stunned)
 					{
 						this._playerVisible = true;
 						if (this._distance <= this.overwhelmRange)
@@ -113,7 +113,7 @@ public class BasicEnemyController : MonoBehaviour {
 						}
 					}
 				}
-				Debug.DrawRay(this.gameObject.transform.position + this.gameObject.transform.up, direction, Color.white, 200, false);
+				//Debug.DrawRay(this.gameObject.transform.position + this.gameObject.transform.up, direction, Color.white, 200, false);
 			}
 		}
 	}
