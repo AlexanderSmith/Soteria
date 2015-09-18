@@ -35,7 +35,7 @@ public class PlayerActionEncounter : IPlayerAction
 			this.baseDuration = 2.0f;
 			this.lingerDuration = 2.0f;
 			this._lingerLonger = 0;
-			//this.InitializeTimer();
+			this.InitializeTimer();
 			inPlayer.FlipEncounterBool();
 		}
 	}
@@ -55,17 +55,17 @@ public class PlayerActionEncounter : IPlayerAction
 			this._preLinger = true;
 			GameDirector.instance.BeginLingering();
 			GameDirector.instance.Overpower();
-			//this._encounterTimer.ResetTimer();
+			this._encounterTimer.ResetTimer();
 		}
 		else if (Input.GetKeyDown(KeyCode.Space) && _preLinger)
 		{
 			this._keyPressCounter++;
-			//this._encounterTimer.ResetTimer();
+			this._encounterTimer.ResetTimer();
 			GameDirector.instance.SetClearStatus(true);
 		}
 		else if (_preLinger)
 		{
-			//if (this._encounterTimer.ElapsedTime() >= intialLinger)
+			if (this._encounterTimer.ElapsedTime() >= intialLinger)
 			{
 				this._keyPressCounter = 0;
 				this._preLinger = false;
