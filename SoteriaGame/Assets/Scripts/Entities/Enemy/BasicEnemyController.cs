@@ -50,25 +50,17 @@ public class BasicEnemyController : MonoBehaviour {
 			this._agent.Stop();
 			this.Stunned();
 		}
-		else if (this._playerVisible)
+		else if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
 		{
-//			if (this._distance <= this.overwhelmRange)
-//			{
-//				GameDirector.instance.Encounter(this.gameObject);
-//				this.OverwhelmPlayer();
-//			}
-//			else if (this._distance <= this.attackRange)
-//			{
-//				this.ChasePlayer();
-//			}
-//			else if (this._distance <= this.lookAtDistance)
-//			{
-//				this.LookAtPlayer();
-//			}
-//			else
-//			{
-//				this.Unaware();
-//			}
+			if (this._distance <= this.lookAtDistance)
+			{
+				this.LookAtPlayer();
+				GameDirector.instance.TileTimer();
+			}
+		}
+		else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
+		{
+			this.Unaware();
 		}
 		else
 		{

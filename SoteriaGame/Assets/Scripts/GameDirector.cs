@@ -228,6 +228,11 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.LanternUsed();
 	}
 
+	public void TileTimer()
+	{
+		this._encounterManager.TileTimer ();
+	}
+
     #endregion
 
 	///////////////////////////////////////////////////////////////////

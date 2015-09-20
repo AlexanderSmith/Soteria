@@ -166,7 +166,7 @@ public class EncounterManager : MonoBehaviour
 		this.currentEnemy.GetComponent<BasicEnemyController> ().Cower ();
 	}
 
-	private void TileTimer()
+	public void TileTimer()
 	{
 		this.hiddenTileDuration -= Time.deltaTime;
 		if (this.hiddenTileDuration <= 0)
