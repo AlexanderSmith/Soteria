@@ -109,6 +109,14 @@ public class BasicEnemyController : MonoBehaviour {
 			}
 		}
 	}
+
+	void OnTriggerExit(Collider player)
+	{
+		if (player.gameObject.tag == "Player")
+		{
+			this._playerVisible = false;
+		}
+	}
 	
 	public void LookAtPlayer()
 	{
