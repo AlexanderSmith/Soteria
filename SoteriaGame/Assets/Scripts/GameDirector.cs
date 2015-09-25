@@ -147,6 +147,7 @@ public class GameDirector : MonoBehaviour {
 		}
 		
 		//_HUDManager.EnableEncounterView();
+		this.SetClearStatus(false);
 		GetPlayer().GetComponent<Player>().PlayerActionEncounter();
 	}
 
@@ -228,9 +229,9 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.LanternUsed();
 	}
 
-	public void TileTimer()
+	public void PlayerOnObservatoryTile()
 	{
-		this._encounterManager.TileTimer ();
+		this._encounterManager.TileTimer();
 	}
 
     #endregion
