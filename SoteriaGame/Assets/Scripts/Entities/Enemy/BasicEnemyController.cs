@@ -19,10 +19,6 @@ public class BasicEnemyController : MonoBehaviour {
 	public float waitTime = 5.0f;
 	private float _stunDuration;
 	public float stunTimer = 5.0f;
-
-	private bool _playerVisible;
-	public float fieldOfVision = 90.0f;
-	private SphereCollider _sphereCollider;
 	
 	public float lookAtDistance = 45.0f;
 	public float attackRange = 35.0f;
@@ -37,84 +33,48 @@ public class BasicEnemyController : MonoBehaviour {
 		}
 		_agent = GetComponent<NavMeshAgent> ();
 		_anim = GetComponent<Animator> ();
-		this._sphereCollider = GetComponent<SphereCollider> ();
 		this._stunDuration = this.stunTimer;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		_distance = Vector3.Distance(this.transform.position, player.transform.position);
 		if (this._stunned)
 		{
 			this._agent.Stop();
 			this.Stunned();
 		}
-		else if (this._playerVisible)
+		else if (GetComponent<EnemySight>().IsPlayerVisible())
 		{
-//			if (this._distance <= this.overwhelmRange)
-//			{
-//				GameDirector.instance.Encounter(this.gameObject);
-//				this.OverwhelmPlayer();
-//			}
-//			else if (this._distance <= this.attackRange)
-//			{
-//				this.ChasePlayer();
-//			}
-//			else if (this._distance <= this.lookAtDistance)
-//			{
-//				this.LookAtPlayer();
-//			}
-//			else
-//			{
-//				this.Unaware();
-//			}
+			if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
+			{
+				this.LookAtPlayer();
+				GameDirector.instance.PlayerOnObservatoryTile();
+			}
+			else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
+			{
+				this.Unaware();
+			}
+			else
+			{
+				this._distance = Vector3.Distance(this.transform.position, player.transform.position);
+				if (this._distance <= this.overwhelmRange)
+				{
+					this.OverwhelmPlayer();
+				}
+				else if (this._distance <= this.attackRange)
+				{
+					this.ChasePlayer();
+				}
+				else
+				{
+					this.LookAtPlayer();
+				}
+			}
 		}
 		else
 		{
 			this.Unaware();
-		}
-	}
-
-	void OnTriggerStay(Collider player)
-	{
-		if (player.gameObject.tag == "Player")
-		{
-			this._playerVisible = false;
-			
-			Vector3 direction = player.transform.position - this.gameObject.transform.position;
-			float angle = Vector3.Angle(direction, this.gameObject.transform.forward);
-			
-			if(angle < fieldOfVision * 0.5f)
-			{
-				RaycastHit hit;
-				
-				if(Physics.Raycast(this.gameObject.transform.position + this.gameObject.transform.up, direction, out hit, this._sphereCollider.radius))
-				{
-					if(hit.collider.gameObject.Equals(player.gameObject) && !this._stunned)
-					{
-						this._playerVisible = true;
-						if (this._distance <= this.overwhelmRange)
-						{
-							GameDirector.instance.Encounter(this.gameObject);
-							this.OverwhelmPlayer();
-						}
-						else if (this._distance <= this.attackRange)
-						{
-							this.ChasePlayer();
-						}
-						else if (this._distance <= this.lookAtDistance)
-						{
-							this.LookAtPlayer();
-						}
-						else
-						{
-							this.Unaware();
-						}
-					}
-				}
-				//Debug.DrawRay(this.gameObject.transform.position + this.gameObject.transform.up, direction, Color.white, 200, false);
-			}
 		}
 	}
 	
@@ -187,6 +147,11 @@ public class BasicEnemyController : MonoBehaviour {
 	public void Stun()
 	{
 		this._stunned = true;
+	}
+
+	public bool GetStunStatus()
+	{
+		return this._stunned;
 	}
 
 	public void Overpower()

@@ -229,6 +229,11 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.LanternUsed();
 	}
 
+	public void PlayerOnObservatoryTile()
+	{
+		this._encounterManager.TileTimer();
+	}
+
     #endregion
 
 	///////////////////////////////////////////////////////////////////
