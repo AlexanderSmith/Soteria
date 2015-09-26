@@ -61,6 +61,7 @@ public class BasicEnemyController : MonoBehaviour {
 				if (this._distance <= this.overwhelmRange)
 				{
 					this.OverwhelmPlayer();
+					GameDirector.instance.Encounter(this.gameObject);
 				}
 				else if (this._distance <= this.attackRange)
 				{
