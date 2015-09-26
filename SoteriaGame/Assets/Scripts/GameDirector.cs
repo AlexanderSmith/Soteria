@@ -56,10 +56,22 @@ public class GameDirector : MonoBehaviour {
 		this.InitializeManagers();
     }
 	
+	void OnLevelWasLoaded(int level) 
+	{
+		/*
+		GameObject UIObject = GameObject.Find("UI");
+		if (UIObject == null)
+			Instantiate(Resources.Load("Prefabs/UI"), Vector3.zero, Quaternion.identity);
+			*/   
+    }
+	
 	 private void InitializeManagers()
     {
         //This is problematic (AddComponent)-> it forces the script to be a component and uses the 
         // Update function automatically each frame, only solution not use MonoBehavior <-- not so simple
+		
+		GameObject UItemp = GameObject.Find("UI");
+		DontDestroyOnLoad(UItemp);
 		
 		this._audioManager = this.gameObject.GetComponent<AudioManager>();
 		this._HUDManager = this.gameObject.GetComponent<HudManager> ();
@@ -74,6 +86,9 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.Initialize();
 		this._stateManager.Initialize();
 		this._dialoguemanager.Initialize ();  
+		
+		
+		
     }
 	
 	public void InitializePlayer()
