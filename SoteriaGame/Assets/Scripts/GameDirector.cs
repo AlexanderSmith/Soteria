@@ -11,6 +11,7 @@ public class GameDirector : MonoBehaviour {
 
     private static GameDirector _instance;
     private GameObject _player = null;
+	private int _gamePhase = 1;
 
     #region Managers
 
@@ -58,11 +59,13 @@ public class GameDirector : MonoBehaviour {
 	
 	void OnLevelWasLoaded(int level) 
 	{
-		/*
+
 		GameObject UIObject = GameObject.Find("UI");
 		if (UIObject == null)
+		{
 			Instantiate(Resources.Load("Prefabs/UI"), Vector3.zero, Quaternion.identity);
-			*/   
+		}
+			   
     }
 	
 	 private void InitializeManagers()
@@ -86,9 +89,6 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.Initialize();
 		this._stateManager.Initialize();
 		this._dialoguemanager.Initialize ();  
-		
-		
-		
     }
 	
 	public void InitializePlayer()
@@ -102,6 +102,11 @@ public class GameDirector : MonoBehaviour {
     {
         return _player;
     }
+
+	public int GetGamePhase()
+	{
+		return this._gamePhase;
+	}
 
 
     // Update is called once per frame
