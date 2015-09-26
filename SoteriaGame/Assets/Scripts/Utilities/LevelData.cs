@@ -18,7 +18,7 @@ public class LevelData : MonoBehaviour {
 	void OnLevelWasLoaded(int level) 
 	{	
 		Debug.Log("SceneLoad");
-		//Add Data and fuctions based on the scene getting loaded (the build order in unity  rapresents the number) 
+		//Add Data and fuctions based on the scene getting loaded (the build order in unity rapresents the number) 
 		switch(level)
 		{
 			case 0:
