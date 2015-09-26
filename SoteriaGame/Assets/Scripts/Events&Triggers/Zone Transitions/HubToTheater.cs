@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HubToObservatory : MonoBehaviour
+public class HubToTheater : MonoBehaviour
 {
 	void OnTriggerEnter(Collider player)
 	{
@@ -10,16 +10,16 @@ public class HubToObservatory : MonoBehaviour
 			switch (GameDirector.instance.GetGamePhase())
 			{
 			case 1:
-				Application.LoadLevel("ObservatoryPass1");
+				Application.LoadLevel("TheaterPass1");
 				break;
 			case 2:
-				Application.LoadLevel("ObservatoryPass2");
+				Application.LoadLevel("TheaterPass2");
 				break;
 			case 3:
-				Application.LoadLevel("ObservatoryPass3");
+				Application.LoadLevel("TheaterPass3");
 				break;
 			case 4:
-				Application.LoadLevel ("ObservatoryPass4");
+				Application.LoadLevel ("TheaterPass4");
 				break;
 			}
 		}
