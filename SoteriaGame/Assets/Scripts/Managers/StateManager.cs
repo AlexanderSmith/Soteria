@@ -17,7 +17,7 @@ public class StateManager : MonoBehaviour {
 
 	void Awake()
 	{
-		this.enabled = false;
+		//this.enabled = false;
 	}
 	
 	// Update is called once per frame
