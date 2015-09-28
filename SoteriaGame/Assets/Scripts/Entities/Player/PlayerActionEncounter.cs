@@ -62,6 +62,7 @@ public class PlayerActionEncounter : IPlayerAction
 			this._keyPressCounter++;
 			this._encounterTimer.ResetTimer();
 			GameDirector.instance.SetClearStatus(true);
+			GameDirector.instance.ResetGameOverTimer();
 		}
 		else if (_preLinger)
 		{

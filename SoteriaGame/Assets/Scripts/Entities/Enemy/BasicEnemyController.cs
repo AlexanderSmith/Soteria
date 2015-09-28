@@ -55,7 +55,7 @@ public class BasicEnemyController : MonoBehaviour {
 			{
 				this.Unaware();
 			}
-			else
+			else if (!this._dead)
 			{
 				this._distance = Vector3.Distance(this.transform.position, player.transform.position);
 				if (this._distance <= this.overwhelmRange)

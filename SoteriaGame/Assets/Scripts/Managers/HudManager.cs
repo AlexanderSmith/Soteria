@@ -162,7 +162,7 @@ public class HudManager : MonoBehaviour {
 	
 	public void DisableEncounterView()
 	{
-		this._fadeinout.gameObject.SetActive (false);
+		//this._fadeinout.gameObject.SetActive (false);
 		this.isToClear = true;
 	}
 

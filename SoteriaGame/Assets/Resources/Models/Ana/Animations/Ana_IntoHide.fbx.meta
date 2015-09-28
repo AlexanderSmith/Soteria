@@ -1,0 +1,1003 @@
+fileFormatVersion: 2
+guid: d70df634f18bdf2499d7a8562563531a
+timeCreated: 1443474630
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: curve1
+    100004: curve1 1
+    100006: curve1 2
+    100008: curve2
+    100010: curve2 1
+    100012: curve4
+    100014: curve5
+    100016: Face_Offset
+    100018: geo
+    100020: Global__Offset
+    100022: Global_Ctrl
+    100024: group102
+    100026: group103
+    100028: group104
+    100030: group105
+    100032: group110
+    100034: group124
+    100036: group127
+    100038: group130
+    100040: group132
+    100042: group133
+    100044: group19
+    100046: group19 1
+    100048: group20
+    100050: group21
+    100052: group32
+    100054: group74
+    100056: group75
+    100058: group77
+    100060: group78
+    100062: group79
+    100064: group8
+    100066: group9
+    100068: group93
+    100070: group95
+    100072: group96
+    100074: group98
+    100076: group99
+    100078: Hat_Jnt
+    100080: Head_Jnt
+    100082: Head_Offset
+    100084: Hips_Ctrl
+    100086: ikHandle1
+    100088: ikHandle2
+    100090: ikHandle3
+    100092: ikHandle4
+    100094: ikHandle5
+    100096: ikHandle6
+    100098: ikHandle7
+    100100: joint10
+    100102: joint10 1
+    100104: joint2
+    100106: joint2 1
+    100108: joint3
+    100110: joint3 1
+    100112: joint4
+    100114: joint4 1
+    100116: joint4 2
+    100118: joint4 3
+    100120: joint4 4
+    100122: joint4 5
+    100124: joint4 6
+    100126: joint4 7
+    100128: joint4 8
+    100130: joint4 9
+    100132: joint5
+    100134: joint5 1
+    100136: joint5 2
+    100138: joint5 3
+    100140: joint5 4
+    100142: joint5 5
+    100144: joint5 6
+    100146: joint5 7
+    100148: joint5 8
+    100150: joint5 9
+    100152: joint6
+    100154: joint6 1
+    100156: joint6 2
+    100158: joint6 3
+    100160: joint6 4
+    100162: joint6 5
+    100164: joint6 6
+    100166: joint6 7
+    100168: joint6 8
+    100170: joint6 9
+    100172: joint7
+    100174: joint7 1
+    100176: joint8
+    100178: joint8 1
+    100180: joint9
+    100182: joint9 1
+    100184: L_Ankle_Jnt
+    100186: L_Ball_Jnt
+    100188: L_Clavicle_Ctrl
+    100190: L_Clavicle_Jnt
+    100192: L_Cllavicle_offset
+    100194: L_Elbow_Ctrl
+    100196: L_Elbow_Jnt
+    100198: L_Elbow_Offset1
+    100200: L_Foot_Ctrl
+    100202: L_Foot_Offset
+    100204: L_Hand_Ctrl
+    100206: L_Hand_Offset
+    100208: L_Hip_Jnt
+    100210: L_Knee_Aim
+    100212: L_Knee_Jnt
+    100214: L_Knee_Offset
+    100216: L_Middle_Ctrl
+    100218: L_Pinky_Ctrl
+    100220: L_Pointer_Ctrl
+    100222: L_RF
+    100224: L_RF_Anklel_Jnt
+    100226: L_RF_Balll_Jnt
+    100228: L_RF_Heel_Jnt
+    100230: L_RF_InnerRoll_Jnt
+    100232: L_RF_outerRoll_Jnt
+    100234: L_RF_Toel_Jnt
+    100236: L_Ring_Ctrl
+    100238: L_Shoulder_Ctrl
+    100240: L_Shoulder_Jnt
+    100242: L_Shoulder_Offset
+    100244: L_Thumb_Ctrl
+    100246: L_Toe_Jnt
+    100248: L_Wrist_Ctrl
+    100250: L_Wrist_IK
+    100252: L_Wrist_Jnt
+    100254: L_Wrist_Offset
+    100256: L_WristIK_Offset
+    100258: LowerSpine_Ctrl
+    100260: LowerSpine_Offset
+    100262: Midspine01_Offset
+    100264: Neck01_Jnt
+    100266: Neck02_Jnt
+    100268: Neck03_Jnt
+    100270: Neck_Ctrl
+    100272: Neck_Offset
+    100274: pasted__Ana
+    100276: pasted__Fr_Jacket_Buckle
+    100278: pasted__group1
+    100280: pasted__Hair
+    100282: pasted__JAcketRuffles
+    100284: pasted__L_Jacket_Buckle
+    100286: pasted__R_Jacket_Buckle
+    100288: pasted__Scarf
+    100290: R_Ankle_Jnt
+    100292: R_Ball_Jnt
+    100294: R_Clavicle_Ctrl
+    100296: R_Clavicle_Jnt
+    100298: R_Clavicle_Offset
+    100300: R_Elbow_Ctrl
+    100302: R_Elbow_Jnt
+    100304: R_Elbow_Offset1
+    100306: R_Foot_Ctrl
+    100308: R_Foot_Offset
+    100310: R_Hand_Ctrl
+    100312: R_Hand_Offset
+    100314: R_Hip_Jnt
+    100316: R_Knee_Aim
+    100318: R_Knee_Jnt
+    100320: R_Knee_Offset
+    100322: R_Middle_Ctrl
+    100324: R_Pinky_Ctrl
+    100326: R_Pointer_Ctrl
+    100328: R_RF
+    100330: R_RF_Anklel_Jnt
+    100332: R_RF_Balll_Jnt
+    100334: R_RF_Heel_Jnt
+    100336: R_RF_InnerRoll_Jnt
+    100338: R_RF_outerRoll_Jnt
+    100340: R_RF_Toel_Jnt
+    100342: R_Ring_Ctrl
+    100344: R_Shoulder_Ctrl
+    100346: R_Shoulder_Jnt
+    100348: R_Shoulder_Offset
+    100350: R_Thumb_Ctrl
+    100352: R_Toe_Jnt
+    100354: R_Wrist_Ctrl
+    100356: R_Wrist_Jnt
+    100358: R_Wrist_Offset
+    100360: R_WristIK_Offset
+    100362: R_WristIK_Offset 1
+    100364: Root_Ctrl
+    100366: Root_Jnt
+    100368: Root_Offset
+    100370: Sine_Ik
+    100372: Spine01_FK_Jnt
+    100374: Spine01_Jnt
+    100376: Spine01_Spline_Jnt
+    100378: Spine02_Ctrl
+    100380: Spine02_Jnt
+    100382: Spine03_Ctrl
+    100384: Spine03_Jnt
+    100386: Spine04_FK_Jnt
+    100388: Spine04_Jnt
+    100390: Spine05_Jnt
+    100392: Spine06_Jnt
+    100394: Spine06_Spline_Jnt
+    100396: Spine_Spline
+    100398: SpineJnt_Grp
+    100400: transform10
+    100402: transform11
+    100404: transform13
+    100406: transform14
+    100408: transform15
+    100410: transform4
+    100412: transform5
+    100414: transform7
+    100416: transform8
+    100418: transform9
+    100420: UpperSpine_Ctrl
+    100422: UpperSpine_Offset
+    400000: //RootNode
+    400002: curve1
+    400004: curve1 1
+    400006: curve1 2
+    400008: curve2
+    400010: curve2 1
+    400012: curve4
+    400014: curve5
+    400016: Face_Offset
+    400018: geo
+    400020: Global__Offset
+    400022: Global_Ctrl
+    400024: group102
+    400026: group103
+    400028: group104
+    400030: group105
+    400032: group110
+    400034: group124
+    400036: group127
+    400038: group130
+    400040: group132
+    400042: group133
+    400044: group19
+    400046: group19 1
+    400048: group20
+    400050: group21
+    400052: group32
+    400054: group74
+    400056: group75
+    400058: group77
+    400060: group78
+    400062: group79
+    400064: group8
+    400066: group9
+    400068: group93
+    400070: group95
+    400072: group96
+    400074: group98
+    400076: group99
+    400078: Hat_Jnt
+    400080: Head_Jnt
+    400082: Head_Offset
+    400084: Hips_Ctrl
+    400086: ikHandle1
+    400088: ikHandle2
+    400090: ikHandle3
+    400092: ikHandle4
+    400094: ikHandle5
+    400096: ikHandle6
+    400098: ikHandle7
+    400100: joint10
+    400102: joint10 1
+    400104: joint2
+    400106: joint2 1
+    400108: joint3
+    400110: joint3 1
+    400112: joint4
+    400114: joint4 1
+    400116: joint4 2
+    400118: joint4 3
+    400120: joint4 4
+    400122: joint4 5
+    400124: joint4 6
+    400126: joint4 7
+    400128: joint4 8
+    400130: joint4 9
+    400132: joint5
+    400134: joint5 1
+    400136: joint5 2
+    400138: joint5 3
+    400140: joint5 4
+    400142: joint5 5
+    400144: joint5 6
+    400146: joint5 7
+    400148: joint5 8
+    400150: joint5 9
+    400152: joint6
+    400154: joint6 1
+    400156: joint6 2
+    400158: joint6 3
+    400160: joint6 4
+    400162: joint6 5
+    400164: joint6 6
+    400166: joint6 7
+    400168: joint6 8
+    400170: joint6 9
+    400172: joint7
+    400174: joint7 1
+    400176: joint8
+    400178: joint8 1
+    400180: joint9
+    400182: joint9 1
+    400184: L_Ankle_Jnt
+    400186: L_Ball_Jnt
+    400188: L_Clavicle_Ctrl
+    400190: L_Clavicle_Jnt
+    400192: L_Cllavicle_offset
+    400194: L_Elbow_Ctrl
+    400196: L_Elbow_Jnt
+    400198: L_Elbow_Offset1
+    400200: L_Foot_Ctrl
+    400202: L_Foot_Offset
+    400204: L_Hand_Ctrl
+    400206: L_Hand_Offset
+    400208: L_Hip_Jnt
+    400210: L_Knee_Aim
+    400212: L_Knee_Jnt
+    400214: L_Knee_Offset
+    400216: L_Middle_Ctrl
+    400218: L_Pinky_Ctrl
+    400220: L_Pointer_Ctrl
+    400222: L_RF
+    400224: L_RF_Anklel_Jnt
+    400226: L_RF_Balll_Jnt
+    400228: L_RF_Heel_Jnt
+    400230: L_RF_InnerRoll_Jnt
+    400232: L_RF_outerRoll_Jnt
+    400234: L_RF_Toel_Jnt
+    400236: L_Ring_Ctrl
+    400238: L_Shoulder_Ctrl
+    400240: L_Shoulder_Jnt
+    400242: L_Shoulder_Offset
+    400244: L_Thumb_Ctrl
+    400246: L_Toe_Jnt
+    400248: L_Wrist_Ctrl
+    400250: L_Wrist_IK
+    400252: L_Wrist_Jnt
+    400254: L_Wrist_Offset
+    400256: L_WristIK_Offset
+    400258: LowerSpine_Ctrl
+    400260: LowerSpine_Offset
+    400262: Midspine01_Offset
+    400264: Neck01_Jnt
+    400266: Neck02_Jnt
+    400268: Neck03_Jnt
+    400270: Neck_Ctrl
+    400272: Neck_Offset
+    400274: pasted__Ana
+    400276: pasted__Fr_Jacket_Buckle
+    400278: pasted__group1
+    400280: pasted__Hair
+    400282: pasted__JAcketRuffles
+    400284: pasted__L_Jacket_Buckle
+    400286: pasted__R_Jacket_Buckle
+    400288: pasted__Scarf
+    400290: R_Ankle_Jnt
+    400292: R_Ball_Jnt
+    400294: R_Clavicle_Ctrl
+    400296: R_Clavicle_Jnt
+    400298: R_Clavicle_Offset
+    400300: R_Elbow_Ctrl
+    400302: R_Elbow_Jnt
+    400304: R_Elbow_Offset1
+    400306: R_Foot_Ctrl
+    400308: R_Foot_Offset
+    400310: R_Hand_Ctrl
+    400312: R_Hand_Offset
+    400314: R_Hip_Jnt
+    400316: R_Knee_Aim
+    400318: R_Knee_Jnt
+    400320: R_Knee_Offset
+    400322: R_Middle_Ctrl
+    400324: R_Pinky_Ctrl
+    400326: R_Pointer_Ctrl
+    400328: R_RF
+    400330: R_RF_Anklel_Jnt
+    400332: R_RF_Balll_Jnt
+    400334: R_RF_Heel_Jnt
+    400336: R_RF_InnerRoll_Jnt
+    400338: R_RF_outerRoll_Jnt
+    400340: R_RF_Toel_Jnt
+    400342: R_Ring_Ctrl
+    400344: R_Shoulder_Ctrl
+    400346: R_Shoulder_Jnt
+    400348: R_Shoulder_Offset
+    400350: R_Thumb_Ctrl
+    400352: R_Toe_Jnt
+    400354: R_Wrist_Ctrl
+    400356: R_Wrist_Jnt
+    400358: R_Wrist_Offset
+    400360: R_WristIK_Offset
+    400362: R_WristIK_Offset 1
+    400364: Root_Ctrl
+    400366: Root_Jnt
+    400368: Root_Offset
+    400370: Sine_Ik
+    400372: Spine01_FK_Jnt
+    400374: Spine01_Jnt
+    400376: Spine01_Spline_Jnt
+    400378: Spine02_Ctrl
+    400380: Spine02_Jnt
+    400382: Spine03_Ctrl
+    400384: Spine03_Jnt
+    400386: Spine04_FK_Jnt
+    400388: Spine04_Jnt
+    400390: Spine05_Jnt
+    400392: Spine06_Jnt
+    400394: Spine06_Spline_Jnt
+    400396: Spine_Spline
+    400398: SpineJnt_Grp
+    400400: transform10
+    400402: transform11
+    400404: transform13
+    400406: transform14
+    400408: transform15
+    400410: transform4
+    400412: transform5
+    400414: transform7
+    400416: transform8
+    400418: transform9
+    400420: UpperSpine_Ctrl
+    400422: UpperSpine_Offset
+    2300000: pasted__Hair
+    3300000: pasted__Hair
+    4300000: pasted__Hair
+    4300002: pasted__Scarf
+    4300004: pasted__Fr_Jacket_Buckle
+    4300006: pasted__R_Jacket_Buckle
+    4300008: pasted__L_Jacket_Buckle
+    4300010: pasted__JAcketRuffles
+    4300012: pasted__Ana
+    7400000: IntoHide
+    9500000: //RootNode
+    13700000: pasted__Ana
+    13700002: pasted__Fr_Jacket_Buckle
+    13700004: pasted__JAcketRuffles
+    13700006: pasted__L_Jacket_Buckle
+    13700008: pasted__R_Jacket_Buckle
+    13700010: pasted__Scarf
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: IntoHide
+      takeName: Take 001
+      firstFrame: 300
+      lastFrame: 350
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: geo
+        weight: 1
+      - path: geo/pasted__group1
+        weight: 1
+      - path: geo/pasted__group1/pasted__Ana
+        weight: 1
+      - path: geo/pasted__group1/pasted__Fr_Jacket_Buckle
+        weight: 1
+      - path: geo/pasted__group1/pasted__JAcketRuffles
+        weight: 1
+      - path: geo/pasted__group1/pasted__L_Jacket_Buckle
+        weight: 1
+      - path: geo/pasted__group1/pasted__R_Jacket_Buckle
+        weight: 1
+      - path: geo/pasted__group1/pasted__Scarf
+        weight: 1
+      - path: Global__Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Foot_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Foot_Offset/L_Foot_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Foot_Offset/L_Foot_Ctrl/L_RF
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Foot_Offset/L_Foot_Ctrl/L_RF/L_RF_InnerRoll_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Foot_Offset/L_Foot_Ctrl/L_RF/L_RF_InnerRoll_Jnt/L_RF_outerRoll_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Foot_Offset/L_Foot_Ctrl/L_RF/L_RF_InnerRoll_Jnt/L_RF_outerRoll_Jnt/L_RF_Heel_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Foot_Offset/L_Foot_Ctrl/L_RF/L_RF_InnerRoll_Jnt/L_RF_outerRoll_Jnt/L_RF_Heel_Jnt/L_RF_Toel_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Foot_Offset/L_Foot_Ctrl/L_RF/L_RF_InnerRoll_Jnt/L_RF_outerRoll_Jnt/L_RF_Heel_Jnt/L_RF_Toel_Jnt/ikHandle4
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Foot_Offset/L_Foot_Ctrl/L_RF/L_RF_InnerRoll_Jnt/L_RF_outerRoll_Jnt/L_RF_Heel_Jnt/L_RF_Toel_Jnt/L_RF_Balll_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Foot_Offset/L_Foot_Ctrl/L_RF/L_RF_InnerRoll_Jnt/L_RF_outerRoll_Jnt/L_RF_Heel_Jnt/L_RF_Toel_Jnt/L_RF_Balll_Jnt/ikHandle5
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Foot_Offset/L_Foot_Ctrl/L_RF/L_RF_InnerRoll_Jnt/L_RF_outerRoll_Jnt/L_RF_Heel_Jnt/L_RF_Toel_Jnt/L_RF_Balll_Jnt/L_RF_Anklel_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Foot_Offset/L_Foot_Ctrl/L_RF/L_RF_InnerRoll_Jnt/L_RF_outerRoll_Jnt/L_RF_Heel_Jnt/L_RF_Toel_Jnt/L_RF_Balll_Jnt/L_RF_Anklel_Jnt/ikHandle6
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Hand_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Hand_Offset/L_Hand_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Knee_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/L_Knee_Offset/L_Knee_Aim
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Foot_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Foot_Offset/R_Foot_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Foot_Offset/R_Foot_Ctrl/R_RF
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Foot_Offset/R_Foot_Ctrl/R_RF/R_RF_InnerRoll_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Foot_Offset/R_Foot_Ctrl/R_RF/R_RF_InnerRoll_Jnt/R_RF_outerRoll_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Foot_Offset/R_Foot_Ctrl/R_RF/R_RF_InnerRoll_Jnt/R_RF_outerRoll_Jnt/R_RF_Heel_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Foot_Offset/R_Foot_Ctrl/R_RF/R_RF_InnerRoll_Jnt/R_RF_outerRoll_Jnt/R_RF_Heel_Jnt/R_RF_Toel_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Foot_Offset/R_Foot_Ctrl/R_RF/R_RF_InnerRoll_Jnt/R_RF_outerRoll_Jnt/R_RF_Heel_Jnt/R_RF_Toel_Jnt/ikHandle3
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Foot_Offset/R_Foot_Ctrl/R_RF/R_RF_InnerRoll_Jnt/R_RF_outerRoll_Jnt/R_RF_Heel_Jnt/R_RF_Toel_Jnt/R_RF_Balll_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Foot_Offset/R_Foot_Ctrl/R_RF/R_RF_InnerRoll_Jnt/R_RF_outerRoll_Jnt/R_RF_Heel_Jnt/R_RF_Toel_Jnt/R_RF_Balll_Jnt/ikHandle2
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Foot_Offset/R_Foot_Ctrl/R_RF/R_RF_InnerRoll_Jnt/R_RF_outerRoll_Jnt/R_RF_Heel_Jnt/R_RF_Toel_Jnt/R_RF_Balll_Jnt/R_RF_Anklel_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Foot_Offset/R_Foot_Ctrl/R_RF/R_RF_InnerRoll_Jnt/R_RF_outerRoll_Jnt/R_RF_Heel_Jnt/R_RF_Toel_Jnt/R_RF_Balll_Jnt/R_RF_Anklel_Jnt/ikHandle1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Hand_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Hand_Offset/R_Hand_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Knee_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/R_Knee_Offset/R_Knee_Aim
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/LowerSpine_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/LowerSpine_Offset/LowerSpine_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/LowerSpine_Offset/LowerSpine_Ctrl/group32
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/LowerSpine_Offset/LowerSpine_Ctrl/Midspine01_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/LowerSpine_Offset/LowerSpine_Ctrl/SpineJnt_Grp
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/LowerSpine_Offset/LowerSpine_Ctrl/transform13
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/LowerSpine_Offset/LowerSpine_Ctrl/transform15
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/LowerSpine_Offset/LowerSpine_Ctrl/transform15/Spine01_Spline_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/Sine_Ik
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/Spine01_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/Spine01_Jnt/Spine02_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/Spine04_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/Spine04_Jnt/Spine05_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/Spine01_Jnt/Spine02_Jnt/Spine03_Jnt/Spine04_Jnt/Spine05_Jnt/Spine06_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/group124/Spine_Spline
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Hips_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Root_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Root_Jnt/L_Hip_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Root_Jnt/L_Hip_Jnt/L_Knee_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Root_Jnt/L_Hip_Jnt/L_Knee_Jnt/L_Ankle_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Root_Jnt/L_Hip_Jnt/L_Knee_Jnt/L_Ankle_Jnt/L_Ball_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Root_Jnt/L_Hip_Jnt/L_Knee_Jnt/L_Ankle_Jnt/L_Ball_Jnt/L_Toe_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Root_Jnt/R_Hip_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Root_Jnt/R_Hip_Jnt/R_Knee_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Root_Jnt/R_Hip_Jnt/R_Knee_Jnt/R_Ankle_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Root_Jnt/R_Hip_Jnt/R_Knee_Jnt/R_Ankle_Jnt/R_Ball_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Root_Jnt/R_Hip_Jnt/R_Knee_Jnt/R_Ankle_Jnt/R_Ball_Jnt/R_Toe_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Face_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Face_Offset/curve1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Face_Offset/curve1/group8
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Face_Offset/curve1/group8/curve1
+          1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Face_Offset/curve1/group8/curve1
+          1/group9
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Face_Offset/curve1/group8/curve1
+          1/group9/curve1 2
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group110
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group127
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group127/curve2
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group127/curve2/group133
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group127/curve2/group133/curve5
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group127/curve2/ikHandle7
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group130
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group130/curve2
+          1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group130/curve2
+          1/group132
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group130/curve2
+          1/group132/curve4
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/group130/curve2
+          1/L_Wrist_IK
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/Head_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/group19
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/group19/L_WristIK_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/group74
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/group74/L_Pinky_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/group75
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/group75/L_Pointer_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/group77
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/group77/L_Thumb_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/group78
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/group78/L_Ring_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/group79
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/group79/L_Middle_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform4
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform7
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform8
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform8/group102
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform8/group102/group103
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform8/group102/group105
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform8/group102/group105/group104
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint3
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint3/joint4
+          1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint3/joint4
+          1/joint5 1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint3/joint4
+          1/joint5 1/joint6 1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint7
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint7/joint4
+          2
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint7/joint4
+          2/joint5 2
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint7/joint4
+          2/joint5 2/joint6 2
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint8
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint8/joint4
+          3
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint8/joint4
+          3/joint5 3
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint8/joint4
+          3/joint5 3/joint6 3
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint9
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint9/joint4
+          4
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint9/joint4
+          4/joint5 4
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint9/joint4
+          4/joint5 4/joint6 4
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint10
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint10/joint4
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint10/joint4/joint5
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Clavicle_Jnt/L_Shoulder_Jnt/L_Elbow_Jnt/L_Wrist_Jnt/transform10/joint2/joint10/joint4/joint5/joint6
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Shoulder_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Shoulder_Offset/L_Shoulder_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Shoulder_Offset/L_Shoulder_Ctrl/L_Elbow_Offset1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Shoulder_Offset/L_Shoulder_Ctrl/L_Elbow_Offset1/L_Elbow_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Shoulder_Offset/L_Shoulder_Ctrl/L_Elbow_Offset1/L_Elbow_Ctrl/L_Wrist_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl/L_Shoulder_Offset/L_Shoulder_Ctrl/L_Elbow_Offset1/L_Elbow_Ctrl/L_Wrist_Offset/L_Wrist_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/group19
+          1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/group19
+          1/R_WristIK_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/group21
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/group21/group20
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/group21/group20/R_WristIK_Offset
+          1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/group93
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/group93/R_Middle_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/group95
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/group95/R_Ring_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/group96
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/group96/R_Thumb_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/group98
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/group98/R_Pointer_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/group99
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/group99/R_Pinky_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint3 1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint3 1/joint4 6
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint3 1/joint4 6/joint5 6
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint3 1/joint4 6/joint5 6/joint6 6
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint7 1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint7 1/joint4 7
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint7 1/joint4 7/joint5 7
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint7 1/joint4 7/joint5 7/joint6 7
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint8 1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint8 1/joint4 8
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint8 1/joint4 8/joint5 8
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint8 1/joint4 8/joint5 8/joint6 8
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint9 1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint9 1/joint4 9
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint9 1/joint4 9/joint5 9
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint9 1/joint4 9/joint5 9/joint6 9
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint10 1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint10 1/joint4 5
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint10 1/joint4 5/joint5 5
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Clavicle_Jnt/R_Shoulder_Jnt/R_Elbow_Jnt/R_Wrist_Jnt/transform9/joint2
+          1/joint10 1/joint4 5/joint5 5/joint6 5
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Shoulder_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Shoulder_Offset/R_Shoulder_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Shoulder_Offset/R_Shoulder_Ctrl/R_Elbow_Offset1
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Shoulder_Offset/R_Shoulder_Ctrl/R_Elbow_Offset1/R_Elbow_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Shoulder_Offset/R_Shoulder_Ctrl/R_Elbow_Offset1/R_Elbow_Ctrl/R_Wrist_Offset
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl/R_Shoulder_Offset/R_Shoulder_Ctrl/R_Elbow_Offset1/R_Elbow_Ctrl/R_Wrist_Offset/R_Wrist_Ctrl
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/transform5
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/transform11
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/transform11/Neck01_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/transform11/Neck01_Jnt/Neck02_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/transform11/Neck01_Jnt/Neck02_Jnt/Neck03_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/transform11/Neck01_Jnt/Neck02_Jnt/Neck03_Jnt/Head_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/transform11/Neck01_Jnt/Neck02_Jnt/Neck03_Jnt/Head_Jnt/Hat_Jnt
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/transform11/Neck01_Jnt/Neck02_Jnt/Neck03_Jnt/Head_Jnt/Hat_Jnt/pasted__Hair
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/transform14
+        weight: 1
+      - path: Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/transform14/Spine06_Spline_Jnt
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

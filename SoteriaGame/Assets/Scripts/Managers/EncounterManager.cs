@@ -113,6 +113,7 @@ public class EncounterManager : MonoBehaviour
 	{
 		this.overcomeCounter = 0;
 		this.ableToOvercome = false;
+		this.ResetGameOverTimer();
 		GameDirector.instance.GetPlayer().GetComponent<Player>().ResetEncounter();
 	}
 
@@ -126,7 +127,7 @@ public class EncounterManager : MonoBehaviour
 		GameDirector.instance.GetPlayer().GetComponent<Player>().Overcome();
 	}
 
-	void GameOverTimer()
+	private void GameOverTimer()
 	{
 		this.gameOverTimer -= Time.deltaTime;
 		if (this.gameOverTimer <= 0.0f)
@@ -134,6 +135,11 @@ public class EncounterManager : MonoBehaviour
 			GameDirector.instance.StopEncounterMode();
 			Application.LoadLevel("HarborNoSwarm");
 		}
+	}
+
+	public void ResetGameOverTimer()
+	{
+		this.gameOverTimer = 15.0f;
 	}
 
 	public void PlayerOvercame()
