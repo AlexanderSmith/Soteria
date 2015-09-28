@@ -37,8 +37,10 @@ public class HudManager : MonoBehaviour {
 		this._onIndicator.gameObject.SetActive(false);
 
 		this.Buttons = new GameObject [6];
-		for (int i=0; i< 6; ++i)
+		for (int i=0; i< 4; ++i)
 			this.Buttons[i] = _hudinterface.transform.FindChild("Button_"+i).gameObject;
+
+
 	}
 
 	// Update is called once per frame
@@ -160,5 +162,10 @@ public class HudManager : MonoBehaviour {
 	{
 		this._fadeinout.gameObject.SetActive (false);
 		this.isToClear = true;
+	}
+
+	public void SafteyLightButtonHit()
+	{
+		GameDirector.instance.TakeSafteyLight();
 	}
 }

@@ -132,7 +132,7 @@ public class EncounterManager : MonoBehaviour
 		if (this.gameOverTimer <= 0.0f)
 		{
 			GameDirector.instance.StopEncounterMode();
-			this.gameObject.AddComponent<LevelManager>().SetActiveLevel("HarborNoSwarm");
+			Application.LoadLevel("HarborNoSwarm");
 		}
 	}
 
