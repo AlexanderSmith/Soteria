@@ -10,6 +10,7 @@ public class HudManager : MonoBehaviour {
 	public bool isToClear = true;
 
 	private GameObject _hudinterface;
+	private ButtonController _coinController;
 
 	private Image _onIndicator;
 	private Image _offIndicator;
@@ -40,7 +41,8 @@ public class HudManager : MonoBehaviour {
 		for (int i=0; i< 4; ++i)
 			this.Buttons[i] = _hudinterface.transform.FindChild("Button_"+i).gameObject;
 
-
+		_coinController = _hudinterface.GetComponentInChildren<ButtonController> ();
+		_coinController.Initialize (this);
 	}
 
 	// Update is called once per frame
