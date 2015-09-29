@@ -1,54 +1,57 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : MonoBehaviour 
+{
 
-    protected static LevelManager _instance;
-    private string activeLevel;
-
-    public static LevelManager instance
-    {
-        get
-        {
-            if (_instance == null)
-                _instance = GameObject.FindObjectOfType<LevelManager>();
-            return (LevelManager)(_instance);
-        }
-    }
-
-    public string GetActiveLeve()
+    private int activeLevel;
+	
+	public int GetActiveLeve()
     {
         return activeLevel;
     }
 
-    public void SetActiveLevel(string level)
-    {
-        activeLevel = level;
-        Application.LoadLevel(level);
-    }
-
-    // Use this for initialization
-    private void Awake()
-    {
-        if (_instance == null)
-        {
-            _instance = this;
-            DontDestroyOnLoad(this); //Keep the instance going between scenes
-        }
-        else
-        {
-            if (this != _instance)
-                Destroy(this.gameObject);
-        }
-    }
-
-	// Use this for initialization
-	void Start () {
-	
+	public void Awake()
+	{
+		LoadCurrentLevelData (Application.loadedLevel);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+
+	public void Start()
+	{
 	}
+
+	public void update()
+	{
+	}
+
+	public void Initialize()
+	{
+
+	}
+	public void LoadLevel(int level)
+	{
+		Debug.Log ("LoadLevel - LevelManager");
+		activeLevel = level;
+		Application.LoadLevel (level);
+		Application.LoadLevelAdditive ("DebugScene");
+	}
+
+	private void LoadCurrentLevelData (int level)
+	{
+		switch(level)
+		{
+			case 0: LoadHarborLevel(); break;
+				
+			case 1: LoadHubLevel();	break;
+				
+			//case 2: //Obs...etc break;
+		}   
+	}
+	void OnLevelWasLoaded(int level) 
+	{
+		LoadCurrentLevelData (level);
+	}
+	void LoadHarborLevel() { }
+
+	void LoadHubLevel(){ }
 }

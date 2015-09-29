@@ -6,12 +6,14 @@ using System.Collections;
 [RequireComponent(typeof(HudManager))]
 [RequireComponent(typeof(EncounterManager))]
 [RequireComponent(typeof(StateManager))]
+[RequireComponent(typeof(LevelManager))]
 
 public class GameDirector : MonoBehaviour {
 
     private static GameDirector _instance;
-    private GameObject _player = null;
+    private Player _player = null;
 	private int _gamePhase = 1;
+	private GameObject UIObject;
 
     #region Managers
 
@@ -21,6 +23,7 @@ public class GameDirector : MonoBehaviour {
 	private EncounterManager 	_encounterManager;
 	private StateManager     	_stateManager;
 	private DialogueManager 	_dialoguemanager;
+	private LevelManager		_levelmanager;
 
     #endregion
 
@@ -33,9 +36,9 @@ public class GameDirector : MonoBehaviour {
         get
         {
             if (_instance == null)
+			{
                 _instance = GameObject.FindObjectOfType<GameDirector>();
-				
-			DontDestroyOnLoad(_instance.gameObject);
+			}
             return _instance;
         }
     }
@@ -46,41 +49,32 @@ public class GameDirector : MonoBehaviour {
         if (_instance == null)
         {
             _instance = this;            
-            DontDestroyOnLoad(this); //Keep the instance going between scenes
+            DontDestroyOnLoad(this.gameObject); //Keep the instance going between scenes
+			this.InitializeManagers();
         }
         else
         {
             if (this != _instance)
-                Destroy(this.gameObject);
+			{
+                DestroyImmediate(this.gameObject);
+				return;
+			}
         }
-		
-		this.InitializeManagers();
-    }
-	
-	void OnLevelWasLoaded(int level) 
-	{
 
-		GameObject UIObject = GameObject.Find("UI");
-		if (UIObject == null)
-		{
-			Instantiate(Resources.Load("Prefabs/UI"), Vector3.zero, Quaternion.identity);
-		}
-			   
-    }
+		
+	}
 	
 	 private void InitializeManagers()
     {
         //This is problematic (AddComponent)-> it forces the script to be a component and uses the 
         // Update function automatically each frame, only solution not use MonoBehavior <-- not so simple
-		
-		GameObject UItemp = GameObject.Find("UI");
-		DontDestroyOnLoad(UItemp);
-		
+
 		this._audioManager = this.gameObject.GetComponent<AudioManager>();
 		this._HUDManager = this.gameObject.GetComponent<HudManager> ();
 		this._encounterManager = this.gameObject.GetComponent<EncounterManager> ();
 		this._stateManager = this.gameObject.GetComponent<StateManager>();
 		this._dialoguemanager = this.gameObject.GetComponent<DialogueManager> ();
+		this._levelmanager = this.gameObject.GetComponent<LevelManager>();
 
 		this.InitializePlayer ();  
 		
@@ -88,17 +82,18 @@ public class GameDirector : MonoBehaviour {
 		this._HUDManager.Initialize();
 		this._encounterManager.Initialize();
 		this._stateManager.Initialize();
-		this._dialoguemanager.Initialize ();  
+		this._dialoguemanager.Initialize ();
+		this._levelmanager.Initialize ();
     }
 	
 	public void InitializePlayer()
 	{
 		if (_player == null) 
 		{
-			_player = GameObject.FindWithTag("Player");
+			_player = GameObject.FindWithTag("Player").GetComponent<Player>();
 		}
 	}
-    public GameObject GetPlayer()
+	public Player GetPlayer()
     {
         return _player;
     }
@@ -114,6 +109,14 @@ public class GameDirector : MonoBehaviour {
     {
 		//Dialogue
 		//this._dialoguemanager.Update();
+	}
+	///////////////////////////////////////////////////////////////////
+	////////////////// LEVEL MANAGER FUNCTIONS ////////////////////////
+	///////////////////////////////////////////////////////////////////
+
+	public void LoadLevel(int level)
+	{
+		this._levelmanager.LoadLevel (level);
 	}
 
 	///////////////////////////////////////////////////////////////////
@@ -168,21 +171,21 @@ public class GameDirector : MonoBehaviour {
 		
 		_HUDManager.EnableEncounterView();
 		this.SetClearStatus(false);
-		GetPlayer().GetComponent<Player>().PlayerActionEncounter();
+		this._player.PlayerActionEncounter();
 	}
 
 	public void StopEncounterMode()
 	{
 		_stateManager.ChangeGameState(GameStates.Normal);
 		_HUDManager.DisableEncounterView();
-		GetPlayer().GetComponent<Player>().PlayerActionNormal();
+		this._player.PlayerActionNormal();
 	}
 
 	public void TakeSafteyLight()
 	{
 		StopEncounterMode();
 		/*Teleport to town center*/
-		this.gameObject.AddComponent<LevelManager>().SetActiveLevel("FullModelHub");
+		this._levelmanager.LoadLevel (1);// ("FullModelHub");
 	}
 
 	public void KillEnemy()
@@ -213,12 +216,12 @@ public class GameDirector : MonoBehaviour {
 
 	public void BeginLingering()
 	{
-		this._player.GetComponent<Player>().BeginLingering();
+		this._player.BeginLingering();
 	}
 
 	public void ResetLinger()
 	{
-		this._player.GetComponent<Player>().ResetLinger();
+		this._player.ResetLinger();
 		this.SetClearStatus (false);
 	}
 

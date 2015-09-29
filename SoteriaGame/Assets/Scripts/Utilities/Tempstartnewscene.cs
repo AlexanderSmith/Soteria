@@ -11,7 +11,7 @@ public class Tempstartnewscene : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		 if (Input.GetKeyDown(KeyCode.LeftShift))
-            Application.LoadLevel("Scene2");
+		 if (Input.GetKeyDown (KeyCode.LeftShift))
+			GameDirector.instance.LoadLevel (0);
 	}
 }

@@ -29,7 +29,7 @@ public class BasicEnemyController : MonoBehaviour {
 	{
 		if (player == null)
 		{
-			player = GameDirector.instance.GetPlayer();
+			player = GameDirector.instance.GetPlayer().gameObject;
 		}
 		_agent = GetComponent<NavMeshAgent> ();
 		_anim = GetComponent<Animator> ();

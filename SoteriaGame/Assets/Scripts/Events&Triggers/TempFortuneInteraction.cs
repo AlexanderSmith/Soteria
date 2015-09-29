@@ -21,8 +21,12 @@ public class TempFortuneInteraction : MonoBehaviour {
 	{
 		if (HudToken == null) 
 		{
-			HudToken = GameObject.Find("Coin");
-			HudToken.SetActive(false);
+			GameObject Temp = GameObject.Find ("HUDInterface");
+			if (Temp != null) ///Quick hack, there's a frame delay between finding and keeping UI alive Investigate!
+			{
+				HudToken = Temp.transform.FindChild("Coin").gameObject;
+				HudToken.SetActive(false);
+			}
 		}
 	}
 	
