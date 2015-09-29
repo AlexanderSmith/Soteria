@@ -19,7 +19,6 @@ public enum EncounterState
 
 public class EncounterManager : MonoBehaviour
 {
-	private GameObject[] enemies;
 	private GameObject currentEnemy;
 
 	private float gameOverTimer = 15.0f;
@@ -49,18 +48,8 @@ public class EncounterManager : MonoBehaviour
 
     public void Initialize()
     {
-		this.enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-		this.LinkToEnemy();
 		this.currentState = EncounterState.INACTIVE;
     }
-
-	void LinkToEnemy()
-	{
-		foreach (GameObject enemy in enemies) 
-		{
-			enemy.GetComponent<BasicEnemyController>().Initialize();
-		}
-	}
 
 	public void Encounter(GameObject enemy)
 	{
@@ -68,7 +57,7 @@ public class EncounterManager : MonoBehaviour
 		{
 			this.currentState = EncounterState.ACTIVE;
 			this.StartEncounter(enemy);
-			GameDirector.instance.GetPlayer().GetComponent<Player>().AddFear();
+			GameDirector.instance.GetPlayer().AddFear();
 		}
 	}
 
@@ -76,10 +65,17 @@ public class EncounterManager : MonoBehaviour
     {
 		this.Cower();
 		this.currentState = EncounterState.INACTIVE;
-		GameDirector.instance.GetPlayer().GetComponent<Player>().RemoveFear();
+		GameDirector.instance.GetPlayer().RemoveFear();
 		GameDirector.instance.StopEncounterMode();
 		this.EncounterReset();
     }
+
+	public void StopEncounterFromToken()
+	{
+		this.currentState = EncounterState.INACTIVE;
+		GameDirector.instance.GetPlayer().RemoveFear();
+		this.EncounterReset();
+	}
 
     public void StartEncounter(GameObject enemy)
     {
@@ -113,8 +109,9 @@ public class EncounterManager : MonoBehaviour
 	{
 		this.overcomeCounter = 0;
 		this.ableToOvercome = false;
+		this.currentState = EncounterState.INACTIVE;
 		this.ResetGameOverTimer();
-		GameDirector.instance.GetPlayer().GetComponent<Player>().ResetEncounter();
+		GameDirector.instance.GetPlayer().ResetEncounter();
 	}
 
 	public bool GetOvercomeStatus()
@@ -124,7 +121,7 @@ public class EncounterManager : MonoBehaviour
 
 	public void PlayerCanOvercome()
 	{
-		GameDirector.instance.GetPlayer().GetComponent<Player>().Overcome();
+		GameDirector.instance.GetPlayer().Overcome();
 	}
 
 	private void GameOverTimer()
@@ -132,7 +129,10 @@ public class EncounterManager : MonoBehaviour
 		this.gameOverTimer -= Time.deltaTime;
 		if (this.gameOverTimer <= 0.0f)
 		{
+			GameDirector.instance.FindEnemies();
+			this.EncounterReset();
 			GameDirector.instance.StopEncounterMode();
+			//GameDirector.instance.LoadLevel(0);
 			Application.LoadLevel("HarborNoSwarm");
 		}
 	}
@@ -200,5 +200,10 @@ public class EncounterManager : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	public void TokenUsed()
+	{
+		this.StopEncounterFromToken();
 	}
 }

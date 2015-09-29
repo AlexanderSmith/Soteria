@@ -25,11 +25,11 @@ public class BasicEnemyController : MonoBehaviour {
 	public float overwhelmRange = 15.0f;
 	
 	// Use this for initialization
-	public void Initialize()
+	public void Start()
 	{
 		if (player == null)
 		{
-			player = GameDirector.instance.GetPlayer();
+			player = GameDirector.instance.GetPlayer().gameObject;
 		}
 		_agent = GetComponent<NavMeshAgent> ();
 		_anim = GetComponent<Animator> ();

@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
 	void Start ()
 	{
 		this._animator = this.gameObject.GetComponent<Animator>();
+		DontDestroyOnLoad (this._animator);
 		PlayerActionNormal();
 //		this._currentState = PlayerState.NORMAL;
 	}
@@ -116,9 +117,15 @@ public class Player : MonoBehaviour
 
 	public void HideUp()
 	{
+		this._animator.SetBool ("HideUp", true);
 		this._animator.SetBool ("HideDown", false);
 		this._animator.SetBool ("HideIdle", false);
-		this._animator.SetBool ("HideUp", true);
+		this.ResetHide();
+	}
+
+	public void ResetHide()
+	{
+		this._animator.SetBool ("HideUp", false);
 	}
 
 	public void HideIdle()
