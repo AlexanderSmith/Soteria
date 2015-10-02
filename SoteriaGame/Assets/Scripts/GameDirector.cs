@@ -13,7 +13,12 @@ public class GameDirector : MonoBehaviour {
     private static GameDirector _instance;
     private Player _player = null;
 	private GameObject UIObject;
-	private int _gamePhase = 1;
+
+	// Game progression variables
+	private int _gamePhase;
+	private bool token;
+	private bool lantern;
+	private bool compass;
 
     #region Managers
 
@@ -60,7 +65,19 @@ public class GameDirector : MonoBehaviour {
 				return;
 			}
         }
+
+		if (this._gamePhase < 1)
+		{
+			this.StartGame();
+		}
     }
+
+	void StartGame()
+	{
+		this.token = false;
+		this.lantern = false;
+		this.compass = false;
+	}
 	
 	private void InitializeManagers()
     {
@@ -74,7 +91,7 @@ public class GameDirector : MonoBehaviour {
 		this._dialoguemanager = this.gameObject.GetComponent<DialogueManager> ();
 		this._levelManager = this.gameObject.GetComponent<LevelManager> ();
 
-		this.InitializePlayer ();  
+		//this.InitializePlayer ();  
 		
 		this._audioManager.Initialize();
 		this._HUDManager.Initialize();
@@ -96,18 +113,47 @@ public class GameDirector : MonoBehaviour {
         return _player;
     }
 
-	public int GetGamePhase()
-	{
-		return this._gamePhase;
-	}
-
-
     // Update is called once per frame
     private void Update()
     {
 		//Dialogue
 		//this._dialoguemanager.Update();
 	}
+
+	///////////////////////////////////////////////////////////////////
+	////////////////// GAME PROGRESSION FUNCTIONS /////////////////////
+	///////////////////////////////////////////////////////////////////
+	
+	#region Game Progression
+	
+	public int GetGamePhase()
+	{
+		return this._gamePhase;
+	}
+	
+	public void TokenTrue()
+	{
+		this.token = true;
+		this._HUDManager.TokenTrue(token);
+	}
+	
+	public bool GetToken()
+	{
+		return this.token;
+	}
+	
+	public void LanternTrue()
+	{
+		this.lantern = true;
+		this._HUDManager.LanternTrue(lantern);
+	}
+	
+	public bool GetLantern()
+	{
+		return this.lantern;
+	}
+	
+	#endregion
 
 	///////////////////////////////////////////////////////////////////
 	////////////////// LEVEL MANAGER FUNCTIONS ////////////////////////
@@ -139,7 +185,12 @@ public class GameDirector : MonoBehaviour {
 	///////////////////////////////////////////////////////////////////
 	///////////////////// HUD MANAGER FUNCTIONS ///////////////////////
 	///////////////////////////////////////////////////////////////////
-		
+
+//	public void HUDSceneStart()
+//	{
+//		this._HUDManager.HUDSceneStart(token, lantern);
+//	}
+
 	public void SetClearStatus (bool inStatus)
 	{
 		_HUDManager.isToClear = inStatus;	

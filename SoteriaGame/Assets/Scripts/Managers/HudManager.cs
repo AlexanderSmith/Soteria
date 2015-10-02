@@ -18,6 +18,16 @@ public class HudManager : MonoBehaviour {
 	public GameObject Objective;
 
 	private GameObject [] Buttons;
+
+	// Inventory items
+	private GameObject token;
+	private GameObject lantern;
+	//	private GameObject compass;
+	//	private GameObject cards;
+	//	private GameObject suit;
+	//	private GameObject leftKeyPiece;
+	//	private GameObject middleKeyPiece;
+	//	private GameObject centerKeyPiece;
 	
 	// Use this for initialization
 	void Awake () 
@@ -41,8 +51,22 @@ public class HudManager : MonoBehaviour {
 		for (int i=0; i< 4; ++i)
 			this.Buttons[i] = _hudinterface.transform.FindChild("Button_"+i).gameObject;
 
-		_coinController = _hudinterface.GetComponentInChildren<ButtonController> ();
-		_coinController.Initialize (this);
+		this._coinController = _hudinterface.GetComponentInChildren<ButtonController> ();
+		this._coinController.Initialize (this);
+		
+		//Inventory item game object references
+		this.token = GameObject.Find("Coin");
+		this.token.SetActive(false);
+		this.lantern = GameObject.Find("Lantern");
+		this.lantern.SetActive(false);
+//		// Same for compass, cards, suit, and key pieces;
+	}
+
+	// On scene start, reinitialize HUD based on game progression -- Can most likely remove Initialize() and replace with this
+	public void HUDSceneStart(bool inToken, bool inLantern/*, bool inCompass, bool inCards, bool inSuit, bool inLeftKey, bool inMidKey, bool inRightKey*/)
+	{
+		this.token.SetActive(inToken);
+		this.lantern.SetActive(inLantern);
 	}
 
 	// Update is called once per frame
@@ -171,5 +195,15 @@ public class HudManager : MonoBehaviour {
 	public void SafteyLightButtonHit()
 	{
 		GameDirector.instance.TakeSafteyLight();
+	}
+
+	public void TokenTrue(bool inToken)
+	{
+		this.token.SetActive(inToken);
+	}
+	
+	public void LanternTrue(bool inLantern)
+	{
+		this.lantern.SetActive(inLantern);
 	}
 }
