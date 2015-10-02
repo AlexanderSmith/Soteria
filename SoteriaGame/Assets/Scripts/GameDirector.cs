@@ -131,6 +131,11 @@ public class GameDirector : MonoBehaviour {
 	{
 		return this._gamePhase;
 	}
+
+	public void AddGamePhase()
+	{
+		this._gamePhase++;
+	}
 	
 	public void TokenTrue()
 	{
