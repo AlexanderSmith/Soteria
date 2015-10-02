@@ -26,7 +26,6 @@ public class ButtonController : MonoBehaviour
     public void Initialize(HudManager manager)
     {
 		this._hudmanager = manager;
-		////TEstAudio
     }
 
     // Update is called once per frame

@@ -116,9 +116,15 @@ public class Player : MonoBehaviour
 
 	public void HideUp()
 	{
+		this._animator.SetBool ("HideUp", true);
 		this._animator.SetBool ("HideDown", false);
 		this._animator.SetBool ("HideIdle", false);
-		this._animator.SetBool ("HideUp", true);
+		this.ResetHide();
+	}
+
+	void ResetHide()
+	{
+		this._animator.SetBool ("HideUp", false);
 	}
 
 	public void HideIdle()

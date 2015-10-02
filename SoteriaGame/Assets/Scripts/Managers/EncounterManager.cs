@@ -50,17 +50,8 @@ public class EncounterManager : MonoBehaviour
     public void Initialize()
     {
 		this.enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-		this.LinkToEnemy();
 		this.currentState = EncounterState.INACTIVE;
     }
-
-	void LinkToEnemy()
-	{
-		foreach (GameObject enemy in enemies) 
-		{
-			enemy.GetComponent<BasicEnemyController>().Initialize();
-		}
-	}
 
 	public void Encounter(GameObject enemy)
 	{
@@ -75,11 +66,18 @@ public class EncounterManager : MonoBehaviour
     public void StopEncounter()
     {
 		this.Cower();
-		this.currentState = EncounterState.INACTIVE;
+		//this.currentState = EncounterState.INACTIVE;
 		GameDirector.instance.GetPlayer().GetComponent<Player>().RemoveFear();
 		GameDirector.instance.StopEncounterMode();
 		this.EncounterReset();
     }
+
+	public void StopEncounterFromToken()
+	{
+		//this.currentState = EncounterState.INACTIVE;
+		GameDirector.instance.GetPlayer().GetComponent<Player>().RemoveFear();
+		this.EncounterReset();
+	}
 
     public void StartEncounter(GameObject enemy)
     {
@@ -113,6 +111,7 @@ public class EncounterManager : MonoBehaviour
 	{
 		this.overcomeCounter = 0;
 		this.ableToOvercome = false;
+		this.currentState = EncounterState.INACTIVE;
 		this.ResetGameOverTimer();
 		GameDirector.instance.GetPlayer().GetComponent<Player>().ResetEncounter();
 	}
@@ -132,6 +131,8 @@ public class EncounterManager : MonoBehaviour
 		this.gameOverTimer -= Time.deltaTime;
 		if (this.gameOverTimer <= 0.0f)
 		{
+			GameDirector.instance.FindEnemies();
+			this.EncounterReset();
 			GameDirector.instance.StopEncounterMode();
 			Application.LoadLevel("HarborNoSwarm");
 		}
@@ -200,5 +201,10 @@ public class EncounterManager : MonoBehaviour
 				}
 			}
 		}
+	}
+
+	public void TokenUsed()
+	{
+		this.StopEncounterFromToken();
 	}
 }

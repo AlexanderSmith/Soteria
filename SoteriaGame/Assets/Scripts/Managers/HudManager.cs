@@ -17,12 +17,51 @@ public class HudManager : MonoBehaviour {
 	private bool _isonscreen;
 	public GameObject Objective;
 
+	// Inventory items
+	private GameObject token;
+	private GameObject lantern;
+//	private GameObject compass;
+//	private GameObject cards;
+//	private GameObject suit;
+//	private GameObject leftKeyPiece;
+//	private GameObject middleKeyPiece;
+//	private GameObject centerKeyPiece;
+
 	private GameObject [] Buttons;
 	
 	// Use this for initialization
 	void Awake () 
 	{
+//		this._hudinterface = GameObject.Find ("HUDInterface");
+//		this._fadeinout = _hudinterface.transform.FindChild("FadeTexture").gameObject.GetComponent<Image>();
+//		this._fadeinout.color = Color.clear;
+//		
+//		this._onIndicator = _hudinterface.transform.FindChild("OnIndicator").gameObject.GetComponent<Image> ();
+//		this._offIndicator = _hudinterface.transform.FindChild("OffIndicator").gameObject.GetComponent<Image> ();
+//		
+//		this._offIndicator.gameObject.SetActive(false);
+//		this._onIndicator.gameObject.SetActive(false);
+//		
+//		this.Buttons = new GameObject [6];
+//		for (int i=0; i< 4; ++i)
+//			this.Buttons[i] = _hudinterface.transform.FindChild("Button_"+i).gameObject;
+//		
+//		this._coinController = _hudinterface.GetComponentInChildren<ButtonController> ();
+//		this._coinController.Initialize (this);
+//		
+//		//Inventory item game object references
+//		this.token = GameObject.Find("Coin");
+//		this.token.SetActive(false);
+//		this.lantern = GameObject.Find("Lantern");
+//		this.lantern.SetActive(false);
+//		// Same for compass, cards, suit, and key pieces
 
+//		DontDestroyOnLoad(token);
+//		DontDestroyOnLoad(lantern);
+//		DontDestroyOnLoad(_fadeinout);
+//		DontDestroyOnLoad (_onIndicator);
+//		DontDestroyOnLoad (_offIndicator);
+//		DontDestroyOnLoad (_coinController);
 	}
 
 	public void Initialize()
@@ -41,8 +80,15 @@ public class HudManager : MonoBehaviour {
 		for (int i=0; i< 4; ++i)
 			this.Buttons[i] = _hudinterface.transform.FindChild("Button_"+i).gameObject;
 
-		_coinController = _hudinterface.GetComponentInChildren<ButtonController> ();
-		_coinController.Initialize (this);
+		this._coinController = _hudinterface.GetComponentInChildren<ButtonController> ();
+		this._coinController.Initialize (this);
+
+		//Inventory item game object references
+		this.token = GameObject.Find("Coin");
+		this.token.SetActive(false);
+		this.lantern = GameObject.Find("Lantern");
+		this.lantern.SetActive(false);
+//		// Same for compass, cards, suit, and key pieces
 	}
 
 	// Update is called once per frame
@@ -50,6 +96,13 @@ public class HudManager : MonoBehaviour {
 	{
 		UpdateFade ();
 		UpdateIndicator ();
+	}
+
+	// On scene start, reinitialize HUD based on game progression -- Can most likely remove Initialize() and replace with this
+	public void HUDSceneStart(bool inToken, bool inLantern/*, bool inCompass, bool inCards, bool inSuit, bool inLeftKey, bool inMidKey, bool inRightKey*/)
+	{
+		this.token.SetActive(inToken);
+		this.lantern.SetActive(inLantern);
 	}
 
 	private void UpdateIndicator ()
@@ -171,5 +224,15 @@ public class HudManager : MonoBehaviour {
 	public void SafteyLightButtonHit()
 	{
 		GameDirector.instance.TakeSafteyLight();
+	}
+
+	public void TokenTrue(bool inToken)
+	{
+		this.token.SetActive(inToken);
+	}
+
+	public void LanternTrue(bool inLantern)
+	{
+		this.lantern.SetActive(inLantern);
 	}
 }

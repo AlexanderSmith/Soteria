@@ -11,7 +11,12 @@ public class GameDirector : MonoBehaviour {
 
     private static GameDirector _instance;
     private GameObject _player = null;
-	private int _gamePhase = 1;
+
+	// Game progression variables
+	private static int _gamePhase;
+	private static bool token;
+	private static bool lantern;
+	private static bool compass;
 
     #region Managers
 
@@ -53,28 +58,47 @@ public class GameDirector : MonoBehaviour {
             if (this != _instance)
                 Destroy(this.gameObject);
         }
-		
+
+		// Initializing game progression variables
+		if (_gamePhase < 1)
+		{
+			StartGame();
+		}
+
 		this.InitializeManagers();
     }
-	
-	void OnLevelWasLoaded(int level) 
-	{
 
-		GameObject UIObject = GameObject.Find("UI");
-		if (UIObject == null)
-		{
-			Instantiate(Resources.Load("Prefabs/UI"), Vector3.zero, Quaternion.identity);
-		}
-			   
-    }
+	void StartGame()
+	{
+		_gamePhase = 1;
+		token = false;
+		lantern = false;
+		compass = false;
+	}
+
+//	void Start()
+//	{
+//		this.InitializeManagers ();
+//	}
 	
-	 private void InitializeManagers()
+//	void OnLevelWasLoaded(int level) 
+//	{
+//
+//		GameObject UIObject = GameObject.Find("UI");
+//		if (UIObject == null)
+//		{
+//			Instantiate(Resources.Load("Prefabs/UI"), Vector3.zero, Quaternion.identity);
+//		}
+//			   
+//    }
+	
+	private void InitializeManagers()
     {
         //This is problematic (AddComponent)-> it forces the script to be a component and uses the 
         // Update function automatically each frame, only solution not use MonoBehavior <-- not so simple
 		
-		GameObject UItemp = GameObject.Find("UI");
-		DontDestroyOnLoad(UItemp);
+//		GameObject UItemp = GameObject.Find("UI");
+//		DontDestroyOnLoad(UItemp);
 		
 		this._audioManager = this.gameObject.GetComponent<AudioManager>();
 		this._HUDManager = this.gameObject.GetComponent<HudManager> ();
@@ -82,7 +106,7 @@ public class GameDirector : MonoBehaviour {
 		this._stateManager = this.gameObject.GetComponent<StateManager>();
 		this._dialoguemanager = this.gameObject.GetComponent<DialogueManager> ();
 
-		this.InitializePlayer ();  
+		//this.InitializePlayer ();  
 		
 		this._audioManager.Initialize();
 		this._HUDManager.Initialize();
@@ -103,18 +127,47 @@ public class GameDirector : MonoBehaviour {
         return _player;
     }
 
-	public int GetGamePhase()
-	{
-		return this._gamePhase;
-	}
-
-
     // Update is called once per frame
     private void Update()
     {
 		//Dialogue
 		//this._dialoguemanager.Update();
 	}
+
+	///////////////////////////////////////////////////////////////////
+	////////////////// GAME PROGRESSION FUNCTIONS /////////////////////
+	///////////////////////////////////////////////////////////////////
+
+	#region Game Progression
+
+	public int GetGamePhase()
+	{
+		return _gamePhase;
+	}
+
+	public void TokenTrue()
+	{
+		token = true;
+		this._HUDManager.TokenTrue(token);
+	}
+
+	public bool GetToken()
+	{
+		return token;
+	}
+
+	public void LanternTrue()
+	{
+		lantern = true;
+		this._HUDManager.LanternTrue(lantern);
+	}
+	
+	public bool GetLantern()
+	{
+		return lantern;
+	}
+
+	#endregion
 
 	///////////////////////////////////////////////////////////////////
 	////////////////// STATE MANAGER FUNCTIONS ////////////////////////
@@ -142,6 +195,11 @@ public class GameDirector : MonoBehaviour {
 	{
 		_HUDManager.isToClear = inStatus;	
 	}
+
+	public void HUDSceneStart()
+	{
+		this._HUDManager.HUDSceneStart(token, lantern);
+	}
 	
 	///////////////////////////////////////////////////////////////////
 	////////////////// ENCOUNTER MANAGER FUNCTIONS ////////////////////
@@ -164,8 +222,7 @@ public class GameDirector : MonoBehaviour {
 		if (_stateManager.GameState() != GameStates.Encounter) 
 		{
 			_stateManager.ChangeGameState (GameStates.Encounter);
-		}
-		
+		}		
 		_HUDManager.EnableEncounterView();
 		this.SetClearStatus(false);
 		GetPlayer().GetComponent<Player>().PlayerActionEncounter();
@@ -180,9 +237,21 @@ public class GameDirector : MonoBehaviour {
 
 	public void TakeSafteyLight()
 	{
+		this.FindEnemies();
+		this._encounterManager.TokenUsed();
 		StopEncounterMode();
 		/*Teleport to town center*/
-		this.gameObject.AddComponent<LevelManager>().SetActiveLevel("FullModelHub");
+		Application.LoadLevel("FullModelHub");
+	}
+
+	public void FindEnemies()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			//enemy.SetActive(false);
+			Destroy(enemy);
+		}
 	}
 
 	public void KillEnemy()

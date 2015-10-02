@@ -23,9 +23,8 @@ public class BasicEnemyController : MonoBehaviour {
 	public float lookAtDistance = 45.0f;
 	public float attackRange = 35.0f;
 	public float overwhelmRange = 15.0f;
-	
-	// Use this for initialization
-	public void Initialize()
+
+	void Start()
 	{
 		if (player == null)
 		{
@@ -34,6 +33,11 @@ public class BasicEnemyController : MonoBehaviour {
 		_agent = GetComponent<NavMeshAgent> ();
 		_anim = GetComponent<Animator> ();
 		this._stunDuration = this.stunTimer;
+	}
+
+	public void SetPlayer()
+	{
+		player = GameDirector.instance.GetPlayer();
 	}
 	
 	// Update is called once per frame
