@@ -430,7 +430,19 @@ ModelImporter:
     400420: UpperSpine_Ctrl
     400422: UpperSpine_Offset
     2300000: pasted__Hair
+    2300002: pasted__Ana
+    2300004: pasted__Fr_Jacket_Buckle
+    2300006: pasted__JAcketRuffles
+    2300008: pasted__L_Jacket_Buckle
+    2300010: pasted__R_Jacket_Buckle
+    2300012: pasted__Scarf
     3300000: pasted__Hair
+    3300002: pasted__Ana
+    3300004: pasted__Fr_Jacket_Buckle
+    3300006: pasted__JAcketRuffles
+    3300008: pasted__L_Jacket_Buckle
+    3300010: pasted__R_Jacket_Buckle
+    3300012: pasted__Scarf
     4300000: pasted__Hair
     4300002: pasted__Scarf
     4300004: pasted__Fr_Jacket_Buckle
@@ -440,6 +452,7 @@ ModelImporter:
     4300012: pasted__Ana
     7400000: Walk
     9500000: //RootNode
+    11100000: //RootNode
     13700000: pasted__Ana
     13700002: pasted__Fr_Jacket_Buckle
     13700004: pasted__JAcketRuffles
@@ -459,7 +472,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    animationCompression: 1
+    animationCompression: 3
     animationRotationError: .5
     animationPositionError: .5
     animationScaleError: .5

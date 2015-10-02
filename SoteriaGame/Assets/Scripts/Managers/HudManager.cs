@@ -22,7 +22,7 @@ public class HudManager : MonoBehaviour {
 	// Inventory items
 	private GameObject token;
 	private GameObject lantern;
-	//	private GameObject compass;
+	private GameObject compass;
 	//	private GameObject cards;
 	//	private GameObject suit;
 	//	private GameObject leftKeyPiece;
@@ -200,6 +200,11 @@ public class HudManager : MonoBehaviour {
 	public void TokenTrue(bool inToken)
 	{
 		this.token.SetActive(inToken);
+	}
+
+	public void CompassTrue(bool inCompass)
+	{
+		//this.compass.SetActive (inCompass);
 	}
 	
 	public void LanternTrue(bool inLantern)

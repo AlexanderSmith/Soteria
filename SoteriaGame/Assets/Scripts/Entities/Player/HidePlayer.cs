@@ -17,7 +17,7 @@ public class HidePlayer : MonoBehaviour {
 
 	void OnTriggerEnter(Collider Other)
 	{
-		if (Other.tag == "Player")
+		if (Other.gameObject.tag == "Player")
 		{
 			GameDirector.instance.ChangeGameState(GameStates.Hidden);
 			Player.GetComponent<Player>().HideDown();
@@ -27,7 +27,7 @@ public class HidePlayer : MonoBehaviour {
 	
 	void OnTriggerStay(Collider Other)
 	{
-		if (Other.tag == "Player")
+		if (Other.gameObject.tag == "Player")
 		{
 		    Debug.Log ("Stay");
 			Player.GetComponent<Player>().HideIdle();
@@ -36,7 +36,7 @@ public class HidePlayer : MonoBehaviour {
 
 	void OnTriggerExit(Collider Other) 
 	{ 
-		if (Other.tag == "Player")
+		if (Other.gameObject.tag == "Player")
 		{
 			GameDirector.instance.ChangeGameState(GameStates.Normal);
 			Player.GetComponent<Player>().HideUp();

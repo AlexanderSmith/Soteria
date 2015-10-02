@@ -74,6 +74,7 @@ public class GameDirector : MonoBehaviour {
 
 	void StartGame()
 	{
+		this._gamePhase++;
 		this.token = false;
 		this.lantern = false;
 		this.compass = false;
@@ -134,18 +135,29 @@ public class GameDirector : MonoBehaviour {
 	public void TokenTrue()
 	{
 		this.token = true;
-		this._HUDManager.TokenTrue(token);
+		this._HUDManager.TokenTrue(this.token);
 	}
 	
 	public bool GetToken()
 	{
 		return this.token;
 	}
+
+	public void CompassTrue()
+	{
+		this.compass = true;
+		this._HUDManager.CompassTrue(this.compass);
+	}
+
+	public bool GetCompass()
+	{
+		return this.compass;
+	}
 	
 	public void LanternTrue()
 	{
 		this.lantern = true;
-		this._HUDManager.LanternTrue(lantern);
+		this._HUDManager.LanternTrue(this.lantern);
 	}
 	
 	public bool GetLantern()
