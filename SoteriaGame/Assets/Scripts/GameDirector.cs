@@ -20,6 +20,8 @@ public class GameDirector : MonoBehaviour {
 	private bool lantern;
 	private bool compass;
 
+	private int _hubPhase;
+
     #region Managers
 
 	private AudioManager     	_audioManager;
@@ -75,6 +77,7 @@ public class GameDirector : MonoBehaviour {
 	void StartGame()
 	{
 		this._gamePhase++;
+		this._hubPhase++;
 		this.token = false;
 		this.lantern = false;
 		this.compass = false;
@@ -169,6 +172,26 @@ public class GameDirector : MonoBehaviour {
 	{
 		return this.lantern;
 	}
+
+	public void HubPhase2()
+	{
+		this._hubPhase = 2;
+	}
+
+	public void HubPhase3()
+	{
+		this._hubPhase = 3;
+	}
+
+	public void HubPhase4()
+	{
+		this._hubPhase = 4;
+	}
+
+	public void HubPhase5()
+	{
+		this._hubPhase = 5;
+	}
 	
 	#endregion
 
@@ -253,9 +276,25 @@ public class GameDirector : MonoBehaviour {
 		this.FindEnemies();
 		//this._levelManager.LoadLevel(1);
 		this._encounterManager.TokenUsed();
-		this.StopEncounterMode();
 		/*Teleport to town center*/
-		Application.LoadLevel("FullModelHub");
+		switch (_hubPhase)
+		{
+		case 5:
+			Application.LoadLevel("HUBPass3");
+			break;
+		case 1:
+			Application.LoadLevel("HUBPass1");
+			break;
+		case 2:
+			Application.LoadLevel("HUBPass2");
+			break;
+		case 3:
+			Application.LoadLevel("HUBPass3");
+			break;
+		case 4:
+			Application.LoadLevel("HUBPass4");
+			break;
+		}
 		//this._levelManager.LoadLevel(1); //("FullModelHub")
 	}
 

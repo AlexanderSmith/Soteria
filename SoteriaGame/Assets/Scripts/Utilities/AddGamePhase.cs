@@ -7,7 +7,7 @@ public class AddGamePhase : MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			Application.LoadLevel ("FullModelHub");
+			//Application.LoadLevel ("HUBPass4");
 			GameDirector.instance.AddGamePhase ();
 		}
 	}
