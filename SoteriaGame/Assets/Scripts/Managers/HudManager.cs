@@ -182,7 +182,10 @@ public class HudManager : MonoBehaviour {
 	public void EnableEncounterView()
 	{
 		this._fadeinout.gameObject.SetActive(true);
-		this._coinController.Pulsing = true;
+		if (this.token.activeSelf == true)
+		{
+			this._coinController.Pulsing = true;
+		}
 	}
 	
 	public void DisableEncounterView()
