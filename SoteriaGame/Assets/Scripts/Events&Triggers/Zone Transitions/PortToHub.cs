@@ -7,7 +7,26 @@ public class PortToHub : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			Application.LoadLevel("HUBPass3");
+			switch (GameDirector.instance.GetHubPhase())
+			{
+			case 5:
+				Application.LoadLevel("HUBPass3");
+				break;
+			case 1:
+				Application.LoadLevel("HUBPass1");
+				break;
+			case 2:
+				Application.LoadLevel("HUBPass2");
+				break;
+			case 3:
+				Application.LoadLevel("HUBPass3");
+				break;
+			case 4:
+				Application.LoadLevel("HUBPass4");
+				break;
+			}
+			// If player has lantern, recharge lantern on return to hub
+			GameDirector.instance.CheckLantern();
 		}
 	}
 }

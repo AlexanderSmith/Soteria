@@ -74,6 +74,7 @@ public class EncounterManager : MonoBehaviour
 	{
 		this.currentState = EncounterState.INACTIVE;
 		GameDirector.instance.GetPlayer().RemoveFear();
+		GameDirector.instance.StopEncounterMode();
 		this.EncounterReset();
 	}
 
@@ -129,11 +130,8 @@ public class EncounterManager : MonoBehaviour
 		this.gameOverTimer -= Time.deltaTime;
 		if (this.gameOverTimer <= 0.0f)
 		{
-			GameDirector.instance.FindEnemies();
+			GameDirector.instance.GameOver();
 			this.EncounterReset();
-			GameDirector.instance.StopEncounterMode();
-			//GameDirector.instance.LoadLevel(0);
-			Application.LoadLevel("HarborNoSwarm");
 		}
 	}
 

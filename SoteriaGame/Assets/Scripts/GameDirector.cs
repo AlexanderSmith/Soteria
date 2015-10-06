@@ -19,6 +19,7 @@ public class GameDirector : MonoBehaviour {
 	private bool token;
 	private bool lantern;
 	private bool compass;
+	private LanternController _lanternController;
 
 	private int _hubPhase;
 
@@ -173,6 +174,11 @@ public class GameDirector : MonoBehaviour {
 		return this.lantern;
 	}
 
+	public int GetHubPhase()
+	{
+		return this._hubPhase;
+	}
+
 	public void HubPhase2()
 	{
 		this._hubPhase = 2;
@@ -276,6 +282,10 @@ public class GameDirector : MonoBehaviour {
 		this.FindEnemies();
 		//this._levelManager.LoadLevel(1);
 		this._encounterManager.TokenUsed();
+		if (this._lanternController != null)
+		{
+			this.RechargeLantern();
+		}
 		/*Teleport to town center*/
 		switch (_hubPhase)
 		{
@@ -380,6 +390,35 @@ public class GameDirector : MonoBehaviour {
 	public void PlayerOnObservatoryTile()
 	{
 		this._encounterManager.TileTimer();
+	}
+
+	public void InitializeLanternController(LanternController lantCont)
+	{
+		this._lanternController = lantCont;
+	}
+
+	void RechargeLantern()
+	{
+		this._lanternController.RechargeLantern();
+	}
+
+	public void CheckLantern()
+	{
+		if (this._lanternController != null)
+		{
+			this.RechargeLantern();
+		}
+	}
+
+	public void GameOver()
+	{
+		this.FindEnemies();
+		this.StopEncounterMode();
+		if (this._lanternController != null)
+		{
+			this.RechargeLantern();
+		}
+		Application.LoadLevel("HarborNoSwarm");
 	}
 
     #endregion
