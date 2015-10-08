@@ -27,6 +27,7 @@ public class GameDirector : MonoBehaviour {
 	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
 	public float flashBangDistance = 3.0f;
 
+	private ParticleSystem beam;
 	public float beamLife = 3.0f;
 	public Vector3 beamHeight = new Vector3 (0, 35.0f, 0);
 
@@ -130,6 +131,10 @@ public class GameDirector : MonoBehaviour {
     {
 		//Dialogue
 		//this._dialoguemanager.Update();
+		if (beam != null)
+		{
+			beam.transform.position = this.GetPlayer().gameObject.transform.position + beamHeight;
+		}
 	}
 
 	///////////////////////////////////////////////////////////////////
@@ -288,7 +293,7 @@ public class GameDirector : MonoBehaviour {
 	{
 		// Beam
 		GameObject soteriaBeam = Instantiate(Resources.Load("ParticleEffects/Beam")) as GameObject;
-		ParticleSystem beam = soteriaBeam.GetComponent<ParticleSystem>();
+		beam = soteriaBeam.GetComponent<ParticleSystem>();
 		beam.transform.position = this.GetPlayer().gameObject.transform.position + beamHeight;
 		beam.Play();
 

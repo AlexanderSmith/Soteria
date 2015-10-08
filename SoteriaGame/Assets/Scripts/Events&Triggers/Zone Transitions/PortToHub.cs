@@ -5,6 +5,7 @@ public class PortToHub : MonoBehaviour
 {
 	void OnTriggerEnter(Collider player)
 	{
+		GameDirector.instance.CheckLantern();
 		if (player.gameObject.tag == "Player")
 		{
 			switch (GameDirector.instance.GetHubPhase())
@@ -25,8 +26,6 @@ public class PortToHub : MonoBehaviour
 				Application.LoadLevel("HUBPass4");
 				break;
 			}
-			// If player has lantern, recharge lantern on return to hub
-			GameDirector.instance.CheckLantern();
 		}
 	}
 }
