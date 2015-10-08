@@ -23,6 +23,13 @@ public class GameDirector : MonoBehaviour {
 
 	private int _hubPhase;
 
+	public float flashBangLife = 3.0f;
+	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
+	public float flashBangDistance = 3.0f;
+
+	public float beamLife = 3.0f;
+	public Vector3 beamHeight = new Vector3 (0, 35.0f, 0);
+
     #region Managers
 
 	private AudioManager     	_audioManager;
@@ -279,33 +286,52 @@ public class GameDirector : MonoBehaviour {
 
 	public void TakeSafteyLight()
 	{
+		// Beam
+		GameObject soteriaBeam = Instantiate(Resources.Load("ParticleEffects/Beam")) as GameObject;
+		ParticleSystem beam = soteriaBeam.GetComponent<ParticleSystem>();
+		beam.transform.position = this.GetPlayer().gameObject.transform.position + beamHeight;
+		beam.Play();
+
+		string level;
+
+		/*Teleport to town center*/
+		switch (_hubPhase)
+		{
+		case 5:
+			level = "HUBPass3";
+			StartCoroutine(BeamLevel(level, beamLife));
+			break;
+		case 1:
+			level = "HUBPass1";
+			StartCoroutine(BeamLevel(level, beamLife));
+			break;
+		case 2:
+			level = "HUBPass2";
+			StartCoroutine(BeamLevel(level, beamLife));
+			break;
+		case 3:
+			level = "HUBPass3";
+			StartCoroutine(BeamLevel(level, beamLife));
+			break;
+		case 4:
+			level = "HUBPass4";
+			StartCoroutine(BeamLevel(level, beamLife));
+			break;
+		}
+
+		Destroy(soteriaBeam, beamLife);
+	}
+
+	IEnumerator BeamLevel(string inLevel, float inBeamLife)
+	{
+		yield return new WaitForSeconds (inBeamLife);
 		this.FindEnemies();
-		//this._levelManager.LoadLevel(1);
 		this._encounterManager.TokenUsed();
 		if (this._lanternController != null)
 		{
 			this.RechargeLantern();
 		}
-		/*Teleport to town center*/
-		switch (_hubPhase)
-		{
-		case 5:
-			Application.LoadLevel("HUBPass3");
-			break;
-		case 1:
-			Application.LoadLevel("HUBPass1");
-			break;
-		case 2:
-			Application.LoadLevel("HUBPass2");
-			break;
-		case 3:
-			Application.LoadLevel("HUBPass3");
-			break;
-		case 4:
-			Application.LoadLevel("HUBPass4");
-			break;
-		}
-		//this._levelManager.LoadLevel(1); //("FullModelHub")
+		Application.LoadLevel(inLevel);
 	}
 
 	public void FindEnemies()
@@ -385,6 +411,11 @@ public class GameDirector : MonoBehaviour {
 	public void UseLantern()
 	{
 		this._encounterManager.LanternUsed();
+		GameObject flashBang = Instantiate(Resources.Load("ParticleEffects/FlashBang")) as GameObject;
+		ParticleSystem bang = flashBang.GetComponent<ParticleSystem>();
+		bang.transform.position = this.GetPlayer().gameObject.transform.position + (flashBangDistance * this.GetPlayer().transform.forward.normalized) + flashBangHeight;
+		bang.Play();
+		Destroy(flashBang, flashBangLife);
 	}
 
 	public void PlayerOnObservatoryTile()
