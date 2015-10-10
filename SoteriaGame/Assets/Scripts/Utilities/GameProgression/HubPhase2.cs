@@ -8,6 +8,7 @@ public class HubPhase2 : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.HubPhase2();
+			GameDirector.instance.ChangeObjective(GameObject.Find("HubToTheater"));
 		}
 	}
 }

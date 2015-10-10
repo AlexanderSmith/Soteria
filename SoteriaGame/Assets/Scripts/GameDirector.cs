@@ -253,6 +253,11 @@ public class GameDirector : MonoBehaviour {
 	{
 		_HUDManager.isToClear = inStatus;	
 	}
+
+	public void ChangeObjective(GameObject gObj)
+	{
+		this._HUDManager.ChangeObjective(gObj);
+	}
 	
 	///////////////////////////////////////////////////////////////////
 	////////////////// ENCOUNTER MANAGER FUNCTIONS ////////////////////

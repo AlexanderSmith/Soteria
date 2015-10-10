@@ -457,54 +457,7 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     animationImportErrors: 
-    animationImportWarnings: 'MuscleClip ''Ana_IntoHide'' conversion warning: ''Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Root_Jnt''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''Ana_IntoHide'' conversion warning: ''Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''Ana_IntoHide'' conversion warning: ''Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''Ana_IntoHide''conversion warning: ''Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl''
-      has translation animation. It is not supported.
-
-
-      MuscleClip ''Ana_IntoHide'' conversion warning: ''Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''Ana_IntoHide''conversion warning: ''Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl''
-      has translation animation. It is not supported.
-
-
-      MuscleClip ''Ana_IntoHide'' conversion warning: ''Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/R_Clavicle_Offset/R_Clavicle_Ctrl''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''Ana_IntoHide''conversion warning: ''Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl''
-      has translation animation. It is not supported.
-
-
-      MuscleClip ''Ana_IntoHide'' conversion warning: ''Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/L_Cllavicle_offset/L_Clavicle_Ctrl''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-      MuscleClip ''Ana_IntoHide'' conversion warning: ''Global__Offset/Global_Ctrl/Root_Offset/Root_Ctrl/Spine01_FK_Jnt/Spine02_Ctrl/Spine03_Ctrl/Spine04_FK_Jnt/UpperSpine_Offset/UpperSpine_Ctrl/Neck_Offset/Neck_Ctrl/transform11/Neck01_Jnt''
-      is between humanoid transforms and has rotation animation. This might lower
-      retargeting quality.
-
-
-'
+    animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     animationCompression: 3
@@ -518,7 +471,7 @@ ModelImporter:
       name: IntoHide
       takeName: Take 001
       firstFrame: 300
-      lastFrame: 350
+      lastFrame: 323
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

@@ -211,11 +211,18 @@ public class HudManager : MonoBehaviour {
 
 	public void CompassTrue(bool inCompass)
 	{
-		//this.compass.SetActive (inCompass);
+		//this.compass.SetActive(inCompass);
+		this.ChangeObjective(GameObject.Find("SoteriaPowerSystem_scaled"));
 	}
 	
 	public void LanternTrue(bool inLantern)
 	{
 		this.lantern.SetActive(inLantern);
+		this.ChangeObjective(GameObject.Find("HubToMusic"));
+	}
+
+	public void ChangeObjective(GameObject gObj)
+	{
+		this.Objective = gObj;
 	}
 }
