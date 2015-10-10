@@ -56,17 +56,12 @@ public class HudManager : MonoBehaviour {
 		
 		//Inventory item game object references
 		this.token = GameObject.Find("Coin");
-		this.token.SetActive(false);
+		this.token.SetActive(true);
+		this.token.GetComponent<Image>().enabled = false;
 		this.lantern = GameObject.Find("Lantern");
-		this.lantern.SetActive(false);
+		this.lantern.SetActive(true);
+		this.lantern.GetComponent<Image>().enabled = false;
 //		// Same for compass, cards, suit, and key pieces;
-	}
-
-	// On scene start, reinitialize HUD based on game progression -- Can most likely remove Initialize() and replace with this
-	public void HUDSceneStart(bool inToken, bool inLantern/*, bool inCompass, bool inCards, bool inSuit, bool inLeftKey, bool inMidKey, bool inRightKey*/)
-	{
-		this.token.SetActive(inToken);
-		this.lantern.SetActive(inLantern);
 	}
 
 	// Update is called once per frame
@@ -206,7 +201,8 @@ public class HudManager : MonoBehaviour {
 
 	public void TokenTrue(bool inToken)
 	{
-		this.token.SetActive(inToken);
+		//this.token.SetActive(inToken);
+		this.token.GetComponent<Image>().enabled = true;
 	}
 
 	public void CompassTrue(bool inCompass)
@@ -217,7 +213,8 @@ public class HudManager : MonoBehaviour {
 	
 	public void LanternTrue(bool inLantern)
 	{
-		this.lantern.SetActive(inLantern);
+		//this.lantern.SetActive(inLantern);
+		this.lantern.GetComponent<Image>().enabled = true;
 		this.ChangeObjective(GameObject.Find("HubToMusic"));
 	}
 
