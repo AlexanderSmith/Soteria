@@ -50,9 +50,9 @@ public class DialogueManager : MonoBehaviour {
 		this._npcportrait.overrideSprite = NPC.transform.Find("NPCPortrait").GetComponent<Image>().sprite;
 		this._playerportrait.overrideSprite = Player.transform.Find("PlayerPortrait").GetComponent<Image>().sprite;
 		
-		this._dialogueinterface.transform.Find("TextBackGround").GetComponent<Animator>().SetBool("Dialogue",true);
-		this._dialogueinterface.transform.Find("PortraitNPC").GetComponent<Animator>().SetBool("Dialogue",true);
-		this._dialogueinterface.transform.Find("PortraitPlayer").GetComponent<Animator>().SetBool("Dialogue",true);
+		this._dialogueinterface.transform.Find("TextBackGround").GetComponent<Animator>().SetBool("Show",true);
+		this._dialogueinterface.transform.Find("PortraitNPC").GetComponent<Animator>().SetBool("Show",true);
+		this._dialogueinterface.transform.Find("PortraitPlayer").GetComponent<Animator>().SetBool("Show",true);
 		
 		this._dproxy = NPC.transform.Find("DialogueText").GetComponent<DialogueTextProxy>().DialoguePrefab;
 		SetupText();
@@ -66,9 +66,14 @@ public class DialogueManager : MonoBehaviour {
 			this._dproxy = this._dproxy.DialoguePrefabs[resp-1];
 			
 			if (this._dproxy.isEnd)
+			{
 				isEnded = true;
+				stopdialogue();
+			}
 			else
+			{
 				SetupText();
+			}
 		}
 		else
 			isEnded = false;
@@ -96,9 +101,9 @@ public class DialogueManager : MonoBehaviour {
 		this._playerchoices[1].transform.parent.gameObject.SetActive(true);
 		this._playerchoices[2].transform.parent.gameObject.SetActive(true);
 		
-		this._dialogueinterface.transform.Find("TextBackGround").GetComponent<Animator>().SetBool("Dialogue",false);
-		this._dialogueinterface.transform.Find("PortraitNPC").GetComponent<Animator>().SetBool("Dialogue",false);
-		this._dialogueinterface.transform.Find("PortraitPlayer").GetComponent<Animator>().SetBool("Dialogue",false);
+		this._dialogueinterface.transform.Find("TextBackGround").GetComponent<Animator>().SetBool("Show",false);
+		this._dialogueinterface.transform.Find("PortraitNPC").GetComponent<Animator>().SetBool("Show",false);
+		this._dialogueinterface.transform.Find("PortraitPlayer").GetComponent<Animator>().SetBool("Show",false);
 		
 		setTextonDialogue(false);
 		this.isOngoing = false;
@@ -115,7 +120,5 @@ public class DialogueManager : MonoBehaviour {
 	// Update is called once per frame
 	public void Update () 
 	{
-		if (isEnded)
-			stopdialogue();
 	}
 }

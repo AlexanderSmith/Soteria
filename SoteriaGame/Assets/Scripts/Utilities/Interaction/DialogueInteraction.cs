@@ -26,6 +26,7 @@ public class DialogueInteraction : InteractionBase {
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			/// Temporrary code
+			GameDirector.instance.StartDialogue(this.gameObject,other.transform.parent.gameObject);
 			//GameDirector Temp = GameObject.Find("MCP").GetComponent<GameDirector>();
 			//Temp.StartDialogue(this.gameObject, other.transform.parent.gameObject);
 		}
