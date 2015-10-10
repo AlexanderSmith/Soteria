@@ -78,8 +78,12 @@ public class HudManager : MonoBehaviour {
 
 	private void UpdateIndicator ()
 	{
-		if (Objective == null)
+		if (Objective == null) 
+		{
+			this._offIndicator.gameObject.SetActive(false);
+			this._onIndicator.gameObject.SetActive(false);
 			return;
+		}
 		///Convert position of Objective to Screen Coordinates.
 		/// Create A Camera Manager!!!
 		Vector3 ObjectPosition = Camera.main.WorldToScreenPoint (Objective.transform.position);
