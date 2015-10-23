@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
 	private IPlayerAction _normalAction = new PlayerActionNormal();
 	private IPlayerAction _encounterAction = new PlayerActionEncounter();
 	private IPlayerAction _hidingAction = new PlayerActionHiding();
+	private IPlayerAction _pauseAction = new PlayerActionPause();
 
 	void Start ()
 	{
@@ -66,6 +67,11 @@ public class Player : MonoBehaviour
 	{
 		StartCoroutine("IntoHide");
 		this.SwitchPlayerAction(_hidingAction);
+	}
+
+	public void PlayerActionPause()
+	{
+		this.SwitchPlayerAction(_pauseAction);
 	}
 
 	IEnumerator IntoHide()

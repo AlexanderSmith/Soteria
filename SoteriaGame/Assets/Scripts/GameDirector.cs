@@ -525,7 +525,11 @@ public class GameDirector : MonoBehaviour {
 		this._dialoguemanager.startdialogue(NPC,Player);
 	}
 
-	#endregion
+	public void EndDialogue()
+	{
+		this._dialoguemanager.EndDialogue();
+	}
 
+	#endregion
 }
 

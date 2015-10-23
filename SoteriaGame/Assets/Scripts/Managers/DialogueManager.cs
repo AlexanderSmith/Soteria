@@ -94,6 +94,11 @@ public class DialogueManager : MonoBehaviour {
 			this._playerchoices[i].transform.parent.gameObject.SetActive(true);
 		}
 	}
+
+	public void EndDialogue()
+	{
+		this.stopdialogue();
+	}
 	
 	private void stopdialogue()
 	{
