@@ -14,7 +14,9 @@ public class FlyThroughSoteriaStatue : MonoBehaviour
 		_soteriaStatue = GameObject.Find ("SotStat");
 		_lookLoc = GameObject.Find ("CameraShift");
 		_cameraSwitch = camSwitch;
-		this.transform.position = GameDirector.instance.GetPlayer ().transform.position + new Vector3 (0, 15, -15);
+		this.transform.position = new Vector3(this.transform.position.x,
+		                                      GameDirector.instance.GetPlayer().transform.position.y,
+		                                      GameDirector.instance.GetPlayer().transform.position.z) + new Vector3 (0, 15, -15);
 		this.transform.LookAt(GameDirector.instance.GetPlayer().transform);
 	}
 
