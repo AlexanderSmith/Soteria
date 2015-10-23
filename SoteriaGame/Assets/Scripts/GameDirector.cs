@@ -459,7 +459,7 @@ public class GameDirector : MonoBehaviour {
 		{
 			this.RechargeLantern();
 		}
-		Application.LoadLevel("HarborNoSwarm");
+		Application.LoadLevel("HarborRespawn");
 	}
 
     #endregion
