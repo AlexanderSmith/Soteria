@@ -168,6 +168,11 @@ public class HudManager : MonoBehaviour {
 		Objective = null;
 	}
 
+	public void EncounterClear()
+	{
+		_fadeinout.color -= new Color (0, 0, 0, .01f);
+	}
+
 	private void FadeToClear()
 	{
 		_fadeinout.color = Color.Lerp(_fadeinout.color, Color.clear, clearSpeed);

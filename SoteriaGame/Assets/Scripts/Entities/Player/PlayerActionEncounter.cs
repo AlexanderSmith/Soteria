@@ -9,19 +9,36 @@ public class PlayerActionEncounter : IPlayerAction
 	private bool _isqtemode;
 	private bool _preLinger;
 
-	private int _keyPressCounter;
+	private int _keyPressCounter = 1;
 	public float intialLinger;
 	public float baseDuration;
 	public float lingerDuration;
 	private int _lingerLonger;
+	private bool _lingering = false;
 
 	public void PlayerAction(Player inPlayer)
 	{
 		this.InitializeValues(inPlayer);
-		this.ProcessInput();
-		if (_preLinger)
+//		this.ProcessInput();
+//		if (_preLinger)
+//		{
+//			this.LingerTimer();
+//		}
+		this.FightShadowCreature();
+		if (this._keyPressCounter == 10 & !GameDirector.instance.GetOvercomeBool())
 		{
-			this.LingerTimer();
+			this._keyPressCounter = 0;
+			GameDirector.instance.NextOPStage();
+			GameDirector.instance.TryingToOvercome();
+		}
+		else if (GameDirector.instance.GetOvercomeBool())
+		{
+			GameDirector.instance.AbleToOvercome();
+			if (this._keyPressCounter > 10)
+			{
+				GameDirector.instance.PlayerOvercame();
+				Debug.Log("player wins");
+			}
 		}
 	}
 
@@ -44,6 +61,21 @@ public class PlayerActionEncounter : IPlayerAction
 	{
 		this._encounterTimer = TimerManager.instance.Attach(this._timerType);
 		this._encounterTimer.StartTimer();
+	}
+
+	private void FightShadowCreature()
+	{
+		GameDirector.instance.Overpower();
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			if (!_lingering)
+			{
+				_lingering = true;
+				GameDirector.instance.BeginLingering();
+			}
+			this._keyPressCounter++;
+			GameDirector.instance.EncounterClear();
+		}
 	}
 
 	private void ProcessInput()
