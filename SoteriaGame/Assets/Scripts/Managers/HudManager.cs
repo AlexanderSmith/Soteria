@@ -151,9 +151,8 @@ public class HudManager : MonoBehaviour {
 	///To swap components the only method I found is by using reflection,
 	//No worth the trouble. hmmm, I'll check for another method for now it works.
 	public void RemoveItemFromInventory (int itemindex)
-	{
-		
-		for (int i=0; i<6; ++i)
+	{		
+		for (int i=0; i<4; ++i)
 		{
 			if (Buttons[i].activeSelf)
 			{				
@@ -181,6 +180,10 @@ public class HudManager : MonoBehaviour {
 	private void FadeToBlack()
 	{
 		_fadeinout.color = Color.Lerp(_fadeinout.color, Color.black, blackSpeed * Time.deltaTime);
+		if (_fadeinout.color.a >= .8f)
+		{
+			GameDirector.instance.GameOver();
+		}
 	}
 
 	public void EnableEncounterView()

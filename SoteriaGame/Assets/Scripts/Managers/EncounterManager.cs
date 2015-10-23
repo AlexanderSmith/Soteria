@@ -40,10 +40,10 @@ public class EncounterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		if (this.currentState == EncounterState.ACTIVE)
-		{
-			this.GameOverTimer();
-		}
+//		if (this.currentState == EncounterState.ACTIVE)
+//		{
+//			this.GameOverTimer();
+//		}
     }
 
     public void Initialize()
