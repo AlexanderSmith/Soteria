@@ -6,9 +6,11 @@ public class AudioManager : MonoBehaviour
 {
 	public float mastervolume;
 	public bool mute;
-
+	
+	AudioSourceWrapper DiagAudioSrc;
+	
 	private List<AudioSourceWrapper> _audioSourceList;
-
+	
 	// Use this for initialization
 	void Awake ()
 	{
@@ -37,9 +39,21 @@ public class AudioManager : MonoBehaviour
 	//I need to test this one!!
 	public AudioID getIDByName(string inName)
 	{
-		return ((AudioID)System.Enum.Parse(typeof(AudioID), inName));
+		AudioID AID = ((AudioID)System.Enum.Parse(typeof(AudioID), inName));
+		
+		return AID;
 	}
 	
+	public AudioSourceWrapper FindAudioSrcbyID (AudioID inAID)
+	{
+		foreach (AudioSourceWrapper ASW in _audioSourceList)
+		{
+			if (ASW.getAID().Equals(inAID))
+				return ASW;
+		}
+		
+		return null;
+	}
 	public void Initialize()
 	{
 		
@@ -53,22 +67,15 @@ public class AudioManager : MonoBehaviour
 	// Maybe implement a different Data Structure in the future for largers sets of data Hashtable or Dictionary. 
 	public void PlayAudio(AudioID inAID)
 	{
-		for (int i = 0; i< this._audioSourceList.Count; i++)
-		{
-			if (this._audioSourceList[i].getAID().Equals(inAID))
-			{
-				this._audioSourceList[i].playClip();
-				break;
-			}
-		}
+		FindAudioSrcbyID(inAID).playClip();
 	}
 }
+
+// Requires separtate script for future stuffies
+// Enum names need to match Object name in Unity
 public enum AudioID
 {
-	Fire,
-	BGM,
-	Dialogue_1,
-	Dialogue_2
+	Dialogue
 }
 
 public class AudioSourceWrapper
@@ -95,9 +102,17 @@ public class AudioSourceWrapper
 	{
 		//not sure if this affects the 3Dness of audio
 		//second call seems better to me.
-		//this._audiosrc.Play();
-		this._gameobj.GetComponent<AudioSource>().Play();
+		this._audiosrc.Play();
+		//this._gameobj.GetComponent<AudioSource>().Play();
 	}
 	
+	public void UpdateAudioClip (AudioClip inClip)
+	{
+		this._audiosrc.clip = inClip;
+	}
 	
+	public bool IsPlaying ()
+	{
+		return _audiosrc.isPlaying;
+	}
 }
