@@ -7,9 +7,9 @@ public class EyeballLightAgent : MonoBehaviour
 	private NavMeshAgent _agent;
 	public Transform[] patrolLocations;
 	private int _patrolIndex = 0;
-	private float _chaseSpeed = 10.0f;
-	private float _patrolSpeed = 5.0f;
-	private float _patrolTimer = 0.0f;
+	public float _chaseSpeed = 10.0f;
+	public float _patrolSpeed = 5.0f;
+	public float _patrolTimer = 0.0f;
 	public float waitTime = 5.0f;
 	private bool _spotted;
 
