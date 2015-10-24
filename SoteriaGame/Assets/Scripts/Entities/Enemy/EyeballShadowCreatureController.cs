@@ -12,6 +12,7 @@ public class EyeballShadowCreatureController : MonoBehaviour
 	private float _stunDuration;
 	public float stunTimer = 1.0f;
 	private float _overwhelmRange = 15.0f;
+	private int _opCounter = 1;
 
 	void Start()
 	{
@@ -73,5 +74,28 @@ public class EyeballShadowCreatureController : MonoBehaviour
 	public void Stun()
 	{
 		this._stunned = true;
+	}
+
+	public void Overpower()
+	{
+		switch (_opCounter)
+		{
+		case 1:
+			_anim.SetBool ("Overpower", true);
+			break;
+		case 2:
+			_anim.SetBool ("OP 2", true);
+			break;
+		case 3:
+			_anim.SetBool ("OP 3", true);
+			break;
+		}
+	}
+	
+	public void ResetOverpower()
+	{
+		_anim.SetBool ("Overpower", false);
+		_anim.SetBool ("OP 2", false);
+		_anim.SetBool ("OP 3", false);
 	}
 }

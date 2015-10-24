@@ -152,17 +152,31 @@ public class EncounterManager : MonoBehaviour
 
 	public void Overpower()
 	{
-		this.currentEnemy.GetComponent<BasicEnemyController>().Overpower ();
+		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
+		{
+			this.currentEnemy.GetComponent<BasicEnemyController>().Overpower();
+		}
+		else
+		{
+			this.currentEnemy.GetComponent<EyeballShadowCreatureController>().Overpower();
+		}
 	}
 
 	public void ResetOverpower()
 	{
-		this.currentEnemy.GetComponent<BasicEnemyController>().ResetOverpower ();
+		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
+		{
+			this.currentEnemy.GetComponent<BasicEnemyController>().Overpower();
+		}
+		else
+		{
+			this.currentEnemy.GetComponent<EyeballShadowCreatureController>().Overpower();
+		}
 	}
 
 	public void NextOPStage()
 	{
-		this.currentEnemy.GetComponent<BasicEnemyController>().NextOPStage ();
+		this.currentEnemy.GetComponent<BasicEnemyController>().NextOPStage();
 	}
 
 	public void Cower()
