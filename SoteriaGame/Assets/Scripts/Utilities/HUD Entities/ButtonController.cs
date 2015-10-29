@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
-using UnityEngine.UI;
-using System.Collections;
+using UnityEngine.Events;
 
 /*
  * public abstract class ButtonMode
@@ -47,7 +46,10 @@ public class ButtonController : MonoBehaviour
 
     public void SafetyLightButtonHit()
     {
-		this._hudmanager.SafteyLightButtonHit();
+		if ((GameDirector.instance.GetGameState() != GameStates.Hidden) || (GameDirector.instance.GetGameState() != GameStates.HiddenTile))
+		{
+			this._hudmanager.SafteyLightButtonHit();
+		}
     }
 
 	//bool Pulsing

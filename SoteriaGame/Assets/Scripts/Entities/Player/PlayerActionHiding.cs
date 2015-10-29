@@ -15,7 +15,7 @@ public class PlayerActionHiding : IPlayerAction
 //			inPlayer.OutOfHide();
 //		}
 
-		if (Input.GetKeyDown("space"))
+		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			inPlayer.OutOfHide();
 		}
