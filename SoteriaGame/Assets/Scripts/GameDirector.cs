@@ -22,6 +22,7 @@ public class GameDirector : MonoBehaviour {
 	private LanternController _lanternController;
 
 	private int _hubPhase;
+	private bool _tokenUsed = false;
 
 	public float flashBangLife = 3.0f;
 	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
@@ -301,40 +302,44 @@ public class GameDirector : MonoBehaviour {
 
 	public void TakeSafteyLight()
 	{
-		// Beam
-		GameObject soteriaBeam = Instantiate(Resources.Load("ParticleEffects/Beam")) as GameObject;
-		beam = soteriaBeam.GetComponent<ParticleSystem>();
-		beam.transform.position = this.GetPlayer().gameObject.transform.position + beamHeight;
-		beam.Play();
-
-		string level;
-
-		/*Teleport to town center*/
-		switch (_hubPhase)
+		if (!this._tokenUsed)
 		{
-		case 5:
-			level = "HUBPass3";
-			StartCoroutine(BeamLevel(level, beamLife));
-			break;
-		case 1:
-			level = "HUBPass1";
-			StartCoroutine(BeamLevel(level, beamLife));
-			break;
-		case 2:
-			level = "HUBPass2";
-			StartCoroutine(BeamLevel(level, beamLife));
-			break;
-		case 3:
-			level = "HUBPass3";
-			StartCoroutine(BeamLevel(level, beamLife));
-			break;
-		case 4:
-			level = "HUBPass4";
-			StartCoroutine(BeamLevel(level, beamLife));
-			break;
-		}
+			this._tokenUsed = true;
+			// Beam
+			GameObject soteriaBeam = Instantiate(Resources.Load("ParticleEffects/Beam")) as GameObject;
+			beam = soteriaBeam.GetComponent<ParticleSystem>();
+			beam.transform.position = this.GetPlayer().gameObject.transform.position + beamHeight;
+			beam.Play();
 
-		Destroy(soteriaBeam, beamLife);
+			string level;
+
+			/*Teleport to town center*/
+			switch (_hubPhase)
+			{
+			case 5:
+				level = "HUBPass3";
+				StartCoroutine(BeamLevel(level, beamLife));
+				break;
+			case 1:
+				level = "HUBPass1";
+				StartCoroutine(BeamLevel(level, beamLife));
+				break;
+			case 2:
+				level = "HUBPass2";
+				StartCoroutine(BeamLevel(level, beamLife));
+				break;
+			case 3:
+				level = "HUBPass3";
+				StartCoroutine(BeamLevel(level, beamLife));
+				break;
+			case 4:
+				level = "HUBPass4";
+				StartCoroutine(BeamLevel(level, beamLife));
+				break;
+			}
+
+			Destroy(soteriaBeam, beamLife);
+		}
 	}
 
 	IEnumerator BeamLevel(string inLevel, float inBeamLife)
@@ -347,6 +352,7 @@ public class GameDirector : MonoBehaviour {
 			this.RechargeLantern();
 		}
 		Application.LoadLevel(inLevel);
+		this._tokenUsed = false;
 	}
 
 	public void FindEnemies()
