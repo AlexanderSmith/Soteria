@@ -4,17 +4,17 @@ using System.Collections;
 public class ChangeObjectiveObservatory : MonoBehaviour
 {
 	GameObject sewer;
-	GameObject musicStore;
+	GameObject puzzle;
 	
 	void Start()
 	{
 		sewer = GameObject.Find ("SewerGate");
-		musicStore = GameObject.Find("MusicStore");
+		puzzle = GameObject.Find("PortToHubFromPuzzle");
 	}
 	
 	void OnTriggerEnter(Collider player)
 	{
-		if (player.gameObject.tag == "Player" && !GameDirector.instance.GetMusicPass1())
+		if (player.gameObject.tag == "Player" && !GameDirector.instance.GetObservatoryPass1())
 		{
 			if (!GameDirector.instance.GetVisitedSewer())
 			{
@@ -22,7 +22,7 @@ public class ChangeObjectiveObservatory : MonoBehaviour
 			}
 			else
 			{
-				GameDirector.instance.ChangeObjective(musicStore);
+				GameDirector.instance.ChangeObjective(puzzle);
 			}
 		}
 	}
