@@ -64,7 +64,6 @@ public class EncounterManager : MonoBehaviour
     public void StopEncounter()
     {
 		this.Cower();
-		this.currentState = EncounterState.INACTIVE;
 		GameDirector.instance.GetPlayer().RemoveFear();
 		GameDirector.instance.StopEncounterMode();
 		this.EncounterReset();
@@ -72,7 +71,6 @@ public class EncounterManager : MonoBehaviour
 
 	public void StopEncounterFromToken()
 	{
-		this.currentState = EncounterState.INACTIVE;
 		GameDirector.instance.GetPlayer().RemoveFear();
 		GameDirector.instance.StopEncounterMode();
 		this.EncounterReset();

@@ -182,7 +182,7 @@ public class HudManager : MonoBehaviour {
 		_fadeinout.color = Color.Lerp(_fadeinout.color, Color.black, blackSpeed * Time.deltaTime);
 		if (_fadeinout.color.a >= .8f)
 		{
-			GameDirector.instance.GameOver();
+			GameDirector.instance.EncounterOver();
 		}
 	}
 

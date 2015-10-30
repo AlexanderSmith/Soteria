@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
 	private IPlayerAction _encounterAction = new PlayerActionEncounter();
 	private IPlayerAction _hidingAction = new PlayerActionHiding();
 	private IPlayerAction _pauseAction = new PlayerActionPause();
+	private IPlayerAction _noFighting = new PlayerActionNoFight();
 
 	void Start ()
 	{
@@ -74,6 +75,11 @@ public class Player : MonoBehaviour
 		this.SwitchPlayerAction(_pauseAction);
 	}
 
+	public void PlayerActionNoFighting()
+	{
+		this.SwitchPlayerAction(_noFighting);
+	}
+
 	IEnumerator IntoHide()
 	{
 		this.HideDown();
@@ -126,6 +132,7 @@ public class Player : MonoBehaviour
 	public void ResetHide()
 	{
 		this._animator.SetBool("HideUp", false);
+		GameDirector.instance.ChangeGameState(GameStates.Normal);
 	}
 
 	public void HideIdle()

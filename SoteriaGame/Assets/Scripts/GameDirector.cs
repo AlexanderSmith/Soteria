@@ -22,7 +22,14 @@ public class GameDirector : MonoBehaviour {
 	private LanternController _lanternController;
 
 	private int _hubPhase;
-	private bool _tokenUsed = false;
+	private bool _tokenUsed;
+	private bool _canFight;
+
+	// District visitation bools for objective
+	private bool _visitedSewer = false;
+	private bool _musicPass1 = false;
+	private bool _theaterPass1 = false;
+	private bool _obsPass1 = false;
 
 	public float flashBangLife = 3.0f;
 	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
@@ -91,6 +98,8 @@ public class GameDirector : MonoBehaviour {
 		this.token = false;
 		this.lantern = false;
 		this.compass = false;
+		this._tokenUsed = false;
+		this._canFight = false;
 	}
 	
 	private void InitializeManagers()
@@ -211,6 +220,59 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._hubPhase = 5;
 	}
+
+	public bool CanFight()
+	{
+		return this._canFight;
+	}
+
+	public void VisitedSewer()
+	{
+		this._visitedSewer = true;
+	}
+
+	public void ResetSewer()
+	{
+		this._visitedSewer = false;
+	}
+
+	public bool GetVisitedSewer()
+	{
+		return this._visitedSewer;
+	}
+
+	public void MusicPass1Done()
+	{
+		this.ResetSewer();
+		this._musicPass1 = true;
+	}
+
+	public bool GetMusicPass1()
+	{
+		return this._musicPass1;
+	}
+
+	public void TheaterPass1Done()
+	{
+		this.ResetSewer();
+		this._theaterPass1 = true;
+	}
+
+	public bool GetTheaterPass1()
+	{
+		return this._theaterPass1;
+	}
+
+	public void ObservatoryPass1Done()
+	{
+		this.ResetSewer();
+		this._obsPass1 = true;
+	}
+
+	public bool GetObservatoryPass1()
+	{
+		return this._obsPass1;
+	}
 	
 	#endregion
 
@@ -290,7 +352,15 @@ public class GameDirector : MonoBehaviour {
 		
 		this._HUDManager.EnableEncounterView();
 		this.SetClearStatus(false);
-		this._player.PlayerActionEncounter();
+		// Take away player's ability to fight shadow creatures until after getting rid of the suit pieces
+		if (this._canFight)
+		{
+			this._player.PlayerActionEncounter();
+		}
+		else
+		{
+			this._player.PlayerActionNoFighting();
+		}
 	}
 
 	public void StopEncounterMode()
@@ -460,6 +530,13 @@ public class GameDirector : MonoBehaviour {
 		{
 			this.RechargeLantern();
 		}
+	}
+
+	public void EncounterOver()
+	{
+		// reset encounter for game over
+		this._encounterManager.StopEncounterFromToken();
+		this.GameOver();
 	}
 
 	public void GameOver()
