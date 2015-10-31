@@ -8,7 +8,7 @@ public class PortToHub : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.CheckLantern();
-
+			GameDirector.instance.ClearAudioList();
 			switch (GameDirector.instance.GetHubPhase())
 			{
 			case 5:

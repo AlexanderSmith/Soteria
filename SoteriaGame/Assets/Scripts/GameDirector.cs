@@ -421,7 +421,7 @@ public class GameDirector : MonoBehaviour {
 		{
 			this.RechargeLantern();
 		}
-		this.StopAudioClip(AudioID.BackgroundMusic);
+		this.ClearAudioList();
 		Application.LoadLevel(inLevel);
 		this._tokenUsed = false;
 	}
@@ -548,7 +548,7 @@ public class GameDirector : MonoBehaviour {
 		{
 			this.RechargeLantern();
 		}
-		this.StopAudioClip(AudioID.BackgroundMusic);
+		this.ClearAudioList();
 		Application.LoadLevel("HarborRespawn");
 	}
 
@@ -568,6 +568,11 @@ public class GameDirector : MonoBehaviour {
 	public void StopAudioClip(AudioID inAID)
 	{
 		this._audioManager.StopAudio(inAID);
+	}
+
+	public void ClearAudioList()
+	{
+		this._audioManager.ClearAudioList();
 	}
 
 	/// <summary>

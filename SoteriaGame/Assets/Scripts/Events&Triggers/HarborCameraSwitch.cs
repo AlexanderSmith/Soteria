@@ -18,12 +18,15 @@ public class HarborCameraSwitch : MonoBehaviour
 		swarm.SetActive(false);
 	}
 
-	void OnTriggerEnter()
+	void OnTriggerEnter(Collider player)
 	{
-		flyThroughCam.enabled = true;
-		flyThroughCam.GetComponent<FlyThroughSoteriaStatue>().enabled = true;
-		flyThroughCam.GetComponent<FlyThroughSoteriaStatue>().Initialize(this);
-		harborCam.enabled = false;
+		if (player.gameObject.tag == "Player")
+		{
+			flyThroughCam.enabled = true;
+			flyThroughCam.GetComponent<FlyThroughSoteriaStatue>().enabled = true;
+			flyThroughCam.GetComponent<FlyThroughSoteriaStatue>().Initialize(this);
+			harborCam.enabled = false;
+		}
 	}
 
 	void OnTriggerExit()

@@ -74,6 +74,12 @@ public class AudioManager : MonoBehaviour
 	{
 		FindAudioSrcbyID(inAID).stopClip();
 	}
+
+	// Before level loaded
+	public void ClearAudioList()
+	{
+		this._audioSourceList.Clear();
+	}
 }
 
 // Requires separtate script for future stuffies
