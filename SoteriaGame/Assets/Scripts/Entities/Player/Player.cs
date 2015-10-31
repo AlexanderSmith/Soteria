@@ -162,4 +162,9 @@ public class Player : MonoBehaviour
 	{
 		this._animator.SetBool("Encounter", false);
 	}
+
+	public void Footstep()
+	{
+		GameDirector.instance.PlayAudioClip(AudioID.Footsteps);
+	}
 }

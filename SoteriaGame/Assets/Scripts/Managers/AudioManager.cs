@@ -75,7 +75,9 @@ public class AudioManager : MonoBehaviour
 // Enum names need to match Object name in Unity
 public enum AudioID
 {
-	Dialogue
+	Dialogue,
+	Footsteps,
+	BackgroundMusic
 }
 
 public class AudioSourceWrapper

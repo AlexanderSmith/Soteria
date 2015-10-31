@@ -14,6 +14,6 @@ public class SceneStart : MonoBehaviour
 	
 	void Start()
 	{
-		//GameDirector.instance.HUDSceneStart();
+		GameDirector.instance.PlayAudioClip(AudioID.BackgroundMusic);
 	}
 }
