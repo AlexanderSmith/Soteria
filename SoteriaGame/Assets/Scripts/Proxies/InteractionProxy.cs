@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Animator))]
 public class InteractionProxy : MonoBehaviour {
 
 	private GameObject _interactionbutton;
@@ -16,18 +15,24 @@ public class InteractionProxy : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other)
 	{
-		this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
+		if (other.gameObject.tag == "Player")
+		{
+			this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
+		}
 	}
 	void OnTriggerExit(Collider other)
 	{
-		this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
+		if (other.gameObject.tag == "Player")
+		{
+			this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
+		}
 	}
 
 	void OnTriggerStay(Collider other)
 	{
-		this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
-
-		if (Input.GetKeyDown(KeyCode.Space))
-			GameDirector.instance.StartDialogue(this.gameObject, other.transform.parent.gameObject);
+		if (other.gameObject.tag == "Player")
+		{
+			this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
+		}
 	}
 }
