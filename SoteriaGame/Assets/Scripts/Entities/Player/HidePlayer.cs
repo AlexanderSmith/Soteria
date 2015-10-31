@@ -1,46 +1,47 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HidePlayer : MonoBehaviour {
+public class HidePlayer : InteractionBase
+{
+	Sprite hide;
+	Sprite unhide;
 
-	//private GameObject Player;
-	// Use this for initialization
-	void Start () 
+	public override void Awake()
 	{
-		//Player = GameObject.FindWithTag("Player");
-	}
-	
-	// Update is called once per frame
-	void Update () 
-	{	
+		this._interactionbutton = this.transform.parent.FindChild("InteractionButton").gameObject;
+		this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
+		hide = Resources.Load<Sprite> ("GUI/SpaceButtonHide");
+		unhide = Resources.Load ("GUI/SpaceButtonUnhide", typeof(Sprite)) as Sprite;
 	}
 
-	void OnTriggerEnter(Collider Other)
+	public override void TriggerEnter(Collider player)
 	{
-		if (Other.gameObject.tag == "Player")
+		if (player.gameObject.tag == "Player")
 		{
-			GameDirector.instance.ChangeGameState(GameStates.Hidden);
-			GameDirector.instance.GetPlayer().PlayerActionHiding();
-		    //Debug.Log ("Enter");
+			this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
+		}
+	}
+
+	public override void TriggerExit(Collider player)
+	{
+		if (player.gameObject.tag == "Player")
+		{
+			this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
+			this._interactionbutton.GetComponent<SpriteRenderer>().sprite = hide;
 		}
 	}
 	
-//	void OnTriggerStay(Collider Other)
-//	{
-//		if (Other.gameObject.tag == "Player")
-//		{
-//		    //Debug.Log ("Stay");
-//			GameDirector.instance.GetPlayer().HideIdle();
-//		}
-//	}
-
-//	void OnTriggerExit(Collider Other) 
-//	{ 
-//		if (Other.gameObject.tag == "Player")
-//		{
-//			GameDirector.instance.ChangeGameState(GameStates.Normal);
-//			GameDirector.instance.GetPlayer().HideUp();
-//			//Debug.Log ("Exit");
-//		}
-//	}
+	public override void TriggerStay(Collider player)
+	{
+		if (player.gameObject.tag == "Player")
+		{
+			this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				GameDirector.instance.GetPlayer().PlayerActionHiding();
+				this._interactionbutton.GetComponent<SpriteRenderer>().sprite = unhide;
+				this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
+			}
+		}
+	}
 }
