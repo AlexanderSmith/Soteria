@@ -7,7 +7,8 @@ public enum GameStates
 	Encounter,
 	Hidden,
 	HiddenTile,
-	Pause
+	Pause,
+	Suit
 }
 
 public class StateManager : MonoBehaviour {
@@ -44,6 +45,9 @@ public class StateManager : MonoBehaviour {
 		case GameStates.Pause:
 			if (gameState != inState) SwitchToPause();
 			break;
+		case GameStates.Suit:
+			if (gameState != inState) SwitchToSuit();
+			break;
 		}
 	}
 
@@ -78,5 +82,10 @@ public class StateManager : MonoBehaviour {
 	{
 
 		gameState = GameStates.Pause;
+	}
+
+	private void SwitchToSuit()
+	{
+		gameState = GameStates.Suit;
 	}
 }
