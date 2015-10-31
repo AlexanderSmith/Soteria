@@ -24,16 +24,17 @@ public class FlyThroughSoteriaStatue : MonoBehaviour
 	{
 		if (this.gameObject.GetComponent<FlyThroughSoteriaStatue>().enabled == true)
 		{
-			if (/*Vector3.Distance(this.transform.position, _soteriaStatue.transform.position) > distance*/time > 0)
+			if (time > 0)
 			{
 				time -= Time.deltaTime;
-				//this.transform.position = Vector3.Lerp (this.transform.position, _soteriaStatue.transform.position, .5f * Time.deltaTime);
 				Quaternion rotation = Quaternion.LookRotation(_soteriaStatue.transform.position - this.transform.position);
 				this.transform.rotation = Quaternion.Slerp(this.transform.rotation, rotation, Time.deltaTime);
+				GameDirector.instance.GetPlayer().PlayerActionPause();
 			}
 			else
 			{
 				_cameraSwitch.SwitchToHarbor();
+				GameDirector.instance.GetPlayer().PlayerActionNormal();
 			}
 		}
 	}

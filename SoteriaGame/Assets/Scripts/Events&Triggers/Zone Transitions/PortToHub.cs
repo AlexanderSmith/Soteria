@@ -5,9 +5,10 @@ public class PortToHub : MonoBehaviour
 {
 	void OnTriggerEnter(Collider player)
 	{
-		GameDirector.instance.CheckLantern();
 		if (player.gameObject.tag == "Player")
 		{
+			GameDirector.instance.CheckLantern();
+
 			switch (GameDirector.instance.GetHubPhase())
 			{
 			case 5:

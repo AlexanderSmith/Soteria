@@ -421,6 +421,7 @@ public class GameDirector : MonoBehaviour {
 		{
 			this.RechargeLantern();
 		}
+		this.StopAudioClip(AudioID.BackgroundMusic);
 		Application.LoadLevel(inLevel);
 		this._tokenUsed = false;
 	}
@@ -547,6 +548,7 @@ public class GameDirector : MonoBehaviour {
 		{
 			this.RechargeLantern();
 		}
+		this.StopAudioClip(AudioID.BackgroundMusic);
 		Application.LoadLevel("HarborRespawn");
 	}
 
@@ -557,10 +559,17 @@ public class GameDirector : MonoBehaviour {
 	///////////////////////////////////////////////////////////////////
 
 	#region AudioManager Methods
+
 	public void PlayAudioClip(AudioID inAID)
 	{
 		this._audioManager.PlayAudio(inAID);
 	}
+
+	public void StopAudioClip(AudioID inAID)
+	{
+		this._audioManager.StopAudio(inAID);
+	}
+
 	/// <summary>
 	/// Adds the audio clip Programmatically.
 	/// </summary>

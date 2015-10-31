@@ -69,6 +69,11 @@ public class AudioManager : MonoBehaviour
 	{
 		FindAudioSrcbyID(inAID).playClip();
 	}
+
+	public void StopAudio(AudioID inAID)
+	{
+		FindAudioSrcbyID(inAID).stopClip();
+	}
 }
 
 // Requires separtate script for future stuffies
@@ -77,7 +82,9 @@ public enum AudioID
 {
 	Dialogue,
 	Footsteps,
-	BackgroundMusic
+	BackgroundMusic,
+	Heartbeats,
+	LeavingHide
 }
 
 public class AudioSourceWrapper
@@ -106,6 +113,11 @@ public class AudioSourceWrapper
 		//second call seems better to me.
 		this._audiosrc.Play();
 		//this._gameobj.GetComponent<AudioSource>().Play();
+	}
+
+	public void stopClip()
+	{
+		this._audiosrc.Stop();
 	}
 	
 	public void UpdateAudioClip (AudioClip inClip)
