@@ -11,7 +11,6 @@ public class ScriptedHideEvent : MonoBehaviour
 	void Start()
 	{
 		_player = GameDirector.instance.GetPlayer();
-		_enemy = GameObject.Find("ScriptedEnemy");
 	}
 
 	void OnTriggerEnter(Collider player)
@@ -19,12 +18,20 @@ public class ScriptedHideEvent : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
-			PlayEvent();
+			InitializeEvent();
 		}
 	}
 
-	void PlayEvent()
+	void InitializeEvent()
 	{
-		//while(Vector3.Distance(_player.transform.position, playerHidingSpot.position) > 
+		_enemy = GameObject.Find("ScriptedEnemy");
+	}
+
+	void Update()
+	{
+		if (_enemy != null)
+		{
+
+		}
 	}
 }
