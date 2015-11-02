@@ -25,6 +25,11 @@ public class GameDirector : MonoBehaviour {
 	private bool _tokenUsed;
 	private bool _canFight;
 
+	// Puzzle activation variables
+	private bool _musicPuzzleActivated;
+	private bool _puppetPuzzleActivated;
+	private bool _observatoryPuzzleActivated;
+
 	// District visitation bools for objective
 	private bool _visitedSewer = false;
 	private bool _musicPass1 = false;
@@ -100,6 +105,9 @@ public class GameDirector : MonoBehaviour {
 		this.compass = false;
 		this._tokenUsed = false;
 		this._canFight = false;
+		this._musicPuzzleActivated = false;
+		this._puppetPuzzleActivated = false;
+		this._observatoryPuzzleActivated = false;
 	}
 	
 	private void InitializeManagers()
@@ -280,6 +288,20 @@ public class GameDirector : MonoBehaviour {
 		return this._obsPass1;
 	}
 	
+	#endregion
+
+	#region PuzzleProgression
+
+	public bool GetMusicActivated()
+	{
+		return this._musicPuzzleActivated;
+	}
+
+	public void MusicPuzzleActivated()
+	{
+		this._musicPuzzleActivated = true;
+	}
+
 	#endregion
 
 	///////////////////////////////////////////////////////////////////
