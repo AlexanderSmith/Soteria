@@ -8,10 +8,9 @@ public class AudioSrcProxy : MonoBehaviour {
 	/// Get the Audio Src from the objects and attaches it to the Audio Manager! then 
 	/// it can be controlled from there
 	/// </summary>
-	void Awake () {
-		
+	void Awake ()
+	{		
 		AudioSource AudioSrc =  this.gameObject.GetComponent<AudioSource>() as AudioSource;
-		GameDirector.instance.AttachAudioSource(AudioSrc, this.gameObject, this.gameObject.name);
-		
+		GameDirector.instance.AttachAudioSource(AudioSrc, this.gameObject, this.gameObject.name);		
 	}
 }
