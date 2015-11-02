@@ -603,6 +603,11 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.ClearAudioList();
 	}
 
+	public void ChangeVolume(AudioID inAID, float inVolume)
+	{
+		this._audioManager.ChangeVolume(inAID, inVolume);
+	}
+
 	/// <summary>
 	/// Adds the audio clip Programmatically.
 	/// </summary>

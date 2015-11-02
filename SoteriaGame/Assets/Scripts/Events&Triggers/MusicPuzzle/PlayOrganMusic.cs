@@ -14,7 +14,11 @@ public class PlayOrganMusic : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			GameDirector.instance.PlayAudioClip(AudioID.OrganMusic);
+			if (!GameDirector.instance.GetMusicActivated())
+			{
+				GameDirector.instance.ChangeVolume(AudioID.OrganMusic, 0.1f);
+				controller.GetComponent<MusicPuzzleController>().PuzzleActivated();
+			}
 		}
 	}
 }

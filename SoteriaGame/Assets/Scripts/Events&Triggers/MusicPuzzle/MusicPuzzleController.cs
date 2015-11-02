@@ -12,6 +12,7 @@ public class MusicPuzzleController : MonoBehaviour
 	public GameObject brassTile;
 	public GameObject stringTile;
 	public GameObject windTile;
+	public GameObject boss;
 
 	public Transform organDown;
 	public Transform organUp;
@@ -21,6 +22,10 @@ public class MusicPuzzleController : MonoBehaviour
 	public Transform stringUp;
 	public Transform windDown;
 	public Transform windUp;
+	public Transform bossDown;
+	public Transform bossUp;
+
+	public float lerpTime;
 
 	// Use this for initialization
 	void Start ()
@@ -57,11 +62,26 @@ public class MusicPuzzleController : MonoBehaviour
 	void PrivatePuzzleActivated()
 	{
 		GameDirector.instance.MusicPuzzleActivated();
-		this.LerpOrganTileDown();
+		StartCoroutine("ActivatePuzzle");
 	}
 
-	void LerpOrganTileDown()
+	IEnumerator ActivatePuzzle()
 	{
-
+		float start = Time.time;
+		while (Time.time < start + lerpTime)
+		{
+			this.organTile.transform.position = Vector3.Lerp(this.organTile.transform.position, this.organDown.position, (Time.time - start) / lerpTime);
+			this.brassTile.transform.position = Vector3.Lerp(this.brassTile.transform.position, this.brassUp.position, (Time.time - start) / lerpTime);
+			this.stringTile.transform.position = Vector3.Lerp(this.stringTile.transform.position, this.stringUp.position, (Time.time - start) / lerpTime);
+			this.windTile.transform.position = Vector3.Lerp(this.windTile.transform.position, this.windUp.position, (Time.time - start) / lerpTime);
+			this.boss.transform.position = Vector3.Lerp (this.boss.transform.position, this.bossUp.position, (Time.time - start) / lerpTime);
+			yield return null;
+		}
+		this.organTile.transform.position = this.organDown.position;
+		this.brassTile.transform.position = this.brassUp.position;
+		this.stringTile.transform.position = this.stringUp.position;
+		this.windTile.transform.position = this.windUp.position;
+		this.boss.transform.position = this.bossUp.position;
+		GameDirector.instance.ChangeVolume(AudioID.OrganMusic, 0.0f);
 	}
 }

@@ -80,6 +80,11 @@ public class AudioManager : MonoBehaviour
 	{
 		this._audioSourceList.Clear();
 	}
+
+	public void ChangeVolume(AudioID inAID, float inVolume)
+	{
+		FindAudioSrcbyID(inAID).updateVolume (inVolume);
+	}
 }
 
 // Requires separtate script for future stuffies
@@ -129,7 +134,12 @@ public class AudioSourceWrapper
 	{
 		this._audiosrc.Stop();
 	}
-	
+
+	public void updateVolume(float inVolume)
+	{
+		this._audiosrc.volume = inVolume;
+	}
+
 	public void UpdateAudioClip (AudioClip inClip)
 	{
 		this._audiosrc.clip = inClip;
