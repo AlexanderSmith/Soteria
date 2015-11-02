@@ -14,6 +14,10 @@ public class PuzzleSceneStartHack : MonoBehaviour
 	
 	void Start()
 	{
-		//GameDirector.instance.HUDSceneStart();
+		GameDirector.instance.SuitRemoved();
+		GameDirector.instance.TokenTrue();
+		GameDirector.instance.CompassTrue();
+		GameDirector.instance.LanternTrue();
+		GameDirector.instance.ChangeObjective(GameObject.Find("KeyPiece"));
 	}
 }

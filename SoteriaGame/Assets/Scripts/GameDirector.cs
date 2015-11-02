@@ -226,6 +226,12 @@ public class GameDirector : MonoBehaviour {
 		return this._canFight;
 	}
 
+	// When suit removed, player now able to fight shadow creatures -- will need more than this bool flip
+	public void SuitRemoved()
+	{
+		this._canFight = true;
+	}
+
 	public void VisitedSewer()
 	{
 		this._visitedSewer = true;

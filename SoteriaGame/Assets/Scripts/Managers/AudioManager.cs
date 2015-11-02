@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -90,7 +90,11 @@ public enum AudioID
 	Footsteps,
 	BackgroundMusic,
 	Heartbeats,
-	LeavingHide
+	LeavingHide,
+	OrganMusic,
+	BrassMusic,
+	StringMusic,
+	WindMusic
 }
 
 public class AudioSourceWrapper
