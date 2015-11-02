@@ -22,6 +22,14 @@ public class GameDirector : MonoBehaviour {
 	private LanternController _lanternController;
 
 	private int _hubPhase;
+	private bool _tokenUsed;
+	private bool _canFight;
+
+	// District visitation bools for objective
+	private bool _visitedSewer = false;
+	private bool _musicPass1 = false;
+	private bool _theaterPass1 = false;
+	private bool _obsPass1 = false;
 
 	public float flashBangLife = 3.0f;
 	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
@@ -90,6 +98,8 @@ public class GameDirector : MonoBehaviour {
 		this.token = false;
 		this.lantern = false;
 		this.compass = false;
+		this._tokenUsed = false;
+		this._canFight = false;
 	}
 	
 	private void InitializeManagers()
@@ -210,6 +220,59 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._hubPhase = 5;
 	}
+
+	public bool CanFight()
+	{
+		return this._canFight;
+	}
+
+	public void VisitedSewer()
+	{
+		this._visitedSewer = true;
+	}
+
+	public void ResetSewer()
+	{
+		this._visitedSewer = false;
+	}
+
+	public bool GetVisitedSewer()
+	{
+		return this._visitedSewer;
+	}
+
+	public void MusicPass1Done()
+	{
+		this.ResetSewer();
+		this._musicPass1 = true;
+	}
+
+	public bool GetMusicPass1()
+	{
+		return this._musicPass1;
+	}
+
+	public void TheaterPass1Done()
+	{
+		this.ResetSewer();
+		this._theaterPass1 = true;
+	}
+
+	public bool GetTheaterPass1()
+	{
+		return this._theaterPass1;
+	}
+
+	public void ObservatoryPass1Done()
+	{
+		this.ResetSewer();
+		this._obsPass1 = true;
+	}
+
+	public bool GetObservatoryPass1()
+	{
+		return this._obsPass1;
+	}
 	
 	#endregion
 
@@ -289,7 +352,15 @@ public class GameDirector : MonoBehaviour {
 		
 		this._HUDManager.EnableEncounterView();
 		this.SetClearStatus(false);
-		this._player.PlayerActionEncounter();
+		// Take away player's ability to fight shadow creatures until after getting rid of the suit pieces
+		if (this._canFight)
+		{
+			this._player.PlayerActionEncounter();
+		}
+		else
+		{
+			this._player.PlayerActionNoFighting();
+		}
 	}
 
 	public void StopEncounterMode()
@@ -301,40 +372,44 @@ public class GameDirector : MonoBehaviour {
 
 	public void TakeSafteyLight()
 	{
-		// Beam
-		GameObject soteriaBeam = Instantiate(Resources.Load("ParticleEffects/Beam")) as GameObject;
-		beam = soteriaBeam.GetComponent<ParticleSystem>();
-		beam.transform.position = this.GetPlayer().gameObject.transform.position + beamHeight;
-		beam.Play();
-
-		string level;
-
-		/*Teleport to town center*/
-		switch (_hubPhase)
+		if (!this._tokenUsed)
 		{
-		case 5:
-			level = "HUBPass3";
-			StartCoroutine(BeamLevel(level, beamLife));
-			break;
-		case 1:
-			level = "HUBPass1";
-			StartCoroutine(BeamLevel(level, beamLife));
-			break;
-		case 2:
-			level = "HUBPass2";
-			StartCoroutine(BeamLevel(level, beamLife));
-			break;
-		case 3:
-			level = "HUBPass3";
-			StartCoroutine(BeamLevel(level, beamLife));
-			break;
-		case 4:
-			level = "HUBPass4";
-			StartCoroutine(BeamLevel(level, beamLife));
-			break;
-		}
+			this._tokenUsed = true;
+			// Beam
+			GameObject soteriaBeam = Instantiate(Resources.Load("ParticleEffects/Beam")) as GameObject;
+			beam = soteriaBeam.GetComponent<ParticleSystem>();
+			beam.transform.position = this.GetPlayer().gameObject.transform.position + beamHeight;
+			beam.Play();
 
-		Destroy(soteriaBeam, beamLife);
+			string level;
+
+			/*Teleport to town center*/
+			switch (_hubPhase)
+			{
+			case 5:
+				level = "HUBPass3";
+				StartCoroutine(BeamLevel(level, beamLife));
+				break;
+			case 1:
+				level = "HUBPass1";
+				StartCoroutine(BeamLevel(level, beamLife));
+				break;
+			case 2:
+				level = "HUBPass2";
+				StartCoroutine(BeamLevel(level, beamLife));
+				break;
+			case 3:
+				level = "HUBPass3";
+				StartCoroutine(BeamLevel(level, beamLife));
+				break;
+			case 4:
+				level = "HUBPass4";
+				StartCoroutine(BeamLevel(level, beamLife));
+				break;
+			}
+
+			Destroy(soteriaBeam, beamLife);
+		}
 	}
 
 	IEnumerator BeamLevel(string inLevel, float inBeamLife)
@@ -346,7 +421,9 @@ public class GameDirector : MonoBehaviour {
 		{
 			this.RechargeLantern();
 		}
+		this.ClearAudioList();
 		Application.LoadLevel(inLevel);
+		this._tokenUsed = false;
 	}
 
 	public void FindEnemies()
@@ -456,6 +533,13 @@ public class GameDirector : MonoBehaviour {
 		}
 	}
 
+	public void EncounterOver()
+	{
+		// reset encounter for game over
+		this._encounterManager.StopEncounterFromToken();
+		this.GameOver();
+	}
+
 	public void GameOver()
 	{
 		this.FindEnemies();
@@ -464,6 +548,7 @@ public class GameDirector : MonoBehaviour {
 		{
 			this.RechargeLantern();
 		}
+		this.ClearAudioList();
 		Application.LoadLevel("HarborRespawn");
 	}
 
@@ -474,10 +559,22 @@ public class GameDirector : MonoBehaviour {
 	///////////////////////////////////////////////////////////////////
 
 	#region AudioManager Methods
+
 	public void PlayAudioClip(AudioID inAID)
 	{
 		this._audioManager.PlayAudio(inAID);
 	}
+
+	public void StopAudioClip(AudioID inAID)
+	{
+		this._audioManager.StopAudio(inAID);
+	}
+
+	public void ClearAudioList()
+	{
+		this._audioManager.ClearAudioList();
+	}
+
 	/// <summary>
 	/// Adds the audio clip Programmatically.
 	/// </summary>
