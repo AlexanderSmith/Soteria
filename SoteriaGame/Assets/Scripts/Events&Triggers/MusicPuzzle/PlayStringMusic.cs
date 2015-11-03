@@ -14,7 +14,7 @@ public class PlayStringMusic : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			GameDirector.instance.PlayAudioClip(AudioID.StringMusic);
+			GameDirector.instance.ChangeVolume(AudioID.StringMusic, 0.1f);
 		}
 	}
 }
