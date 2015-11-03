@@ -166,6 +166,7 @@ public class GameDirector : MonoBehaviour {
 	public void TokenTrue()
 	{
 		this.token = true;
+		this._audioManager.PlayAudio(AudioID.TokenUse);
 		this._HUDManager.TokenTrue(this.token);
 	}
 	
@@ -374,6 +375,7 @@ public class GameDirector : MonoBehaviour {
 	{
 		if (!this._tokenUsed)
 		{
+			this._audioManager.PlayAudio(AudioID.TokenUse);
 			this._tokenUsed = true;
 			// Beam
 			GameObject soteriaBeam = Instantiate(Resources.Load("ParticleEffects/Beam")) as GameObject;

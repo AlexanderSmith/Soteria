@@ -48,7 +48,7 @@ public class ScriptedHideEvent : MonoBehaviour
 				else
 				{
 					Destroy(_enemy);
-					GameDirector.instance.GetPlayer().PlayerActionHiding();
+					//GameDirector.instance.GetPlayer().PlayerActionHiding();
 				}
 			}
 		}

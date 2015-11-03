@@ -90,7 +90,8 @@ public enum AudioID
 	Footsteps,
 	BackgroundMusic,
 	Heartbeats,
-	LeavingHide
+	LeavingHide,
+	TokenUse
 }
 
 public class AudioSourceWrapper

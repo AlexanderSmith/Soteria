@@ -5,6 +5,7 @@ public class HidePlayer : InteractionBase
 {
 	Sprite hide;
 	Sprite unhide;
+	bool hiding;
 
 	public override void Awake()
 	{
@@ -12,6 +13,7 @@ public class HidePlayer : InteractionBase
 		this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 		hide = Resources.Load<Sprite> ("GUI/SpaceButtonHide");
 		unhide = Resources.Load ("GUI/SpaceButtonUnhide", typeof(Sprite)) as Sprite;
+		hiding = false;
 	}
 
 	public override void TriggerEnter(Collider player)
@@ -19,6 +21,7 @@ public class HidePlayer : InteractionBase
 		if (player.gameObject.tag == "Player")
 		{
 			this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
+			hiding = false;
 		}
 	}
 
@@ -28,6 +31,7 @@ public class HidePlayer : InteractionBase
 		{
 			this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 			this._interactionbutton.GetComponent<SpriteRenderer>().sprite = hide;
+			hiding = false;
 		}
 	}
 	
@@ -36,8 +40,9 @@ public class HidePlayer : InteractionBase
 		if (player.gameObject.tag == "Player")
 		{
 			this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
-			if (Input.GetKeyDown(KeyCode.Space))
+			if (Input.GetKeyDown(KeyCode.Space) && !hiding)
 			{
+				hiding = true;
 				GameDirector.instance.GetPlayer().PlayerActionHiding();
 				GameDirector.instance.ChangeGameState(GameStates.Hidden);
 				this._interactionbutton.GetComponent<SpriteRenderer>().sprite = unhide;

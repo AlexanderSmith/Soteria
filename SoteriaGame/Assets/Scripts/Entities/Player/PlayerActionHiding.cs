@@ -5,6 +5,7 @@ public class PlayerActionHiding : IPlayerAction
 	private float _horizontal;
 	private float _vertical;
 
+
 	public void PlayerAction(Player inPlayer)
 	{
 		this._horizontal = Input.GetAxisRaw("Horizontal");
@@ -15,9 +16,10 @@ public class PlayerActionHiding : IPlayerAction
 //			inPlayer.OutOfHide();
 //		}
 
-		if (Input.GetKeyUp(KeyCode.Space))
+		if (Input.GetKeyUp(KeyCode.Space) && GameDirector.instance.GetGameState() == GameStates.Hidden)
 		{
 			inPlayer.OutOfHide();
+			//GameDirector.instance.ChangeGameState(GameStates.Normal);
 		}
 	}
 }
