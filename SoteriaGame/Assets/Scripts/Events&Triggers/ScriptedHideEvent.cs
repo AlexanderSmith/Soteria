@@ -64,7 +64,7 @@ public class ScriptedHideEvent : MonoBehaviour
 			{
 				_playerMovement = false;
 				_player.gameObject.transform.position = playerHidingSpot.position;
-				GameDirector.instance.GetPlayer().PlayerActionPause();
+				//GameDirector.instance.GetPlayer().PlayerActionPause();
 			}
 		}
 	}

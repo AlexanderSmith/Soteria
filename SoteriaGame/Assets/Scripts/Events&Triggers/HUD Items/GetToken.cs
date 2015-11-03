@@ -5,7 +5,9 @@ public class GetToken: MonoBehaviour
 {
 	void OnTriggerEnter(Collider other)
 	{
-		//HudToken.SetActive(true);
-		GameDirector.instance.TokenTrue ();
+		if (other.gameObject.tag == "Player")
+		{
+			GameDirector.instance.TokenTrue ();
+		}
 	}
 }
