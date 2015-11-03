@@ -19,10 +19,10 @@ public class MusicBossController : MonoBehaviour
 		this._brass = true;
 	}
 
-//	IEnumerator BrassMusicEncounter()
-//	{
-//		//while (
-//	}
+	IEnumerator BrassMusicEncounter()
+	{
+		while (
+	}
 
 	public void StringMusicStart()
 	{
