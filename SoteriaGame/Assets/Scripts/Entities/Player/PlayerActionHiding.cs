@@ -16,7 +16,7 @@ public class PlayerActionHiding : IPlayerAction
 //			inPlayer.OutOfHide();
 //		}
 
-		if (Input.GetKeyUp(KeyCode.Space) && GameDirector.instance.GetGameState() == GameStates.Hidden)
+		if (Input.GetKeyUp(KeyCode.Space) /*&& GameDirector.instance.GetGameState() == GameStates.Hidden*/)
 		{
 			inPlayer.OutOfHide();
 			//GameDirector.instance.ChangeGameState(GameStates.Normal);
