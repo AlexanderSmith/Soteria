@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 	private IPlayerAction _hidingAction = new PlayerActionHiding();
 	private IPlayerAction _pauseAction = new PlayerActionPause();
 	private IPlayerAction _noFighting = new PlayerActionNoFight();
+	private IPlayerAction _musicPuzzle = new PlayerActionMusicPuzzle();
 
 	void Start ()
 	{
@@ -57,6 +58,7 @@ public class Player : MonoBehaviour
 	public void PlayerActionEncounter()
 	{
 		this.SwitchPlayerAction(_encounterAction);
+		this.GetComponent<PlayerActionEncounter>().InitializeValues(this);
 	}
 
 	public void PlayerActionNormal()
@@ -78,6 +80,12 @@ public class Player : MonoBehaviour
 	public void PlayerActionNoFighting()
 	{
 		this.SwitchPlayerAction(_noFighting);
+	}
+
+	public void PlayerActionMusicPuzzle()
+	{
+		this.SwitchPlayerAction(_musicPuzzle);
+		this.GetComponent<PlayerActionMusicPuzzle>().InitializeValues(this);
 	}
 
 	IEnumerator IntoHide()

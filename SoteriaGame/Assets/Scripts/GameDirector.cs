@@ -608,6 +608,16 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.ChangeVolume(inAID, inVolume);
 	}
 
+	public void AddVolume(AudioID inAID, float inVolume)
+	{
+		this._audioManager.AddVolume(inAID, inVolume);
+	}
+
+	public void SubtractVolume(AudioID inAID, float inVolume)
+	{
+		this._audioManager.SubtractVolume(inAID, inVolume);
+	}
+
 	/// <summary>
 	/// Adds the audio clip Programmatically.
 	/// </summary>
@@ -632,6 +642,11 @@ public class GameDirector : MonoBehaviour {
 	//Clone Audio Clip
 	//Is Done playing Clip
 	//Queue Clips
+
+	public float GetPuzzleWinVolume()
+	{
+		return this._audioManager.GetPuzzleWinVolume();
+	}
 	
 	#endregion
 	

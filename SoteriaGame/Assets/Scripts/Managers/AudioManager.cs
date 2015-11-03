@@ -6,7 +6,8 @@ public class AudioManager : MonoBehaviour
 {
 	public float mastervolume;
 	public bool mute;
-	
+	public float puzzleWinVolume;
+
 	AudioSourceWrapper DiagAudioSrc;
 	
 	private List<AudioSourceWrapper> _audioSourceList;
@@ -83,7 +84,22 @@ public class AudioManager : MonoBehaviour
 
 	public void ChangeVolume(AudioID inAID, float inVolume)
 	{
-		FindAudioSrcbyID(inAID).updateVolume (inVolume);
+		FindAudioSrcbyID(inAID).updateVolume(inVolume);
+	}
+
+	public void AddVolume(AudioID inAID, float inVolume)
+	{
+		FindAudioSrcbyID(inAID).addVolume(inVolume);
+	}
+
+	public void SubtractVolume(AudioID inAID, float inVolume)
+	{
+		FindAudioSrcbyID(inAID).subtractVolume(inVolume);
+	}
+
+	public float GetPuzzleWinVolume()
+	{
+		return this.puzzleWinVolume;
 	}
 }
 
@@ -139,6 +155,27 @@ public class AudioSourceWrapper
 	{
 		this._audiosrc.volume = inVolume;
 	}
+
+	public void addVolume(float inVolume)
+	{
+		this._audiosrc.volume += inVolume;
+
+		if (this._audiosrc.volume >= GameDirector.instance.GetPuzzleWinVolume())
+		{
+			GameDirector.instance.StopEncounterMode();
+		}
+	}
+
+	public void subtractVolume(float inVolume)
+	{
+		this._audiosrc.volume -= inVolume;
+		if (this._audiosrc.volume <= 0)
+		{
+			GameDirector.instance.GameOver();
+		}
+	}
+
+	//public float GetVolume
 
 	public void UpdateAudioClip (AudioClip inClip)
 	{
