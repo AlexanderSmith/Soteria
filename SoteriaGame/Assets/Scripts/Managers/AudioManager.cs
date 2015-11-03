@@ -102,7 +102,10 @@ public class AudioManager : MonoBehaviour
 		return this.puzzleWinVolume;
 	}
 
-
+	public float GetVolume(AudioID inAID)
+	{
+		return FindAudioSrcbyID(inAID).getVolume();
+	}
 }
 
 // Requires separtate script for future stuffies
@@ -177,7 +180,10 @@ public class AudioSourceWrapper
 		}
 	}
 
-	//public float GetVolume
+	public float getVolume()
+	{
+		return this._audiosrc.volume;
+	}
 
 	public void UpdateAudioClip (AudioClip inClip)
 	{

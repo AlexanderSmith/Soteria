@@ -84,4 +84,9 @@ public class MusicPuzzleController : MonoBehaviour
 		this.boss.transform.position = this.bossUp.position;
 		GameDirector.instance.ChangeVolume(AudioID.OrganMusic, 0.0f);
 	}
+
+	public GameObject GetBoss()
+	{
+		return this.boss;
+	}
 }

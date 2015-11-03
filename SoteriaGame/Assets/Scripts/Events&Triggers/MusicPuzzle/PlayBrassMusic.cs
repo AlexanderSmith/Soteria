@@ -15,6 +15,7 @@ public class PlayBrassMusic : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.ChangeVolume(AudioID.BrassMusic, 0.1f);
+			controller.GetComponent<MusicPuzzleController>().GetBoss().GetComponentInChildren<MusicBossController>().BrassMusicStart();
 		}
 	}
 }

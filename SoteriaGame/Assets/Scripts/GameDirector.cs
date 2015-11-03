@@ -647,6 +647,11 @@ public class GameDirector : MonoBehaviour {
 	{
 		return this._audioManager.GetPuzzleWinVolume();
 	}
+
+	public float GetVolume(AudioID inAID)
+	{
+		return this._audioManager.GetVolume(inAID);
+	}
 	
 	#endregion
 	
