@@ -85,7 +85,7 @@ public class Player : MonoBehaviour
 	public void PlayerActionMusicPuzzle()
 	{
 		this.SwitchPlayerAction(_musicPuzzle);
-		this.GetComponent<PlayerActionMusicPuzzle>().InitializeValues(this);
+		_musicPuzzle.InitializeValues(this);
 	}
 
 	IEnumerator IntoHide()

@@ -10,4 +10,7 @@ public class PlayerActionPause : IPlayerAction
 			GameDirector.instance.GetPlayer().PlayerActionNormal();
 		}
 	}
+
+	public void InitializeValues(Player player)
+	{}
 }

@@ -168,13 +168,14 @@ public class AudioSourceWrapper
 		if (this._audiosrc.volume >= GameDirector.instance.GetPuzzleWinVolume())
 		{
 			GameDirector.instance.StopEncounterMode();
+			GameDirector.instance.PlayerOvercame();
 		}
 	}
 
 	public void subtractVolume(float inVolume)
 	{
-		this._audiosrc.volume -= inVolume;
-		if (this._audiosrc.volume <= 0)
+		this._audiosrc.volume = Mathf.Lerp(this._audiosrc.volume, 0f, Time.deltaTime);
+		if (this._audiosrc.volume <= .001f)
 		{
 			GameDirector.instance.GameOver();
 		}

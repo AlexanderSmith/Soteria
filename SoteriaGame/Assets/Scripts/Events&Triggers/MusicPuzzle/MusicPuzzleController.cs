@@ -52,6 +52,7 @@ public class MusicPuzzleController : MonoBehaviour
 			this.stringTile.transform.position = this.stringDown.position;
 			this.windTile.transform.position = this.windDown.position;
 		}
+		boss.GetComponentInChildren<MusicBossController>().Initialize(this);
 	}
 
 	public void PuzzleActivated()
@@ -83,6 +84,21 @@ public class MusicPuzzleController : MonoBehaviour
 		this.windTile.transform.position = this.windUp.position;
 		this.boss.transform.position = this.bossUp.position;
 		GameDirector.instance.ChangeVolume(AudioID.OrganMusic, 0.0f);
+	}
+
+	public void OrganTileActive()
+	{
+		StartCoroutine("OrganTileUp");
+	}
+
+	IEnumerator OrganTileUp()
+	{
+		float start = Time.time;
+		while (Time.time < start + lerpTime)
+		{
+			this.organTile.transform.position = Vector3.Lerp(this.organTile.transform.position, this.organUp.position, (Time.time - start) / lerpTime);
+			yield return null;
+		}
 	}
 
 	public GameObject GetBoss()

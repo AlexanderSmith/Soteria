@@ -371,6 +371,11 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.Encounter(enemy);
 	}
 
+	public void MusicPuzzleEncounter(GameObject enemy)
+	{
+		this._encounterManager.MusicPuzzleEncounter(enemy);
+	}
+
 	public void StartEncounterMode()
 	{
 		if (this._stateManager.GameState() != GameStates.Encounter) 
@@ -396,6 +401,25 @@ public class GameDirector : MonoBehaviour {
 		this._stateManager.ChangeGameState(GameStates.Normal);
 		this._HUDManager.DisableEncounterView();
 		this._player.PlayerActionNormal();
+	}
+
+	public void StartMusicPuzzleEncounter()
+	{
+		if (this._stateManager.GameState() != GameStates.Encounter) 
+		{
+			this._stateManager.ChangeGameState (GameStates.Encounter);
+		}
+		this._HUDManager.EnableEncounterView();
+		this.SetClearStatus(false);
+		if (this._canFight)
+		{
+			this._player.PlayerActionMusicPuzzle();
+		}
+		else
+		{
+			this._player.PlayerActionNoFighting();
+		}
+
 	}
 
 	public void TakeSafteyLight()

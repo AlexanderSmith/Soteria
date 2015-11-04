@@ -5,6 +5,7 @@ public class PlayerActionMusicPuzzle : IPlayerAction
 {
 	private bool _lingering;
 	private int _keyPressCounter;
+	private GameObject controller;
 
 	public void PlayerAction(Player inPlayer)
 	{
@@ -18,6 +19,7 @@ public class PlayerActionMusicPuzzle : IPlayerAction
 		{
 			this._keyPressCounter = 0;
 			inPlayer.FlipEncounterBool();
+			controller = GameObject.Find("MusicPuzzleControl");
 		}
 	}
 
@@ -32,6 +34,7 @@ public class PlayerActionMusicPuzzle : IPlayerAction
 			}
 			this._keyPressCounter++;
 			GameDirector.instance.EncounterClear();
+			controller.GetComponent<MusicPuzzleController>().GetBoss().GetComponentInChildren<MusicBossController>().FightingBoss();
 		}
 	}
 }

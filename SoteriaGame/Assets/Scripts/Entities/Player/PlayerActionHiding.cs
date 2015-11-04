@@ -20,4 +20,7 @@ public class PlayerActionHiding : IPlayerAction
 			inPlayer.OutOfHide();
 		}
 	}
+
+	public void InitializeValues(Player player)
+	{}
 }
