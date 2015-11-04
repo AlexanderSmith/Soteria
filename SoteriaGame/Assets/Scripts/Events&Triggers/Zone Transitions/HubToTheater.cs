@@ -5,6 +5,7 @@ public class HubToTheater : MonoBehaviour
 {
 	void OnTriggerEnter(Collider player)
 	{
+		GameDirector.instance.ClearAudioList();
 		if (player.gameObject.tag == "Player")
 		{
 			switch (GameDirector.instance.GetGamePhase())
