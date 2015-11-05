@@ -216,7 +216,7 @@ public class HudManager : MonoBehaviour {
 	public void CompassTrue(bool inCompass)
 	{
 		//this.compass.SetActive(inCompass);
-		this.ChangeObjective(GameObject.Find("SoteriaPowerSystem_scaled"));
+		this.ChangeObjective(GameObject.Find("ReceiveLantern"));
 	}
 	
 	public void LanternTrue(bool inLantern)

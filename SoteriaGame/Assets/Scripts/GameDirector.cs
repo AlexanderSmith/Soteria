@@ -26,10 +26,10 @@ public class GameDirector : MonoBehaviour {
 	private bool _canFight;
 
 	// District visitation bools for objective
-	private bool _visitedSewer = false;
-	private bool _musicPass1 = false;
-	private bool _theaterPass1 = false;
-	private bool _obsPass1 = false;
+	private bool _visitedSewer;
+	private bool _musicPass1;
+	private bool _theaterPass1;
+	private bool _obsPass1;
 
 	public float flashBangLife = 3.0f;
 	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
@@ -100,6 +100,10 @@ public class GameDirector : MonoBehaviour {
 		this.compass = false;
 		this._tokenUsed = false;
 		this._canFight = false;
+		this._visitedSewer = false;
+		this._musicPass1 = false;
+		this._theaterPass1 = false;
+		this._obsPass1 = false;
 	}
 	
 	private void InitializeManagers()
