@@ -24,7 +24,7 @@ public class MusicBossController : MonoBehaviour
 		this.noPilesDefeatedVolume = .01f;
 		this.onePilesDefeatedVolume = .02f;
 		this.allPilesDefeatedVolume = .03f;
-		this._rateOfVolumeIncrease = .02f;
+		this._rateOfVolumeIncrease = .03f;
 		this._musicPilesDefeated = 0;
 		this._brass = false;
 		this._string = false;
@@ -76,141 +76,6 @@ public class MusicBossController : MonoBehaviour
 	public void PileDone()
 	{
 		this._fighting = true;
-//		switch (inMusicPile)
-//		{
-//		case "brass":
-//			this.BrassPileDone();
-//			break;
-//		case "string":
-//			this.StringPileDone();
-//			break;
-//		case "wind":
-//			this.WindPileDone();
-//			break;
-//		}
-	}
-
-	public void BrassMusicStart()
-	{
-		this._currentMusic = AudioID.BrassMusic;
-		StartCoroutine("BrassMusicEncounter");
-		GameDirector.instance.MusicPuzzleEncounter(this.gameObject);
-	}
-
-	IEnumerator BrassMusicEncounter()
-	{
-		switch (_musicPilesDefeated)
-		{
-		case 0:
-			this._rateOfVolumeDecrease = this.noPilesDefeatedVolume;
-			break;
-		case 1:
-			this._rateOfVolumeDecrease = this.onePilesDefeatedVolume;
-			break;
-		case 2:
-			this._rateOfVolumeDecrease = this.allPilesDefeatedVolume;
-			break;
-		}
-		while (!this._brass)
-		{
-			if (GameDirector.instance.GetVolume(AudioID.BrassMusic) < GameDirector.instance.GetPuzzleWinVolume())
-			{
-				GameDirector.instance.SubtractVolume(AudioID.BrassMusic, this._rateOfVolumeDecrease);
-			}
-			else
-			{
-				this.BrassPileDone();
-				GameDirector.instance.ChangeVolume(AudioID.BrassMusic, GameDirector.instance.GetPuzzleWinVolume());
-			}
-			yield return null;
-		}
-	}
-
-	public void BrassPileDone()
-	{
-		this._brass = true;
-	}
-
-	public void StringMusicStart()
-	{
-		this._currentMusic = AudioID.StringMusic;
-		StartCoroutine("StringMusicEncounter");
-		GameDirector.instance.MusicPuzzleEncounter(this.gameObject);
-	}
-
-	IEnumerator StringMusicEncounter()
-	{
-		switch (_musicPilesDefeated)
-		{
-		case 0:
-			this._rateOfVolumeDecrease = this.noPilesDefeatedVolume;
-			break;
-		case 1:
-			this._rateOfVolumeDecrease = this.onePilesDefeatedVolume;
-			break;
-		case 2:
-			this._rateOfVolumeDecrease = this.allPilesDefeatedVolume;
-			break;
-		}
-		while (!this._string)
-		{
-			if (GameDirector.instance.GetVolume(AudioID.StringMusic) < GameDirector.instance.GetPuzzleWinVolume())
-			{
-				GameDirector.instance.SubtractVolume(AudioID.StringMusic, this._rateOfVolumeDecrease);
-			}
-			else
-			{
-				this.StringPileDone();
-				GameDirector.instance.ChangeVolume(AudioID.StringMusic, GameDirector.instance.GetPuzzleWinVolume());
-			}
-			yield return null;
-		}
-	}
-
-	public void StringPileDone()
-	{
-		this._string = true;
-	}
-
-	public void WindMusicStart()
-	{
-		this._currentMusic = AudioID.WindMusic;
-		StartCoroutine("WindMusicEncounter");
-		GameDirector.instance.MusicPuzzleEncounter(this.gameObject);
-	}
-
-	IEnumerator WindMusicEncounter()
-	{
-		switch (_musicPilesDefeated)
-		{
-		case 0:
-			this._rateOfVolumeDecrease = this.noPilesDefeatedVolume;
-			break;
-		case 1:
-			this._rateOfVolumeDecrease = this.onePilesDefeatedVolume;
-			break;
-		case 2:
-			this._rateOfVolumeDecrease = this.allPilesDefeatedVolume;
-			break;
-		}
-		while (!this._wind)
-		{
-			if (GameDirector.instance.GetVolume(AudioID.WindMusic) < GameDirector.instance.GetPuzzleWinVolume())
-			{
-				GameDirector.instance.SubtractVolume(AudioID.WindMusic, this._rateOfVolumeDecrease);
-			}
-			else
-			{
-				this.WindPileDone();
-				GameDirector.instance.ChangeVolume(AudioID.WindMusic, GameDirector.instance.GetPuzzleWinVolume());
-			}
-			yield return null;
-		}
-	}
-
-	public void WindPileDone()
-	{
-		this._wind = true;
 	}
 
 	public void FightingBoss()
@@ -220,14 +85,18 @@ public class MusicBossController : MonoBehaviour
 
 	public void Cower()
 	{
-		this._musicPilesDefeated++;
 		if (this._musicPilesDefeated == 2)
 		{
 			this._musicController.OrganTileActive();
 		}
-		if (this._musicPilesDefeated > 3)
+		if (this._musicPilesDefeated == 3)
 		{
 			Destroy(this);
+			GameDirector.instance.StopAudioClip(AudioID.OrganMusic);
+			GameDirector.instance.StopAudioClip(AudioID.BrassMusic);
+			GameDirector.instance.StopAudioClip(AudioID.StringMusic);
+			GameDirector.instance.StopAudioClip(AudioID.WindMusic);
 		}
+		this._musicPilesDefeated++;
 	}
 }

@@ -143,6 +143,7 @@ public enum AudioID
 	BackgroundMusic,
 	Heartbeats,
 	LeavingHide,
+	OrganMusicBroken,
 	OrganMusic,
 	BrassMusic,
 	StringMusic,
@@ -181,8 +182,11 @@ public class AudioSourceWrapper
 			if (!this._audiosrc.clip.Equals (this._audioclips [currindx]))
 				Nextclip ();
 		}
+		Debug.Log (this._audiosrc.clip.name);
 		this._audiosrc.Play();
-		currindx++;
+
+		if (this._audioclips.Count > 1) 
+			currindx++;
 	}
 	
 	public void UpdateAudioClip (AudioClip inClip)
@@ -202,7 +206,7 @@ public class AudioSourceWrapper
 	
 	public void Nextclip()
 	{
-		if (this._audioclips.Count > 1 && currindx < this._audioclips.Count) 
+		if (currindx < this._audioclips.Count) 
 		{
 			this._audiosrc.clip = this._audioclips [currindx];
 		}

@@ -141,7 +141,7 @@ public class DialogueManager : MonoBehaviour
 	public void Update()
 	{
 		//TemporaryCode//
-		GameObject.Find("DiagText").GetComponent<Text>().text = UIText;	
+		//GameObject.Find("DiagText").GetComponent<Text>().text = UIText;	
 
 		CheckNextClip();
 	}

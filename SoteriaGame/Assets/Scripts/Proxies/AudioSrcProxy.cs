@@ -21,8 +21,8 @@ public class AudioSrcProxy : MonoBehaviour {
 		GameDirector.instance.AttachAudioSource(AudioSrc, this.gameObject, AudioSourceID);		
 		
 		if (IsDialogue)
-			GameDirector.instance.CollectAudioClipsForDialogue("Scene1",AudioSourceID);
+			GameDirector.instance.CollectAudioClipsForDialogue(AudioSourceID,AudioSourceID);
 		else
-			GameDirector.instance.CollectAudioClips("Scene1",AudioSourceID);
+			GameDirector.instance.CollectAudioClips(AudioSourceID,AudioSourceID);
 	}
 }
