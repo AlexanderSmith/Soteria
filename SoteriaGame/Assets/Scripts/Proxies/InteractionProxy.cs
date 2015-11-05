@@ -1,33 +1,37 @@
 using UnityEngine;
 using System.Collections;
 
-[RequireComponent(typeof(Animator))]
 public class InteractionProxy : MonoBehaviour {
 
-	private GameObject _interactionbutton;
-	private GameObject _npcportrait;
+	public InteractionBase InteractionType;
 
 	// Use this for initialization
 	void Awake () 
 	{
-		this._interactionbutton = this.transform.FindChild("InteractionButton").gameObject;
-		this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
+		if (InteractionType != null)
+			this.InteractionType.Awake();
 	}
-
+	
+	// Update is called once per frame
+	void Update () 
+	{
+		if (InteractionType != null)
+			this.InteractionType.Update();
+	}
+	
 	void OnTriggerEnter(Collider other)
 	{
-		this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
+		this.InteractionType.TriggerEnter(other);
+		Debug.Log("Trigger Start");
 	}
 	void OnTriggerExit(Collider other)
 	{
-		this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
+		this.InteractionType.TriggerExit(other);
+		Debug.Log("Trigger exit");
 	}
-
 	void OnTriggerStay(Collider other)
 	{
-		this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
-
-		if (Input.GetKeyDown(KeyCode.Space))
-			GameDirector.instance.StartDialogue(this.gameObject, other.transform.parent.gameObject);
+		this.InteractionType.TriggerStay(other);
+		Debug.Log("Trigger stay");
 	}
 }
