@@ -658,6 +658,24 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._audioManager.AttachAudioSource (inAudioSrc,inGameObj,inName);
 	}
+
+	public bool isClipPlaying(AudioID inAID)
+	{
+		return this._audioManager.isClipPlaying(inAID);
+	}
+
+	public void CollectAudioClipsForDialogue(string inFolderName, string inAID)
+	{
+		AudioID aid = this._audioManager.getIDByName(inAID);
+		this._audioManager.CollectDialogueAudioClips(inFolderName, aid);
+	}
+
+	public void CollectAudioClips(string inFolderName, string inAID)
+	{
+		AudioID aid = this._audioManager.getIDByName(inAID);
+		this._audioManager.CollectAudioClips(inFolderName, aid);
+	}
+
 	///Other Stuff to Add.
 	/// --->
 	//set Parameters Methods
@@ -687,16 +705,22 @@ public class GameDirector : MonoBehaviour {
 
 	public GameObject getDialogueInterface()
 	{
-		return this._dialoguemanager.getDialogueInterface();
+		return null;
 	}
 	
 	public bool isDialogueActive()
 	{
-		return this._dialoguemanager.isCurrentlyActive();
+		return this._dialoguemanager.isDialogueActive();
 	}
-	public void StartDialogue(GameObject NPC, GameObject Player)
+
+	public void SetupDialogue(string txtname, AudioID inAID)
 	{
-		this._dialoguemanager.startdialogue(NPC,Player);
+		this._dialoguemanager.ReloadDialogueData(txtname, inAID);
+	}
+
+	public void StartDialogue()
+	{
+		this._dialoguemanager.StartDialogue();
 	}
 
 	public void EndDialogue()

@@ -64,7 +64,33 @@ public class AudioManager : MonoBehaviour
 	{
 		
 	}
-	
+
+	/// Call in Case the audio is for a dialogue.
+	public void CollectDialogueAudioClips(string foldername, AudioID inAID)
+	{
+		string resdir = "DialoguesSrc/" + foldername + "/Audio/"; 
+		privCollectAudioClips (resdir, inAID);
+	}
+	/// Call for sequential audio.
+	public void CollectAudioClips (string foldername, AudioID inAID) 
+	{
+		string resdir = "Audio/" + foldername + "/";
+		privCollectAudioClips (resdir, inAID);
+	}
+	private void privCollectAudioClips (string resdir, AudioID inAID)
+	{
+		AudioSourceWrapper adsrc = this.FindAudioSrcbyID(inAID);
+		
+		foreach(AudioClip AC in Resources.LoadAll(resdir, typeof(AudioClip)))
+		{
+			adsrc.AddClip(AC);
+		}
+	}
+	public bool isClipPlaying(AudioID inAid)
+	{
+		return FindAudioSrcbyID(inAid).IsPlaying();
+	}
+
 	// Maybe implement a different Data Structure in the future for largers sets of data Hashtable or Dictionary. 
 	public void PlayAudio(AudioID inAID)
 	{
@@ -128,6 +154,8 @@ public class AudioSourceWrapper
 	private GameObject _gameobj;
 	private AudioSource _audiosrc;
 	private AudioID _aID;
+	private int currindx;
+	private List<AudioClip> _audioclips;
 	
 	private AudioSourceWrapper(){}
 	
@@ -136,6 +164,7 @@ public class AudioSourceWrapper
 		this._gameobj = inGameObj;
 		this._audiosrc = inAudioSrc;
 		this._aID = inAID;
+		this._audioclips = new List<AudioClip>();
 	}
 	
 	public AudioID getAID()
@@ -145,47 +174,17 @@ public class AudioSourceWrapper
 	
 	public void playClip()
 	{
-		//not sure if this affects the 3Dness of audio
-		//second call seems better to me.
+		if (this._audiosrc.clip == null)
+			this._audiosrc.clip = this._audioclips [0];
+		else 
+		{
+			if (!this._audiosrc.clip.Equals (this._audioclips [currindx]))
+				Nextclip ();
+		}
 		this._audiosrc.Play();
-		//this._gameobj.GetComponent<AudioSource>().Play();
+		currindx++;
 	}
-
-	public void stopClip()
-	{
-		this._audiosrc.Stop();
-	}
-
-	public void updateVolume(float inVolume)
-	{
-		this._audiosrc.volume = inVolume;
-	}
-
-	public void addVolume(float inVolume)
-	{
-		this._audiosrc.volume += inVolume;
-
-		if (this._audiosrc.volume >= GameDirector.instance.GetPuzzleWinVolume())
-		{
-			GameDirector.instance.StopEncounterMode();
-			GameDirector.instance.PlayerOvercame();
-		}
-	}
-
-	public void subtractVolume(float inVolume)
-	{
-		this._audiosrc.volume = Mathf.Lerp(this._audiosrc.volume, 0f, Time.deltaTime);
-		if (this._audiosrc.volume <= .001f)
-		{
-			GameDirector.instance.GameOver();
-		}
-	}
-
-	public float getVolume()
-	{
-		return this._audiosrc.volume;
-	}
-
+	
 	public void UpdateAudioClip (AudioClip inClip)
 	{
 		this._audiosrc.clip = inClip;
@@ -194,5 +193,58 @@ public class AudioSourceWrapper
 	public bool IsPlaying ()
 	{
 		return _audiosrc.isPlaying;
+	}
+	
+	public void AddClip( AudioClip inAudioClip)
+	{
+		this._audioclips.Add(inAudioClip);
+	}
+	
+	public void Nextclip()
+	{
+		if (this._audioclips.Count > 1 && currindx < this._audioclips.Count) 
+		{
+			this._audiosrc.clip = this._audioclips [currindx];
+		}
+	}
+	
+	public void Rewind()
+	{
+		this._audiosrc.clip = this._audioclips[0];
+	}
+	
+	public void stopClip()
+	{
+		this._audiosrc.Stop();
+	}
+	
+	public void updateVolume(float inVolume)
+	{
+		this._audiosrc.volume = inVolume;
+	}
+	
+	public void addVolume(float inVolume)
+	{
+		this._audiosrc.volume += inVolume;
+		
+		if (this._audiosrc.volume >= GameDirector.instance.GetPuzzleWinVolume())
+		{
+			GameDirector.instance.StopEncounterMode();
+			GameDirector.instance.PlayerOvercame();
+		}
+	}
+	
+	public void subtractVolume(float inVolume)
+	{
+		this._audiosrc.volume = Mathf.Lerp(this._audiosrc.volume, 0f, Time.deltaTime);
+		if (this._audiosrc.volume <= .001f)
+		{
+			GameDirector.instance.GameOver();
+		}
+	}
+	
+	public float getVolume()
+	{
+		return this._audiosrc.volume;
 	}
 }
