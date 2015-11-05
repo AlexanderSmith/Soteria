@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d9435d532fb3efa43b6dcaa8467b047f
-timeCreated: 1441127288
+guid: e6b053fcfd0b8804a8473a4bd7316073
+timeCreated: 1446698937
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Apothecary1
+    4300000: InsuranceAgency_combined:pCube292
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -67,8 +67,10 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
+    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   animationType: 2
+  humanoidOversampling: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
