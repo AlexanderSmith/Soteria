@@ -10,25 +10,28 @@ public class PlayerActionNormal : IPlayerAction
 
 	public void PlayerAction(Player inPlayer)
 	{
-		_camForward = Camera.main.transform.forward;
-		_camRight = Camera.main.transform.right;
-		_horizontal = Input.GetAxisRaw("Horizontal");
-		_vertical = Input.GetAxisRaw("Vertical");
-
-		if (!_horizontal.Equals(0) || !_vertical.Equals(0))
+		if (!GameDirector.instance.isDialogueActive())
 		{
-			inPlayer.Moving();
-		}
+			_camForward = Camera.main.transform.forward;
+			_camRight = Camera.main.transform.right;
+			_horizontal = Input.GetAxisRaw("Horizontal");
+			_vertical = Input.GetAxisRaw("Vertical");
 
-		moveVect = (_camForward * _vertical) + (_camRight * _horizontal);
-		moveVect.y = 0;
-		inPlayer.gameObject.transform.GetComponent<Rigidbody>().MovePosition((moveVect * inPlayer.moveSpeed * Time.deltaTime) + inPlayer.gameObject.transform.GetComponent<Rigidbody>().position);
+			if (!_horizontal.Equals(0) || !_vertical.Equals(0))
+			{
+				inPlayer.Moving();
+			}
 
-		if (moveVect != Vector3.zero)
-		{
-			Quaternion targetRot = Quaternion.LookRotation (moveVect);
-			Quaternion rot = Quaternion.Lerp (inPlayer.gameObject.transform.GetComponent<Rigidbody>().rotation, targetRot, inPlayer.rotationSpeed * Time.deltaTime);
-			inPlayer.gameObject.transform.GetComponent<Rigidbody>().MoveRotation (rot);
+			moveVect = (_camForward * _vertical) + (_camRight * _horizontal);
+			moveVect.y = 0;
+			inPlayer.gameObject.transform.GetComponent<Rigidbody>().MovePosition((moveVect * inPlayer.moveSpeed * Time.deltaTime) + inPlayer.gameObject.transform.GetComponent<Rigidbody>().position);
+
+			if (moveVect != Vector3.zero)
+			{
+				Quaternion targetRot = Quaternion.LookRotation (moveVect);
+				Quaternion rot = Quaternion.Lerp (inPlayer.gameObject.transform.GetComponent<Rigidbody>().rotation, targetRot, inPlayer.rotationSpeed * Time.deltaTime);
+				inPlayer.gameObject.transform.GetComponent<Rigidbody>().MoveRotation (rot);
+			}
 		}
 	}
 }

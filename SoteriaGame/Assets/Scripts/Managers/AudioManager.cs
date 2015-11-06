@@ -91,7 +91,8 @@ public enum AudioID
 	BackgroundMusic,
 	Heartbeats,
 	LeavingHide,
-	TokenUse
+	TokenUse,
+	None
 }
 
 public class AudioSourceWrapper

@@ -1,129 +1,171 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Diagnostics;
 using UnityEngine.UI;
 
-public class DialogueManager : MonoBehaviour {
+enum DialogueState
+{
+	Active,
+	Standby,
+	Null
+};
+public class DialogueManager : MonoBehaviour 
+{
+	DialogueParser _parser;
+	DialogueState _currState;
+	DialogueData _diagdata;
+	GameObject DialogueUIBG;
+	GameObject DialogueUIText;
+	string 		UIText;
 	
-	private GameObject _dialogueinterface;
-	private DialogueChoice _dproxy;
-	private Image _npcportrait;
-	private Image _playerportrait;
+	/////////////////////////////////////////////////////////////////////////
+	///////////////////////  INITIALIZATION   ///////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
 	
-	private Text _npctext;
-	private Text[] _playerchoices;
-	public bool isEnded = false;
-	private bool isOngoing = false;
-
-	public bool isCurrentlyActive()
-	{
-		return isOngoing;
-	}
-	public GameObject getDialogueInterface()
-	{
-		return this._dialogueinterface;
-	}
 	public void Initialize()
 	{
-		_playerchoices = new Text[3];
-		
-		_dialogueinterface = GameObject.Find("DialogueInterface");
-		_npcportrait = _dialogueinterface.transform.FindChild("PortraitNPC").gameObject.GetComponent<Image>();
-		_playerportrait = _dialogueinterface.transform.FindChild("PortraitPlayer").gameObject.GetComponent<Image>();
-		_npctext = _dialogueinterface.transform.FindChild("Dialogue").gameObject.GetComponent<Text>();
-		
-		_playerchoices[0] = _dialogueinterface.transform.FindChild("Response 1").transform.Find("Text").gameObject.GetComponent<Text>();
-		_playerchoices[1] = _dialogueinterface.transform.FindChild("Response 2").transform.Find("Text").gameObject.GetComponent<Text>();
-		_playerchoices[2] = _dialogueinterface.transform.FindChild("Response 3").transform.Find("Text").gameObject.GetComponent<Text>();
-		
-		_npctext.gameObject.SetActive(false);
-		_playerchoices[0].gameObject.SetActive(false);
-		_playerchoices[1].gameObject.SetActive(false);
-		_playerchoices[2].gameObject.SetActive(false);
+		this._currState = DialogueState.Standby;
+		this._parser = new DialogueParser ();
+		InitializeInterface();
 
-		this.enabled = false;
 	}
-	
-	public void startdialogue(GameObject NPC, GameObject Player)
-	{
-		this.isOngoing = true;
 
-		this._npcportrait.overrideSprite = NPC.transform.Find("NPCPortrait").GetComponent<Image>().sprite;
-		this._playerportrait.overrideSprite = Player.transform.Find("PlayerPortrait").GetComponent<Image>().sprite;
-		
-		this._dialogueinterface.transform.Find("TextBackGround").GetComponent<Animator>().SetBool("Show",true);
-		this._dialogueinterface.transform.Find("PortraitNPC").GetComponent<Animator>().SetBool("Show",true);
-		this._dialogueinterface.transform.Find("PortraitPlayer").GetComponent<Animator>().SetBool("Show",true);
-		
-		this._dproxy = NPC.transform.Find("DialogueText").GetComponent<DialogueTextProxy>().DialoguePrefab;
-		SetupText();
-		
+	private void InitializeInterface ()
+	{
+		GameObject DialogueUI = GameObject.FindWithTag("DialogueInterface");
+		DialogueUIBG = DialogueUI.transform.FindChild("TextBackGround").gameObject;
+		DialogueUIBG.SetActive(false);
+		DialogueUIText = DialogueUI.transform.FindChild("Dialogue").gameObject;
+		DialogueUIText.SetActive(false);
+
+	}
+
+	public void OnLevelWasLoaded()
+	{
+		InitializeInterface();
+	}
+
+	public bool isDialogueActive()
+	{
+		return (_currState == DialogueState.Active ? true : false);
+	}
+	public void UpdateDialogueDataAudioID( AudioID inAid)
+	{
+		if (this._currState == DialogueState.Standby)
+			this._diagdata.Aid = inAid;
 	}
 	
-	public void SelectResponse(int resp)
+	public void readDialogueData(string txtname)
 	{
-		if (!isEnded)
-		{
-			this._dproxy = this._dproxy.DialoguePrefabs[resp-1];
-			
-			if (this._dproxy.isEnd)
-			{
-				isEnded = true;
-				stopdialogue();
-			}
-			else
-			{
-				SetupText();
-			}
-		}
-		else
-			isEnded = false;
+		_parser.LoadDialogueSrc (_diagdata, txtname);
 	}
 	
-	private void SetupText()
+	private void ChangeState(DialogueState inState)
 	{
-		setTextonDialogue(true);
-		this._npctext.text = this._dproxy.NPCText;
-		
-		this._playerchoices[0].transform.parent.gameObject.SetActive(false);
-		this._playerchoices[1].transform.parent.gameObject.SetActive(false);
-		this._playerchoices[2].transform.parent.gameObject.SetActive(false);
-		
-		for (int i = 0; i< _dproxy.size; ++i)
+		_currState = inState;
+	}
+	
+	public void ReloadDialogueData(string txtname, AudioID inAid)
+	{
+		if (this._currState == DialogueState.Standby) 
 		{
-			this._playerchoices[i].text = this._dproxy.ChoicesText[i];
-			this._playerchoices[i].transform.parent.gameObject.SetActive(true);
+			this._diagdata = new DialogueData(inAid);
+			this._parser.LoadDialogueSrc (_diagdata,txtname);
 		}
 	}
-
+	
+	/////////////////////////////////////////////////////////////////////////
+	///////////////////////  GUI MANIPULATION   /////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	
+	private void ActivateGUI()
+	{
+		DialogueUIBG.SetActive(true);
+		DialogueUIText.SetActive(true);
+	}
+	
+	private void DeActivateGUI()
+	{
+		DialogueUIBG.SetActive(false);
+		DialogueUIText.SetActive(false);
+	}
+	
+	//////////////////////////////////////////////////////////////////////////	
+	///////////////////////  DIALOGUE COMMAND CENTER /////////////////////////
+	//////////////////////////////////////////////////////////////////////////
+	
+	
+	public void StartDialogue()
+	{
+		this.ChangeState (DialogueState.Active);
+		
+		ActivateGUI ();
+		
+		GetNextLine();
+	//	GetNextVO();
+	}
+	
 	public void EndDialogue()
 	{
-		this.stopdialogue();
-	}
-	
-	private void stopdialogue()
-	{
-		this._playerchoices[0].transform.parent.gameObject.SetActive(true);
-		this._playerchoices[1].transform.parent.gameObject.SetActive(true);
-		this._playerchoices[2].transform.parent.gameObject.SetActive(true);
+		this.ChangeState (DialogueState.Standby);
 		
-		this._dialogueinterface.transform.Find("TextBackGround").GetComponent<Animator>().SetBool("Show",false);
-		this._dialogueinterface.transform.Find("PortraitNPC").GetComponent<Animator>().SetBool("Show",false);
-		this._dialogueinterface.transform.Find("PortraitPlayer").GetComponent<Animator>().SetBool("Show",false);
+		DeActivateGUI ();
+	}
+	
+	void ContinueDialogue()
+	{
+		this._diagdata.Textindx++;
 		
-		setTextonDialogue(false);
-		this.isOngoing = false;
+		GetNextLine();
+	//GetNextVO();
+	} 
+	
+	/////////////////////////////////////////////////////////////////////////
+	///////////////////////  TEXT MANIPULATION   ////////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	void GetNextLine()
+	{
+		Text t = DialogueUIText.GetComponent<Text>();
+		t.text = this._diagdata.DialogueLines[this._diagdata.Textindx];
 	}
 	
-	public void setTextonDialogue(bool state)
+	public void SkipLine()
 	{
-		_npctext.gameObject.SetActive(state);
-		_playerchoices[0].gameObject.SetActive(state);
-		_playerchoices[1].gameObject.SetActive(state);
-		_playerchoices[2].gameObject.SetActive(state);
+		GetNextLine();
+	//	GetNextVO();
 	}
 	
-	// Update is called once per frame
-	public void Update () 
+	/////////////////////////////////////////////////////////////////////////
+	///////////////////////  AUDIO MANIPULATION   ///////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	
+	void GetNextVO()
 	{
+		GameDirector.instance.PlayAudioClip(this._diagdata.Aid);	
+	}
+	
+	void CheckNextClip()
+	{
+		if (this._currState == DialogueState.Active)
+		{
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				if (this._diagdata.Textindx == this._diagdata.diaglength)
+					EndDialogue();
+				else
+					ContinueDialogue();
+			}
+		}
+	}
+	/////////////////////////////////////////////////////////////////////////
+	//////////////////////  TRIGGER MANIPULATION   //////////////////////////
+	/////////////////////////////////////////////////////////////////////////
+	
+	public void Update()
+	{
+		//TemporaryCode//
+		//GameObject.Find("DiagText").GetComponent<Text>().text = UIText;	
+		
+		CheckNextClip();
 	}
 }
