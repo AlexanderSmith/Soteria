@@ -91,7 +91,7 @@ public class MusicBossController : MonoBehaviour
 		}
 		if (this._musicPilesDefeated == 3)
 		{
-			Destroy(this);
+			Destroy(this.gameObject);
 			GameDirector.instance.StopAudioClip(AudioID.OrganMusic);
 			GameDirector.instance.StopAudioClip(AudioID.BrassMusic);
 			GameDirector.instance.StopAudioClip(AudioID.StringMusic);
