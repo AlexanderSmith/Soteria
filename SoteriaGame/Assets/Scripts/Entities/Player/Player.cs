@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
 	private IPlayerAction _hidingAction = new PlayerActionHiding();
 	private IPlayerAction _pauseAction = new PlayerActionPause();
 	private IPlayerAction _noFighting = new PlayerActionNoFight();
+	private IPlayerAction _cardPickup = new global::PlayerActionCardPickup();
 
 	void Start ()
 	{
@@ -73,6 +74,11 @@ public class Player : MonoBehaviour
 	public void PlayerActionPause()
 	{
 		this.SwitchPlayerAction(_pauseAction);
+	}
+
+	public void PlayerActionCardPickup()
+	{
+		this.SwitchPlayerAction(_cardPickup);
 	}
 
 	public void PlayerActionNoFighting()

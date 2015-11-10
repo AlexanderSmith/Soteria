@@ -4,9 +4,8 @@ public class PlayerActionPause : IPlayerAction
 {	
 	public void PlayerAction(Player inPlayer)
 	{
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (Input.GetKeyDown(KeyCode.Escape))
 		{
-			GameDirector.instance.EndDialogue();
 			GameDirector.instance.GetPlayer().PlayerActionNormal();
 		}
 	}
