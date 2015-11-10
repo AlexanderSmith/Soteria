@@ -40,7 +40,7 @@ public class PulseButtonMode : ButtonMode
 	public PulseButtonMode(ButtonController controller)
 		:base(controller)
 	{
-		this.m_NormalTexture = Resources.Load("GUI/Soteria_coin", typeof(Sprite)) as Sprite;
+		this.m_NormalTexture = Resources.Load("GUI/Coin_Dark", typeof(Sprite)) as Sprite;
 		this.m_ScaleFactor = new Vector3 (1.2f, 1.3f, 1.0f);
 		this.m_fTimeElapsed = 0.0f;
 	}
@@ -89,7 +89,7 @@ public class IdleButtonMode : ButtonMode
 		:base(controller)
 	{
 		m_Owner.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
-		this.m_PulseTexture = Resources.Load("GUI/CoinTrans", typeof(Sprite)) as Sprite;
+		this.m_PulseTexture = Resources.Load("GUI/Coin_Light", typeof(Sprite)) as Sprite;
 	}
 	
 	public override void VOnUpdate () {}

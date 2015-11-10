@@ -14,17 +14,21 @@ public class HudManager : MonoBehaviour {
 
 	private Image _onIndicator;
 	private Image _offIndicator;
+	private Quaternion _compassRotation;
+	private Sprite _1card;
+	private Sprite _2cards;
+	private Sprite _3cards;
 	private bool _isonscreen;
 	public GameObject Objective;
 
 	private GameObject [] Buttons;
 
 	// Inventory items
-	private GameObject token;
-	private GameObject lantern;
-	private GameObject compass;
-	//	private GameObject cards;
-	//	private GameObject suit;
+	private GameObject _token;
+	private GameObject _lantern;
+	private GameObject _compass;
+	private GameObject _cards;
+	private GameObject _suit;
 	//	private GameObject leftKeyPiece;
 	//	private GameObject middleKeyPiece;
 	//	private GameObject centerKeyPiece;
@@ -53,15 +57,22 @@ public class HudManager : MonoBehaviour {
 
 		this._coinController = _hudinterface.GetComponentInChildren<ButtonController> ();
 		this._coinController.Initialize (this);
+
+		this._1card = Resources.Load("GUI/1Card", typeof(Sprite)) as Sprite;
+		this._2cards = Resources.Load("GUI/2Card", typeof(Sprite)) as Sprite;
+		this._3cards = Resources.Load("GUI/3Card", typeof(Sprite)) as Sprite;
 		
 		//Inventory item game object references
-		this.token = GameObject.Find("Coin");
-		this.token.SetActive(true);
-		this.token.GetComponent<Image>().enabled = false;
-		this.lantern = GameObject.Find("Lantern");
-		this.lantern.SetActive(true);
-		this.lantern.GetComponent<Image>().enabled = false;
-//		// Same for compass, cards, suit, and key pieces;
+		this._token = GameObject.Find("Coin");
+		this._token.GetComponent<Image>().enabled = false;
+		this._lantern = GameObject.Find ("Lantern");
+		this._lantern.GetComponent<Image>().enabled = false;
+		this._compass = GameObject.Find("Compass");
+		this._compass.GetComponent<Image>().enabled = false;
+		this._cards = GameObject.Find("Cards");
+		this._cards.GetComponent<Image>().enabled = false;
+		this._suit = GameObject.Find("Suit");
+		this._suit.GetComponent<Image>().enabled = false;
 	}
 
 	// Update is called once per frame
@@ -118,8 +129,14 @@ public class HudManager : MonoBehaviour {
 				y = offset;
 			
 			_offIndicator.transform.position = new Vector3 (x, y , 0);
+
 			//Should also add rotation for the arrow to point at,
-			//Add a second check if it's in the corner than rotate the arrow correctly. 
+			this._compassRotation = Quaternion.identity;
+			this._compassRotation.eulerAngles = new Vector3(0, 0, Vector3.Angle(_offIndicator.transform.position - ObjectPosition, _offIndicator.transform.forward));
+			this._offIndicator.transform.rotation = this._compassRotation;
+
+			/************************Still need below*********************/
+			//Add a second check if it's in the corner than rotate the arrow correctly.
 		}
 	}
 
@@ -189,7 +206,7 @@ public class HudManager : MonoBehaviour {
 	public void EnableEncounterView()
 	{
 		this._fadeinout.gameObject.SetActive(true);
-		if (this.token.activeSelf == true)
+		if (this._token.activeSelf == true)
 		{
 			this._coinController.Pulsing = true;
 		}
@@ -210,19 +227,20 @@ public class HudManager : MonoBehaviour {
 	public void TokenTrue(bool inToken)
 	{
 		//this.token.SetActive(inToken);
-		this.token.GetComponent<Image>().enabled = true;
+		this._token.GetComponent<Image>().enabled = true;
 	}
 
 	public void CompassTrue(bool inCompass)
 	{
 		//this.compass.SetActive(inCompass);
+		this._compass.GetComponent<Image>().enabled = true;
 		this.ChangeObjective(GameObject.Find("ReceiveLantern"));
 	}
 	
 	public void LanternTrue(bool inLantern)
 	{
 		//this.lantern.SetActive(inLantern);
-		this.lantern.GetComponent<Image>().enabled = true;
+		this._lantern.GetComponent<Image>().enabled = true;
 		this.ChangeObjective(GameObject.Find("HubToMusic"));
 	}
 
