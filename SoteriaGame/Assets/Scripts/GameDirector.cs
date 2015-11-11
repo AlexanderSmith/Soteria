@@ -25,6 +25,11 @@ public class GameDirector : MonoBehaviour {
 	private bool _tokenUsed;
 	private bool _canFight;
 
+	// Puzzle activation variables
+	private bool _musicPuzzleActivated;
+	private bool _puppetPuzzleActivated;
+	private bool _observatoryPuzzleActivated;
+
 	// District visitation bools for objective
 	private bool _visitedSewer;
 	private bool _musicPass1;
@@ -104,6 +109,9 @@ public class GameDirector : MonoBehaviour {
 		this._musicPass1 = false;
 		this._theaterPass1 = false;
 		this._obsPass1 = false;
+		this._musicPuzzleActivated = false;
+		this._puppetPuzzleActivated = false;
+		this._observatoryPuzzleActivated = false;
 	}
 	
 	private void InitializeManagers()
@@ -118,8 +126,6 @@ public class GameDirector : MonoBehaviour {
 		this._dialoguemanager = this.gameObject.GetComponent<DialogueManager> ();
 		this._levelManager = this.gameObject.GetComponent<LevelManager> ();
 
-		//this.InitializePlayer ();  
-		
 		this._audioManager.Initialize();
 		this._HUDManager.Initialize();
 		this._encounterManager.Initialize();
@@ -229,6 +235,12 @@ public class GameDirector : MonoBehaviour {
 	public bool CanFight()
 	{
 		return this._canFight;
+	}
+
+	// When suit removed, player now able to fight shadow creatures -- will need more than this bool flip
+	public void SuitRemoved()
+	{
+		this._canFight = true;
 	}
 
 	public void VisitedSewer()
@@ -348,6 +360,11 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.Encounter(enemy);
 	}
 
+//	public void MusicPuzzleEncounter(GameObject enemy)
+//	{
+//		this._encounterManager.MusicPuzzleEncounter(enemy);
+//	}
+
 	public void StartEncounterMode()
 	{
 		if (this._stateManager.GameState() != GameStates.Encounter) 
@@ -374,6 +391,24 @@ public class GameDirector : MonoBehaviour {
 		this._HUDManager.DisableEncounterView();
 		this._player.PlayerActionNormal();
 	}
+
+//	public void StartMusicPuzzleEncounter()
+//	{
+//		if (this._stateManager.GameState() != GameStates.Encounter) 
+//		{
+//			this._stateManager.ChangeGameState (GameStates.Encounter);
+//		}
+//		this._HUDManager.EnableEncounterView();
+//		this.SetClearStatus(false);
+//		if (this._canFight)
+//		{
+//			this._player.PlayerActionMusicPuzzle();
+//		}
+//		else
+//		{
+//			this._player.PlayerActionNoFighting();
+//		}
+//	}
 
 	public void TakeSafteyLight()
 	{
@@ -581,6 +616,21 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.ClearAudioList();
 	}
 
+	public void ChangeVolume(AudioID inAID, float inVolume)
+	{
+		this._audioManager.ChangeVolume(inAID, inVolume);
+	}
+	
+	public void AddVolume(AudioID inAID, float inVolume)
+	{
+		this._audioManager.AddVolume(inAID, inVolume);
+	}
+	
+	public void SubtractVolume(AudioID inAID, float inVolume)
+	{
+		this._audioManager.SubtractVolume(inAID, inVolume);
+	}
+
 	/// <summary>
 	/// Adds the audio clip Programmatically.
 	/// </summary>
@@ -597,6 +647,24 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._audioManager.AttachAudioSource (inAudioSrc,inGameObj,inName);
 	}
+
+	public bool isClipPlaying(AudioID inAID)
+	{
+		return this._audioManager.isClipPlaying(inAID);
+	}
+	
+	public void CollectAudioClipsForDialogue(string inFolderName, string inAID)
+	{
+		AudioID aid = this._audioManager.getIDByName(inAID);
+		this._audioManager.CollectDialogueAudioClips(inFolderName, aid);
+	}
+	
+	public void CollectAudioClips(string inFolderName, string inAID)
+	{
+		AudioID aid = this._audioManager.getIDByName(inAID);
+		this._audioManager.CollectAudioClips(inFolderName, aid);
+	}
+
 	///Other Stuff to Add.
 	/// --->
 	//set Parameters Methods
@@ -605,6 +673,16 @@ public class GameDirector : MonoBehaviour {
 	//Clone Audio Clip
 	//Is Done playing Clip
 	//Queue Clips
+
+	public float GetPuzzleWinVolume()
+	{
+		return this._audioManager.GetPuzzleWinVolume();
+	}
+	
+	public float GetVolume(AudioID inAID)
+	{
+		return this._audioManager.GetVolume(inAID);
+	}
 	
 	#endregion
 	
@@ -616,16 +694,22 @@ public class GameDirector : MonoBehaviour {
 
 	public GameObject getDialogueInterface()
 	{
-		return this._dialoguemanager.getDialogueInterface();
+		return null;
 	}
 	
 	public bool isDialogueActive()
 	{
-		return this._dialoguemanager.isCurrentlyActive();
+		return this._dialoguemanager.isDialogueActive();
 	}
+
+	public void SetupDialogue(string txtname, AudioID inAID)
+	{
+		this._dialoguemanager.ReloadDialogueData(txtname, inAID);
+	}
+
 	public void StartDialogue(GameObject NPC, GameObject Player)
 	{
-		this._dialoguemanager.startdialogue(NPC,Player);
+		this._dialoguemanager.StartDialogue();
 	}
 
 	public void EndDialogue()
@@ -635,4 +719,3 @@ public class GameDirector : MonoBehaviour {
 
 	#endregion
 }
-
