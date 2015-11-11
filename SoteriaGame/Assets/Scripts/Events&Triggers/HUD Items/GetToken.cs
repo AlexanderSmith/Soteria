@@ -7,7 +7,7 @@ public class GetToken: MonoBehaviour
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			GameDirector.instance.TokenTrue ();
+			GameDirector.instance.TokenTrue();
 		}
 	}
 }

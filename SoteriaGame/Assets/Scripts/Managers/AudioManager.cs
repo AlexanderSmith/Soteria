@@ -140,7 +140,8 @@ public class AudioManager : MonoBehaviour
 public enum AudioID
 {
 	Dialogue,
-	Footsteps,
+	WoodFootsteps,
+	StoneFootsteps,
 	BackgroundMusic,
 	Heartbeats,
 	LeavingHide,
@@ -175,7 +176,7 @@ public class AudioSourceWrapper
 		return this._aID;
 	}
 	
-	public void playClip()
+		public void playClip()
 	{
 		if (this._audiosrc.clip == null)
 			this._audiosrc.clip = this._audioclips [0];

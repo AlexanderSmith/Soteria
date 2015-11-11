@@ -171,6 +171,6 @@ public class Player : MonoBehaviour
 
 	public void Footstep()
 	{
-		GameDirector.instance.PlayAudioClip(AudioID.Footsteps);
+		GameDirector.instance.PlayAudioClip(AudioID.WoodFootsteps);
 	}
 }
