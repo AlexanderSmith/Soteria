@@ -19,9 +19,11 @@ public class HudManager : MonoBehaviour {
 	private Sprite _2cards;
 	private Sprite _3cards;
 	private bool _isonscreen;
+	private Sprite _splashTest;
 	public GameObject Objective;
 
 	private GameObject [] Buttons;
+	private GameObject _splashScreen;
 
 	// Inventory items
 	private GameObject _token;
@@ -51,7 +53,7 @@ public class HudManager : MonoBehaviour {
 		this._offIndicator.gameObject.SetActive(false);
 		this._onIndicator.gameObject.SetActive(false);
 
-		this.Buttons = new GameObject [6];
+		this.Buttons = new GameObject [4];
 		for (int i=0; i< 4; ++i)
 			this.Buttons[i] = _hudinterface.transform.FindChild("Button_"+i).gameObject;
 
@@ -61,6 +63,13 @@ public class HudManager : MonoBehaviour {
 		this._1card = Resources.Load("GUI/1Card", typeof(Sprite)) as Sprite;
 		this._2cards = Resources.Load("GUI/2Card", typeof(Sprite)) as Sprite;
 		this._3cards = Resources.Load("GUI/3Card", typeof(Sprite)) as Sprite;
+
+		// Splash screen images
+		this._splashTest = Resources.Load ("GUI/ScreenTest", typeof(Sprite)) as Sprite;
+		this._splashScreen = GameObject.Find("SplashScreen");
+		this._splashScreen.GetComponent<Image>().sprite = this._splashTest;
+		this._splashScreen.GetComponent<Image>().enabled = false;
+
 		
 		//Inventory item game object references
 		this._token = GameObject.Find("Coin");
