@@ -36,6 +36,11 @@ public class GameDirector : MonoBehaviour {
 	private bool _theaterPass1;
 	private bool _obsPass1;
 
+	// Cards collected
+	private string _musicDistrictCard;
+	private string _theaterDistrictCard;
+	private string _observatoryDistrictCard;
+
 	public float flashBangLife = 3.0f;
 	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
 	public float flashBangDistance = 3.0f;
@@ -289,6 +294,28 @@ public class GameDirector : MonoBehaviour {
 	public bool GetObservatoryPass1()
 	{
 		return this._obsPass1;
+	}
+
+	public void MusicCardCollected(string inCard)
+	{
+		this._musicDistrictCard = inCard;
+	}
+
+	public void TheaterCardCollected(string inCard)
+	{
+		this._theaterDistrictCard = inCard;
+	}
+
+	public void ObservatoryCardCollected(string inCard)
+	{
+		this._observatoryDistrictCard = inCard;
+	}
+
+	public bool CheckCards(string inMusic, string inTheater, string inObservatory)
+	{
+		return this._musicDistrictCard == inMusic &&
+			this._theaterDistrictCard == inTheater &&
+			this._observatoryDistrictCard == inObservatory;
 	}
 	
 	#endregion
