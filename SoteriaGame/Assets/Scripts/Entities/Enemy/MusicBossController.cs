@@ -3,10 +3,10 @@ using System.Collections;
 
 public class MusicBossController : MonoBehaviour
 {
-	public float noPilesDefeatedVolume;
-	public float onePilesDefeatedVolume;
-	public float allPilesDefeatedVolume;
-	public float _rateOfVolumeIncrease;
+	public float noPilesDefeatedVolume = .01f;
+	public float onePilesDefeatedVolume = .02f;
+	public float allPilesDefeatedVolume = .03f;
+	public float _rateOfVolumeIncrease = .03f;
 	private float _rateOfVolumeDecrease;
 	private int _musicPilesDefeated;
 
@@ -21,10 +21,7 @@ public class MusicBossController : MonoBehaviour
 
 	void Start()
 	{
-		this.noPilesDefeatedVolume = .01f;
-		this.onePilesDefeatedVolume = .02f;
-		this.allPilesDefeatedVolume = .03f;
-		this._rateOfVolumeIncrease = .03f;
+		
 		this._musicPilesDefeated = 0;
 		this._brass = false;
 		this._string = false;
