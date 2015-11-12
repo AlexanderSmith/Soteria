@@ -6,7 +6,7 @@ public class MusicBossController : MonoBehaviour
 	public float noPilesDefeatedVolume;
 	public float onePilesDefeatedVolume;
 	public float allPilesDefeatedVolume;
-	private float _rateOfVolumeIncrease;
+	public float _rateOfVolumeIncrease;
 	private float _rateOfVolumeDecrease;
 	private int _musicPilesDefeated;
 
