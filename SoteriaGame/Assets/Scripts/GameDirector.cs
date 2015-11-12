@@ -343,6 +343,16 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._HUDManager.ChangeObjective(gObj);
 	}
+
+	public void StartCardInteraction()
+	{
+		this._HUDManager.StartCardInteraction();
+	}
+
+	public void EndCardInteraction()
+	{
+		this._HUDManager.EndCardInteraction();
+	}
 	
 	///////////////////////////////////////////////////////////////////
 	////////////////// ENCOUNTER MANAGER FUNCTIONS ////////////////////

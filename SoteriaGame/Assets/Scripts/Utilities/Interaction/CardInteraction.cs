@@ -6,18 +6,18 @@ public class CardInteraction : InteractionBase
 	protected GameObject _interactionbutton;
 	
 	// Use this for initialization
-	public virtual void Awake()
+	public override void Awake()
 	{
 		this._interactionbutton = this.transform.parent.FindChild("InteractionButton").gameObject;
 		this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 	}
 	
 	// Update is called once per frame
-	public virtual void Update ()
+	public override void Update ()
 	{	
 	}
 	
-	public virtual void TriggerEnter(Collider player)
+	public override void TriggerEnter(Collider player)
 	{
 		if (player.gameObject.tag == "Player")
 		{
@@ -25,7 +25,7 @@ public class CardInteraction : InteractionBase
 		}
 	}
 	
-	public virtual void TriggerExit(Collider player)
+	public override void TriggerExit(Collider player)
 	{
 		if (player.gameObject.tag == "Player")
 		{
@@ -33,7 +33,7 @@ public class CardInteraction : InteractionBase
 		}
 	}
 	
-	public virtual void TriggerStay(Collider player)
+	public override void TriggerStay(Collider player)
 	{
 		if (player.gameObject.tag == "Player")
 		{
@@ -41,6 +41,7 @@ public class CardInteraction : InteractionBase
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				// Switch to splash screen
+				GameDirector.instance.StartCardInteraction();
 				GameDirector.instance.GetPlayer().PlayerActionCardPickup();
 			}
 		}

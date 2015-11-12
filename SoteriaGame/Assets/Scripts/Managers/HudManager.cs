@@ -257,4 +257,14 @@ public class HudManager : MonoBehaviour {
 	{
 		this.Objective = gObj;
 	}
+
+	public void StartCardInteraction()
+	{
+		this._splashScreen.GetComponent<Image>().enabled = true;
+	}
+
+	public void EndCardInteraction()
+	{
+		this._splashScreen.GetComponent<Image>().enabled = false;
+	}
 }
