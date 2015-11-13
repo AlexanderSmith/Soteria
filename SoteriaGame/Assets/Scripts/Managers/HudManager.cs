@@ -8,6 +8,7 @@ public class HudManager : MonoBehaviour {
 	public float blackSpeed = .15f;
 	public float clearSpeed = .15f;
 	public bool isToClear = true;
+	private bool _isonscreen;
 
 	private GameObject _hudinterface;
 	private ButtonController _coinController;
@@ -18,12 +19,21 @@ public class HudManager : MonoBehaviour {
 	private Sprite _1card;
 	private Sprite _2cards;
 	private Sprite _3cards;
-	private bool _isonscreen;
 	private Sprite _splashTest;
-	public GameObject Objective;
+	private Sprite _backPack;
+	private Sprite _eggShells;
+	private Sprite _handDoll;
+	private Sprite _partyHat;
+	private Sprite _starChart;
+	private Sprite _stringOfPearls;
+	private Sprite _trainTicket;
+	private Sprite _whistle;
+	private Sprite _chameleon;
 
+	public GameObject Objective;
 	private GameObject [] Buttons;
 	private GameObject _splashScreen;
+	private GameObject _splashScreenCard;
 
 	// Inventory items
 	private GameObject _token;
@@ -69,6 +79,7 @@ public class HudManager : MonoBehaviour {
 		this._splashScreen = GameObject.Find("SplashScreen");
 		this._splashScreen.GetComponent<Image>().sprite = this._splashTest;
 		this._splashScreen.GetComponent<Image>().enabled = false;
+		this._splashScreenCard = GameObject.Find("SplashScreenCard");
 
 		
 		//Inventory item game object references
@@ -82,6 +93,16 @@ public class HudManager : MonoBehaviour {
 		this._cards.GetComponent<Image>().enabled = false;
 		this._suit = GameObject.Find("Suit");
 		this._suit.GetComponent<Image>().enabled = false;
+
+		this._backPack = Resources.Load("GUI/Cards/BackPackAndJournal", typeof(Sprite)) as Sprite;
+		this._eggShells = Resources.Load("GUI/Cards/EggShells", typeof(Sprite)) as Sprite;
+		this._handDoll = Resources.Load("GUI/Cards/HandDoll", typeof(Sprite)) as Sprite;
+		this._partyHat = Resources.Load("GUI/Cards/PartyHat", typeof(Sprite)) as Sprite;
+		this._starChart = Resources.Load("GUI/Cards/StarChart", typeof(Sprite)) as Sprite;
+		this._stringOfPearls = Resources.Load("GUI/Cards/StringOfPearls", typeof(Sprite)) as Sprite;
+		this._trainTicket = Resources.Load("GUI/Cards/TrainTicket", typeof(Sprite)) as Sprite;
+		this._whistle = Resources.Load("GUI/Cards/Whistle", typeof(Sprite)) as Sprite;
+		//this._chameleon = Resources.Load("GUI/Cards/Chameleon", typeof(Sprite)) as Sprite;
 	}
 
 	// Update is called once per frame
