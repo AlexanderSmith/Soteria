@@ -80,6 +80,7 @@ public class HudManager : MonoBehaviour {
 		this._splashScreen.GetComponent<Image>().sprite = this._splashTest;
 		this._splashScreen.GetComponent<Image>().enabled = false;
 		this._splashScreenCard = GameObject.Find("SplashScreenCard");
+		this._splashScreenCard.GetComponent<Image>().enabled = false;
 
 		
 		//Inventory item game object references

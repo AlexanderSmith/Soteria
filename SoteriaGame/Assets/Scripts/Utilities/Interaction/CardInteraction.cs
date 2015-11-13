@@ -2,9 +2,7 @@
 using System.Collections;
 
 public class CardInteraction : InteractionBase
-{
-	protected GameObject _interactionbutton;
-	
+{	
 	// Use this for initialization
 	public override void Awake()
 	{
