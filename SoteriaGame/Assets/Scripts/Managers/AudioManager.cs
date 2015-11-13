@@ -241,6 +241,8 @@ public class AudioSourceWrapper
 	public void subtractVolume(float inVolume)
 	{
 		this._audiosrc.volume = Mathf.Lerp(this._audiosrc.volume, 0f, Time.deltaTime);
+		//this._audiosrc.volume -= inVolume;
+
 		if (this._audiosrc.volume <= .001f)
 		{
 			GameDirector.instance.GameOver();

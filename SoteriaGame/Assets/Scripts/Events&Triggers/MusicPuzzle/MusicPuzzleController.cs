@@ -26,6 +26,7 @@ public class MusicPuzzleController : MonoBehaviour
 	public Transform bossUp;
 
 	public float lerpTime;
+	public float initialVolume;
 
 	// Use this for initialization
 	void Start ()
@@ -104,5 +105,10 @@ public class MusicPuzzleController : MonoBehaviour
 	public GameObject GetBoss()
 	{
 		return this.boss;
+	}
+
+	public float GetInitialVolume()
+	{
+		return this.initialVolume;
 	}
 }

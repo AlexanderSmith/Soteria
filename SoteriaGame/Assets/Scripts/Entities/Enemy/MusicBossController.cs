@@ -5,7 +5,8 @@ public class MusicBossController : MonoBehaviour
 {
 	public float noPilesDefeatedVolume = .01f;
 	public float onePilesDefeatedVolume = .02f;
-	public float allPilesDefeatedVolume = .03f;
+	public float twoPilesDefeatedVOlume = .03f;
+	public float allPilesDefeatedVolume = .04f;
 	public float _rateOfVolumeIncrease = .03f;
 	private float _rateOfVolumeDecrease;
 	private int _musicPilesDefeated;
