@@ -5,7 +5,9 @@ public class IntroDialogue : MonoBehaviour
 {
 	void OnTriggerEnter()
 	{
-		GameDirector.instance.SetupDialogue ("IntroDialogue", AudioID.None);
-		GameDirector.instance.StartDialogue ();
+		GameDirector.instance.GetPlayer().PlayerActionPause();
+		GameDirector.instance.SetupDialogue("IntroDialogue", AudioID.None);
+		GameDirector.instance.StartDialogue();
+		this.gameObject.GetComponent<BoxCollider>().enabled = false;
 	}
 }

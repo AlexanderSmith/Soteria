@@ -131,7 +131,19 @@ public class DialogueManager : MonoBehaviour
 	
 	public void SkipLine()
 	{
-		GetNextLine();
+		
+		if (this._currState == DialogueState.Active)
+		{
+			if (this._diagdata.Textindx == this._diagdata.diaglength)
+			{
+				EndDialogue();
+				GameDirector.instance.GetPlayer().PlayerActionNormal();
+			}
+			else
+			{
+				ContinueDialogue();
+			}
+		}
 	//	GetNextVO();
 	}
 	

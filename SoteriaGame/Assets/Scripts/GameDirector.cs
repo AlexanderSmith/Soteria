@@ -754,5 +754,10 @@ public class GameDirector : MonoBehaviour {
 		this._dialoguemanager.EndDialogue();
 	}
 
+	public void SkipLine()
+	{
+		this._dialoguemanager.SkipLine();
+	}
+
 	#endregion
 }

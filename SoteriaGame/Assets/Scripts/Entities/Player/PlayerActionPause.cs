@@ -4,9 +4,13 @@ public class PlayerActionPause : IPlayerAction
 {	
 	public void PlayerAction(Player inPlayer)
 	{
-		if (Input.GetKeyDown(KeyCode.Escape))
+//		if (Input.GetKeyDown(KeyCode.Escape))
+//		{
+//			GameDirector.instance.GetPlayer().PlayerActionNormal();
+//		}
+		if (Input.GetKeyDown (KeyCode.Space))
 		{
-			GameDirector.instance.GetPlayer().PlayerActionNormal();
+			GameDirector.instance.SkipLine();
 		}
 	}
 }
