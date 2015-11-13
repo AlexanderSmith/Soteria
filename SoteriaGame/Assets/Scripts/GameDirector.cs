@@ -744,7 +744,7 @@ public class GameDirector : MonoBehaviour {
 		this._dialoguemanager.ReloadDialogueData(txtname, inAID);
 	}
 
-	public void StartDialogue(GameObject NPC, GameObject Player)
+	public void StartDialogue()
 	{
 		this._dialoguemanager.StartDialogue();
 	}

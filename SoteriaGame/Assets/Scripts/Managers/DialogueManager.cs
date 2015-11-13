@@ -14,6 +14,8 @@ public class DialogueManager : MonoBehaviour
 	DialogueParser _parser;
 	DialogueState _currState;
 	DialogueData _diagdata;
+	GameObject DialogueUIBG;
+	GameObject DialogueUIText;
 	string 		UIText;
 	
 	/////////////////////////////////////////////////////////////////////////
@@ -24,8 +26,25 @@ public class DialogueManager : MonoBehaviour
 	{
 		this._currState = DialogueState.Standby;
 		this._parser = new DialogueParser ();
+		InitializeInterface();
+
 	}
-	
+
+	private void InitializeInterface ()
+	{
+		GameObject DialogueUI = GameObject.FindWithTag("DialogueInterface");
+		DialogueUIBG = DialogueUI.transform.FindChild("TextBackGround").gameObject;
+		DialogueUIBG.SetActive(false);
+		DialogueUIText = DialogueUI.transform.FindChild("Dialogue").gameObject;
+		DialogueUIText.SetActive(false);
+
+	}
+
+	public void OnLevelWasLoaded()
+	{
+		InitializeInterface();
+	}
+
 	public bool isDialogueActive()
 	{
 		return (_currState == DialogueState.Active ? true : false);
@@ -61,11 +80,14 @@ public class DialogueManager : MonoBehaviour
 	
 	private void ActivateGUI()
 	{
+		DialogueUIBG.SetActive(true);
+		DialogueUIText.SetActive(true);
 	}
 	
 	private void DeActivateGUI()
 	{
-		
+		DialogueUIBG.SetActive(false);
+		DialogueUIText.SetActive(false);
 	}
 	
 	//////////////////////////////////////////////////////////////////////////	
@@ -80,7 +102,7 @@ public class DialogueManager : MonoBehaviour
 		ActivateGUI ();
 		
 		GetNextLine();
-		GetNextVO();
+	//	GetNextVO();
 	}
 	
 	public void EndDialogue()
@@ -95,7 +117,7 @@ public class DialogueManager : MonoBehaviour
 		this._diagdata.Textindx++;
 		
 		GetNextLine();
-		GetNextVO();
+	//GetNextVO();
 	} 
 	
 	/////////////////////////////////////////////////////////////////////////
@@ -103,13 +125,14 @@ public class DialogueManager : MonoBehaviour
 	/////////////////////////////////////////////////////////////////////////
 	void GetNextLine()
 	{
-		UIText = this._diagdata.DialogueLines[this._diagdata.Textindx];
+		Text t = DialogueUIText.GetComponent<Text>();
+		t.text = this._diagdata.DialogueLines[this._diagdata.Textindx];
 	}
 	
 	public void SkipLine()
 	{
 		GetNextLine();
-		GetNextVO();
+	//	GetNextVO();
 	}
 	
 	/////////////////////////////////////////////////////////////////////////
@@ -125,13 +148,13 @@ public class DialogueManager : MonoBehaviour
 	{
 		if (this._currState == DialogueState.Active)
 		{
-			if ( !GameDirector.instance.isClipPlaying(this._diagdata.Aid))
+			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				if (this._diagdata.Textindx == this._diagdata.diaglength)
 					EndDialogue();
 				else
 					ContinueDialogue();
-			}			
+			}
 		}
 	}
 	/////////////////////////////////////////////////////////////////////////
