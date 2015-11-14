@@ -178,6 +178,6 @@ public class DialogueManager : MonoBehaviour
 		//TemporaryCode//
 		//GameObject.Find("DiagText").GetComponent<Text>().text = UIText;	
 		
-		CheckNextClip();
+		//CheckNextClip();
 	}
 }
