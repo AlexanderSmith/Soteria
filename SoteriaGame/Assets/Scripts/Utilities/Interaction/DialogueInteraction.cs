@@ -15,6 +15,7 @@ public class DialogueInteraction : InteractionBase {
 	// Update is called once per frame
 	public override void Update () 
 	{
+
 	}
 	
 	public override void TriggerStay(Collider other)
