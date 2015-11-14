@@ -38,8 +38,12 @@ public class GameDirector : MonoBehaviour {
 
 	// Cards collected
 	private string _musicDistrictCard;
+	private bool _musicDistrictHaveCard;
 	private string _theaterDistrictCard;
+	private bool _theaterDistrictHaveCard;
 	private string _observatoryDistrictCard;
+	private bool _observatoryDistrictHaveCard;
+	private int _cardsHeld;
 
 	public float flashBangLife = 3.0f;
 	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
@@ -371,14 +375,61 @@ public class GameDirector : MonoBehaviour {
 		this._HUDManager.ChangeObjective(gObj);
 	}
 
-	public void StartCardInteraction()
+	public void StartCardInteraction(Sprite inSprite, int inDist, GameObject inCardObj)
 	{
-		this._HUDManager.StartCardInteraction();
+		this._HUDManager.StartCardInteraction(inSprite, inDist, inCardObj);
 	}
 
-	public void EndCardInteraction()
+	public void EndCardInteraction(bool inResponse)
 	{
-		this._HUDManager.EndCardInteraction();
+		this._HUDManager.EndCardInteraction(inResponse);
+	}
+
+	public void PlayerHasCard(int inDist, string inCard)
+	{
+		switch (inDist)
+		{
+		case 1:
+		case 2:
+		case 3:
+			if (!this._musicDistrictHaveCard)
+			{
+				this._musicDistrictHaveCard = true;
+				this._musicDistrictCard = inCard;
+			}
+			else
+			{
+				// find transform location with correct tag, drop current card there, and replace current card with inCard
+			}
+			break;
+		case 4:
+		case 5:
+		case 6:
+			this._theaterDistrictHaveCard = true;
+			this._theaterDistrictCard = inCard;
+			break;
+		case 7:
+		case 8:
+		case 9:
+			this._observatoryDistrictHaveCard = true;
+			this._observatoryDistrictCard = inCard;
+			break;
+		};
+
+		this._cardsHeld = 0;
+		if (this._musicDistrictHaveCard)
+		{
+			this._cardsHeld++;
+		}
+		if (this._theaterDistrictHaveCard)
+		{
+			this._cardsHeld++;
+		}
+		if (this._observatoryDistrictHaveCard)
+		{
+			this._cardsHeld++;
+		}
+		this._HUDManager.DisplayCards(this._cardsHeld);
 	}
 	
 	///////////////////////////////////////////////////////////////////

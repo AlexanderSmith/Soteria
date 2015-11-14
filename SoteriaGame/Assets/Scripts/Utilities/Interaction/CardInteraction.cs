@@ -3,6 +3,7 @@ using System.Collections;
 
 public class CardInteraction : InteractionBase
 {	
+	private int _district;
 	// Use this for initialization
 	public override void Awake()
 	{
@@ -38,8 +39,11 @@ public class CardInteraction : InteractionBase
 			this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
-				// Switch to splash screen
-				GameDirector.instance.StartCardInteraction();
+				// Convert tag string to int for district check to inform Game Director which district card belongs to
+				char dist = this.gameObject.tag[0];
+				this._district = dist - 48;
+				GameDirector.instance.StartCardInteraction(this.gameObject.GetComponent<SpriteRenderer>().sprite, this._district,
+				                                           this.transform.parent.parent.gameObject);
 				GameDirector.instance.GetPlayer().PlayerActionCardPickup();
 			}
 		}

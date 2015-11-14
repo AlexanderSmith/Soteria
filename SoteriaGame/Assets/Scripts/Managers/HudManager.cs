@@ -20,15 +20,9 @@ public class HudManager : MonoBehaviour {
 	private Sprite _2cards;
 	private Sprite _3cards;
 	private Sprite _splashTest;
-	private Sprite _backPack;
-	private Sprite _eggShells;
-	private Sprite _handDoll;
-	private Sprite _partyHat;
-	private Sprite _starChart;
-	private Sprite _stringOfPearls;
-	private Sprite _trainTicket;
-	private Sprite _whistle;
-	private Sprite _chameleon;
+	// 1 = Music, 2 = Theater, 3 = Observatory
+	private int _district;
+	private GameObject _currentCard;
 
 	public GameObject Objective;
 	private GameObject [] Buttons;
@@ -44,7 +38,7 @@ public class HudManager : MonoBehaviour {
 	//	private GameObject leftKeyPiece;
 	//	private GameObject middleKeyPiece;
 	//	private GameObject centerKeyPiece;
-	
+
 	// Use this for initialization
 	void Awake () 
 	{
@@ -94,16 +88,6 @@ public class HudManager : MonoBehaviour {
 		this._cards.GetComponent<Image>().enabled = false;
 		this._suit = GameObject.Find("Suit");
 		this._suit.GetComponent<Image>().enabled = false;
-
-		this._backPack = Resources.Load("GUI/Cards/BackPackAndJournal", typeof(Sprite)) as Sprite;
-		this._eggShells = Resources.Load("GUI/Cards/EggShells", typeof(Sprite)) as Sprite;
-		this._handDoll = Resources.Load("GUI/Cards/HandDoll", typeof(Sprite)) as Sprite;
-		this._partyHat = Resources.Load("GUI/Cards/PartyHat", typeof(Sprite)) as Sprite;
-		this._starChart = Resources.Load("GUI/Cards/StarChart", typeof(Sprite)) as Sprite;
-		this._stringOfPearls = Resources.Load("GUI/Cards/StringOfPearls", typeof(Sprite)) as Sprite;
-		this._trainTicket = Resources.Load("GUI/Cards/TrainTicket", typeof(Sprite)) as Sprite;
-		this._whistle = Resources.Load("GUI/Cards/Whistle", typeof(Sprite)) as Sprite;
-		//this._chameleon = Resources.Load("GUI/Cards/Chameleon", typeof(Sprite)) as Sprite;
 	}
 
 	// Update is called once per frame
@@ -280,13 +264,73 @@ public class HudManager : MonoBehaviour {
 		this.Objective = gObj;
 	}
 
-	public void StartCardInteraction()
+	public void StartCardInteraction(Sprite inSprite, int inDist, GameObject inCardObj)
 	{
-		this._splashScreen.GetComponent<Image>().enabled = true;
+		this._district = inDist;
+		this._currentCard = inCardObj;
+ 		this._splashScreen.GetComponent<Image>().enabled = true;
+		this._splashScreenCard.GetComponent<Image>().sprite = inSprite;
+		this._splashScreenCard.GetComponent<Image>().enabled = true;
 	}
 
-	public void EndCardInteraction()
+	public void EndCardInteraction(bool inResponse)
 	{
 		this._splashScreen.GetComponent<Image>().enabled = false;
+		this._splashScreenCard.GetComponent<Image>().enabled = false;
+		if (inResponse)
+		{
+			string selectedCard = FindCard (this._district);
+			GameDirector.instance.PlayerHasCard(this._district, selectedCard);
+			this._currentCard.SetActive(false);
+		}
+	}
+
+	string FindCard(int card)
+	{
+		switch (card)
+		{
+		case 1:
+			return "Whistle";
+		case 2:
+			return "HandDoll";
+		case 3:
+			return "EggShells";
+		case 4:
+			return "StringOfPearls";
+		case 5:
+			return "PartyHat";
+		case 6:
+			return "Chameleon";
+		case 7:
+			return "BackpackAndJournal";
+		case 8:
+			return "TrainTicket";
+		case 9:
+			return "StarChart";
+		default:
+			return "";
+		};
+	}
+
+	public void DisplayCards(int inNumCards)
+	{
+		switch (inNumCards)
+		{
+		case 0:
+			this._cards.GetComponent<Image>().enabled = false;
+			break;
+		case 1:
+			this._cards.GetComponent<Image>().sprite = this._1card;
+			this._cards.GetComponent<Image>().enabled = true;
+			break;
+		case 2:
+			this._cards.GetComponent<Image>().sprite = this._2cards;
+			this._cards.GetComponent<Image>().enabled = true;
+			break;
+		case 3:
+			this._cards.GetComponent<Image>().sprite = this._3cards;
+			this._cards.GetComponent<Image>().enabled = true;
+			break;
+		};
 	}
 }
