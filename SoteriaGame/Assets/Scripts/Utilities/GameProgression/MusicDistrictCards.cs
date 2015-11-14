@@ -11,26 +11,24 @@ public class MusicDistrictCards : MonoBehaviour
 	public GameObject handDollCard;
 	public GameObject eggShellsCard;
 
-	void OnTriggerEnter(Collider player)
+	//void OnTriggerEnter(Collider player)
+	void Awake()
 	{
-		if (player.gameObject.tag == "Player")
+		string card = GameDirector.instance.GetMusicDistrictCard();
+		if (card != null)
 		{
-			string card = GameDirector.instance.GetMusicDistrictCard();
-			if (card != null)
+			switch (card)
 			{
-				switch (card)
-				{
-				case "Whistle":
-					this.NoWhistle();
-					break;
-				case "HandDoll":
-					this.NoDoll();
-					break;
-				case "EggShells":
-					this.NoEgg();
-					break;
-				};
-			}
+			case "Whistle":
+				this.NoWhistle();
+				break;
+			case "HandDoll":
+				this.NoDoll();
+				break;
+			case "EggShells":
+				this.NoEgg();
+				break;
+			};
 		}
 		else
 		{

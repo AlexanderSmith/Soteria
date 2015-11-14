@@ -279,6 +279,7 @@ public class HudManager : MonoBehaviour {
 		this._splashScreenCard.GetComponent<Image>().enabled = false;
 		if (inResponse)
 		{
+
 			string selectedCard = FindCard (this._district);
 			GameDirector.instance.PlayerHasCard(this._district, selectedCard);
 			this._currentCard.SetActive(false);

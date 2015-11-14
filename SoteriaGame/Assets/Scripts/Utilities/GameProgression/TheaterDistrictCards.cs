@@ -13,24 +13,21 @@ public class TheaterDistrictCards : MonoBehaviour
 	
 	void OnTriggerEnter(Collider player)
 	{
-		if (player.gameObject.tag == "Player")
+		string card = GameDirector.instance.GetTheaterDistrictCard();
+		if (card != null)
 		{
-			string card = GameDirector.instance.GetTheaterDistrictCard();
-			if (card != null)
+			switch (card)
 			{
-				switch (card)
-				{
-				case "StringOfPearls":
-					this.NoPearls();
-					break;
-				case "PartyHat":
-					this.NoHat();
-					break;
-				case "Chameleon":
-					this.NoChameleon();
-					break;
-				};
-			}
+			case "StringOfPearls":
+				this.NoPearls();
+				break;
+			case "PartyHat":
+				this.NoHat();
+				break;
+			case "Chameleon":
+				this.NoChameleon();
+				break;
+			};
 		}
 		else
 		{

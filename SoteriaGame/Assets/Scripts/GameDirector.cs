@@ -399,20 +399,34 @@ public class GameDirector : MonoBehaviour {
 			}
 			else
 			{
-				// find transform location with correct tag, drop current card there, and replace current card with inCard
+				this._musicDistrictCard = inCard;
 			}
 			break;
 		case 4:
 		case 5:
 		case 6:
-			this._theaterDistrictHaveCard = true;
-			this._theaterDistrictCard = inCard;
+			if (!this._theaterDistrictHaveCard)
+			{
+				this._theaterDistrictHaveCard = true;
+				this._theaterDistrictCard = inCard;
+			}
+			else
+			{
+				this._theaterDistrictCard = inCard;
+			}
 			break;
 		case 7:
 		case 8:
 		case 9:
-			this._observatoryDistrictHaveCard = true;
-			this._observatoryDistrictCard = inCard;
+			if (!this._observatoryDistrictHaveCard)
+			{
+				this._observatoryDistrictHaveCard = true;
+				this._observatoryDistrictCard = inCard;
+			}
+			else
+			{
+				this._observatoryDistrictCard = inCard;
+			}
 			break;
 		};
 

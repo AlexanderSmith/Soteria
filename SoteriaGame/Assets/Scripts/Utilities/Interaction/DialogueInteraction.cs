@@ -19,12 +19,19 @@ public class DialogueInteraction : InteractionBase {
 	
 	public override void TriggerStay(Collider other)
 	{
-		this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
-
-		if (Input.GetKeyDown(KeyCode.Space))
+		if (other.gameObject.tag == "Player")
 		{
-			GameDirector.instance.SetupDialogue(DialogueName, AudioID.None);
-			GameDirector.instance.StartDialogue();
+			this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
+			
+			if (Input.GetKeyDown(KeyCode.Space))
+			{
+				GameDirector.instance.GetPlayer().PlayerActionPause();
+				GameDirector.instance.SetupDialogue(DialogueName, AudioID.None);
+				GameDirector.instance.StartDialogue();
+				this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
+				this.gameObject.transform.parent.GetComponent<SphereCollider>().isTrigger = false;
+				this.gameObject.transform.parent.GetComponent<SphereCollider>().enabled = false;
+			}
 		}
 	}
 }

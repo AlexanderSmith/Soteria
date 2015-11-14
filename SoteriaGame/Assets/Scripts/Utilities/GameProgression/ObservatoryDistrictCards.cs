@@ -13,24 +13,21 @@ public class ObservatoryDistrictCards : MonoBehaviour
 	
 	void OnTriggerEnter(Collider player)
 	{
-		if (player.gameObject.tag == "Player")
+		string card = GameDirector.instance.GetObservatoryDistrictCard();
+		if (card != null)
 		{
-			string card = GameDirector.instance.GetObservatoryDistrictCard();
-			if (card != null)
+			switch (card)
 			{
-				switch (card)
-				{
-				case "BackpackAndJournal":
-					this.NoBackpack();
-					break;
-				case "TrainTicket":
-					this.NoTrainTic();
-					break;
-				case "StarChart":
-					this.NoStarChart();
-					break;
-				};
-			}
+			case "BackpackAndJournal":
+				this.NoBackpack();
+				break;
+			case "TrainTicket":
+				this.NoTrainTic();
+				break;
+			case "StarChart":
+				this.NoStarChart();
+				break;
+			};
 		}
 		else
 		{
