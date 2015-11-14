@@ -431,6 +431,42 @@ public class GameDirector : MonoBehaviour {
 		}
 		this._HUDManager.DisplayCards(this._cardsHeld);
 	}
+
+	public string GetMusicDistrictCard()
+	{
+		if (this._musicDistrictHaveCard)
+		{
+			return this._musicDistrictCard;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	public string GetTheaterDistrictCard()
+	{
+		if (this._theaterDistrictHaveCard)
+		{
+			return this._theaterDistrictCard;
+		}
+		else
+		{
+			return null;
+		}
+	}
+
+	public string GetObservatoryDistrictCard()
+	{
+		if (this._observatoryDistrictHaveCard)
+		{
+			return this._observatoryDistrictCard;
+		}
+		else
+		{
+			return null;
+		}
+	}
 	
 	///////////////////////////////////////////////////////////////////
 	////////////////// ENCOUNTER MANAGER FUNCTIONS ////////////////////
