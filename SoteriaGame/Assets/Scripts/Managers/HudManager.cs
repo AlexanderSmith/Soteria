@@ -65,8 +65,8 @@ public class HudManager : MonoBehaviour {
 		this._coinController.Initialize (this);
 
 		this._1card = Resources.Load("GUI/1Card", typeof(Sprite)) as Sprite;
-		this._2cards = Resources.Load("GUI/2Card", typeof(Sprite)) as Sprite;
-		this._3cards = Resources.Load("GUI/3Card", typeof(Sprite)) as Sprite;
+		this._2cards = Resources.Load("GUI/2Cards", typeof(Sprite)) as Sprite;
+		this._3cards = Resources.Load("GUI/3Cards", typeof(Sprite)) as Sprite;
 
 		// Splash screen images
 		this._splashTest = Resources.Load ("GUI/ScreenTest", typeof(Sprite)) as Sprite;
