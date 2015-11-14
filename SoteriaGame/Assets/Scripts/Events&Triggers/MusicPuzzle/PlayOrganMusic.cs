@@ -22,7 +22,7 @@ public class PlayOrganMusic : MonoBehaviour
 			}
 			else
 			{
-				GameDirector.instance.ChangeVolume(AudioID.OrganMusic, .1f);
+                GameDirector.instance.ChangeVolume(AudioID.OrganMusic, controller.GetComponent<MusicPuzzleController>().GetInitialVolume());
 				controller.GetComponent<MusicPuzzleController>().GetBoss().GetComponentInChildren<MusicBossController>().MusicStart(AudioID.OrganMusic, "organ");
 			}
 		}
