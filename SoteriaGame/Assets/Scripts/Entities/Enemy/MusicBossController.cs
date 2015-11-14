@@ -52,9 +52,12 @@ public class MusicBossController : MonoBehaviour
 		case 1:
 			this._rateOfVolumeDecrease = this.onePilesDefeatedVolume;
 			break;
-		case 2:
-			this._rateOfVolumeDecrease = this.allPilesDefeatedVolume;
-			break;
+        case 2:
+            this._rateOfVolumeDecrease = this.twoPilesDefeatedVOlume;
+            break;
+        case 3:
+            this._rateOfVolumeDecrease = this.allPilesDefeatedVolume;
+            break;
 		}
 		while (!this._fighting)
 		{
