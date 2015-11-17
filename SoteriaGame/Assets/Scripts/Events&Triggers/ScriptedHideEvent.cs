@@ -22,6 +22,7 @@ public class ScriptedHideEvent : MonoBehaviour
 		{
 			GameDirector.instance.GetPlayer().PlayerActionNoFighting();
 			InitializeEvent();
+			Destroy (this.GetComponent<BoxCollider>());
 		}
 	}
 

@@ -11,9 +11,4 @@ public class SceneStart : MonoBehaviour
 		GameObject player = Instantiate(playerPrefab, playerSpawnLoc.position, playerSpawnLoc.rotation) as GameObject;
 		GameDirector.instance.InitializePlayer();
 	}
-	
-	void Start()
-	{
-		GameDirector.instance.PlayAudioClip(AudioID.BackgroundMusic);
-	}
 }

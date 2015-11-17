@@ -133,6 +133,16 @@ public class AudioManager : MonoBehaviour
 	{
 		return FindAudioSrcbyID(inAID).getVolume();
 	}
+
+	public void FadeOut(AudioID inAID)
+	{
+		FindAudioSrcbyID (inAID).fadeOut();
+	}
+
+	public void FadeIn(AudioID inAID)
+	{
+		FindAudioSrcbyID (inAID).fadeIn();
+	}
 }
 
 // Requires separtate script for future stuffies
@@ -143,7 +153,12 @@ public enum AudioID
 	Dialogue,
 	WoodFootsteps,
 	StoneFootsteps,
+	BackgroundIntro,
+	BackgroundHarbor,
+	BackgroundHub,
 	BackgroundMusic,
+	BackgroundTheater,
+	BackgroundObservatory,
 	Heartbeats,
 	LeavingHide,
 	TokenUse,
@@ -254,5 +269,15 @@ public class AudioSourceWrapper
 	public float getVolume()
 	{
 		return this._audiosrc.volume;
+	}
+
+	public void fadeOut()
+	{
+
+	}
+
+	public void fadeIn()
+	{
+
 	}
 }

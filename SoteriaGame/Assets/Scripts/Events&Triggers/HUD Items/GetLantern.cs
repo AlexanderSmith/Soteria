@@ -3,8 +3,15 @@ using System.Collections;
 
 public class GetLantern : MonoBehaviour
 {
-	void OnTriggerEnter(Collider other)
+	void OnTriggerStay(Collider player)
 	{
-		GameDirector.instance.LanternTrue();
+		if (player.gameObject.tag == "Player")
+		{
+			if (GameDirector.instance.GetPlayer().GetPlayerState() == PlayerState.Dialogue && GameDirector.instance.isDialogueActive())
+			{
+				Destroy(this.GetComponent<SphereCollider>());
+				GameDirector.instance.LanternTrue();
+			}
+		}
 	}
 }

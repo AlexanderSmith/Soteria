@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum PlayerState
+{
+	Normal,
+	Dialogue
+}
+
 [RequireComponent(typeof(Animator))]
 public class Player : MonoBehaviour 
 {
@@ -21,9 +27,12 @@ public class Player : MonoBehaviour
 	private IPlayerAction _noFighting = new PlayerActionNoFight();
 	private IPlayerAction _cardPickup = new global::PlayerActionCardPickup();
 
+	public PlayerState  playerState;
+
 	void Start ()
 	{
 		PlayerActionNormal();
+		playerState = PlayerState.Normal;
 		this._animator = this.gameObject.GetComponent<Animator>();
 	}
 
@@ -31,6 +40,11 @@ public class Player : MonoBehaviour
 	{
 		this._animator.SetBool("Moving", false);
 		this._currentAction.PlayerAction(this);
+	}
+
+	public PlayerState GetPlayerState()
+	{
+		return this.playerState;
 	}
 
 	private void PrivateFlipEncounterBool()
@@ -63,6 +77,7 @@ public class Player : MonoBehaviour
 	public void PlayerActionNormal()
 	{
 		this.SwitchPlayerAction(_normalAction);
+		playerState = PlayerState.Normal;
 	}
 
 	public void PlayerActionHiding()
@@ -74,6 +89,7 @@ public class Player : MonoBehaviour
 	public void PlayerActionPause()
 	{
 		this.SwitchPlayerAction(_pauseAction);
+		playerState = PlayerState.Dialogue;
 	}
 
 	public void PlayerActionCardPickup()
