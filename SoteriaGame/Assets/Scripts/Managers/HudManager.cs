@@ -334,4 +334,10 @@ public class HudManager : MonoBehaviour {
 			break;
 		};
 	}
+
+	public void SuitTrue()
+	{
+		this._cards.GetComponent<Image>().enabled = false;
+		this._suit.GetComponent<Image>().enabled = true;
+	}
 }

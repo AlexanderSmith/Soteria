@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GetLantern : MonoBehaviour
+public class GetSuit : MonoBehaviour
 {
 	void OnTriggerStay(Collider player)
 	{
@@ -10,7 +10,7 @@ public class GetLantern : MonoBehaviour
 			if (GameDirector.instance.GetPlayer().GetPlayerState() == PlayerState.Dialogue && GameDirector.instance.isDialogueActive())
 			{
 				Destroy(this.GetComponent<SphereCollider>());
-				GameDirector.instance.LanternTrue();
+				GameDirector.instance.SuitWorn();
 			}
 		}
 	}

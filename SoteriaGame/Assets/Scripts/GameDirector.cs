@@ -37,6 +37,7 @@ public class GameDirector : MonoBehaviour {
 	private bool _obsPass1;
 
 	// Cards collected
+	private bool _firstTailorInteraction;
 	private string _musicDistrictCard;
 	private bool _musicDistrictHaveCard;
 	private string _theaterDistrictCard;
@@ -44,6 +45,12 @@ public class GameDirector : MonoBehaviour {
 	private string _observatoryDistrictCard;
 	private bool _observatoryDistrictHaveCard;
 	private int _cardsHeld;
+
+	// Suit pieces
+	private GameObject chest;
+	private GameObject hatGoggles;
+	private GameObject lBoot;
+	private GameObject rBoot;
 
 	public float flashBangLife = 3.0f;
 	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
@@ -148,6 +155,24 @@ public class GameDirector : MonoBehaviour {
 		if (_player == null) 
 		{
 			_player = GameObject.FindWithTag("Player").GetComponent<Player>();
+			this.chest = GameObject.FindWithTag("SuitPiece_Chest");
+			this.hatGoggles = GameObject.FindWithTag("SuitPiece_HatAndGoggles");
+			this.lBoot = GameObject.FindWithTag("SuitPiece_LBoot");
+			this.rBoot = GameObject.FindWithTag("SuitPiece_RBoot");
+			if (this.GetGameState() != GameStates.Suit)
+			{
+				this.chest.SetActive(false);
+				this.hatGoggles.SetActive(false);
+				this.rBoot.SetActive(false);
+				this.lBoot.SetActive(false);
+			}
+			else
+			{
+				this.chest.SetActive(true);
+				this.hatGoggles.SetActive(true);
+				this.rBoot.SetActive(true);
+				this.lBoot.SetActive(true);
+			}
 		}
 	}
     public Player GetPlayer()
@@ -242,6 +267,19 @@ public class GameDirector : MonoBehaviour {
 		this._hubPhase = 5;
 	}
 
+	public void SuitWorn()
+	{
+		this._HUDManager.SuitTrue();
+		this._stateManager.ChangeGameState(GameStates.Suit);
+		this.chest.SetActive(true);
+		this.hatGoggles.SetActive(true);
+		this.lBoot.SetActive(true);
+		this.rBoot.SetActive(true);
+		//this.GetPlayer().gameObject.FindWithTag("SuitPiece_HatAndGoggles").SetActive(true);
+		//this.GetPlayer().gameObject.FindWithTag("SuitPiece_RBoot").SetActive(true);
+		//this.GetPlayer().gameObject.FindWithTag("SuitPiece_LBoot").SetActive(true);
+	}
+
 	public bool CanFight()
 	{
 		return this._canFight;
@@ -251,6 +289,10 @@ public class GameDirector : MonoBehaviour {
 	public void SuitRemoved()
 	{
 		this._canFight = true;
+		this.chest.SetActive(false);
+		this.hatGoggles.SetActive(false);
+		this.lBoot.SetActive(false);
+		this.rBoot.SetActive(false);
 	}
 
 	public void VisitedSewer()
@@ -299,6 +341,16 @@ public class GameDirector : MonoBehaviour {
 	public bool GetObservatoryPass1()
 	{
 		return this._obsPass1;
+	}
+
+	public bool GetFirstTailorInteraction()
+	{
+		return this._firstTailorInteraction;
+	}
+
+	public void TailorSpokenTo()
+	{
+		this._firstTailorInteraction = true;
 	}
 
 	public void MusicCardCollected(string inCard)
