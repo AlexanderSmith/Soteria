@@ -37,5 +37,12 @@ public class LanternController : MonoBehaviour
 	public void RechargeLantern()
 	{
 		this._charged = true;
+		StartCoroutine("VisibleRecharge");
+	}
+
+	IEnumerator VisibleRecharge()
+	{
+		float start = Time.time;
+		//while (start 
 	}
 }
