@@ -42,7 +42,10 @@ public class LanternController : MonoBehaviour
 
 	IEnumerator VisibleRecharge()
 	{
-		float start = Time.time;
-		//while (start 
+		// Random value to make sure recharge doesn't happen before scene starts - 3 seconds is too long, 1 may be too short
+		yield return new WaitForSeconds(1.0f);
+		GameDirector.instance.PulseLantern();
+		yield return new WaitForSeconds(2.0f);
+		GameDirector.instance.IdleLantern();
 	}
 }

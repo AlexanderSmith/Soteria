@@ -9,10 +9,6 @@ public class LanternRange : MonoBehaviour
 		{
 			GameDirector.instance.PulseLantern();
 		}
-		else
-		{
-			GameDirector.instance.IdleLantern();
-		}
 	}
 	
 	void OnTriggerStay(Collider player)
@@ -20,10 +16,6 @@ public class LanternRange : MonoBehaviour
 		if (player.gameObject.tag == "Player" && GameDirector.instance.GetGameState() == GameStates.Normal)
 		{
 			GameDirector.instance.PulseLantern();
-		}
-		else
-		{
-			GameDirector.instance.IdleLantern();
 		}
 	}
 	

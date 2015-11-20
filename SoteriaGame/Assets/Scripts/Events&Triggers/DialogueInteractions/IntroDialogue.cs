@@ -21,7 +21,7 @@ public class IntroDialogue : MonoBehaviour
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
 				GameDirector.instance.StopAudioClip(AudioID.BackgroundIntro);
-				GameDirector.instance.ChangeVolume(AudioID.BackgroundHarbor, .5f);
+				GameDirector.instance.ChangeVolume(AudioID.BackgroundHarbor, 1f);
 			}
 		}
 	}
