@@ -12,6 +12,7 @@ public class HudManager : MonoBehaviour {
 
 	private GameObject _hudinterface;
 	private ButtonController _coinController;
+	private LanternModeController _lanternController;
 
 	private Image _onIndicator;
 	private Image _offIndicator;
@@ -20,6 +21,8 @@ public class HudManager : MonoBehaviour {
 	private Sprite _2cards;
 	private Sprite _3cards;
 	private Sprite _splashTest;
+	private Sprite _idleLantern;
+	private Sprite _activeLantern;
 	// 1 = Music, 2 = Theater, 3 = Observatory
 	private int _district;
 	private GameObject _currentCard;
@@ -61,12 +64,16 @@ public class HudManager : MonoBehaviour {
 		for (int i=0; i< 4; ++i)
 			this.Buttons[i] = _hudinterface.transform.FindChild("Button_"+i).gameObject;
 
-		this._coinController = _hudinterface.GetComponentInChildren<ButtonController> ();
+		this._coinController = _hudinterface.GetComponentInChildren<ButtonController>();
 		this._coinController.Initialize (this);
+		this._lanternController = _hudinterface.GetComponentInChildren<LanternModeController>();
+		this._lanternController.Initialize(this);
 
 		this._1card = Resources.Load("GUI/1Card", typeof(Sprite)) as Sprite;
 		this._2cards = Resources.Load("GUI/2Cards", typeof(Sprite)) as Sprite;
 		this._3cards = Resources.Load("GUI/3Cards", typeof(Sprite)) as Sprite;
+		//this._idleLantern = Resources.Load("GUI/HUD_lantern_off", typeof(Sprite)) as Sprite;
+		//this._activeLantern = Resources.Load("GUI/HUD_lantern_light", typeof(Sprite)) as Sprite;
 
 		// Splash screen images
 		this._splashTest = Resources.Load ("GUI/ScreenTest", typeof(Sprite)) as Sprite;
@@ -147,7 +154,16 @@ public class HudManager : MonoBehaviour {
 
 			//Should also add rotation for the arrow to point at,
 			this._compassRotation = Quaternion.identity;
-			this._compassRotation.eulerAngles = new Vector3(0, 0, Vector3.Angle(_offIndicator.transform.position - ObjectPosition, _offIndicator.transform.forward));
+			if (GameDirector.instance.GetPlayer().gameObject.transform.position.x < ObjectPosition.x || GameDirector.instance.GetPlayer().gameObject.transform.position.z > ObjectPosition.z)
+			{
+				this._compassRotation.eulerAngles = new Vector3(0, 0, -Vector3.Angle(GameDirector.instance.GetPlayer().gameObject.transform.position - ObjectPosition, 
+			                                                                    GameDirector.instance.GetPlayer().gameObject.transform.forward));
+			}
+			else
+			{
+				this._compassRotation.eulerAngles = new Vector3(0, 0, Vector3.Angle(ObjectPosition - GameDirector.instance.GetPlayer().gameObject.transform.position, 
+				                                                                    GameDirector.instance.GetPlayer().gameObject.transform.forward));
+			}
 			this._offIndicator.transform.rotation = this._compassRotation;
 
 			/************************Still need below*********************/
@@ -257,6 +273,19 @@ public class HudManager : MonoBehaviour {
 		//this.lantern.SetActive(inLantern);
 		this._lantern.GetComponent<Image>().enabled = true;
 		this.ChangeObjective(GameObject.Find("HubToMusic"));
+	}
+
+	public void PulseLantern()
+	{
+		if (this._lantern.activeSelf == true)
+		{
+			this._lanternController.Pulsing = true;
+		}
+	}
+
+	public void IdleLantern()
+	{
+		this._lanternController.Pulsing = false;
 	}
 
 	public void ChangeObjective(GameObject gObj)

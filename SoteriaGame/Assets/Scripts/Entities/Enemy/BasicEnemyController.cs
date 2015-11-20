@@ -57,6 +57,7 @@ public class BasicEnemyController : MonoBehaviour {
 			}
 			else if (!this._dead)
 			{
+				GameDirector.instance.WithinRangeOfEnemy();
 				this._distance = Vector3.Distance(this.transform.position, player.transform.position);
 				if (this._distance <= this.overwhelmRange && GameDirector.instance.GetGameState() != GameStates.Suit)
 				{

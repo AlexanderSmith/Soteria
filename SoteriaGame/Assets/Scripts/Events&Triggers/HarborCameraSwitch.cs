@@ -29,9 +29,12 @@ public class HarborCameraSwitch : MonoBehaviour
 		}
 	}
 
-	void OnTriggerExit()
+	void OnTriggerExit(Collider player)
 	{
-		swarm.SetActive(true);
+		if (player.gameObject.tag == "Player")
+		{
+			swarm.SetActive(true);
+		}
 	}
 
 	public void SwitchToHarbor()

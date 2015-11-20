@@ -16,14 +16,14 @@ public class ChangeObjectiveObservatory : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player" && !GameDirector.instance.GetObservatoryPass1())
 		{
-			if (!GameDirector.instance.GetVisitedSewer())
-			{
-				GameDirector.instance.ChangeObjective(sewer);
-			}
-			else
-			{
+			//if (!GameDirector.instance.GetVisitedSewer())
+			//{
+				//GameDirector.instance.ChangeObjective(sewer);
+			//}
+			//else
+			//{
 				GameDirector.instance.ChangeObjective(puzzle);
-			}
+			//}
 		}
 	}
 }

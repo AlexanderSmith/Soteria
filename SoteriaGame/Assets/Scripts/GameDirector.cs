@@ -534,6 +534,16 @@ public class GameDirector : MonoBehaviour {
 			return null;
 		}
 	}
+
+	public void PulseLantern()
+	{
+		this._HUDManager.PulseLantern();
+	}
+
+	public void IdleLantern()
+	{
+		this._HUDManager.IdleLantern();
+	}
 	
 	///////////////////////////////////////////////////////////////////
 	////////////////// ENCOUNTER MANAGER FUNCTIONS ////////////////////
@@ -544,6 +554,16 @@ public class GameDirector : MonoBehaviour {
 	public EncounterState GetEncounterState()
 	{
 		return this._encounterManager.GetState();
+	}
+
+	public void WithinRangeOfEnemy()
+	{
+		this.PulseLantern();
+	}
+
+	public void OutOfEnemyRange()
+	{
+		this.IdleLantern();
 	}
 
 	public void Encounter(GameObject enemy)

@@ -3,20 +3,26 @@ using System.Collections;
 
 public class IntroDialogue : MonoBehaviour
 {
-	void OnTriggerEnter()
+	void OnTriggerEnter(Collider player)
 	{
-		GameDirector.instance.GetPlayer().PlayerActionPause();
-		GameDirector.instance.SetupDialogue("IntroDialogue", AudioID.None);
-		GameDirector.instance.StartDialogue();
+		if (player.gameObject.tag == "Player")
+		{
+			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetupDialogue("IntroDialogue", AudioID.None);
+			GameDirector.instance.StartDialogue();
+		}
 	}
 
-	void OnTriggerStay()
+	void OnTriggerStay(Collider player)
 	{
-		if (!GameDirector.instance.isDialogueActive())
+		if (player.gameObject.tag == "Player")
 		{
-			this.gameObject.GetComponent<BoxCollider>().enabled = false;
-			GameDirector.instance.StopAudioClip(AudioID.BackgroundIntro);
-			GameDirector.instance.ChangeVolume(AudioID.BackgroundHarbor, .5f);
+			if (!GameDirector.instance.isDialogueActive())
+			{
+				this.gameObject.GetComponent<BoxCollider>().enabled = false;
+				GameDirector.instance.StopAudioClip(AudioID.BackgroundIntro);
+				GameDirector.instance.ChangeVolume(AudioID.BackgroundHarbor, .5f);
+			}
 		}
 	}
 }

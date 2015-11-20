@@ -20,16 +20,35 @@ public class ScriptedHideEvent : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			GameDirector.instance.GetPlayer().PlayerActionNoFighting();
-			InitializeEvent();
-			Destroy (this.GetComponent<BoxCollider>());
+			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetupDialogue("AnaFirstHarborSCEncounter", AudioID.None);
+			GameDirector.instance.StartDialogue();
+		}
+//		if (player.gameObject.tag == "Player")
+//		{
+//			GameDirector.instance.GetPlayer().PlayerActionNoFighting();
+//			InitializeEvent();
+//			Destroy (this.GetComponent<BoxCollider>());
+//		}
+	}
+
+	void OnTriggerStay(Collider player)
+	{
+		if (player.gameObject.tag == "Player")
+		{
+			if (!GameDirector.instance.isDialogueActive())
+			{
+				this.gameObject.GetComponent<BoxCollider>().enabled = false;
+				GameDirector.instance.GetPlayer().PlayerActionNoFighting();
+				InitializeEvent();
+			}
 		}
 	}
 
 	void InitializeEvent()
 	{
 		_enemy = GameObject.Find("ScriptedEnemy");
-		StartCoroutine("TwoSecondDelay");
+		StartCoroutine("OneSecondDelay");
 	}
 
 	void Update()
@@ -70,7 +89,7 @@ public class ScriptedHideEvent : MonoBehaviour
 		}
 	}
 
-	IEnumerator TwoSecondDelay()
+	IEnumerator OneSecondDelay()
 	{
 		yield return new WaitForSeconds(1.0f);
 		_playerMovement = true;

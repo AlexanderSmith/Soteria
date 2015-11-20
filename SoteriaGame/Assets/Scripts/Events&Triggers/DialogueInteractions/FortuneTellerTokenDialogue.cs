@@ -10,6 +10,7 @@ public class  FortuneTellerTokenDialogue: MonoBehaviour
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("FortuneTellerTokenDialogue", AudioID.None);
 			GameDirector.instance.StartDialogue();
+			this.gameObject.GetComponentInChildren<InspectFortuneTeller>().TurnOffInspect();
 		}
 	}
 

@@ -3,11 +3,14 @@ using System.Collections;
 
 public class  PTFirstEncounter: MonoBehaviour
 {
-	void OnTriggerEnter()
+	void OnTriggerEnter(Collider player)
 	{
-		GameDirector.instance.GetPlayer().PlayerActionPause();
-		GameDirector.instance.SetupDialogue("PTFirstEncounter", AudioID.None);
-		GameDirector.instance.StartDialogue();
-		this.gameObject.GetComponent<BoxCollider>().enabled = false;
+		if (player.gameObject.tag == "Player")
+		{
+			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetupDialogue("PTFirstEncounter", AudioID.None);
+			GameDirector.instance.StartDialogue();
+			this.gameObject.GetComponent<BoxCollider>().enabled = false;
+		}
 	}
 }
