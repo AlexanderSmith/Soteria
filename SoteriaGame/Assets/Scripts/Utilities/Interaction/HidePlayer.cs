@@ -42,7 +42,7 @@ public class HidePlayer : InteractionBase
 			this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
 			if (Input.GetKeyDown(KeyCode.Space) && !hiding)
 			{
-				hiding = true;
+ 				hiding = true;
 				GameDirector.instance.GetPlayer().PlayerActionHiding();
 				GameDirector.instance.ChangeGameState(GameStates.Hidden);
 				this._interactionbutton.GetComponent<SpriteRenderer>().sprite = unhide;
