@@ -4,7 +4,7 @@ using System.Collections;
 public class InteractionBase : MonoBehaviour
 {
 	protected GameObject _interactionbutton;
-	
+
 	// Use this for initialization
 	public virtual void Awake()
 	{

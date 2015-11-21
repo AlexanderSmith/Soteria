@@ -137,7 +137,6 @@ public class DialogueManager : MonoBehaviour
 			if (this._diagdata.Textindx == this._diagdata.diaglength)
 			{
 				EndDialogue();
-				GameDirector.instance.GetPlayer().PlayerActionNormal();
 			}
 			else
 			{

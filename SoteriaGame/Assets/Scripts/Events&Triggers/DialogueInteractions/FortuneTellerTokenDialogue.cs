@@ -22,6 +22,7 @@ public class  FortuneTellerTokenDialogue: MonoBehaviour
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
 				GameDirector.instance.TokenTrue();
+				GameDirector.instance.GetPlayer().PlayerActionNormal();
 			}
 		}
 	}

@@ -20,6 +20,7 @@ public class ObservatoryIntroDialogue : MonoBehaviour
 			if (!GameDirector.instance.isDialogueActive())
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
+				GameDirector.instance.GetPlayer().PlayerActionNormal();
 			}
 		}
 	}
