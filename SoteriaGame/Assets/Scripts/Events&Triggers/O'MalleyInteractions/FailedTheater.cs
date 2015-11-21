@@ -11,7 +11,7 @@ public class FailedTheater : MonoBehaviour
 		if (GameDirector.instance.GetFirstTimeTheater())
 		{
 			GameObject oMalley = Instantiate (oMalleyPrefab, oMalleySpawnLoc.position, oMalleySpawnLoc.rotation) as GameObject;
-			GameDirector.instance.OMalleyPuzzleDone(GameDirector.instance.GetFirstTimeTheater());
+			GameDirector.instance.OMalleyTheaterPuzzleDone();
 		}
 	}
 }

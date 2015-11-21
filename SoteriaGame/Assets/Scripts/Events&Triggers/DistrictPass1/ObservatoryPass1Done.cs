@@ -8,6 +8,7 @@ public class ObservatoryPass1Done : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.ObservatoryPass1Done();
+			GameDirector.instance.FirstTimeObservatoryPuzzle();
 		}
 	}
 }

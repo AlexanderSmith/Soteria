@@ -8,6 +8,7 @@ public class TheaterPass1Done : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.TheaterPass1Done();
+			GameDirector.instance.FirstTimeTheaterPuzzle();
 		}
 	}
 }

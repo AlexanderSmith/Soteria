@@ -33,6 +33,7 @@ public class TailorInteraction : MonoBehaviour
 			if (!GameDirector.instance.GetFirstTailorInteraction())
 			{
 				GameObject tailorPrefab = Instantiate(tailorFirstDialogue, tailorPrefabLocation.position, tailorPrefabLocation.rotation) as GameObject;
+				GameDirector.instance.TailorSpokenTo();
 			}
 			else
 			{

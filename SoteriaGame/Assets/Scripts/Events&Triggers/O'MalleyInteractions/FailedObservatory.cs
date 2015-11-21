@@ -11,7 +11,7 @@ public class FailedObservatory : MonoBehaviour
 		if (GameDirector.instance.GetFirstTimeObservatory())
 		{
 			GameObject oMalley = Instantiate (oMalleyPrefab, oMalleySpawnLoc.position, oMalleySpawnLoc.rotation) as GameObject;
-			GameDirector.instance.OMalleyPuzzleDone(GameDirector.instance.GetFirstTimeObservatory());
+			GameDirector.instance.OMalleyObservatoryPuzzleDone();
 		}
 	}
 }

@@ -8,6 +8,7 @@ public class MusicPass1Done : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.MusicPass1Done();
+			GameDirector.instance.FirstTimeMusicPuzzle();
 		}
 	}
 }

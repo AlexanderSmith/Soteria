@@ -329,9 +329,9 @@ public class GameDirector : MonoBehaviour {
 		return this._musicFirstTime;
 	}
 
-	public void OMalleyPuzzleDone(bool inPuzzle)
+	public void OMalleyMusicPuzzleDone()
 	{
-		inPuzzle = false;
+		this._musicFirstTime = false;
 	}
 
 	public void MusicPass1Done()
@@ -355,6 +355,11 @@ public class GameDirector : MonoBehaviour {
 		return this._theaterFirstTime;
 	}
 
+	public void OMalleyTheaterPuzzleDone()
+	{
+		this._theaterFirstTime = false;
+	}
+
 	public void TheaterPass1Done()
 	{
 		this.ResetSewer();
@@ -374,6 +379,11 @@ public class GameDirector : MonoBehaviour {
 	public bool GetFirstTimeObservatory()
 	{
 		return this._observatoryFirstTime;
+	}
+
+	public void OMalleyObservatoryPuzzleDone()
+	{
+		this._observatoryFirstTime = false;
 	}
 
 	public void ObservatoryPass1Done()
@@ -417,6 +427,39 @@ public class GameDirector : MonoBehaviour {
 		return this._musicDistrictCard == inMusic &&
 			this._theaterDistrictCard == inTheater &&
 			this._observatoryDistrictCard == inObservatory;
+	}
+
+	// Dumb, unnecessary extra work
+	public void RemoveCards(string inMusic, string inTheater, string inObservatory)
+	{
+		if (this._musicDistrictCard != inMusic)
+		{
+			this._musicDistrictHaveCard = false;
+		}
+		if (this._theaterDistrictCard != inTheater)
+		{
+			this._theaterDistrictHaveCard = false;
+		}
+		if (this._observatoryDistrictCard != inObservatory)
+		{
+			this._observatoryDistrictHaveCard = false;
+		}
+
+		this._cardsHeld = 0;
+		if (this._musicDistrictHaveCard)
+		{
+			this._cardsHeld++;
+		}
+		if (this._theaterDistrictHaveCard)
+		{
+			this._cardsHeld++;
+		}
+		if (this._observatoryDistrictHaveCard)
+		{
+			this._cardsHeld++;
+		}
+
+		this._HUDManager.DisplayCards(this._cardsHeld);
 	}
 	
 	#endregion

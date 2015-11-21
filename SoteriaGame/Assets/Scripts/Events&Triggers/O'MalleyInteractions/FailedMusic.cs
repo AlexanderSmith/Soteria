@@ -11,7 +11,7 @@ public class FailedMusic : MonoBehaviour
 		if (GameDirector.instance.GetFirstTimeMusic())
 		{
 			GameObject oMalley = Instantiate (oMalleyPrefab, oMalleySpawnLoc.position, oMalleySpawnLoc.rotation) as GameObject;
-			GameDirector.instance.OMalleyPuzzleDone(GameDirector.instance.GetFirstTimeMusic());
+			GameDirector.instance.OMalleyMusicPuzzleDone();
 		}
 	}
 }

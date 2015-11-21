@@ -20,8 +20,6 @@ public class ObservatoryIntroDialogue : MonoBehaviour
 			if (!GameDirector.instance.isDialogueActive())
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
-				GameDirector.instance.StopAudioClip(AudioID.BackgroundIntro);
-				GameDirector.instance.ChangeVolume(AudioID.BackgroundHarbor, 1f);
 			}
 		}
 	}
