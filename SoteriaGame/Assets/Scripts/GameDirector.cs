@@ -25,6 +25,11 @@ public class GameDirector : MonoBehaviour {
 	private bool _tokenUsed;
 	private bool _canFight;
 
+	// First time entering puzzle bools for O'Malley interactions
+	private bool _musicFirstTime;
+	private bool _theaterFirstTime;
+	private bool _observatoryFirstTime;
+
 	// Puzzle activation variables
 	private bool _musicPuzzleActivated;
 	private bool _puppetPuzzleActivated;
@@ -314,6 +319,21 @@ public class GameDirector : MonoBehaviour {
 		return this._visitedSewer;
 	}
 
+	public void FirstTimeMusicPuzzle()
+	{
+		this._musicFirstTime = true;
+	}
+
+	public bool GetFirstTimeMusic()
+	{
+		return this._musicFirstTime;
+	}
+
+	public void OMalleyPuzzleDone(bool inPuzzle)
+	{
+		inPuzzle = false;
+	}
+
 	public void MusicPass1Done()
 	{
 		this.ResetSewer();
@@ -325,6 +345,16 @@ public class GameDirector : MonoBehaviour {
 		return this._musicPass1;
 	}
 
+	public void FirstTimeTheaterPuzzle()
+	{
+		this._theaterFirstTime = true;
+	}
+
+	public bool GetFirstTimeTheater()
+	{
+		return this._theaterFirstTime;
+	}
+
 	public void TheaterPass1Done()
 	{
 		this.ResetSewer();
@@ -334,6 +364,16 @@ public class GameDirector : MonoBehaviour {
 	public bool GetTheaterPass1()
 	{
 		return this._theaterPass1;
+	}
+
+	public void FirstTimeObservatoryPuzzle()
+	{
+		this._observatoryFirstTime = true;
+	}
+
+	public bool GetFirstTimeObservatory()
+	{
+		return this._observatoryFirstTime;
 	}
 
 	public void ObservatoryPass1Done()
@@ -417,7 +457,7 @@ public class GameDirector : MonoBehaviour {
 //		this._HUDManager.HUDSceneStart(token, lantern);
 //	}
 
-	public void SetClearStatus (bool inStatus)
+	public void SetClearStatus(bool inStatus)
 	{
 		_HUDManager.isToClear = inStatus;	
 	}
@@ -671,7 +711,7 @@ public class GameDirector : MonoBehaviour {
 
 	IEnumerator BeamLevel(string inLevel, float inBeamLife)
 	{
-		yield return new WaitForSeconds (inBeamLife);
+		yield return new WaitForSeconds(inBeamLife);
 		this.FindEnemies();
 		this._encounterManager.TokenUsed();
 		if (this._lanternController != null)
@@ -688,7 +728,6 @@ public class GameDirector : MonoBehaviour {
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		foreach (GameObject enemy in enemies)
 		{
-			//enemy.SetActive(false);
 			Destroy(enemy);
 		}
 	}
@@ -727,7 +766,7 @@ public class GameDirector : MonoBehaviour {
 	public void ResetLinger()
 	{
 		this._player.ResetLinger();
-		this.SetClearStatus (false);
+		this.SetClearStatus(false);
 	}
 
 	public void PlayerOvercame()
