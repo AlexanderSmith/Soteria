@@ -1,7 +1,7 @@
-<b>Fortune Teller:</b> Ana Carmena...I was hoping you wouldn’t come. The journey ahead of you is filled with uncertainty and danger. There are powerful, dark forces at work.
-<b>Ana:</b> Yes...I think I know what you mean. That’s why I’m afraid to move forward. But I feel that I need to. And I need to learn more about those Shadows, too. 
+﻿<b>Fortune Teller:</b> Ana Carmena...I was hoping you wouldn't come. The journey ahead of you is filled with uncertainty and danger. There are powerful, dark forces at work.
+<b>Ana:</b> Yes...I think I know what you mean. That's why I'm afraid to move forward. But I feel that I need to. And I need to learn more about those Shadows, too. 
 <b>Fortune Teller:</b> They will cloud your mind and shrivel your heart. The best way to deal with them is to avoid them.  Here, take this token of our lady Soteria. Use it as 
-often as you want and she’ll protect you.
+often as you want and she'll protect you.
 <b>Ana:</b> Thanks! That looks useful. Can you also tell me where to find my dreams?
-<b>Fortune Teller:</b> Your dreams? You are just asking for trouble, you know that, don’t you? If you insist, talk to the Cartographer in the town center. It’s his job to know 
+<b>Fortune Teller:</b> Your dreams? You are just asking for trouble, you know that, don't you? If you insist, talk to the Cartographer in the town center. It’s his job to know 
 where everything is. He never leaves his tower, mind you - too dangerous. But he has a mighty telescope.
