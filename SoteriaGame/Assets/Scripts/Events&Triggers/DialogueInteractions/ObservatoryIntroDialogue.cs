@@ -1,15 +1,28 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class ObservatoryIntroDialogue : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-	
+public class ObservatoryIntroDialogue : MonoBehaviour
+{
+	void OnTriggerEnter(Collider player)
+	{
+		if (player.gameObject.tag == "Player")
+		{
+			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetupDialogue("AnaEnterDistOBSERp1", AudioID.None);
+			GameDirector.instance.StartDialogue();
+		}
 	}
 	
-	// Update is called once per frame
-	void Update () {
-	
+	void OnTriggerStay(Collider player)
+	{
+		if (player.gameObject.tag == "Player")
+		{
+			if (!GameDirector.instance.isDialogueActive())
+			{
+				this.gameObject.GetComponent<BoxCollider>().enabled = false;
+				GameDirector.instance.StopAudioClip(AudioID.BackgroundIntro);
+				GameDirector.instance.ChangeVolume(AudioID.BackgroundHarbor, 1f);
+			}
+		}
 	}
 }
