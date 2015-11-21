@@ -223,6 +223,8 @@ public class GameDirector : MonoBehaviour {
 	public void CompassTrue()
 	{
 		this.compass = true;
+		this._audioManager.ChangeVolume(AudioID.TokenUse, .3f);
+		this._audioManager.PlayAudio(AudioID.TokenUse);
 		this._HUDManager.CompassTrue(this.compass);
 	}
 
@@ -234,6 +236,8 @@ public class GameDirector : MonoBehaviour {
 	public void LanternTrue()
 	{
 		this.lantern = true;
+		this._audioManager.ChangeVolume(AudioID.TokenUse, .3f);
+		this._audioManager.PlayAudio(AudioID.TokenUse);
 		this._HUDManager.LanternTrue(this.lantern);
 	}
 	
