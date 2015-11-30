@@ -8,7 +8,7 @@ public class MusicIntroDialogueP3 : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("AnaDistEnterVOMUSICp3", AudioID.None);
+			GameDirector.instance.SetupDialogue("AnaDistEnterVOMUSICp3");
 			GameDirector.instance.StartDialogue();
 		}
 	}
@@ -20,8 +20,6 @@ public class MusicIntroDialogueP3 : MonoBehaviour
 			if (!GameDirector.instance.isDialogueActive())
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
-				GameDirector.instance.StopAudioClip(AudioID.BackgroundIntro);
-				GameDirector.instance.ChangeVolume(AudioID.BackgroundHarbor, 1f);
 				GameDirector.instance.GetPlayer().PlayerActionNormal();
 			}
 		}

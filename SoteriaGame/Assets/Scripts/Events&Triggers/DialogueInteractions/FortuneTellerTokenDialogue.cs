@@ -8,7 +8,7 @@ public class  FortuneTellerTokenDialogue: MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("FortuneTellerTokenDialogue", AudioID.None);
+			GameDirector.instance.SetupDialogue("FortuneTellerTokenDialogue");
 			GameDirector.instance.StartDialogue();
 			this.gameObject.GetComponentInChildren<InspectFortuneTeller>().TurnOffInspect();
 		}

@@ -1011,9 +1011,10 @@ public class GameDirector : MonoBehaviour {
 		return this._dialoguemanager.isDialogueActive();
 	}
 
-	public void SetupDialogue(string txtname, AudioID inAID)
+	public void SetupDialogue(string txtname)
 	{
-		this._dialoguemanager.ReloadDialogueData(txtname, inAID);
+		AudioID aid = this._audioManager.getIDByName(txtname);
+		this._dialoguemanager.ReloadDialogueData(txtname, aid);
 	}
 
 	public void StartDialogue()

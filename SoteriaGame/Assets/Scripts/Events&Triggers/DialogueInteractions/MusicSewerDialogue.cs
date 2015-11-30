@@ -11,7 +11,7 @@ public class MusicSewerDialogue : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("AnaGateInteractMUSICp1", AudioID.None);
+			GameDirector.instance.SetupDialogue("AnaTriesGateMUSICp1");
 			GameDirector.instance.StartDialogue();
 			this.gameObject.GetComponentInChildren<InspectMusicSewer>().TurnOffInspect();
 		}

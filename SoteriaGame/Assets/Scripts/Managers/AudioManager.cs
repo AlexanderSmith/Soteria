@@ -152,6 +152,8 @@ public enum AudioID
 	None,
 	Dialogue,
 	IntroDialogue,
+	AnaFirstHarborSCEncounter,
+	FortuneTellerTokenDialogue,
 	WoodFootsteps,
 	StoneFootsteps,
 	BackgroundIntro,
@@ -167,7 +169,11 @@ public enum AudioID
 	OrganMusic,
 	BrassMusic,
 	StringMusic,
-	WindMusic
+	WindMusic,
+	CartFirstEncounterHUBp1,
+	PTFirstEncounter,
+	OMalleyMusicGateMUSICp1,
+	AnaTriesGateMUSICp1
 }
 
 public class AudioSourceWrapper

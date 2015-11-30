@@ -43,7 +43,7 @@ public class DialogueInteraction : InteractionBase {
 				if (Input.GetKeyDown(KeyCode.Space))
 				{
 					GameDirector.instance.GetPlayer().PlayerActionPause();
-					GameDirector.instance.SetupDialogue(DialogueName, AudioID.None);
+					GameDirector.instance.SetupDialogue(DialogueName);
 					GameDirector.instance.StartDialogue();
 					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 				}

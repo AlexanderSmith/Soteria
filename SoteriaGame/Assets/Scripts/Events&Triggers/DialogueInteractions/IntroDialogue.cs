@@ -8,7 +8,7 @@ public class IntroDialogue : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("IntroDialogue", AudioID.IntroDialogue);
+			GameDirector.instance.SetupDialogue("IntroDialogue");
 			GameDirector.instance.StartDialogue();
 		}
 	}

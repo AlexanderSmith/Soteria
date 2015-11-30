@@ -8,7 +8,7 @@ public class TheaterIntroDialogue : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("AnaDistEnterVOTHEATERp1", AudioID.None);
+			GameDirector.instance.SetupDialogue("AnaDistEnterVOTHEATERp1");
 			GameDirector.instance.StartDialogue();
 		}
 	}

@@ -8,7 +8,7 @@ public class  PTFirstEncounter: MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("PTFirstEncounter", AudioID.None);
+			GameDirector.instance.SetupDialogue("PTFirstEncounter");
 			GameDirector.instance.StartDialogue();
 			this.gameObject.GetComponent<BoxCollider>().enabled = false;
 		}

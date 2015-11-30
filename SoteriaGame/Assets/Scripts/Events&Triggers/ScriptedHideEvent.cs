@@ -21,7 +21,7 @@ public class ScriptedHideEvent : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("AnaFirstHarborSCEncounter", AudioID.None);
+			GameDirector.instance.SetupDialogue("AnaFirstHarborSCEncounter");
 			GameDirector.instance.StartDialogue();
 		}
 //		if (player.gameObject.tag == "Player")
