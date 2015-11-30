@@ -48,7 +48,8 @@ public class ScriptedHideEvent : MonoBehaviour
 	void InitializeEvent()
 	{
 		_enemy = GameObject.Find("ScriptedEnemy");
-		StartCoroutine("OneSecondDelay");
+		//StartCoroutine("OneSecondDelay");
+		_playerMovement = true;
 	}
 
 	void Update()

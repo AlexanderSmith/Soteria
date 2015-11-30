@@ -8,7 +8,7 @@ public class ObservatoryIntroDialogue : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("AnaEnterDistOBSERp1");
+			GameDirector.instance.SetupDialogue("AnaDistEnterVOOBSERp1");
 			GameDirector.instance.StartDialogue();
 		}
 	}

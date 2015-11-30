@@ -1,17 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GetSuit : MonoBehaviour
+public class GetSuit : Reaction
 {
-	void OnTriggerStay(Collider player)
+	public override void execute()
 	{
-		if (player.gameObject.tag == "Player")
-		{
-			if (GameDirector.instance.GetPlayer().GetPlayerState() == PlayerState.Dialogue && GameDirector.instance.isDialogueActive())
-			{
-				Destroy(this.GetComponent<SphereCollider>());
-				GameDirector.instance.SuitWorn();
-			}
-		}
+		this.GetComponent<SphereCollider>().enabled = false;
+		GameDirector.instance.SuitWorn();
 	}
 }

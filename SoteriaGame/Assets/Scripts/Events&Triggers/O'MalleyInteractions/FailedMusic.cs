@@ -3,15 +3,24 @@ using System.Collections;
 
 public class FailedMusic : MonoBehaviour
 {
-	public GameObject oMalleyPrefab;
+	private GameObject _oMalleyPrefab;
 	public Transform oMalleySpawnLoc;
 
 	void Awake()
 	{
+		_oMalleyPrefab = GameObject.Find ("O'MalleyFailedMusic");
+		_oMalleyPrefab.transform.position = oMalleySpawnLoc.position;
+	}
+
+	void Start()
+	{
 		if (GameDirector.instance.GetFirstTimeMusic())
 		{
-			GameObject oMalley = Instantiate (oMalleyPrefab, oMalleySpawnLoc.position, oMalleySpawnLoc.rotation) as GameObject;
 			GameDirector.instance.OMalleyMusicPuzzleDone();
+		}
+		else
+		{
+			_oMalleyPrefab.SetActive(false);
 		}
 	}
 }

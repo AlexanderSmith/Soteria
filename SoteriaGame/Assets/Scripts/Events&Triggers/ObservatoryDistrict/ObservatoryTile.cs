@@ -5,7 +5,6 @@ public class ObservatoryTile : MonoBehaviour
 {
 	void Awake()
 	{
-		this.GetComponentInChildren<Light>().color = Color.cyan;
 	}
 
 	void OnTriggerEnter(Collider player)

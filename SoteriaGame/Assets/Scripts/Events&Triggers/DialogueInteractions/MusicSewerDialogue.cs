@@ -3,8 +3,16 @@ using System.Collections;
 
 public class MusicSewerDialogue : MonoBehaviour
 {
-	public GameObject oMalleyPrefab;
+	private GameObject _oMalleyPrefab;
 	public Transform oMalleySpawnLoc;
+
+	void Awake()
+	{
+		_oMalleyPrefab = GameObject.Find ("O'MalleyMusicSewer");
+		_oMalleyPrefab.transform.position = oMalleySpawnLoc.position;
+		_oMalleyPrefab.transform.rotation = oMalleySpawnLoc.rotation;
+		_oMalleyPrefab.SetActive(false);
+	}
 
 	void OnTriggerEnter(Collider player)
 	{
@@ -24,7 +32,8 @@ public class MusicSewerDialogue : MonoBehaviour
 			if (!GameDirector.instance.isDialogueActive())
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
-				GameObject oMalley = Instantiate(oMalleyPrefab, oMalleySpawnLoc.position, oMalleySpawnLoc.rotation) as GameObject;
+				_oMalleyPrefab.SetActive(true);
+				//GameDirector.instance.PlayAudioClip(AudioID.OMalleyMeow);
 				GameDirector.instance.GetPlayer().PlayerActionNormal();
 			}
 		}

@@ -10,6 +10,6 @@ public class OMalleyChangeObjective : Reaction
 		if (GameObj != null)
 			GameDirector.instance.ChangeObjective(GameObj);
 		else
-			GameDirector.instance.ChangeObjective(GameObject.Find ("MusicStore"));
+			Debug.Log("Missing Objective");
 	}
 }
