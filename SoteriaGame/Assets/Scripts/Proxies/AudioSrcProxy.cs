@@ -6,7 +6,8 @@ public class AudioSrcProxy : MonoBehaviour {
 	
 	public string AudioSourceID;
 	public bool IsDialogue;
-	
+	public bool IsSequential = true;
+
 	/// <summary>
 	/// Get the Audio Src from the objects and attaches it to the Audio Manager! then 
 	/// it can be controlled from there
@@ -21,8 +22,10 @@ public class AudioSrcProxy : MonoBehaviour {
 		GameDirector.instance.AttachAudioSource(AudioSrc, this.gameObject, AudioSourceID);		
 		
 		if (IsDialogue)
-			GameDirector.instance.CollectAudioClipsForDialogue(AudioSourceID,AudioSourceID);
+			GameDirector.instance.CollectAudioClipsForDialogue(AudioSourceID);
 		else
-			GameDirector.instance.CollectAudioClips(AudioSourceID,AudioSourceID);
+			GameDirector.instance.CollectAudioClips(AudioSourceID);
+
+		GameDirector.instance.UpdateAudioClipSequentialProperty(AudioSourceID,IsSequential);
 	}
 }

@@ -8,7 +8,7 @@ public class IntroDialogue : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("IntroDialogue", AudioID.None);
+			GameDirector.instance.SetupDialogue("IntroDialogue", AudioID.IntroDialogue);
 			GameDirector.instance.StartDialogue();
 		}
 	}
@@ -22,6 +22,7 @@ public class IntroDialogue : MonoBehaviour
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
 				GameDirector.instance.StopAudioClip(AudioID.BackgroundIntro);
 				GameDirector.instance.ChangeVolume(AudioID.BackgroundHarbor, 1f);
+				GameDirector.instance.GetPlayer().PlayerActionNormal();
 			}
 		}
 	}

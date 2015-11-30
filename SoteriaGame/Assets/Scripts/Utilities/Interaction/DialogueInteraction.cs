@@ -5,6 +5,8 @@ public class DialogueInteraction : InteractionBase {
 	private GameObject _npcportrait;
 
 	public string DialogueName;
+	public Reaction _reaction;
+	
 	// Use this for initialization
 	public override void Awake () 
 	{
@@ -22,16 +24,29 @@ public class DialogueInteraction : InteractionBase {
 	{
 		if (other.gameObject.tag == "Player")
 		{
-			this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
+			if (!GameDirector.instance.isDialogueActive())
+				this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
 			
-			if (Input.GetKeyDown(KeyCode.Space))
+			if (GameDirector.instance.GetPlayer().GetPlayerState() == PlayerState.Dialogue)
 			{
-				GameDirector.instance.GetPlayer().PlayerActionPause();
-				GameDirector.instance.SetupDialogue(DialogueName, AudioID.None);
-				GameDirector.instance.StartDialogue();
-				this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
-				this.gameObject.transform.parent.GetComponent<SphereCollider>().isTrigger = false;
-				this.gameObject.transform.parent.GetComponent<SphereCollider>().enabled = false;
+				if (!GameDirector.instance.isDialogueActive())
+				{
+					this._reaction.execute();
+					this.gameObject.transform.parent.GetComponent<SphereCollider>().isTrigger = false;
+					this.gameObject.transform.parent.GetComponent<SphereCollider>().enabled = false;
+					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
+					GameDirector.instance.GetPlayer().PlayerActionNormal();
+				}
+			}
+			else
+			{
+				if (Input.GetKeyDown(KeyCode.Space))
+				{
+					GameDirector.instance.GetPlayer().PlayerActionPause();
+					GameDirector.instance.SetupDialogue(DialogueName, AudioID.None);
+					GameDirector.instance.StartDialogue();
+					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
+				}
 			}
 		}
 	}

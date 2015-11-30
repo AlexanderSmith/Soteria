@@ -102,13 +102,13 @@ public class DialogueManager : MonoBehaviour
 		ActivateGUI ();
 		
 		GetNextLine();
-	//	GetNextVO();
+		GetNextVO();
 	}
 	
 	public void EndDialogue()
 	{
 		this.ChangeState (DialogueState.Standby);
-		
+		GameDirector.instance.StopAudioClip(this._diagdata.Aid);
 		DeActivateGUI ();
 	}
 	
@@ -117,7 +117,7 @@ public class DialogueManager : MonoBehaviour
 		this._diagdata.Textindx++;
 		
 		GetNextLine();
-	//GetNextVO();
+		GetNextVO();
 	} 
 	
 	/////////////////////////////////////////////////////////////////////////
@@ -131,20 +131,17 @@ public class DialogueManager : MonoBehaviour
 	
 	public void SkipLine()
 	{
-		
 		if (this._currState == DialogueState.Active)
 		{
 			if (this._diagdata.Textindx == this._diagdata.diaglength)
 			{
 				EndDialogue();
-				GameDirector.instance.GetPlayer().PlayerActionNormal();
 			}
 			else
 			{
 				ContinueDialogue();
 			}
 		}
-	//	GetNextVO();
 	}
 	
 	/////////////////////////////////////////////////////////////////////////
@@ -160,12 +157,15 @@ public class DialogueManager : MonoBehaviour
 	{
 		if (this._currState == DialogueState.Active)
 		{
-			if (Input.GetKeyDown(KeyCode.Space))
+			if (this._diagdata.Aid != AudioID.None)
 			{
-				if (this._diagdata.Textindx == this._diagdata.diaglength)
-					EndDialogue();
-				else
-					ContinueDialogue();
+				if (!GameDirector.instance.isClipPlaying(this._diagdata.Aid))
+				{
+					if (this._diagdata.Textindx == this._diagdata.diaglength)
+						EndDialogue();
+					else
+						ContinueDialogue();
+				}
 			}
 		}
 	}
@@ -175,9 +175,6 @@ public class DialogueManager : MonoBehaviour
 	
 	public void Update()
 	{
-		//TemporaryCode//
-		//GameObject.Find("DiagText").GetComponent<Text>().text = UIText;	
-		
-		//CheckNextClip();
+		CheckNextClip();
 	}
 }

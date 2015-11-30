@@ -231,6 +231,7 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.ChangeVolume(AudioID.TokenUse, .3f);
 		this._audioManager.PlayAudio(AudioID.TokenUse);
 		this._HUDManager.CompassTrue(this.compass);
+
 	}
 
 	public bool GetCompass()
@@ -244,6 +245,7 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.ChangeVolume(AudioID.TokenUse, .3f);
 		this._audioManager.PlayAudio(AudioID.TokenUse);
 		this._HUDManager.LanternTrue(this.lantern);
+
 	}
 	
 	public bool GetLantern()
@@ -929,6 +931,17 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.SubtractVolume(inAID, inVolume);
 	}
 
+	public void UpdateAudioClipSequentialProperty(string inAid, bool inSquential)
+	{
+		AudioID aid = this._audioManager.getIDByName(inAid);
+		this._audioManager.FindAudioSrcbyID (aid).IsSequential = inSquential;
+	}
+
+	public void LoadClipinSequence(AudioID inAid, int indx)
+	{
+		this._audioManager.FindAudioSrcbyID (inAid).LoadClipinCollection(indx);
+	}
+
 	/// <summary>
 	/// Adds the audio clip Programmatically.
 	/// </summary>
@@ -951,26 +964,24 @@ public class GameDirector : MonoBehaviour {
 		return this._audioManager.isClipPlaying(inAID);
 	}
 	
-	public void CollectAudioClipsForDialogue(string inFolderName, string inAID)
+	public void CollectAudioClipsForDialogue(string inFolderName)
 	{
-		AudioID aid = this._audioManager.getIDByName(inAID);
+		AudioID aid = this._audioManager.getIDByName(inFolderName);
 		this._audioManager.CollectDialogueAudioClips(inFolderName, aid);
 	}
 	
-	public void CollectAudioClips(string inFolderName, string inAID)
+	public void CollectAudioClips(string inFolderName)
 	{
-		AudioID aid = this._audioManager.getIDByName(inAID);
+		AudioID aid = this._audioManager.getIDByName(inFolderName);
 		this._audioManager.CollectAudioClips(inFolderName, aid);
 	}
-
+	
 	///Other Stuff to Add.
 	/// --->
 	//set Parameters Methods
 	//Remove Audio Clip
 	//Silence Audio Clip
 	//Clone Audio Clip
-	//Is Done playing Clip
-	//Queue Clips
 
 	public float GetPuzzleWinVolume()
 	{

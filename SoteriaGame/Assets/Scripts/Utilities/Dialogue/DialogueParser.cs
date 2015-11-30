@@ -5,13 +5,14 @@ using System.IO;
 
 public class DialogueData
 {
-	public DialogueData (AudioID aid)
+	public DialogueData (AudioID inAid)
 	{
 		DialogueLines = new List<string>();
 		TriggerCommands = new List<DialogueTrigger>();
 		textindx = 0;
 		diaglength = 0;
 		currTrig = 0;
+		this.Aid = inAid;
 	}
 
 	private AudioID aid;

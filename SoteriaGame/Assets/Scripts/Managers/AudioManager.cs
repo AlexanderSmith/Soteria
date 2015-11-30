@@ -151,6 +151,7 @@ public enum AudioID
 {
 	None,
 	Dialogue,
+	IntroDialogue,
 	WoodFootsteps,
 	StoneFootsteps,
 	BackgroundIntro,
@@ -176,6 +177,7 @@ public class AudioSourceWrapper
 	private AudioID _aID;
 	private int currindx;
 	private List<AudioClip> _audioclips;
+	public bool IsSequential = true;
 	
 	private AudioSourceWrapper(){}
 	
@@ -192,7 +194,7 @@ public class AudioSourceWrapper
 		return this._aID;
 	}
 	
-		public void playClip()
+	public void playClip()
 	{
 		if (this._audiosrc.clip == null)
 			this._audiosrc.clip = this._audioclips [0];
@@ -225,12 +227,22 @@ public class AudioSourceWrapper
 	
 	public void Nextclip()
 	{
-		if (currindx < this._audioclips.Count) 
+		if (currindx < this._audioclips.Count && IsSequential) 
 		{
 			this._audiosrc.clip = this._audioclips [currindx];
 		}
 	}
-	
+
+	public void LoadClipinCollection (int indx)
+	{
+
+		if (indx < this._audioclips.Count)
+		{
+			currindx = indx;
+			this._audiosrc.clip = this._audioclips[indx];
+		}
+	}
+
 	public void Rewind()
 	{
 		this._audiosrc.clip = this._audioclips[0];
