@@ -6,6 +6,7 @@ public class EnemySight : MonoBehaviour
 	private bool _playerVisible;
 	public float fieldOfVision = 90.0f;
 	private SphereCollider _sphereCollider;
+	public float eyeHeightOffset;
 
 	// Use this for initialization
 	void Start ()
@@ -31,14 +32,14 @@ public class EnemySight : MonoBehaviour
 			{
 				RaycastHit hit;
 				
-				if(Physics.Raycast(this.gameObject.transform.position + this.gameObject.transform.up, direction, out hit, this._sphereCollider.radius))
+				if(Physics.Raycast(this.gameObject.transform.position + (eyeHeightOffset * this.gameObject.transform.up), direction, out hit, this._sphereCollider.radius))
 				{
 					if(hit.collider.gameObject.Equals(player.gameObject) && !GetComponent<BasicEnemyController>().GetStunStatus())
 					{
 						this._playerVisible = true;
 					}
 				}
-				//Debug.DrawRay(this.gameObject.transform.position + this.gameObject.transform.up, direction, Color.white, 200, false);
+				//Debug.DrawRay(this.gameObject.transform.position + (eyeHeightOffset * this.gameObject.transform.up), direction, Color.white, 200, false);
 			}
 		}
 	}
