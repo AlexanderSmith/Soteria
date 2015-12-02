@@ -9,42 +9,43 @@ public class TailorInteraction : MonoBehaviour
 
 	private bool _cardsCorrect;
 
-	public GameObject tailorFirstDialogue;
-	public GameObject tailorCorrectCards;
-	public GameObject tailorIncorrectCards;
+	private GameObject _tailorFirstDialogue;
+	private GameObject _tailorCorrectCards;
+	private GameObject _tailorIncorrectCards;
 	public Transform tailorPrefabLocation;
 
-	void Start()
+	void Awake()
 	{
 		this._musicDistrictCard = "EggShells";
 		this._theaterDistrictCard = "Chameleon";
 		this._observatoryDistrictCard = "StarChart";
+		this._tailorFirstDialogue = GameObject.Find("TailorFirstInteraction");
+		this._tailorCorrectCards = GameObject.Find("TailorCorrectCards");
+		this._tailorIncorrectCards = GameObject.Find("TailorIncorrectCards");
+	}
+
+	void Start()
+	{
 //		GameDirector.instance.TailorSpokenTo();
 //		GameDirector.instance.MusicCardCollected (this._musicDistrictCard);
 //		GameDirector.instance.TheaterCardCollected (this._theaterDistrictCard);
 //		GameDirector.instance.ObservatoryCardCollected (this._observatoryDistrictCard);
 		this._cardsCorrect = GameDirector.instance.CheckCards(this._musicDistrictCard, this._theaterDistrictCard, this._observatoryDistrictCard);
-	}
-
-	void OnTriggerEnter(Collider player)
-	{
-		if (player.gameObject.tag == "Player")
+		if (!GameDirector.instance.GetFirstTailorInteraction())
 		{
-			if (!GameDirector.instance.GetFirstTailorInteraction())
+			this._tailorCorrectCards.SetActive(false);
+			this._tailorIncorrectCards.SetActive(false);
+		}
+		else
+		{
+			this._tailorFirstDialogue.SetActive(false);
+			if (this._cardsCorrect)
 			{
-				GameObject tailorPrefab = Instantiate(tailorFirstDialogue, tailorPrefabLocation.position, tailorPrefabLocation.rotation) as GameObject;
-				GameDirector.instance.TailorSpokenTo();
+				this._tailorIncorrectCards.SetActive(false);
 			}
 			else
 			{
-				if (this._cardsCorrect)
-				{
-					GameObject tailorPrefab = Instantiate(tailorCorrectCards, tailorPrefabLocation.position, tailorPrefabLocation.rotation) as GameObject;
-				}
-				else
-				{
-					GameObject tailorPrefab = Instantiate(tailorIncorrectCards, tailorPrefabLocation.position, tailorPrefabLocation.rotation) as GameObject;
-				}
+				this._tailorCorrectCards.SetActive(false);
 			}
 		}
 	}
