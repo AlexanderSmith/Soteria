@@ -76,6 +76,7 @@ public class Player : MonoBehaviour
 
 	public void PlayerActionNormal()
 	{
+		this.ResumeEnemies();
 		this.SwitchPlayerAction(_normalAction);
 		playerState = PlayerState.Normal;
 	}
@@ -88,12 +89,14 @@ public class Player : MonoBehaviour
 
 	public void PlayerActionPause()
 	{
+		this.PauseEnemies();
 		this.SwitchPlayerAction(_pauseAction);
 		playerState = PlayerState.Dialogue;
 	}
 
 	public void PlayerActionCardPickup()
 	{
+		this.PauseEnemies();
 		this.SwitchPlayerAction(_cardPickup);
 	}
 
@@ -188,5 +191,23 @@ public class Player : MonoBehaviour
 	public void Footstep()
 	{
 		GameDirector.instance.PlayAudioClip(AudioID.WoodFootsteps);
+	}
+
+	private void PauseEnemies()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			enemy.GetComponent<PauseEnemy>().Pause();
+		}
+	}
+
+	private void ResumeEnemies()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			enemy.GetComponent<PauseEnemy>().Resume();
+		}
 	}
 }

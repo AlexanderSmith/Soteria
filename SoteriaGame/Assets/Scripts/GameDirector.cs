@@ -171,13 +171,13 @@ public class GameDirector : MonoBehaviour {
 				this.rBoot.SetActive(false);
 				this.lBoot.SetActive(false);
 			}
-			else
-			{
-				this.chest.SetActive(true);
-				this.hatGoggles.SetActive(true);
-				this.rBoot.SetActive(true);
-				this.lBoot.SetActive(true);
-			}
+//			else
+//			{
+//				this.chest.SetActive(true);
+//				this.hatGoggles.SetActive(true);
+//				this.rBoot.SetActive(true);
+//				this.lBoot.SetActive(true);
+//			}
 		}
 	}
     public Player GetPlayer()
