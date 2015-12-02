@@ -41,25 +41,23 @@ public class CardInteraction : InteractionBase
 		if (player.gameObject.tag == "Player")
 		{
 			if (!GameDirector.instance.isDialogueActive())
+			{
 				this._interactionbutton.GetComponent<Animator>().SetBool("Show", true);
+			}
 			
 			if (GameDirector.instance.GetPlayer().GetPlayerState() == PlayerState.Dialogue)
 			{
 				if (!GameDirector.instance.isDialogueActive())
 				{
 					this._reaction.execute();
-					this.gameObject.transform.parent.GetComponent<SphereCollider>().isTrigger = false;
-					this.gameObject.transform.parent.GetComponent<SphereCollider>().enabled = false;
-					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
-					GameDirector.instance.GetPlayer().PlayerActionNormal();
 				}
 			}
 			else
 			{
 				if (Input.GetKeyDown(KeyCode.Space))
 				{
-					GameDirector.instance.GetPlayer().PlayerActionCardPickup();
-					// Convert tag string to int for district check to inform Game Director which district card belongs to
+					GameDirector.instance.GetPlayer().PlayerActionPause();
+										// Convert tag string to int for district check to inform Game Director which district card belongs to
 					char dist = this.gameObject.tag[0];
 					this._district = dist - 48;
 					GameDirector.instance.StartCardInteraction(this.gameObject.GetComponent<SpriteRenderer>().sprite, this._district,
@@ -69,16 +67,6 @@ public class CardInteraction : InteractionBase
 					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 				}
 			}
-
-//			if (Input.GetKeyDown(KeyCode.Space))
-//			{
-//				// Convert tag string to int for district check to inform Game Director which district card belongs to
-//				char dist = this.gameObject.tag[0];
-//				this._district = dist - 48;
-//				GameDirector.instance.StartCardInteraction(this.gameObject.GetComponent<SpriteRenderer>().sprite, this._district,
-//				                                           this.transform.parent.parent.gameObject);
-//				GameDirector.instance.GetPlayer().PlayerActionCardPickup();
-//			}
 		}
 	}
 }

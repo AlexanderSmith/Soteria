@@ -31,6 +31,8 @@ public class HudManager : MonoBehaviour {
 	private GameObject [] Buttons;
 	private GameObject _splashScreen;
 	private GameObject _splashScreenCard;
+	private GameObject _noResponse;
+	private GameObject _yesResponse;
 
 	// Inventory items
 	private GameObject _token;
@@ -82,7 +84,10 @@ public class HudManager : MonoBehaviour {
 		this._splashScreen.GetComponent<Image>().enabled = false;
 		this._splashScreenCard = GameObject.Find("SplashScreenCard");
 		this._splashScreenCard.GetComponent<Image>().enabled = false;
-
+		this._noResponse = GameObject.Find("No");
+		this._noResponse.GetComponent<Text>().enabled = false;
+		this._yesResponse = GameObject.Find("Yes");
+		this._yesResponse.GetComponent<Text>().enabled = false;
 		
 		//Inventory item game object references
 		this._token = GameObject.Find("Coin");
@@ -302,10 +307,18 @@ public class HudManager : MonoBehaviour {
 		this._splashScreenCard.GetComponent<Image>().enabled = true;
 	}
 
+	public void EnableCardResponseOptions()
+	{
+		this._noResponse.GetComponent<Text>().enabled = true;
+		this._yesResponse.GetComponent<Text>().enabled = true;
+	}
+
 	public void EndCardInteraction(bool inResponse)
 	{
 		this._splashScreen.GetComponent<Image>().enabled = false;
 		this._splashScreenCard.GetComponent<Image>().enabled = false;
+		this._noResponse.GetComponent<Text>().enabled = false;
+		this._yesResponse.GetComponent<Text>().enabled = false;
 		if (inResponse)
 		{
 			string selectedCard = FindCard (this._district);

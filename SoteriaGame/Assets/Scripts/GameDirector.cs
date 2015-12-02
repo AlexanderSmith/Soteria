@@ -522,6 +522,11 @@ public class GameDirector : MonoBehaviour {
 		this._HUDManager.StartCardInteraction(inSprite, inDist, inCardObj);
 	}
 
+	public void EnableCardResponseOptions()
+	{
+		this._HUDManager.EnableCardResponseOptions();
+	}
+
 	public void EndCardInteraction(bool inResponse)
 	{
 		this._HUDManager.EndCardInteraction(inResponse);
