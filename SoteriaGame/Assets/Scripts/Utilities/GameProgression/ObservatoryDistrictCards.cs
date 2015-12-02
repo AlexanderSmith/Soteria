@@ -7,12 +7,18 @@ public class ObservatoryDistrictCards : MonoBehaviour
 	public Transform trainTic;
 	public Transform starChart;
 	
-	public GameObject backpackCard;
-	public GameObject trainCard;
-	public GameObject starCard;
+	private GameObject _backpackCard;
+	private GameObject _trainCard;
+	private GameObject _starCard;
 	
 	void OnTriggerEnter(Collider player)
 	{
+		this._backpackCard = GameObject.Find("BackpackAndJournal");
+		this._backpackCard.transform.position = this.backpack.position;
+		this._trainCard = GameObject.Find("TrainTicket");
+		this._trainCard.transform.position = this.trainTic.position;
+		this._starCard = GameObject.Find("StarChart");
+		this._starCard.transform.position = this.starChart.position;
 		string card = GameDirector.instance.GetObservatoryDistrictCard();
 		if (card != null)
 		{
@@ -29,30 +35,21 @@ public class ObservatoryDistrictCards : MonoBehaviour
 				break;
 			};
 		}
-		else
-		{
-			GameObject _backpack = Instantiate(backpackCard, backpack.position, backpack.rotation) as GameObject;
-			GameObject _trainTic = Instantiate(trainCard, trainTic.position, trainTic.rotation) as GameObject;
-			GameObject _starChart = Instantiate(starCard, starChart.position, starChart.rotation) as GameObject;
-		}
 		this.gameObject.GetComponent<BoxCollider>().enabled = false;
 	}
 	
 	void NoBackpack()
 	{
-		GameObject _trainTic = Instantiate(trainCard, trainTic.position, trainTic.rotation) as GameObject;
-		GameObject _starChart = Instantiate(starCard, starChart.position, starChart.rotation) as GameObject;
+		this._backpackCard.SetActive(false);
 	}
 	
 	void NoTrainTic()
 	{
-		GameObject _backpack = Instantiate(backpackCard, backpack.position, backpack.rotation) as GameObject;
-		GameObject _starChart = Instantiate(starCard, starChart.position, starChart.rotation) as GameObject;
+		this._trainCard.SetActive(false);
 	}
 	
 	void NoStarChart()
 	{
-		GameObject _backpack = Instantiate(backpackCard, backpack.position, backpack.rotation) as GameObject;
-		GameObject _trainTic = Instantiate(trainCard, trainTic.position, trainTic.rotation) as GameObject;
+		this._starCard.SetActive(false);
 	}
 }

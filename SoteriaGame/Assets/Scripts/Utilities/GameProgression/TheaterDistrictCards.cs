@@ -7,12 +7,18 @@ public class TheaterDistrictCards : MonoBehaviour
 	public Transform hat;
 	public Transform chameleon;
 	
-	public GameObject pearlsCard;
-	public GameObject hatCard;
-	public GameObject chameleonCard;
+	private GameObject _pearlsCard;
+	private GameObject _hatCard;
+	private GameObject _chameleonCard;
 	
 	void OnTriggerEnter(Collider player)
 	{
+		this._pearlsCard = GameObject.Find("StringOfPearls");
+		this._pearlsCard.transform.position = this.pearls.position;
+		this._hatCard = GameObject.Find("PartyHat");
+		this._hatCard.transform.position = this.hat.position;
+		this._chameleonCard = GameObject.Find("Chameleon");
+		this._chameleonCard.transform.position = this.chameleon.position;
 		string card = GameDirector.instance.GetTheaterDistrictCard();
 		if (card != null)
 		{
@@ -29,30 +35,21 @@ public class TheaterDistrictCards : MonoBehaviour
 				break;
 			};
 		}
-		else
-		{
-			GameObject _pearls = Instantiate(pearlsCard, pearls.position, pearls.rotation) as GameObject;
-			GameObject _hat = Instantiate(hatCard, hat.position, hat.rotation) as GameObject;
-			GameObject _chameleon = Instantiate(chameleonCard, chameleon.position, chameleon.rotation) as GameObject;
-		}
 		this.gameObject.GetComponent<BoxCollider>().enabled = false;
 	}
 	
 	void NoPearls()
 	{
-		GameObject _hat = Instantiate(hatCard, hat.position, hat.rotation) as GameObject;
-		GameObject _chameleon = Instantiate(chameleonCard, chameleon.position, chameleon.rotation) as GameObject;
+		this._pearlsCard.SetActive(false);
 	}
 	
 	void NoHat()
 	{
-		GameObject _pearls = Instantiate(pearlsCard, pearls.position, pearls.rotation) as GameObject;
-		GameObject _chameleon = Instantiate(chameleonCard, chameleon.position, chameleon.rotation) as GameObject;
+		this._hatCard.SetActive(false);
 	}
 	
 	void NoChameleon()
 	{
-		GameObject _pearls = Instantiate(pearlsCard, pearls.position, pearls.rotation) as GameObject;
-		GameObject _hat = Instantiate(hatCard, hat.position, hat.rotation) as GameObject;
+		this._chameleonCard.SetActive(false);
 	}
 }

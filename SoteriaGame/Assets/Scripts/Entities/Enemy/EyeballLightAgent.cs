@@ -69,7 +69,7 @@ public class EyeballLightAgent : MonoBehaviour
 
 	void OnTriggerEnter(Collider player)
 	{
-		if (player.gameObject.tag == "Player")
+		if (player.gameObject.tag == "Player" && GameDirector.instance.GetGameState() != GameStates.Suit)
 		{
 			this._spotted = true;
 			this.gameObject.GetComponent<EyeballShadowCreatureSpawner>().Resume();

@@ -7,13 +7,19 @@ public class MusicDistrictCards : MonoBehaviour
 	public Transform handDoll;
 	public Transform eggShells;
 
-	public GameObject whistleCard;
-	public GameObject handDollCard;
-	public GameObject eggShellsCard;
+	private GameObject _whistleCard;
+	private GameObject _handDollCard;
+	private GameObject _eggShellsCard;
 
 	//void OnTriggerEnter(Collider player)
 	void Awake()
 	{
+		this._whistleCard = GameObject.Find("Whistle");
+		this._whistleCard.transform.position = this.whistle.position;
+		this._handDollCard = GameObject.Find("HandDoll");
+		this._handDollCard.transform.position = this.handDoll.position;
+		this._eggShellsCard = GameObject.Find("EggShells");
+		this._eggShellsCard.transform.position = eggShells.position;
 		string card = GameDirector.instance.GetMusicDistrictCard();
 		if (card != null)
 		{
@@ -30,30 +36,21 @@ public class MusicDistrictCards : MonoBehaviour
 				break;
 			};
 		}
-		else
-		{
-			GameObject _whistle = Instantiate(whistleCard, whistle.position, whistle.rotation) as GameObject;
-			GameObject _doll = Instantiate(handDollCard, handDoll.position, handDoll.rotation) as GameObject;
-			GameObject _egg = Instantiate(eggShellsCard, eggShells.position, eggShells.rotation) as GameObject;
-		}
 		this.gameObject.GetComponent<BoxCollider>().enabled = false;
 	}
 
 	void NoWhistle()
 	{
-		GameObject _doll = Instantiate(handDollCard, handDoll.position, handDoll.rotation) as GameObject;
-		GameObject _egg = Instantiate(eggShellsCard, eggShells.position, eggShells.rotation) as GameObject;
+		this._whistleCard.SetActive(false);
 	}
 
 	void NoDoll()
 	{
-		GameObject _whistle = Instantiate(whistleCard, whistle.position, whistle.rotation) as GameObject;
-		GameObject _egg = Instantiate(eggShellsCard, eggShells.position, eggShells.rotation) as GameObject;
+		this._handDollCard.SetActive(false);
 	}
 
 	void NoEgg()
 	{
-		GameObject _whistle = Instantiate(whistleCard, whistle.position, whistle.rotation) as GameObject;
-		GameObject _doll = Instantiate(handDollCard, handDoll.position, handDoll.rotation) as GameObject;
+		this._eggShellsCard.SetActive(false);
 	}
 }

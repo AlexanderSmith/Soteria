@@ -9,8 +9,6 @@ public class MusicSewerDialogue : MonoBehaviour
 	void Awake()
 	{
 		_oMalleyPrefab = GameObject.Find ("O'MalleyMusicSewer");
-		_oMalleyPrefab.transform.position = oMalleySpawnLoc.position;
-		_oMalleyPrefab.transform.rotation = oMalleySpawnLoc.rotation;
 		_oMalleyPrefab.SetActive(false);
 	}
 
@@ -22,6 +20,9 @@ public class MusicSewerDialogue : MonoBehaviour
 			GameDirector.instance.SetupDialogue("AnaTriesGateMUSICp1");
 			GameDirector.instance.StartDialogue();
 			this.gameObject.GetComponentInChildren<InspectMusicSewer>().TurnOffInspect();
+			oMalleySpawnLoc.LookAt(GameDirector.instance.GetPlayer().transform.position);
+			_oMalleyPrefab.transform.position = oMalleySpawnLoc.position;
+			_oMalleyPrefab.transform.rotation = oMalleySpawnLoc.rotation;
 		}
 	}
 	
@@ -33,7 +34,7 @@ public class MusicSewerDialogue : MonoBehaviour
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
 				_oMalleyPrefab.SetActive(true);
-				//GameDirector.instance.PlayAudioClip(AudioID.OMalleyMeow);
+				GameDirector.instance.PlayAudioClip(AudioID.OMalleyMeow);
 				GameDirector.instance.GetPlayer().PlayerActionNormal();
 			}
 		}

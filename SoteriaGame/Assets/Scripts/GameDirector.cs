@@ -687,7 +687,10 @@ public class GameDirector : MonoBehaviour {
 
 	public void StopEncounterMode()
 	{
-		this._stateManager.ChangeGameState(GameStates.Normal);
+		if (this.GetGameState() != GameStates.Suit)
+		{
+			this._stateManager.ChangeGameState(GameStates.Normal);
+		}
 		this._HUDManager.DisableEncounterView();
 		this._player.PlayerActionNormal();
 	}

@@ -35,6 +35,7 @@ public class TailorInteraction : MonoBehaviour
 		{
 			this._tailorCorrectCards.SetActive(false);
 			this._tailorIncorrectCards.SetActive(false);
+			GameDirector.instance.TailorSpokenTo();
 		}
 		else
 		{
