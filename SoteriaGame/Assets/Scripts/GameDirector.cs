@@ -35,7 +35,7 @@ public class GameDirector : MonoBehaviour {
 	private bool _puppetPuzzleActivated;
 	private bool _observatoryPuzzleActivated;
 
-	// District visitation bools for objective
+	// Pass 1 district visitation bools for objective
 	private bool _visitedSewer;
 	private bool _musicPass1;
 	private bool _theaterPass1;
@@ -52,10 +52,15 @@ public class GameDirector : MonoBehaviour {
 	private int _cardsHeld;
 
 	// Suit pieces
-	private GameObject chest;
-	private GameObject hatGoggles;
-	private GameObject lBoot;
-	private GameObject rBoot;
+	private GameObject _chest;
+	private GameObject _hatGoggles;
+	private GameObject _lBoot;
+	private GameObject _rBoot;
+
+	// Puzzle bools while wearing suit pieces for objective
+	private bool _musicPuzzleSuit;
+	private bool _theaterPuzzleSuit;
+	private bool _observatoryPuzzleSuit;
 
 	public float flashBangLife = 3.0f;
 	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
@@ -160,16 +165,16 @@ public class GameDirector : MonoBehaviour {
 		if (_player == null) 
 		{
 			_player = GameObject.FindWithTag("Player").GetComponent<Player>();
-			this.chest = GameObject.FindWithTag("SuitPiece_Chest");
-			this.hatGoggles = GameObject.FindWithTag("SuitPiece_HatAndGoggles");
-			this.lBoot = GameObject.FindWithTag("SuitPiece_LBoot");
-			this.rBoot = GameObject.FindWithTag("SuitPiece_RBoot");
+			this._chest = GameObject.FindWithTag("SuitPiece_Chest");
+			this._hatGoggles = GameObject.FindWithTag("SuitPiece_HatAndGoggles");
+			this._lBoot = GameObject.FindWithTag("SuitPiece_LBoot");
+			this._rBoot = GameObject.FindWithTag("SuitPiece_RBoot");
 			if (this.GetGameState() != GameStates.Suit)
 			{
-				this.chest.SetActive(false);
-				this.hatGoggles.SetActive(false);
-				this.rBoot.SetActive(false);
-				this.lBoot.SetActive(false);
+				this._chest.SetActive(false);
+				this._hatGoggles.SetActive(false);
+				this._rBoot.SetActive(false);
+				this._lBoot.SetActive(false);
 			}
 //			else
 //			{
@@ -253,6 +258,11 @@ public class GameDirector : MonoBehaviour {
 		return this.lantern;
 	}
 
+	public bool CanFight()
+	{
+		return this._canFight;
+	}
+
 	public int GetHubPhase()
 	{
 		return this._hubPhase;
@@ -276,34 +286,6 @@ public class GameDirector : MonoBehaviour {
 	public void HubPhase5()
 	{
 		this._hubPhase = 5;
-	}
-
-	public void SuitWorn()
-	{
-		this._HUDManager.SuitTrue();
-		this._stateManager.ChangeGameState(GameStates.Suit);
-		this.chest.SetActive(true);
-		this.hatGoggles.SetActive(true);
-		this.lBoot.SetActive(true);
-		this.rBoot.SetActive(true);
-		//this.GetPlayer().gameObject.FindWithTag("SuitPiece_HatAndGoggles").SetActive(true);
-		//this.GetPlayer().gameObject.FindWithTag("SuitPiece_RBoot").SetActive(true);
-		//this.GetPlayer().gameObject.FindWithTag("SuitPiece_LBoot").SetActive(true);
-	}
-
-	public bool CanFight()
-	{
-		return this._canFight;
-	}
-
-	// When suit removed, player now able to fight shadow creatures -- will need more than this bool flip
-	public void SuitRemoved()
-	{
-		this._canFight = true;
-		this.chest.SetActive(false);
-		this.hatGoggles.SetActive(false);
-		this.lBoot.SetActive(false);
-		this.rBoot.SetActive(false);
 	}
 
 	public void VisitedSewer()
@@ -463,7 +445,57 @@ public class GameDirector : MonoBehaviour {
 
 		this._HUDManager.DisplayCards(this._cardsHeld);
 	}
+
+	public void SuitWorn()
+	{
+		this._HUDManager.SuitTrue();
+		this._stateManager.ChangeGameState(GameStates.Suit);
+		this._chest.SetActive(true);
+		this._hatGoggles.SetActive(true);
+		this._lBoot.SetActive(true);
+		this._rBoot.SetActive(true);
+	}
+
+	public bool GetMusicPuzzleVisitedSuit()
+	{
+		return this._musicPuzzleSuit;
+	}
+
+	public void MusicPuzzleVisitedSuit()
+	{
+		this._musicPuzzleSuit = true;
+	}
+
+	public bool GetTheaterPuzzleVisitedSuit()
+	{
+		return this._theaterPuzzleSuit;
+	}
 	
+	public void TheaterPuzzleVisitedSuit()
+	{
+		this._theaterPuzzleSuit = true;
+	}
+
+	public bool GetObservatoryPuzzleVisitedSuit()
+	{
+		return this._observatoryPuzzleSuit;
+	}
+	
+	public void ObservatoryPuzzleVisitedSuit()
+	{
+		this._observatoryPuzzleSuit = true;
+	}
+	
+	// When suit removed, player now able to fight shadow creatures
+	public void SuitRemoved()
+	{
+		this._canFight = true;
+		this._chest.SetActive(false);
+		this._hatGoggles.SetActive(false);
+		this._lBoot.SetActive(false);
+		this._rBoot.SetActive(false);
+	}
+
 	#endregion
 
 	///////////////////////////////////////////////////////////////////
