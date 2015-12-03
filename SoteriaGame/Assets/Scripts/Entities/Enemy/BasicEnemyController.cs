@@ -44,7 +44,7 @@ public class BasicEnemyController : MonoBehaviour {
 			this._agent.Stop();
 			this.Stunned();
 		}
-		else if (GetComponent<EnemySight>().IsPlayerVisible())
+		else if (GetComponent<EnemySight>().IsPlayerVisible() && GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
 		{
 			if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
 			{
@@ -83,7 +83,10 @@ public class BasicEnemyController : MonoBehaviour {
 		}
 		else
 		{
-			this.Unaware();
+			if (GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
+			{
+				this.Unaware();
+			}
 		}
 	}
 	
