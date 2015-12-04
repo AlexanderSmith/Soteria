@@ -8,11 +8,13 @@ public class DialogueData
 	public DialogueData (AudioID inAid)
 	{
 		DialogueLines = new List<string>();
+		Choices = new List<string>();
 		TriggerCommands = new List<DialogueTrigger>();
 		textindx = 0;
 		diaglength = 0;
 		currTrig = 0;
 		this.Aid = inAid;
+		hasChoices = false; 
 	}
 
 	private AudioID aid;
@@ -27,10 +29,11 @@ public class DialogueData
 		get { return this.textindx; }
 		set { this.textindx = value; }
 	}
-
+	public bool hasChoices;
 	private int currTrig;
 	public int diaglength;
 	public List<string> DialogueLines;
+	public List<string> Choices;
 	public List<DialogueTrigger> TriggerCommands;
 }
 
@@ -91,6 +94,11 @@ public class DialogueParser
 				tricom[0].Replace("<trigger/>", "");
 				DialogueTrigger tempTrig = new DialogueTrigger(tricom[0], tricom[1]);
 				inDialogue.TriggerCommands.Add(tempTrig);
+			}
+			else if(line.Contains("<choice/>"))
+			{
+				line.Replace("<choice/>", "");
+				inDialogue.Choices.Add(line);
 			}
 			else
 			{

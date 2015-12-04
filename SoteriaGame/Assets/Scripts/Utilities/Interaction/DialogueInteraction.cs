@@ -55,7 +55,7 @@ public class DialogueInteraction : InteractionBase
 	
 	[HideInInspector]
 	public bool EndsWithChoice = false;
-	
+
 	// Use this for initialization
 	public override void Awake () 
 	{
@@ -93,6 +93,8 @@ public class DialogueInteraction : InteractionBase
 				{
 					GameDirector.instance.GetPlayer().PlayerActionPause();
 					GameDirector.instance.SetupDialogue(DialogueName);
+					if (this.EndsWithChoice)
+						GameDirector.instance.SetupDialogueChoices(this.FirstChoice, this.SecondChoice, this.ThirdChoice);
 					GameDirector.instance.StartDialogue();
 					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 				}

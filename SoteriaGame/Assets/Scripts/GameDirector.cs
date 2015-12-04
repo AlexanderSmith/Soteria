@@ -1057,6 +1057,11 @@ public class GameDirector : MonoBehaviour {
 		this._dialoguemanager.ReloadDialogueData(txtname, aid);
 	}
 
+	public void SetupDialogueChoices (string fChoice, string sChoice, string tChoice)
+	{
+		this._dialoguemanager.LoadChoicesDialogueName(fChoice, sChoice, tChoice);
+	}
+
 	public void StartDialogue()
 	{
 		this._dialoguemanager.StartDialogue();
