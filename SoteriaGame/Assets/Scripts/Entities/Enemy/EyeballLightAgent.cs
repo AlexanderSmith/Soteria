@@ -22,19 +22,27 @@ public class EyeballLightAgent : MonoBehaviour
 
 	void Update()
 	{
-		if (!this._spotted)
+		if (GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
 		{
-			this.Patrolling();
-		}
-		else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
-		{
-			this._spotted = false;
-			this.gameObject.GetComponent<EyeballShadowCreatureSpawner>().Cancel();
-			this.GetComponentInChildren<EyeballLightController>().NormalColor();
+			this._agent.Resume();
+			if (!this._spotted)
+			{
+				this.Patrolling();
+			}
+			else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
+			{
+				this._spotted = false;
+				this.gameObject.GetComponent<EyeballShadowCreatureSpawner>().Cancel();
+				this.GetComponentInChildren<EyeballLightController>().NormalColor();
+			}
+			else
+			{
+				this.Following();
+			}
 		}
 		else
 		{
-			this.Following();
+			this._agent.Stop();
 		}
 	}
 
