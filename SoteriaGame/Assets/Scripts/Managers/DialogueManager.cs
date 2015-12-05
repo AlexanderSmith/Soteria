@@ -21,10 +21,10 @@ public class DialogueManager : MonoBehaviour
 	GameObject DialogueUISecondChoice;
 	GameObject DialogueUIThirdChoice;
 
-	string 		UIText;
-	string FirstChoice;
-	string SecondChoice;
-	string ThirdChoice;
+	string  UIText;
+	string FirstChoiceSrc;
+	string SecondChoiceSrc;
+	string ThirdChoiceSrc;
 	
 	/////////////////////////////////////////////////////////////////////////
 	///////////////////////  INITIALIZATION   ///////////////////////////////
@@ -85,6 +85,12 @@ public class DialogueManager : MonoBehaviour
 		{
 			this._diagdata = new DialogueData(inAid);
 			this._parser.LoadDialogueSrc (_diagdata,txtname);
+
+			if (this._diagdata.hasChoices)
+			{
+
+
+			}
 		}
 	}
 	
@@ -96,7 +102,6 @@ public class DialogueManager : MonoBehaviour
 	{
 		DialogueUIBG.SetActive(true);
 		DialogueUIText.SetActive(true);
-
 	}
 	
 	private void DeActivateGUI()
@@ -108,46 +113,48 @@ public class DialogueManager : MonoBehaviour
 		DialogueUIThirdChoice.SetActive(false);
 	}
 
+	private void LoadChoice(int indx)
+	{
+		if (_diagdata.Choices[indx].Length > 0)
+		{
+			switch( indx )
+			{
+				case 0:
+					DialogueUIFirstChoice.transform.GetChild(0).GetComponent<Text>().text = _diagdata.Choices[indx];
+				break;
+				
+				case 1:
+					DialogueUISecondChoice.transform.GetChild(0).GetComponent<Text>().text = _diagdata.Choices[indx];
+				break;
+
+				case 2:
+					DialogueUIThirdChoice.transform.GetChild(0).GetComponent<Text>().text = _diagdata.Choices[indx];
+				break;
+			}
+		}
+	}
+
 	public void ActivateChoices()
 	{
 		if (_diagdata.hasChoices)
 		{
-			//activate one Choice
-			if (_diagdata.Choices.Count > 0)
+			for (int i = 0; i < _diagdata.Choices.Count; ++i )
 			{
-				DialogueUIFirstChoice.SetActive(false);
-				if (FirstChoice.Length > 0)
-					DialogueUIFirstChoice.transform.GetChild(0).GetComponent<Text>().text = FirstChoice;
-			}
-			//activate two Choices
-			if (_diagdata.Choices.Count > 1)
-			{
-				DialogueUISecondChoice.SetActive(false);
-				if (FirstChoice.Length > 0)
-					DialogueUISecondChoice.transform.GetChild(1).GetComponent<Text>().text = SecondChoice;
-			}
-			//activate three Choices
-			if (_diagdata.Choices.Count > 2)
-			{
-				DialogueUIThirdChoice.SetActive(false);
-				if (FirstChoice.Length > 0)
-					DialogueUIThirdChoice.transform.GetChild(1).GetComponent<Text>().text = ThirdChoice;
+				LoadChoice ( i );
 			}
 		}
 	}
 
 	public void LoadChoicesDialogueName (string fChoice, string sChoice, string tChoice)
 	{
-		this.FirstChoice = fChoice;
-		this.SecondChoice = sChoice;
-		this.ThirdChoice = tChoice;
+		this.FirstChoiceSrc = fChoice;
+		this.SecondChoiceSrc = sChoice;
+		this.ThirdChoiceSrc = tChoice;
 	}
 
 	//////////////////////////////////////////////////////////////////////////
 	///////////////////////  DIALOGUE COMMAND CENTER /////////////////////////
 	//////////////////////////////////////////////////////////////////////////
-	
-	
 	public void StartDialogue()
 	{
 		this.ChangeState (DialogueState.Active);
