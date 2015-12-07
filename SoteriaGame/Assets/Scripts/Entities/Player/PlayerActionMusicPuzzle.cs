@@ -3,12 +3,18 @@ using System.Collections;
 
 public class PlayerActionMusicPuzzle : IPlayerAction
 {
+	private bool _start;
 	private bool _lingering;
 	private int _keyPressCounter;
 	private GameObject controller;
 
 	public void PlayerAction(Player inPlayer)
 	{
+		if (!this._start)
+		{
+			this._start = true;
+			this._lingering = false;
+		}
 		//this.InitializeValues(inPlayer);
 		this.FightMusicBoss();
 	}
@@ -27,9 +33,9 @@ public class PlayerActionMusicPuzzle : IPlayerAction
 	{
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
-			if (!_lingering)
+			if (!this._lingering)
 			{
-				_lingering = true;
+				this._lingering = true;
 				GameDirector.instance.BeginLingering();
 			}
 			this._keyPressCounter++;
