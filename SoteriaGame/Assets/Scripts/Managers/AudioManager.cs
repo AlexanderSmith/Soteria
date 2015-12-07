@@ -234,6 +234,7 @@ public class AudioSourceWrapper
 		if (this._audiosrc.volume >= GameDirector.instance.GetPuzzleWinVolume())
 		{
 			GameDirector.instance.StopEncounterMode();
+			GameDirector.instance.GetPlayer().ResetEncounter();
 			GameDirector.instance.PlayerOvercame();
 		}
 	}
