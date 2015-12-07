@@ -19,7 +19,7 @@ public class AudioManager : MonoBehaviour
 	{
 		this.enabled = false;
 		_audioSourceList = new List<AudioSourceWrapper>();
-		TimerManager.instance.Attach (fadeTimer, TimersType.Puzzle);
+		//TimerManager.instance.Attach(fadeTimer, TimersType.Puzzle);
 	}
 	
 	public void AddAudioSource(string inClipName, AudioID inAID, GameObject inGameObj)
