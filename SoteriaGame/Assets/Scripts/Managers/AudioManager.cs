@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
 	public float puzzleWinVolume;
 
 	AudioSourceWrapper DiagAudioSrc;
+
+	Timer fadeTimer;
 	
 	private List<AudioSourceWrapper> _audioSourceList;
 	
@@ -17,6 +19,7 @@ public class AudioManager : MonoBehaviour
 	{
 		this.enabled = false;
 		_audioSourceList = new List<AudioSourceWrapper>();
+		TimerManager.instance.Attach (fadeTimer, TimersType.Puzzle);
 	}
 	
 	public void AddAudioSource(string inClipName, AudioID inAID, GameObject inGameObj)
@@ -136,11 +139,15 @@ public class AudioManager : MonoBehaviour
 
 	public void FadeOut(AudioID inAID)
 	{
+		// if not elapsed time then fade
+		// lerp volume, don't call below
 		FindAudioSrcbyID (inAID).fadeOut();
 	}
 
 	public void FadeIn(AudioID inAID)
 	{
+		// if not elapsed time then fade
+		// lerp volume
 		FindAudioSrcbyID (inAID).fadeIn();
 	}
 }
@@ -356,11 +363,11 @@ public class AudioSourceWrapper
 
 	public void fadeOut()
 	{
-
+		// sub volume
 	}
 
 	public void fadeIn()
 	{
-
+		// add volume
 	}
 }
