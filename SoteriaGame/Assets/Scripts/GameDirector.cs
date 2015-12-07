@@ -489,6 +489,7 @@ public class GameDirector : MonoBehaviour {
 	// When suit removed, player now able to fight shadow creatures
 	public void SuitRemoved()
 	{
+		this._stateManager.ChangeGameState(GameStates.Normal);
 		this._canFight = true;
 		this._chest.SetActive(false);
 		this._hatGoggles.SetActive(false);
