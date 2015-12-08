@@ -113,14 +113,24 @@ public class AudioManager : MonoBehaviour
 		FindAudioSrcbyID(inAID).updateVolume(inVolume);
 	}
 
-	public void AddVolume(AudioID inAID, float inVolume)
+	public void AddVolumePuzzle(AudioID inAID, float inVolume)
 	{
-		FindAudioSrcbyID(inAID).addVolume(inVolume);
+		FindAudioSrcbyID(inAID).addVolumePuzzle(inVolume);
 	}
 
-	public void SubtractVolume(AudioID inAID, float inVolume)
+	public void SubtractVolumePuzzle(AudioID inAID, float inVolume)
 	{
-		FindAudioSrcbyID(inAID).subtractVolume(inVolume);
+		FindAudioSrcbyID(inAID).subtractVolumePuzzle(inVolume);
+	}
+
+	public void DefeatedMusicTile(AudioID inAID)
+	{
+		FindAudioSrcbyID(inAID).defeatedMusicTile();
+	}
+
+	public void OvercomeMusicPuzzle(AudioID inAID)
+	{
+		FindAudioSrcbyID(inAID).overcomeMusicPuzzle();
 	}
 
 	public float GetPuzzleWinVolume()
@@ -143,7 +153,7 @@ public enum AudioID
 	BackgroundMusic,
 	Heartbeats,
 	LeavingHide,
-	OrganMusicBroken,
+	OrganMusicComplete,
 	OrganMusic,
 	BrassMusic,
 	StringMusic,
@@ -227,7 +237,7 @@ public class AudioSourceWrapper
 		this._audiosrc.volume = inVolume;
 	}
 	
-	public void addVolume(float inVolume)
+	public void addVolumePuzzle(float inVolume)
 	{
 		this._audiosrc.volume += inVolume;
 		
@@ -239,7 +249,7 @@ public class AudioSourceWrapper
 		}
 	}
 	
-	public void subtractVolume(float inVolume)
+	public void subtractVolumePuzzle(float inVolume)
 	{
 		this._audiosrc.volume = Mathf.Lerp(this._audiosrc.volume, 0f, Time.deltaTime * inVolume);
 		//this._audiosrc.volume -= inVolume;
@@ -248,6 +258,16 @@ public class AudioSourceWrapper
 		{
 			GameDirector.instance.GameOver();
 		}
+	}
+
+	public void defeatedMusicTile()
+	{
+		this._audiosrc.volume = Mathf.Lerp(this._audiosrc.volume, .025f, Time.deltaTime);
+	}
+
+	public void overcomeMusicPuzzle()
+	{
+		this._audiosrc.volume = Mathf.Lerp(this._audiosrc.volume, 1f, Time.deltaTime);
 	}
 	
 	public float getVolume()

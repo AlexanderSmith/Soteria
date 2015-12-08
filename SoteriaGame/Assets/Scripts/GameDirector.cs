@@ -632,14 +632,24 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.ChangeVolume(inAID, inVolume);
 	}
 
-	public void AddVolume(AudioID inAID, float inVolume)
+	public void AddVolumePuzzle(AudioID inAID, float inVolume)
 	{
-		this._audioManager.AddVolume(inAID, inVolume);
+		this._audioManager.AddVolumePuzzle(inAID, inVolume);
 	}
 
-	public void SubtractVolume(AudioID inAID, float inVolume)
+	public void SubtractVolumePuzzle(AudioID inAID, float inVolume)
 	{
-		this._audioManager.SubtractVolume(inAID, inVolume);
+		this._audioManager.SubtractVolumePuzzle(inAID, inVolume);
+	}
+
+	public void DefeatedMusicTile(AudioID inAID)
+	{
+		this._audioManager.DefeatedMusicTile(inAID);
+	}
+
+	public void OvercomeMusicPuzzle(AudioID inAID)
+	{
+		this._audioManager.OvercomeMusicPuzzle(inAID);
 	}
 
 	/// <summary>

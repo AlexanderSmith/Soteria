@@ -16,7 +16,7 @@ public class PlayOrganMusic : MonoBehaviour
 		{
 			if (!GameDirector.instance.GetMusicActivated())
 			{
-				GameDirector.instance.PlayAudioClip(AudioID.OrganMusicBroken);
+				GameDirector.instance.PlayAudioClip(AudioID.OrganMusicComplete);
 				//GameDirector.instance.ChangeVolume(AudioID.OrganMusic, 1f);
 				controller.GetComponent<MusicPuzzleController>().PuzzleActivated();
 			}

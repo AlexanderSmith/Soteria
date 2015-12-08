@@ -27,6 +27,7 @@ public class MusicPuzzleController : MonoBehaviour
 
 	public float lerpTime;
 	public float initialVolume;
+	public float winTime;
 
 	// Use this for initialization
 	void Start ()
@@ -110,5 +111,65 @@ public class MusicPuzzleController : MonoBehaviour
 	public float GetInitialVolume()
 	{
 		return this.initialVolume;
+	}
+
+	public void TileDown(string inMusicPile)
+	{
+		StartCoroutine(inMusicPile);
+	}
+
+	IEnumerator BrassTileDown()
+	{
+		float start = Time.time;
+		while (Time.time < start + lerpTime)
+		{
+			this.brassTile.transform.position = Vector3.Lerp(this.brassTile.transform.position, this.brassDown.position, (Time.time - start) / lerpTime);
+			GameDirector.instance.DefeatedMusicTile(AudioID.BrassMusic);
+			yield return null;
+		}
+	}
+
+	IEnumerator StringTileDown()
+	{
+		float start = Time.time;
+		while (Time.time < start + lerpTime)
+		{
+			this.stringTile.transform.position = Vector3.Lerp(this.stringTile.transform.position, this.stringDown.position, (Time.time - start) / lerpTime);
+			GameDirector.instance.DefeatedMusicTile(AudioID.StringMusic);
+			yield return null;
+		}
+	}
+
+	IEnumerator WindTileDown()
+	{
+		float start = Time.time;
+		while (Time.time < start + lerpTime)
+		{
+			this.windTile.transform.position = Vector3.Lerp(this.windTile.transform.position, this.windDown.position, (Time.time - start) / lerpTime);
+			GameDirector.instance.DefeatedMusicTile(AudioID.WindMusic);
+			yield return null;
+		}
+	}
+
+	public void PuzzleDefeated()
+	{
+		StartCoroutine ("OvercamePuzzle");
+	}
+
+	IEnumerator OvercamePuzzle()
+	{
+		float start = Time.time;
+		while (Time.time < start + winTime)
+		{
+			GameDirector.instance.OvercomeMusicPuzzle(AudioID.BrassMusic);
+			GameDirector.instance.OvercomeMusicPuzzle(AudioID.WindMusic);
+			GameDirector.instance.OvercomeMusicPuzzle(AudioID.StringMusic);
+			GameDirector.instance.OvercomeMusicPuzzle(AudioID.OrganMusic);
+			yield return null;
+		}
+		GameDirector.instance.StopAudioClip(AudioID.BrassMusic);
+		GameDirector.instance.StopAudioClip(AudioID.WindMusic);
+		GameDirector.instance.StopAudioClip(AudioID.StringMusic);
+		GameDirector.instance.StopAudioClip(AudioID.OrganMusic);
 	}
 }

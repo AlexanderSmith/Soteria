@@ -15,7 +15,7 @@ public class PlayStringMusic : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
             GameDirector.instance.ChangeVolume(AudioID.StringMusic, controller.GetComponent<MusicPuzzleController>().GetInitialVolume());
-			controller.GetComponent<MusicPuzzleController>().GetBoss().GetComponentInChildren<MusicBossController>().MusicStart(AudioID.StringMusic, "string");
+			controller.GetComponent<MusicPuzzleController>().GetBoss().GetComponentInChildren<MusicBossController>().MusicStart(AudioID.StringMusic, "String");
 			Destroy(this.GetComponent<BoxCollider>());
 		}
 	}

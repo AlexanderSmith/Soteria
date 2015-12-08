@@ -13,20 +13,14 @@ public class MusicBossController : MonoBehaviour
 
 	private AudioID _currentMusic;
 
-	private bool _brass;
-	private bool _string;
-	private bool _wind;
+	private string _currentPile;
 	private bool _fighting;
 
 	private MusicPuzzleController _musicController;
 
 	void Start()
 	{
-		
 		this._musicPilesDefeated = 0;
-		this._brass = false;
-		this._string = false;
-		this._wind = false;
 	}
 
 	public void Initialize(MusicPuzzleController inMusPuzCont)
@@ -38,6 +32,7 @@ public class MusicBossController : MonoBehaviour
 	{
 		this._currentMusic = inAID;
 		this._fighting = false;
+		this._currentPile = inMusicPile + "TileDown";
 		StartCoroutine("MusicEncounter", inAID);
 		GameDirector.instance.MusicPuzzleEncounter(this.gameObject);
 	}
@@ -63,7 +58,7 @@ public class MusicBossController : MonoBehaviour
 		{
 			if (GameDirector.instance.GetVolume(inAID) < GameDirector.instance.GetPuzzleWinVolume())
 			{
-				GameDirector.instance.SubtractVolume(inAID, this._rateOfVolumeDecrease);
+				GameDirector.instance.SubtractVolumePuzzle(inAID, this._rateOfVolumeDecrease);
 			}
 			else
 			{
@@ -77,11 +72,13 @@ public class MusicBossController : MonoBehaviour
 	public void PileDone()
 	{
 		this._fighting = true;
+		this._musicController.TileDown(this._currentPile);
+		GameDirector.instance.GetPlayer().ResetLinger();
 	}
 
 	public void FightingBoss()
 	{
-		GameDirector.instance.AddVolume(this._currentMusic, this._rateOfVolumeIncrease);
+		GameDirector.instance.AddVolumePuzzle(this._currentMusic, this._rateOfVolumeIncrease);
 	}
 
 	public void Cower()
@@ -92,11 +89,8 @@ public class MusicBossController : MonoBehaviour
 		}
 		if (this._musicPilesDefeated == 3)
 		{
-			Destroy(this.gameObject);
-			GameDirector.instance.StopAudioClip(AudioID.OrganMusic);
-			GameDirector.instance.StopAudioClip(AudioID.BrassMusic);
-			GameDirector.instance.StopAudioClip(AudioID.StringMusic);
-			GameDirector.instance.StopAudioClip(AudioID.WindMusic);
+			this.gameObject.SetActive(false);
+			this._musicController.PuzzleDefeated();
 		}
 		this._musicPilesDefeated++;
 	}

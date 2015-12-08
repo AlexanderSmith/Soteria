@@ -15,7 +15,7 @@ public class PlayWindMusic : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
             GameDirector.instance.ChangeVolume(AudioID.WindMusic, controller.GetComponent<MusicPuzzleController>().GetInitialVolume());
-			controller.GetComponent<MusicPuzzleController>().GetBoss().GetComponentInChildren<MusicBossController>().MusicStart(AudioID.WindMusic, "wind");
+			controller.GetComponent<MusicPuzzleController>().GetBoss().GetComponentInChildren<MusicBossController>().MusicStart(AudioID.WindMusic, "Wind");
 			Destroy(this.GetComponent<BoxCollider>());
 		}
 	}
