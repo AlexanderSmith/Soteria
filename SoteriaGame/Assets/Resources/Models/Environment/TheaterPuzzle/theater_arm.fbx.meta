@@ -1,49 +1,15 @@
 fileFormatVersion: 2
-guid: 0fe2d5f08f65e8f4ea20fc3e9f3c0169
+guid: 02d59ed2b39125b4eafaf630f9c76465
 timeCreated: 1449956931
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: pCube178
-    100002: pCube178 1
-    100004: pCube179
-    100006: pCube180
-    100008: pCube181
-    100010: pCube182
-    100012: pCylinder62
-    100014: pCylinder63
-    100016: stage:group64
-    100018: stage:group66
-    100020: //RootNode
-    100022: transform1
-    100024: transform2
-    100026: transform3
-    100028: transform4
-    100030: transform5
-    100032: transform6
-    100034: transform7
-    400000: pCube178
-    400002: pCube178 1
-    400004: pCube179
-    400006: pCube180
-    400008: pCube181
-    400010: pCube182
-    400012: pCylinder62
-    400014: pCylinder63
-    400016: stage:group64
-    400018: stage:group66
-    400020: //RootNode
-    400022: transform1
-    400024: transform2
-    400026: transform3
-    400028: transform4
-    400030: transform5
-    400032: transform6
-    400034: transform7
-    2300000: pCube178
-    3300000: pCube178
-    4300000: pCube178
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: EyeBallLamp_Top6
     9500000: //RootNode
   materials:
     importMaterials: 1

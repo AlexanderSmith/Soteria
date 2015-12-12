@@ -1,45 +1,33 @@
 fileFormatVersion: 2
-guid: 6305bd4d60cf8c046bf82adff98de0d5
-timeCreated: 1449337396
+guid: 0455088df79d56c46a98fb972c85ac94
+timeCreated: 1449956931
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: group100
-    100002: group101
-    100004: group102
-    100006: group110
-    100008: group116
-    100010: group77
-    100012: group81
-    100014: pointLight112
-    100016: pPipe108
-    100018: pSphere719
-    100020: pSphere719 1
-    100022: pSphere720
-    100024: //RootNode
-    100026: transform35
-    100028: transform36
-    100030: transform37
-    400000: group100
-    400002: group101
-    400004: group102
-    400006: group110
-    400008: group116
-    400010: group77
-    400012: group81
-    400014: pointLight112
-    400016: pPipe108
-    400018: pSphere719
-    400020: pSphere719 1
-    400022: pSphere720
-    400024: //RootNode
-    400026: transform35
-    400028: transform36
-    400030: transform37
-    2300000: pSphere719
-    3300000: pSphere719
-    4300000: pSphere719
+    100000: pointLight113
+    100002: pPipe109
+    100004: pSphere723
+    100006: pSphere723 1
+    100008: pSphere724
+    100010: stage:group64
+    100012: //RootNode
+    100014: transform18
+    100016: transform19
+    100018: transform20
+    400000: pointLight113
+    400002: pPipe109
+    400004: pSphere723
+    400006: pSphere723 1
+    400008: pSphere724
+    400010: stage:group64
+    400012: //RootNode
+    400014: transform18
+    400016: transform19
+    400018: transform20
+    2300000: pSphere723
+    3300000: pSphere723
+    4300000: pSphere723
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -1,43 +1,39 @@
 fileFormatVersion: 2
-guid: 61d4a72196720e640b05373fd1636654
-timeCreated: 1449337396
+guid: 1c3334f03f68dae47a59bdd217e7dacf
+timeCreated: 1449956932
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: group4
-    100002: group7
-    100004: group85
-    100006: pCube184
-    100008: pCube185
-    100010: pCylinder62
-    100012: pCylinder62 1
-    100014: pCylinder63
-    100016: pCylinder64
-    100018: //RootNode
-    100020: transform10
-    100022: transform11
-    100024: transform7
-    100026: transform8
-    100028: transform9
-    400000: group4
-    400002: group7
-    400004: group85
-    400006: pCube184
-    400008: pCube185
-    400010: pCylinder62
-    400012: pCylinder62 1
-    400014: pCylinder63
-    400016: pCylinder64
-    400018: //RootNode
-    400020: transform10
-    400022: transform11
-    400024: transform7
-    400026: transform8
-    400028: transform9
-    2300000: pCylinder62
-    3300000: pCylinder62
-    4300000: pCylinder62
+    100000: pCube184
+    100002: pCube185
+    100004: pCylinder64
+    100006: pCylinder64 1
+    100008: pCylinder65
+    100010: pCylinder66
+    100012: stage:group64
+    100014: //RootNode
+    100016: transform10
+    100018: transform11
+    100020: transform12
+    100022: transform8
+    100024: transform9
+    400000: pCube184
+    400002: pCube185
+    400004: pCylinder64
+    400006: pCylinder64 1
+    400008: pCylinder65
+    400010: pCylinder66
+    400012: stage:group64
+    400014: //RootNode
+    400016: transform10
+    400018: transform11
+    400020: transform12
+    400022: transform8
+    400024: transform9
+    2300000: pCylinder64
+    3300000: pCylinder64
+    4300000: pCylinder64
     9500000: //RootNode
   materials:
     importMaterials: 1

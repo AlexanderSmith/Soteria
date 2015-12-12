@@ -1,31 +1,15 @@
 fileFormatVersion: 2
-guid: b1250d0cfde88a34b93f9b503f92c200
-timeCreated: 1449337397
+guid: 02d1f9ad4120c7842921f84459ec5785
+timeCreated: 1449956931
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: group114
-    100002: group72
-    100004: group80
-    100006: pCube180
-    100008: pCube180 1
-    100010: pCube181
-    100012: //RootNode
-    100014: transform1
-    100016: transform2
-    400000: group114
-    400002: group72
-    400004: group80
-    400006: pCube180
-    400008: pCube180 1
-    400010: pCube181
-    400012: //RootNode
-    400014: transform1
-    400016: transform2
-    2300000: pCube180
-    3300000: pCube180
-    4300000: pCube180
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCube188
     9500000: //RootNode
   materials:
     importMaterials: 1

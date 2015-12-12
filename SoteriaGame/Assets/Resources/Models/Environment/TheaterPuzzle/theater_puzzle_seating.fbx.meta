@@ -1,97 +1,15 @@
 fileFormatVersion: 2
-guid: 416f45bcc6858484ab734a8fdd966f34
-timeCreated: 1449337396
+guid: 7b700749ea4cb1b4ab1ab4b03c695034
+timeCreated: 1449956932
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: group115
-    100002: group115 1
-    100004: group77
-    100006: group81
-    100008: group82
-    100010: pCube187
-    100012: pCube188
-    100014: pCube189
-    100016: pCube190
-    100018: pCube191
-    100020: pCube192
-    100022: pCube193
-    100024: pCube194
-    100026: pCube195
-    100028: pCube196
-    100030: pCube197
-    100032: pCube198
-    100034: pCube199
-    100036: pCube200
-    100038: pCube201
-    100040: pCube202
-    100042: pCube203
-    100044: pCube204
-    100046: //RootNode
-    100048: transform12
-    100050: transform13
-    100052: transform14
-    100054: transform15
-    100056: transform16
-    100058: transform17
-    100060: transform18
-    100062: transform19
-    100064: transform20
-    100066: transform21
-    100068: transform22
-    100070: transform23
-    100072: transform24
-    100074: transform25
-    100076: transform26
-    100078: transform27
-    100080: transform28
-    100082: transform29
-    400000: group115
-    400002: group115 1
-    400004: group77
-    400006: group81
-    400008: group82
-    400010: pCube187
-    400012: pCube188
-    400014: pCube189
-    400016: pCube190
-    400018: pCube191
-    400020: pCube192
-    400022: pCube193
-    400024: pCube194
-    400026: pCube195
-    400028: pCube196
-    400030: pCube197
-    400032: pCube198
-    400034: pCube199
-    400036: pCube200
-    400038: pCube201
-    400040: pCube202
-    400042: pCube203
-    400044: pCube204
-    400046: //RootNode
-    400048: transform12
-    400050: transform13
-    400052: transform14
-    400054: transform15
-    400056: transform16
-    400058: transform17
-    400060: transform18
-    400062: transform19
-    400064: transform20
-    400066: transform21
-    400068: transform22
-    400070: transform23
-    400072: transform24
-    400074: transform25
-    400076: transform26
-    400078: transform27
-    400080: transform28
-    400082: transform29
-    2300000: group115
-    3300000: group115
-    4300000: group115
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: pCube183
     9500000: //RootNode
   materials:
     importMaterials: 1

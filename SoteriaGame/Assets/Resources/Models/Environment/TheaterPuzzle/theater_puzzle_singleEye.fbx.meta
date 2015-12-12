@@ -1,25 +1,17 @@
 fileFormatVersion: 2
-guid: c6ed303d34f51644285f9bad5bda6c5d
-timeCreated: 1449337398
+guid: deda9b8da1a2d69438747798a3de5870
+timeCreated: 1449956940
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: group119
-    100002: group120
-    100004: group121
-    100006: group83
-    100008: pSphere620
-    100010: //RootNode
-    400000: group119
-    400002: group120
-    400004: group121
-    400006: group83
-    400008: pSphere620
-    400010: //RootNode
-    2300000: pSphere620
-    3300000: pSphere620
-    4300000: pSphere620
+    100000: pSphere640
+    100002: //RootNode
+    400000: pSphere640
+    400002: //RootNode
+    2300000: pSphere640
+    3300000: pSphere640
+    4300000: pSphere640
     9500000: //RootNode
   materials:
     importMaterials: 1
