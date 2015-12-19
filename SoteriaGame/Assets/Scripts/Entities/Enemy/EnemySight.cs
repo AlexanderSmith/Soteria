@@ -39,7 +39,7 @@ public class EnemySight : MonoBehaviour
 						this._playerVisible = true;
 					}
 				}
-				//Debug.DrawRay(this.gameObject.transform.position + (eyeHeightOffset * this.gameObject.transform.up), direction, Color.white, 200, false);
+				Debug.DrawRay(this.gameObject.transform.position + (eyeHeightOffset * this.gameObject.transform.up), direction, Color.white, 200, false);
 			}
 		}
 	}
