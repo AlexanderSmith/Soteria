@@ -28,6 +28,11 @@ public class MusicBossController : MonoBehaviour
 		this._musicController = inMusPuzCont;
 	}
 
+	public void PuzzleStart()
+	{
+		GameDirector.instance.MusicPuzzleEncounter(this.gameObject);
+	}
+
 	public void MusicStart(AudioID inAID, string inMusicPile)
 	{
 		this._currentMusic = inAID;
