@@ -1,1 +1,2 @@
 <b>O'Malley:</b> Yes! Good! Keep going! You got this!
+//trigger more lingering; reaction on success go to AnaOMalleyAfterLingerSuccess
