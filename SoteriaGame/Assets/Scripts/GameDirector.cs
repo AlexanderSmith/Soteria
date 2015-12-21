@@ -499,6 +499,20 @@ public class GameDirector : MonoBehaviour {
 
 	#endregion
 
+	#region PuzzleProgression
+	
+	public bool GetMusicActivated()
+	{
+		return this._musicPuzzleActivated;
+	}
+	
+	public void MusicPuzzleActivated()
+	{
+		this._musicPuzzleActivated = true;
+	}
+	
+	#endregion
+
 	///////////////////////////////////////////////////////////////////
 	////////////////// LEVEL MANAGER FUNCTIONS ////////////////////////
 	///////////////////////////////////////////////////////////////////
@@ -698,10 +712,10 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.Encounter(enemy);
 	}
 
-//	public void MusicPuzzleEncounter(GameObject enemy)
-//	{
-//		this._encounterManager.MusicPuzzleEncounter(enemy);
-//	}
+	public void MusicPuzzleEncounter(GameObject enemy)
+	{
+		this._encounterManager.MusicPuzzleEncounter(enemy);
+	}
 
 	public void StartEncounterMode()
 	{
@@ -733,23 +747,23 @@ public class GameDirector : MonoBehaviour {
 		this._player.PlayerActionNormal();
 	}
 
-//	public void StartMusicPuzzleEncounter()
-//	{
-//		if (this._stateManager.GameState() != GameStates.Encounter) 
-//		{
-//			this._stateManager.ChangeGameState (GameStates.Encounter);
-//		}
-//		this._HUDManager.EnableEncounterView();
-//		this.SetClearStatus(false);
-//		if (this._canFight)
-//		{
-//			this._player.PlayerActionMusicPuzzle();
-//		}
-//		else
-//		{
-//			this._player.PlayerActionNoFighting();
-//		}
-//	}
+	public void StartMusicPuzzleEncounter()
+	{
+		if (this._stateManager.GameState() != GameStates.Encounter) 
+		{
+			this._stateManager.ChangeGameState (GameStates.Encounter);
+		}
+		this._HUDManager.EnableEncounterView();
+		this.SetClearStatus(false);
+		if (this._canFight)
+		{
+			this._player.PlayerActionMusicPuzzle();
+		}
+		else
+		{
+			this._player.PlayerActionNoFighting();
+		}
+	}
 
 	public void TakeSafteyLight()
 	{
@@ -814,7 +828,7 @@ public class GameDirector : MonoBehaviour {
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		foreach (GameObject enemy in enemies)
 		{
-			Destroy(enemy);
+			enemy.SetActive(false);
 		}
 	}
 
@@ -962,14 +976,14 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.ChangeVolume(inAID, inVolume);
 	}
 	
-	public void AddVolume(AudioID inAID, float inVolume)
+	public void AddVolumePuzzle(AudioID inAID, float inVolume)
 	{
-		this._audioManager.AddVolume(inAID, inVolume);
+		this._audioManager.AddVolumePuzzle(inAID, inVolume);
 	}
 	
-	public void SubtractVolume(AudioID inAID, float inVolume)
+	public void SubtractVolumePuzzle(AudioID inAID, float inVolume)
 	{
-		this._audioManager.SubtractVolume(inAID, inVolume);
+		this._audioManager.SubtractVolumePuzzle(inAID, inVolume);
 	}
 
 	public void UpdateAudioClipSequentialProperty(string inAid, bool inSquential)

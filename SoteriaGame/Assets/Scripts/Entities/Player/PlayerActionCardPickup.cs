@@ -18,4 +18,8 @@ public class PlayerActionCardPickup : IPlayerAction
 			GameDirector.instance.GetPlayer().PlayerActionNormal();
 		}
 	}
+
+	public void InitializeValues(Player inPlayer)
+	{
+	}
 }

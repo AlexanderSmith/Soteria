@@ -31,4 +31,8 @@ public class PlayerActionNormal : IPlayerAction
 			inPlayer.gameObject.transform.GetComponent<Rigidbody>().MoveRotation (rot);
 		}
 	}
+
+	public void InitializeValues(Player inPlayer)
+	{
+	}
 }

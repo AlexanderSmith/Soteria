@@ -145,7 +145,7 @@ public class EncounterManager : MonoBehaviour
 
 	public void DestroyMe()
 	{
-		Destroy(currentEnemy);
+		currentEnemy.SetActive(false);
 	}
 
 	public void Overpower()
@@ -179,7 +179,20 @@ public class EncounterManager : MonoBehaviour
 
 	public void Cower()
 	{
-		this.currentEnemy.GetComponent<BasicEnemyController>().Cower();
+		// Bad!!!!!!!!!!!!
+		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
+		{
+			this.currentEnemy.GetComponent<BasicEnemyController>().Cower();
+		}
+		else
+		{
+			this.MusicCower();
+		}
+	}
+
+	public void MusicCower()
+	{
+		this.currentEnemy.GetComponent<MusicBossController>().Cower();
 	}
 
 	public void TileTimer()
@@ -215,5 +228,21 @@ public class EncounterManager : MonoBehaviour
 	public void TokenUsed()
 	{
 		this.StopEncounterFromToken();
+	}
+
+	public void MusicPuzzleEncounter(GameObject enemy)
+	{
+		if (this.currentState == EncounterState.INACTIVE)
+		{
+			this.currentState = EncounterState.ACTIVE;
+			this.StartMusicPuzzleEncounter(enemy);
+			GameDirector.instance.GetPlayer().AddFear();
+		}
+	}
+	
+	void StartMusicPuzzleEncounter(GameObject enemy)
+	{
+		this.currentEnemy = enemy;
+		GameDirector.instance.StartMusicPuzzleEncounter();
 	}
 }

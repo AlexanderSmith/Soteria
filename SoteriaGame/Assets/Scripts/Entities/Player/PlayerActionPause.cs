@@ -13,4 +13,8 @@ public class PlayerActionPause : IPlayerAction
 			GameDirector.instance.SkipLine();
 		}
 	}
+
+	public void InitializeValues(Player inPlayer)
+	{
+	}
 }

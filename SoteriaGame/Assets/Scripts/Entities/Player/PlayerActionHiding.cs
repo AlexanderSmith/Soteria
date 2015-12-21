@@ -22,4 +22,8 @@ public class PlayerActionHiding : IPlayerAction
 			//GameDirector.instance.ChangeGameState(GameStates.Normal);
 		}
 	}
+
+	public void InitializeValues(Player inPlayer)
+	{
+	}
 }

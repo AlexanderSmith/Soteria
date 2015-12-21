@@ -25,7 +25,8 @@ public class Player : MonoBehaviour
 	private IPlayerAction _hidingAction = new PlayerActionHiding();
 	private IPlayerAction _pauseAction = new PlayerActionPause();
 	private IPlayerAction _noFighting = new PlayerActionNoFight();
-	private IPlayerAction _cardPickup = new global::PlayerActionCardPickup();
+	private IPlayerAction _cardPickup = new PlayerActionCardPickup();
+	private IPlayerAction _musicPuzzle = new PlayerActionMusicPuzzle();
 
 	public PlayerState  playerState;
 
@@ -100,6 +101,12 @@ public class Player : MonoBehaviour
 	public void PlayerActionNoFighting()
 	{
 		this.SwitchPlayerAction(_noFighting);
+	}
+
+	public void PlayerActionMusicPuzzle()
+	{
+		this.SwitchPlayerAction(_musicPuzzle);
+		_musicPuzzle.InitializeValues(this);
 	}
 
 	IEnumerator IntoHide()
