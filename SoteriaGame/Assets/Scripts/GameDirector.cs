@@ -986,6 +986,16 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.SubtractVolumePuzzle(inAID, inVolume);
 	}
 
+	public void DefeatedMusicTile(AudioID inAID)
+	{
+		this._audioManager.DefeatedMusicTile(inAID);
+	}
+	
+	public void OvercomeMusicPuzzle(AudioID inAID)
+	{
+		this._audioManager.OvercomeMusicPuzzle(inAID);
+	}
+
 	public void UpdateAudioClipSequentialProperty(string inAid, bool inSquential)
 	{
 		AudioID aid = this._audioManager.getIDByName(inAid);

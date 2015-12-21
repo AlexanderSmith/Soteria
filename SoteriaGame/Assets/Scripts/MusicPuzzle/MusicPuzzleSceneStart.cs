@@ -19,9 +19,9 @@ public class MusicPuzzleSceneStart : MonoBehaviour
 	{
 		// These won't need to be here during normal game play
 		GameDirector.instance.SuitRemoved();
-		GameDirector.instance.TokenTrue();
-		GameDirector.instance.CompassTrue();
-		GameDirector.instance.LanternTrue();
+		//GameDirector.instance.TokenTrue();
+		//GameDirector.instance.CompassTrue();
+		//GameDirector.instance.LanternTrue();
 		GameDirector.instance.ChangeObjective(GameObject.Find("KeyPiece"));
 
 		_controller = GameObject.Find("MusicPuzzleControl");

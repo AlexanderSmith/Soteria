@@ -16,7 +16,7 @@ public class PlayBrassMusic : MonoBehaviour
 		{
 			GameDirector.instance.ChangeVolume(AudioID.BrassMusic, controller.GetComponent<MusicPuzzleController>().GetInitialVolume());
 			controller.GetComponent<MusicPuzzleController>().GetBoss().GetComponentInChildren<MusicBossController>().MusicStart(AudioID.BrassMusic, "Brass");
-			Destroy(this.GetComponent<BoxCollider>());
+			this.gameObject.GetComponent<BoxCollider>().enabled = false;
 		}
 	}
 }

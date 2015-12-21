@@ -16,7 +16,7 @@ public class PlayWindMusic : MonoBehaviour
 		{
             GameDirector.instance.ChangeVolume(AudioID.WindMusic, controller.GetComponent<MusicPuzzleController>().GetInitialVolume());
 			controller.GetComponent<MusicPuzzleController>().GetBoss().GetComponentInChildren<MusicBossController>().MusicStart(AudioID.WindMusic, "Wind");
-			Destroy(this.GetComponent<BoxCollider>());
+			this.gameObject.GetComponent<BoxCollider>().enabled = false;
 		}
 	}
 }
