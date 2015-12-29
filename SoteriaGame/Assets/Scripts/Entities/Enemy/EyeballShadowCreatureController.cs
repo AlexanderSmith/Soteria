@@ -28,7 +28,7 @@ public class EyeballShadowCreatureController : MonoBehaviour
 
 	void Update()
 	{
-		if (!this._stunned && GameDirector.instance.GetGameState() != GameStates.Hidden)
+		if (!this._stunned && GameDirector.instance.GetGameState() != GameStates.Hidden && GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
 		{
 			float distance = Vector3.Distance(this.transform.position, _player.transform.position);
 			if (!_dead)
