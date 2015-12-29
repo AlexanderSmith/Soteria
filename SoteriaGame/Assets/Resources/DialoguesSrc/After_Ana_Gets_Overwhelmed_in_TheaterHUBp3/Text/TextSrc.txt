@@ -6,9 +6,9 @@
 <b>Ana:</b> Yes, it was in the middle of that strange pit on the stage, with a puppet version of me dangling over it. It was absolutely horrifying.
 <b>O'Malley:</b> Hm...what do you think it means?
 <b>Ana:</b> I don't know. But I felt so exposed, so helpless, powerless. Like I was that puppet and I was about to fall into that pit. That pit looked like death to me!
-<b>O'Malley:</b> So that means you won’t go after the key?
+<b>O'Malley:</b> So that means you won't go after the key?
 <b>Ana:</b> I can't!
-<b>O'Malley:</b> You mean you won't...
-<b>Ana:</b> I'm NOT doing it, is what I mean!
+<b>O'Malley:</b> Aha, You mean you won't...
+<b>Ana:</b> I'm not doing it, is what I mean!
 <b>O'Malley:</b> Well, if that's all you can handle right now...there's one more location to be explored, Ana. Your nifty little compass will surely point the way.
 <b>Ana:</b> If this is going to be more of the same, I'd rather quit. I mean it. I can't do this much longer...
