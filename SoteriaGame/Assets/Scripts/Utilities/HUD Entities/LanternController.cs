@@ -19,7 +19,7 @@ public class LanternController : MonoBehaviour
 	public void LanternClicked()
 	{
 		//Debug.Log (this._charged);
-		if (GameDirector.instance.GetGameState() == GameStates.Normal && this._charged)
+		if (this._charged)
 		{
 			this.UseLantern();
 		}
@@ -27,11 +27,8 @@ public class LanternController : MonoBehaviour
 	
 	private void UseLantern()
 	{
-		if (this._charged)
-		{
-			GameDirector.instance.UseLantern();
-			this._charged = false;
-		}
+		GameDirector.instance.UseLantern();
+		this._charged = false;
 	}
 	
 	public void RechargeLantern()
@@ -47,5 +44,10 @@ public class LanternController : MonoBehaviour
 		GameDirector.instance.PulseLantern();
 		yield return new WaitForSeconds(2.0f);
 		GameDirector.instance.IdleLantern();
+	}
+
+	public bool IsCharged()
+	{
+		return this._charged;
 	}
 }

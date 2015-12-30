@@ -697,16 +697,6 @@ public class GameDirector : MonoBehaviour {
 		return this._encounterManager.GetState();
 	}
 
-	public void WithinRangeOfEnemy()
-	{
-		this.PulseLantern();
-	}
-
-	public void OutOfEnemyRange()
-	{
-		this.IdleLantern();
-	}
-
 	public void Encounter(GameObject enemy)
 	{
 		this._encounterManager.Encounter(enemy);
@@ -899,6 +889,7 @@ public class GameDirector : MonoBehaviour {
 	public void UseLantern()
 	{
 		this._encounterManager.LanternUsed();
+		this.IdleLantern();
 		GameObject flashBang = Instantiate(Resources.Load("ParticleEffects/FlashBang")) as GameObject;
 		ParticleSystem bang = flashBang.GetComponent<ParticleSystem>();
 		bang.transform.position = this.GetPlayer().gameObject.transform.position + (flashBangDistance * this.GetPlayer().transform.forward.normalized) + flashBangHeight;
@@ -914,6 +905,11 @@ public class GameDirector : MonoBehaviour {
 	public void InitializeLanternController(LanternController lantCont)
 	{
 		this._lanternController = lantCont;
+	}
+
+	public LanternController GetLanternController()
+	{
+		return this._lanternController;
 	}
 
 	void RechargeLantern()
@@ -932,7 +928,7 @@ public class GameDirector : MonoBehaviour {
 	public void EncounterOver()
 	{
 		// reset encounter for game over
-		this._encounterManager.StopEncounterFromToken();
+		this._encounterManager.StopEncounterFromItem();
 		this.GameOver();
 	}
 

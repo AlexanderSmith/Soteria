@@ -69,7 +69,7 @@ public class EncounterManager : MonoBehaviour
 		this.EncounterReset();
     }
 
-	public void StopEncounterFromToken()
+	public void StopEncounterFromItem()
 	{
 		GameDirector.instance.GetPlayer().RemoveFear();
 		GameDirector.instance.StopEncounterMode();
@@ -223,11 +223,12 @@ public class EncounterManager : MonoBehaviour
 				}
 			}
 		}
+		this.StopEncounterFromItem();
 	}
 
 	public void TokenUsed()
 	{
-		this.StopEncounterFromToken();
+		this.StopEncounterFromItem();
 	}
 
 	public void MusicPuzzleEncounter(GameObject enemy)
