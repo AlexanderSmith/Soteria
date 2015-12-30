@@ -159,7 +159,7 @@ public class HudManager : MonoBehaviour {
 
 			//Should also add rotation for the arrow to point at,
 			this._compassRotation = Quaternion.identity;
-			if (GameDirector.instance.GetPlayer().gameObject.transform.position.x < ObjectPosition.x || GameDirector.instance.GetPlayer().gameObject.transform.position.z > ObjectPosition.z)
+			if (GameDirector.instance.GetPlayer().gameObject.transform.position.x < ObjectPosition.x /*|| GameDirector.instance.GetPlayer().gameObject.transform.position.z < ObjectPosition.z*/)
 			{
 				this._compassRotation.eulerAngles = new Vector3(0, 0, -Vector3.Angle(GameDirector.instance.GetPlayer().gameObject.transform.position - ObjectPosition, 
 			                                                                    GameDirector.instance.GetPlayer().gameObject.transform.forward));
@@ -233,7 +233,7 @@ public class HudManager : MonoBehaviour {
 	private void FadeToBlack()
 	{
 		_fadeinout.color = Color.Lerp(_fadeinout.color, Color.black, blackSpeed * Time.deltaTime);
-		if (_fadeinout.color.a >= .8f)
+		if (_fadeinout.color.a >= .8f && !GameDirector.instance.IsTokenUsed())
 		{
 			GameDirector.instance.EncounterOver();
 		}

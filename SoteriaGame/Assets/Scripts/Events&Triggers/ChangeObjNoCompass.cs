@@ -6,17 +6,20 @@ public class ChangeObjNoCompass : MonoBehaviour
 	GameObject lanternObjective;
 	GameObject portToMusic;
 	GameObject ptLights;
+	GameObject dreams;
 
 	void Start()
 	{
 		lanternObjective = GameObject.Find ("ReceiveLantern");
 		portToMusic = GameObject.Find("HubToMusic");
 		ptLights = GameObject.Find ("SoteriaPowerSystem_Lights");
+		dreams = GameObject.Find("DreamsDirectionDialogue");
 	}
 	
 	void OnTriggerEnter(Collider player)
 	{
 		ptLights.SetActive(false);
+		dreams.SetActive(false);
 		if (player.gameObject.tag == "Player" && GameDirector.instance.GetCompass())
 		{
 			ptLights.SetActive(true);
@@ -27,6 +30,7 @@ public class ChangeObjNoCompass : MonoBehaviour
 			else
 			{
 				GameDirector.instance.ChangeObjective(portToMusic);
+				dreams.SetActive(true);
 			}
 		}
 	}

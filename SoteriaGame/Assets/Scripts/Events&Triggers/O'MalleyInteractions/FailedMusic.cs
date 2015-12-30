@@ -21,6 +21,7 @@ public class FailedMusic : MonoBehaviour
 		else
 		{
 			_oMalleyPrefab.SetActive(false);
+			GameDirector.instance.ChangeObjective(GameObject.Find("HubToTheater"));
 		}
 	}
 }
