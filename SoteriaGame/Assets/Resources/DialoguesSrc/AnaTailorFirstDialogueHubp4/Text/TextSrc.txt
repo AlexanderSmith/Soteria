@@ -3,7 +3,7 @@
 <b>Tailor:</b> I thought I've seen you with that cat O'Malley. You shouldn't trust him, you know. He has no respect of the Shadows. Thinks they can be toyed with. He has no idea how dangerous they are. Follow your gut on this, is what I say.
 <b>Ana:</b> Can you help me?
 <b>Tailor:</b> Sure can! Soteria gives me the power to make you a Phobos suit. Guaranteed protection from those nasty creatures. You just have to bring me the right cards.
-<b>Ana:</b> What cards do you need and where do I find them?
+<b>Ana:</b> Alright, What cards do you need and where do I find them?
 <b>Tailor:</b> There is one right card in each of the three districts. They depict things that are meaningful to you for some reason. Each Phobos suit is unique to its wearer and only you can know which cards will imbue it with protective qualities and which ones won't work. I won’t be able to use the wrong cards, so reflect carefully about which ones you think will help you to protect yourself. You definitely need to be careful in your search. Come back when you identified the right cards. I promise that the Phobos suit will be well worth it and 100% effective.
 <b>Ana:</b> I hate going back out there. But if it helps me find a way to really be safe, I'll do it.
 <b>Tailor:</b> You know how to call upon Soteria when you get into trouble, right?
