@@ -6,8 +6,8 @@
 //trigger encounter screen dark, loud SC whispers, heartbeat effetcs, screen effects
 <b>Ana:</b> Are you crazy?.... I can't handle this!.... 
 <b>O'Malley:</b> Just let it happen. Accept the fear.
-<b>Ana:</b> This is too much! I want it to stop! STOP IT!
-<b>O'Malley:<b/> THE ONLY WAY OUT IS THROUGH!!
+<b>Ana:</b> This is too much! I want it to stop! Stop it!
+<b>O'Malley:<b/> The only way out is through!!
 //trigger delay
 <b>O'Malley:</b> Good. You've got to choose to be afraid. Linger through the fear.
 //trigger prompt for linger and allowing player to linger - 2 reactions possible
