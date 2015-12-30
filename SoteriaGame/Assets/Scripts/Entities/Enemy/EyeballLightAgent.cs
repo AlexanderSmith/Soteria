@@ -12,16 +12,19 @@ public class EyeballLightAgent : MonoBehaviour
 	public float _patrolTimer = 0.0f;
 	public float waitTime = 5.0f;
 	private bool _spotted;
+	private bool _dialoguePause;
 
 	void Start()
 	{
 		this._player = GameObject.FindWithTag ("Player");
 		this._agent = GetComponent<NavMeshAgent>();
 		this._spotted = false;
+		this._dialoguePause = false;
 	}
 
 	void Update()
 	{
+		// Bad -- Needs to be re-visited later to clean up these ridiculous if blocks
 		if (GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
 		{
 			this._agent.Resume();
@@ -38,11 +41,21 @@ public class EyeballLightAgent : MonoBehaviour
 			else
 			{
 				this.Following();
+				if (this._dialoguePause)
+				{
+					this.gameObject.GetComponent<EyeballShadowCreatureSpawner>().Resume();
+					this._dialoguePause = false;
+				}
 			}
 		}
 		else
 		{
 			this._agent.Stop();
+			if (this._spotted)
+			{
+				this.gameObject.GetComponent<EyeballShadowCreatureSpawner>().Cancel();
+				this._dialoguePause = true;
+			}
 		}
 	}
 
@@ -77,7 +90,7 @@ public class EyeballLightAgent : MonoBehaviour
 
 	void OnTriggerEnter(Collider player)
 	{
-		if (player.gameObject.tag == "Player" && GameDirector.instance.GetGameState() != GameStates.Suit)
+		if (player.gameObject.tag == "Player" && GameDirector.instance.GetGameState() != GameStates.Suit && GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
 		{
 			this._spotted = true;
 			this.gameObject.GetComponent<EyeballShadowCreatureSpawner>().Resume();

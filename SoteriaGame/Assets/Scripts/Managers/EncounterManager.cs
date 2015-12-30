@@ -80,6 +80,7 @@ public class EncounterManager : MonoBehaviour
     {
 		GameDirector.instance.StartEncounterMode();
 		this.currentEnemy = enemy;
+		GameDirector.instance.GetPlayer().gameObject.transform.LookAt(this.currentEnemy.transform.position);
     }
 
 	public EncounterState GetState()

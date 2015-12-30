@@ -128,6 +128,8 @@ public class BasicEnemyController : MonoBehaviour {
 			{
 				_anim.SetBool ("Moving", false);
 				_patrolTimer += Time.deltaTime;
+				// Bad -- Needs to be re-visited later
+				this._agent.gameObject.transform.rotation = this.patrolLocations[this._patrolIndex].rotation;
 				if (_patrolTimer >= waitTime)
 				{
 					if (_patrolIndex == patrolLocations.Length - 1)

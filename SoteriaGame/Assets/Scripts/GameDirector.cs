@@ -813,6 +813,11 @@ public class GameDirector : MonoBehaviour {
 		this._tokenUsed = false;
 	}
 
+	public bool IsTokenUsed()
+	{
+		return this._tokenUsed;
+	}
+
 	public void FindEnemies()
 	{
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");

@@ -209,6 +209,7 @@ public enum AudioID
 	AnaFirstAnswerTakingOffSuit,
 	AnaFirstHarborSCEncounter,
 	AnaHandDollPickupMUSICp2,
+	AnaHubBeforeEnteringDistrict,
 	AnaMusicGateRattleResponseOne,
 	AnaMusicGateRattleResponseTwo,
 	AnaObservPuzzFirstLinger,

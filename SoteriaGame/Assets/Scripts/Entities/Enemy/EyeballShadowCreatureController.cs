@@ -30,6 +30,7 @@ public class EyeballShadowCreatureController : MonoBehaviour
 	{
 		if (!this._stunned && GameDirector.instance.GetGameState() != GameStates.Hidden && GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
 		{
+			this._agent.Resume();
 			float distance = Vector3.Distance(this.transform.position, _player.transform.position);
 			if (!_dead)
 			{
@@ -67,7 +68,7 @@ public class EyeballShadowCreatureController : MonoBehaviour
 		{
 			this._stunned = false;
 			this._stunDuration = stunTimer;
-			_agent.Resume();
+			this._agent.Resume();
 		}
 	}
 
@@ -81,21 +82,21 @@ public class EyeballShadowCreatureController : MonoBehaviour
 		switch (_opCounter)
 		{
 		case 1:
-			_anim.SetBool ("Overpower", true);
+			this._anim.SetBool ("Overpower", true);
 			break;
 		case 2:
-			_anim.SetBool ("OP 2", true);
+			this._anim.SetBool ("OP 2", true);
 			break;
 		case 3:
-			_anim.SetBool ("OP 3", true);
+			this._anim.SetBool ("OP 3", true);
 			break;
 		}
 	}
 	
 	public void ResetOverpower()
 	{
-		_anim.SetBool ("Overpower", false);
-		_anim.SetBool ("OP 2", false);
-		_anim.SetBool ("OP 3", false);
+		this._anim.SetBool ("Overpower", false);
+		this._anim.SetBool ("OP 2", false);
+		this._anim.SetBool ("OP 3", false);
 	}
 }
