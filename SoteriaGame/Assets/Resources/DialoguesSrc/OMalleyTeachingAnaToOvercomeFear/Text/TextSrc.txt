@@ -1,3 +1,5 @@
+<b>Ana:</b> I must be crazy to do this.
+<b>O'Malley:</b> It's the only way, Ana.
 //trigger scene change and O'Malley transformation
 <b>Ana:</b> What are you doing?? Did you trick me? You tricked me!
 <b>O'Malley:</b> Don’t fight the fear.
