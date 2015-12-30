@@ -20,16 +20,35 @@ public class PlayerActionNormal : IPlayerAction
 			inPlayer.Moving();
 		}
 
-		moveVect = (_camForward * _vertical) + (_camRight * _horizontal);
-		moveVect.y = 0;
-		inPlayer.gameObject.transform.GetComponent<Rigidbody>().MovePosition((moveVect * inPlayer.moveSpeed * Time.deltaTime) + inPlayer.gameObject.transform.GetComponent<Rigidbody>().position);
+		moveVect = (_camForward * _vertical) + (_camRight * _horizontal) * Time.deltaTime * inPlayer.moveSpeed;
+		moveVect.y = 0;	
+
+
 
 		if (moveVect != Vector3.zero)
 		{
+			//Debug.Log( Quaternion.LookRotation (moveVect) );
 			Quaternion targetRot = Quaternion.LookRotation (moveVect);
-			Quaternion rot = Quaternion.Lerp (inPlayer.gameObject.transform.GetComponent<Rigidbody>().rotation, targetRot, inPlayer.rotationSpeed * Time.deltaTime);
-			inPlayer.gameObject.transform.GetComponent<Rigidbody>().MoveRotation (rot);
+			Vector3 currentRotation =  inPlayer.gameObject.transform.rotation * Vector3.forward;
+			Vector3 rot = Vector3.Lerp (currentRotation, moveVect, inPlayer.rotationSpeed);
+			inPlayer.transform.rotation = Quaternion.LookRotation(rot, Vector3.up);
 		}
+
+
+		float snapDistance = 1.0f; //Adjust this based on the CharacterController's height and the slopes you want to handle - my CharacterController's height is 1.8
+	
+		if (inPlayer.gameObject.GetComponent<CharacterController>().isGrounded == false)
+		{
+			moveVect.y -= 10.0f; // quick Hack it kind of works but raycasting would be better (maybe?)
+
+			//RaycastHit hitInfo = new RaycastHit();
+			//if (Physics.Raycast(new Ray(inPlayer.transform.position, Vector3.down), out hitInfo, snapDistance))
+			//	inPlayer.gameObject.GetComponent<CharacterController>().Move(hitInfo.point - inPlayer.transform.position);
+
+			//Debug.DrawRay(inPlayer.transform.position, Vector3.down);
+		}
+
+		inPlayer.gameObject.GetComponent<CharacterController>().Move (moveVect );
 	}
 
 	public void InitializeValues(Player inPlayer)

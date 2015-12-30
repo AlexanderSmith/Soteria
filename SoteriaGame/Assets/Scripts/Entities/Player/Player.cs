@@ -30,6 +30,9 @@ public class Player : MonoBehaviour
 
 	public PlayerState  playerState;
 
+	public bool isGrounded = false;
+
+
 	void Start ()
 	{
 		PlayerActionNormal();
