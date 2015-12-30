@@ -7,6 +7,8 @@ enum DialogueState
 {
 	Active,
 	Standby,
+	Choice,
+	TriggerActive,
 	Null
 };
 public class DialogueManager : MonoBehaviour
@@ -16,11 +18,11 @@ public class DialogueManager : MonoBehaviour
 	DialogueData _diagdata;
 	GameObject DialogueUIBG;
 	GameObject DialogueUIText;
-
+	
 	GameObject DialogueUIFirstChoice;
 	GameObject DialogueUISecondChoice;
 	GameObject DialogueUIThirdChoice;
-
+	
 	string  UIText;
 	string FirstChoiceSrc;
 	string SecondChoiceSrc;
@@ -44,7 +46,7 @@ public class DialogueManager : MonoBehaviour
 		DialogueUIBG.SetActive(false);
 		DialogueUIText = DialogueUI.transform.FindChild("Dialogue").gameObject;
 		DialogueUIText.SetActive(false);
-
+		
 		GameObject Choices = DialogueUI.transform.FindChild("Choices").gameObject;
 		DialogueUIFirstChoice = Choices.transform.FindChild("FirstChoice").gameObject;
 		DialogueUIFirstChoice.SetActive(false);
@@ -61,7 +63,7 @@ public class DialogueManager : MonoBehaviour
 	
 	public bool isDialogueActive()
 	{
-		return (_currState == DialogueState.Active ? true : false);
+		return (_currState != DialogueState.Standby ? true : false);
 	}
 	public void UpdateDialogueDataAudioID( AudioID inAid)
 	{
@@ -85,12 +87,6 @@ public class DialogueManager : MonoBehaviour
 		{
 			this._diagdata = new DialogueData(inAid);
 			this._parser.LoadDialogueSrc (_diagdata,txtname);
-
-			if (this._diagdata.hasChoices)
-			{
-
-
-			}
 		}
 	}
 	
@@ -112,46 +108,60 @@ public class DialogueManager : MonoBehaviour
 		DialogueUISecondChoice.SetActive(false);
 		DialogueUIThirdChoice.SetActive(false);
 	}
-
-	private void LoadChoice(int indx)
+	
+	private void privLoadChoice(int indx)
 	{
 		if (_diagdata.Choices[indx].Length > 0)
 		{
 			switch( indx )
 			{
-				case 0:
-					DialogueUIFirstChoice.transform.GetChild(0).GetComponent<Text>().text = _diagdata.Choices[indx];
+			case 0:
+				DialogueUIFirstChoice.transform.GetChild(0).GetComponent<Text>().text = _diagdata.Choices[indx];
 				break;
 				
-				case 1:
-					DialogueUISecondChoice.transform.GetChild(0).GetComponent<Text>().text = _diagdata.Choices[indx];
+			case 1:
+				DialogueUISecondChoice.transform.GetChild(0).GetComponent<Text>().text = _diagdata.Choices[indx];
 				break;
-
-				case 2:
-					DialogueUIThirdChoice.transform.GetChild(0).GetComponent<Text>().text = _diagdata.Choices[indx];
+				
+			case 2:
+				DialogueUIThirdChoice.transform.GetChild(0).GetComponent<Text>().text = _diagdata.Choices[indx];
 				break;
 			}
 		}
 	}
-
-	public void ActivateChoices()
+	
+	public void LoadChoices()
 	{
 		if (_diagdata.hasChoices)
 		{
 			for (int i = 0; i < _diagdata.Choices.Count; ++i )
 			{
-				LoadChoice ( i );
+				privLoadChoice ( i );
 			}
 		}
 	}
-
+	
+	public void ActivateChoiceUI()
+	{
+		DialogueUIFirstChoice.SetActive(true);
+		DialogueUISecondChoice.SetActive(true);
+		DialogueUIThirdChoice.SetActive(true);
+	}
+	public void DeactivateChoiceUI()
+	{
+		DialogueUIFirstChoice.SetActive(false);
+		DialogueUISecondChoice.SetActive(false);
+		DialogueUIThirdChoice.SetActive(false);
+	}
+	
 	public void LoadChoicesDialogueName (string fChoice, string sChoice, string tChoice)
 	{
+		this._diagdata.hasChoices = true;
 		this.FirstChoiceSrc = fChoice;
 		this.SecondChoiceSrc = sChoice;
 		this.ThirdChoiceSrc = tChoice;
 	}
-
+	
 	//////////////////////////////////////////////////////////////////////////
 	///////////////////////  DIALOGUE COMMAND CENTER /////////////////////////
 	//////////////////////////////////////////////////////////////////////////
@@ -172,12 +182,39 @@ public class DialogueManager : MonoBehaviour
 		DeActivateGUI ();
 	}
 	
+	public void EndTriggerState()
+	{
+		if (this._currState == DialogueState.TriggerActive)
+			this._currState = DialogueState.Active;
+	}
+	
 	void ContinueDialogue()
 	{
-		this._diagdata.Textindx++;
+		DialogueTrigger tri = null;
+		if (_diagdata.hasTriggers)
+		{
+			foreach (DialogueTrigger Tri in _diagdata.TriggerCommands)
+			{
+				if (_diagdata.Textindx > Tri.line)
+				{
+					Tri.runTrigger();
+					tri = Tri;
+					this._currState = DialogueState.TriggerActive;
+				}
+			}
+		}
 		
-		GetNextLine();
-		GetNextVO();
+		///Make sure this dialogue doesn't happen multiple times or else it breaks.
+		if (tri != null)
+			_diagdata.TriggerCommands.Remove(tri);
+		
+		if (this._currState != DialogueState.TriggerActive)
+		{
+			this._diagdata.Textindx++;
+			
+			GetNextLine();
+			GetNextVO();
+		}
 	}
 	
 	/////////////////////////////////////////////////////////////////////////
@@ -195,12 +232,20 @@ public class DialogueManager : MonoBehaviour
 		{
 			if (this._diagdata.Textindx == this._diagdata.diaglength)
 			{
-				EndDialogue();
+				if (this._diagdata.hasChoices)
+				{
+					if (this._currState != DialogueState.Choice)
+					{
+						this._currState = DialogueState.Choice;
+						this.LoadChoices();
+						this.ActivateChoiceUI();
+					}
+				}
+				else
+					EndDialogue();
 			}
 			else
-			{
 				ContinueDialogue();
-			}
 		}
 	}
 	
@@ -222,7 +267,19 @@ public class DialogueManager : MonoBehaviour
 				if (!GameDirector.instance.isClipPlaying(this._diagdata.Aid))
 				{
 					if (this._diagdata.Textindx == this._diagdata.diaglength)
-						EndDialogue();
+					{
+						if (this._diagdata.hasChoices)
+						{
+							if (this._currState != DialogueState.Choice)
+							{
+								this._currState = DialogueState.Choice;
+								this.LoadChoices();
+								this.ActivateChoiceUI();
+							}
+						}
+						else
+							EndDialogue();
+					}
 					else
 						ContinueDialogue();
 				}

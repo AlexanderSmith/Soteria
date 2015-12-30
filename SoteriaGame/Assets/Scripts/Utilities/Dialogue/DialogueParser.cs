@@ -14,9 +14,10 @@ public class DialogueData
 		diaglength = 0;
 		currTrig = 0;
 		this.Aid = inAid;
-		hasChoices = false; 
+		hasChoices = false;
+		hasTriggers = false;
 	}
-
+	
 	private AudioID aid;
 	public AudioID Aid
 	{
@@ -30,6 +31,7 @@ public class DialogueData
 		set { this.textindx = value; }
 	}
 	public bool hasChoices;
+	public bool hasTriggers;
 	private int currTrig;
 	public int diaglength;
 	public List<string> DialogueLines;
@@ -41,24 +43,26 @@ public class DialogueTrigger
 {
 	string objectName;
 	string MethodName;
+	public int line;
 	GameObject obj;
-
-	public DialogueTrigger (string inOName, string inMName)
+	
+	public DialogueTrigger (string inOName, string inMName, int inLine)
 	{
+		this.line = inLine;
 		this.objectName = inOName;
 		this.MethodName = inMName;
 	}
-
+	
 	public string ObjectName
 	{
 		get { return this.objectName; }
-
+		
 		set { 
 			this.objectName = value;
 			this.obj = GameObject.Find(this.objectName);
 		}
 	}
-
+	
 	public void runTrigger ()
 	{
 		obj.SendMessage( this.MethodName );
@@ -68,11 +72,11 @@ public class DialogueTrigger
 public class DialogueParser
 {
 	private string[] fileLines;
-
+	
 	public void LoadDialogueSrc (DialogueData inDialogue, string FileName) 
 	{
 		ParseDialogueFile(inDialogue, FileName);
-
+		
 		///Less Clips on audio/// FIX
 		inDialogue.diaglength = inDialogue.DialogueLines.Count - 1;
 	}
@@ -80,29 +84,33 @@ public class DialogueParser
 	// Use this for initialization
 	void ParseDialogueFile(DialogueData inDialogue, string FileName) 
 	{
+		int linesadded = 0;
 		// This is the folder name that holds all of the dialogue text files for each interaction
 		TextAsset TextSource = Resources.Load("DialoguesSrc/" + FileName +"/Text/TextSrc") as TextAsset;
-
+		
 		fileLines = TextSource.text.Split ('\n');
-
+		
 		foreach(string line in fileLines)
 		{
 			if(line.Contains("<trigger/>"))
 			{
+				inDialogue.hasTriggers = true;
 				inDialogue.DialogueLines.Add("<trigger/>");
 				string[] tricom = line.Split('-');
 				tricom[0].Replace("<trigger/>", "");
-				DialogueTrigger tempTrig = new DialogueTrigger(tricom[0], tricom[1]);
+				DialogueTrigger tempTrig = new DialogueTrigger(tricom[0], tricom[1], linesadded);
 				inDialogue.TriggerCommands.Add(tempTrig);
 			}
 			else if(line.Contains("<choice/>"))
 			{
-				line.Replace("<choice/>", "");
-				inDialogue.Choices.Add(line);
+				inDialogue.hasChoices = true;
+				string templine = line.Replace("<choice/>", "");
+				inDialogue.Choices.Add(templine);
 			}
 			else
 			{
 				inDialogue.DialogueLines.Add(line);
+				linesadded++;
 			}
 		}
 	}
