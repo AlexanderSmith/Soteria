@@ -20,8 +20,11 @@ public class PlayerActionNormal : IPlayerAction
 			inPlayer.Moving();
 		}
 
-		moveVect = (_camForward * _vertical) + (_camRight * _horizontal) * Time.deltaTime * inPlayer.moveSpeed;
+
+		moveVect.x = _horizontal;
+		moveVect.z = _vertical;
 		moveVect.y = 0;	
+		moveVect *= Time.deltaTime * inPlayer.moveSpeed;
 
 
 
