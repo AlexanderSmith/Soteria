@@ -8,7 +8,7 @@ public class ChangeObjectiveMusic : MonoBehaviour
 	
 	void Start()
 	{
-		sewer = GameObject.Find ("SewerEntrance");
+		sewer = GameObject.Find ("SewerInspectionPoint");
 		musicStore = GameObject.Find("MusicStore");
 	}
 	
