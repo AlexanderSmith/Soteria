@@ -16,7 +16,6 @@ public class HubSuitObjective : MonoBehaviour
 	private bool _toMusic;
 	private bool _toTheater;
 	private bool _toObservatory;
-	private bool _toOMalley;
 
 	/*****************************************************************************
 	Objective Determination Logic
@@ -31,6 +30,13 @@ public class HubSuitObjective : MonoBehaviour
 		this._theater = GameDirector.instance.GetTheaterPuzzleVisitedSuit();
 		this._observatory = GameDirector.instance.GetObservatoryPuzzleVisitedSuit();
 		this._oMalleySuitOff = GameObject.Find("O'MalleySuitOff");
+
+		// Testing code
+//		GameDirector.instance.ChangeGameState(GameStates.Suit);
+//		this._music = true;
+//		this._theater = true;
+//		this._observatory = true;
+//		DetermineObjective(this._music, this._theater, this._observatory);
 	}
 
 	void Start ()
@@ -43,13 +49,6 @@ public class HubSuitObjective : MonoBehaviour
 		{
 			this._oMalleySuitOff.SetActive(false);
 		}
-
-//		// Testing code
-//		GameDirector.instance.ChangeGameState(GameStates.Suit);
-//		this._music = true;
-//		this._theater = true;
-//		this._observatory = true;
-//		DetermineObjective(this._music, this._theater, this._observatory);
 	}
 
 	void DetermineObjective(bool inMusic, bool inTheater, bool inObservatory)
@@ -57,7 +56,6 @@ public class HubSuitObjective : MonoBehaviour
 		this._toMusic = !this._music;
 		this._toTheater = this._music && !this._theater;
 		this._toObservatory = this._music && this._theater && !this._observatory;
-		//this._toOMalley = this._music && this._theater && this._observatory;
 
 		if (this._toMusic)
 		{
@@ -78,12 +76,6 @@ public class HubSuitObjective : MonoBehaviour
 			return;
 		}
 
-		// Necessary?
-//		if (this._toOMalley)
-//		{
-//			GameDirector.instance.ChangeObjective(oMalley);
-//			return;
-//		}
 		GameDirector.instance.ChangeObjective(oMalley);
 	}
 }

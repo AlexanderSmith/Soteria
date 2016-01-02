@@ -50,6 +50,7 @@ public class DialogueTrigger
 	{
 		this.line = inLine;
 		this.objectName = inOName;
+		this.obj = GameObject.Find(this.objectName);
 		this.MethodName = inMName;
 	}
 	
@@ -95,9 +96,9 @@ public class DialogueParser
 			if(line.Contains("<trigger/>"))
 			{
 				inDialogue.hasTriggers = true;
-				inDialogue.DialogueLines.Add("<trigger/>");
+				//inDialogue.DialogueLines.Add("<trigger/>");
 				string[] tricom = line.Split('-');
-				tricom[0].Replace("<trigger/>", "");
+				tricom[0] = tricom[0].Replace("<trigger/>", "");
 				DialogueTrigger tempTrig = new DialogueTrigger(tricom[0], tricom[1], linesadded);
 				inDialogue.TriggerCommands.Add(tempTrig);
 			}

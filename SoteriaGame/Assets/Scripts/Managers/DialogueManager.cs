@@ -187,27 +187,38 @@ public class DialogueManager : MonoBehaviour
 		if (this._currState == DialogueState.TriggerActive)
 			this._currState = DialogueState.Active;
 	}
-	
-	void ContinueDialogue()
+
+	void ExecuteTrigger()
 	{
 		DialogueTrigger tri = null;
+
 		if (_diagdata.hasTriggers)
 		{
 			foreach (DialogueTrigger Tri in _diagdata.TriggerCommands)
 			{
-				if (_diagdata.Textindx > Tri.line)
+				if (_diagdata.Textindx == (Tri.line - 1))
 				{
 					Tri.runTrigger();
 					tri = Tri;
-					this._currState = DialogueState.TriggerActive;
 				}
 			}
 		}
-		
+	
 		///Make sure this dialogue doesn't happen multiple times or else it breaks.
 		if (tri != null)
+		{
 			_diagdata.TriggerCommands.Remove(tri);
-		
+		}
+
+		if ( _diagdata.TriggerCommands.Count < 1)
+		{
+			_diagdata.hasTriggers = false;
+		}
+	}
+
+	void ContinueDialogue()
+	{
+ 		this.ExecuteTrigger();
 		if (this._currState != DialogueState.TriggerActive)
 		{
 			this._diagdata.Textindx++;
@@ -239,6 +250,15 @@ public class DialogueManager : MonoBehaviour
 						this._currState = DialogueState.Choice;
 						this.LoadChoices();
 						this.ActivateChoiceUI();
+					}
+				}
+				else if (this._diagdata.hasTriggers)
+				{
+					if (this._currState != DialogueState.TriggerActive)
+					{
+						
+						this._currState = DialogueState.TriggerActive;
+						this.ExecuteTrigger();
 					}
 				}
 				else
@@ -275,6 +295,14 @@ public class DialogueManager : MonoBehaviour
 								this._currState = DialogueState.Choice;
 								this.LoadChoices();
 								this.ActivateChoiceUI();
+							}
+						}
+						else if (this._diagdata.hasTriggers)
+						{
+							if (this._currState != DialogueState.TriggerActive)
+							{
+								this._currState = DialogueState.TriggerActive;
+								this.ExecuteTrigger();
 							}
 						}
 						else

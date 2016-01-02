@@ -1103,5 +1103,10 @@ public class GameDirector : MonoBehaviour {
 		this._dialoguemanager.SkipLine();
 	}
 
+	public void EndTriggerState()
+	{
+		this._dialoguemanager.EndTriggerState();
+	}
+
 	#endregion
 }
