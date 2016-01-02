@@ -181,11 +181,36 @@ public class DialogueManager : MonoBehaviour
 		GameDirector.instance.StopAudioClip(this._diagdata.Aid);
 		DeActivateGUI ();
 	}
-	
+
+	public void ClearLine()
+	{
+		Text t = DialogueUIText.GetComponent<Text>();
+		t.text = "";
+	}
 	public void EndTriggerState()
 	{
 		if (this._currState == DialogueState.TriggerActive)
 			this._currState = DialogueState.Active;
+	}
+
+	public void GetDialogueFromChoice(int choice)
+	{
+		switch (choice)
+		{
+			case 1:
+				GameDirector.instance.SetupDialogue(FirstChoiceSrc);
+			break;
+
+			case 2:
+				GameDirector.instance.SetupDialogue(SecondChoiceSrc);
+			break;
+
+			case 3:
+				GameDirector.instance.SetupDialogue(ThirdChoiceSrc);
+			break;
+		}
+
+		this._diagdata.hasChoices = false;
 	}
 
 	void ExecuteTrigger()
