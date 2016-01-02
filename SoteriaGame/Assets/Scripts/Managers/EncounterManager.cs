@@ -210,15 +210,21 @@ public class EncounterManager : MonoBehaviour
 	public void LanternUsed()
 	{
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-		foreach (GameObject enemy in enemies)
+		if (enemies[0].GetComponent<BasicEnemyController>() != null)
 		{
-			if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= enemy.GetComponent<BasicEnemyController>().lookAtDistance)
+			foreach (GameObject enemy in enemies)
 			{
-				if (enemy.GetComponent<BasicEnemyController>() != null)
+				if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= enemy.GetComponent<BasicEnemyController>().lookAtDistance)
 				{
 					enemy.GetComponent<BasicEnemyController>().Stun();
 				}
-				else
+			}
+		}
+		else
+		{
+			foreach (GameObject enemy in enemies)
+			{
+				if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= enemy.GetComponent<EyeballShadowCreatureController>().lookAtDistance)
 				{
 					enemy.GetComponent<EyeballShadowCreatureController>().Stun();
 				}

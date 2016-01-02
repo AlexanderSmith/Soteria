@@ -13,6 +13,7 @@ public class EyeballShadowCreatureController : MonoBehaviour
 	public float stunTimer = 1.0f;
 	private float _overwhelmRange = 15.0f;
 	private int _opCounter = 1;
+	public float lookAtDistance = 45.0f;
 
 	void Start()
 	{
