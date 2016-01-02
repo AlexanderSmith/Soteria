@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System.Collections;
-using System.Diagnostics;
 using UnityEngine.UI;
 
 enum DialogueState
@@ -195,21 +194,23 @@ public class DialogueManager : MonoBehaviour
 
 	public void GetDialogueFromChoice(int choice)
 	{
+		this.EndDialogue();
 		switch (choice)
 		{
 			case 1:
-				GameDirector.instance.SetupDialogue(FirstChoiceSrc);
+			GameDirector.instance.SetupDialogue(this.FirstChoiceSrc);
 			break;
 
 			case 2:
-				GameDirector.instance.SetupDialogue(SecondChoiceSrc);
+				GameDirector.instance.SetupDialogue(this.SecondChoiceSrc);
 			break;
 
 			case 3:
-				GameDirector.instance.SetupDialogue(ThirdChoiceSrc);
+				GameDirector.instance.SetupDialogue(this.ThirdChoiceSrc);
 			break;
 		}
 
+		this.StartDialogue();
 		this._diagdata.hasChoices = false;
 	}
 
