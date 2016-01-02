@@ -14,6 +14,8 @@ public class TailorInteraction : MonoBehaviour
 	private GameObject _tailorIncorrectCards;
 	public Transform tailorPrefabLocation;
 
+	GameObject tailorLight;
+
 	void Awake()
 	{
 		this._musicDistrictCard = "EggShells";
@@ -22,6 +24,11 @@ public class TailorInteraction : MonoBehaviour
 		this._tailorFirstDialogue = GameObject.Find("TailorFirstInteraction");
 		this._tailorCorrectCards = GameObject.Find("TailorCorrectCards");
 		this._tailorIncorrectCards = GameObject.Find("TailorIncorrectCards");
+		this._tailorFirstDialogue.SetActive(false);
+		this._tailorCorrectCards.SetActive(false);
+		this._tailorIncorrectCards.SetActive(false);
+		this.tailorLight = GameObject.Find("TailorLight");
+		tailorLight.GetComponent<Light>().enabled = false;
 	}
 
 	void Start()
@@ -30,23 +37,25 @@ public class TailorInteraction : MonoBehaviour
 //		GameDirector.instance.MusicCardCollected (this._musicDistrictCard);
 //		GameDirector.instance.TheaterCardCollected (this._theaterDistrictCard);
 //		GameDirector.instance.ObservatoryCardCollected (this._observatoryDistrictCard);
-		this._cardsCorrect = GameDirector.instance.CheckCards(this._musicDistrictCard, this._theaterDistrictCard, this._observatoryDistrictCard);
 		if (!GameDirector.instance.GetFirstTailorInteraction())
 		{
-			this._tailorCorrectCards.SetActive(false);
-			this._tailorIncorrectCards.SetActive(false);
+			this._tailorFirstDialogue.SetActive(true);
 			GameDirector.instance.TailorSpokenTo();
 		}
 		else
 		{
-			this._tailorFirstDialogue.SetActive(false);
-			if (this._cardsCorrect)
+			if (GameDirector.instance.CardsHeld() == 3)
 			{
-				this._tailorIncorrectCards.SetActive(false);
-			}
-			else
-			{
-				this._tailorCorrectCards.SetActive(false);
+				this._cardsCorrect = GameDirector.instance.CheckCards(this._musicDistrictCard, this._theaterDistrictCard, this._observatoryDistrictCard);
+				tailorLight.GetComponent<Light>().enabled = true;
+				if (this._cardsCorrect)
+				{
+					this._tailorCorrectCards.SetActive(true);
+				}
+				else
+				{
+					this._tailorIncorrectCards.SetActive(true);
+				}
 			}
 		}
 	}

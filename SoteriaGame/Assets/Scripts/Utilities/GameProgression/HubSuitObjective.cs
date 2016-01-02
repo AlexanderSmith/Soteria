@@ -36,14 +36,13 @@ public class HubSuitObjective : MonoBehaviour
 //		this._music = true;
 //		this._theater = true;
 //		this._observatory = true;
-//		DetermineObjective(this._music, this._theater, this._observatory);
 	}
 
 	void Start ()
 	{
 		if (GameDirector.instance.GetGameState() == GameStates.Suit)
 		{
-			DetermineObjective(this._music, this._theater, this._observatory);
+			DetermineObjective();
 		}
 		else
 		{
@@ -51,7 +50,7 @@ public class HubSuitObjective : MonoBehaviour
 		}
 	}
 
-	void DetermineObjective(bool inMusic, bool inTheater, bool inObservatory)
+	void DetermineObjective()
 	{
 		this._toMusic = !this._music;
 		this._toTheater = this._music && !this._theater;
@@ -67,12 +66,14 @@ public class HubSuitObjective : MonoBehaviour
 		if (this._toTheater)
 		{
 			GameDirector.instance.ChangeObjective(hubToTheater);
+			this._oMalleySuitOff.SetActive(false);
 			return;
 		}
 
 		if (this._toObservatory)
 		{
 			GameDirector.instance.ChangeObjective(hubToObservatory);
+			this._oMalleySuitOff.SetActive(false);
 			return;
 		}
 

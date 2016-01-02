@@ -19,6 +19,7 @@ public class GameDirector : MonoBehaviour {
 	private bool token;
 	private bool lantern;
 	private bool compass;
+	private bool _dreams;
 	private LanternController _lanternController;
 
 	private int _hubPhase;
@@ -236,7 +237,6 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.ChangeVolume(AudioID.TokenUse, .3f);
 		this._audioManager.PlayAudio(AudioID.TokenUse);
 		this._HUDManager.CompassTrue(this.compass);
-
 	}
 
 	public bool GetCompass()
@@ -250,7 +250,16 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.ChangeVolume(AudioID.TokenUse, .3f);
 		this._audioManager.PlayAudio(AudioID.TokenUse);
 		this._HUDManager.LanternTrue(this.lantern);
+	}
 
+	public void DreamsTrue()
+	{
+		this._dreams = true;
+	}
+
+	public bool GetDreams()
+	{
+		return this._dreams;
 	}
 	
 	public bool GetLantern()
@@ -413,6 +422,11 @@ public class GameDirector : MonoBehaviour {
 			this._observatoryDistrictCard == inObservatory;
 	}
 
+	public int CardsHeld()
+	{
+		return this._cardsHeld;
+	}
+
 	// Dumb, unnecessary extra work
 	public void RemoveCards(string inMusic, string inTheater, string inObservatory)
 	{
@@ -449,6 +463,7 @@ public class GameDirector : MonoBehaviour {
 	public void SuitWorn()
 	{
 		this._HUDManager.SuitTrue();
+		this._cardsHeld = 0;
 		this._stateManager.ChangeGameState(GameStates.Suit);
 		this._chest.SetActive(true);
 		this._hatGoggles.SetActive(true);
@@ -941,12 +956,15 @@ public class GameDirector : MonoBehaviour {
 	{
 		this.FindEnemies();
 		this.StopEncounterMode();
-		if (this._lanternController != null)
-		{
-			this.RechargeLantern();
-		}
 		this.ClearAudioList();
-		Application.LoadLevel("HarborRespawn");
+		if (!this.token)
+		{
+			Application.LoadLevel("Harbor");
+		}
+		else
+		{
+			Application.LoadLevel("HarborRespawn");
+		}
 	}
 
     #endregion

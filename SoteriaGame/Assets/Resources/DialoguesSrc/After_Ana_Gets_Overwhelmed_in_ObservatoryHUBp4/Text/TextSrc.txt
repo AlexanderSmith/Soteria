@@ -7,3 +7,4 @@
 <b>Ana:</b> Stop pushing me. Stop making fun of me! I’m done with you. You don't help. I don't trust you. I can't handle this anymore. It's too much!
 <b>O'Malley:</b> Suit yourself.
 <b>Ana:</b> I'll find the help I need. There must be a way around those Shadows. I'll deal with this my way.
+<trigger/>TailorLight-TurnOn

@@ -30,7 +30,10 @@ public class ChangeObjNoCompass : MonoBehaviour
 			else
 			{
 				GameDirector.instance.ChangeObjective(portToMusic);
-				dreams.SetActive(true);
+				if (!GameDirector.instance.GetDreams())
+				{
+					dreams.SetActive(true);
+				}
 			}
 		}
 	}

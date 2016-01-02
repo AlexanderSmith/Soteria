@@ -19,7 +19,7 @@ public class LanternController : MonoBehaviour
 	public void LanternClicked()
 	{
 		//Debug.Log (this._charged);
-		if (this._charged)
+		if (this._charged && GameDirector.instance.GetGameState() != GameStates.Suit)
 		{
 			this.UseLantern();
 		}
@@ -42,7 +42,7 @@ public class LanternController : MonoBehaviour
 		// Random value to make sure recharge doesn't happen before scene starts - 3 seconds is too long, 1 may be too short
 		yield return new WaitForSeconds(1.0f);
 		GameDirector.instance.PulseLantern();
-		yield return new WaitForSeconds(2.0f);
+		yield return new WaitForSeconds(1.0f);
 		GameDirector.instance.IdleLantern();
 	}
 
@@ -51,3 +51,4 @@ public class LanternController : MonoBehaviour
 		return this._charged;
 	}
 }
+ 

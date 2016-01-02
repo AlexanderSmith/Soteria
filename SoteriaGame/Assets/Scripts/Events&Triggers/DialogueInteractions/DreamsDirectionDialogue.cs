@@ -8,6 +8,7 @@ public class DreamsDirectionDialogue : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.DreamsTrue();
 			GameDirector.instance.SetupDialogue("AnaHubBeforeEnteringDistrict");
 			GameDirector.instance.StartDialogue();
 		}
