@@ -1,18 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HarborTheaterDistrictCamera : MonoBehaviour
-{	
+public class TheaterDistrictCamera : MonoBehaviour
+{
 	public Transform target;
 	public float smooth;
 	public Vector3 CameraOffset;
 	public float minZ;
 	
 	// Use this for initialization
-	void Start () {
+	void Start ()
+	{
 		if (target == null)
 			target = GameObject.FindWithTag("Player").transform;
-		minZ = -276.0f;
+		minZ = -129.0f;
 	}
 	
 	// Update is called once per frame
