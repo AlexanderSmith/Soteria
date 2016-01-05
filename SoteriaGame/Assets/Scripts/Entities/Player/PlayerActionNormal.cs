@@ -20,13 +20,10 @@ public class PlayerActionNormal : IPlayerAction
 			inPlayer.Moving();
 		}
 
-
 		moveVect.x = _horizontal;
 		moveVect.z = _vertical;
 		moveVect.y = 0;	
 		moveVect *= Time.deltaTime * inPlayer.moveSpeed;
-
-
 
 		if (moveVect != Vector3.zero)
 		{
@@ -36,7 +33,6 @@ public class PlayerActionNormal : IPlayerAction
 			Vector3 rot = Vector3.Lerp (currentRotation, moveVect, inPlayer.rotationSpeed);
 			inPlayer.transform.rotation = Quaternion.LookRotation(rot, Vector3.up);
 		}
-
 
 		float snapDistance = 1.0f; //Adjust this based on the CharacterController's height and the slopes you want to handle - my CharacterController's height is 1.8
 	
@@ -51,7 +47,7 @@ public class PlayerActionNormal : IPlayerAction
 			//Debug.DrawRay(inPlayer.transform.position, Vector3.down);
 		}
 
-		inPlayer.gameObject.GetComponent<CharacterController>().Move (moveVect );
+		inPlayer.gameObject.GetComponent<CharacterController>().Move (moveVect);
 	}
 
 	public void InitializeValues(Player inPlayer)
