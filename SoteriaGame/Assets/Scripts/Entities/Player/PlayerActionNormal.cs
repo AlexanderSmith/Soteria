@@ -10,8 +10,8 @@ public class PlayerActionNormal : IPlayerAction
 
 	public void PlayerAction(Player inPlayer)
 	{
-		_camForward = Camera.main.transform.forward;
-		_camRight = Camera.main.transform.right;
+		//_camForward = Camera.main.transform.forward;
+		//_camRight = Camera.main.transform.right;
 		_horizontal = Input.GetAxisRaw("Horizontal");
 		_vertical = Input.GetAxisRaw("Vertical");
 
@@ -23,7 +23,7 @@ public class PlayerActionNormal : IPlayerAction
 		moveVect.x = _horizontal;
 		moveVect.z = _vertical;
 		moveVect.y = 0;	
-		moveVect *= Time.deltaTime * inPlayer.moveSpeed;
+		moveVect *= (Time.deltaTime * inPlayer.moveSpeed);
 
 		if (moveVect != Vector3.zero)
 		{
