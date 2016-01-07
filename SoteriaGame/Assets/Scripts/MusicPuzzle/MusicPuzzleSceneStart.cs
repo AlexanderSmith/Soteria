@@ -22,8 +22,8 @@ public class MusicPuzzleSceneStart : MonoBehaviour
 		//GameDirector.instance.TokenTrue();
 		//GameDirector.instance.CompassTrue();
 		//GameDirector.instance.LanternTrue();
-		//GameDirector.instance.ChangeObjective(GameObject.Find("KeyPiece"));
 
+		GameDirector.instance.ChangeObjective(GameObject.Find("KeyPiece"));
 		_controller = GameObject.Find("MusicPuzzleControl");
 		_controller.GetComponent<MusicPuzzleController>().Initialize();
 	}

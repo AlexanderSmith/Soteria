@@ -30,7 +30,8 @@ public class MusicBossController : MonoBehaviour
 
 	public void PuzzleStart()
 	{
-		GameDirector.instance.MusicPuzzleEncounter(this.gameObject);
+		//GameDirector.instance.MusicPuzzleEncounter(this.gameObject);
+		MusicStart(AudioID.OrganMusicComplete, "Organ");
 	}
 
 	public void MusicStart(AudioID inAID, string inMusicPile)
@@ -61,7 +62,11 @@ public class MusicBossController : MonoBehaviour
 		}
 		while (!this._fighting)
 		{
-			if (GameDirector.instance.GetVolume(inAID) < GameDirector.instance.GetPuzzleWinVolume())
+			if (inAID == AudioID.OrganMusicComplete)
+			{
+				GameDirector.instance.SubtractVolumePuzzle(inAID, this._rateOfVolumeDecrease);
+			}
+			else if (GameDirector.instance.GetVolume(inAID) < GameDirector.instance.GetPuzzleWinVolume())
 			{
 				GameDirector.instance.SubtractVolumePuzzle(inAID, this._rateOfVolumeDecrease);
 			}

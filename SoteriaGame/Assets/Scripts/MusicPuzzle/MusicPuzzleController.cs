@@ -46,19 +46,6 @@ public class MusicPuzzleController : MonoBehaviour
 			this.brassTile.transform.position = this.brassUp.position;
 			this.stringTile.transform.position = this.stringUp.position;
 			this.windTile.transform.position = this.windUp.position;
-		}
-		else if (!GameDirector.instance.GetMusicActivated() && GameDirector.instance.GetGameState() != GameStates.Suit)
-		{
-			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("AnaEnteringMusicPuzFirstTime");
-			GameDirector.instance.StartDialogue();
-		}
-		else
-		{
-			this.organTile.transform.position = this.organUp.position;
-			this.brassTile.transform.position = this.brassDown.position;
-			this.stringTile.transform.position = this.stringDown.position;
-			this.windTile.transform.position = this.windDown.position;
 			this.boss.transform.position = this.bossUp.position;
 			if (GameDirector.instance.GetGameState() == GameStates.Suit)
 			{
@@ -66,6 +53,17 @@ public class MusicPuzzleController : MonoBehaviour
 				GameDirector.instance.SetupDialogue("AnaEnteringMusicPuzzWithSuit");
 				GameDirector.instance.StartDialogue();
 			}
+		}
+		else
+		{
+			this.organTile.transform.position = this.organUp.position;
+			this.brassTile.transform.position = this.brassDown.position;
+			this.stringTile.transform.position = this.stringDown.position;
+			this.windTile.transform.position = this.windDown.position;
+			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetupDialogue("AnaEnteringMusicPuzFirstTime");
+			GameDirector.instance.StartDialogue();
+
 		}
 		boss.GetComponentInChildren<MusicBossController>().Initialize(this);
 	}
@@ -103,6 +101,7 @@ public class MusicPuzzleController : MonoBehaviour
 			this.stringTile.transform.position = Vector3.Lerp(this.stringTile.transform.position, this.stringUp.position, (Time.time - start) / lerpTime);
 			this.windTile.transform.position = Vector3.Lerp(this.windTile.transform.position, this.windUp.position, (Time.time - start) / lerpTime);
 			this.boss.transform.position = Vector3.Lerp (this.boss.transform.position, this.bossUp.position, (Time.time - start) / lerpTime);
+			//GameDirector.instance.SubtractVolumePuzzle(AudioID.OrganMusic, 1f);
 			yield return null;
 		}
 		this.organTile.transform.position = this.organDown.position;
@@ -110,7 +109,7 @@ public class MusicPuzzleController : MonoBehaviour
 		this.stringTile.transform.position = this.stringUp.position;
 		this.windTile.transform.position = this.windUp.position;
 		this.boss.transform.position = this.bossUp.position;
-		GameDirector.instance.ChangeVolume(AudioID.OrganMusic, 0.0f);
+		//GameDirector.instance.ChangeVolume(AudioID.OrganMusic, 0.0f);
 	}
 
 	public void OrganTileActive()
