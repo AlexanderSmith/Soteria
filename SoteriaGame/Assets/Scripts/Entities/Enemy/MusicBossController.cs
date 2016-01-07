@@ -62,6 +62,7 @@ public class MusicBossController : MonoBehaviour
 		}
 		while (!this._fighting)
 		{
+			// BAD -- Temp fix to suck music away on start up. This needs to be looked at again later
 			if (inAID == AudioID.OrganMusicComplete)
 			{
 				GameDirector.instance.SubtractVolumePuzzle(inAID, this._rateOfVolumeDecrease);
