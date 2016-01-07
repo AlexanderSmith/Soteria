@@ -47,14 +47,39 @@ public class MusicPuzzleController : MonoBehaviour
 			this.stringTile.transform.position = this.stringUp.position;
 			this.windTile.transform.position = this.windUp.position;
 		}
+		else if (!GameDirector.instance.GetMusicActivated() && GameDirector.instance.GetGameState() != GameStates.Suit)
+		{
+			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetupDialogue("AnaEnteringMusicPuzFirstTime");
+			GameDirector.instance.StartDialogue();
+		}
 		else
 		{
 			this.organTile.transform.position = this.organUp.position;
 			this.brassTile.transform.position = this.brassDown.position;
 			this.stringTile.transform.position = this.stringDown.position;
 			this.windTile.transform.position = this.windDown.position;
+			this.boss.transform.position = this.bossUp.position;
+			if (GameDirector.instance.GetGameState() == GameStates.Suit)
+			{
+				GameDirector.instance.GetPlayer().PlayerActionPause();
+				GameDirector.instance.SetupDialogue("AnaEnteringMusicPuzzWithSuit");
+				GameDirector.instance.StartDialogue();
+			}
 		}
 		boss.GetComponentInChildren<MusicBossController>().Initialize(this);
+	}
+
+	void OnTriggerStay(Collider player)
+	{
+		if (player.gameObject.tag == "Player")
+		{
+			if (!GameDirector.instance.isDialogueActive())
+			{
+				this.gameObject.GetComponent<BoxCollider>().enabled = false;
+				GameDirector.instance.GetPlayer().PlayerActionNormal();
+			}
+		}
 	}
 
 	public void PuzzleActivated()
