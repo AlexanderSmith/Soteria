@@ -32,8 +32,6 @@ public class Player : MonoBehaviour
 
 	void Start ()
 	{
-		PlayerActionNormal();
-		playerState = PlayerState.Normal;
 		this._animator = this.gameObject.GetComponent<Animator>();
 	}
 

@@ -7,24 +7,20 @@ public class MusicPuzzleToDistrict : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			GameDirector.instance.CheckLantern();
 			GameDirector.instance.ClearAudioList();
-			switch (GameDirector.instance.GetHubPhase())
+			switch (GameDirector.instance.GetGamePhase())
 			{
-			case 5:
-				Application.LoadLevel("HUBPass3");
-				break;
 			case 1:
-				Application.LoadLevel("HUBPass1");
+				Application.LoadLevel("MusicPass1");
 				break;
 			case 2:
-				Application.LoadLevel("HUBPass2");
+				Application.LoadLevel("MusicPass2");
 				break;
 			case 3:
-				Application.LoadLevel("HUBPass3");
+				Application.LoadLevel("MusicPass3");
 				break;
 			case 4:
-				Application.LoadLevel("HUBPass4");
+				Application.LoadLevel("MusicPass4");
 				break;
 			}
 		}
