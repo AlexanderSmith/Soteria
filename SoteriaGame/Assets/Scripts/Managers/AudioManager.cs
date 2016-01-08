@@ -25,22 +25,31 @@ public class AudioManager : MonoBehaviour
 	public void AddAudioSource(string inClipName, AudioID inAID, GameObject inGameObj)
 	{
 		if (inGameObj == null)
-			inGameObj = GameObject.Find ("MCP");
-		
-		AudioSource audioSrc = inGameObj.AddComponent<AudioSource> ();
+			inGameObj = GameObject.Find ("Player");
+
+		AudioSource audioSrc = inGameObj.GetComponent<AudioSource>();
+
+		if (audioSrc == null)
+			audioSrc = inGameObj.AddComponent<AudioSource> ();
+		   
 		audioSrc.clip = Resources.Load ("Audio/" + inClipName) as AudioClip;
 		audioSrc.playOnAwake = false;
 		
 		this._audioSourceList.Add (new AudioSourceWrapper(inGameObj, audioSrc, inAID));
 	}
-	
-	public void AttachAudioSource( AudioSource inAudioSrc, GameObject inGameObj, string inName)
+
+	public void AttachAudioSource( GameObject inGameObj, string inName)
 	{
 		AudioID  aID = this.getIDByName(inName);
-		this._audioSourceList.Add (new AudioSourceWrapper(inGameObj, inAudioSrc, aID));
+
+		if (this.FindAudioSrcbyID(aID) == null)
+		{
+			AudioSource AudioSrc = inGameObj.GetComponent<AudioSource>() as AudioSource;
+			this._audioSourceList.Add (new AudioSourceWrapper(inGameObj, AudioSrc, aID));
+		}
 	}
-	
-	//I need to test this one!!
+		
+
 	public AudioID getIDByName(string inName)
 	{
 		AudioID AID = ((AudioID)System.Enum.Parse(typeof(AudioID), inName));

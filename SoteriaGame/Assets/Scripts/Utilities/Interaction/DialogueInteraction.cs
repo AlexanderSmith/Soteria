@@ -51,7 +51,7 @@ public class DialogueInteraction : InteractionBase
 				if (Input.GetKeyDown(KeyCode.Space))
 				{
 					GameDirector.instance.GetPlayer().PlayerActionPause();
-					GameDirector.instance.SetupDialogue(DialogueName);
+					GameDirector.instance.SetupDialogue(DialogueName, this.transform.parent.gameObject);
 					if (this.EndsWithChoice)
 						GameDirector.instance.SetupDialogueChoices(this.FirstChoice, this.SecondChoice, this.ThirdChoice);
 					GameDirector.instance.StartDialogue();

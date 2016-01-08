@@ -12,6 +12,8 @@ enum DialogueState
 };
 public class DialogueManager : MonoBehaviour
 {
+	GameObject _activeActor;
+
 	DialogueParser _parser;
 	DialogueState _currState;
 	DialogueData _diagdata;
@@ -80,11 +82,14 @@ public class DialogueManager : MonoBehaviour
 		_currState = inState;
 	}
 	
-	public void ReloadDialogueData(string txtname, AudioID inAid)
+	public void ReloadDialogueData(string txtname, GameObject inActor)
 	{
 		if (this._currState == DialogueState.Standby)
 		{
-			this._diagdata = new DialogueData(inAid);
+			AudioID aid = GameDirector.instance.getIDByName(txtname);
+			this._diagdata = new DialogueData(aid);
+
+			this._activeActor = inActor;
 			this._parser.LoadDialogueSrc (_diagdata,txtname);
 		}
 	}
@@ -116,14 +121,17 @@ public class DialogueManager : MonoBehaviour
 			{
 			case 0:
 				DialogueUIFirstChoice.transform.GetChild(0).GetComponent<Text>().text = _diagdata.Choices[indx];
+				DialogueUIFirstChoice.SetActive(true);
 				break;
 				
 			case 1:
 				DialogueUISecondChoice.transform.GetChild(0).GetComponent<Text>().text = _diagdata.Choices[indx];
+				DialogueUISecondChoice.SetActive(true);
 				break;
 				
 			case 2:
 				DialogueUIThirdChoice.transform.GetChild(0).GetComponent<Text>().text = _diagdata.Choices[indx];
+				DialogueUIThirdChoice.SetActive(true);
 				break;
 			}
 		}
@@ -140,12 +148,7 @@ public class DialogueManager : MonoBehaviour
 		}
 	}
 	
-	public void ActivateChoiceUI()
-	{
-		DialogueUIFirstChoice.SetActive(true);
-		DialogueUISecondChoice.SetActive(true);
-		DialogueUIThirdChoice.SetActive(true);
-	}
+
 	public void DeactivateChoiceUI()
 	{
 		DialogueUIFirstChoice.SetActive(false);
@@ -192,21 +195,33 @@ public class DialogueManager : MonoBehaviour
 			this._currState = DialogueState.Active;
 	}
 
+
+	public void SetActiveActor( GameObject inActor )
+	{
+		this._activeActor = inActor;
+	}
+
 	public void GetDialogueFromChoice(int choice)
 	{
 		this.EndDialogue();
 		switch (choice)
 		{
 			case 1:
-			GameDirector.instance.SetupDialogue(this.FirstChoiceSrc);
-			break;
+				this.ReloadDialogueData( this.FirstChoiceSrc, this._activeActor);				
+				GameDirector.instance.AttachAudioSource(this._activeActor, this.FirstChoiceSrc);
+				GameDirector.instance.CollectAudioClipsForDialogue(this.FirstChoiceSrc);
+				break;
 
 			case 2:
-				GameDirector.instance.SetupDialogue(this.SecondChoiceSrc);
+				this.ReloadDialogueData( this.SecondChoiceSrc, this._activeActor);				
+				GameDirector.instance.AttachAudioSource( this._activeActor, this.SecondChoiceSrc);
+				GameDirector.instance.CollectAudioClipsForDialogue(this.SecondChoiceSrc);
 			break;
 
 			case 3:
-				GameDirector.instance.SetupDialogue(this.ThirdChoiceSrc);
+				this.ReloadDialogueData( this.ThirdChoiceSrc, this._activeActor);				
+				GameDirector.instance.AttachAudioSource( this._activeActor, this.ThirdChoiceSrc);
+				GameDirector.instance.CollectAudioClipsForDialogue(this.ThirdChoiceSrc);
 			break;
 		}
 
@@ -275,7 +290,6 @@ public class DialogueManager : MonoBehaviour
 					{
 						this._currState = DialogueState.Choice;
 						this.LoadChoices();
-						this.ActivateChoiceUI();
 					}
 				}
 				else if (this._diagdata.hasTriggers)
@@ -320,7 +334,6 @@ public class DialogueManager : MonoBehaviour
 							{
 								this._currState = DialogueState.Choice;
 								this.LoadChoices();
-								this.ActivateChoiceUI();
 							}
 						}
 						else if (this._diagdata.hasTriggers)

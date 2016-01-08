@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UISingleton : MonoBehaviour {
-
+public class UISingleton : MonoBehaviour
+{
 	private static UISingleton _instance;
 	private void Awake()
 	{

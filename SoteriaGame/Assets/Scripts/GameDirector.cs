@@ -1033,9 +1033,9 @@ public class GameDirector : MonoBehaviour {
 	/// Attachs the audio source that was added to another object from the inspector 
 	/// so that the manager can control it.
 	/// </summary>
-	public void AttachAudioSource( AudioSource inAudioSrc,GameObject inGameObj, string inName)
+	public void AttachAudioSource( GameObject inGameObj, string inName)
 	{
-		this._audioManager.AttachAudioSource (inAudioSrc,inGameObj,inName);
+		this._audioManager.AttachAudioSource (inGameObj,inName);
 	}
 
 	public bool isClipPlaying(AudioID inAID)
@@ -1053,6 +1053,11 @@ public class GameDirector : MonoBehaviour {
 	{
 		AudioID aid = this._audioManager.getIDByName(inFolderName);
 		this._audioManager.CollectAudioClips(inFolderName, aid);
+	}
+
+	public AudioID getIDByName (string inName)
+	{
+		return this._audioManager.getIDByName(inName);
 	}
 	
 	///Other Stuff to Add.
@@ -1090,10 +1095,9 @@ public class GameDirector : MonoBehaviour {
 		return this._dialoguemanager.isDialogueActive();
 	}
 
-	public void SetupDialogue(string txtname)
+	public void SetupDialogue(string txtname, GameObject inActor = null)
 	{
-		AudioID aid = this._audioManager.getIDByName(txtname);
-		this._dialoguemanager.ReloadDialogueData(txtname, aid);
+		this._dialoguemanager.ReloadDialogueData(txtname, inActor);
 	}
 
 	public void SetupDialogueChoices (string fChoice, string sChoice, string tChoice)
