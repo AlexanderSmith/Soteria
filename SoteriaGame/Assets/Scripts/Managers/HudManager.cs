@@ -381,4 +381,20 @@ public class HudManager : MonoBehaviour {
 		this._cards.GetComponent<Image>().enabled = false;
 		this._suit.GetComponent<Image>().enabled = true;
 	}
+
+	public void OmalleyEncounter()
+	{
+		StartCoroutine("FadeScreen");
+	}
+
+	IEnumerator FadeScreen()
+	{
+		float stop = 2f;
+		float start = Time.time;
+		while (Time.time < start + stop)
+		{
+			FadeToBlack();
+		}
+		yield return null;
+	}
 }

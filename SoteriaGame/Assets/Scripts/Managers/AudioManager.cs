@@ -260,6 +260,7 @@ public enum AudioID
 	OMalleyResponsePrayer2,
 	OMalleyResponseToNotTakingSuitOff,
 	OMalleySoteriaStatueGate,
+	OMalleyTeachingAnaToOvercomeFear,
 	OMalleyTeachingLinger,
 	OMalleyTeachingPrevoke,
 	OMalleyTransformIntoFear,

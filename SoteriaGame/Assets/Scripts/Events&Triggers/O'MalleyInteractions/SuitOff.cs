@@ -7,6 +7,7 @@ public class SuitOff : Reaction
 	{
 		GameDirector.instance.SuitRemoved();
 		GameDirector.instance.AddGamePhase();
-		GameDirector.instance.ChangeObjective(GameObject.Find ("HubToMusic"));
+		GameDirector.instance.ClearAudioList();
+		Application.LoadLevel("Tutorial");
 	}
 }
