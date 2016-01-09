@@ -18,11 +18,8 @@ public class DialogueInteraction : InteractionBase
 	// Use this for initialization
 	public override void Awake () 
 	{
-		if (this._interactionbutton != null)
-		{
-			this._interactionbutton = this.transform.parent.FindChild("InteractionButton").gameObject;
-			this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
-		}
+		this._interactionbutton = this.transform.parent.FindChild("InteractionButton").gameObject;
+		this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 	}
 	
 	// Update is called once per frame
@@ -45,10 +42,7 @@ public class DialogueInteraction : InteractionBase
 					this._reaction.execute();
 					this.gameObject.transform.parent.GetComponent<SphereCollider>().isTrigger = false;
 					this.gameObject.transform.parent.GetComponent<SphereCollider>().enabled = false;
-					if (this._interactionbutton != null)
-					{
-						this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
-					}
+					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 					GameDirector.instance.GetPlayer().PlayerActionNormal();
 				}
 			}
@@ -61,10 +55,7 @@ public class DialogueInteraction : InteractionBase
 					if (this.EndsWithChoice)
 						GameDirector.instance.SetupDialogueChoices(this.FirstChoice, this.SecondChoice, this.ThirdChoice);
 					GameDirector.instance.StartDialogue();
-					if (this._interactionbutton != null)
-					{
-						this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
-					}
+					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 				}
 			}
 		}

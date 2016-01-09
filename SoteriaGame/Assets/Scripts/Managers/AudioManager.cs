@@ -268,7 +268,8 @@ public enum AudioID
 	OMalleyTransformIntoFear,
 	PTFirstEncounter,
 	PTLanternRecharge,
-	TailorWrongCard
+	TailorWrongCard,
+	TakingSuitOffInHub
 }
 
 public class AudioSourceWrapper
@@ -298,11 +299,16 @@ public class AudioSourceWrapper
 	public void playClip()
 	{
 		if (this._audiosrc.clip == null)
-			this._audiosrc.clip = this._audioclips [0];
+		{
+			if (_audioclips.Count > 0)
+				this._audiosrc.clip = this._audioclips [0];
+		}
 		else 
 		{
 			if (!this._audiosrc.clip.Equals (this._audioclips [currindx]))
+			{
 				Nextclip ();
+			}
 		}
 		Debug.Log (this._audiosrc.clip.name);
 		this._audiosrc.Play();

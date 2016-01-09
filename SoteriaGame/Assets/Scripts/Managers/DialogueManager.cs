@@ -169,12 +169,15 @@ public class DialogueManager : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////
 	public void StartDialogue()
 	{
-		this.ChangeState (DialogueState.Active);
-		
-		ActivateGUI ();
-		
-		GetNextLine();
-		GetNextVO();
+		if (this._diagdata.diaglength > 0)
+		{
+			this.ChangeState (DialogueState.Active);
+			
+			ActivateGUI ();
+			
+			GetNextLine();
+			GetNextVO();
+		}
 	}
 	
 	public void EndDialogue()
@@ -291,30 +294,35 @@ public class DialogueManager : MonoBehaviour
 	{
 		if (this._currState == DialogueState.Active)
 		{
-			if (this._diagdata.Textindx == this._diagdata.diaglength)
+			if (this._diagdata.diaglength > 0 )
 			{
-				if (this._diagdata.hasChoices)
+				if (this._diagdata.Textindx == this._diagdata.diaglength)
 				{
-					if (this._currState != DialogueState.Choice)
+					if (this._diagdata.hasChoices)
 					{
-						this._currState = DialogueState.Choice;
-						this.LoadChoices();
+						if (this._currState != DialogueState.Choice)
+						{
+							this._currState = DialogueState.Choice;
+							this.LoadChoices();
+						}
 					}
-				}
-				else if (this._diagdata.hasTriggers)
-				{
-					if (this._currState != DialogueState.TriggerActive)
+					else if (this._diagdata.hasTriggers)
 					{
-						
-						this._currState = DialogueState.TriggerActive;
-						this.ExecuteTrigger();
+						if (this._currState != DialogueState.TriggerActive)
+						{
+							
+							this._currState = DialogueState.TriggerActive;
+							this.ExecuteTrigger();
+						}
 					}
+					else
+						EndDialogue();
 				}
 				else
-					EndDialogue();
+					ContinueDialogue();
 			}
 			else
-				ContinueDialogue();
+				EndDialogue();
 		}
 	}
 	
@@ -331,7 +339,7 @@ public class DialogueManager : MonoBehaviour
 	{
 		if (this._currState == DialogueState.Active)
 		{
-			if (this._diagdata.Aid != AudioID.None)
+			if (this._diagdata.Aid != AudioID.None && this._diagdata.diaglength > 0)
 			{
 				if (!GameDirector.instance.isClipPlaying(this._diagdata.Aid))
 				{
@@ -360,6 +368,8 @@ public class DialogueManager : MonoBehaviour
 						ContinueDialogue();
 				}
 			}
+			else
+				EndDialogue();
 		}
 	}
 	/////////////////////////////////////////////////////////////////////////

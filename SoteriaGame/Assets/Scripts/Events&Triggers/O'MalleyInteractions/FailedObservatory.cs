@@ -11,7 +11,7 @@ public class FailedObservatory : MonoBehaviour
 		_oMalleyPrefab = GameObject.Find ("O'MalleyFailedObservatory");
 		_oMalleyPrefab.transform.position = oMalleySpawnLoc.position;
 		// Testing
-		GameDirector.instance.FirstTimeObservatoryPuzzle();
+		//GameDirector.instance.FirstTimeObservatoryPuzzle();
 	}
 	
 	void Start()

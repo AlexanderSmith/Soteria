@@ -19,7 +19,7 @@ public class TriggerActions : MonoBehaviour
 		NewColor = new Color(0.0f,0.0f,0.0f);
 		NewColor.a = 50;
 		failTime = 5.0f;
-		winTime = 8	f;
+		winTime = 8.0f;
 
 		this._oMalley = this.transform.parent.FindChild("pCube42").gameObject;
 		this._SC = this.transform.parent.FindChild("Enemy").gameObject;
