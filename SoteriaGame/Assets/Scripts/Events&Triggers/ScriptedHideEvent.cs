@@ -48,7 +48,6 @@ public class ScriptedHideEvent : MonoBehaviour
 	void InitializeEvent()
 	{
 		_enemy = GameObject.Find("ScriptedEnemy");
-		//StartCoroutine("OneSecondDelay");
 		_playerMovement = true;
 	}
 
@@ -88,11 +87,5 @@ public class ScriptedHideEvent : MonoBehaviour
 				//GameDirector.instance.GetPlayer().PlayerActionPause();
 			}
 		}
-	}
-
-	IEnumerator OneSecondDelay()
-	{
-		yield return new WaitForSeconds(1.0f);
-		_playerMovement = true;
 	}
 }

@@ -9,6 +9,7 @@ public class HudManager : MonoBehaviour {
 	public float clearSpeed = .15f;
 	public bool isToClear = true;
 	private bool _isonscreen;
+	private bool _maintaining;
 
 	private GameObject _hudinterface;
 	private ButtonController _coinController;
@@ -180,6 +181,8 @@ public class HudManager : MonoBehaviour {
 	{
 		if (isToClear)
 			FadeToClear ();
+		else if (!isToClear && _maintaining)
+			MaintainFade();
 		else
 			FadeToBlack ();
 	}
@@ -237,6 +240,27 @@ public class HudManager : MonoBehaviour {
 		{
 			GameDirector.instance.EncounterOver();
 		}
+	}
+
+	private void MaintainFade()
+	{
+		_fadeinout.color = _fadeinout.color;
+	}
+
+	public void OMalleyFadeTrue()
+	{
+		this._fadeinout.gameObject.SetActive(true);
+	}
+
+	public void Maintaining()
+	{
+		_maintaining = true;
+	}
+
+	public void OMalleyFadeFalse()
+	{
+		FadeToClear();
+		_maintaining = false;
 	}
 
 	public void EnableEncounterView()
@@ -382,19 +406,8 @@ public class HudManager : MonoBehaviour {
 		this._suit.GetComponent<Image>().enabled = true;
 	}
 
-	public void OmalleyEncounter()
+	public void OMalleyEncounter()
 	{
-		StartCoroutine("FadeScreen");
-	}
-
-	IEnumerator FadeScreen()
-	{
-		float stop = 2f;
-		float start = Time.time;
-		while (Time.time < start + stop)
-		{
-			FadeToBlack();
-		}
-		yield return null;
+		OMalleyFadeTrue();
 	}
 }

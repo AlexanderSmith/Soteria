@@ -695,6 +695,11 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._HUDManager.IdleLantern();
 	}
+
+	public void OMalleyEncounter()
+	{
+		this._HUDManager.OMalleyEncounter();
+	}
 	
 	///////////////////////////////////////////////////////////////////
 	////////////////// ENCOUNTER MANAGER FUNCTIONS ////////////////////

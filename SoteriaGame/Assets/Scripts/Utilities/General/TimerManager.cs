@@ -12,9 +12,8 @@ using System;
 public enum TimersType
 {
 	Generic = 0,
-	Encounter,
-	Input,
-	Puzzle,
+	Tutorial,
+	Encounter
 }
 /// <summary>
 /// The Actual manager that takes care of the Timers.
@@ -112,5 +111,10 @@ public class Timer
 	{
 		if (this.started)
 			this.elapsedTime += Time.deltaTime;
+	}
+
+	public bool IsStarted()
+	{
+		return this.started;
 	}
 }
