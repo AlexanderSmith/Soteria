@@ -705,9 +705,20 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._HUDManager.SetupScreenFade();
 	}
+
 	public void FadebyAmount (Color NewColor, float DeltaTime)
 	{
 		this._HUDManager.FadeScreenByAmount(NewColor, DeltaTime);
+	}
+
+	public void PauseScreenFade()
+	{
+		this._HUDManager.PauseScreenFade();
+	}
+
+	public void ResumeScreenFade()
+	{
+		this._HUDManager.ResumeScreenFade();
 	}
 	
 	///////////////////////////////////////////////////////////////////
@@ -1119,6 +1130,11 @@ public class GameDirector : MonoBehaviour {
 		this._dialoguemanager.LoadChoicesDialogueName(fChoice, sChoice, tChoice);
 	}
 
+	public void GetDialogueFromReaction(string inFolderName, GameObject inActor = null)
+	{
+		this._dialoguemanager.GetDialogueFromReaction(inFolderName, inActor);
+	}
+
 	public void StartDialogue()
 	{
 		this._dialoguemanager.StartDialogue();
@@ -1137,6 +1153,11 @@ public class GameDirector : MonoBehaviour {
 	public void EndTriggerState()
 	{
 		this._dialoguemanager.EndTriggerState();
+	}
+
+	public DialogueState GetDiagState()
+	{
+		return this._dialoguemanager.GetDiagState();
 	}
 
 	#endregion

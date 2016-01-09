@@ -8,7 +8,7 @@ public class PlayerActionPause : IPlayerAction
 //		{
 //			GameDirector.instance.GetPlayer().PlayerActionNormal();
 //		}
-		if (Input.GetKeyDown (KeyCode.Space))
+		if (Input.GetKeyDown (KeyCode.End))
 		{
 			GameDirector.instance.SkipLine();
 		}

@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 
-enum DialogueState
+public enum DialogueState
 {
 	Active,
 	Standby,
@@ -229,6 +229,15 @@ public class DialogueManager : MonoBehaviour
 		this._diagdata.hasChoices = false;
 	}
 
+	public void GetDialogueFromReaction(string inFolderName, GameObject inActor)
+	{
+		this._activeActor = inActor;
+		this.ReloadDialogueData(inFolderName, this._activeActor);				
+		GameDirector.instance.AttachAudioSource(this._activeActor, inFolderName);
+		GameDirector.instance.CollectAudioClipsForDialogue(inFolderName);
+		this.StartDialogue();
+	}
+
 	void ExecuteTrigger()
 	{
 		DialogueTrigger tri = null;
@@ -360,5 +369,10 @@ public class DialogueManager : MonoBehaviour
 	public void Update()
 	{
 		CheckNextClip();
+	}
+
+	public DialogueState GetDiagState()
+	{
+		return this._currState;
 	}
 }
