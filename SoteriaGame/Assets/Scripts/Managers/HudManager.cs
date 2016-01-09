@@ -410,4 +410,16 @@ public class HudManager : MonoBehaviour {
 	{
 		OMalleyFadeTrue();
 	}
+
+	public void SetupScreenFade ()
+	{
+		this._fadeinout.gameObject.SetActive(true);
+		_fadeinout.color = Color.clear;
+	}
+
+	public void FadeScreenByAmount(Color NewColor, float deltaTime)
+	{
+		_fadeinout.color = Color.Lerp(_fadeinout.color, NewColor, blackSpeed * deltaTime);
+	}
+
 }

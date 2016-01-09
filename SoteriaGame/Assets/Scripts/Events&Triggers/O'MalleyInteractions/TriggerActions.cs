@@ -5,11 +5,15 @@ public class TriggerActions : MonoBehaviour
 {
 	private GameObject _oMalley;
 	private GameObject _SC;
+	private bool _startFade = false;
+	private Color NewColor;
 
 	Timer fadeTimer;
 
 	void Start()
 	{
+		NewColor = new Color(0.0f,0.0f,0.0f,50.0f);
+
 		this._oMalley = this.transform.parent.FindChild("pCube42").gameObject;
 		this._SC = this.transform.parent.FindChild("Enemy").gameObject;
 		fadeTimer = TimerManager.instance.Attach(TimersType.Tutorial);
@@ -17,30 +21,21 @@ public class TriggerActions : MonoBehaviour
 
 	void Update()
 	{
-		if (fadeTimer.IsStarted())
-		{
-			if (fadeTimer.ElapsedTime() < 5)
-			{
-				GameDirector.instance.OMalleyEncounter();
-			}
-			else
-			{
-				fadeTimer.StopTimer();
-				GameDirector.instance.SetClearStatus(true);
-			}
-		}
+		if (_startFade == true)
+			GameDirector.instance.FadebyAmount(NewColor, 0.5f * Time.deltaTime);
 	}
 
 	public void OMalleyOffSCOn()
 	{
 		this._oMalley.SetActive(false);
 		this._SC.SetActive(true);
+
 		//GameDirector.instance.EndTriggerState();
 	}
 
 	public void FadeScreen()
 	{
-		fadeTimer.StartTimer();
-		GameDirector.instance.SetClearStatus(false);
+		GameDirector.instance.SetupScreenFade();
+		_startFade = true;	
 	}
 }

@@ -700,6 +700,15 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._HUDManager.OMalleyEncounter();
 	}
+
+	public void SetupScreenFade ()
+	{
+		this._HUDManager.SetupScreenFade();
+	}
+	public void FadebyAmount (Color NewColor, float DeltaTime)
+	{
+		this._HUDManager.FadeScreenByAmount(NewColor, DeltaTime);
+	}
 	
 	///////////////////////////////////////////////////////////////////
 	////////////////// ENCOUNTER MANAGER FUNCTIONS ////////////////////
