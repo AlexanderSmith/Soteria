@@ -169,7 +169,7 @@ public class DialogueManager : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////
 	public void StartDialogue()
 	{
-		if (this._diagdata.diaglength > 0)
+		if (this._diagdata.getDialogueCount() > 0)
 		{
 			this.ChangeState (DialogueState.Active);
 			
@@ -294,7 +294,7 @@ public class DialogueManager : MonoBehaviour
 	{
 		if (this._currState == DialogueState.Active)
 		{
-			if (this._diagdata.diaglength > 0 )
+			if (this._diagdata.getDialogueCount() > 0 )
 			{
 				if (this._diagdata.Textindx == this._diagdata.diaglength)
 				{
@@ -339,7 +339,7 @@ public class DialogueManager : MonoBehaviour
 	{
 		if (this._currState == DialogueState.Active)
 		{
-			if (this._diagdata.Aid != AudioID.None && this._diagdata.diaglength > 0)
+			if (this._diagdata.Aid != AudioID.None && this._diagdata.getDialogueCount() > 0)
 			{
 				if (!GameDirector.instance.isClipPlaying(this._diagdata.Aid))
 				{

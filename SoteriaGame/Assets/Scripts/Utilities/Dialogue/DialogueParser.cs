@@ -17,6 +17,11 @@ public class DialogueData
 		hasChoices = false;
 		hasTriggers = false;
 	}
+
+	public int getDialogueCount()
+	{
+		return DialogueLines.Count;
+	}
 	
 	private AudioID aid;
 	public AudioID Aid
