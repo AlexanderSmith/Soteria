@@ -5,6 +5,7 @@ public class OMalleyTutorialReactions : Reaction
 {
 	private bool _failed;
 	private bool _succeeded;
+	private bool _done;
 
 	void Start()
 	{
@@ -13,20 +14,26 @@ public class OMalleyTutorialReactions : Reaction
 	public override void execute()
 	{
 		this.GetBools();
-		if (_failed)
+		if (_done)
 		{
-			GameDirector.instance.GetDialogueFromReaction("OMalleyTeachingAnaToOvercomeFear2", this.gameObject.transform.parent.gameObject);
-			GameDirector.instance.StartDialogue();
+			GameDirector.instance.ClearAudioList();
+			GameDirector.instance.CheckLantern();
+			Application.LoadLevel("HubPass3");
+		}
+		else if (_failed)
+		{
+			this.transform.root.GetComponentInChildren<TriggerActions>().OMalleyOnSCOff();
+			GameDirector.instance.GetDialogueFromReaction("OMalleyTeachingAnaToOvercomeFear3", this.gameObject.transform.parent.gameObject);
 		}
 		else if (_succeeded)
 		{
+			_done = true;
+			this.transform.root.GetComponentInChildren<TriggerActions>().ClearScreen();
 			GameDirector.instance.GetDialogueFromReaction("AnaOMalleyAfterLingerSuccess", this.gameObject.transform.parent.gameObject);
-			GameDirector.instance.StartDialogue();
 		}
 		else
 		{
 			GameDirector.instance.GetDialogueFromReaction("OMalleyTeachingAnaToOvercomeFear2", this.gameObject.transform.parent.gameObject);
-			GameDirector.instance.StartDialogue();
 		}
 	}
 

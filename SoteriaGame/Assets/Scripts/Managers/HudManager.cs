@@ -422,6 +422,11 @@ public class HudManager : MonoBehaviour {
 		_fadeinout.color = Color.Lerp(_fadeinout.color, NewColor, blackSpeed * deltaTime);
 	}
 
+	public void ClearScreenFade()
+	{
+		_fadeinout.color = new Color(0, 0, 0, 0);
+	}
+
 	public void PauseScreenFade()
 	{
 		this._fadeinout.gameObject.SetActive(false);

@@ -25,6 +25,11 @@ public class InitiateTutorial : MonoBehaviour
 		this._success = true;
 	}
 
+	public void ResetFail()
+	{
+		this._fail = false;
+	}
+
 	public bool GetFail()
 	{
 		return this._fail;

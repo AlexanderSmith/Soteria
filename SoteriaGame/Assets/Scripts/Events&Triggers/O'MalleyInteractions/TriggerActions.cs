@@ -11,14 +11,20 @@ public class TriggerActions : MonoBehaviour
 	Timer lingerTimer;
 	Timer eventTimer;
 
+	public float failTime;
+	public float winTime;
+
 	void Start()
 	{
-		NewColor = new Color(0.0f,0.0f,0.0f,50.0f);
+		NewColor = new Color(0.0f,0.0f,0.0f);
+		NewColor.a = 50;
+		failTime = 5.0f;
+		winTime = 8f;
 
 		this._oMalley = this.transform.parent.FindChild("pCube42").gameObject;
 		this._SC = this.transform.parent.FindChild("Enemy").gameObject;
-		lingerTimer = TimerManager.instance.Attach(TimersType.Tutorial);
-		eventTimer = TimerManager.instance.Attach(TimersType.Tutorial);
+		lingerTimer = TimerManager.instance.Attach(TimersType.TutorialLinger);
+		eventTimer = TimerManager.instance.Attach(TimersType.TutorialEvent);
 	}
 
 	void Update()
@@ -33,7 +39,7 @@ public class TriggerActions : MonoBehaviour
 			}
 			else
 			{
-				if (lingerTimer.ElapsedTime() >= 5f)
+				if (lingerTimer.ElapsedTime() >= failTime)
 				{
 					lingerTimer.StopTimer();
 					eventTimer.StopTimer();
@@ -42,7 +48,7 @@ public class TriggerActions : MonoBehaviour
 					GameDirector.instance.EndDialogue();
 				}
 			}
-			if (eventTimer.ElapsedTime() >= 10)
+			if (eventTimer.ElapsedTime() >= winTime)
 			{
 				lingerTimer.StopTimer();
 				eventTimer.StopTimer();
@@ -60,11 +66,26 @@ public class TriggerActions : MonoBehaviour
 		//GameDirector.instance.EndTriggerState();
 	}
 
+	public void OMalleyOnSCOff()
+	{
+		this.transform.root.GetComponent<InitiateTutorial>().ResetFail();
+		ClearScreen();
+		this._oMalley.SetActive(true);
+		this._SC.SetActive(false);
+	}
+
+	public void ClearScreen()
+	{
+		_startFade = false;
+		NewColor.a = 50;
+		GameDirector.instance.ClearScreenFade();
+	}
+
 	public void FadeScreen()
 	{
 		GameDirector.instance.SetupScreenFade();
 		_startFade = true;
-		//GameDirector.instance.EndTriggerState();
+		GameDirector.instance.EndTriggerState();
 	}
 
 	public void PauseFade()
@@ -76,9 +97,7 @@ public class TriggerActions : MonoBehaviour
 
 	public void ResumeFade()
 	{
-		GameDirector.instance.ResumeScreenFade();
-		_startFade = true;
-		//GameDirector.instance.EndTriggerState();
+		NewColor.a += 25;
 	}
 
 	public void InitiateEventTimers()

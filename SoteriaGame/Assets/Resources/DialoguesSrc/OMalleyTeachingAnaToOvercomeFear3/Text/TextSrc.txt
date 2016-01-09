@@ -1,4 +1,10 @@
-<b>Ana:</b> This is too much! I want it to stop! Stop it!
+<b>O'Malley:</b> Now, shall we try this again?
+<b>Ana:</b> Yes.
+<trigger/>TriggerActions-FadeScreen
+<trigger/>TriggerActions-OMalleyOffSCOn
+<b>O'Malley:</b> Don’t fight the fear.
+<b>O'Malley:</b> Just let it happen. Accept the fear.
+<trigger/>TriggerActions-ResumeFade
 <b>O'Malley:</b> The only way out is through!!
 <b>O'Malley:</b> Good. You've got to choose to be afraid. Linger through the fear.
 <trigger/>TriggerActions-ResumeFade

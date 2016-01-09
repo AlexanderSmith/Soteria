@@ -36,8 +36,8 @@ public class TutorialDialogueInteraction : InteractionBase
 				if (!GameDirector.instance.isDialogueActive())
 				{
 					this._reaction.execute();
-					this.gameObject.transform.parent.GetComponent<SphereCollider>().isTrigger = false;
-					this.gameObject.transform.parent.GetComponent<SphereCollider>().enabled = false;
+//					this.gameObject.transform.parent.GetComponent<SphereCollider>().isTrigger = false;
+//					this.gameObject.transform.parent.GetComponent<SphereCollider>().enabled = false;
 					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 //					GameDirector.instance.GetPlayer().PlayerActionNormal();
 				}

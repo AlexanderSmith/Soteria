@@ -262,6 +262,7 @@ public enum AudioID
 	OMalleySoteriaStatueGate,
 	OMalleyTeachingAnaToOvercomeFear1,
 	OMalleyTeachingAnaToOvercomeFear2,
+	OMalleyTeachingAnaToOvercomeFear3,
 	OMalleyTeachingLinger,
 	OMalleyTeachingPrevoke,
 	OMalleyTransformIntoFear,
