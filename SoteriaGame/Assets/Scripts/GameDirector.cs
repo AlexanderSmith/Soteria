@@ -934,6 +934,12 @@ public class GameDirector : MonoBehaviour {
 		this._stateManager.ChangeGameState(GameStates.Normal);
 	}
 
+	public void PuzzleOvercome()
+	{
+		this._encounterManager.PuzzleOvercome();
+		this._stateManager.ChangeGameState(GameStates.Normal);
+	}
+
 	public void ResetGameOverTimer()
 	{
 		this._encounterManager.ResetGameOverTimer();

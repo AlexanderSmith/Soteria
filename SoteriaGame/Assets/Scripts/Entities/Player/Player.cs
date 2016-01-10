@@ -111,6 +111,7 @@ public class Player : MonoBehaviour
 	public void PlayerActionObsPuzzle()
 	{
 		this.SwitchPlayerAction(_obsPuzzle);
+		this._obsPuzzle.InitializeValues(this);
 	}
 
 	IEnumerator IntoHide()

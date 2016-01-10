@@ -5,6 +5,9 @@ public class TurnOffLights : MonoBehaviour
 {
 	void Start()
 	{
-		this.GetComponentInChildren<Light>().enabled = false;
+		if (GameDirector.instance.GetGameState() != GameStates.Suit)
+		{
+			this.GetComponentInChildren<Light>().enabled = false;
+		}
 	}
 }

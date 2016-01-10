@@ -9,7 +9,7 @@ public class ChangeObjectiveObservatory : MonoBehaviour
 	void Start()
 	{
 		sewer = GameObject.Find ("SewerGate");
-		puzzle = GameObject.Find("PortToHubFromPuzzle");
+		puzzle = GameObject.Find("PortToPuzzle");
 	}
 	
 	void OnTriggerEnter(Collider player)
