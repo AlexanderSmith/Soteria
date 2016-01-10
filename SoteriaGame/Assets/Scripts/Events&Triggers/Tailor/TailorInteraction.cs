@@ -39,7 +39,6 @@ public class TailorInteraction : MonoBehaviour
 //		GameDirector.instance.ObservatoryCardCollected (this._observatoryDistrictCard);
 		if (!GameDirector.instance.GetFirstTailorInteraction())
 		{
-			GameDirector.instance.ChangeObjective(GameObject.Find("TailorDialogueLocation"));
 			this._tailorFirstDialogue.SetActive(true);
 			GameDirector.instance.TailorSpokenTo();
 		}

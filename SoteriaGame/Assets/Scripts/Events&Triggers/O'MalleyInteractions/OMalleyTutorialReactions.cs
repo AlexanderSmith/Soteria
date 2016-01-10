@@ -18,6 +18,7 @@ public class OMalleyTutorialReactions : Reaction
 		{
 			GameDirector.instance.ClearAudioList();
 			GameDirector.instance.CheckLantern();
+			GameDirector.instance.SuitRemoved();
 			Application.LoadLevel("HubPass3");
 		}
 		else if (_failed)

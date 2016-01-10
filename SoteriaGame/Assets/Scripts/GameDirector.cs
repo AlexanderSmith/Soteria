@@ -520,6 +520,16 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._musicPuzzleActivated = true;
 	}
+
+	public bool GetObsActivated()
+	{
+		return this._observatoryPuzzleActivated;
+	}
+
+	public void ObsPuzzleActivated()
+	{
+		this._observatoryPuzzleActivated = true;
+	}
 	
 	#endregion
 

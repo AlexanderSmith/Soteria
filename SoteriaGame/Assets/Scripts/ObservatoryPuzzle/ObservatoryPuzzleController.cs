@@ -51,15 +51,14 @@ public class ObservatoryPuzzleController : MonoBehaviour
 
 	public void Initialize()
 	{
-		if (!GameDirector.instance.GetFirstTimeObservatory())
+		if (GameDirector.instance.ObsPuzzleActivated())
 		{
-			GameDirector.instance.FirstTimeObservatoryPuzzle();
-			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("AnaEnteringObservPuzzFirstTime");
-			GameDirector.instance.StartDialogue();
 		}
 		else
 		{
+			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetupDialogue("AnaEnteringObservPuzzFirstTime");
+			GameDirector.instance.StartDialogue();
 		}
 	}
 
