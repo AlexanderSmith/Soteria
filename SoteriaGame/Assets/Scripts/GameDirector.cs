@@ -795,6 +795,29 @@ public class GameDirector : MonoBehaviour {
 		}
 	}
 
+	public void ObsPuzzleEncounter()
+	{
+		this._encounterManager.ObsPuzzleEncounter();
+	}
+
+	public void StartObsPuzzleEncounter()
+	{
+		if (this._stateManager.GameState() != GameStates.Encounter) 
+		{
+			this._stateManager.ChangeGameState (GameStates.Encounter);
+		}
+		this._HUDManager.EnableEncounterView();
+		this.SetClearStatus(false);
+		if (this._canFight)
+		{
+			this._player.PlayerActionObsPuzzle();
+		}
+		else
+		{
+			this._player.PlayerActionNoFighting();
+		}
+	}
+
 	public void TakeSafteyLight()
 	{
 		if (!this._tokenUsed)

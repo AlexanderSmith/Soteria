@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
 	private IPlayerAction _noFighting = new PlayerActionNoFight();
 	private IPlayerAction _cardPickup = new PlayerActionCardPickup();
 	private IPlayerAction _musicPuzzle = new PlayerActionMusicPuzzle();
+	private IPlayerAction _obsPuzzle = new PlayerActionObsPuzzle();
 
 	public PlayerState  playerState;
 
@@ -105,6 +106,11 @@ public class Player : MonoBehaviour
 	{
 		this.SwitchPlayerAction(_musicPuzzle);
 		_musicPuzzle.InitializeValues(this);
+	}
+
+	public void PlayerActionObsPuzzle()
+	{
+		this.SwitchPlayerAction(_obsPuzzle);
 	}
 
 	IEnumerator IntoHide()

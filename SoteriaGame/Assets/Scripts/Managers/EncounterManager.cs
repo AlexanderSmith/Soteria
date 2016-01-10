@@ -253,4 +253,19 @@ public class EncounterManager : MonoBehaviour
 		this.currentEnemy = enemy;
 		GameDirector.instance.StartMusicPuzzleEncounter();
 	}
+
+	public void ObsPuzzleEncounter()
+	{
+		if (this.currentState == EncounterState.INACTIVE)
+		{
+			this.currentState = EncounterState.ACTIVE;
+			this.StartObsPuzzleEncounter();
+			GameDirector.instance.GetPlayer().AddFear();
+		}
+	}
+
+	void StartObsPuzzleEncounter()
+	{
+		GameDirector.instance.StartObsPuzzleEncounter();
+	}
 }
