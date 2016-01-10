@@ -1,15 +1,17 @@
 fileFormatVersion: 2
-guid: 02d59ed2b39125b4eafaf630f9c76465
-timeCreated: 1449956931
-licenseType: Free
+guid: 3775e5c287747564db15eea3fb3a5d84
+timeCreated: 1452365904
+licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: //RootNode
-    400000: //RootNode
-    2300000: //RootNode
-    3300000: //RootNode
-    4300000: EyeBallLamp_Top6
+    100000: EyeBallLamp_Top5
+    100002: //RootNode
+    400000: EyeBallLamp_Top5
+    400002: //RootNode
+    2300000: EyeBallLamp_Top5
+    3300000: EyeBallLamp_Top5
+    4300000: EyeBallLamp_Top5
     9500000: //RootNode
   materials:
     importMaterials: 1
