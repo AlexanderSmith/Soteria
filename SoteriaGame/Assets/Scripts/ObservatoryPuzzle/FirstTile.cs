@@ -12,9 +12,12 @@ public class FirstTile : MonoBehaviour
 
 	void OnTriggerEnter(Collider player)
 	{
-		if (player.gameObject.tag == "Player" && !this._controller.GetOffPath())
+		if (GameDirector.instance.GetGameState() != GameStates.Suit)
 		{
-			this._controller.EnableTileCtrLight();
+			if (player.gameObject.tag == "Player" && !this._controller.GetOffPath())
+			{
+				this._controller.EnableTileCtrLight();
+			}
 		}
 	}
 }

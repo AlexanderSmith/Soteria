@@ -7,20 +7,25 @@ public class ObservatoryPuzzleController : MonoBehaviour
 	private GameObject _doorEncounter1;
 	private GameObject _doorEncounter2;
 	private GameObject _doorEncounter3;
+	private GameObject _reset;
+	private GameObject _oMalley;
 
 	public GameObject tileUp;
 	public GameObject tileDown;
 	public GameObject tileLeft;
 	public GameObject tileRight;
 	public GameObject tileCtr;
+	public GameObject lastTile;
 
 	private bool _offPath;
 	private int _timesFailed;
 
+	private int _doorEncountersWon;
+
 	private GameObject[] _lights;
 
 	// Use this for initialization
-	void Start ()
+	void Awake()
 	{
 		tileUp.GetComponentInChildren<Light>().enabled = false;
 		tileDown.GetComponentInChildren<Light>().enabled = false;
@@ -34,6 +39,40 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		_doorEncounter3 = GameObject.Find("DoorEncounter3");
 		_doorEncounter3.SetActive(false);
 		this._lights = GameObject.FindGameObjectsWithTag("TileLight");
+		this._timesFailed = 0;
+		this._doorEncountersWon = 0;
+		this._reset = GameObject.Find("PortToEntrance");
+		this._oMalley = GameObject.Find("O'Malley3Fails");
+		this._oMalley.SetActive(false);
+
+		// Testing
+		//GameDirector.instance.SuitRemoved();
+	}
+
+	public void Initialize()
+	{
+		if (!GameDirector.instance.GetFirstTimeObservatory())
+		{
+			GameDirector.instance.FirstTimeObservatoryPuzzle();
+			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetupDialogue("AnaEnteringObservPuzzFirstTime");
+			GameDirector.instance.StartDialogue();
+		}
+		else
+		{
+		}
+	}
+
+	void OnTriggerStay(Collider player)
+	{
+		if (player.gameObject.tag == "Player")
+		{
+			if (!GameDirector.instance.isDialogueActive())
+			{
+				this.gameObject.GetComponent<BoxCollider>().enabled = false;
+				GameDirector.instance.GetPlayer().PlayerActionNormal();
+			}
+		}
 	}
 	
 	public void EnableTileUpLight()
@@ -93,6 +132,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 	public void OffPath()
 	{
 		this._offPath = true;
+		this.lastTile.GetComponent<BoxCollider>().enabled = false;
 	}
 
 	public bool GetOffPath()
@@ -107,6 +147,15 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		_doorEncounter3.SetActive(true);
 	}
 
+	public void DoorEncounterWon()
+	{
+		this._doorEncountersWon++;
+		if (this._doorEncountersWon >= 3)
+		{
+			this._reset.GetComponent<BoxCollider>().enabled = false;
+		}
+	}
+
 	public void TickFail()
 	{
 		foreach(GameObject light in this._lights)
@@ -114,10 +163,11 @@ public class ObservatoryPuzzleController : MonoBehaviour
 			light.GetComponentInChildren<Light>().enabled = false;
 			light.GetComponent<BoxCollider>().enabled = true;
 		}
+		this._doorEncountersWon = 0;
 		this._timesFailed++;
-		if (this._timesFailed >= 3)
+		if (this._timesFailed == 3)
 		{
-			//Spawn O'Malley
+			this._oMalley.SetActive(true);
 		}
 	}
 }

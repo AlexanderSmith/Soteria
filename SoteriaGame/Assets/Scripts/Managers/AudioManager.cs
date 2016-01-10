@@ -221,6 +221,7 @@ public enum AudioID
 	AnaHubBeforeEnteringDistrict,
 	AnaMusicGateRattleResponseOne,
 	AnaMusicGateRattleResponseTwo,
+	AnaObservPuzzAtDoorSuit,
 	AnaObservPuzzFirstLinger,
 	AnaObservPuzzSecondLinger,
 	AnaObservPuzzThirdLinger,

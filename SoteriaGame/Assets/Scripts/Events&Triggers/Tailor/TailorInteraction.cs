@@ -39,6 +39,7 @@ public class TailorInteraction : MonoBehaviour
 //		GameDirector.instance.ObservatoryCardCollected (this._observatoryDistrictCard);
 		if (!GameDirector.instance.GetFirstTailorInteraction())
 		{
+			GameDirector.instance.ChangeObjective(GameObject.Find("TailorDialogueLocation"));
 			this._tailorFirstDialogue.SetActive(true);
 			GameDirector.instance.TailorSpokenTo();
 		}
@@ -46,6 +47,7 @@ public class TailorInteraction : MonoBehaviour
 		{
 			if (GameDirector.instance.CardsHeld() == 3)
 			{
+				GameDirector.instance.ChangeObjective(GameObject.Find("TailorDialogueLocation"));
 				this._cardsCorrect = GameDirector.instance.CheckCards(this._musicDistrictCard, this._theaterDistrictCard, this._observatoryDistrictCard);
 				tailorLight.GetComponent<Light>().enabled = true;
 				if (this._cardsCorrect)

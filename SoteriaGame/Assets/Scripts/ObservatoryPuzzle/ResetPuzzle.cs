@@ -16,8 +16,29 @@ public class ResetPuzzle : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			_controller.GetComponent<ObservatoryPuzzleController>().TickFail();
-			GameDirector.instance.GetPlayer().gameObject.transform.position = this._start.position;
+			if (GameDirector.instance.GetGameState() == GameStates.Suit)
+			{
+				GameDirector.instance.GetPlayer().PlayerActionPause();
+				GameDirector.instance.SetupDialogue("AnaObservPuzzAtDoorSuit");
+				GameDirector.instance.StartDialogue();
+			}
+			else
+			{
+				_controller.GetComponent<ObservatoryPuzzleController>().TickFail();
+				GameDirector.instance.GetPlayer().gameObject.transform.position = this._start.position;
+			}
+		}
+	}
+
+	void OnTriggerStay(Collider player)
+	{
+		if (player.gameObject.tag == "Player")
+		{
+			if (GameDirector.instance.GetGameState() == GameStates.Suit && !GameDirector.instance.isDialogueActive())
+			{
+				this.gameObject.GetComponent<BoxCollider>().enabled = false;
+				GameDirector.instance.GetPlayer().PlayerActionNormal();
+			}
 		}
 	}
 }

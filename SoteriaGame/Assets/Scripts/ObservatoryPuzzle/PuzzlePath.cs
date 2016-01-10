@@ -39,62 +39,68 @@ public class PuzzlePath : MonoBehaviour
 		_currentPath.next = path1next;
 		_currentPath.prev = path1prev;
 		_controller = GameObject.Find("ObsPuzzleController").GetComponent<ObservatoryPuzzleController>();
-		this.GetComponentInChildren<Light>().enabled = false;
+		if (GameDirector.instance.GetGameState() != GameStates.Suit)
+		{
+			this.GetComponentInChildren<Light>().enabled = false;
+		}
 	}
 
 	void OnTriggerEnter(Collider player)
 	{
-		if (player.gameObject.tag == "Player" && !this._controller.GetOffPath())
+		if (GameDirector.instance.GetGameState() != GameStates.Suit)
 		{
-			this.GetComponentInChildren<Light>().enabled = false;
-			if (_currentPath.next != ActiveLights.none)
+			if (player.gameObject.tag == "Player" && !this._controller.GetOffPath())
 			{
-				if (_currentPath.next == ActiveLights.up || _currentPath.prev == ActiveLights.up)
+				this.GetComponentInChildren<Light>().enabled = false;
+				if (_currentPath.next != ActiveLights.none)
 				{
-					this._controller.EnableTileUpLight();
+					if (_currentPath.next == ActiveLights.up || _currentPath.prev == ActiveLights.up)
+					{
+						this._controller.EnableTileUpLight();
+					}
+					else
+					{
+						this._controller.DisableTileUpLight();
+					}
+					if (_currentPath.next == ActiveLights.down || _currentPath.prev == ActiveLights.down)
+					{
+						this._controller.EnableTileDownLight();
+					}
+					else
+					{
+						this._controller.DisableTileDownLight();
+					}
+					if (_currentPath.next == ActiveLights.left || _currentPath.prev == ActiveLights.left)
+					{
+						this._controller.EnableTileLeftLight();
+					}
+					else
+					{
+						this._controller.DisableTileLeftLight();
+					}
+					if (_currentPath.next == ActiveLights.right || _currentPath.prev == ActiveLights.right)
+					{
+						this._controller.EnableTileRightLight();
+					}
+					else
+					{
+						this._controller.DisableTileRightLight();
+					}
 				}
 				else
 				{
-					this._controller.DisableTileUpLight();
+					this._controller.OffPath();
+					this._controller.DisableAllLights();
+					this._controller.EnableDoorEncounters();
+					GameDirector.instance.ObsPuzzleEncounter();
 				}
-				if (_currentPath.next == ActiveLights.down || _currentPath.prev == ActiveLights.down)
-				{
-					this._controller.EnableTileDownLight();
-				}
-				else
-				{
-					this._controller.DisableTileDownLight();
-				}
-				if (_currentPath.next == ActiveLights.left || _currentPath.prev == ActiveLights.left)
-				{
-					this._controller.EnableTileLeftLight();
-				}
-				else
-				{
-					this._controller.DisableTileLeftLight();
-				}
-				if (_currentPath.next == ActiveLights.right || _currentPath.prev == ActiveLights.right)
-				{
-					this._controller.EnableTileRightLight();
-				}
-				else
-				{
-					this._controller.DisableTileRightLight();
-				}
-			}
-			else
-			{
-				this._controller.OffPath();
-				this._controller.DisableAllLights();
-				this._controller.EnableDoorEncounters();
-				GameDirector.instance.ObsPuzzleEncounter();
 			}
 		}
 	}
 
 	void OnTriggerExit(Collider player)
 	{
-		if (player.gameObject.tag == "Player")
+		if (player.gameObject.tag == "Player" && GameDirector.instance.GetGameState() != GameStates.Suit)
 		{
 			this.GetComponentInChildren<Light>().enabled = false;
 		}

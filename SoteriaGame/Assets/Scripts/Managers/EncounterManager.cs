@@ -69,6 +69,13 @@ public class EncounterManager : MonoBehaviour
 		this.EncounterReset();
     }
 
+	public void StopPuzzleEncounter()
+	{
+		GameDirector.instance.GetPlayer().RemoveFear();
+		GameDirector.instance.StopEncounterMode();
+		this.EncounterReset();
+	}
+
 	public void StopEncounterFromItem()
 	{
 		GameDirector.instance.GetPlayer().RemoveFear();
@@ -142,6 +149,11 @@ public class EncounterManager : MonoBehaviour
 	public void PlayerOvercame()
 	{
 		this.StopEncounter();
+	}
+
+	public void PuzzleOvercome()
+	{
+		this.StopPuzzleEncounter();
 	}
 
 	public void DestroyMe()

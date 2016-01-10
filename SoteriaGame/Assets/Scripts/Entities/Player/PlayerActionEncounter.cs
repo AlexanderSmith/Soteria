@@ -18,7 +18,7 @@ public class PlayerActionEncounter : IPlayerAction
 
 	public void PlayerAction(Player inPlayer)
 	{
-		this.InitializeValues(inPlayer);
+		//this.InitializeValues(inPlayer);
 //		this.ProcessInput();
 //		if (_preLinger)
 //		{
