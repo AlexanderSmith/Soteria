@@ -6,7 +6,8 @@ public enum ActiveLights
 	up,
 	down,
 	left,
-	right
+	right,
+	none
 };
 
 struct CurrentPath
@@ -29,51 +30,61 @@ public class PuzzlePath : MonoBehaviour
 	public GameObject tileLeft;
 	public GameObject tileRight;
 
+	private ObservatoryPuzzleController _controller;
+
 	CurrentPath _currentPath;
 
 	void Start()
 	{
 		_currentPath.next = path1next;
 		_currentPath.prev = path1prev;
+		_controller = GameObject.Find("ObsPuzzleController").GetComponent<ObservatoryPuzzleController>();
 	}
 
 	void OnTriggerEnter(Collider player)
 	{
-		if (player.gameObject.tag == "Player")
+		if (player.gameObject.tag == "Player" && !this._controller.GetOffPath())
 		{
+			if (_currentPath.next != ActiveLights.none)
 			{
 				if (_currentPath.next == ActiveLights.up || _currentPath.prev == ActiveLights.up)
 				{
-					tileUp.GetComponentInChildren<Light>().enabled = true;
+					this._controller.EnableTileUpLight();
 				}
 				else
 				{
-					tileUp.GetComponentInChildren<Light>().enabled = false;
+					this._controller.DisableTileUpLight();
 				}
 				if (_currentPath.next == ActiveLights.down || _currentPath.prev == ActiveLights.down)
 				{
-					tileDown.GetComponentInChildren<Light>().enabled = true;
+					this._controller.EnableTileDownLight();
 				}
 				else
 				{
-					tileDown.GetComponentInChildren<Light>().enabled = false;
+					this._controller.DisableTileDownLight();
 				}
 				if (_currentPath.next == ActiveLights.left || _currentPath.prev == ActiveLights.left)
 				{
-					tileLeft.GetComponentInChildren<Light>().enabled = true;
+					this._controller.EnableTileLeftLight();
 				}
 				else
 				{
-					tileLeft.GetComponentInChildren<Light>().enabled = false;
+					this._controller.DisableTileLeftLight();
 				}
 				if (_currentPath.next == ActiveLights.right || _currentPath.prev == ActiveLights.right)
 				{
-					tileRight.GetComponentInChildren<Light>().enabled = true;
+					this._controller.EnableTileRightLight();
 				}
 				else
 				{
-					tileRight.GetComponentInChildren<Light>().enabled = false;
+					this._controller.DisableTileRightLight();
 				}
+			}
+			else
+			{
+				this._controller.OffPath();
+				this._controller.DisableAllLights();
+				this._controller.EnableDoorEncounters();
 			}
 		}
 	}

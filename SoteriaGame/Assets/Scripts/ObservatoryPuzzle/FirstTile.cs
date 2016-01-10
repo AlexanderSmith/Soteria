@@ -3,14 +3,18 @@ using System.Collections;
 
 public class FirstTile : MonoBehaviour
 {
+	private ObservatoryPuzzleController _controller;
 
-	public GameObject tileCtr;
+	void Start()
+	{
+		this._controller = GameObject.Find("ObsPuzzleController").GetComponent<ObservatoryPuzzleController>();
+	}
 
 	void OnTriggerEnter(Collider player)
 	{
-		if (player.gameObject.tag == "Player")
+		if (player.gameObject.tag == "Player" && !this._controller.GetOffPath())
 		{
-			tileCtr.GetComponentInChildren<Light>().enabled = true;
+			this._controller.EnableTileCtrLight();
 		}
 	}
 }
