@@ -28,7 +28,7 @@ public class OMalleyTutorialReactions : Reaction
 		else if (_succeeded)
 		{
 			_done = true;
-			this.transform.root.GetComponentInChildren<TriggerActions>().ClearScreen();
+			this.transform.root.GetComponentInChildren<TriggerActions>().OMalleyOnSCOff();
 			GameDirector.instance.GetDialogueFromReaction("AnaOMalleyAfterLingerSuccess", this.gameObject.transform.parent.gameObject);
 		}
 		else
