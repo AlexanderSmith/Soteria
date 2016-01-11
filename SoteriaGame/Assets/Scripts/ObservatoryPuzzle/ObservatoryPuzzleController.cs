@@ -51,7 +51,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 
 	public void Initialize()
 	{
-		if (GameDirector.instance.ObsPuzzleActivated())
+		if (GameDirector.instance.GetObsActivated())
 		{
 		}
 		else
