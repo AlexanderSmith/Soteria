@@ -1154,6 +1154,11 @@ public class GameDirector : MonoBehaviour {
 	
 	#region DialogueManager Methods
 
+	public void GetDialogueFromChoice(int iChoice)
+	{
+		this._dialoguemanager.GetDialogueFromChoice( iChoice );
+	}
+
 	public GameObject getDialogueInterface()
 	{
 		return null;

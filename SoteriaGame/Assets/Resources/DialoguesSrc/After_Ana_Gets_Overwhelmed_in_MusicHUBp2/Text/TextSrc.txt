@@ -7,6 +7,6 @@
 <b>O'Malley:</b> How did that make you feel?
 <b>Ana:</b> Embarrassed about the sound I made. Like I had done something forbidden. But also angry when that creature sucked the sound away. Powerless, too, because I couldn’t do anything about it. Just...really torn between wanting to let out the music and dreading it.
 <b>O'Malley:</b> Hm...maybe you should explore a little further. Learn more about this place and its dark secrets?
-<b>Ana:</b> I don’t know how more of this I can take.
+<b>Ana:</b> I don't know how more of this I can take.
 <b>O'Malley:</b> You want to live your dreams, yes?
-<b>Ana:</b> Yes, but there’s a limit to what I can stand! You didn’t see that monster. You don’t know what it was like.
+<b>Ana:</b> Yes, but there’s a limit to what I can stand! You didn't see that monster. You don't know what it was like.
