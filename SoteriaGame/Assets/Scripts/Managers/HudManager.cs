@@ -243,6 +243,7 @@ public class HudManager : MonoBehaviour {
 	private void FadeToClear()
 	{
 		_fadeinout.color = Color.Lerp(_fadeinout.color, Color.clear, clearSpeed);
+		this._puzzleFade.color = Color.Lerp (this._puzzleFade.color, Color.clear, clearSpeed);
 	}
 	
 	private void FadeToBlack()

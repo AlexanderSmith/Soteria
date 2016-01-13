@@ -521,6 +521,16 @@ public class GameDirector : MonoBehaviour {
 		this._musicPuzzleActivated = true;
 	}
 
+	public bool GetPuppetActivated()
+	{
+		return this._puppetPuzzleActivated;
+	}
+
+	public void PuppetPuzzleActivated()
+	{
+		this._puppetPuzzleActivated = true;
+	}
+
 	public bool GetObsActivated()
 	{
 		return this._observatoryPuzzleActivated;

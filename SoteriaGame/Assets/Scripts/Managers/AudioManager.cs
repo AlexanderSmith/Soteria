@@ -212,6 +212,7 @@ public enum AudioID
 	AnaEnteringMusicPuzzWithSuit,
 	AnaEnteringObservPuzzFirstTime,
 	AnaEnteringObservPuzzSecondTime,
+	AnaEnteringTheaterPuzzFirstTime,
 	AnaEnteringTheaterPuzzSecondTime,
 	AnaEnteringTheaterPuzzSuit,
 	AnaFailingLingerAgainstOMalley,
