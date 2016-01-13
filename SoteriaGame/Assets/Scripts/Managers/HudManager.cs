@@ -5,11 +5,13 @@ using System.Collections;
 public class HudManager : MonoBehaviour {
 
 	private Image _fadeinout;
+	private Image _puzzleFade;
+	private Color _clearFade;
 	public float blackSpeed = .15f;
 	public float clearSpeed = .15f;
 	public bool isToClear = true;
 	private bool _isonscreen;
-	private bool _maintaining;
+	private bool _puppetPuzzle;
 
 	private GameObject _hudinterface;
 	private ButtonController _coinController;
@@ -53,9 +55,12 @@ public class HudManager : MonoBehaviour {
 
 	public void Initialize()
 	{
+		this._clearFade = new Color(0, 0, 0, .01f);
 		this._hudinterface = GameObject.Find ("HUDInterface");
 		this._fadeinout = _hudinterface.transform.FindChild("FadeTexture").gameObject.GetComponent<Image>();
 		this._fadeinout.color = Color.clear;
+		this._puzzleFade = _hudinterface.transform.FindChild("PuppetPuzzleFade").gameObject.GetComponent<Image>();
+		this._puzzleFade.color = Color.clear;
 
 		this._onIndicator = _hudinterface.transform.FindChild("OnIndicator").gameObject.GetComponent<Image> ();
 		this._offIndicator = _hudinterface.transform.FindChild("OffIndicator").gameObject.GetComponent<Image> ();
@@ -181,8 +186,10 @@ public class HudManager : MonoBehaviour {
 	{
 		if (isToClear)
 			FadeToClear ();
-		else if (!isToClear && _maintaining)
-			MaintainFade();
+		else if (!isToClear && _puppetPuzzle)
+		{
+			FadeToWhite();
+		}
 		else
 			FadeToBlack ();
 	}
@@ -225,7 +232,12 @@ public class HudManager : MonoBehaviour {
 
 	public void EncounterClear()
 	{
-		_fadeinout.color -= new Color (0, 0, 0, .01f);
+		_fadeinout.color -= this._clearFade;
+	}
+
+	public void PuppetPuzzleEncounterClear()
+	{
+		this._puzzleFade.color -= this._clearFade;
 	}
 
 	private void FadeToClear()
@@ -242,25 +254,18 @@ public class HudManager : MonoBehaviour {
 		}
 	}
 
-	private void MaintainFade()
+	private void FadeToWhite()
 	{
-		_fadeinout.color = _fadeinout.color;
+		this._puzzleFade.color = Color.Lerp (this._puzzleFade.color, Color.white, blackSpeed * Time.deltaTime);
+		if (this._puzzleFade.color.a >= .8f && !GameDirector.instance.IsTokenUsed())
+		{
+			GameDirector.instance.EncounterOver();
+		}
 	}
 
 	public void OMalleyFadeTrue()
 	{
 		this._fadeinout.gameObject.SetActive(true);
-	}
-
-	public void Maintaining()
-	{
-		_maintaining = true;
-	}
-
-	public void OMalleyFadeFalse()
-	{
-		FadeToClear();
-		_maintaining = false;
 	}
 
 	public void EnableEncounterView()
@@ -271,11 +276,22 @@ public class HudManager : MonoBehaviour {
 			this._coinController.Pulsing = true;
 		}
 	}
+
+	public void EnablePuppetPuzzleEncounterView()
+	{
+		this._puzzleFade.gameObject.SetActive(true);
+		this._puppetPuzzle = true;
+		if (this._token.activeSelf == true)
+		{
+			this._coinController.Pulsing = true;
+		}
+	}
 	
 	public void DisableEncounterView()
 	{
 		//this._fadeinout.gameObject.SetActive (false);
 		this.isToClear = true;
+		this._puppetPuzzle = false;
 		this._coinController.Pulsing = false;
 	}
 

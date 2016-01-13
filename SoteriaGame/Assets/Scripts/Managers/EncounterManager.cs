@@ -266,6 +266,21 @@ public class EncounterManager : MonoBehaviour
 		GameDirector.instance.StartMusicPuzzleEncounter();
 	}
 
+	public void PuppetPuzzleEncounter()
+	{
+		if (this.currentState == EncounterState.INACTIVE)
+		{
+			this.currentState = EncounterState.ACTIVE;
+			this.StartPuppetPuzzleEncounter();
+			GameDirector.instance.GetPlayer().AddFear();
+		}
+	}
+
+	void StartPuppetPuzzleEncounter()
+	{
+		GameDirector.instance.StartPuppetPuzzleEncounter();
+	}
+
 	public void ObsPuzzleEncounter()
 	{
 		if (this.currentState == EncounterState.INACTIVE)
