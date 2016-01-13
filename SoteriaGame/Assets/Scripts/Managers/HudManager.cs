@@ -5,7 +5,6 @@ using System.Collections;
 public class HudManager : MonoBehaviour {
 
 	private Image _fadeinout;
-	private Image _puzzleFade;
 	private Color _clearFade;
 	public float blackSpeed = .15f;
 	public float clearSpeed = .15f;
@@ -59,8 +58,6 @@ public class HudManager : MonoBehaviour {
 		this._hudinterface = GameObject.Find ("HUDInterface");
 		this._fadeinout = _hudinterface.transform.FindChild("FadeTexture").gameObject.GetComponent<Image>();
 		this._fadeinout.color = Color.clear;
-		this._puzzleFade = _hudinterface.transform.FindChild("PuppetPuzzleFade").gameObject.GetComponent<Image>();
-		this._puzzleFade.color = Color.clear;
 
 		this._onIndicator = _hudinterface.transform.FindChild("OnIndicator").gameObject.GetComponent<Image> ();
 		this._offIndicator = _hudinterface.transform.FindChild("OffIndicator").gameObject.GetComponent<Image> ();
@@ -237,13 +234,12 @@ public class HudManager : MonoBehaviour {
 
 	public void PuppetPuzzleEncounterClear()
 	{
-		this._puzzleFade.color -= this._clearFade;
+		this._fadeinout.color -= this._clearFade;
 	}
 
 	private void FadeToClear()
 	{
 		_fadeinout.color = Color.Lerp(_fadeinout.color, Color.clear, clearSpeed);
-		this._puzzleFade.color = Color.Lerp (this._puzzleFade.color, Color.clear, clearSpeed);
 	}
 	
 	private void FadeToBlack()
@@ -257,8 +253,8 @@ public class HudManager : MonoBehaviour {
 
 	private void FadeToWhite()
 	{
-		this._puzzleFade.color = Color.Lerp (this._puzzleFade.color, Color.white, blackSpeed * Time.deltaTime);
-		if (this._puzzleFade.color.a >= .8f && !GameDirector.instance.IsTokenUsed())
+		this._fadeinout.color = Color.Lerp (this._fadeinout.color, Color.white, blackSpeed * Time.deltaTime);
+		if (this._fadeinout.color.a >= .8f && !GameDirector.instance.IsTokenUsed())
 		{
 			GameDirector.instance.EncounterOver();
 		}
@@ -280,7 +276,7 @@ public class HudManager : MonoBehaviour {
 
 	public void EnablePuppetPuzzleEncounterView()
 	{
-		this._puzzleFade.gameObject.SetActive(true);
+		this._fadeinout.gameObject.SetActive(true);
 		this._puppetPuzzle = true;
 		if (this._token.activeSelf == true)
 		{

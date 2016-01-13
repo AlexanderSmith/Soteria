@@ -17,6 +17,7 @@ public class PuppetPuzzleSceneStart : MonoBehaviour
 		// Testing
 		//GameDirector.instance.SuitWorn();
 		//GameDirector.instance.FirstTimeObservatoryPuzzle();
+		GameDirector.instance.SuitRemoved();
 	}
 
 	void Start()

@@ -16,12 +16,6 @@ public class PuppetPuzzleController : MonoBehaviour
 		finalSpot.GetComponent<Light>().enabled = false;
 	}
 
-	void Start()
-	{
-//		GameDirector.instance.SuitRemoved();
-//		this.Initialize();
-	}
-
 	public void Initialize()
 	{
 		if (!GameDirector.instance.GetPuppetActivated())
