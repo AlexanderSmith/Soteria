@@ -34,6 +34,7 @@ public class MusicSewerDialogue : MonoBehaviour
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
 				_oMalleyPrefab.SetActive(true);
+				GameDirector.instance.ChangeObjective(_oMalleyPrefab);
 				GameDirector.instance.PlayAudioClip(AudioID.OMalleyMeow);
 				GameDirector.instance.GetPlayer().PlayerActionNormal();
 			}
