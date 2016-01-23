@@ -54,15 +54,15 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		if (!GameDirector.instance.GetObsActivated())
 		{
 			GameDirector.instance.ObsPuzzleActivated();
-			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("AnaEnteringObservPuzzFirstTime");
-			GameDirector.instance.StartDialogue();
+//			GameDirector.instance.GetPlayer().PlayerActionPause();
+//			GameDirector.instance.SetupDialogue("AnaEnteringObservPuzzFirstTime");
+//			GameDirector.instance.StartDialogue();
 		}
 	}
 
 	void OnTriggerStay(Collider player)
 	{
-		if (player.gameObject.tag == "Player")
+		if (player.gameObject.tag == "Player" && this._timesFailed > 0)
 		{
 			if (!GameDirector.instance.isDialogueActive())
 			{
@@ -162,7 +162,13 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		}
 		this._doorEncountersWon = 0;
 		this._timesFailed++;
-		if (this._timesFailed == 3)
+		if (this._timesFailed == 1 && GameDirector.instance.GetGameState() == GameStates.Suit)
+		{
+			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetupDialogue("AnaObservPuzzAtDoorSuit");
+			GameDirector.instance.StartDialogue();
+		}
+		else if (this._timesFailed == 3)
 		{
 			this._oMalley.SetActive(true);
 		}

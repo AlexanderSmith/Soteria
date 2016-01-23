@@ -16,17 +16,8 @@ public class ResetPuzzle : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			if (GameDirector.instance.GetGameState() == GameStates.Suit)
-			{
-				GameDirector.instance.GetPlayer().PlayerActionPause();
-				GameDirector.instance.SetupDialogue("AnaObservPuzzAtDoorSuit");
-				GameDirector.instance.StartDialogue();
-			}
-			else
-			{
-				_controller.GetComponent<ObservatoryPuzzleController>().TickFail();
-				GameDirector.instance.GetPlayer().gameObject.transform.position = this._start.position;
-			}
+			_controller.GetComponent<ObservatoryPuzzleController>().TickFail();
+			GameDirector.instance.GetPlayer().gameObject.transform.position = this._start.position;
 		}
 	}
 
