@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PuppetPuzzleController : MonoBehaviour
 {
+	private GameObject _intro;
+
 	public GameObject leftSpot;
 	public GameObject backSpot;
 	public GameObject rightSpot;
@@ -11,9 +13,15 @@ public class PuppetPuzzleController : MonoBehaviour
 	void Awake()
 	{
 		leftSpot.GetComponent<Light>().enabled = false;
+		leftSpot.GetComponent<SphereCollider>().enabled = false;
 		backSpot.GetComponent<Light>().enabled = false;
+		backSpot.GetComponent<SphereCollider>().enabled = false;
 		rightSpot.GetComponent<Light>().enabled = false;
+		rightSpot.GetComponent<SphereCollider>().enabled = false;
 		finalSpot.GetComponent<Light>().enabled = false;
+		finalSpot.GetComponent<SphereCollider>().enabled = false;
+		this._intro = GameObject.Find("PuppetPuzzleIntro");
+		this._intro.SetActive(false);
 	}
 
 	public void Initialize()
@@ -21,9 +29,7 @@ public class PuppetPuzzleController : MonoBehaviour
 		if (!GameDirector.instance.GetPuppetActivated())
 		{
 			GameDirector.instance.PuppetPuzzleActivated();
-			GameDirector.instance.GetPlayer().PlayerActionPause();
-			GameDirector.instance.SetupDialogue("AnaEnteringTheaterPuzzFirstTime");
-			GameDirector.instance.StartDialogue();
+			this._intro.SetActive(true);
 		}
 		else
 		{
@@ -31,17 +37,10 @@ public class PuppetPuzzleController : MonoBehaviour
 		}
 	}
 
-	void OnTriggerStay(Collider player)
+	public void LeftLightOn()
 	{
-		if (player.gameObject.tag == "Player")
-		{
-			if (!GameDirector.instance.isDialogueActive())
-			{
-				this.gameObject.GetComponent<BoxCollider>().enabled = false;
-				GameDirector.instance.GetPlayer().PlayerActionNormal();
-				leftSpot.GetComponent<Light>().enabled = true;
-			}
-		}
+		leftSpot.GetComponent<Light>().enabled = true;
+		leftSpot.GetComponent<SphereCollider>().enabled = true;
 	}
 
 	public void LightEncounter(GameObject light)
@@ -49,6 +48,7 @@ public class PuppetPuzzleController : MonoBehaviour
 		if (light != null)
 		{
 			light.GetComponent<Light>().enabled = true;
+			light.GetComponent<SphereCollider>().enabled = true;
 		}
 		else
 		{
