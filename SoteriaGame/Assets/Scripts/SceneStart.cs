@@ -11,4 +11,10 @@ public class SceneStart : MonoBehaviour
 		GameObject player = Instantiate(playerPrefab, playerSpawnLoc.position, playerSpawnLoc.rotation) as GameObject;
 		GameDirector.instance.InitializePlayer();
 	}
+
+	//Encounter hack
+	void Start()
+	{
+		//GameDirector.instance.SuitRemoved();
+	}
 }
