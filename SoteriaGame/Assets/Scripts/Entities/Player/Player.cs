@@ -73,6 +73,7 @@ public class Player : MonoBehaviour
 	public void PlayerActionEncounter()
 	{
 		this.SwitchPlayerAction(_encounterAction);
+		_encounterAction.InitializeValues(this);
 	}
 
 	public void PlayerActionNormal()
