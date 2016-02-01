@@ -63,6 +63,9 @@ public class GameDirector : MonoBehaviour {
 	private bool _theaterPuzzleSuit;
 	private bool _observatoryPuzzleSuit;
 
+	// Totorial complete
+	private bool _tutorial;
+
 	public float flashBangLife = 3.0f;
 	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
 	public float flashBangDistance = 3.0f;
@@ -139,6 +142,7 @@ public class GameDirector : MonoBehaviour {
 		this._musicPuzzleActivated = false;
 		this._puppetPuzzleActivated = false;
 		this._observatoryPuzzleActivated = false;
+		this._tutorial = false;
 	}
 	
 	private void InitializeManagers()
@@ -539,6 +543,16 @@ public class GameDirector : MonoBehaviour {
 	public void ObsPuzzleActivated()
 	{
 		this._observatoryPuzzleActivated = true;
+	}
+
+	public bool IsTutorialComplete()
+	{
+		return this._tutorial;
+	}
+
+	public void TutorialCompleted()
+	{
+		this._tutorial = true;
 	}
 	
 	#endregion
