@@ -66,6 +66,11 @@ public class GameDirector : MonoBehaviour {
 	// Totorial complete
 	private bool _tutorial;
 
+	// Puzzles defeated for pass 4
+	private bool _musicDefeated;
+	private bool _theaterDefeated;
+	private bool _observatoryDefeated;
+
 	public float flashBangLife = 3.0f;
 	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
 	public float flashBangDistance = 3.0f;
@@ -553,6 +558,36 @@ public class GameDirector : MonoBehaviour {
 	public void TutorialCompleted()
 	{
 		this._tutorial = true;
+	}
+
+	public bool IsMusicDefeated()
+	{
+		return this._musicDefeated;
+	}
+
+	public void MusicPuzzleDefeated()
+	{
+		this._musicDefeated = true;
+	}
+
+	public bool IsTheaterDefeated()
+	{
+		return this._theaterDefeated;
+	}
+
+	public void TheaterPuzzleDefeated()
+	{
+		this._theaterDefeated = true;
+	}
+
+	public bool IsObservatoryDefeated()
+	{
+		return this._observatoryDefeated;
+	}
+
+	public void ObservatoryPuzzleDefeated()
+	{
+		this._observatoryDefeated = true;
 	}
 	
 	#endregion
@@ -1196,6 +1231,16 @@ public class GameDirector : MonoBehaviour {
 	public float GetVolume(AudioID inAID)
 	{
 		return this._audioManager.GetVolume(inAID);
+	}
+
+	public void FadeIn(AudioID inAID)
+	{
+		this._audioManager.FadeIn(inAID);
+	}
+
+	public void FadeOut(AudioID inAID)
+	{
+		this._audioManager.FadeOut(inAID);
 	}
 	
 	#endregion

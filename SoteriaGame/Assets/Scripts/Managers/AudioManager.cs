@@ -10,7 +10,9 @@ public class AudioManager : MonoBehaviour
 
 	AudioSourceWrapper DiagAudioSrc;
 
-	Timer fadeTimer;
+	Timer puzzlefadeTimer;
+	Timer fadeInTimer;
+	Timer fadeOutTimer;
 	
 	private List<AudioSourceWrapper> _audioSourceList;
 	
@@ -20,6 +22,8 @@ public class AudioManager : MonoBehaviour
 		this.enabled = false;
 		_audioSourceList = new List<AudioSourceWrapper>();
 		//TimerManager.instance.Attach(fadeTimer, TimersType.Puzzle);
+		fadeInTimer = TimerManager.instance.Attach(TimersType.FadeIn);
+		fadeOutTimer = TimerManager.instance.Attach(TimersType.FadeOut);
 	}
 	
 	public void AddAudioSource(string inClipName, AudioID inAID, GameObject inGameObj)
@@ -160,14 +164,36 @@ public class AudioManager : MonoBehaviour
 	{
 		// if not elapsed time then fade
 		// lerp volume, don't call below
-		FindAudioSrcbyID (inAID).fadeOut();
+		//FindAudioSrcbyID (inAID).fadeOut();
+		float volume = FindAudioSrcbyID (inAID).getVolume();
+		fadeOutTimer.StartTimer();
+		if (fadeOutTimer.ElapsedTime() <= 5.0f)
+		{
+			volume = Mathf.Lerp (volume, 0.0f, Time.deltaTime);
+			FadeOut(inAID);
+		}
+		else
+		{
+			fadeOutTimer.ResetTimer();
+		}
 	}
 
 	public void FadeIn(AudioID inAID)
 	{
 		// if not elapsed time then fade
 		// lerp volume
-		FindAudioSrcbyID (inAID).fadeIn();
+		//FindAudioSrcbyID (inAID).fadeIn();
+		float volume = FindAudioSrcbyID (inAID).getVolume();
+		fadeInTimer.StartTimer();
+		if (fadeInTimer.ElapsedTime() <= 5.0f)
+		{
+			volume = Mathf.Lerp (volume, 1.0f, Time.deltaTime);
+			FadeIn(inAID);
+		}
+		else
+		{
+			fadeInTimer.ResetTimer();
+		}
 	}
 }
 

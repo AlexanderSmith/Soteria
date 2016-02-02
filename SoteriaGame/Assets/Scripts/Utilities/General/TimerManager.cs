@@ -14,7 +14,9 @@ public enum TimersType
 	Generic = 0,
 	TutorialLinger,
 	TutorialEvent,
-	Encounter
+	Encounter,
+	FadeIn,
+	FadeOut
 }
 /// <summary>
 /// The Actual manager that takes care of the Timers.

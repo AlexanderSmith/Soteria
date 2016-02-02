@@ -9,6 +9,7 @@ public class HubSuitObjective : MonoBehaviour
 	public GameObject hubToTheater;
 	public GameObject hubToObservatory;
 	public GameObject oMalley;
+	public GameObject soteriaStatue;
 
 	private bool _music;
 	private bool _theater;
@@ -26,9 +27,6 @@ public class HubSuitObjective : MonoBehaviour
 	*****************************************************************************/
 	void Awake()
 	{
-		this._music = GameDirector.instance.GetMusicPuzzleVisitedSuit();
-		this._theater = GameDirector.instance.GetTheaterPuzzleVisitedSuit();
-		this._observatory = GameDirector.instance.GetObservatoryPuzzleVisitedSuit();
 		this._oMalleySuitOff = GameObject.Find("O'MalleySuitOff");
 
 		// Testing code
@@ -47,11 +45,19 @@ public class HubSuitObjective : MonoBehaviour
 		else
 		{
 			this._oMalleySuitOff.SetActive(false);
+			if (GameDirector.instance.IsTutorialComplete())
+			{
+				DeterminePass4Objective();
+			}
 		}
 	}
 
 	void DetermineObjective()
 	{
+		this._music = GameDirector.instance.GetMusicPuzzleVisitedSuit();
+		this._theater = GameDirector.instance.GetTheaterPuzzleVisitedSuit();
+		this._observatory = GameDirector.instance.GetObservatoryPuzzleVisitedSuit();
+
 		this._toMusic = !this._music;
 		this._toTheater = this._music && !this._theater;
 		this._toObservatory = this._music && this._theater && !this._observatory;
@@ -78,5 +84,36 @@ public class HubSuitObjective : MonoBehaviour
 		}
 
 		GameDirector.instance.ChangeObjective(oMalley);
+	}
+
+	void DeterminePass4Objective()
+	{
+		this._music = GameDirector.instance.IsMusicDefeated();
+		this._theater = GameDirector.instance.IsTheaterDefeated();
+		this._observatory = GameDirector.instance.IsObservatoryDefeated();
+
+		this._toMusic = !this._music;
+		this._toTheater = this._music && !this._theater;
+		this._toObservatory = this._music && this._theater && !this._observatory;
+		
+		if (this._toMusic)
+		{
+			GameDirector.instance.ChangeObjective(hubToMusic);
+			return;
+		}
+		
+		if (this._toTheater)
+		{
+			GameDirector.instance.ChangeObjective(hubToTheater);
+			return;
+		}
+		
+		if (this._toObservatory)
+		{
+			GameDirector.instance.ChangeObjective(hubToObservatory);
+			return;
+		}
+		
+		GameDirector.instance.ChangeObjective(soteriaStatue);
 	}
 }
