@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PortToHub : MonoBehaviour
+public class PortToHubFromTheater : MonoBehaviour
 {
 	void OnTriggerEnter(Collider player)
 	{
@@ -9,7 +9,7 @@ public class PortToHub : MonoBehaviour
 		{
 			GameDirector.instance.CheckLantern();
 			GameDirector.instance.ClearAudioList();
-			GameDirector.instance.SetFromMusicDistrict();
+			GameDirector.instance.SetFromTheaterDistrict();
 			switch (GameDirector.instance.GetHubPhase())
 			{
 			case 5:

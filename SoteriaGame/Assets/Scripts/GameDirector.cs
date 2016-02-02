@@ -26,6 +26,12 @@ public class GameDirector : MonoBehaviour {
 	private bool _tokenUsed;
 	private bool _canFight;
 
+	// Zone transition bools
+	private bool _fromPuzzle;
+	private bool _fromMusicDistrict;
+	private bool _fromTheaterDistrict;
+	private bool _fromObservatoryDistrict;
+
 	// First time entering puzzle bools for O'Malley interactions
 	private bool _musicFirstTime;
 	private bool _theaterFirstTime;
@@ -211,6 +217,66 @@ public class GameDirector : MonoBehaviour {
 	///////////////////////////////////////////////////////////////////
 	
 	#region Game Progression
+
+	public bool GetFromPuzzle()
+	{
+		return this._fromPuzzle;
+	}
+
+	public void SetFromPuzzle()
+	{
+		this._fromPuzzle = true;
+	}
+
+	public void ResetFromPuzzle()
+	{
+		this._fromPuzzle = false;
+	}
+
+	public bool GetFromMusicDistrict()
+	{
+		return this._fromMusicDistrict;
+	}
+	
+	public void SetFromMusicDistrict()
+	{
+		this._fromMusicDistrict = true;
+	}
+	
+	public void ResetFromMusicDistrict()
+	{
+		this._fromMusicDistrict = false;
+	}
+
+	public bool GetFromTheaterDistrict()
+	{
+		return this._fromTheaterDistrict;
+	}
+	
+	public void SetFromTheaterDistrict()
+	{
+		this._fromTheaterDistrict = true;
+	}
+	
+	public void ResetFromTheaterDistrict()
+	{
+		this._fromTheaterDistrict = false;
+	}
+
+	public bool GetFromObservatoryDistrict()
+	{
+		return this._fromObservatoryDistrict;
+	}
+	
+	public void SetFromObservatoryDistrict()
+	{
+		this._fromObservatoryDistrict = true;
+	}
+	
+	public void ResetFromObservatoryDistrict()
+	{
+		this._fromObservatoryDistrict = false;
+	}
 	
 	public int GetGamePhase()
 	{

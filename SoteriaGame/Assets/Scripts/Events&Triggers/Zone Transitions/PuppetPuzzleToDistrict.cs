@@ -8,6 +8,7 @@ public class PuppetPuzzleToDistrict : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.ClearAudioList();
+			GameDirector.instance.SetFromPuzzle();
 			switch (GameDirector.instance.GetGamePhase())
 			{
 			case 1:

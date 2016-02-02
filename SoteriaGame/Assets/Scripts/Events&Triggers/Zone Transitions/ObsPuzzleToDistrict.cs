@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class MusicPuzzleToDistrict : MonoBehaviour
+public class ObsPuzzleToDistrict : MonoBehaviour
 {
 	void OnTriggerEnter(Collider player)
 	{
@@ -12,16 +12,16 @@ public class MusicPuzzleToDistrict : MonoBehaviour
 			switch (GameDirector.instance.GetGamePhase())
 			{
 			case 1:
-				Application.LoadLevel("MusicPass1");
+				Application.LoadLevel("ObservatoryPass1");
 				break;
 			case 2:
-				Application.LoadLevel("MusicPass2");
+				Application.LoadLevel("ObservatoryPass2");
 				break;
 			case 3:
-				Application.LoadLevel("MusicPass3");
+				Application.LoadLevel("ObservatoryPass3");
 				break;
 			case 4:
-				Application.LoadLevel("MusicPass4");
+				Application.LoadLevel("ObservatoryPass4");
 				break;
 			}
 		}

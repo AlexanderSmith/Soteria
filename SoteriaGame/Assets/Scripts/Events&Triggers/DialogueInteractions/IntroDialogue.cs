@@ -20,10 +20,10 @@ public class IntroDialogue : MonoBehaviour
 			if (!GameDirector.instance.isDialogueActive())
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
-				//GameDirector.instance.StopAudioClip(AudioID.BackgroundIntro);
-				//GameDirector.instance.ChangeVolume(AudioID.BackgroundHarbor, 1f);
-				GameDirector.instance.FadeOut(AudioID.BackgroundIntro);
-				GameDirector.instance.FadeIn(AudioID.BackgroundHarbor);
+				GameDirector.instance.StopAudioClip(AudioID.BackgroundIntro);
+				GameDirector.instance.ChangeVolume(AudioID.BackgroundHarbor, 1f);
+//				GameDirector.instance.FadeOut(AudioID.BackgroundIntro);
+//				GameDirector.instance.FadeIn(AudioID.BackgroundHarbor);
 				GameDirector.instance.GetPlayer().PlayerActionNormal();
 			}
 		}
