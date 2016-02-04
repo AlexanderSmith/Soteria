@@ -6,7 +6,6 @@ public class HubToObservatory : MonoBehaviour
 	void OnTriggerEnter(Collider player)
 	{
 		GameDirector.instance.ClearAudioList();
-		GameDirector.instance.SetFromPuzzle();
 		if (player.gameObject.tag == "Player")
 		{
 			switch (GameDirector.instance.GetGamePhase())
