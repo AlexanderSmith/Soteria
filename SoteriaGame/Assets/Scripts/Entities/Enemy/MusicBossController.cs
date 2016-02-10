@@ -12,6 +12,7 @@ public class MusicBossController : MonoBehaviour
 	private int _musicPilesDefeated;
 
 	private AudioID _currentMusic;
+	private bool _started;
 
 	private string _currentPile;
 	private bool _fighting;
@@ -23,6 +24,12 @@ public class MusicBossController : MonoBehaviour
 		this._musicPilesDefeated = 0;
 	}
 
+	public void HackStart(AudioID inAID)
+	{
+		this._currentMusic = inAID;
+		this._started = true;
+	}
+
 	public void Initialize(MusicPuzzleController inMusPuzCont)
 	{
 		this._musicController = inMusPuzCont;
@@ -32,6 +39,11 @@ public class MusicBossController : MonoBehaviour
 	{
 		//GameDirector.instance.MusicPuzzleEncounter(this.gameObject);
 		MusicStart(AudioID.OrganMusicComplete, "Organ");
+	}
+
+	public bool GetHackStart()
+	{
+		return this._started;
 	}
 
 	public void MusicStart(AudioID inAID, string inMusicPile)
@@ -67,17 +79,19 @@ public class MusicBossController : MonoBehaviour
 			{
 				GameDirector.instance.SubtractVolumePuzzle(inAID, this._rateOfVolumeDecrease);
 			}
-			else if (GameDirector.instance.GetVolume(inAID) < GameDirector.instance.GetPuzzleWinVolume())
+			if (GameDirector.instance.GetVolume(inAID) < GameDirector.instance.GetPuzzleWinVolume() && inAID != AudioID.OrganMusicComplete)
 			{
 				GameDirector.instance.SubtractVolumePuzzle(inAID, this._rateOfVolumeDecrease);
 			}
-			else
+			else if (inAID != AudioID.OrganMusicComplete)
 			{
 				this.PileDone();
 				GameDirector.instance.ChangeVolume(inAID, GameDirector.instance.GetPuzzleWinVolume());
 			}
 			yield return null;
 		}
+		// Bad -- Temp fix to ensure player leaving trigger zone because puzzle has started doesn't restart this function with different audio
+		this._started = false;
 	}
 
 	public void PileDone()

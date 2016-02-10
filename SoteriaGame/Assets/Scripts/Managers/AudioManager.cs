@@ -277,6 +277,10 @@ public enum AudioID
 	FortuneTellerTokenDialogue,
 	FTAnaFailUsingTokenHAR,
 	IntroDialogue,
+	MusicPuzzFirstLingerResponse,
+	MusicPuzzFourthLingerResponse,
+	MusicPuzzSecondLingerResponse,
+	MusicPuzzThirdLingerResponse,
 	OMalleyAboutSoteria,
 	OMalleyAfterCompletingMusicPuzz,
 	OMalleyAnaLingerSuccess,
@@ -298,7 +302,8 @@ public enum AudioID
 	PTFirstEncounter,
 	PTLanternRecharge,
 	TailorWrongCard,
-	TakingSuitOffInHub
+	TakingSuitOffInHub,
+	WhispersMusicPuzzleActivation
 }
 
 public class AudioSourceWrapper
@@ -409,7 +414,7 @@ public class AudioSourceWrapper
 	public void subtractVolumePuzzle(float inVolume)
 	{
 		this._audiosrc.volume = Mathf.Lerp(this._audiosrc.volume, 0f, Time.deltaTime * inVolume);
-		if (this._audiosrc.volume <= .001f)
+		if (this._audiosrc.volume <= .001f && !GameDirector.instance.isDialogueActive())
 		{
 			GameDirector.instance.GameOver();
 		}

@@ -14,7 +14,18 @@ public class PlayWindMusic : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player" && GameDirector.instance.GetGameState() != GameStates.Suit)
 		{
-            GameDirector.instance.ChangeVolume(AudioID.WindMusic, controller.GetComponent<MusicPuzzleController>().GetInitialVolume());
+			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetupDialogue("MusicPuzzThirdLingerResponse");
+			GameDirector.instance.StartDialogue();
+		}
+	}
+
+	void OnTriggerStay(Collider player)
+	{
+		if (player.gameObject.tag == "Player")
+		{
+			GameDirector.instance.GetPlayer().PlayerActionNormal();
+			GameDirector.instance.ChangeVolume(AudioID.WindMusic, controller.GetComponent<MusicPuzzleController>().GetInitialVolume());
 			controller.GetComponent<MusicPuzzleController>().GetBoss().GetComponentInChildren<MusicBossController>().MusicStart(AudioID.WindMusic, "Wind");
 			this.gameObject.GetComponent<BoxCollider>().enabled = false;
 		}
