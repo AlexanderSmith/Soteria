@@ -3,6 +3,9 @@ using System.Collections;
 
 public class  FortuneTellerTokenDialogue: MonoBehaviour
 {
+	private GameObject _npcportrait;
+	public Reaction _reaction;
+
 	void OnTriggerEnter(Collider player)
 	{
 		if (player.gameObject.tag == "Player")
@@ -13,6 +16,7 @@ public class  FortuneTellerTokenDialogue: MonoBehaviour
 			this.gameObject.GetComponentInChildren<InspectFortuneTeller>().TurnOffInspect();
 		}
 	}
+	
 
 	void OnTriggerStay(Collider player)
 	{
@@ -20,10 +24,9 @@ public class  FortuneTellerTokenDialogue: MonoBehaviour
 		{
 			if (!GameDirector.instance.isDialogueActive())
 			{
-				this.gameObject.GetComponent<BoxCollider>().enabled = false;
-				GameDirector.instance.TokenTrue();
-				GameDirector.instance.GetPlayer().PlayerActionNormal();
+				this._reaction.execute();
 			}
 		}
 	}
 }
+

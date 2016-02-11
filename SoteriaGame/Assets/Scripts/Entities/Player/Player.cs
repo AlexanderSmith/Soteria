@@ -29,6 +29,7 @@ public class Player : MonoBehaviour
 	private IPlayerAction _musicPuzzle = new PlayerActionMusicPuzzle();
 	private IPlayerAction _puppetPuzzle = new PlayerActionPuppetPuzzle();
 	private IPlayerAction _obsPuzzle = new PlayerActionObsPuzzle();
+	private IPlayerAction _itemPickup = new PlayerActionItemPickup();
 
 	public PlayerState  playerState;
 
@@ -97,6 +98,11 @@ public class Player : MonoBehaviour
 	public void PlayerActionCardPickup()
 	{
 		this.SwitchPlayerAction(_cardPickup);
+	}
+
+	public void PlayerActionItemPickup()
+	{
+		this.SwitchPlayerAction(_itemPickup);
 	}
 
 	public void PlayerActionNoFighting()

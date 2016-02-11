@@ -15,5 +15,6 @@ public class InspectFortuneTeller : InteractionBase
 	
 	public override void TriggerStay(Collider player)
 	{
+
 	}	
 }

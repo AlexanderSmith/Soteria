@@ -337,8 +337,9 @@ public class HudManager : MonoBehaviour {
 
 	public void StartItemInteraction(Sprite inSprite)
 	{
-		this._splashScreen.GetComponent<Image>().enabled = true;
+ 		this._splashScreen.GetComponent<Image>().enabled = true;
 		this._splashScreenCard.GetComponent<Image>().sprite = inSprite;
+		this._splashScreenCard.GetComponent<Image>().enabled = true;
 	}
 
 	public void EnableItemResponseOptions()
@@ -350,14 +351,7 @@ public class HudManager : MonoBehaviour {
 	public void EndItemInteraction(bool inResponse)
 	{
 		this._splashScreen.GetComponent<Image>().enabled = false;
-		this._noResponse.GetComponent<Text>().enabled = false;
-		this._yesResponse.GetComponent<Text>().enabled = false;
-		if (inResponse)
-		{
-			string selectedCard = FindCard (this._district);
-			GameDirector.instance.PlayerHasCard(this._district, selectedCard);
-			this._currentCard.SetActive(false);
-		}
+		this._splashScreenCard.GetComponent<Image>().enabled = false;
 	}
 
 	public void StartCardInteraction(Sprite inSprite, int inDist, GameObject inCardObj)
