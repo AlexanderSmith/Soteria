@@ -419,6 +419,11 @@ public class HudManager : MonoBehaviour {
 		this._suit.GetComponent<Image>().enabled = true;
 	}
 
+	public void SuitFalse()
+	{
+		this._suit.GetComponent<Image>().enabled = false;
+	}
+
 	public void OMalleyEncounter()
 	{
 		OMalleyFadeTrue();

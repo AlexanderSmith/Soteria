@@ -14,5 +14,6 @@
 <b>Ana:</b> I...I trust you….
 <b>O'Malley:</b> Then take off that suit.
 <b>Ana:</b> But...it’s the only thing that really kept me safe!
-<b>O'Malley:</b> And stuck, remember? You just said so yourself. <b>Take the suit off?</b>
+<b>O'Malley:</b> And stuck, remember? You just said so yourself.
+<b>Take the suit off?</b>
 <choice/>Yes
