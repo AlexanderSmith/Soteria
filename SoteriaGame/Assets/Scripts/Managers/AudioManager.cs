@@ -264,11 +264,11 @@ public enum AudioID
 	AnaStarChartPickupOBSERVp2,
 	AnaTailorCollectedCorrectCardsHubp4,
 	AnaTailorFirstDialogueHubp4,
-	AnaTheaterFirstPrevoke,
+	AnaTheaterFirstProvoke,
 	AnaTheaterPuzzFirstLinger,
 	AnaTheaterPuzzSecondLinger,
 	AnaTheaterPuzzThirdLinger,
-	AnaTheaterSecondPrevoke,
+	AnaTheaterSecondProvoke,
 	AnaTrainTicketOBSERVp2,
 	AnaTriesGateMUSICp1,
 	AnaWhistlePickupMUSICp2,
@@ -303,7 +303,8 @@ public enum AudioID
 	PTLanternRecharge,
 	TailorWrongCard,
 	TakingSuitOffInHub,
-	WhispersMusicPuzzleActivation
+	WhispersMusicPuzzleActivation,
+	WhispersPuppetPuzzleActivation
 }
 
 public class AudioSourceWrapper

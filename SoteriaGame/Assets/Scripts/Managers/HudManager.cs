@@ -7,6 +7,7 @@ public class HudManager : MonoBehaviour {
 	private Image _fadeinout;
 	private Color _clearFade;
 	public float blackSpeed = .15f;
+	public float whiteSpeed = .1f;
 	public float clearSpeed = .15f;
 	public bool isToClear = true;
 	private bool _isonscreen;
@@ -253,8 +254,8 @@ public class HudManager : MonoBehaviour {
 
 	private void FadeToWhite()
 	{
-		this._fadeinout.color = Color.Lerp (this._fadeinout.color, Color.white, blackSpeed * Time.deltaTime);
-		if (this._fadeinout.color.a >= .8f && !GameDirector.instance.IsTokenUsed())
+		this._fadeinout.color = Color.Lerp (this._fadeinout.color, Color.white, whiteSpeed * Time.deltaTime);
+		if (this._fadeinout.color.a >= .8f && !GameDirector.instance.IsTokenUsed() && !GameDirector.instance.isDialogueActive())
 		{
 			GameDirector.instance.EncounterOver();
 		}
