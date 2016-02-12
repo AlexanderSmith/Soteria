@@ -304,6 +304,7 @@ public enum AudioID
 	TailorWrongCard,
 	TakingSuitOffInHub,
 	WhispersMusicPuzzleActivation,
+	WhispersObservatoryPuzzleActivation,
 	WhispersPuppetPuzzleActivation
 }
 

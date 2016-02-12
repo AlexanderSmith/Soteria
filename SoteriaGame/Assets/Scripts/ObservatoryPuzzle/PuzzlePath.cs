@@ -57,7 +57,6 @@ public class PuzzlePath : MonoBehaviour
 					if (_currentPath.next == ActiveLights.up || _currentPath.prev == ActiveLights.up)
 					{
 						this._controller.EnableTileUpLight();
-						//this.GetComponentInChildren<Light>().enabled = true;
 					}
 					else
 					{
@@ -66,7 +65,6 @@ public class PuzzlePath : MonoBehaviour
 					if (_currentPath.next == ActiveLights.down || _currentPath.prev == ActiveLights.down)
 					{
 						this._controller.EnableTileDownLight();
-						//this.GetComponentInChildren<Light>().enabled = true;
 					}
 					else
 					{
@@ -75,7 +73,6 @@ public class PuzzlePath : MonoBehaviour
 					if (_currentPath.next == ActiveLights.left || _currentPath.prev == ActiveLights.left)
 					{
 						this._controller.EnableTileLeftLight();
-						//this.GetComponentInChildren<Light>().enabled = true;
 					}
 					else
 					{
@@ -84,7 +81,6 @@ public class PuzzlePath : MonoBehaviour
 					if (_currentPath.next == ActiveLights.right || _currentPath.prev == ActiveLights.right)
 					{
 						this._controller.EnableTileRightLight();
-						//this.GetComponentInChildren<Light>().enabled = true;
 					}
 					else
 					{
@@ -96,7 +92,9 @@ public class PuzzlePath : MonoBehaviour
 					this._controller.OffPath();
 					this._controller.DisableAllLights();
 					this._controller.EnableDoorEncounters();
-					GameDirector.instance.ObsPuzzleEncounter();
+					GameDirector.instance.GetPlayer().PlayerActionPause();
+					GameDirector.instance.SetupDialogue("WhispersObservatoryPuzzleActivation");
+					GameDirector.instance.StartDialogue();
 				}
 			}
 		}
@@ -104,17 +102,13 @@ public class PuzzlePath : MonoBehaviour
 
 	void OnTriggerStay(Collider player)
 	{
-		if (player.gameObject.tag == "Player")
+		if (player.gameObject.tag == "Player" && this._controller.GetOffPath())
 		{
-			Debug.Log ("FML");
+			if (!GameDirector.instance.isDialogueActive())
+			{
+				GameDirector.instance.GetPlayer().PlayerActionNormal();
+				GameDirector.instance.ObsPuzzleEncounter();
+			}
 		}
 	}
-
-//	void OnTriggerExit(Collider player)
-//	{
-//		if (player.gameObject.tag == "Player" && GameDirector.instance.GetGameState() != GameStates.Suit)
-//		{
-//			this.GetComponentInChildren<Light>().enabled = false;
-//		}
-//	}
 }
