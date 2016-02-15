@@ -40,6 +40,10 @@ public class MusicPuzzleController : MonoBehaviour
 
 	public void Initialize()
 	{
+		// Gameplay hacks to test puzzle fight
+//		GameDirector.instance.MusicPuzzleActivated();
+//		GameDirector.instance.SuitRemoved();
+
 		if (GameDirector.instance.GetMusicActivated())
 		{
 			this.organTile.transform.position = this.organDown.position;
@@ -100,7 +104,6 @@ public class MusicPuzzleController : MonoBehaviour
 			this.brassTile.transform.position = Vector3.Lerp(this.brassTile.transform.position, this.brassUp.position, (Time.time - start) / lerpTime);
 			this.stringTile.transform.position = Vector3.Lerp(this.stringTile.transform.position, this.stringUp.position, (Time.time - start) / lerpTime);
 			this.windTile.transform.position = Vector3.Lerp(this.windTile.transform.position, this.windUp.position, (Time.time - start) / lerpTime);
-			this.boss.transform.position = Vector3.Lerp (this.boss.transform.position, this.bossUp.position, (Time.time - start) / lerpTime);
 			//GameDirector.instance.SubtractVolumePuzzle(AudioID.OrganMusic, 1f);
 			yield return null;
 		}
@@ -110,6 +113,22 @@ public class MusicPuzzleController : MonoBehaviour
 		this.windTile.transform.position = this.windUp.position;
 		this.boss.transform.position = this.bossUp.position;
 		//GameDirector.instance.ChangeVolume(AudioID.OrganMusic, 0.0f);
+	}
+
+	public void PuzzleStartHackBoss()
+	{
+		StartCoroutine("PuzzleStartHack");
+	}
+
+	IEnumerator PuzzleStartHack()
+	{
+		float start = Time.time;
+		while (Time.time < start + lerpTime)
+		{
+			this.boss.transform.position = Vector3.Lerp (this.boss.transform.position, this.bossUp.position, (Time.time - start) / lerpTime);
+			yield return null;
+		}
+		this.boss.transform.position = this.bossUp.position;
 	}
 
 	public void OrganTileActive()

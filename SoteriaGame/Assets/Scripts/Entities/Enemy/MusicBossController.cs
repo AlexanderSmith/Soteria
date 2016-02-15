@@ -28,6 +28,7 @@ public class MusicBossController : MonoBehaviour
 	{
 		this._currentMusic = inAID;
 		this._started = true;
+		this._musicController.GetComponent<MusicPuzzleController>().PuzzleStartHackBoss();
 	}
 
 	public void Initialize(MusicPuzzleController inMusPuzCont)

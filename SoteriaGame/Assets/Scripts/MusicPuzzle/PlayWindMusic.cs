@@ -24,10 +24,13 @@ public class PlayWindMusic : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			GameDirector.instance.GetPlayer().PlayerActionNormal();
-			GameDirector.instance.ChangeVolume(AudioID.WindMusic, controller.GetComponent<MusicPuzzleController>().GetInitialVolume());
-			controller.GetComponent<MusicPuzzleController>().GetBoss().GetComponentInChildren<MusicBossController>().MusicStart(AudioID.WindMusic, "Wind");
-			this.gameObject.GetComponent<BoxCollider>().enabled = false;
+			if (!GameDirector.instance.isDialogueActive())
+			{
+				GameDirector.instance.GetPlayer().PlayerActionNormal();
+				GameDirector.instance.ChangeVolume(AudioID.WindMusic, controller.GetComponent<MusicPuzzleController>().GetInitialVolume());
+				controller.GetComponent<MusicPuzzleController>().GetBoss().GetComponentInChildren<MusicBossController>().MusicStart(AudioID.WindMusic, "Wind");
+				this.gameObject.GetComponent<BoxCollider>().enabled = false;
+			}
 		}
 	}
 }
