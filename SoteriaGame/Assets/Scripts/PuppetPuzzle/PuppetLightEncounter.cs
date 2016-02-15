@@ -21,7 +21,7 @@ public class PuppetLightEncounter : MonoBehaviour
 		{
 			this.transform.position = new Vector3(GameDirector.instance.GetPlayer().transform.position.x, this.transform.position.y,
 			                                      GameDirector.instance.GetPlayer().transform.position.z);
-			if (!GameDirector.instance.isDialogueActive() && !_started)
+			if (!GameDirector.instance.isDialogueActive())// && !_started)
 			{
 				//GameDirector.instance.GetPlayer().PlayerActionNormal();
 				GameDirector.instance.PuppetPuzzleEncounter();

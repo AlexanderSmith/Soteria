@@ -17,6 +17,7 @@ public class PuppetPuzzleIntro : MonoBehaviour
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("AnaEnteringTheaterPuzzFirstTime");
 			GameDirector.instance.StartDialogue();
+			GameDirector.instance.PuppetPuzzleActivated();
 		}
 	}
 
