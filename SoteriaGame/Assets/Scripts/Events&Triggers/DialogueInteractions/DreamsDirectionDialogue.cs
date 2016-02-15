@@ -3,14 +3,6 @@ using System.Collections;
 
 public class DreamsDirectionDialogue : MonoBehaviour
 {
-	private GameObject _hubToMusic;
-
-	void Start()
-	{
-		_hubToMusic = GameObject.Find("HubToMusic");
-		_hubToMusic.SetActive(false);
-	}
-
 	void OnTriggerEnter(Collider player)
 	{
 		if (player.gameObject.tag == "Player")
@@ -29,7 +21,6 @@ public class DreamsDirectionDialogue : MonoBehaviour
 			if (!GameDirector.instance.isDialogueActive())
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
-				_hubToMusic.SetActive(true);
 				GameDirector.instance.GetPlayer().PlayerActionNormal();
 			}
 		}
