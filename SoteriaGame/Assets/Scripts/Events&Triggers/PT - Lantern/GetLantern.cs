@@ -5,6 +5,7 @@ public class GetLantern : Reaction
 {
 	GameObject dreams;
 	private GameObject _hubToMusic;
+	public Sprite SplashScreen;
 	
 	void Start()
 	{
@@ -17,5 +18,8 @@ public class GetLantern : Reaction
 		GameDirector.instance.LanternTrue();
 		dreams.SetActive(true);
 		_hubToMusic.SetActive(true);
+		GameDirector.instance.StartItemInteraction(SplashScreen);
+		this.gameObject.transform.parent.gameObject.SetActive(false);
+		GameDirector.instance.GetPlayer().PlayerActionItemPickup();
 	}
 }

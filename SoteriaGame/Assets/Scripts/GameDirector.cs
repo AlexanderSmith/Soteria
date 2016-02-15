@@ -715,6 +715,22 @@ public class GameDirector : MonoBehaviour {
 		this._HUDManager.ChangeObjective(gObj);
 	}
 
+	/// Add Item SplashScreen
+	public void StartItemInteraction(Sprite inSprite)
+	{
+		this._HUDManager.StartItemInteraction(inSprite);
+	}
+	
+	public void EnableItemResponseOptions()
+	{
+		this._HUDManager.EnableItemResponseOptions();
+	}
+	
+	public void EndItemInteraction(bool inResponse)
+	{
+		this._HUDManager.EndItemInteraction(inResponse);
+	}
+
 	public void StartCardInteraction(Sprite inSprite, int inDist, GameObject inCardObj)
 	{
 		this._HUDManager.StartCardInteraction(inSprite, inDist, inCardObj);

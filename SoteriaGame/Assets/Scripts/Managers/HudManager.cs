@@ -336,6 +336,25 @@ public class HudManager : MonoBehaviour {
 		this.Objective = gObj;
 	}
 
+	public void StartItemInteraction(Sprite inSprite)
+	{
+		this._splashScreen.GetComponent<Image>().enabled = true;
+		this._splashScreenCard.GetComponent<Image>().sprite = inSprite;
+		this._splashScreenCard.GetComponent<Image>().enabled = true;
+	}
+
+	public void EnableItemResponseOptions()
+	{
+		this._noResponse.GetComponent<Text>().enabled = true;
+		this._yesResponse.GetComponent<Text>().enabled = true;
+	}
+
+	public void EndItemInteraction(bool inResponse)
+	{
+		this._splashScreen.GetComponent<Image>().enabled = false;
+		this._splashScreenCard.GetComponent<Image>().enabled = false;
+	}
+
 	public void StartCardInteraction(Sprite inSprite, int inDist, GameObject inCardObj)
 	{
 		this._district = inDist;
