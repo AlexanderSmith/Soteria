@@ -18,6 +18,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 	public GameObject lastTile;
 
 	private bool _offPath;
+	private bool _activated;
 	private int _timesFailed;
 
 	private int _doorEncountersWon;
@@ -44,6 +45,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		this._reset = GameObject.Find("PortToEntrance");
 		this._oMalley = GameObject.Find("O'Malley3Fails");
 		this._oMalley.SetActive(false);
+		this._activated = false;
 
 		// Testing
 		//GameDirector.instance.SuitRemoved();
@@ -51,20 +53,29 @@ public class ObservatoryPuzzleController : MonoBehaviour
 
 	public void Initialize()
 	{
+		// Hacks for fighting puzzle
+		GameDirector.instance.ObsPuzzleActivated();
+		GameDirector.instance.SuitRemoved();
+
 		if (!GameDirector.instance.GetObsActivated())
 		{
-			GameDirector.instance.ObsPuzzleActivated();
-//			GameDirector.instance.GetPlayer().PlayerActionPause();
-//			GameDirector.instance.SetupDialogue("AnaEnteringObservPuzzFirstTime");
-//			GameDirector.instance.StartDialogue();
+			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetupDialogue("AnaEnteringObservPuzzFirstTime");
+			GameDirector.instance.StartDialogue();
 		}
 	}
 
 	void OnTriggerStay(Collider player)
 	{
-		if (player.gameObject.tag == "Player" && this._timesFailed > 0)
+		if (player.gameObject.tag == "Player")
 		{
-			if (!GameDirector.instance.isDialogueActive())
+			if (!GameDirector.instance.isDialogueActive() && !GameDirector.instance.GetObsActivated())
+			{
+				GameDirector.instance.ObsPuzzleActivated();
+				this.gameObject.GetComponent<BoxCollider>().enabled = false;
+				GameDirector.instance.GetPlayer().PlayerActionNormal();
+			}
+			if (!GameDirector.instance.isDialogueActive() && this._timesFailed == 1)
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
 				GameDirector.instance.GetPlayer().PlayerActionNormal();
@@ -137,6 +148,16 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		return this._offPath;
 	}
 
+	public bool GetActivated()
+	{
+		return this._activated;
+	}
+
+	public void Activated()
+	{
+		this._activated = true;
+	}
+
 	public void EnableDoorEncounters()
 	{
 		_doorEncounter1.SetActive(true);
@@ -160,8 +181,10 @@ public class ObservatoryPuzzleController : MonoBehaviour
 			light.GetComponentInChildren<Light>().enabled = false;
 			light.GetComponent<BoxCollider>().enabled = true;
 		}
+
 		this._doorEncountersWon = 0;
 		this._timesFailed++;
+		
 		if (this._timesFailed == 1 && GameDirector.instance.GetGameState() == GameStates.Suit)
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();

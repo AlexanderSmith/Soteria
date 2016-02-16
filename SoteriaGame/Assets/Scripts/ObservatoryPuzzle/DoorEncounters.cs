@@ -9,25 +9,38 @@ public class DoorEncounters : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			GameDirector.instance.ObsPuzzleEncounter();
-			this.GetComponent<BoxCollider>().enabled = false;
-			//ObsPuzzleWhisperSetup();
+//			GameDirector.instance.ObsPuzzleEncounter();
+//			this.GetComponent<BoxCollider>().enabled = false;
+			ObsPuzzleWhisperSetup();
 		}
 	}
 
-//	void OnTriggerStay(Collider player)
-//	{
-//		if (player.gameObject.tag == "Player")
-//		{
-//			GameDirector.instance.ObsPuzzleEncounter();
-//			this.GetComponent<BoxCollider>().enabled = false;
-//		}
-//	}
+	void OnTriggerStay(Collider player)
+	{
+		if (player.gameObject.tag == "Player" && !GameDirector.instance.isDialogueActive())
+		{
+			GameDirector.instance.ObsPuzzleEncounter();
+			this.GetComponent<BoxCollider>().enabled = false;
+		}
+	}
 
 	void ObsPuzzleWhisperSetup()
 	{
 		GameDirector.instance.GetPlayer().PlayerActionPause();
-		GameDirector.instance.SetupDialogue("WhispersMusicPuzzleActivation");
+
+		switch (this._thisEncounter.name)
+		{
+		case "DoorEncounter1":
+			GameDirector.instance.SetupDialogue("AnaObservPuzzFirstLinger");
+			break;
+		case "DoorEncounter2":
+			GameDirector.instance.SetupDialogue("AnaObservPuzzSecondLinger");
+			break;
+		case "DoorEncounter3":
+			GameDirector.instance.SetupDialogue("AnaObservPuzzThirdLinger");
+			break;
+		};
+
 		GameDirector.instance.StartDialogue();
 	}
 }

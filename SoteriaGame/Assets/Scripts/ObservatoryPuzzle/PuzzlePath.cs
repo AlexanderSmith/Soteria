@@ -32,7 +32,7 @@ public class PuzzlePath : MonoBehaviour
 
 	private ObservatoryPuzzleController _controller;
 
-	CurrentPath _currentPath;
+	private CurrentPath _currentPath;
 
 	void Start()
 	{
@@ -102,12 +102,14 @@ public class PuzzlePath : MonoBehaviour
 
 	void OnTriggerStay(Collider player)
 	{
-		if (player.gameObject.tag == "Player" && this._controller.GetOffPath())
+		if (player.gameObject.tag == "Player" && this._controller.GetOffPath() && !this._controller.GetActivated())
 		{
 			if (!GameDirector.instance.isDialogueActive())
 			{
-				GameDirector.instance.GetPlayer().PlayerActionNormal();
+				//GameDirector.instance.GetPlayer().PlayerActionNormal();
+				this._controller.Activated();
 				GameDirector.instance.ObsPuzzleEncounter();
+//				this.GetComponent<BoxCollider>().enabled = false;
 			}
 		}
 	}
