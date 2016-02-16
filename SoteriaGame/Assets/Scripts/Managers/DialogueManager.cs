@@ -19,6 +19,10 @@ public class DialogueManager : MonoBehaviour
 	DialogueData _diagdata;
 	GameObject DialogueUIBG;
 	GameObject DialogueUIText;
+
+	GameObject DialogueUISplashScreen;
+	GameObject DialogueUINpcPortrait;
+	GameObject DialogueUIPlayerPortrait;
 	
 	GameObject DialogueUIFirstChoice;
 	GameObject DialogueUISecondChoice;
@@ -47,7 +51,11 @@ public class DialogueManager : MonoBehaviour
 		DialogueUIBG.SetActive(false);
 		DialogueUIText = DialogueUI.transform.FindChild("Dialogue").gameObject;
 		DialogueUIText.SetActive(false);
-		
+
+		DialogueUISplashScreen = GameObject.Find("HUDInterface").transform.FindChild("SplashScreen").gameObject;
+		DialogueUINpcPortrait = GameObject.Find("NpcPortrait").gameObject;;
+		DialogueUIPlayerPortrait = GameObject.Find("PlayerPortrait").gameObject;;
+
 		GameObject Choices = DialogueUI.transform.FindChild("Choices").gameObject;
 		DialogueUIFirstChoice = Choices.transform.FindChild("FirstChoice").gameObject;
 		DialogueUIFirstChoice.SetActive(false);
@@ -97,11 +105,13 @@ public class DialogueManager : MonoBehaviour
 	/////////////////////////////////////////////////////////////////////////
 	///////////////////////  GUI MANIPULATION   /////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
-	
 	private void ActivateGUI()
 	{
 		DialogueUIBG.SetActive(true);
 		DialogueUIText.SetActive(true);
+		DialogueUISplashScreen.GetComponent<Image>().enabled = true;
+		DialogueUINpcPortrait.SetActive(true);
+		DialogueUIPlayerPortrait.SetActive(true);
 	}
 	
 	private void DeActivateGUI()
@@ -111,8 +121,11 @@ public class DialogueManager : MonoBehaviour
 		DialogueUIFirstChoice.SetActive(false);
 		DialogueUISecondChoice.SetActive(false);
 		DialogueUIThirdChoice.SetActive(false);
+		DialogueUISplashScreen.GetComponent<Image>().enabled = false;
+		DialogueUINpcPortrait.SetActive(false);
+		DialogueUIPlayerPortrait.SetActive(false);
 	}
-	
+
 	private void privLoadChoice(int indx)
 	{
 		if (_diagdata.Choices[indx].Length > 0)
