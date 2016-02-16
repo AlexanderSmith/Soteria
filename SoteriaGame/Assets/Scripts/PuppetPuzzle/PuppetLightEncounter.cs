@@ -7,12 +7,13 @@ public class PuppetLightEncounter : MonoBehaviour
 	public GameObject _thisLight;
 	public GameObject _nextLight;
 	private bool _active;
-	private bool _started;
+	private bool _defeated;
 
 	void Start()
 	{
 		this._controller = GameObject.Find("PuppetPuzzleController");
 		this._active = false;
+		this._defeated = false;
 	}
 
 	void Update()
@@ -21,11 +22,11 @@ public class PuppetLightEncounter : MonoBehaviour
 		{
 			this.transform.position = new Vector3(GameDirector.instance.GetPlayer().transform.position.x, this.transform.position.y,
 			                                      GameDirector.instance.GetPlayer().transform.position.z);
-			if (!GameDirector.instance.isDialogueActive())// && !_started)
+			if (!GameDirector.instance.isDialogueActive() && !this._defeated)
 			{
 				//GameDirector.instance.GetPlayer().PlayerActionNormal();
 				GameDirector.instance.PuppetPuzzleEncounter();
-				this._controller.GetComponent<PuppetPuzzleController>().LightEncounter(_nextLight);
+				this._controller.GetComponent<PuppetPuzzleController>().LightEncounter(_thisLight, _nextLight);
 //				this.GetComponent<SphereCollider>().enabled = false;
 			}
 		}
@@ -46,6 +47,8 @@ public class PuppetLightEncounter : MonoBehaviour
 
 	void WhisperDialogueSetup(GameObject light)
 	{
+		GameDirector.instance.PuppetPuzzleWhiteOut();
+
 		switch(light.name)
 		{
 		case "LeftSpot":
@@ -65,12 +68,11 @@ public class PuppetLightEncounter : MonoBehaviour
 
 	void LeftSpotDialogue()
 	{
-		_started = true;
 		GameDirector.instance.GetPlayer().PlayerActionPause();
 		GameDirector.instance.SetupDialogue("WhispersPuppetPuzzleActivation");
 		GameDirector.instance.StartDialogue();
-		GameDirector.instance.PuppetPuzzleEncounter();
-		this._controller.GetComponent<PuppetPuzzleController>().LightEncounter(_nextLight);
+//		GameDirector.instance.PuppetPuzzleEncounter();
+//		this._controller.GetComponent<PuppetPuzzleController>().LightEncounter(_nextLight);
 	}
 
 	void BackSpotDialogue()
@@ -92,5 +94,11 @@ public class PuppetLightEncounter : MonoBehaviour
 		GameDirector.instance.GetPlayer().PlayerActionPause();
 		GameDirector.instance.SetupDialogue("AnaTheaterPuzzThirdLinger");
 		GameDirector.instance.StartDialogue();
+	}
+
+	public void LightDefeated()
+	{
+		this._defeated = true;
+		GameDirector.instance.NewWhiteOut();
 	}
 }

@@ -10,6 +10,8 @@ public class PuppetPuzzleController : MonoBehaviour
 	public GameObject rightSpot;
 	public GameObject finalSpot;
 
+	private GameObject _currentLight;
+
 	void Awake()
 	{
 		leftSpot.GetComponent<Light>().enabled = false;
@@ -27,8 +29,8 @@ public class PuppetPuzzleController : MonoBehaviour
 	public void Initialize()
 	{
 		// Hacks for checking ability to fight puzzle
-		GameDirector.instance.PuppetPuzzleActivated();
-		GameDirector.instance.SuitRemoved();
+//		GameDirector.instance.PuppetPuzzleActivated();
+//		GameDirector.instance.SuitRemoved();
 
 		if (!GameDirector.instance.GetPuppetActivated())
 		{
@@ -46,17 +48,24 @@ public class PuppetPuzzleController : MonoBehaviour
 		leftSpot.GetComponent<SphereCollider>().enabled = true;
 	}
 
-	public void LightEncounter(GameObject light)
+	public void LightEncounter(GameObject inThisLight, GameObject inNextLight)
 	{
-		if (light != null)
+		this._currentLight = inThisLight;
+
+		if (inNextLight != null)
 		{
-			light.GetComponent<Light>().enabled = true;
-			light.GetComponent<SphereCollider>().enabled = true;
+			inNextLight.GetComponent<Light>().enabled = true;
+			inNextLight.GetComponent<SphereCollider>().enabled = true;
 		}
 		else
 		{
 			this.FinalEncounter();
 		}
+	}
+
+	public void LightDefeated()
+	{
+		this._currentLight.GetComponent<PuppetLightEncounter>().LightDefeated();
 	}
 
 	void FinalEncounter()

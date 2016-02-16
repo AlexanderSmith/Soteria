@@ -21,7 +21,7 @@ public class PlayerActionPuppetPuzzle : IPlayerAction
 			if (this._keyPressCounter > 10)
 			{
 				GameDirector.instance.PuzzleOvercome();
-
+				this._controller.GetComponent<PuppetPuzzleController>().LightDefeated();
 				Debug.Log("player wins");
 			}
 		}

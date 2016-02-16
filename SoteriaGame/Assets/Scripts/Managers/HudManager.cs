@@ -7,7 +7,7 @@ public class HudManager : MonoBehaviour {
 	private Image _fadeinout;
 	private Color _clearFade;
 	public float blackSpeed = .15f;
-	public float whiteSpeed = .1f;
+	public float whiteSpeed = .05f;
 	public float clearSpeed = .15f;
 	public bool isToClear = true;
 	private bool _isonscreen;
@@ -109,8 +109,8 @@ public class HudManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		UpdateFade ();
-		UpdateIndicator ();
+		UpdateFade();
+		UpdateIndicator();
 	}
 
 	private void UpdateIndicator ()
@@ -258,6 +258,14 @@ public class HudManager : MonoBehaviour {
 		if (this._fadeinout.color.a >= .8f && !GameDirector.instance.IsTokenUsed() && !GameDirector.instance.isDialogueActive())
 		{
 			GameDirector.instance.EncounterOver();
+		}
+	}
+
+	public void NewWhiteOut()
+	{
+		if (this.whiteSpeed < .1f)
+		{
+			this.whiteSpeed += .025f;
 		}
 	}
 

@@ -710,6 +710,11 @@ public class GameDirector : MonoBehaviour {
 		this._HUDManager.PuppetPuzzleEncounterClear();
 	}
 
+	public void NewWhiteOut()
+	{
+		this._HUDManager.NewWhiteOut();
+	}
+
 	public void ChangeObjective(GameObject gObj)
 	{
 		this._HUDManager.ChangeObjective(gObj);
@@ -952,6 +957,12 @@ public class GameDirector : MonoBehaviour {
 		}
 	}
 
+	public void PuppetPuzzleWhiteOut()
+	{
+		this.SetClearStatus(false);
+		this._HUDManager.EnablePuppetPuzzleEncounterView();
+	}
+
 	public void PuppetPuzzleEncounter()
 	{
 		this._encounterManager.PuppetPuzzleEncounter();
@@ -963,8 +974,8 @@ public class GameDirector : MonoBehaviour {
 		{
 			this._stateManager.ChangeGameState (GameStates.Encounter);
 		}
-		this._HUDManager.EnablePuppetPuzzleEncounterView();
-		this.SetClearStatus(false);
+		//this._HUDManager.EnablePuppetPuzzleEncounterView();
+		//this.SetClearStatus(false);
 		if (this._canFight)
 		{
 			this._player.PlayerActionPuppetPuzzle();
