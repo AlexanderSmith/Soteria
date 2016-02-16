@@ -725,12 +725,7 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._HUDManager.StartItemInteraction(inSprite);
 	}
-	
-	public void EnableItemResponseOptions()
-	{
-		this._HUDManager.EnableItemResponseOptions();
-	}
-	
+
 	public void EndItemInteraction(bool inResponse)
 	{
 		this._HUDManager.EndItemInteraction(inResponse);
