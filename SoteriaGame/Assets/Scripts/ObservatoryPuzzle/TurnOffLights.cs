@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TurnOffLights : MonoBehaviour
 {
-	void Start()
+	void Awake()
 	{
 		if (GameDirector.instance.GetGameState() != GameStates.Suit)
 		{

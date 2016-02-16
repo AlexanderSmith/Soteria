@@ -28,6 +28,10 @@ public class ObservatoryPuzzleController : MonoBehaviour
 	// Use this for initialization
 	void Awake()
 	{
+		//Hack for suit
+//		GameDirector.instance.SuitWorn();
+//		GameDirector.instance.ObsPuzzleActivated();
+
 		tileUp.GetComponentInChildren<Light>().enabled = false;
 		tileDown.GetComponentInChildren<Light>().enabled = false;
 		tileLeft.GetComponentInChildren<Light>().enabled = false;
@@ -47,6 +51,15 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		this._oMalley.SetActive(false);
 		this._activated = false;
 
+		if (GameDirector.instance.GetGameState() == GameStates.Suit)
+		{
+			foreach (GameObject light in _lights)
+			{
+				light.GetComponentInChildren<Light>().enabled = true;
+				light.GetComponent<BoxCollider>().enabled = false;
+			}
+		}
+
 		// Testing
 		//GameDirector.instance.SuitRemoved();
 	}
@@ -54,10 +67,10 @@ public class ObservatoryPuzzleController : MonoBehaviour
 	public void Initialize()
 	{
 		// Hacks for fighting puzzle
-		GameDirector.instance.ObsPuzzleActivated();
-		GameDirector.instance.SuitRemoved();
+//		GameDirector.instance.ObsPuzzleActivated();
+//		GameDirector.instance.SuitRemoved();
 
-		if (!GameDirector.instance.GetObsActivated())
+		if (!GameDirector.instance.GetObsActivated() && GameDirector.instance.GetGameState() != GameStates.Suit)
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("AnaEnteringObservPuzzFirstTime");
@@ -176,10 +189,13 @@ public class ObservatoryPuzzleController : MonoBehaviour
 
 	public void TickFail()
 	{
-		foreach(GameObject light in this._lights)
+		if (GameDirector.instance.GetGameState() != GameStates.Suit)
 		{
-			light.GetComponentInChildren<Light>().enabled = false;
-			light.GetComponent<BoxCollider>().enabled = true;
+			foreach(GameObject light in this._lights)
+			{
+				light.GetComponentInChildren<Light>().enabled = false;
+				light.GetComponent<BoxCollider>().enabled = true;
+			}
 		}
 
 		this._doorEncountersWon = 0;
@@ -191,7 +207,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 			GameDirector.instance.SetupDialogue("AnaObservPuzzAtDoorSuit");
 			GameDirector.instance.StartDialogue();
 		}
-		else if (this._timesFailed == 3)
+		else if (this._timesFailed == 3 && GameDirector.instance.GetGameState() != GameStates.Suit)
 		{
 			this._oMalley.SetActive(true);
 		}

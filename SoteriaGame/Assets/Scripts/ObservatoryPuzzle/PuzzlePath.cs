@@ -34,7 +34,7 @@ public class PuzzlePath : MonoBehaviour
 
 	private CurrentPath _currentPath;
 
-	void Start()
+	void Awake()
 	{
 		_currentPath.next = path1next;
 		_currentPath.prev = path1prev;

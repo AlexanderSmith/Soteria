@@ -21,15 +21,15 @@ public class ResetPuzzle : MonoBehaviour
 		}
 	}
 
-	void OnTriggerStay(Collider player)
-	{
-		if (player.gameObject.tag == "Player")
-		{
-			if (GameDirector.instance.GetGameState() == GameStates.Suit && !GameDirector.instance.isDialogueActive())
-			{
-				this.gameObject.GetComponent<BoxCollider>().enabled = false;
-				GameDirector.instance.GetPlayer().PlayerActionNormal();
-			}
-		}
-	}
+//	void OnTriggerStay(Collider player)
+//	{
+//		if (player.gameObject.tag == "Player")
+//		{
+//			if (GameDirector.instance.GetGameState() == GameStates.Suit && !GameDirector.instance.isDialogueActive())
+//			{
+//				this.gameObject.GetComponent<BoxCollider>().enabled = false;
+//				GameDirector.instance.GetPlayer().PlayerActionNormal();
+//			}
+//		}
+//	}
 }
