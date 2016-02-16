@@ -3,6 +3,14 @@ using System.Collections;
 
 public class FortuneTellerDeath : MonoBehaviour
 {
+	void Start()
+	{
+		if (!GameDirector.instance.GetToken())
+		{
+			this.gameObject.SetActive(false);
+		}
+	}
+
 	void OnTriggerEnter(Collider player)
 	{
 		if (player.gameObject.tag == "Player")
