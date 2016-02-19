@@ -100,4 +100,16 @@ public class EyeballShadowCreatureController : MonoBehaviour
 		this._anim.SetBool ("OP 2", false);
 		this._anim.SetBool ("OP 3", false);
 	}
+
+	public void NextOPStage()
+	{
+		_opCounter++;
+	}
+
+	public void Cower()
+	{
+		_anim.SetBool ("Cower", true);
+		_dead = true;
+		_opCounter = 1;
+	}
 }

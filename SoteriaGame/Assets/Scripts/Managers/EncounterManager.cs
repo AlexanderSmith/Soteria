@@ -187,7 +187,14 @@ public class EncounterManager : MonoBehaviour
 
 	public void NextOPStage()
 	{
-		this.currentEnemy.GetComponent<BasicEnemyController>().NextOPStage();
+		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
+		{
+			this.currentEnemy.GetComponent<BasicEnemyController>().NextOPStage();
+		}
+		else
+		{
+			this.currentEnemy.GetComponent<EyeballShadowCreatureController>().NextOPStage();
+		}
 	}
 
 	public void Cower()
@@ -196,6 +203,10 @@ public class EncounterManager : MonoBehaviour
 		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
 		{
 			this.currentEnemy.GetComponent<BasicEnemyController>().Cower();
+		}
+		else if (this.currentEnemy.GetComponent<EyeballShadowCreatureController>() != null)
+		{
+			this.currentEnemy.GetComponent<EyeballShadowCreatureController>().Cower();
 		}
 		else
 		{

@@ -7,6 +7,7 @@ public class EyeballShadowCreatureSpawner : MonoBehaviour
 	public Transform[] spawnLocations;
 	private int _spawnerIndex;
 	public GameObject enemyPrefab;
+	private GameObject _currentEnemy;
 
 	void Start()
 	{
@@ -25,6 +26,7 @@ public class EyeballShadowCreatureSpawner : MonoBehaviour
 			_spawnerIndex++;
 		}
 		GameObject enemy = Instantiate (enemyPrefab, spawnLocations [_spawnerIndex].position, spawnLocations [_spawnerIndex].rotation) as GameObject;
+		_currentEnemy = enemy;
 	}
 
 	public void Cancel()
@@ -35,7 +37,15 @@ public class EyeballShadowCreatureSpawner : MonoBehaviour
 
 	public void Resume()
 	{
-		this.gameObject.GetComponent<EyeballShadowCreatureSpawner>().enabled = true;
-		InvokeRepeating("ShadowCreatureSpawner", 0.0f, spawnTime);
+		if (!GameDirector.instance.CanFight())
+		{
+			this.gameObject.GetComponent<EyeballShadowCreatureSpawner>().enabled = true;
+			InvokeRepeating("ShadowCreatureSpawner", 0.0f, spawnTime);
+		}
+		else if (_currentEnemy == null)
+		{
+			this.gameObject.GetComponent<EyeballShadowCreatureSpawner>().enabled = true;
+			Invoke("ShadowCreatureSpawner", 0.0f);
+		}
 	}
 }

@@ -66,6 +66,7 @@ public class GameDirector : MonoBehaviour {
 
 	// Puzzle bools while wearing suit pieces for objective
 	private bool _musicPuzzleSuit;
+	private bool _musicSuitIntroDone;
 	private bool _theaterPuzzleSuit;
 	private bool _observatoryPuzzleSuit;
 
@@ -549,6 +550,16 @@ public class GameDirector : MonoBehaviour {
 	public void MusicPuzzleVisitedSuit()
 	{
 		this._musicPuzzleSuit = true;
+	}
+
+	public bool GetMusicSuitIntro()
+	{
+		return this._musicSuitIntroDone;
+	}
+
+	public void MusicSuitIntroDone()
+	{
+		this._musicSuitIntroDone = true;
 	}
 
 	public bool GetTheaterPuzzleVisitedSuit()

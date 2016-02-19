@@ -22,5 +22,8 @@ public class CheckTheaterDefeatedObjective : MonoBehaviour
 		{
 			GameDirector.instance.ChangeObjective(this._puppetStore);
 		}
+
+		// Hack for testing shadow creature spawner rates
+//		GameDirector.instance.SuitRemoved();
 	}
 }
