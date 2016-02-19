@@ -14,7 +14,7 @@ public class CheckTheaterDefeatedObjective : MonoBehaviour
 	
 	void Start()
 	{
-		if (GameDirector.instance.IsTheaterDefeated())
+		if (!GameDirector.instance.IsMusicDefeated() || GameDirector.instance.IsTheaterDefeated())
 		{
 			GameDirector.instance.ChangeObjective(this._portToHub);
 		}

@@ -184,6 +184,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		if (this._doorEncountersWon >= 3)
 		{
 			this._reset.GetComponent<BoxCollider>().enabled = false;
+			GameDirector.instance.ObservatoryPuzzleDefeated();
 		}
 	}
 

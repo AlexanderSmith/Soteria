@@ -14,7 +14,7 @@ public class CheckObservatoryDefeatedObjective : MonoBehaviour
 	
 	void Start()
 	{
-		if (GameDirector.instance.IsMusicDefeated())
+		if (!GameDirector.instance.IsMusicDefeated() || !GameDirector.instance.IsTheaterDefeated() || GameDirector.instance.IsObservatoryDefeated())
 		{
 			GameDirector.instance.ChangeObjective(this._portToHub);
 		}

@@ -11,6 +11,7 @@ public class PuppetPuzzleController : MonoBehaviour
 	public GameObject finalSpot;
 
 	private GameObject _currentLight;
+	private bool _lastFight;
 
 	void Awake()
 	{
@@ -66,10 +67,14 @@ public class PuppetPuzzleController : MonoBehaviour
 	public void LightDefeated()
 	{
 		this._currentLight.GetComponent<PuppetLightEncounter>().LightDefeated();
+		if (this._lastFight)
+		{
+			GameDirector.instance.TheaterPuzzleDefeated();
+		}
 	}
 
 	void FinalEncounter()
 	{
-
+		this._lastFight = true;
 	}
 }

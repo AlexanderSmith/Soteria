@@ -196,6 +196,7 @@ public class MusicPuzzleController : MonoBehaviour
 
 	public void PuzzleDefeated()
 	{
+		GameDirector.instance.MusicPuzzleDefeated();
 		StartCoroutine ("OvercamePuzzle");
 	}
 
