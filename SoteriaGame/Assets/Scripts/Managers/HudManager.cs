@@ -33,6 +33,7 @@ public class HudManager : MonoBehaviour {
 	public GameObject Objective;
 	private GameObject [] Buttons;
 	private GameObject _splashScreen;
+	private GameObject _dialogueSplashScreen;
 	private GameObject _splashScreenItem;
 	private GameObject _ItemAccept;
 	private GameObject _splashScreenCard;
@@ -88,6 +89,10 @@ public class HudManager : MonoBehaviour {
 		this._splashScreen = GameObject.Find("SplashScreen");
 		this._splashScreen.GetComponent<Image>().sprite = this._splashTest;
 		this._splashScreen.GetComponent<Image>().enabled = false;
+	
+		this._dialogueSplashScreen = GameObject.Find ("DialogueSplashScreen");
+		this._dialogueSplashScreen.GetComponent<Image>().enabled = false;
+
 		this._splashScreenItem = GameObject.Find("ItemSplashScreen");
 		this._splashScreenItem.GetComponent<Image>().enabled = false;
 		this._ItemAccept = GameObject.Find("ItemAccept");
@@ -352,7 +357,7 @@ public class HudManager : MonoBehaviour {
 
 	public void StartItemInteraction(Sprite inSprite)
 	{
-		this._splashScreen.GetComponent<Image>().enabled = true;
+		this._dialogueSplashScreen.GetComponent<Image>().enabled = true;
 		this._splashScreenItem.GetComponent<Image>().sprite = inSprite;
 		this._splashScreenItem.GetComponent<Image>().enabled = true;
 		this._ItemAccept.GetComponent<Text>().enabled = true;	
@@ -360,7 +365,7 @@ public class HudManager : MonoBehaviour {
 
 	public void EndItemInteraction(bool inResponse)
 	{
-		this._splashScreen.GetComponent<Image>().enabled = false;
+		this._dialogueSplashScreen.GetComponent<Image>().enabled = false;
 		this._splashScreenItem.GetComponent<Image>().enabled = false;
 		this._ItemAccept.GetComponent<Text>().enabled = false;
 	}
@@ -369,7 +374,7 @@ public class HudManager : MonoBehaviour {
 	{
 		this._district = inDist;
 		this._currentCard = inCardObj;
- 		this._splashScreen.GetComponent<Image>().enabled = true;
+		this._dialogueSplashScreen.GetComponent<Image>().enabled = true;
 		this._splashScreenCard.GetComponent<Image>().sprite = inSprite;
 		this._splashScreenCard.GetComponent<Image>().enabled = true;
 	}

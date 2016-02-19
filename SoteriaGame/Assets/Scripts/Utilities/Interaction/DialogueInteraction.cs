@@ -3,8 +3,9 @@ using System.Collections;
 
 public class DialogueInteraction : InteractionBase
 {
-	private GameObject _npcportrait;
-	
+	public Sprite NpcPortrait;
+	public bool IsNpcDialogue = true;
+
 	public string DialogueName;
 	public Reaction _reaction;
 	
@@ -52,6 +53,8 @@ public class DialogueInteraction : InteractionBase
 				{
 					GameDirector.instance.GetPlayer().PlayerActionPause();
 					GameDirector.instance.SetupDialogue(DialogueName, this.transform.parent.gameObject);
+					if (this.IsNpcDialogue)
+						GameDirector.instance.SetupDialogueNPC(this.NpcPortrait);
 					if (this.EndsWithChoice)
 						GameDirector.instance.SetupDialogueChoices(this.FirstChoice, this.SecondChoice, this.ThirdChoice);
 					GameDirector.instance.StartDialogue();

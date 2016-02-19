@@ -13,6 +13,7 @@ public enum DialogueState
 public class DialogueManager : MonoBehaviour
 {
 	GameObject _activeActor;
+	bool isNpcOn = false;
 
 	DialogueParser _parser;
 	DialogueState _currState;
@@ -36,7 +37,8 @@ public class DialogueManager : MonoBehaviour
 	/////////////////////////////////////////////////////////////////////////
 	///////////////////////  INITIALIZATION   ///////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
-	
+
+
 	public void Initialize()
 	{
 		this._currState = DialogueState.Standby;
@@ -52,9 +54,13 @@ public class DialogueManager : MonoBehaviour
 		DialogueUIText = DialogueUI.transform.FindChild("Dialogue").gameObject;
 		DialogueUIText.SetActive(false);
 
-		DialogueUISplashScreen = GameObject.Find("HUDInterface").transform.FindChild("SplashScreen").gameObject;
+		DialogueUISplashScreen = GameObject.Find("DialogueInterface").transform.FindChild("DialogueSplashScreen").gameObject;
+
 		DialogueUINpcPortrait = GameObject.Find("NpcPortrait").gameObject;;
+		DialogueUINpcPortrait.GetComponent<Image>().enabled = false;
 		DialogueUIPlayerPortrait = GameObject.Find("PlayerPortrait").gameObject;;
+		DialogueUIPlayerPortrait.GetComponent<Image>().enabled = false;
+
 
 		GameObject Choices = DialogueUI.transform.FindChild("Choices").gameObject;
 		DialogueUIFirstChoice = Choices.transform.FindChild("FirstChoice").gameObject;
@@ -105,13 +111,24 @@ public class DialogueManager : MonoBehaviour
 	/////////////////////////////////////////////////////////////////////////
 	///////////////////////  GUI MANIPULATION   /////////////////////////////
 	/////////////////////////////////////////////////////////////////////////
+
+	public void SetNpcPortrait(Sprite inNpc)
+	{
+		DialogueUINpcPortrait.GetComponent<Image>().sprite = inNpc;
+		this.isNpcOn = true;
+	}
+
 	private void ActivateGUI()
 	{
 		DialogueUIBG.SetActive(true);
 		DialogueUIText.SetActive(true);
-		DialogueUISplashScreen.GetComponent<Image>().enabled = true;
-		DialogueUINpcPortrait.SetActive(true);
-		DialogueUIPlayerPortrait.SetActive(true);
+
+		if (this.isNpcOn)
+		{
+			DialogueUISplashScreen.GetComponent<Image>().enabled = true;
+			DialogueUINpcPortrait.SetActive(true);
+			DialogueUIPlayerPortrait.SetActive(true);
+		}
 	}
 	
 	private void DeActivateGUI()
@@ -124,6 +141,12 @@ public class DialogueManager : MonoBehaviour
 		DialogueUISplashScreen.GetComponent<Image>().enabled = false;
 		DialogueUINpcPortrait.SetActive(false);
 		DialogueUIPlayerPortrait.SetActive(false);
+
+		if (this.isNpcOn)
+		{
+			DialogueUINpcPortrait.GetComponent<Image>().sprite = null;
+			isNpcOn = false;
+		}
 	}
 
 	private void privLoadChoice(int indx)
