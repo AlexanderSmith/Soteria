@@ -374,7 +374,7 @@ public class HudManager : MonoBehaviour {
 	{
 		this._district = inDist;
 		this._currentCard = inCardObj;
-		this._dialogueSplashScreen.GetComponent<Image>().enabled = true;
+		this._splashScreen.GetComponent<Image>().enabled = true;
 		this._splashScreenCard.GetComponent<Image>().sprite = inSprite;
 		this._splashScreenCard.GetComponent<Image>().enabled = true;
 	}
