@@ -1371,6 +1371,11 @@ public class GameDirector : MonoBehaviour {
 		this._dialoguemanager.ReloadDialogueData(txtname, inActor);
 	}
 
+	public void SetupDialogueNPC(Sprite NpcPortrait)
+	{
+		this._dialoguemanager.SetNpcPortrait(NpcPortrait);
+	}
+
 	public void SetupDialogueChoices (string fChoice, string sChoice, string tChoice)
 	{
 		this._dialoguemanager.LoadChoicesDialogueName(fChoice, sChoice, tChoice);
