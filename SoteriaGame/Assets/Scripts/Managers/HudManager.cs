@@ -31,7 +31,6 @@ public class HudManager : MonoBehaviour {
 	private GameObject _currentCard;
 
 	public GameObject Objective;
-	private GameObject [] Buttons;
 	private GameObject _splashScreen;
 	private GameObject _dialogueSplashScreen;
 	private GameObject _splashScreenItem;
@@ -39,6 +38,13 @@ public class HudManager : MonoBehaviour {
 	private GameObject _splashScreenCard;
 	private GameObject _noResponse;
 	private GameObject _yesResponse;
+	
+	/// Inventory Swap Objects
+	private GameObject _keysplash;
+	private GameObject _keySplashScreen;
+	private GameObject _tokenItemSelection;
+	private GameObject _lanternItemSelection;
+	private GameObject _compassItemSelection;
 
 	// Inventory items
 	private GameObject _token;
@@ -46,6 +52,10 @@ public class HudManager : MonoBehaviour {
 	private GameObject _compass;
 	private GameObject _cards;
 	private GameObject _suit;
+
+
+
+
 	//	private GameObject leftKeyPiece;
 	//	private GameObject middleKeyPiece;
 	//	private GameObject centerKeyPiece;
@@ -68,10 +78,6 @@ public class HudManager : MonoBehaviour {
 
 		this._offIndicator.gameObject.SetActive(false);
 		this._onIndicator.gameObject.SetActive(false);
-
-		this.Buttons = new GameObject [4];
-		for (int i=0; i< 4; ++i)
-			this.Buttons[i] = _hudinterface.transform.FindChild("Button_"+i).gameObject;
 
 		this._coinController = _hudinterface.GetComponentInChildren<ButtonController>();
 		this._coinController.Initialize (this);
@@ -115,6 +121,13 @@ public class HudManager : MonoBehaviour {
 		this._cards.GetComponent<Image>().enabled = false;
 		this._suit = GameObject.Find("Suit");
 		this._suit.GetComponent<Image>().enabled = false;
+
+
+		 _keysplash = GameObject.Find("KeySplashItem");
+		 _keySplashScreen =  GameObject.Find("KeySplashScreen_bg");
+		 _tokenItemSelection =  GameObject.Find("Token_ItemSwap");
+		 _lanternItemSelection =  GameObject.Find("Lantern_ItemSwap");
+		 _compassItemSelection =  GameObject.Find("Compass_ItemSwap");
 	}
 
 	// Update is called once per frame
@@ -218,20 +231,6 @@ public class HudManager : MonoBehaviour {
 		}
 		
 		return false;
-	}
-	
-	///To swap components the only method I found is by using reflection,
-	//No worth the trouble. hmmm, I'll check for another method for now it works.
-	public void RemoveItemFromInventory (int itemindex)
-	{		
-		for (int i=0; i<4; ++i)
-		{
-			if (Buttons[i].activeSelf)
-			{				
-				Buttons[i].SetActive(false);
-				break;
-			}	
-		}
 	}
 
 	public void RemoveIndicator()
@@ -398,6 +397,29 @@ public class HudManager : MonoBehaviour {
 			this._currentCard.SetActive(false);
 		}
 	}
+
+	
+	public void StartKeySwapInteraction(Sprite inSprite)
+	{
+		_tokenItemSelection.GetComponent<Image>().enabled = true;
+		_lanternItemSelection.GetComponent<Image>().enabled = true;
+		_compassItemSelection.GetComponent<Image>().enabled = true;
+		
+		_keysplash.GetComponent<Image>().sprite = inSprite;
+		_keysplash.GetComponent<Image>().enabled = true;
+		_keySplashScreen.GetComponent<Image>().enabled = true;
+	}
+	
+	public void EndKeySwapInteraction()
+	{
+		_tokenItemSelection.GetComponent<Image>().enabled = false;
+		_lanternItemSelection.GetComponent<Image>().enabled = false;
+		_compassItemSelection.GetComponent<Image>().enabled = false;
+		
+		_keysplash.GetComponent<Image>().enabled = false;
+		_keySplashScreen.GetComponent<Image>().enabled = false;
+	}
+
 
 	string FindCard(int card)
 	{
