@@ -2,12 +2,16 @@
 <b>Ana:</b> Yes.
 <trigger/>TriggerActions-FadeScreen-
 <trigger/>TriggerActions-OMalleyOffSCOn-
+<trigger/>TriggerActions-FearPlayer-
+<trigger/>TriggerActions-ShadowCreatureOP-
 <b>O'Malley:</b> Don’t fight the fear.
 <b>O'Malley:</b> Just let it happen. Accept the fear.
 <trigger/>TriggerActions-ResumeFade-
+<trigger/>TriggerActions-ShadowCreatureOP2-
 <b>O'Malley:</b> The only way out is through!!
 <b>O'Malley:</b> Good. You've got to choose to be afraid. Linger through the fear.
 <trigger/>TriggerActions-ResumeFade-
+<trigger/>TriggerActions-ShadowCreatureOP3-
 <trigger/>TriggerActions-InitiateEventTimers-
 <trigger/>TriggerActions-LingerPrompt-
 <trigger/>TriggerActions-Delay-

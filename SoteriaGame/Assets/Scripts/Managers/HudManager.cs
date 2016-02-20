@@ -26,8 +26,7 @@ public class HudManager : MonoBehaviour {
 	private Sprite _splashTest;
 	private Sprite _idleLantern;
 	private Sprite _activeLantern;
-	// 1 = Music, 2 = Theater, 3 = Observatory
-	private int _district;
+	private int _district; // 1 = Music, 2 = Theater, 3 = Observatory
 	private GameObject _currentCard;
 
 	public GameObject Objective;
@@ -45,6 +44,7 @@ public class HudManager : MonoBehaviour {
 	private GameObject _tokenItemSelection;
 	private GameObject _lanternItemSelection;
 	private GameObject _compassItemSelection;
+	private GameObject _textItemSelection;
 
 	// Inventory items
 	private GameObject _token;
@@ -52,13 +52,9 @@ public class HudManager : MonoBehaviour {
 	private GameObject _compass;
 	private GameObject _cards;
 	private GameObject _suit;
-
-
-
-
-	//	private GameObject leftKeyPiece;
-	//	private GameObject middleKeyPiece;
-	//	private GameObject centerKeyPiece;
+//	private GameObject leftKeyPiece;
+//	private GameObject middleKeyPiece;
+//	private GameObject centerKeyPiece;
 
 	// Use this for initialization
 	void Awake () 
@@ -122,12 +118,18 @@ public class HudManager : MonoBehaviour {
 		this._suit = GameObject.Find("Suit");
 		this._suit.GetComponent<Image>().enabled = false;
 
-
-		 _keysplash = GameObject.Find("KeySplashItem");
-		 _keySplashScreen =  GameObject.Find("KeySplashScreen_bg");
-		 _tokenItemSelection =  GameObject.Find("Token_ItemSwap");
-		 _lanternItemSelection =  GameObject.Find("Lantern_ItemSwap");
-		 _compassItemSelection =  GameObject.Find("Compass_ItemSwap");
+		this._keysplash = GameObject.Find("KeySplashItem");
+		this._keysplash.GetComponent<Image> ().enabled = false;
+		this._keySplashScreen =  GameObject.Find("KeySplashScreen_bg");
+		this._keySplashScreen.GetComponent<Image> ().enabled = false;
+		this._tokenItemSelection =  GameObject.Find("Token_ItemSwap");
+		this._tokenItemSelection.GetComponent<Image> ().enabled = false;
+		this._lanternItemSelection =  GameObject.Find("Lantern_ItemSwap");
+		this._lanternItemSelection.GetComponent<Image> ().enabled = false;
+		this._compassItemSelection =  GameObject.Find("Compass_ItemSwap");
+		this._compassItemSelection.GetComponent<Image> ().enabled = false;
+		this._textItemSelection = GameObject.Find("Text_ItemSwap");
+		this._textItemSelection.GetComponent<Text>().enabled = false;
 	}
 
 	// Update is called once per frame
@@ -397,13 +399,13 @@ public class HudManager : MonoBehaviour {
 			this._currentCard.SetActive(false);
 		}
 	}
-
-	
+		
 	public void StartKeySwapInteraction(Sprite inSprite)
 	{
 		_tokenItemSelection.GetComponent<Image>().enabled = true;
 		_lanternItemSelection.GetComponent<Image>().enabled = true;
 		_compassItemSelection.GetComponent<Image>().enabled = true;
+		this._textItemSelection.GetComponent<Text>().enabled = true;
 		
 		_keysplash.GetComponent<Image>().sprite = inSprite;
 		_keysplash.GetComponent<Image>().enabled = true;
@@ -415,11 +417,11 @@ public class HudManager : MonoBehaviour {
 		_tokenItemSelection.GetComponent<Image>().enabled = false;
 		_lanternItemSelection.GetComponent<Image>().enabled = false;
 		_compassItemSelection.GetComponent<Image>().enabled = false;
-		
+		this._textItemSelection.GetComponent<Text>().enabled = false;
+
 		_keysplash.GetComponent<Image>().enabled = false;
 		_keySplashScreen.GetComponent<Image>().enabled = false;
 	}
-
 
 	string FindCard(int card)
 	{

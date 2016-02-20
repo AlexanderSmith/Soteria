@@ -23,6 +23,7 @@ public class TriggerActions : MonoBehaviour
 
 		this._oMalley = this.transform.parent.FindChild("pCube42").gameObject;
 		this._SC = this.transform.parent.FindChild("Enemy").gameObject;
+		this._SC.SetActive (false);
 		lingerTimer = TimerManager.instance.Attach(TimersType.TutorialLinger);
 		eventTimer = TimerManager.instance.Attach(TimersType.TutorialEvent);
 	}
@@ -36,6 +37,7 @@ public class TriggerActions : MonoBehaviour
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				lingerTimer.ResetTimer();
+				this.Lingering();
 			}
 			else
 			{
@@ -50,6 +52,7 @@ public class TriggerActions : MonoBehaviour
 			}
 			if (eventTimer.ElapsedTime() >= winTime)
 			{
+				GameDirector.instance.GetPlayer().Overcome();
 				lingerTimer.StopTimer();
 				eventTimer.StopTimer();
 				this.transform.root.GetComponent<InitiateTutorial>().Succeeded();
@@ -114,5 +117,42 @@ public class TriggerActions : MonoBehaviour
 
 	public void Delay()
 	{
+	}
+
+	public void FearPlayer()
+	{
+		GameDirector.instance.GetPlayer().AddFear();
+	}
+
+	public void Lingering()
+	{
+		GameDirector.instance.GetPlayer().BeginLingering();
+	}
+
+	public void ShadowCreatureOP()
+	{
+		this._SC.GetComponent<TutorialEnemy>().OP();
+	}
+
+	public void ShadowCreatureOP2()
+	{
+		this._SC.GetComponent<TutorialEnemy>().OP2();
+	}
+
+	public void ShadowCreatureOP3()
+	{
+		this._SC.GetComponent<TutorialEnemy>().OP3();
+	}
+
+	public void ShadowCreatureCower()
+	{
+		this._SC.GetComponent<TutorialEnemy>().Cower();
+	}
+
+	public void ResetTutorial()
+	{
+		this._SC.GetComponent<TutorialEnemy>().ResetOverpower();
+		GameDirector.instance.GetPlayer().ResetLinger();
+		GameDirector.instance.GetPlayer().RemoveFear();
 	}
 }

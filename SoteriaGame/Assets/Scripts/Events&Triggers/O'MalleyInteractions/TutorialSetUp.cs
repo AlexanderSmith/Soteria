@@ -8,6 +8,6 @@ public class TutorialSetUp : MonoBehaviour
 	void Awake()
 	{
 		this._oMalley = GameObject.Find("O'MalleyTutorial");
-		this._oMalley.transform.FindChild("Enemy").gameObject.SetActive(false);
+		//this._oMalley.transform.FindChild("Enemy").gameObject.SetActive(false);
 	}
 }
