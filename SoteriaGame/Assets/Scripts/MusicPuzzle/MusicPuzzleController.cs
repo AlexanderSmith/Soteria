@@ -3,6 +3,8 @@ using System.Collections;
 
 public class MusicPuzzleController : MonoBehaviour
 {
+	private GameObject _oMalleySuitOn;
+
 	private bool _brassPlaying;
 	private bool _stringPlaying;
 	private bool _windPlaying;
@@ -32,6 +34,7 @@ public class MusicPuzzleController : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		this._oMalleySuitOn = GameObject.Find("O'MalleySuitOnMusicPuzzle");
 		this._brassPlaying = false;
 		this._stringPlaying = false;
 		this._windPlaying = false;
@@ -42,7 +45,7 @@ public class MusicPuzzleController : MonoBehaviour
 	{
 		// Gameplay hacks to test puzzle fight
 //		GameDirector.instance.MusicPuzzleActivated();
-//		GameDirector.instance.SuitRemoved();
+//		GameDirector.instance.SuitWorn();
 
 		if (GameDirector.instance.GetMusicActivated())
 		{
@@ -57,9 +60,14 @@ public class MusicPuzzleController : MonoBehaviour
 				GameDirector.instance.SetupDialogue("AnaEnteringMusicPuzzWithSuit");
 				GameDirector.instance.StartDialogue();
 			}
+			else
+			{
+				this._oMalleySuitOn.SetActive(false);
+			}
 		}
 		else
 		{
+			this._oMalleySuitOn.SetActive(false);
 			this.organTile.transform.position = this.organUp.position;
 			this.brassTile.transform.position = this.brassDown.position;
 			this.stringTile.transform.position = this.stringDown.position;
