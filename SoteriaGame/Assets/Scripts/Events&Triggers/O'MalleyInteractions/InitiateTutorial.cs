@@ -6,6 +6,7 @@ public class InitiateTutorial : MonoBehaviour
 	private bool _start;
 	private bool _fail;
 	private bool _success;
+	private bool _lingering;
 
 	void Start()
 	{
@@ -18,6 +19,7 @@ public class InitiateTutorial : MonoBehaviour
 	public void Failed()
 	{
 		this._fail = true;
+		this.ResetLinger();
 	}
 
 	public void Succeeded()
@@ -38,5 +40,20 @@ public class InitiateTutorial : MonoBehaviour
 	public bool GetSuccess()
 	{
 		return this._success;
+	}
+
+	public bool GetLingering()
+	{
+		return this._lingering;
+	}
+
+	public void ResetLinger()
+	{
+		this._lingering = false;
+	}
+
+	public void Lingering()
+	{
+		this._lingering = true;
 	}
 }

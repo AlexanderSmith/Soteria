@@ -66,7 +66,7 @@ public class TriggerActions : MonoBehaviour
 	{
 		this._oMalley.SetActive(false);
 		this._SC.SetActive(true);
-		//GameDirector.instance.EndTriggerState();
+		GameDirector.instance.EndTriggerState();
 	}
 
 	public void OMalleyOnSCOff()
@@ -75,6 +75,7 @@ public class TriggerActions : MonoBehaviour
 		ClearScreen();
 		this._oMalley.SetActive(true);
 		this._SC.SetActive(false);
+		GameDirector.instance.EndTriggerState();
 	}
 
 	public void ClearScreen()
@@ -82,6 +83,7 @@ public class TriggerActions : MonoBehaviour
 		_startFade = false;
 		NewColor.a = 50;
 		GameDirector.instance.ClearScreenFade();
+		GameDirector.instance.EndTriggerState();
 	}
 
 	public void FadeScreen()
@@ -95,19 +97,20 @@ public class TriggerActions : MonoBehaviour
 	{
 		GameDirector.instance.PauseScreenFade();
 		_startFade = false;
-		//GameDirector.instance.EndTriggerState();
+		GameDirector.instance.EndTriggerState();
 	}
 
 	public void ResumeFade()
 	{
 		NewColor.a += 25;
+		GameDirector.instance.EndTriggerState();
 	}
 
 	public void InitiateEventTimers()
 	{
 		lingerTimer.StartTimer();
 		eventTimer.StartTimer();
-		//GameDirector.instance.EndTriggerState();
+//		GameDirector.instance.EndTriggerState();
 	}
 
 	public void LingerPrompt()
@@ -122,37 +125,44 @@ public class TriggerActions : MonoBehaviour
 	public void FearPlayer()
 	{
 		GameDirector.instance.GetPlayer().AddFear();
+		GameDirector.instance.EndTriggerState();
 	}
 
 	public void Lingering()
 	{
+		this.transform.root.GetComponent<InitiateTutorial>().Lingering();
 		GameDirector.instance.GetPlayer().BeginLingering();
 	}
 
 	public void ShadowCreatureOP()
 	{
 		this._SC.GetComponent<TutorialEnemy>().OP();
+		GameDirector.instance.EndTriggerState();
 	}
 
 	public void ShadowCreatureOP2()
 	{
 		this._SC.GetComponent<TutorialEnemy>().OP2();
+		GameDirector.instance.EndTriggerState();
 	}
 
 	public void ShadowCreatureOP3()
 	{
 		this._SC.GetComponent<TutorialEnemy>().OP3();
+		GameDirector.instance.EndTriggerState();
 	}
 
 	public void ShadowCreatureCower()
 	{
 		this._SC.GetComponent<TutorialEnemy>().Cower();
+		GameDirector.instance.EndTriggerState();
 	}
 
 	public void ResetTutorial()
 	{
-		this._SC.GetComponent<TutorialEnemy>().ResetOverpower();
+		//this._SC.GetComponent<TutorialEnemy>().ResetOverpower();
 		GameDirector.instance.GetPlayer().ResetLinger();
 		GameDirector.instance.GetPlayer().RemoveFear();
+		GameDirector.instance.EndTriggerState();
 	}
 }

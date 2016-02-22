@@ -1,3 +1,5 @@
+
+<trigger/>TriggerActions-ResetTutorial-
 <b>O'Malley:</b> Now, shall we try this again?
 <b>Ana:</b> Yes.
 <trigger/>TriggerActions-FadeScreen-
@@ -14,4 +16,3 @@
 <trigger/>TriggerActions-ShadowCreatureOP3-
 <trigger/>TriggerActions-InitiateEventTimers-
 <trigger/>TriggerActions-LingerPrompt-
-<trigger/>TriggerActions-Delay-

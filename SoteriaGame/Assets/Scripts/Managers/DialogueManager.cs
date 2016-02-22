@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public enum DialogueState
@@ -279,7 +280,7 @@ public class DialogueManager : MonoBehaviour
 
 	void ExecuteTrigger()
 	{
-		DialogueTrigger tri = null;
+		List< DialogueTrigger> triKillList = new List<DialogueTrigger>();
 
 		if (_diagdata.hasTriggers)
 		{
@@ -287,16 +288,18 @@ public class DialogueManager : MonoBehaviour
 			{
 				if (_diagdata.Textindx == (Tri.line - 1))
 				{
+					triKillList.Add(Tri);
+		
+					this._currState = DialogueState.TriggerActive;
+
 					Tri.runTrigger();
-					tri = Tri;
 				}
 			}
-		}
-	
-		///Make sure this dialogue doesn't happen multiple times or else it breaks.
-		if (tri != null)
-		{
-			_diagdata.TriggerCommands.Remove(tri);
+			///Make sure this dialogue doesn't happen multiple times or else it breaks.
+			foreach (DialogueTrigger Tri in triKillList)
+			{
+				_diagdata.TriggerCommands.Remove(Tri);
+			}
 		}
 
 		if ( _diagdata.TriggerCommands.Count < 1)
@@ -347,7 +350,7 @@ public class DialogueManager : MonoBehaviour
 						if (this._currState != DialogueState.TriggerActive)
 						{
 							
-							this._currState = DialogueState.TriggerActive;
+							//this._currState = DialogueState.TriggerActive;
 							this.ExecuteTrigger();
 						}
 					}
@@ -393,7 +396,7 @@ public class DialogueManager : MonoBehaviour
 						{
 							if (this._currState != DialogueState.TriggerActive)
 							{
-								this._currState = DialogueState.TriggerActive;
+								//this._currState = DialogueState.TriggerActive;
 								this.ExecuteTrigger();
 							}
 						}

@@ -5,4 +5,3 @@
 <trigger/>TriggerActions-ResumeFade-
 <trigger/>TriggerActions-InitiateEventTimers-
 <trigger/>TriggerActions-LingerPrompt-
-<trigger/>TriggerActions-Delay-
