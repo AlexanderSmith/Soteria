@@ -30,17 +30,17 @@ public class HubSuitObjective : MonoBehaviour
 		this._oMalleySuitOff = GameObject.Find("O'MalleySuitOff");
 
 		// Testing code
-//		GameDirector.instance.ChangeGameState(GameStates.Suit);
-//		this._music = true;
-//		this._theater = true;
-//		this._observatory = true;
+		GameDirector.instance.ChangeGameState(GameStates.Suit);
+		this._music = true;
+		this._theater = true;
+		this._observatory = true;
 	}
 
 	void Start ()
 	{
 		if (GameDirector.instance.GetGameState() == GameStates.Suit)
 		{
-			DetermineObjective();
+//			DetermineObjective();
 		}
 		else
 		{

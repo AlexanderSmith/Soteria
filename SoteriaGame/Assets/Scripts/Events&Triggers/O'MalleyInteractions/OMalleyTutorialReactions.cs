@@ -5,6 +5,7 @@ public class OMalleyTutorialReactions : Reaction
 {
 	private bool _failed;
 	private bool _succeeded;
+	private bool _lingering;
 	private bool _done;
 
 	void Start()
@@ -33,7 +34,7 @@ public class OMalleyTutorialReactions : Reaction
 			this.transform.root.GetComponentInChildren<TriggerActions>().OMalleyOnSCOff();
 			GameDirector.instance.GetDialogueFromReaction("AnaOMalleyAfterLingerSuccess", this.gameObject.transform.parent.gameObject);
 		}
-		else
+		else if (!_lingering)
 		{
 			GameDirector.instance.GetDialogueFromReaction("OMalleyTeachingAnaToOvercomeFear2", this.gameObject.transform.parent.gameObject);
 		}
@@ -43,5 +44,6 @@ public class OMalleyTutorialReactions : Reaction
 	{
 		this._failed = this.transform.root.GetComponent<InitiateTutorial>().GetFail();
 		this._succeeded = this.transform.root.GetComponent<InitiateTutorial>().GetSuccess();
+		this._lingering = this.transform.root.GetComponent<InitiateTutorial>().GetLingering();
 	}
 }
