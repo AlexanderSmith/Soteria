@@ -55,6 +55,25 @@ public class HudManager : MonoBehaviour {
 //	private GameObject leftKeyPiece;
 //	private GameObject middleKeyPiece;
 //	private GameObject centerKeyPiece;
+	
+	GameObject LeftKey;
+	GameObject RightKey;
+	GameObject MidKey;
+	
+	GameObject CoinInv;
+	GameObject CoinInv_1;
+	GameObject CoinInv_2;
+	GameObject CompassInv;
+	GameObject LanternInv;
+
+	InventorySwapChoice currChoice;
+	enum InventorySwapChoice
+	{
+		First,
+		Second,
+		Third,
+		Done
+	}
 
 	// Use this for initialization
 	void Awake () 
@@ -130,6 +149,25 @@ public class HudManager : MonoBehaviour {
 		this._compassItemSelection.GetComponent<Image> ().enabled = false;
 		this._textItemSelection = GameObject.Find("Text_ItemSwap");
 		this._textItemSelection.GetComponent<Text>().enabled = false;
+
+
+		LeftKey = GameObject.Find("LeftKey");
+		LeftKey.SetActive(false);
+		RightKey = GameObject.Find("RightKey");
+		RightKey.SetActive(false);
+		MidKey = GameObject.Find("MidKey");
+		MidKey.SetActive(false);
+		
+		CoinInv = GameObject.Find("Coin");
+		CompassInv = GameObject.Find("Compass");
+		LanternInv = GameObject.Find("Lantern");
+
+		CoinInv_1 = GameObject.Find("Coin_1");
+		CoinInv_1.SetActive(false);
+		CoinInv_2 = GameObject.Find("Coin_2");
+		CoinInv_2.SetActive(false);
+		
+		currChoice = InventorySwapChoice.First;
 	}
 
 	// Update is called once per frame
@@ -137,6 +175,95 @@ public class HudManager : MonoBehaviour {
 	{
 		UpdateFade();
 		UpdateIndicator();
+	}
+
+	public void SwapCompassForKey()
+	{
+		switch(currChoice)
+		{
+		case InventorySwapChoice.First:
+			CompassInv.SetActive(false);
+			LeftKey.SetActive(true);
+			CoinInv_1.SetActive(true);
+			CoinInv.SetActive(false);
+			break;
+			
+		case InventorySwapChoice.Second:
+			CompassInv.SetActive(false);
+			RightKey.SetActive(true);
+			break;
+			
+		case InventorySwapChoice.Third:
+			CompassInv.SetActive(false);
+			MidKey.SetActive(true);
+			break;
+
+		default:
+			break;
+		}
+
+		currChoice++;
+	}
+
+	public void SwapLanternForKey()
+	{
+		switch(currChoice)
+		{
+		case InventorySwapChoice.First:
+			LanternInv.SetActive(false);
+			CoinInv.SetActive(false);
+			LeftKey.SetActive(true);
+			CoinInv_2.SetActive(true);
+			break;
+			
+		case InventorySwapChoice.Second:
+			LanternInv.SetActive(false);
+			RightKey.SetActive(true);
+			break;
+			
+		case InventorySwapChoice.Third:
+			LanternInv.SetActive(false);
+			MidKey.SetActive(true);
+			break;
+
+		default:
+			break;
+		}
+		currChoice++;
+	}
+
+	public void SwapTokenForKey()
+	{
+		switch(currChoice)
+		{
+			case InventorySwapChoice.First:
+				CoinInv.SetActive(false);
+				LeftKey.SetActive(true);
+			break;
+
+			case InventorySwapChoice.Second:
+				
+				if ( CoinInv_1.activeSelf)
+					CoinInv_1.SetActive(false);
+				if (CoinInv_2.activeSelf)
+					CoinInv_2.SetActive(false);
+
+				RightKey.SetActive(true);
+			break;
+
+			case InventorySwapChoice.Third:
+
+				if ( CoinInv_1.activeSelf)
+					CoinInv_1.SetActive(false);
+				if (CoinInv_2.activeSelf)
+					CoinInv_2.SetActive(false);
+
+				MidKey.SetActive(true);
+			break;
+			default:
+			break;
+		}
+		currChoice++;
 	}
 
 	private void UpdateIndicator ()

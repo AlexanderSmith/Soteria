@@ -1362,7 +1362,20 @@ public class GameDirector : MonoBehaviour {
 	}
 	public void SwapItemForKey(ItemType inType)
 	{
-
+		switch(inType)
+		{
+			case ItemType.Token:
+				this._HUDManager.SwapTokenForKey();
+			break;
+			
+			case ItemType.Compass:    
+				this._HUDManager.SwapCompassForKey();
+			break;
+			
+			case ItemType.Lantern:
+				this._HUDManager.SwapLanternForKey();
+			break;
+		}
 	}
 
 	///////////////////////////////////////////////////////////////////

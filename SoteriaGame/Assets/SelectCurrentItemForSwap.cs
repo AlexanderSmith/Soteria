@@ -19,20 +19,25 @@ public class SelectCurrentItemForSwap : MonoBehaviour {
 	void Start () {
 	
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		if (Input.GetMouseButton( 0 ) && isSelectable)
+
+	public void SelectChoice() {
+
+		if (isSelectable)
 		{
 			GameDirector.instance.SwapItemForKey(Type);
 			GameDirector.instance.EndKeyInteraction();
-
+			
 			isSelectable = false;
 		}
-		else if (!isSelectable)
+	}
+
+	// Update is called once per frame
+	void Update () 
+	{	
+		if (!isSelectable)
 		{
 			///Swap for a greyscale image or deactivate!
 		}
+
 	}
 }
