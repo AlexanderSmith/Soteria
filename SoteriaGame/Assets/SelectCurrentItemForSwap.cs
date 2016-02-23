@@ -16,8 +16,8 @@ public class SelectCurrentItemForSwap : MonoBehaviour {
 	public ItemType Type;
 
 	// Use this for initialization
-	void Start () {
-	
+	void Start ()
+	{
 	}
 
 	public void SelectChoice() {
@@ -28,16 +28,13 @@ public class SelectCurrentItemForSwap : MonoBehaviour {
 			GameDirector.instance.EndKeyInteraction();
 			
 			isSelectable = false;
+			TurnOff ();
 		}
 	}
 
 	// Update is called once per frame
-	void Update () 
-	{	
-		if (!isSelectable)
-		{
-			///Swap for a greyscale image or deactivate!
-		}
-
+	void TurnOff()
+	{
+		this.gameObject.SetActive(false);
 	}
 }

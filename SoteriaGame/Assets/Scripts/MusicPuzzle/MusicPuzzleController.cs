@@ -31,6 +31,8 @@ public class MusicPuzzleController : MonoBehaviour
 	public float initialVolume;
 	public float winTime;
 
+	public Sprite _leftKey;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -45,7 +47,7 @@ public class MusicPuzzleController : MonoBehaviour
 	{
 		// Gameplay hacks to test puzzle fight
 //		GameDirector.instance.MusicPuzzleActivated();
-//		GameDirector.instance.SuitWorn();
+//		GameDirector.instance.SuitRemoved();
 
 		if (GameDirector.instance.GetMusicActivated())
 		{
@@ -206,6 +208,7 @@ public class MusicPuzzleController : MonoBehaviour
 	{
 		GameDirector.instance.MusicPuzzleDefeated();
 		StartCoroutine ("OvercamePuzzle");
+		GameDirector.instance.StartKeyInteraction(_leftKey);
 	}
 
 	IEnumerator OvercamePuzzle()
@@ -219,9 +222,9 @@ public class MusicPuzzleController : MonoBehaviour
 			GameDirector.instance.OvercomeMusicPuzzle(AudioID.OrganMusic);
 			yield return null;
 		}
-		GameDirector.instance.StopAudioClip(AudioID.BrassMusic);
-		GameDirector.instance.StopAudioClip(AudioID.WindMusic);
-		GameDirector.instance.StopAudioClip(AudioID.StringMusic);
-		GameDirector.instance.StopAudioClip(AudioID.OrganMusic);
+//		GameDirector.instance.StopAudioClip(AudioID.BrassMusic);
+//		GameDirector.instance.StopAudioClip(AudioID.WindMusic);
+//		GameDirector.instance.StopAudioClip(AudioID.StringMusic);
+//		GameDirector.instance.StopAudioClip(AudioID.OrganMusic);
 	}
 }
