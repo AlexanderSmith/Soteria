@@ -7,6 +7,8 @@ public class MusicPuzzleSceneStart : MonoBehaviour
 	public Transform playerSpawnLoc;
 
 	private GameObject _controller;
+	private GameObject _key;
+	private GameObject _oMalley;
 
 	// Instantiate Player prefab based on progression using GameDirector
 	void Awake()
@@ -23,8 +25,20 @@ public class MusicPuzzleSceneStart : MonoBehaviour
 //		GameDirector.instance.CompassTrue();
 //		GameDirector.instance.LanternTrue();
 
-		GameDirector.instance.ChangeObjective(GameObject.Find("KeyPiece"));
-		_controller = GameObject.Find("MusicPuzzleControl");
-		_controller.GetComponent<MusicPuzzleController>().Initialize();
+		if (!GameDirector.instance.IsMusicDefeated())
+		{
+			GameDirector.instance.ChangeObjective(GameObject.Find("KeyPiece"));
+			_controller = GameObject.Find("MusicPuzzleControl");
+			_controller.GetComponent<MusicPuzzleController>().Initialize();
+		}
+		else
+		{
+			GameDirector.instance.PlayAudioClip(AudioID.OrganMusicComplete);
+			GameDirector.instance.ChangeVolume(AudioID.OrganMusicComplete, 1.0f);
+			_key = GameObject.Find("KeyPiece");
+			_oMalley = GameObject.Find("O'MalleySuitOnMusicPuzzle");
+			_key.SetActive(false);
+			_oMalley.SetActive(false);
+		}
 	}
 }

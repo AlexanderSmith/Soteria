@@ -15,6 +15,11 @@ public class MusicPuzzleController : MonoBehaviour
 	public GameObject stringTile;
 	public GameObject windTile;
 	public GameObject boss;
+	public GameObject musicSuckOrgan;
+	public GameObject musicSuckBrass;
+	public GameObject musicSuckString;
+	public GameObject musicSuckWind;
+	public GameObject keyPiece;
 
 	public Transform organDown;
 	public Transform organUp;
@@ -41,14 +46,17 @@ public class MusicPuzzleController : MonoBehaviour
 		this._stringPlaying = false;
 		this._windPlaying = false;
 		this._organPlaying = false;
+		this.musicSuckOrgan.SetActive(false);
+		this.musicSuckBrass.SetActive(false);
+		this.musicSuckString.SetActive(false);
+		this.musicSuckWind.SetActive(false);
 	}
 
 	public void Initialize()
 	{
 		// Gameplay hacks to test puzzle fight
-//		GameDirector.instance.MusicPuzzleActivated();
-//		GameDirector.instance.SuitRemoved();
-
+		GameDirector.instance.MusicPuzzleActivated();
+		GameDirector.instance.SuitRemoved();
 		if (GameDirector.instance.GetMusicActivated())
 		{
 			this.organTile.transform.position = this.organDown.position;
@@ -213,6 +221,9 @@ public class MusicPuzzleController : MonoBehaviour
 
 	IEnumerator OvercamePuzzle()
 	{
+		this.KillSuckOrganMusic();
+		GameDirector.instance.ChangeObjective(null);
+		this.keyPiece.SetActive(false);
 		float start = Time.time;
 		while (Time.time < start + winTime)
 		{
@@ -226,5 +237,91 @@ public class MusicPuzzleController : MonoBehaviour
 //		GameDirector.instance.StopAudioClip(AudioID.WindMusic);
 //		GameDirector.instance.StopAudioClip(AudioID.StringMusic);
 //		GameDirector.instance.StopAudioClip(AudioID.OrganMusic);
+	}
+
+	public void StartAllMusicSuck()
+	{
+		this.musicSuckOrgan.SetActive(true);
+		this.musicSuckBrass.SetActive(true);
+		this.musicSuckString.SetActive(true);
+		this.musicSuckWind.SetActive(true);
+	}
+
+	public void MusicSuck(string inMusicSuck)
+	{
+		switch (inMusicSuck)
+		{
+		case "Organ":
+			this.SuckOrganMusic();
+			break;
+		case "Brass":
+			this.SuckBrassMusic();
+			break;
+		case "String":
+			this.SuckStringMusic();
+			break;
+		case "Wind":
+			this.SuckWindMusic();
+			break;
+		}
+	}
+
+	private void SuckOrganMusic()
+	{
+		this.musicSuckOrgan.SetActive(true);
+	}
+
+	private void SuckBrassMusic()
+	{
+		this.musicSuckBrass.SetActive(true);
+	}
+
+	private void SuckStringMusic()
+	{
+		this.musicSuckString.SetActive(true);
+	}
+
+	private void SuckWindMusic()
+	{
+		this.musicSuckWind.SetActive(true);
+	}
+
+	public void KillMusicSuck(string inMusicSuck)
+	{
+		switch (inMusicSuck)
+		{
+		case "Organ":
+			this.KillSuckOrganMusic();
+			break;
+		case "Brass":
+			this.KillSuckBrassMusic();
+			break;
+		case "String":
+			this.KillSuckStringMusic();
+			break;
+		case "Wind":
+			this.KillSuckWindMusic();
+			break;
+		}
+	}
+	
+	private void KillSuckOrganMusic()
+	{
+		this.musicSuckOrgan.SetActive(false);
+	}
+	
+	private void KillSuckBrassMusic()
+	{
+		this.musicSuckBrass.SetActive(false);
+	}
+	
+	private void KillSuckStringMusic()
+	{
+		this.musicSuckString.SetActive(false);
+	}
+	
+	private void KillSuckWindMusic()
+	{
+		this.musicSuckWind.SetActive(false);
 	}
 }

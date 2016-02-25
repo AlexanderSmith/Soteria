@@ -15,6 +15,7 @@ public class MusicBossController : MonoBehaviour
 	private bool _started;
 
 	private string _currentPile;
+	private string _musicSuck;
 	private bool _fighting;
 
 	private MusicPuzzleController _musicController;
@@ -26,9 +27,10 @@ public class MusicBossController : MonoBehaviour
 
 	public void HackStart(AudioID inAID)
 	{
+		this._musicController.StartAllMusicSuck();
 		this._currentMusic = inAID;
 		this._started = true;
-		this._musicController.GetComponent<MusicPuzzleController>().PuzzleStartHackBoss();
+		this._musicController.PuzzleStartHackBoss();
 	}
 
 	public void Initialize(MusicPuzzleController inMusPuzCont)
@@ -52,8 +54,10 @@ public class MusicBossController : MonoBehaviour
 		this._currentMusic = inAID;
 		this._fighting = false;
 		this._currentPile = inMusicPile + "TileDown";
+		this._musicSuck = inMusicPile;
 		StartCoroutine("MusicEncounter", inAID);
 		GameDirector.instance.MusicPuzzleEncounter(this.gameObject);
+		this._musicController.MusicSuck(this._musicSuck);
 	}
 
 	IEnumerator MusicEncounter(AudioID inAID)
@@ -99,6 +103,7 @@ public class MusicBossController : MonoBehaviour
 	{
 		this._fighting = true;
 		this._musicController.TileDown(this._currentPile);
+		this._musicController.KillMusicSuck(this._musicSuck);
 		GameDirector.instance.GetPlayer().ResetLinger();
 	}
 
