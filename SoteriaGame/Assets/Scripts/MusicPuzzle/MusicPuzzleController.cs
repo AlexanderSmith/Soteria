@@ -4,6 +4,7 @@ using System.Collections;
 public class MusicPuzzleController : MonoBehaviour
 {
 	private GameObject _oMalleySuitOn;
+	private GameObject _oMalleyDefeated;
 
 	private bool _brassPlaying;
 	private bool _stringPlaying;
@@ -42,6 +43,8 @@ public class MusicPuzzleController : MonoBehaviour
 	void Start ()
 	{
 		this._oMalleySuitOn = GameObject.Find("O'MalleySuitOnMusicPuzzle");
+		this._oMalleyDefeated = GameObject.Find("O'MalleyPuzzleDefeated");
+		this._oMalleyDefeated.SetActive(false);
 		this._brassPlaying = false;
 		this._stringPlaying = false;
 		this._windPlaying = false;
@@ -216,14 +219,12 @@ public class MusicPuzzleController : MonoBehaviour
 	{
 		GameDirector.instance.MusicPuzzleDefeated();
 		StartCoroutine ("OvercamePuzzle");
-		GameDirector.instance.StartKeyInteraction(_leftKey);
 	}
 
 	IEnumerator OvercamePuzzle()
 	{
 		this.KillSuckOrganMusic();
-		GameDirector.instance.ChangeObjective(null);
-		this.keyPiece.SetActive(false);
+		this._oMalleyDefeated.SetActive(true);
 		float start = Time.time;
 		while (Time.time < start + winTime)
 		{
