@@ -13,10 +13,6 @@ public class KeyPieceInteraction : InteractionBase
 		this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 	}
 
-	public override void Update () 
-	{
-	}
-
 	public override void TriggerStay(Collider player)
 	{
 		if (player.gameObject.tag == "Player")
@@ -24,8 +20,9 @@ public class KeyPieceInteraction : InteractionBase
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
-				this.transform.root.gameObject.SetActive(false);
 				GameDirector.instance.StartKeyInteraction(this.rightKey);
+				this.transform.root.gameObject.SetActive(false);
+				this._reaction.execute();
 			}
 		}
 	}

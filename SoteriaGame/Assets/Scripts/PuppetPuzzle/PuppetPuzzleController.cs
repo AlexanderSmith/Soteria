@@ -6,6 +6,7 @@ public class PuppetPuzzleController : MonoBehaviour
 	public GameObject boss;
 	public GameObject keyPiece;
 	private GameObject _intro;
+	private GameObject _oMalleyPuppetDefeated;
 
 	public GameObject leftSpot;
 	public GameObject backSpot;
@@ -28,21 +29,26 @@ public class PuppetPuzzleController : MonoBehaviour
 		this._intro = GameObject.Find("PuppetPuzzleIntro");
 		this._intro.SetActive(false);
 		keyPiece.GetComponentInChildren<SphereCollider>().enabled = false;
+		this._oMalleyPuppetDefeated = GameObject.Find("O'MalleyPuppetPuzzleDefeated");
+		this._oMalleyPuppetDefeated.SetActive(false);
 	}
 
 	public void Initialize()
 	{
 		// Hacks for checking ability to fight puzzle
-//		GameDirector.instance.PuppetPuzzleActivated();
-//		GameDirector.instance.SuitRemoved();
+		GameDirector.instance.PuppetPuzzleActivated();
+		GameDirector.instance.SuitRemoved();
 
-		if (!GameDirector.instance.GetPuppetActivated())
+		if (!GameDirector.instance.IsTheaterDefeated())
 		{
-			this._intro.SetActive(true);
-		}
-		else
-		{
-			this.LeftLightOn();
+			if (!GameDirector.instance.GetPuppetActivated())
+			{
+				this._intro.SetActive(true);
+			}
+			else
+			{
+				this.LeftLightOn();
+			}
 		}
 	}
 
@@ -74,7 +80,20 @@ public class PuppetPuzzleController : MonoBehaviour
 		{
 			GameDirector.instance.TheaterPuzzleDefeated();
 			this.keyPiece.GetComponentInChildren<SphereCollider>().enabled = true;
+			this.KillLights();
 		}
+	}
+
+	void KillLights()
+	{
+		leftSpot.GetComponent<Light>().enabled = false;
+		leftSpot.GetComponent<SphereCollider>().enabled = false;
+		backSpot.GetComponent<Light>().enabled = false;
+		backSpot.GetComponent<SphereCollider>().enabled = false;
+		rightSpot.GetComponent<Light>().enabled = false;
+		rightSpot.GetComponent<SphereCollider>().enabled = false;
+		finalSpot.GetComponent<Light>().enabled = false;
+		finalSpot.GetComponent<SphereCollider>().enabled = false;
 	}
 
 	void FinalEncounter()
@@ -85,5 +104,10 @@ public class PuppetPuzzleController : MonoBehaviour
 	public void OpenBossEye()
 	{
 		this.boss.GetComponent<OpenBossEye>().ShowOpenEye();
+	}
+
+	public void SpawnOMalleyAfterPuzzleDefeated()
+	{
+		this._oMalleyPuppetDefeated.SetActive(true);
 	}
 }
