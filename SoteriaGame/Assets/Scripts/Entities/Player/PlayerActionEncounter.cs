@@ -46,13 +46,8 @@ public class PlayerActionEncounter : IPlayerAction
 	{
 		if (!inPlayer.encounterVariables)
 		{
-			//this._preLinger = false;
 			this._keyPressCounter = 0;
-//			this.intialLinger = 1.0f;
-//			this.baseDuration = 2.0f;
-//			this.lingerDuration = 2.0f;
-//			this._lingerLonger = 0;
-			//this.InitializeTimer();
+			_lingering = false;
 			inPlayer.FlipEncounterBool();
 		}
 	}

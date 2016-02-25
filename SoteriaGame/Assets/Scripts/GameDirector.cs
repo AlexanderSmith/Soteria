@@ -1,6 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public enum StatueCrumbleState
+{
+	WHOLE = 0,
+	CRUMBLEONE = 1,
+	CRUMBLETWO = 2,
+	CRUMBLETHREE = 3,
+	CRUMBLED = 4
+}
+
 [RequireComponent(typeof(DialogueManager))]
 [RequireComponent(typeof(AudioManager))]
 [RequireComponent(typeof(HudManager))]
@@ -598,6 +607,36 @@ public class GameDirector : MonoBehaviour {
 		this._rBoot.SetActive(false);
 	}
 
+	public bool GetLeftKey()
+	{
+		return this._leftKey;
+	}
+	
+	public bool GetMidKey()
+	{
+		return this._midKey;
+	}
+	
+	public bool GetRightKey()
+	{
+		return this._rightKey;
+	}
+	
+	public void LeftKeyAcquired()
+	{
+		this._leftKey = true;
+	}
+	
+	public void MidKeyAcquired()
+	{
+		this._midKey = true;
+	}
+	
+	public void RightKeyAcquired()
+	{
+		this._rightKey = true;
+	}
+
 	#endregion
 
 	#region PuzzleProgression
@@ -672,36 +711,6 @@ public class GameDirector : MonoBehaviour {
 		this._observatoryDefeated = true;
 	}
 
-	public bool GetLeftKey()
-	{
-		return this._leftKey;
-	}
-	
-	public bool GetMidKey()
-	{
-		return this._midKey;
-	}
-	
-	public bool GetRightKey()
-	{
-		return this._rightKey;
-	}
-
-	public void LeftKeyAcquired()
-	{
-		this._leftKey = true;
-	}
-	
-	public void MidKeyAcquired()
-	{
-		this._midKey = true;
-	}
-	
-	public void RightKeyAcquired()
-	{
-		this._rightKey = true;
-	}
-	
 	#endregion
 
 	///////////////////////////////////////////////////////////////////
@@ -1224,7 +1233,7 @@ public class GameDirector : MonoBehaviour {
 
 	public void CheckLantern()
 	{
-		if (this._lanternController != null)
+		if (this._lanternController != null && this.lantern)
 		{
 			this.RechargeLantern();
 		}
@@ -1383,6 +1392,7 @@ public class GameDirector : MonoBehaviour {
 	////////////////////// INVENTORY FUNCTIONS ////////////////////////
 	///////////////////////////////////////////////////////////////////
 
+	#region Inventory Functions
 
 	public void StartKeyInteraction(Sprite inSprite)
 	{
@@ -1400,17 +1410,59 @@ public class GameDirector : MonoBehaviour {
 		{
 			case ItemType.Token:
 				this._HUDManager.SwapTokenForKey();
+				this.token = false;
 			break;
 			
 			case ItemType.Compass:    
 				this._HUDManager.SwapCompassForKey();
+				this.compass = false;
 			break;
 			
 			case ItemType.Lantern:
 				this._HUDManager.SwapLanternForKey();
+				this.lantern = false;
 			break;
 		}
 	}
+
+	#endregion
+
+	///////////////////////////////////////////////////////////////////
+	//////////////////////// STATUE CRUMBLE ///////////////////////////
+	///////////////////////////////////////////////////////////////////
+	
+	#region Statue Crumble Functions
+
+	private bool _statueCrumbled;
+
+	public StatueCrumbleState _crumbleSate;
+
+	public StatueCrumbleState GetStatueCrumble()
+	{
+		return this._crumbleSate;
+	}
+
+	public void StatueCrumbleOne()
+	{
+		this._crumbleSate = StatueCrumbleState.CRUMBLEONE;
+	}
+
+	public void StatueCrumbleTwo()
+	{
+		this._crumbleSate = StatueCrumbleState.CRUMBLETWO;
+	}
+
+	public void StatueCrumbleThree()
+	{
+		this._crumbleSate = StatueCrumbleState.CRUMBLETHREE;
+	}
+
+	public void StatueCrumbled()
+	{
+		this._crumbleSate = StatueCrumbleState.CRUMBLED;
+	}
+
+	#endregion
 
 	///////////////////////////////////////////////////////////////////
 	////////////////// DIALOGUE MANAGER FUNCTIONS /////////////////////

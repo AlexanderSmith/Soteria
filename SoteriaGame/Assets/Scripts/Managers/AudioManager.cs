@@ -289,6 +289,7 @@ public enum AudioID
 	OMalleyHubp5BeforeObservatoryPuzzle,
 	OMalleyMeow,
 	OMalleyMusicGateMUSICp1,
+	OMalleyMusicGateRattleInitiate,
 	OMalleyResponsePrayer1,
 	OMalleyResponsePrayer2,
 	OMalleyResponseToNotTakingSuitOff,
