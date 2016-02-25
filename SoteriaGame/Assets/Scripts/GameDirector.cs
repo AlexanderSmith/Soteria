@@ -78,6 +78,10 @@ public class GameDirector : MonoBehaviour {
 	private bool _theaterDefeated;
 	private bool _observatoryDefeated;
 
+	private bool _leftKey;
+	private bool _midKey;
+	private bool _rightKey;
+
 	public float flashBangLife = 3.0f;
 	public Vector3 flashBangHeight = new Vector3(0, 6.0f, 0);
 	public float flashBangDistance = 3.0f;
@@ -666,6 +670,36 @@ public class GameDirector : MonoBehaviour {
 	public void ObservatoryPuzzleDefeated()
 	{
 		this._observatoryDefeated = true;
+	}
+
+	public bool GetLeftKey()
+	{
+		return this._leftKey;
+	}
+	
+	public bool GetMidKey()
+	{
+		return this._midKey;
+	}
+	
+	public bool GetRightKey()
+	{
+		return this._rightKey;
+	}
+
+	public void LeftKeyAcquired()
+	{
+		this._leftKey = true;
+	}
+	
+	public void MidKeyAcquired()
+	{
+		this._midKey = true;
+	}
+	
+	public void RightKeyAcquired()
+	{
+		this._rightKey = true;
 	}
 	
 	#endregion

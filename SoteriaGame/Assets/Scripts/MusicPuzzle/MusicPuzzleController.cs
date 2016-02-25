@@ -60,6 +60,7 @@ public class MusicPuzzleController : MonoBehaviour
 		// Gameplay hacks to test puzzle fight
 		GameDirector.instance.MusicPuzzleActivated();
 		GameDirector.instance.SuitRemoved();
+
 		if (GameDirector.instance.GetMusicActivated())
 		{
 			this.organTile.transform.position = this.organDown.position;
@@ -234,10 +235,10 @@ public class MusicPuzzleController : MonoBehaviour
 			GameDirector.instance.OvercomeMusicPuzzle(AudioID.OrganMusic);
 			yield return null;
 		}
-//		GameDirector.instance.StopAudioClip(AudioID.BrassMusic);
-//		GameDirector.instance.StopAudioClip(AudioID.WindMusic);
-//		GameDirector.instance.StopAudioClip(AudioID.StringMusic);
-//		GameDirector.instance.StopAudioClip(AudioID.OrganMusic);
+		GameDirector.instance.ChangeVolume(AudioID.BrassMusic, 1.0f);
+		GameDirector.instance.ChangeVolume(AudioID.WindMusic, 1.0f);
+		GameDirector.instance.ChangeVolume(AudioID.StringMusic, 1.0f);
+		GameDirector.instance.ChangeVolume(AudioID.OrganMusic, 1.0f);
 	}
 
 	public void StartAllMusicSuck()

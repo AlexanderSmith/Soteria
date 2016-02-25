@@ -1,15 +1,17 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
-public class MusicPuzzleKeyPiece : Reaction
+public class MusicPuzzleTriggers : MonoBehaviour
 {
 	public GameObject keyPiece;
 	public Sprite _leftKey;
 
-	public override void execute()
+	public void LeftKeyPiece()
 	{
 		GameDirector.instance.ChangeObjective(null);
 		this.keyPiece.SetActive(false);
 		GameDirector.instance.StartKeyInteraction(this._leftKey);
+		GameDirector.instance.EndTriggerState();
+		GameDirector.instance.LeftKeyAcquired();
 	}
 }
