@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PuppetPuzzleController : MonoBehaviour
 {
+	public GameObject boss;
+	public GameObject keyPiece;
 	private GameObject _intro;
 
 	public GameObject leftSpot;
@@ -25,6 +27,7 @@ public class PuppetPuzzleController : MonoBehaviour
 		finalSpot.GetComponent<SphereCollider>().enabled = false;
 		this._intro = GameObject.Find("PuppetPuzzleIntro");
 		this._intro.SetActive(false);
+		keyPiece.GetComponentInChildren<SphereCollider>().enabled = false;
 	}
 
 	public void Initialize()
@@ -70,11 +73,17 @@ public class PuppetPuzzleController : MonoBehaviour
 		if (this._lastFight)
 		{
 			GameDirector.instance.TheaterPuzzleDefeated();
+			this.keyPiece.GetComponentInChildren<SphereCollider>().enabled = true;
 		}
 	}
 
 	void FinalEncounter()
 	{
 		this._lastFight = true;
+	}
+
+	public void OpenBossEye()
+	{
+		this.boss.GetComponent<OpenBossEye>().ShowOpenEye();
 	}
 }

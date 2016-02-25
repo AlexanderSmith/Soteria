@@ -16,7 +16,8 @@ public enum TimersType
 	TutorialEvent,
 	Encounter,
 	FadeIn,
-	FadeOut
+	FadeOut,
+	PuppetEyeTimer
 }
 /// <summary>
 /// The Actual manager that takes care of the Timers.

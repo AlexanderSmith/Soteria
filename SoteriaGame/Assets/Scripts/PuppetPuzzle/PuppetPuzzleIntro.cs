@@ -14,6 +14,7 @@ public class PuppetPuzzleIntro : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
+			this._controller.GetComponent<PuppetPuzzleController>().OpenBossEye();
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("AnaEnteringTheaterPuzzFirstTime");
 			GameDirector.instance.StartDialogue();
