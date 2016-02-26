@@ -9,6 +9,8 @@ public class ObservatoryPuzzleController : MonoBehaviour
 	private GameObject _doorEncounter3;
 	private GameObject _reset;
 	private GameObject _oMalley;
+	private GameObject _oMalleyPuzzleDefeated;
+	private GameObject _midKey;
 
 	public GameObject tileUp;
 	public GameObject tileDown;
@@ -59,6 +61,11 @@ public class ObservatoryPuzzleController : MonoBehaviour
 				light.GetComponent<BoxCollider>().enabled = false;
 			}
 		}
+
+		this._oMalleyPuzzleDefeated = GameObject.Find("O'MalleyObservatoryPuzzleDefeated");
+		this._oMalleyPuzzleDefeated.SetActive(false);
+		this._midKey = GameObject.Find ("KeyPieceInspect");
+		this._midKey.GetComponentInChildren<SphereCollider>().enabled = false;
 
 		// Testing
 		//GameDirector.instance.SuitRemoved();
@@ -181,10 +188,11 @@ public class ObservatoryPuzzleController : MonoBehaviour
 	public void DoorEncounterWon()
 	{
 		this._doorEncountersWon++;
-		if (this._doorEncountersWon >= 3)
+		if (this._doorEncountersWon > 3)
 		{
 			this._reset.GetComponent<BoxCollider>().enabled = false;
 			GameDirector.instance.ObservatoryPuzzleDefeated();
+			this._midKey.GetComponentInChildren<SphereCollider>().enabled = true;
 		}
 	}
 
@@ -212,5 +220,10 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		{
 			this._oMalley.SetActive(true);
 		}
+	}
+
+	public void SpawnOMalleyAfterKeyPiece()
+	{
+		this._oMalleyPuzzleDefeated.SetActive(true);
 	}
 }
