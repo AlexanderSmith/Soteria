@@ -15,8 +15,8 @@ public class CheckMusicDefeatedObjective : MonoBehaviour
 		this._oMalleySewerProvoke.SetActive(false);
 
 		//Hacks for testing provoke
-		GameDirector.instance.MusicPuzzleDefeated();
-		GameDirector.instance.SuitRemoved();
+//		GameDirector.instance.MusicPuzzleDefeated();
+//		GameDirector.instance.SuitRemoved();
 	}
 
 	void Start()
@@ -35,15 +35,6 @@ public class CheckMusicDefeatedObjective : MonoBehaviour
 					GameDirector.instance.ChangeObjective(this._portToHub);
 					break;
 				}
-//				if (GameDirector.instance.GetStatueCrumble() != StatueCrumbleState.CRUMBLEONE)
-//				{
-//					this._oMalleySewerProvoke.SetActive(true);
-//					GameDirector.instance.ChangeObjective(this._oMalleySewerProvoke);
-//				}
-//				else
-//				{
-//					GameDirector.instance.ChangeObjective(this._portToHub);
-//				}
 			}
 			else
 			{
@@ -54,6 +45,7 @@ public class CheckMusicDefeatedObjective : MonoBehaviour
 		{
 			GameDirector.instance.ChangeObjective(null);
 		}
+
 		if (GameDirector.instance.IsMusicDefeated())
 		{
 			this._oMalleySewerProvoke.SetActive(true);

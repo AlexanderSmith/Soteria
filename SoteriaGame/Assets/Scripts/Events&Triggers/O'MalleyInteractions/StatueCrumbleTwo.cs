@@ -6,5 +6,9 @@ public class StatueCrumbleTwo : Reaction
 	public override void execute()
 	{
 		GameDirector.instance.StatueCrumbleTwo();
+		if (GameDirector.instance.GetCompass())
+		{
+			GameDirector.instance.ChangeObjective(GameObject.Find ("PortToHub"));
+		}
 	}
 }

@@ -1,3 +1,6 @@
 <b>O'Malley:</b> Provoke him.
 <b>Ana:</b> You really think that's smart?
 <b>O'Malley:</b> Only if you want to rob him of his power eventually.
+<b>Choose Provoke Options:</b>
+<choice/>Hey toad, show yourself!
+<choice/>You silly toad! I'm not scared of you!

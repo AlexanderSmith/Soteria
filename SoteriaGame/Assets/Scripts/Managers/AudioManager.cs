@@ -299,6 +299,7 @@ public enum AudioID
 	OMalleyTeachingAnaToOvercomeFear3,
 	OMalleyTeachingLinger,
 	OMalleyTeachingPrevoke,
+	OMalleyTheaterGateRattleInitiate,
 	OMalleyTransformIntoFear,
 	PTFirstEncounter,
 	PTLanternRecharge,
