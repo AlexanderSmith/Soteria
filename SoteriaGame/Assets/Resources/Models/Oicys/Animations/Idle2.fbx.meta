@@ -1,0 +1,2074 @@
+fileFormatVersion: 2
+guid: ed5064dae8ef56c49ae8ba0ce591842c
+timeCreated: 1456616355
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Oicys_Idle_02:Chin_Jnt
+    100004: Oicys_Idle_02:cluster1Handle
+    100006: Oicys_Idle_02:cluster2Handle
+    100008: Oicys_Idle_02:cluster3Handle
+    100010: Oicys_Idle_02:cluster4Handle
+    100012: Oicys_Idle_02:curve1
+    100014: Oicys_Idle_02:curve1 1
+    100016: Oicys_Idle_02:curve1 2
+    100018: Oicys_Idle_02:curve1 3
+    100020: Oicys_Idle_02:curve1 4
+    100022: Oicys_Idle_02:curve1 5
+    100024: Oicys_Idle_02:curve3
+    100026: Oicys_Idle_02:Finger_con_Offset15
+    100028: Oicys_Idle_02:Finger_con_Offset15 1
+    100030: Oicys_Idle_02:group13
+    100032: Oicys_Idle_02:group14
+    100034: Oicys_Idle_02:group15
+    100036: Oicys_Idle_02:group16
+    100038: Oicys_Idle_02:group17
+    100040: Oicys_Idle_02:group18
+    100042: Oicys_Idle_02:group19
+    100044: Oicys_Idle_02:group21
+    100046: Oicys_Idle_02:group22
+    100048: Oicys_Idle_02:group23
+    100050: Oicys_Idle_02:group24
+    100052: Oicys_Idle_02:group25
+    100054: Oicys_Idle_02:group26
+    100056: Oicys_Idle_02:group28
+    100058: Oicys_Idle_02:group29
+    100060: Oicys_Idle_02:group30
+    100062: Oicys_Idle_02:group31
+    100064: Oicys_Idle_02:group32
+    100066: Oicys_Idle_02:group33
+    100068: Oicys_Idle_02:group34
+    100070: Oicys_Idle_02:group35
+    100072: Oicys_Idle_02:group36
+    100074: Oicys_Idle_02:group37
+    100076: Oicys_Idle_02:group38
+    100078: Oicys_Idle_02:group39
+    100080: Oicys_Idle_02:group40
+    100082: Oicys_Idle_02:group41
+    100084: Oicys_Idle_02:group42
+    100086: Oicys_Idle_02:group43
+    100088: Oicys_Idle_02:group44
+    100090: Oicys_Idle_02:group45
+    100092: Oicys_Idle_02:group46
+    100094: Oicys_Idle_02:group5
+    100096: Oicys_Idle_02:group54
+    100098: Oicys_Idle_02:Hand_01_Ctrl
+    100100: Oicys_Idle_02:Hand_01_Ctrl 1
+    100102: Oicys_Idle_02:Hand_01_Ctrl 2
+    100104: Oicys_Idle_02:Hand_01_Ctrl 3
+    100106: Oicys_Idle_02:Hand_01_Ctrl 4
+    100108: Oicys_Idle_02:Hand_01_Ctrl 5
+    100110: Oicys_Idle_02:Hand_01_offset
+    100112: Oicys_Idle_02:Hand_01_offset1
+    100114: Oicys_Idle_02:Hand_01_offset1 1
+    100116: Oicys_Idle_02:Hand_01_offset2
+    100118: Oicys_Idle_02:Hand_01_offset3
+    100120: Oicys_Idle_02:Hand_01_offset4
+    100122: Oicys_Idle_02:Hat_Jnt
+    100124: Oicys_Idle_02:Head_Jnt
+    100126: Oicys_Idle_02:L1_Clav_Offset
+    100128: Oicys_Idle_02:L1_Clavicle_Jnt
+    100130: Oicys_Idle_02:L1_Elbow_Jnt
+    100132: Oicys_Idle_02:L1_Middle_01_Jnt
+    100134: Oicys_Idle_02:L1_Middle_02_Jnt
+    100136: Oicys_Idle_02:L1_Middle_03_Jnt
+    100138: Oicys_Idle_02:L1_Middle_04_Jnt
+    100140: Oicys_Idle_02:L1_Palm_Jnt
+    100142: Oicys_Idle_02:L1_Pinky_01_Jnt
+    100144: Oicys_Idle_02:L1_Pinky_02_Jnt
+    100146: Oicys_Idle_02:L1_Pinky_03_Jnt
+    100148: Oicys_Idle_02:L1_Pinky_04_Jnt
+    100150: Oicys_Idle_02:L1_Pointer_01_Jnt
+    100152: Oicys_Idle_02:L1_Pointer_02_Jnt
+    100154: Oicys_Idle_02:L1_Pointer_03_Jnt
+    100156: Oicys_Idle_02:L1_Pointer_04_Jnt
+    100158: Oicys_Idle_02:L1_Ring_01_Jnt
+    100160: Oicys_Idle_02:L1_Ring_02_Jnt
+    100162: Oicys_Idle_02:L1_Ring_03_Jnt
+    100164: Oicys_Idle_02:L1_Ring_04_Jnt
+    100166: Oicys_Idle_02:L1_Shoulder_Jnt
+    100168: Oicys_Idle_02:L1_Thumb_01_Jnt
+    100170: Oicys_Idle_02:L1_Thumb_02_Jnt
+    100172: Oicys_Idle_02:L1_Thumb_03_Jnt
+    100174: Oicys_Idle_02:L1_Thumb_04_Jnt
+    100176: Oicys_Idle_02:L1_Wrist_Jnt
+    100178: Oicys_Idle_02:L2_Clavicle_Jnt
+    100180: Oicys_Idle_02:L2_Elbow_Jnt
+    100182: Oicys_Idle_02:L2_Middle_01_Jnt
+    100184: Oicys_Idle_02:L2_Middle_02_Jnt
+    100186: Oicys_Idle_02:L2_Middle_03_Jnt
+    100188: Oicys_Idle_02:L2_Middle_04_Jnt
+    100190: Oicys_Idle_02:L2_Palm_Jnt
+    100192: Oicys_Idle_02:L2_Pinky_01_Jnt
+    100194: Oicys_Idle_02:L2_Pinky_02_Jnt
+    100196: Oicys_Idle_02:L2_Pinky_03_Jnt
+    100198: Oicys_Idle_02:L2_Pinky_04_Jnt
+    100200: Oicys_Idle_02:L2_Pointer_01_Jnt
+    100202: Oicys_Idle_02:L2_Pointer_02_Jnt
+    100204: Oicys_Idle_02:L2_Pointer_03_Jnt
+    100206: Oicys_Idle_02:L2_Pointer_04_Jnt
+    100208: Oicys_Idle_02:L2_Ring_01_Jnt
+    100210: Oicys_Idle_02:L2_Ring_02_Jnt
+    100212: Oicys_Idle_02:L2_Ring_03_Jnt
+    100214: Oicys_Idle_02:L2_Ring_04_Jnt
+    100216: Oicys_Idle_02:L2_Shoulder_Jnt
+    100218: Oicys_Idle_02:L2_Wrist_01_Jnt
+    100220: Oicys_Idle_02:L2_Wrist_02_Jnt
+    100222: Oicys_Idle_02:L2_Wrist_03_Jnt
+    100224: Oicys_Idle_02:L2_Wrist_04_Jnt
+    100226: Oicys_Idle_02:L2_Wrist_Jnt
+    100228: Oicys_Idle_02:L3_Clav_Offset
+    100230: Oicys_Idle_02:L3_Clavicle_Jnt
+    100232: Oicys_Idle_02:L3_Elbow_Jnt
+    100234: Oicys_Idle_02:L3_Middle_01_Jnt
+    100236: Oicys_Idle_02:L3_Middle_02_Jnt
+    100238: Oicys_Idle_02:L3_Middle_03_Jnt
+    100240: Oicys_Idle_02:L3_Middle_04_Jnt
+    100242: Oicys_Idle_02:L3_Palm_Jnt
+    100244: Oicys_Idle_02:L3_Pinky_01_Jnt
+    100246: Oicys_Idle_02:L3_Pinky_02_Jnt
+    100248: Oicys_Idle_02:L3_Pinky_03_Jnt
+    100250: Oicys_Idle_02:L3_Pinky_04_Jnt
+    100252: Oicys_Idle_02:L3_Pointer_01_Jnt
+    100254: Oicys_Idle_02:L3_Pointer_02_Jnt
+    100256: Oicys_Idle_02:L3_Pointer_03_Jnt
+    100258: Oicys_Idle_02:L3_Pointer_04_Jnt
+    100260: Oicys_Idle_02:L3_Ring_01_Jnt
+    100262: Oicys_Idle_02:L3_Ring_02_Jnt
+    100264: Oicys_Idle_02:L3_Ring_03_Jnt
+    100266: Oicys_Idle_02:L3_Ring_04_Jnt
+    100268: Oicys_Idle_02:L3_Shoulder_Jnt
+    100270: Oicys_Idle_02:L3_Thumb_01_Jnt
+    100272: Oicys_Idle_02:L3_Thumb_02_Jnt
+    100274: Oicys_Idle_02:L3_Thumb_03_Jnt
+    100276: Oicys_Idle_02:L3_Thumb_04_Jnt
+    100278: Oicys_Idle_02:L3_Wrist_Jnt
+    100280: Oicys_Idle_02:Mask1
+    100282: Oicys_Idle_02:Neck_Jnt
+    100284: Oicys_Idle_02:nurbsCircle1
+    100286: Oicys_Idle_02:nurbsCircle1 1
+    100288: Oicys_Idle_02:nurbsCircle1 10
+    100290: Oicys_Idle_02:nurbsCircle1 11
+    100292: Oicys_Idle_02:nurbsCircle1 2
+    100294: Oicys_Idle_02:nurbsCircle1 3
+    100296: Oicys_Idle_02:nurbsCircle1 4
+    100298: Oicys_Idle_02:nurbsCircle1 5
+    100300: Oicys_Idle_02:nurbsCircle1 6
+    100302: Oicys_Idle_02:nurbsCircle1 7
+    100304: Oicys_Idle_02:nurbsCircle1 8
+    100306: Oicys_Idle_02:nurbsCircle1 9
+    100308: Oicys_Idle_02:nurbsCircle2
+    100310: Oicys_Idle_02:nurbsCircle2 1
+    100312: Oicys_Idle_02:nurbsCircle2 2
+    100314: Oicys_Idle_02:nurbsCircle2 3
+    100316: Oicys_Idle_02:nurbsCircle2 4
+    100318: Oicys_Idle_02:nurbsCircle2 5
+    100320: Oicys_Idle_02:nurbsCircle3
+    100322: Oicys_Idle_02:nurbsCircle3 1
+    100324: Oicys_Idle_02:nurbsCircle3 2
+    100326: Oicys_Idle_02:nurbsCircle3 3
+    100328: Oicys_Idle_02:nurbsCircle3 4
+    100330: Oicys_Idle_02:nurbsCircle4
+    100332: Oicys_Idle_02:nurbsCircle5
+    100334: Oicys_Idle_02:pasted__Finger_Con_01
+    100336: Oicys_Idle_02:pasted__Finger_Con_01 1
+    100338: Oicys_Idle_02:pasted__Finger_Con_01 10
+    100340: Oicys_Idle_02:pasted__Finger_Con_01 11
+    100342: Oicys_Idle_02:pasted__Finger_Con_01 12
+    100344: Oicys_Idle_02:pasted__Finger_Con_01 13
+    100346: Oicys_Idle_02:pasted__Finger_Con_01 14
+    100348: Oicys_Idle_02:pasted__Finger_Con_01 15
+    100350: Oicys_Idle_02:pasted__Finger_Con_01 16
+    100352: Oicys_Idle_02:pasted__Finger_Con_01 17
+    100354: Oicys_Idle_02:pasted__Finger_Con_01 2
+    100356: Oicys_Idle_02:pasted__Finger_Con_01 3
+    100358: Oicys_Idle_02:pasted__Finger_Con_01 4
+    100360: Oicys_Idle_02:pasted__Finger_Con_01 5
+    100362: Oicys_Idle_02:pasted__Finger_Con_01 6
+    100364: Oicys_Idle_02:pasted__Finger_Con_01 7
+    100366: Oicys_Idle_02:pasted__Finger_Con_01 8
+    100368: Oicys_Idle_02:pasted__Finger_Con_01 9
+    100370: Oicys_Idle_02:pasted__Finger_con_Offset24
+    100372: Oicys_Idle_02:pasted__Finger_con_Offset24 1
+    100374: Oicys_Idle_02:pasted__Finger_con_Offset24 2
+    100376: Oicys_Idle_02:pasted__Finger_con_Offset24 3
+    100378: Oicys_Idle_02:pasted__Finger_con_Offset24 4
+    100380: Oicys_Idle_02:pasted__Finger_con_Offset24 5
+    100382: Oicys_Idle_02:pasted__Finger_con_Offset25
+    100384: Oicys_Idle_02:pasted__Finger_con_Offset25 1
+    100386: Oicys_Idle_02:pasted__Finger_con_Offset25 2
+    100388: Oicys_Idle_02:pasted__Finger_con_Offset25 3
+    100390: Oicys_Idle_02:pasted__Finger_con_Offset25 4
+    100392: Oicys_Idle_02:pasted__Finger_con_Offset25 5
+    100394: Oicys_Idle_02:pasted__Finger_con_Offset26
+    100396: Oicys_Idle_02:pasted__Finger_con_Offset26 1
+    100398: Oicys_Idle_02:pasted__Finger_con_Offset26 2
+    100400: Oicys_Idle_02:pasted__Finger_con_Offset26 3
+    100402: Oicys_Idle_02:pasted__Finger_con_Offset26 4
+    100404: Oicys_Idle_02:pasted__Finger_con_Offset26 5
+    100406: Oicys_Idle_02:Pelvice_Jnt
+    100408: Oicys_Idle_02:R1_Clav_Offset
+    100410: Oicys_Idle_02:R1_Clavicle_Jnt
+    100412: Oicys_Idle_02:R1_Elbow_Jnt
+    100414: Oicys_Idle_02:R1_Middle_01_Jnt
+    100416: Oicys_Idle_02:R1_Middle_02_Jnt
+    100418: Oicys_Idle_02:R1_Middle_03_Jnt
+    100420: Oicys_Idle_02:R1_Middle_04_Jnt
+    100422: Oicys_Idle_02:R1_Palm_Jnt
+    100424: Oicys_Idle_02:R1_Pinky_01_Jnt
+    100426: Oicys_Idle_02:R1_Pinky_02_Jnt
+    100428: Oicys_Idle_02:R1_Pinky_03_Jnt
+    100430: Oicys_Idle_02:R1_Pinky_04_Jnt
+    100432: Oicys_Idle_02:R1_Pointer_01_Jnt
+    100434: Oicys_Idle_02:R1_Pointer_02_Jnt
+    100436: Oicys_Idle_02:R1_Pointer_03_Jnt
+    100438: Oicys_Idle_02:R1_Pointer_04_Jnt
+    100440: Oicys_Idle_02:R1_Ring_01_Jnt
+    100442: Oicys_Idle_02:R1_Ring_02_Jnt
+    100444: Oicys_Idle_02:R1_Ring_03_Jnt
+    100446: Oicys_Idle_02:R1_Ring_04_Jnt
+    100448: Oicys_Idle_02:R1_Shoulder_Jnt
+    100450: Oicys_Idle_02:R1_Thumb_01_Jnt
+    100452: Oicys_Idle_02:R1_Thumb_02_Jnt
+    100454: Oicys_Idle_02:R1_Thumb_03_Jnt
+    100456: Oicys_Idle_02:R1_Thumb_04_Jnt
+    100458: Oicys_Idle_02:R1_Wrist_Jnt
+    100460: Oicys_Idle_02:R2_Clavicle_Jnt
+    100462: Oicys_Idle_02:R2_Elbow_Jnt
+    100464: Oicys_Idle_02:R2_Middle_01_Jnt
+    100466: Oicys_Idle_02:R2_Middle_02_Jnt
+    100468: Oicys_Idle_02:R2_Middle_03_Jnt
+    100470: Oicys_Idle_02:R2_Middle_04_Jnt
+    100472: Oicys_Idle_02:R2_Palm_Jnt
+    100474: Oicys_Idle_02:R2_Pinky_01_Jnt
+    100476: Oicys_Idle_02:R2_Pinky_02_Jnt
+    100478: Oicys_Idle_02:R2_Pinky_03_Jnt
+    100480: Oicys_Idle_02:R2_Pinky_04_Jnt
+    100482: Oicys_Idle_02:R2_Pointer_01_Jnt
+    100484: Oicys_Idle_02:R2_Pointer_02_Jnt
+    100486: Oicys_Idle_02:R2_Pointer_03_Jnt
+    100488: Oicys_Idle_02:R2_Pointer_04_Jnt
+    100490: Oicys_Idle_02:R2_Ring_01_Jnt
+    100492: Oicys_Idle_02:R2_Ring_02_Jnt
+    100494: Oicys_Idle_02:R2_Ring_03_Jnt
+    100496: Oicys_Idle_02:R2_Ring_04_Jnt
+    100498: Oicys_Idle_02:R2_Shoulder_Jnt
+    100500: Oicys_Idle_02:R2_Wrist_01_Jnt
+    100502: Oicys_Idle_02:R2_Wrist_02_Jnt
+    100504: Oicys_Idle_02:R2_Wrist_03_Jnt
+    100506: Oicys_Idle_02:R2_Wrist_04_Jnt
+    100508: Oicys_Idle_02:R2_Wrist_Jnt
+    100510: Oicys_Idle_02:R3_Clav_Offset
+    100512: Oicys_Idle_02:R3_Clavicle_Jnt
+    100514: Oicys_Idle_02:R3_Elbow_Jnt
+    100516: Oicys_Idle_02:R3_Middle_01_Jnt
+    100518: Oicys_Idle_02:R3_Middle_02_Jnt
+    100520: Oicys_Idle_02:R3_Middle_03_Jnt
+    100522: Oicys_Idle_02:R3_Middle_04_Jnt
+    100524: Oicys_Idle_02:R3_Palm_Jnt
+    100526: Oicys_Idle_02:R3_Pinky_01_Jnt
+    100528: Oicys_Idle_02:R3_Pinky_02_Jnt
+    100530: Oicys_Idle_02:R3_Pinky_03_Jnt
+    100532: Oicys_Idle_02:R3_Pinky_04_Jnt
+    100534: Oicys_Idle_02:R3_Pointer_01_Jnt
+    100536: Oicys_Idle_02:R3_Pointer_02_Jnt
+    100538: Oicys_Idle_02:R3_Pointer_03_Jnt
+    100540: Oicys_Idle_02:R3_Pointer_04_Jnt
+    100542: Oicys_Idle_02:R3_Ring_01_Jnt
+    100544: Oicys_Idle_02:R3_Ring_02_Jnt
+    100546: Oicys_Idle_02:R3_Ring_03_Jnt
+    100548: Oicys_Idle_02:R3_Ring_04_Jnt
+    100550: Oicys_Idle_02:R3_Shoulder_Jnt
+    100552: Oicys_Idle_02:R3_Thumb_01_Jnt
+    100554: Oicys_Idle_02:R3_Thumb_02_Jnt
+    100556: Oicys_Idle_02:R3_Thumb_03_Jnt
+    100558: Oicys_Idle_02:R3_Thumb_04_Jnt
+    100560: Oicys_Idle_02:R3_Wrist_Jnt
+    100562: Oicys_Idle_02:Root
+    100564: Oicys_Idle_02:Shadow_Creature
+    100566: Oicys_Idle_02:Spine_01_Jnt
+    100568: Oicys_Idle_02:Spine_02_Jnt
+    100570: Oicys_Idle_02:Spine_03_Jnt
+    100572: Oicys_Idle_02:Spine_04_Jnt
+    100574: Oicys_Idle_02:Spine_05_Jnt
+    100576: Oicys_Idle_02:Spine_06_Jnt
+    100578: Oicys_Idle_02:Spine_07_Jnt
+    100580: Oicys_Idle_02:Spine_08_Jnt
+    100582: Oicys_Idle_02:Spine_09_Jnt
+    100584: Oicys_Idle_02:transform1
+    100586: Oicys_Idle_02:transform3
+    100588: Oicys_Idle_02:transform4
+    100590: Oicys_Idle_02:transform5
+    400000: //RootNode
+    400002: Oicys_Idle_02:Chin_Jnt
+    400004: Oicys_Idle_02:cluster1Handle
+    400006: Oicys_Idle_02:cluster2Handle
+    400008: Oicys_Idle_02:cluster3Handle
+    400010: Oicys_Idle_02:cluster4Handle
+    400012: Oicys_Idle_02:curve1
+    400014: Oicys_Idle_02:curve1 1
+    400016: Oicys_Idle_02:curve1 2
+    400018: Oicys_Idle_02:curve1 3
+    400020: Oicys_Idle_02:curve1 4
+    400022: Oicys_Idle_02:curve1 5
+    400024: Oicys_Idle_02:curve3
+    400026: Oicys_Idle_02:Finger_con_Offset15
+    400028: Oicys_Idle_02:Finger_con_Offset15 1
+    400030: Oicys_Idle_02:group13
+    400032: Oicys_Idle_02:group14
+    400034: Oicys_Idle_02:group15
+    400036: Oicys_Idle_02:group16
+    400038: Oicys_Idle_02:group17
+    400040: Oicys_Idle_02:group18
+    400042: Oicys_Idle_02:group19
+    400044: Oicys_Idle_02:group21
+    400046: Oicys_Idle_02:group22
+    400048: Oicys_Idle_02:group23
+    400050: Oicys_Idle_02:group24
+    400052: Oicys_Idle_02:group25
+    400054: Oicys_Idle_02:group26
+    400056: Oicys_Idle_02:group28
+    400058: Oicys_Idle_02:group29
+    400060: Oicys_Idle_02:group30
+    400062: Oicys_Idle_02:group31
+    400064: Oicys_Idle_02:group32
+    400066: Oicys_Idle_02:group33
+    400068: Oicys_Idle_02:group34
+    400070: Oicys_Idle_02:group35
+    400072: Oicys_Idle_02:group36
+    400074: Oicys_Idle_02:group37
+    400076: Oicys_Idle_02:group38
+    400078: Oicys_Idle_02:group39
+    400080: Oicys_Idle_02:group40
+    400082: Oicys_Idle_02:group41
+    400084: Oicys_Idle_02:group42
+    400086: Oicys_Idle_02:group43
+    400088: Oicys_Idle_02:group44
+    400090: Oicys_Idle_02:group45
+    400092: Oicys_Idle_02:group46
+    400094: Oicys_Idle_02:group5
+    400096: Oicys_Idle_02:group54
+    400098: Oicys_Idle_02:Hand_01_Ctrl
+    400100: Oicys_Idle_02:Hand_01_Ctrl 1
+    400102: Oicys_Idle_02:Hand_01_Ctrl 2
+    400104: Oicys_Idle_02:Hand_01_Ctrl 3
+    400106: Oicys_Idle_02:Hand_01_Ctrl 4
+    400108: Oicys_Idle_02:Hand_01_Ctrl 5
+    400110: Oicys_Idle_02:Hand_01_offset
+    400112: Oicys_Idle_02:Hand_01_offset1
+    400114: Oicys_Idle_02:Hand_01_offset1 1
+    400116: Oicys_Idle_02:Hand_01_offset2
+    400118: Oicys_Idle_02:Hand_01_offset3
+    400120: Oicys_Idle_02:Hand_01_offset4
+    400122: Oicys_Idle_02:Hat_Jnt
+    400124: Oicys_Idle_02:Head_Jnt
+    400126: Oicys_Idle_02:L1_Clav_Offset
+    400128: Oicys_Idle_02:L1_Clavicle_Jnt
+    400130: Oicys_Idle_02:L1_Elbow_Jnt
+    400132: Oicys_Idle_02:L1_Middle_01_Jnt
+    400134: Oicys_Idle_02:L1_Middle_02_Jnt
+    400136: Oicys_Idle_02:L1_Middle_03_Jnt
+    400138: Oicys_Idle_02:L1_Middle_04_Jnt
+    400140: Oicys_Idle_02:L1_Palm_Jnt
+    400142: Oicys_Idle_02:L1_Pinky_01_Jnt
+    400144: Oicys_Idle_02:L1_Pinky_02_Jnt
+    400146: Oicys_Idle_02:L1_Pinky_03_Jnt
+    400148: Oicys_Idle_02:L1_Pinky_04_Jnt
+    400150: Oicys_Idle_02:L1_Pointer_01_Jnt
+    400152: Oicys_Idle_02:L1_Pointer_02_Jnt
+    400154: Oicys_Idle_02:L1_Pointer_03_Jnt
+    400156: Oicys_Idle_02:L1_Pointer_04_Jnt
+    400158: Oicys_Idle_02:L1_Ring_01_Jnt
+    400160: Oicys_Idle_02:L1_Ring_02_Jnt
+    400162: Oicys_Idle_02:L1_Ring_03_Jnt
+    400164: Oicys_Idle_02:L1_Ring_04_Jnt
+    400166: Oicys_Idle_02:L1_Shoulder_Jnt
+    400168: Oicys_Idle_02:L1_Thumb_01_Jnt
+    400170: Oicys_Idle_02:L1_Thumb_02_Jnt
+    400172: Oicys_Idle_02:L1_Thumb_03_Jnt
+    400174: Oicys_Idle_02:L1_Thumb_04_Jnt
+    400176: Oicys_Idle_02:L1_Wrist_Jnt
+    400178: Oicys_Idle_02:L2_Clavicle_Jnt
+    400180: Oicys_Idle_02:L2_Elbow_Jnt
+    400182: Oicys_Idle_02:L2_Middle_01_Jnt
+    400184: Oicys_Idle_02:L2_Middle_02_Jnt
+    400186: Oicys_Idle_02:L2_Middle_03_Jnt
+    400188: Oicys_Idle_02:L2_Middle_04_Jnt
+    400190: Oicys_Idle_02:L2_Palm_Jnt
+    400192: Oicys_Idle_02:L2_Pinky_01_Jnt
+    400194: Oicys_Idle_02:L2_Pinky_02_Jnt
+    400196: Oicys_Idle_02:L2_Pinky_03_Jnt
+    400198: Oicys_Idle_02:L2_Pinky_04_Jnt
+    400200: Oicys_Idle_02:L2_Pointer_01_Jnt
+    400202: Oicys_Idle_02:L2_Pointer_02_Jnt
+    400204: Oicys_Idle_02:L2_Pointer_03_Jnt
+    400206: Oicys_Idle_02:L2_Pointer_04_Jnt
+    400208: Oicys_Idle_02:L2_Ring_01_Jnt
+    400210: Oicys_Idle_02:L2_Ring_02_Jnt
+    400212: Oicys_Idle_02:L2_Ring_03_Jnt
+    400214: Oicys_Idle_02:L2_Ring_04_Jnt
+    400216: Oicys_Idle_02:L2_Shoulder_Jnt
+    400218: Oicys_Idle_02:L2_Wrist_01_Jnt
+    400220: Oicys_Idle_02:L2_Wrist_02_Jnt
+    400222: Oicys_Idle_02:L2_Wrist_03_Jnt
+    400224: Oicys_Idle_02:L2_Wrist_04_Jnt
+    400226: Oicys_Idle_02:L2_Wrist_Jnt
+    400228: Oicys_Idle_02:L3_Clav_Offset
+    400230: Oicys_Idle_02:L3_Clavicle_Jnt
+    400232: Oicys_Idle_02:L3_Elbow_Jnt
+    400234: Oicys_Idle_02:L3_Middle_01_Jnt
+    400236: Oicys_Idle_02:L3_Middle_02_Jnt
+    400238: Oicys_Idle_02:L3_Middle_03_Jnt
+    400240: Oicys_Idle_02:L3_Middle_04_Jnt
+    400242: Oicys_Idle_02:L3_Palm_Jnt
+    400244: Oicys_Idle_02:L3_Pinky_01_Jnt
+    400246: Oicys_Idle_02:L3_Pinky_02_Jnt
+    400248: Oicys_Idle_02:L3_Pinky_03_Jnt
+    400250: Oicys_Idle_02:L3_Pinky_04_Jnt
+    400252: Oicys_Idle_02:L3_Pointer_01_Jnt
+    400254: Oicys_Idle_02:L3_Pointer_02_Jnt
+    400256: Oicys_Idle_02:L3_Pointer_03_Jnt
+    400258: Oicys_Idle_02:L3_Pointer_04_Jnt
+    400260: Oicys_Idle_02:L3_Ring_01_Jnt
+    400262: Oicys_Idle_02:L3_Ring_02_Jnt
+    400264: Oicys_Idle_02:L3_Ring_03_Jnt
+    400266: Oicys_Idle_02:L3_Ring_04_Jnt
+    400268: Oicys_Idle_02:L3_Shoulder_Jnt
+    400270: Oicys_Idle_02:L3_Thumb_01_Jnt
+    400272: Oicys_Idle_02:L3_Thumb_02_Jnt
+    400274: Oicys_Idle_02:L3_Thumb_03_Jnt
+    400276: Oicys_Idle_02:L3_Thumb_04_Jnt
+    400278: Oicys_Idle_02:L3_Wrist_Jnt
+    400280: Oicys_Idle_02:Mask1
+    400282: Oicys_Idle_02:Neck_Jnt
+    400284: Oicys_Idle_02:nurbsCircle1
+    400286: Oicys_Idle_02:nurbsCircle1 1
+    400288: Oicys_Idle_02:nurbsCircle1 10
+    400290: Oicys_Idle_02:nurbsCircle1 11
+    400292: Oicys_Idle_02:nurbsCircle1 2
+    400294: Oicys_Idle_02:nurbsCircle1 3
+    400296: Oicys_Idle_02:nurbsCircle1 4
+    400298: Oicys_Idle_02:nurbsCircle1 5
+    400300: Oicys_Idle_02:nurbsCircle1 6
+    400302: Oicys_Idle_02:nurbsCircle1 7
+    400304: Oicys_Idle_02:nurbsCircle1 8
+    400306: Oicys_Idle_02:nurbsCircle1 9
+    400308: Oicys_Idle_02:nurbsCircle2
+    400310: Oicys_Idle_02:nurbsCircle2 1
+    400312: Oicys_Idle_02:nurbsCircle2 2
+    400314: Oicys_Idle_02:nurbsCircle2 3
+    400316: Oicys_Idle_02:nurbsCircle2 4
+    400318: Oicys_Idle_02:nurbsCircle2 5
+    400320: Oicys_Idle_02:nurbsCircle3
+    400322: Oicys_Idle_02:nurbsCircle3 1
+    400324: Oicys_Idle_02:nurbsCircle3 2
+    400326: Oicys_Idle_02:nurbsCircle3 3
+    400328: Oicys_Idle_02:nurbsCircle3 4
+    400330: Oicys_Idle_02:nurbsCircle4
+    400332: Oicys_Idle_02:nurbsCircle5
+    400334: Oicys_Idle_02:pasted__Finger_Con_01
+    400336: Oicys_Idle_02:pasted__Finger_Con_01 1
+    400338: Oicys_Idle_02:pasted__Finger_Con_01 10
+    400340: Oicys_Idle_02:pasted__Finger_Con_01 11
+    400342: Oicys_Idle_02:pasted__Finger_Con_01 12
+    400344: Oicys_Idle_02:pasted__Finger_Con_01 13
+    400346: Oicys_Idle_02:pasted__Finger_Con_01 14
+    400348: Oicys_Idle_02:pasted__Finger_Con_01 15
+    400350: Oicys_Idle_02:pasted__Finger_Con_01 16
+    400352: Oicys_Idle_02:pasted__Finger_Con_01 17
+    400354: Oicys_Idle_02:pasted__Finger_Con_01 2
+    400356: Oicys_Idle_02:pasted__Finger_Con_01 3
+    400358: Oicys_Idle_02:pasted__Finger_Con_01 4
+    400360: Oicys_Idle_02:pasted__Finger_Con_01 5
+    400362: Oicys_Idle_02:pasted__Finger_Con_01 6
+    400364: Oicys_Idle_02:pasted__Finger_Con_01 7
+    400366: Oicys_Idle_02:pasted__Finger_Con_01 8
+    400368: Oicys_Idle_02:pasted__Finger_Con_01 9
+    400370: Oicys_Idle_02:pasted__Finger_con_Offset24
+    400372: Oicys_Idle_02:pasted__Finger_con_Offset24 1
+    400374: Oicys_Idle_02:pasted__Finger_con_Offset24 2
+    400376: Oicys_Idle_02:pasted__Finger_con_Offset24 3
+    400378: Oicys_Idle_02:pasted__Finger_con_Offset24 4
+    400380: Oicys_Idle_02:pasted__Finger_con_Offset24 5
+    400382: Oicys_Idle_02:pasted__Finger_con_Offset25
+    400384: Oicys_Idle_02:pasted__Finger_con_Offset25 1
+    400386: Oicys_Idle_02:pasted__Finger_con_Offset25 2
+    400388: Oicys_Idle_02:pasted__Finger_con_Offset25 3
+    400390: Oicys_Idle_02:pasted__Finger_con_Offset25 4
+    400392: Oicys_Idle_02:pasted__Finger_con_Offset25 5
+    400394: Oicys_Idle_02:pasted__Finger_con_Offset26
+    400396: Oicys_Idle_02:pasted__Finger_con_Offset26 1
+    400398: Oicys_Idle_02:pasted__Finger_con_Offset26 2
+    400400: Oicys_Idle_02:pasted__Finger_con_Offset26 3
+    400402: Oicys_Idle_02:pasted__Finger_con_Offset26 4
+    400404: Oicys_Idle_02:pasted__Finger_con_Offset26 5
+    400406: Oicys_Idle_02:Pelvice_Jnt
+    400408: Oicys_Idle_02:R1_Clav_Offset
+    400410: Oicys_Idle_02:R1_Clavicle_Jnt
+    400412: Oicys_Idle_02:R1_Elbow_Jnt
+    400414: Oicys_Idle_02:R1_Middle_01_Jnt
+    400416: Oicys_Idle_02:R1_Middle_02_Jnt
+    400418: Oicys_Idle_02:R1_Middle_03_Jnt
+    400420: Oicys_Idle_02:R1_Middle_04_Jnt
+    400422: Oicys_Idle_02:R1_Palm_Jnt
+    400424: Oicys_Idle_02:R1_Pinky_01_Jnt
+    400426: Oicys_Idle_02:R1_Pinky_02_Jnt
+    400428: Oicys_Idle_02:R1_Pinky_03_Jnt
+    400430: Oicys_Idle_02:R1_Pinky_04_Jnt
+    400432: Oicys_Idle_02:R1_Pointer_01_Jnt
+    400434: Oicys_Idle_02:R1_Pointer_02_Jnt
+    400436: Oicys_Idle_02:R1_Pointer_03_Jnt
+    400438: Oicys_Idle_02:R1_Pointer_04_Jnt
+    400440: Oicys_Idle_02:R1_Ring_01_Jnt
+    400442: Oicys_Idle_02:R1_Ring_02_Jnt
+    400444: Oicys_Idle_02:R1_Ring_03_Jnt
+    400446: Oicys_Idle_02:R1_Ring_04_Jnt
+    400448: Oicys_Idle_02:R1_Shoulder_Jnt
+    400450: Oicys_Idle_02:R1_Thumb_01_Jnt
+    400452: Oicys_Idle_02:R1_Thumb_02_Jnt
+    400454: Oicys_Idle_02:R1_Thumb_03_Jnt
+    400456: Oicys_Idle_02:R1_Thumb_04_Jnt
+    400458: Oicys_Idle_02:R1_Wrist_Jnt
+    400460: Oicys_Idle_02:R2_Clavicle_Jnt
+    400462: Oicys_Idle_02:R2_Elbow_Jnt
+    400464: Oicys_Idle_02:R2_Middle_01_Jnt
+    400466: Oicys_Idle_02:R2_Middle_02_Jnt
+    400468: Oicys_Idle_02:R2_Middle_03_Jnt
+    400470: Oicys_Idle_02:R2_Middle_04_Jnt
+    400472: Oicys_Idle_02:R2_Palm_Jnt
+    400474: Oicys_Idle_02:R2_Pinky_01_Jnt
+    400476: Oicys_Idle_02:R2_Pinky_02_Jnt
+    400478: Oicys_Idle_02:R2_Pinky_03_Jnt
+    400480: Oicys_Idle_02:R2_Pinky_04_Jnt
+    400482: Oicys_Idle_02:R2_Pointer_01_Jnt
+    400484: Oicys_Idle_02:R2_Pointer_02_Jnt
+    400486: Oicys_Idle_02:R2_Pointer_03_Jnt
+    400488: Oicys_Idle_02:R2_Pointer_04_Jnt
+    400490: Oicys_Idle_02:R2_Ring_01_Jnt
+    400492: Oicys_Idle_02:R2_Ring_02_Jnt
+    400494: Oicys_Idle_02:R2_Ring_03_Jnt
+    400496: Oicys_Idle_02:R2_Ring_04_Jnt
+    400498: Oicys_Idle_02:R2_Shoulder_Jnt
+    400500: Oicys_Idle_02:R2_Wrist_01_Jnt
+    400502: Oicys_Idle_02:R2_Wrist_02_Jnt
+    400504: Oicys_Idle_02:R2_Wrist_03_Jnt
+    400506: Oicys_Idle_02:R2_Wrist_04_Jnt
+    400508: Oicys_Idle_02:R2_Wrist_Jnt
+    400510: Oicys_Idle_02:R3_Clav_Offset
+    400512: Oicys_Idle_02:R3_Clavicle_Jnt
+    400514: Oicys_Idle_02:R3_Elbow_Jnt
+    400516: Oicys_Idle_02:R3_Middle_01_Jnt
+    400518: Oicys_Idle_02:R3_Middle_02_Jnt
+    400520: Oicys_Idle_02:R3_Middle_03_Jnt
+    400522: Oicys_Idle_02:R3_Middle_04_Jnt
+    400524: Oicys_Idle_02:R3_Palm_Jnt
+    400526: Oicys_Idle_02:R3_Pinky_01_Jnt
+    400528: Oicys_Idle_02:R3_Pinky_02_Jnt
+    400530: Oicys_Idle_02:R3_Pinky_03_Jnt
+    400532: Oicys_Idle_02:R3_Pinky_04_Jnt
+    400534: Oicys_Idle_02:R3_Pointer_01_Jnt
+    400536: Oicys_Idle_02:R3_Pointer_02_Jnt
+    400538: Oicys_Idle_02:R3_Pointer_03_Jnt
+    400540: Oicys_Idle_02:R3_Pointer_04_Jnt
+    400542: Oicys_Idle_02:R3_Ring_01_Jnt
+    400544: Oicys_Idle_02:R3_Ring_02_Jnt
+    400546: Oicys_Idle_02:R3_Ring_03_Jnt
+    400548: Oicys_Idle_02:R3_Ring_04_Jnt
+    400550: Oicys_Idle_02:R3_Shoulder_Jnt
+    400552: Oicys_Idle_02:R3_Thumb_01_Jnt
+    400554: Oicys_Idle_02:R3_Thumb_02_Jnt
+    400556: Oicys_Idle_02:R3_Thumb_03_Jnt
+    400558: Oicys_Idle_02:R3_Thumb_04_Jnt
+    400560: Oicys_Idle_02:R3_Wrist_Jnt
+    400562: Oicys_Idle_02:Root
+    400564: Oicys_Idle_02:Shadow_Creature
+    400566: Oicys_Idle_02:Spine_01_Jnt
+    400568: Oicys_Idle_02:Spine_02_Jnt
+    400570: Oicys_Idle_02:Spine_03_Jnt
+    400572: Oicys_Idle_02:Spine_04_Jnt
+    400574: Oicys_Idle_02:Spine_05_Jnt
+    400576: Oicys_Idle_02:Spine_06_Jnt
+    400578: Oicys_Idle_02:Spine_07_Jnt
+    400580: Oicys_Idle_02:Spine_08_Jnt
+    400582: Oicys_Idle_02:Spine_09_Jnt
+    400584: Oicys_Idle_02:transform1
+    400586: Oicys_Idle_02:transform3
+    400588: Oicys_Idle_02:transform4
+    400590: Oicys_Idle_02:transform5
+    2300000: Oicys_Idle_02:Mask1
+    3300000: Oicys_Idle_02:Mask1
+    4300000: Oicys_Idle_02:Shadow_Creature
+    4300002: Oicys_Idle_02:Mask1
+    7400000: Idle2
+    9500000: //RootNode
+    13700000: Oicys_Idle_02:Shadow_Creature
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Idle2
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 48
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Oicys_Idle_02:group44
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group32
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group32/Oicys_Idle_02:nurbsCircle3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group32/Oicys_Idle_02:nurbsCircle3/Oicys_Idle_02:transform1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group32/Oicys_Idle_02:nurbsCircle3/Oicys_Idle_02:transform1/Oicys_Idle_02:Root
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group5
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4/Oicys_Idle_02:group16
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4/Oicys_Idle_02:group16/Oicys_Idle_02:nurbsCircle1
+          8
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4/Oicys_Idle_02:group16/Oicys_Idle_02:nurbsCircle1
+          8/Oicys_Idle_02:group15
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4/Oicys_Idle_02:group16/Oicys_Idle_02:nurbsCircle1
+          8/Oicys_Idle_02:group15/Oicys_Idle_02:nurbsCircle1 9
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4/Oicys_Idle_02:group16/Oicys_Idle_02:nurbsCircle1
+          8/Oicys_Idle_02:group15/Oicys_Idle_02:nurbsCircle1 9/Oicys_Idle_02:Hand_01_offset2
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4/Oicys_Idle_02:group16/Oicys_Idle_02:nurbsCircle1
+          8/Oicys_Idle_02:group15/Oicys_Idle_02:nurbsCircle1 9/Oicys_Idle_02:Hand_01_offset2/Oicys_Idle_02:Hand_01_Ctrl
+          4
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4/Oicys_Idle_02:group16/Oicys_Idle_02:nurbsCircle1
+          8/Oicys_Idle_02:group15/Oicys_Idle_02:nurbsCircle1 9/Oicys_Idle_02:pasted__Finger_con_Offset24
+          4
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4/Oicys_Idle_02:group16/Oicys_Idle_02:nurbsCircle1
+          8/Oicys_Idle_02:group15/Oicys_Idle_02:nurbsCircle1 9/Oicys_Idle_02:pasted__Finger_con_Offset24
+          4/Oicys_Idle_02:pasted__Finger_Con_01 8
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4/Oicys_Idle_02:group16/Oicys_Idle_02:nurbsCircle1
+          8/Oicys_Idle_02:group15/Oicys_Idle_02:nurbsCircle1 9/Oicys_Idle_02:pasted__Finger_con_Offset24
+          4/Oicys_Idle_02:pasted__Finger_Con_01 8/Oicys_Idle_02:pasted__Finger_con_Offset25
+          4
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4/Oicys_Idle_02:group16/Oicys_Idle_02:nurbsCircle1
+          8/Oicys_Idle_02:group15/Oicys_Idle_02:nurbsCircle1 9/Oicys_Idle_02:pasted__Finger_con_Offset24
+          4/Oicys_Idle_02:pasted__Finger_Con_01 8/Oicys_Idle_02:pasted__Finger_con_Offset25
+          4/Oicys_Idle_02:pasted__Finger_Con_01 13
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4/Oicys_Idle_02:group16/Oicys_Idle_02:nurbsCircle1
+          8/Oicys_Idle_02:group15/Oicys_Idle_02:nurbsCircle1 9/Oicys_Idle_02:pasted__Finger_con_Offset24
+          4/Oicys_Idle_02:pasted__Finger_Con_01 8/Oicys_Idle_02:pasted__Finger_con_Offset25
+          4/Oicys_Idle_02:pasted__Finger_Con_01 13/Oicys_Idle_02:pasted__Finger_con_Offset26
+          4
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:group30/Oicys_Idle_02:nurbsCircle2 4/Oicys_Idle_02:group16/Oicys_Idle_02:nurbsCircle1
+          8/Oicys_Idle_02:group15/Oicys_Idle_02:nurbsCircle1 9/Oicys_Idle_02:pasted__Finger_con_Offset24
+          4/Oicys_Idle_02:pasted__Finger_Con_01 8/Oicys_Idle_02:pasted__Finger_con_Offset25
+          4/Oicys_Idle_02:pasted__Finger_Con_01 13/Oicys_Idle_02:pasted__Finger_con_Offset26
+          4/Oicys_Idle_02:pasted__Finger_Con_01 15
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Middle_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Middle_01_Jnt/Oicys_Idle_02:L2_Middle_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Middle_01_Jnt/Oicys_Idle_02:L2_Middle_02_Jnt/Oicys_Idle_02:L2_Middle_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Middle_01_Jnt/Oicys_Idle_02:L2_Middle_02_Jnt/Oicys_Idle_02:L2_Middle_03_Jnt/Oicys_Idle_02:L2_Middle_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Pinky_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Pinky_01_Jnt/Oicys_Idle_02:L2_Pinky_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Pinky_01_Jnt/Oicys_Idle_02:L2_Pinky_02_Jnt/Oicys_Idle_02:L2_Pinky_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Pinky_01_Jnt/Oicys_Idle_02:L2_Pinky_02_Jnt/Oicys_Idle_02:L2_Pinky_03_Jnt/Oicys_Idle_02:L2_Pinky_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Pointer_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Pointer_01_Jnt/Oicys_Idle_02:L2_Pointer_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Pointer_01_Jnt/Oicys_Idle_02:L2_Pointer_02_Jnt/Oicys_Idle_02:L2_Pointer_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Pointer_01_Jnt/Oicys_Idle_02:L2_Pointer_02_Jnt/Oicys_Idle_02:L2_Pointer_03_Jnt/Oicys_Idle_02:L2_Pointer_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Ring_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Ring_01_Jnt/Oicys_Idle_02:L2_Ring_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Ring_01_Jnt/Oicys_Idle_02:L2_Ring_02_Jnt/Oicys_Idle_02:L2_Ring_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Ring_01_Jnt/Oicys_Idle_02:L2_Ring_02_Jnt/Oicys_Idle_02:L2_Ring_03_Jnt/Oicys_Idle_02:L2_Ring_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Wrist_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Wrist_01_Jnt/Oicys_Idle_02:L2_Wrist_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Wrist_01_Jnt/Oicys_Idle_02:L2_Wrist_02_Jnt/Oicys_Idle_02:L2_Wrist_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group34/Oicys_Idle_02:curve1
+          4/Oicys_Idle_02:L2_Clavicle_Jnt/Oicys_Idle_02:L2_Shoulder_Jnt/Oicys_Idle_02:L2_Elbow_Jnt/Oicys_Idle_02:L2_Wrist_Jnt/Oicys_Idle_02:L2_Palm_Jnt/Oicys_Idle_02:L2_Wrist_01_Jnt/Oicys_Idle_02:L2_Wrist_02_Jnt/Oicys_Idle_02:L2_Wrist_03_Jnt/Oicys_Idle_02:L2_Wrist_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group41
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group41/Oicys_Idle_02:cluster3Handle
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5/Oicys_Idle_02:group22
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5/Oicys_Idle_02:group22/Oicys_Idle_02:nurbsCircle1
+          10
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5/Oicys_Idle_02:group22/Oicys_Idle_02:nurbsCircle1
+          10/Oicys_Idle_02:group21
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5/Oicys_Idle_02:group22/Oicys_Idle_02:nurbsCircle1
+          10/Oicys_Idle_02:group21/Oicys_Idle_02:nurbsCircle1 11
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5/Oicys_Idle_02:group22/Oicys_Idle_02:nurbsCircle1
+          10/Oicys_Idle_02:group21/Oicys_Idle_02:nurbsCircle1 11/Oicys_Idle_02:Hand_01_offset4
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5/Oicys_Idle_02:group22/Oicys_Idle_02:nurbsCircle1
+          10/Oicys_Idle_02:group21/Oicys_Idle_02:nurbsCircle1 11/Oicys_Idle_02:Hand_01_offset4/Oicys_Idle_02:Hand_01_Ctrl
+          5
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5/Oicys_Idle_02:group22/Oicys_Idle_02:nurbsCircle1
+          10/Oicys_Idle_02:group21/Oicys_Idle_02:nurbsCircle1 11/Oicys_Idle_02:pasted__Finger_con_Offset24
+          5
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5/Oicys_Idle_02:group22/Oicys_Idle_02:nurbsCircle1
+          10/Oicys_Idle_02:group21/Oicys_Idle_02:nurbsCircle1 11/Oicys_Idle_02:pasted__Finger_con_Offset24
+          5/Oicys_Idle_02:pasted__Finger_Con_01 14
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5/Oicys_Idle_02:group22/Oicys_Idle_02:nurbsCircle1
+          10/Oicys_Idle_02:group21/Oicys_Idle_02:nurbsCircle1 11/Oicys_Idle_02:pasted__Finger_con_Offset24
+          5/Oicys_Idle_02:pasted__Finger_Con_01 14/Oicys_Idle_02:pasted__Finger_con_Offset25
+          5
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5/Oicys_Idle_02:group22/Oicys_Idle_02:nurbsCircle1
+          10/Oicys_Idle_02:group21/Oicys_Idle_02:nurbsCircle1 11/Oicys_Idle_02:pasted__Finger_con_Offset24
+          5/Oicys_Idle_02:pasted__Finger_Con_01 14/Oicys_Idle_02:pasted__Finger_con_Offset25
+          5/Oicys_Idle_02:pasted__Finger_Con_01 16
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5/Oicys_Idle_02:group22/Oicys_Idle_02:nurbsCircle1
+          10/Oicys_Idle_02:group21/Oicys_Idle_02:nurbsCircle1 11/Oicys_Idle_02:pasted__Finger_con_Offset24
+          5/Oicys_Idle_02:pasted__Finger_Con_01 14/Oicys_Idle_02:pasted__Finger_con_Offset25
+          5/Oicys_Idle_02:pasted__Finger_Con_01 16/Oicys_Idle_02:pasted__Finger_con_Offset26
+          5
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:group28/Oicys_Idle_02:nurbsCircle2 5/Oicys_Idle_02:group22/Oicys_Idle_02:nurbsCircle1
+          10/Oicys_Idle_02:group21/Oicys_Idle_02:nurbsCircle1 11/Oicys_Idle_02:pasted__Finger_con_Offset24
+          5/Oicys_Idle_02:pasted__Finger_Con_01 14/Oicys_Idle_02:pasted__Finger_con_Offset25
+          5/Oicys_Idle_02:pasted__Finger_Con_01 16/Oicys_Idle_02:pasted__Finger_con_Offset26
+          5/Oicys_Idle_02:pasted__Finger_Con_01 17
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Middle_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Middle_01_Jnt/Oicys_Idle_02:R2_Middle_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Middle_01_Jnt/Oicys_Idle_02:R2_Middle_02_Jnt/Oicys_Idle_02:R2_Middle_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Middle_01_Jnt/Oicys_Idle_02:R2_Middle_02_Jnt/Oicys_Idle_02:R2_Middle_03_Jnt/Oicys_Idle_02:R2_Middle_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Pinky_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Pinky_01_Jnt/Oicys_Idle_02:R2_Pinky_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Pinky_01_Jnt/Oicys_Idle_02:R2_Pinky_02_Jnt/Oicys_Idle_02:R2_Pinky_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Pinky_01_Jnt/Oicys_Idle_02:R2_Pinky_02_Jnt/Oicys_Idle_02:R2_Pinky_03_Jnt/Oicys_Idle_02:R2_Pinky_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Pointer_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Pointer_01_Jnt/Oicys_Idle_02:R2_Pointer_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Pointer_01_Jnt/Oicys_Idle_02:R2_Pointer_02_Jnt/Oicys_Idle_02:R2_Pointer_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Pointer_01_Jnt/Oicys_Idle_02:R2_Pointer_02_Jnt/Oicys_Idle_02:R2_Pointer_03_Jnt/Oicys_Idle_02:R2_Pointer_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Ring_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Ring_01_Jnt/Oicys_Idle_02:R2_Ring_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Ring_01_Jnt/Oicys_Idle_02:R2_Ring_02_Jnt/Oicys_Idle_02:R2_Ring_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Ring_01_Jnt/Oicys_Idle_02:R2_Ring_02_Jnt/Oicys_Idle_02:R2_Ring_03_Jnt/Oicys_Idle_02:R2_Ring_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Wrist_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Wrist_01_Jnt/Oicys_Idle_02:R2_Wrist_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Wrist_01_Jnt/Oicys_Idle_02:R2_Wrist_02_Jnt/Oicys_Idle_02:R2_Wrist_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:group54/Oicys_Idle_02:curve1
+          5/Oicys_Idle_02:R2_Clavicle_Jnt/Oicys_Idle_02:R2_Shoulder_Jnt/Oicys_Idle_02:R2_Elbow_Jnt/Oicys_Idle_02:R2_Wrist_Jnt/Oicys_Idle_02:R2_Palm_Jnt/Oicys_Idle_02:R2_Wrist_01_Jnt/Oicys_Idle_02:R2_Wrist_02_Jnt/Oicys_Idle_02:R2_Wrist_03_Jnt/Oicys_Idle_02:R2_Wrist_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:Neck_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:Neck_Jnt/Oicys_Idle_02:Head_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:Neck_Jnt/Oicys_Idle_02:Head_Jnt/Oicys_Idle_02:Chin_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:Neck_Jnt/Oicys_Idle_02:Head_Jnt/Oicys_Idle_02:Chin_Jnt/Oicys_Idle_02:Mask1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:Neck_Jnt/Oicys_Idle_02:Head_Jnt/Oicys_Idle_02:Hat_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group37/Oicys_Idle_02:nurbsCircle3 4/Oicys_Idle_02:group42/Oicys_Idle_02:nurbsCircle4/Oicys_Idle_02:transform5
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group40
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:group40/Oicys_Idle_02:cluster1Handle
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1/Oicys_Idle_02:group14
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1/Oicys_Idle_02:group14/Oicys_Idle_02:nurbsCircle1 5
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1/Oicys_Idle_02:group14/Oicys_Idle_02:nurbsCircle1 5/Oicys_Idle_02:group45
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1/Oicys_Idle_02:group14/Oicys_Idle_02:nurbsCircle1 5/Oicys_Idle_02:group46
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1/Oicys_Idle_02:group14/Oicys_Idle_02:nurbsCircle1 5/Oicys_Idle_02:Hand_01_offset
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1/Oicys_Idle_02:group14/Oicys_Idle_02:nurbsCircle1 5/Oicys_Idle_02:Hand_01_offset/Oicys_Idle_02:Hand_01_Ctrl
+          2
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1/Oicys_Idle_02:group14/Oicys_Idle_02:nurbsCircle1 5/Oicys_Idle_02:pasted__Finger_con_Offset24
+          1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1/Oicys_Idle_02:group14/Oicys_Idle_02:nurbsCircle1 5/Oicys_Idle_02:pasted__Finger_con_Offset24
+          1/Oicys_Idle_02:pasted__Finger_Con_01 1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1/Oicys_Idle_02:group14/Oicys_Idle_02:nurbsCircle1 5/Oicys_Idle_02:pasted__Finger_con_Offset24
+          1/Oicys_Idle_02:pasted__Finger_Con_01 1/Oicys_Idle_02:pasted__Finger_con_Offset25
+          1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1/Oicys_Idle_02:group14/Oicys_Idle_02:nurbsCircle1 5/Oicys_Idle_02:pasted__Finger_con_Offset24
+          1/Oicys_Idle_02:pasted__Finger_Con_01 1/Oicys_Idle_02:pasted__Finger_con_Offset25
+          1/Oicys_Idle_02:pasted__Finger_Con_01 5
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1/Oicys_Idle_02:group14/Oicys_Idle_02:nurbsCircle1 5/Oicys_Idle_02:pasted__Finger_con_Offset24
+          1/Oicys_Idle_02:pasted__Finger_Con_01 1/Oicys_Idle_02:pasted__Finger_con_Offset25
+          1/Oicys_Idle_02:pasted__Finger_Con_01 5/Oicys_Idle_02:pasted__Finger_con_Offset26
+          1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:group25/Oicys_Idle_02:nurbsCircle2/Oicys_Idle_02:group13/Oicys_Idle_02:nurbsCircle1
+          1/Oicys_Idle_02:group14/Oicys_Idle_02:nurbsCircle1 5/Oicys_Idle_02:pasted__Finger_con_Offset24
+          1/Oicys_Idle_02:pasted__Finger_Con_01 1/Oicys_Idle_02:pasted__Finger_con_Offset25
+          1/Oicys_Idle_02:pasted__Finger_Con_01 5/Oicys_Idle_02:pasted__Finger_con_Offset26
+          1/Oicys_Idle_02:pasted__Finger_Con_01 10
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Middle_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Middle_01_Jnt/Oicys_Idle_02:L1_Middle_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Middle_01_Jnt/Oicys_Idle_02:L1_Middle_02_Jnt/Oicys_Idle_02:L1_Middle_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Middle_01_Jnt/Oicys_Idle_02:L1_Middle_02_Jnt/Oicys_Idle_02:L1_Middle_03_Jnt/Oicys_Idle_02:L1_Middle_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Pinky_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Pinky_01_Jnt/Oicys_Idle_02:L1_Pinky_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Pinky_01_Jnt/Oicys_Idle_02:L1_Pinky_02_Jnt/Oicys_Idle_02:L1_Pinky_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Pinky_01_Jnt/Oicys_Idle_02:L1_Pinky_02_Jnt/Oicys_Idle_02:L1_Pinky_03_Jnt/Oicys_Idle_02:L1_Pinky_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Pointer_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Pointer_01_Jnt/Oicys_Idle_02:L1_Pointer_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Pointer_01_Jnt/Oicys_Idle_02:L1_Pointer_02_Jnt/Oicys_Idle_02:L1_Pointer_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Pointer_01_Jnt/Oicys_Idle_02:L1_Pointer_02_Jnt/Oicys_Idle_02:L1_Pointer_03_Jnt/Oicys_Idle_02:L1_Pointer_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Ring_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Ring_01_Jnt/Oicys_Idle_02:L1_Ring_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Ring_01_Jnt/Oicys_Idle_02:L1_Ring_02_Jnt/Oicys_Idle_02:L1_Ring_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Ring_01_Jnt/Oicys_Idle_02:L1_Ring_02_Jnt/Oicys_Idle_02:L1_Ring_03_Jnt/Oicys_Idle_02:L1_Ring_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Thumb_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Thumb_01_Jnt/Oicys_Idle_02:L1_Thumb_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Thumb_01_Jnt/Oicys_Idle_02:L1_Thumb_02_Jnt/Oicys_Idle_02:L1_Thumb_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L1_Clav_Offset/Oicys_Idle_02:curve1/Oicys_Idle_02:L1_Clavicle_Jnt/Oicys_Idle_02:L1_Shoulder_Jnt/Oicys_Idle_02:L1_Elbow_Jnt/Oicys_Idle_02:L1_Wrist_Jnt/Oicys_Idle_02:L1_Palm_Jnt/Oicys_Idle_02:L1_Thumb_01_Jnt/Oicys_Idle_02:L1_Thumb_02_Jnt/Oicys_Idle_02:L1_Thumb_03_Jnt/Oicys_Idle_02:L1_Thumb_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1/Oicys_Idle_02:group18
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1/Oicys_Idle_02:group18/Oicys_Idle_02:nurbsCircle1 2
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1/Oicys_Idle_02:group18/Oicys_Idle_02:nurbsCircle1 2/Oicys_Idle_02:group17
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1/Oicys_Idle_02:group18/Oicys_Idle_02:nurbsCircle1 2/Oicys_Idle_02:group17/Oicys_Idle_02:nurbsCircle1
+          6
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1/Oicys_Idle_02:group18/Oicys_Idle_02:nurbsCircle1 2/Oicys_Idle_02:group17/Oicys_Idle_02:nurbsCircle1
+          6/Oicys_Idle_02:Hand_01_offset1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1/Oicys_Idle_02:group18/Oicys_Idle_02:nurbsCircle1 2/Oicys_Idle_02:group17/Oicys_Idle_02:nurbsCircle1
+          6/Oicys_Idle_02:Hand_01_offset1/Oicys_Idle_02:Hand_01_Ctrl 3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1/Oicys_Idle_02:group18/Oicys_Idle_02:nurbsCircle1 2/Oicys_Idle_02:group17/Oicys_Idle_02:nurbsCircle1
+          6/Oicys_Idle_02:pasted__Finger_con_Offset24 2
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1/Oicys_Idle_02:group18/Oicys_Idle_02:nurbsCircle1 2/Oicys_Idle_02:group17/Oicys_Idle_02:nurbsCircle1
+          6/Oicys_Idle_02:pasted__Finger_con_Offset24 2/Oicys_Idle_02:pasted__Finger_Con_01
+          2
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1/Oicys_Idle_02:group18/Oicys_Idle_02:nurbsCircle1 2/Oicys_Idle_02:group17/Oicys_Idle_02:nurbsCircle1
+          6/Oicys_Idle_02:pasted__Finger_con_Offset24 2/Oicys_Idle_02:pasted__Finger_Con_01
+          2/Oicys_Idle_02:pasted__Finger_con_Offset25 2
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1/Oicys_Idle_02:group18/Oicys_Idle_02:nurbsCircle1 2/Oicys_Idle_02:group17/Oicys_Idle_02:nurbsCircle1
+          6/Oicys_Idle_02:pasted__Finger_con_Offset24 2/Oicys_Idle_02:pasted__Finger_Con_01
+          2/Oicys_Idle_02:pasted__Finger_con_Offset25 2/Oicys_Idle_02:pasted__Finger_Con_01
+          6
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1/Oicys_Idle_02:group18/Oicys_Idle_02:nurbsCircle1 2/Oicys_Idle_02:group17/Oicys_Idle_02:nurbsCircle1
+          6/Oicys_Idle_02:pasted__Finger_con_Offset24 2/Oicys_Idle_02:pasted__Finger_Con_01
+          2/Oicys_Idle_02:pasted__Finger_con_Offset25 2/Oicys_Idle_02:pasted__Finger_Con_01
+          6/Oicys_Idle_02:pasted__Finger_con_Offset26 2
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:group31/Oicys_Idle_02:nurbsCircle2
+          1/Oicys_Idle_02:group18/Oicys_Idle_02:nurbsCircle1 2/Oicys_Idle_02:group17/Oicys_Idle_02:nurbsCircle1
+          6/Oicys_Idle_02:pasted__Finger_con_Offset24 2/Oicys_Idle_02:pasted__Finger_Con_01
+          2/Oicys_Idle_02:pasted__Finger_con_Offset25 2/Oicys_Idle_02:pasted__Finger_Con_01
+          6/Oicys_Idle_02:pasted__Finger_con_Offset26 2/Oicys_Idle_02:pasted__Finger_Con_01
+          11
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Middle_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Middle_01_Jnt/Oicys_Idle_02:L3_Middle_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Middle_01_Jnt/Oicys_Idle_02:L3_Middle_02_Jnt/Oicys_Idle_02:L3_Middle_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Middle_01_Jnt/Oicys_Idle_02:L3_Middle_02_Jnt/Oicys_Idle_02:L3_Middle_03_Jnt/Oicys_Idle_02:L3_Middle_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Pinky_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Pinky_01_Jnt/Oicys_Idle_02:L3_Pinky_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Pinky_01_Jnt/Oicys_Idle_02:L3_Pinky_02_Jnt/Oicys_Idle_02:L3_Pinky_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Pinky_01_Jnt/Oicys_Idle_02:L3_Pinky_02_Jnt/Oicys_Idle_02:L3_Pinky_03_Jnt/Oicys_Idle_02:L3_Pinky_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Pointer_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Pointer_01_Jnt/Oicys_Idle_02:L3_Pointer_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Pointer_01_Jnt/Oicys_Idle_02:L3_Pointer_02_Jnt/Oicys_Idle_02:L3_Pointer_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Pointer_01_Jnt/Oicys_Idle_02:L3_Pointer_02_Jnt/Oicys_Idle_02:L3_Pointer_03_Jnt/Oicys_Idle_02:L3_Pointer_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Ring_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Ring_01_Jnt/Oicys_Idle_02:L3_Ring_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Ring_01_Jnt/Oicys_Idle_02:L3_Ring_02_Jnt/Oicys_Idle_02:L3_Ring_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Ring_01_Jnt/Oicys_Idle_02:L3_Ring_02_Jnt/Oicys_Idle_02:L3_Ring_03_Jnt/Oicys_Idle_02:L3_Ring_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Thumb_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Thumb_01_Jnt/Oicys_Idle_02:L3_Thumb_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Thumb_01_Jnt/Oicys_Idle_02:L3_Thumb_02_Jnt/Oicys_Idle_02:L3_Thumb_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:L3_Clav_Offset/Oicys_Idle_02:curve1 1/Oicys_Idle_02:L3_Clavicle_Jnt/Oicys_Idle_02:L3_Shoulder_Jnt/Oicys_Idle_02:L3_Elbow_Jnt/Oicys_Idle_02:L3_Wrist_Jnt/Oicys_Idle_02:L3_Palm_Jnt/Oicys_Idle_02:L3_Thumb_01_Jnt/Oicys_Idle_02:L3_Thumb_02_Jnt/Oicys_Idle_02:L3_Thumb_03_Jnt/Oicys_Idle_02:L3_Thumb_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:nurbsCircle1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:nurbsCircle1/Oicys_Idle_02:group19
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:nurbsCircle1/Oicys_Idle_02:group19/Oicys_Idle_02:nurbsCircle1
+          4
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:nurbsCircle1/Oicys_Idle_02:group19/Oicys_Idle_02:nurbsCircle1
+          4/Oicys_Idle_02:Finger_con_Offset15
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:nurbsCircle1/Oicys_Idle_02:group19/Oicys_Idle_02:nurbsCircle1
+          4/Oicys_Idle_02:Hand_01_offset3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:nurbsCircle1/Oicys_Idle_02:group19/Oicys_Idle_02:nurbsCircle1
+          4/Oicys_Idle_02:Hand_01_offset3/Oicys_Idle_02:Hand_01_Ctrl
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:nurbsCircle1/Oicys_Idle_02:group19/Oicys_Idle_02:nurbsCircle1
+          4/Oicys_Idle_02:pasted__Finger_con_Offset24
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:nurbsCircle1/Oicys_Idle_02:group19/Oicys_Idle_02:nurbsCircle1
+          4/Oicys_Idle_02:pasted__Finger_con_Offset24/Oicys_Idle_02:pasted__Finger_Con_01
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:nurbsCircle1/Oicys_Idle_02:group19/Oicys_Idle_02:nurbsCircle1
+          4/Oicys_Idle_02:pasted__Finger_con_Offset24/Oicys_Idle_02:pasted__Finger_Con_01/Oicys_Idle_02:pasted__Finger_con_Offset25
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:nurbsCircle1/Oicys_Idle_02:group19/Oicys_Idle_02:nurbsCircle1
+          4/Oicys_Idle_02:pasted__Finger_con_Offset24/Oicys_Idle_02:pasted__Finger_Con_01/Oicys_Idle_02:pasted__Finger_con_Offset25/Oicys_Idle_02:pasted__Finger_Con_01
+          4
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:nurbsCircle1/Oicys_Idle_02:group19/Oicys_Idle_02:nurbsCircle1
+          4/Oicys_Idle_02:pasted__Finger_con_Offset24/Oicys_Idle_02:pasted__Finger_Con_01/Oicys_Idle_02:pasted__Finger_con_Offset25/Oicys_Idle_02:pasted__Finger_Con_01
+          4/Oicys_Idle_02:pasted__Finger_con_Offset26
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:nurbsCircle1/Oicys_Idle_02:group19/Oicys_Idle_02:nurbsCircle1
+          4/Oicys_Idle_02:pasted__Finger_con_Offset24/Oicys_Idle_02:pasted__Finger_Con_01/Oicys_Idle_02:pasted__Finger_con_Offset25/Oicys_Idle_02:pasted__Finger_Con_01
+          4/Oicys_Idle_02:pasted__Finger_con_Offset26/Oicys_Idle_02:pasted__Finger_Con_01
+          9
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:group26/Oicys_Idle_02:nurbsCircle2
+          2/Oicys_Idle_02:transform3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Middle_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Middle_01_Jnt/Oicys_Idle_02:R1_Middle_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Middle_01_Jnt/Oicys_Idle_02:R1_Middle_02_Jnt/Oicys_Idle_02:R1_Middle_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Middle_01_Jnt/Oicys_Idle_02:R1_Middle_02_Jnt/Oicys_Idle_02:R1_Middle_03_Jnt/Oicys_Idle_02:R1_Middle_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Pinky_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Pinky_01_Jnt/Oicys_Idle_02:R1_Pinky_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Pinky_01_Jnt/Oicys_Idle_02:R1_Pinky_02_Jnt/Oicys_Idle_02:R1_Pinky_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Pinky_01_Jnt/Oicys_Idle_02:R1_Pinky_02_Jnt/Oicys_Idle_02:R1_Pinky_03_Jnt/Oicys_Idle_02:R1_Pinky_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Pointer_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Pointer_01_Jnt/Oicys_Idle_02:R1_Pointer_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Pointer_01_Jnt/Oicys_Idle_02:R1_Pointer_02_Jnt/Oicys_Idle_02:R1_Pointer_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Pointer_01_Jnt/Oicys_Idle_02:R1_Pointer_02_Jnt/Oicys_Idle_02:R1_Pointer_03_Jnt/Oicys_Idle_02:R1_Pointer_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Ring_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Ring_01_Jnt/Oicys_Idle_02:R1_Ring_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Ring_01_Jnt/Oicys_Idle_02:R1_Ring_02_Jnt/Oicys_Idle_02:R1_Ring_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Ring_01_Jnt/Oicys_Idle_02:R1_Ring_02_Jnt/Oicys_Idle_02:R1_Ring_03_Jnt/Oicys_Idle_02:R1_Ring_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Thumb_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Thumb_01_Jnt/Oicys_Idle_02:R1_Thumb_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Thumb_01_Jnt/Oicys_Idle_02:R1_Thumb_02_Jnt/Oicys_Idle_02:R1_Thumb_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R1_Clav_Offset/Oicys_Idle_02:curve1 2/Oicys_Idle_02:R1_Clavicle_Jnt/Oicys_Idle_02:R1_Shoulder_Jnt/Oicys_Idle_02:R1_Elbow_Jnt/Oicys_Idle_02:R1_Wrist_Jnt/Oicys_Idle_02:R1_Palm_Jnt/Oicys_Idle_02:R1_Thumb_01_Jnt/Oicys_Idle_02:R1_Thumb_02_Jnt/Oicys_Idle_02:R1_Thumb_03_Jnt/Oicys_Idle_02:R1_Thumb_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23/Oicys_Idle_02:nurbsCircle1 3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23/Oicys_Idle_02:nurbsCircle1 3/Oicys_Idle_02:group24
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23/Oicys_Idle_02:nurbsCircle1 3/Oicys_Idle_02:group24/Oicys_Idle_02:nurbsCircle1
+          7
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23/Oicys_Idle_02:nurbsCircle1 3/Oicys_Idle_02:group24/Oicys_Idle_02:nurbsCircle1
+          7/Oicys_Idle_02:Finger_con_Offset15 1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23/Oicys_Idle_02:nurbsCircle1 3/Oicys_Idle_02:group24/Oicys_Idle_02:nurbsCircle1
+          7/Oicys_Idle_02:Hand_01_Ctrl 1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23/Oicys_Idle_02:nurbsCircle1 3/Oicys_Idle_02:group24/Oicys_Idle_02:nurbsCircle1
+          7/Oicys_Idle_02:Hand_01_offset1 1
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23/Oicys_Idle_02:nurbsCircle1 3/Oicys_Idle_02:group24/Oicys_Idle_02:nurbsCircle1
+          7/Oicys_Idle_02:pasted__Finger_con_Offset24 3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23/Oicys_Idle_02:nurbsCircle1 3/Oicys_Idle_02:group24/Oicys_Idle_02:nurbsCircle1
+          7/Oicys_Idle_02:pasted__Finger_con_Offset24 3/Oicys_Idle_02:pasted__Finger_Con_01
+          3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23/Oicys_Idle_02:nurbsCircle1 3/Oicys_Idle_02:group24/Oicys_Idle_02:nurbsCircle1
+          7/Oicys_Idle_02:pasted__Finger_con_Offset24 3/Oicys_Idle_02:pasted__Finger_Con_01
+          3/Oicys_Idle_02:pasted__Finger_con_Offset25 3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23/Oicys_Idle_02:nurbsCircle1 3/Oicys_Idle_02:group24/Oicys_Idle_02:nurbsCircle1
+          7/Oicys_Idle_02:pasted__Finger_con_Offset24 3/Oicys_Idle_02:pasted__Finger_Con_01
+          3/Oicys_Idle_02:pasted__Finger_con_Offset25 3/Oicys_Idle_02:pasted__Finger_Con_01
+          7
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23/Oicys_Idle_02:nurbsCircle1 3/Oicys_Idle_02:group24/Oicys_Idle_02:nurbsCircle1
+          7/Oicys_Idle_02:pasted__Finger_con_Offset24 3/Oicys_Idle_02:pasted__Finger_Con_01
+          3/Oicys_Idle_02:pasted__Finger_con_Offset25 3/Oicys_Idle_02:pasted__Finger_Con_01
+          7/Oicys_Idle_02:pasted__Finger_con_Offset26 3
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:group29/Oicys_Idle_02:nurbsCircle2
+          3/Oicys_Idle_02:group23/Oicys_Idle_02:nurbsCircle1 3/Oicys_Idle_02:group24/Oicys_Idle_02:nurbsCircle1
+          7/Oicys_Idle_02:pasted__Finger_con_Offset24 3/Oicys_Idle_02:pasted__Finger_Con_01
+          3/Oicys_Idle_02:pasted__Finger_con_Offset25 3/Oicys_Idle_02:pasted__Finger_Con_01
+          7/Oicys_Idle_02:pasted__Finger_con_Offset26 3/Oicys_Idle_02:pasted__Finger_Con_01
+          12
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Middle_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Middle_01_Jnt/Oicys_Idle_02:R3_Middle_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Middle_01_Jnt/Oicys_Idle_02:R3_Middle_02_Jnt/Oicys_Idle_02:R3_Middle_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Middle_01_Jnt/Oicys_Idle_02:R3_Middle_02_Jnt/Oicys_Idle_02:R3_Middle_03_Jnt/Oicys_Idle_02:R3_Middle_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Pinky_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Pinky_01_Jnt/Oicys_Idle_02:R3_Pinky_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Pinky_01_Jnt/Oicys_Idle_02:R3_Pinky_02_Jnt/Oicys_Idle_02:R3_Pinky_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Pinky_01_Jnt/Oicys_Idle_02:R3_Pinky_02_Jnt/Oicys_Idle_02:R3_Pinky_03_Jnt/Oicys_Idle_02:R3_Pinky_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Pointer_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Pointer_01_Jnt/Oicys_Idle_02:R3_Pointer_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Pointer_01_Jnt/Oicys_Idle_02:R3_Pointer_02_Jnt/Oicys_Idle_02:R3_Pointer_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Pointer_01_Jnt/Oicys_Idle_02:R3_Pointer_02_Jnt/Oicys_Idle_02:R3_Pointer_03_Jnt/Oicys_Idle_02:R3_Pointer_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Ring_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Ring_01_Jnt/Oicys_Idle_02:R3_Ring_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Ring_01_Jnt/Oicys_Idle_02:R3_Ring_02_Jnt/Oicys_Idle_02:R3_Ring_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Ring_01_Jnt/Oicys_Idle_02:R3_Ring_02_Jnt/Oicys_Idle_02:R3_Ring_03_Jnt/Oicys_Idle_02:R3_Ring_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Thumb_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Thumb_01_Jnt/Oicys_Idle_02:R3_Thumb_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Thumb_01_Jnt/Oicys_Idle_02:R3_Thumb_02_Jnt/Oicys_Idle_02:R3_Thumb_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:R3_Clav_Offset/Oicys_Idle_02:curve1 3/Oicys_Idle_02:R3_Clavicle_Jnt/Oicys_Idle_02:R3_Shoulder_Jnt/Oicys_Idle_02:R3_Elbow_Jnt/Oicys_Idle_02:R3_Wrist_Jnt/Oicys_Idle_02:R3_Palm_Jnt/Oicys_Idle_02:R3_Thumb_01_Jnt/Oicys_Idle_02:R3_Thumb_02_Jnt/Oicys_Idle_02:R3_Thumb_03_Jnt/Oicys_Idle_02:R3_Thumb_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group36/Oicys_Idle_02:nurbsCircle3
+          3/Oicys_Idle_02:transform4
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group39
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group35/Oicys_Idle_02:nurbsCircle3 2/Oicys_Idle_02:group39/Oicys_Idle_02:cluster2Handle
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group38
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:group33/Oicys_Idle_02:nurbsCircle3
+          1/Oicys_Idle_02:group38/Oicys_Idle_02:cluster4Handle
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:Pelvice_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:Pelvice_Jnt/Oicys_Idle_02:Spine_01_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:Pelvice_Jnt/Oicys_Idle_02:Spine_01_Jnt/Oicys_Idle_02:Spine_02_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:Pelvice_Jnt/Oicys_Idle_02:Spine_01_Jnt/Oicys_Idle_02:Spine_02_Jnt/Oicys_Idle_02:Spine_03_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:Pelvice_Jnt/Oicys_Idle_02:Spine_01_Jnt/Oicys_Idle_02:Spine_02_Jnt/Oicys_Idle_02:Spine_03_Jnt/Oicys_Idle_02:Spine_04_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:Pelvice_Jnt/Oicys_Idle_02:Spine_01_Jnt/Oicys_Idle_02:Spine_02_Jnt/Oicys_Idle_02:Spine_03_Jnt/Oicys_Idle_02:Spine_04_Jnt/Oicys_Idle_02:Spine_05_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:Pelvice_Jnt/Oicys_Idle_02:Spine_01_Jnt/Oicys_Idle_02:Spine_02_Jnt/Oicys_Idle_02:Spine_03_Jnt/Oicys_Idle_02:Spine_04_Jnt/Oicys_Idle_02:Spine_05_Jnt/Oicys_Idle_02:Spine_06_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:Pelvice_Jnt/Oicys_Idle_02:Spine_01_Jnt/Oicys_Idle_02:Spine_02_Jnt/Oicys_Idle_02:Spine_03_Jnt/Oicys_Idle_02:Spine_04_Jnt/Oicys_Idle_02:Spine_05_Jnt/Oicys_Idle_02:Spine_06_Jnt/Oicys_Idle_02:Spine_07_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:Pelvice_Jnt/Oicys_Idle_02:Spine_01_Jnt/Oicys_Idle_02:Spine_02_Jnt/Oicys_Idle_02:Spine_03_Jnt/Oicys_Idle_02:Spine_04_Jnt/Oicys_Idle_02:Spine_05_Jnt/Oicys_Idle_02:Spine_06_Jnt/Oicys_Idle_02:Spine_07_Jnt/Oicys_Idle_02:Spine_08_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:group44/Oicys_Idle_02:curve3/Oicys_Idle_02:group43/Oicys_Idle_02:nurbsCircle5/Oicys_Idle_02:Pelvice_Jnt/Oicys_Idle_02:Spine_01_Jnt/Oicys_Idle_02:Spine_02_Jnt/Oicys_Idle_02:Spine_03_Jnt/Oicys_Idle_02:Spine_04_Jnt/Oicys_Idle_02:Spine_05_Jnt/Oicys_Idle_02:Spine_06_Jnt/Oicys_Idle_02:Spine_07_Jnt/Oicys_Idle_02:Spine_08_Jnt/Oicys_Idle_02:Spine_09_Jnt
+        weight: 1
+      - path: Oicys_Idle_02:Shadow_Creature
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 0
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
