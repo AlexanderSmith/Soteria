@@ -36,8 +36,8 @@ public class PuppetPuzzleController : MonoBehaviour
 	public void Initialize()
 	{
 		// Hacks for checking ability to fight puzzle
-		GameDirector.instance.PuppetPuzzleActivated();
-		GameDirector.instance.SuitRemoved();
+//		GameDirector.instance.PuppetPuzzleActivated();
+//		GameDirector.instance.SuitRemoved();
 
 		if (!GameDirector.instance.IsTheaterDefeated())
 		{

@@ -58,8 +58,8 @@ public class MusicPuzzleController : MonoBehaviour
 	public void Initialize()
 	{
 		// Gameplay hacks to test puzzle fight
-		GameDirector.instance.MusicPuzzleActivated();
-		GameDirector.instance.SuitRemoved();
+//		GameDirector.instance.MusicPuzzleActivated();
+//		GameDirector.instance.SuitRemoved();
 
 		if (GameDirector.instance.GetMusicActivated())
 		{
