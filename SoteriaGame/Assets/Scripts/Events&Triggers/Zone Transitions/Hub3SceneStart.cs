@@ -8,6 +8,11 @@ public class Hub3SceneStart : MonoBehaviour
 	public Transform musicSpawnLoc;
 	public Transform theaterSpawnLoc;
 	public Transform observatorySpawnLoc;
+
+	public GameObject sotStatue;
+	public GameObject sotStatueCrumble1;
+	public GameObject sotStatueCrumble2;
+	private Material[] crumble2Mats;
 	
 	// Instantiate Player prefab based on progression using GameDirector
 	void Awake()
@@ -36,5 +41,29 @@ public class Hub3SceneStart : MonoBehaviour
 		}
 		
 		GameDirector.instance.InitializePlayer();
+
+		// Testing statue final crumble code
+//		GameDirector.instance.StatueCrumbleTwo();
+
+		switch(GameDirector.instance.GetStatueCrumble())
+		{
+		case StatueCrumbleState.WHOLE:
+			sotStatueCrumble1.SetActive(false);
+			sotStatueCrumble2.SetActive(false);
+			break;
+		case StatueCrumbleState.CRUMBLEONE:
+			sotStatue.SetActive(false);
+			sotStatueCrumble2.SetActive(false);
+			break;
+		case StatueCrumbleState.CRUMBLETWO:
+			sotStatue.SetActive(false);
+			sotStatueCrumble1.SetActive(false);
+			crumble2Mats = sotStatueCrumble2.GetComponent<MeshRenderer>().materials;
+			foreach (Material mat in crumble2Mats)
+			{
+				mat.color = Color.gray;
+			}
+			break;
+		}
 	}
 }

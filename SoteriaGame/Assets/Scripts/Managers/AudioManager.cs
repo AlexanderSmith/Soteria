@@ -261,6 +261,7 @@ public enum AudioID
 	AnaSecondAnswerTakingOffSuit,
 	AnaSoteriaPrayer1HUBp4,
 	AnaSoteriaPrayer2HUBp4,
+	AnaSoteriaPrayerFail,
 	AnaStarChartPickupOBSERVp2,
 	AnaTailorCollectedCorrectCardsHubp4,
 	AnaTailorFirstDialogueHubp4,

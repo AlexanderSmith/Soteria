@@ -4,6 +4,7 @@ using System.Collections;
 public class HubSuitObjective : MonoBehaviour
 {
 	private GameObject _oMalleySuitOff;
+	private GameObject _oMalleyStatue;
 
 	public GameObject hubToMusic;
 	public GameObject hubToTheater;
@@ -28,19 +29,24 @@ public class HubSuitObjective : MonoBehaviour
 	void Awake()
 	{
 		this._oMalleySuitOff = GameObject.Find("O'MalleySuitOff");
+		this._oMalleyStatue = GameObject.Find("O'MalleySoteriaStatue");
+		this._oMalleyStatue.SetActive(false);
 
 		// Testing code
-		GameDirector.instance.ChangeGameState(GameStates.Suit);
-		this._music = true;
-		this._theater = true;
-		this._observatory = true;
+//		GameDirector.instance.ChangeGameState(GameStates.Suit);
+//		this._music = true;
+//		this._theater = true;
+//		this._observatory = true;
+
+		// Testing statue final crumble code
+//		GameDirector.instance.StatueCrumbleTwo();
 	}
 
 	void Start ()
 	{
 		if (GameDirector.instance.GetGameState() == GameStates.Suit)
 		{
-//			DetermineObjective();
+			DetermineObjective();
 		}
 		else
 		{
@@ -48,6 +54,11 @@ public class HubSuitObjective : MonoBehaviour
 			if (GameDirector.instance.IsTutorialComplete())
 			{
 				DeterminePass4Objective();
+			}
+
+			if (GameDirector.instance.GetStatueCrumble() == StatueCrumbleState.CRUMBLETWO)
+			{
+				this._oMalleyStatue.SetActive(true);
 			}
 		}
 	}
@@ -95,25 +106,28 @@ public class HubSuitObjective : MonoBehaviour
 		this._toMusic = !this._music;
 		this._toTheater = this._music && !this._theater;
 		this._toObservatory = this._music && this._theater && !this._observatory;
-		
-		if (this._toMusic)
+
+		if (GameDirector.instance.GetCompass())
 		{
-			GameDirector.instance.ChangeObjective(hubToMusic);
-			return;
+			if (this._toMusic)
+			{
+				GameDirector.instance.ChangeObjective(hubToMusic);
+				return;
+			}
+			
+			if (this._toTheater)
+			{
+				GameDirector.instance.ChangeObjective(hubToTheater);
+				return;
+			}
+			
+			if (this._toObservatory)
+			{
+				GameDirector.instance.ChangeObjective(hubToObservatory);
+				return;
+			}
+			
+			GameDirector.instance.ChangeObjective(soteriaStatue);
 		}
-		
-		if (this._toTheater)
-		{
-			GameDirector.instance.ChangeObjective(hubToTheater);
-			return;
-		}
-		
-		if (this._toObservatory)
-		{
-			GameDirector.instance.ChangeObjective(hubToObservatory);
-			return;
-		}
-		
-		GameDirector.instance.ChangeObjective(soteriaStatue);
 	}
 }

@@ -21,9 +21,12 @@ public class FailedTheater : MonoBehaviour
 		else
 		{
 			_oMalleyPrefab.SetActive(false);
-			if (GameDirector.instance.GetGameState() != GameStates.Suit && !GameDirector.instance.IsTutorialComplete())
+			if (GameDirector.instance.GetCompass())
 			{
-				GameDirector.instance.ChangeObjective(GameObject.Find("HubToObservatory"));
+				if (GameDirector.instance.GetGameState() != GameStates.Suit && !GameDirector.instance.IsTutorialComplete())
+				{
+					GameDirector.instance.ChangeObjective(GameObject.Find("HubToObservatory"));
+				}
 			}
 		}
 	}

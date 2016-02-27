@@ -1,1 +1,3 @@
 <b>Ana:</b> Soteria, you've blocked my path long enough. I wanted you above anything else.  You protected me from embarrassment, ridicule, uncertainty, because you never let me do anything. You protected me from living a full life! This ends now. I choose to be unsafe. Let me pass.
+<b>O'Malley:</b> This is the part you'll have to do alone, Ana. So let me give you one last piece of advice before you face Oicys: it's really hard to scare someone who wants to be scared. The best way to rob him of his power is by provoking him to become his biggest, meanest self. Move towards the roar.
+<trigger/>ResetPrayerActions-Success-
