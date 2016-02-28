@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: b84421313e80a314aac18fb53ff38998
-timeCreated: 1456615583
+guid: c7b396ad32105fd4d9f5dc715e345be8
+timeCreated: 1456679020
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -145,161 +145,162 @@ ModelImporter:
     100274: Oicys_Death:L3_Thumb_03_Jnt
     100276: Oicys_Death:L3_Thumb_04_Jnt
     100278: Oicys_Death:L3_Wrist_Jnt
-    100280: Oicys_Death:Neck_Jnt
-    100282: Oicys_Death:nurbsCircle1
-    100284: Oicys_Death:nurbsCircle1 1
-    100286: Oicys_Death:nurbsCircle1 10
-    100288: Oicys_Death:nurbsCircle1 11
-    100290: Oicys_Death:nurbsCircle1 2
-    100292: Oicys_Death:nurbsCircle1 3
-    100294: Oicys_Death:nurbsCircle1 4
-    100296: Oicys_Death:nurbsCircle1 5
-    100298: Oicys_Death:nurbsCircle1 6
-    100300: Oicys_Death:nurbsCircle1 7
-    100302: Oicys_Death:nurbsCircle1 8
-    100304: Oicys_Death:nurbsCircle1 9
-    100306: Oicys_Death:nurbsCircle2
-    100308: Oicys_Death:nurbsCircle2 1
-    100310: Oicys_Death:nurbsCircle2 2
-    100312: Oicys_Death:nurbsCircle2 3
-    100314: Oicys_Death:nurbsCircle2 4
-    100316: Oicys_Death:nurbsCircle2 5
-    100318: Oicys_Death:nurbsCircle3
-    100320: Oicys_Death:nurbsCircle3 1
-    100322: Oicys_Death:nurbsCircle3 2
-    100324: Oicys_Death:nurbsCircle3 3
-    100326: Oicys_Death:nurbsCircle3 4
-    100328: Oicys_Death:nurbsCircle4
-    100330: Oicys_Death:nurbsCircle5
-    100332: Oicys_Death:pasted__Finger_Con_01
-    100334: Oicys_Death:pasted__Finger_Con_01 1
-    100336: Oicys_Death:pasted__Finger_Con_01 10
-    100338: Oicys_Death:pasted__Finger_Con_01 11
-    100340: Oicys_Death:pasted__Finger_Con_01 12
-    100342: Oicys_Death:pasted__Finger_Con_01 13
-    100344: Oicys_Death:pasted__Finger_Con_01 14
-    100346: Oicys_Death:pasted__Finger_Con_01 15
-    100348: Oicys_Death:pasted__Finger_Con_01 16
-    100350: Oicys_Death:pasted__Finger_Con_01 17
-    100352: Oicys_Death:pasted__Finger_Con_01 2
-    100354: Oicys_Death:pasted__Finger_Con_01 3
-    100356: Oicys_Death:pasted__Finger_Con_01 4
-    100358: Oicys_Death:pasted__Finger_Con_01 5
-    100360: Oicys_Death:pasted__Finger_Con_01 6
-    100362: Oicys_Death:pasted__Finger_Con_01 7
-    100364: Oicys_Death:pasted__Finger_Con_01 8
-    100366: Oicys_Death:pasted__Finger_Con_01 9
-    100368: Oicys_Death:pasted__Finger_con_Offset24
-    100370: Oicys_Death:pasted__Finger_con_Offset24 1
-    100372: Oicys_Death:pasted__Finger_con_Offset24 2
-    100374: Oicys_Death:pasted__Finger_con_Offset24 3
-    100376: Oicys_Death:pasted__Finger_con_Offset24 4
-    100378: Oicys_Death:pasted__Finger_con_Offset24 5
-    100380: Oicys_Death:pasted__Finger_con_Offset25
-    100382: Oicys_Death:pasted__Finger_con_Offset25 1
-    100384: Oicys_Death:pasted__Finger_con_Offset25 2
-    100386: Oicys_Death:pasted__Finger_con_Offset25 3
-    100388: Oicys_Death:pasted__Finger_con_Offset25 4
-    100390: Oicys_Death:pasted__Finger_con_Offset25 5
-    100392: Oicys_Death:pasted__Finger_con_Offset26
-    100394: Oicys_Death:pasted__Finger_con_Offset26 1
-    100396: Oicys_Death:pasted__Finger_con_Offset26 2
-    100398: Oicys_Death:pasted__Finger_con_Offset26 3
-    100400: Oicys_Death:pasted__Finger_con_Offset26 4
-    100402: Oicys_Death:pasted__Finger_con_Offset26 5
-    100404: Oicys_Death:Pelvice_Jnt
-    100406: Oicys_Death:R1_Clav_Offset
-    100408: Oicys_Death:R1_Clavicle_Jnt
-    100410: Oicys_Death:R1_Elbow_Jnt
-    100412: Oicys_Death:R1_Middle_01_Jnt
-    100414: Oicys_Death:R1_Middle_02_Jnt
-    100416: Oicys_Death:R1_Middle_03_Jnt
-    100418: Oicys_Death:R1_Middle_04_Jnt
-    100420: Oicys_Death:R1_Palm_Jnt
-    100422: Oicys_Death:R1_Pinky_01_Jnt
-    100424: Oicys_Death:R1_Pinky_02_Jnt
-    100426: Oicys_Death:R1_Pinky_03_Jnt
-    100428: Oicys_Death:R1_Pinky_04_Jnt
-    100430: Oicys_Death:R1_Pointer_01_Jnt
-    100432: Oicys_Death:R1_Pointer_02_Jnt
-    100434: Oicys_Death:R1_Pointer_03_Jnt
-    100436: Oicys_Death:R1_Pointer_04_Jnt
-    100438: Oicys_Death:R1_Ring_01_Jnt
-    100440: Oicys_Death:R1_Ring_02_Jnt
-    100442: Oicys_Death:R1_Ring_03_Jnt
-    100444: Oicys_Death:R1_Ring_04_Jnt
-    100446: Oicys_Death:R1_Shoulder_Jnt
-    100448: Oicys_Death:R1_Thumb_01_Jnt
-    100450: Oicys_Death:R1_Thumb_02_Jnt
-    100452: Oicys_Death:R1_Thumb_03_Jnt
-    100454: Oicys_Death:R1_Thumb_04_Jnt
-    100456: Oicys_Death:R1_Wrist_Jnt
-    100458: Oicys_Death:R2_Clavicle_Jnt
-    100460: Oicys_Death:R2_Elbow_Jnt
-    100462: Oicys_Death:R2_Middle_01_Jnt
-    100464: Oicys_Death:R2_Middle_02_Jnt
-    100466: Oicys_Death:R2_Middle_03_Jnt
-    100468: Oicys_Death:R2_Middle_04_Jnt
-    100470: Oicys_Death:R2_Palm_Jnt
-    100472: Oicys_Death:R2_Pinky_01_Jnt
-    100474: Oicys_Death:R2_Pinky_02_Jnt
-    100476: Oicys_Death:R2_Pinky_03_Jnt
-    100478: Oicys_Death:R2_Pinky_04_Jnt
-    100480: Oicys_Death:R2_Pointer_01_Jnt
-    100482: Oicys_Death:R2_Pointer_02_Jnt
-    100484: Oicys_Death:R2_Pointer_03_Jnt
-    100486: Oicys_Death:R2_Pointer_04_Jnt
-    100488: Oicys_Death:R2_Ring_01_Jnt
-    100490: Oicys_Death:R2_Ring_02_Jnt
-    100492: Oicys_Death:R2_Ring_03_Jnt
-    100494: Oicys_Death:R2_Ring_04_Jnt
-    100496: Oicys_Death:R2_Shoulder_Jnt
-    100498: Oicys_Death:R2_Wrist_01_Jnt
-    100500: Oicys_Death:R2_Wrist_02_Jnt
-    100502: Oicys_Death:R2_Wrist_03_Jnt
-    100504: Oicys_Death:R2_Wrist_04_Jnt
-    100506: Oicys_Death:R2_Wrist_Jnt
-    100508: Oicys_Death:R3_Clav_Offset
-    100510: Oicys_Death:R3_Clavicle_Jnt
-    100512: Oicys_Death:R3_Elbow_Jnt
-    100514: Oicys_Death:R3_Middle_01_Jnt
-    100516: Oicys_Death:R3_Middle_02_Jnt
-    100518: Oicys_Death:R3_Middle_03_Jnt
-    100520: Oicys_Death:R3_Middle_04_Jnt
-    100522: Oicys_Death:R3_Palm_Jnt
-    100524: Oicys_Death:R3_Pinky_01_Jnt
-    100526: Oicys_Death:R3_Pinky_02_Jnt
-    100528: Oicys_Death:R3_Pinky_03_Jnt
-    100530: Oicys_Death:R3_Pinky_04_Jnt
-    100532: Oicys_Death:R3_Pointer_01_Jnt
-    100534: Oicys_Death:R3_Pointer_02_Jnt
-    100536: Oicys_Death:R3_Pointer_03_Jnt
-    100538: Oicys_Death:R3_Pointer_04_Jnt
-    100540: Oicys_Death:R3_Ring_01_Jnt
-    100542: Oicys_Death:R3_Ring_02_Jnt
-    100544: Oicys_Death:R3_Ring_03_Jnt
-    100546: Oicys_Death:R3_Ring_04_Jnt
-    100548: Oicys_Death:R3_Shoulder_Jnt
-    100550: Oicys_Death:R3_Thumb_01_Jnt
-    100552: Oicys_Death:R3_Thumb_02_Jnt
-    100554: Oicys_Death:R3_Thumb_03_Jnt
-    100556: Oicys_Death:R3_Thumb_04_Jnt
-    100558: Oicys_Death:R3_Wrist_Jnt
-    100560: Oicys_Death:Root
-    100562: Oicys_Death:Shadow_Creature
-    100564: Oicys_Death:Spine_01_Jnt
-    100566: Oicys_Death:Spine_02_Jnt
-    100568: Oicys_Death:Spine_03_Jnt
-    100570: Oicys_Death:Spine_04_Jnt
-    100572: Oicys_Death:Spine_05_Jnt
-    100574: Oicys_Death:Spine_06_Jnt
-    100576: Oicys_Death:Spine_07_Jnt
-    100578: Oicys_Death:Spine_08_Jnt
-    100580: Oicys_Death:Spine_09_Jnt
-    100582: Oicys_Death:transform1
-    100584: Oicys_Death:transform3
-    100586: Oicys_Death:transform4
-    100588: Oicys_Death:transform5
+    100280: Oicys_Death:Mask1
+    100282: Oicys_Death:Neck_Jnt
+    100284: Oicys_Death:nurbsCircle1
+    100286: Oicys_Death:nurbsCircle1 1
+    100288: Oicys_Death:nurbsCircle1 10
+    100290: Oicys_Death:nurbsCircle1 11
+    100292: Oicys_Death:nurbsCircle1 2
+    100294: Oicys_Death:nurbsCircle1 3
+    100296: Oicys_Death:nurbsCircle1 4
+    100298: Oicys_Death:nurbsCircle1 5
+    100300: Oicys_Death:nurbsCircle1 6
+    100302: Oicys_Death:nurbsCircle1 7
+    100304: Oicys_Death:nurbsCircle1 8
+    100306: Oicys_Death:nurbsCircle1 9
+    100308: Oicys_Death:nurbsCircle2
+    100310: Oicys_Death:nurbsCircle2 1
+    100312: Oicys_Death:nurbsCircle2 2
+    100314: Oicys_Death:nurbsCircle2 3
+    100316: Oicys_Death:nurbsCircle2 4
+    100318: Oicys_Death:nurbsCircle2 5
+    100320: Oicys_Death:nurbsCircle3
+    100322: Oicys_Death:nurbsCircle3 1
+    100324: Oicys_Death:nurbsCircle3 2
+    100326: Oicys_Death:nurbsCircle3 3
+    100328: Oicys_Death:nurbsCircle3 4
+    100330: Oicys_Death:nurbsCircle4
+    100332: Oicys_Death:nurbsCircle5
+    100334: Oicys_Death:pasted__Finger_Con_01
+    100336: Oicys_Death:pasted__Finger_Con_01 1
+    100338: Oicys_Death:pasted__Finger_Con_01 10
+    100340: Oicys_Death:pasted__Finger_Con_01 11
+    100342: Oicys_Death:pasted__Finger_Con_01 12
+    100344: Oicys_Death:pasted__Finger_Con_01 13
+    100346: Oicys_Death:pasted__Finger_Con_01 14
+    100348: Oicys_Death:pasted__Finger_Con_01 15
+    100350: Oicys_Death:pasted__Finger_Con_01 16
+    100352: Oicys_Death:pasted__Finger_Con_01 17
+    100354: Oicys_Death:pasted__Finger_Con_01 2
+    100356: Oicys_Death:pasted__Finger_Con_01 3
+    100358: Oicys_Death:pasted__Finger_Con_01 4
+    100360: Oicys_Death:pasted__Finger_Con_01 5
+    100362: Oicys_Death:pasted__Finger_Con_01 6
+    100364: Oicys_Death:pasted__Finger_Con_01 7
+    100366: Oicys_Death:pasted__Finger_Con_01 8
+    100368: Oicys_Death:pasted__Finger_Con_01 9
+    100370: Oicys_Death:pasted__Finger_con_Offset24
+    100372: Oicys_Death:pasted__Finger_con_Offset24 1
+    100374: Oicys_Death:pasted__Finger_con_Offset24 2
+    100376: Oicys_Death:pasted__Finger_con_Offset24 3
+    100378: Oicys_Death:pasted__Finger_con_Offset24 4
+    100380: Oicys_Death:pasted__Finger_con_Offset24 5
+    100382: Oicys_Death:pasted__Finger_con_Offset25
+    100384: Oicys_Death:pasted__Finger_con_Offset25 1
+    100386: Oicys_Death:pasted__Finger_con_Offset25 2
+    100388: Oicys_Death:pasted__Finger_con_Offset25 3
+    100390: Oicys_Death:pasted__Finger_con_Offset25 4
+    100392: Oicys_Death:pasted__Finger_con_Offset25 5
+    100394: Oicys_Death:pasted__Finger_con_Offset26
+    100396: Oicys_Death:pasted__Finger_con_Offset26 1
+    100398: Oicys_Death:pasted__Finger_con_Offset26 2
+    100400: Oicys_Death:pasted__Finger_con_Offset26 3
+    100402: Oicys_Death:pasted__Finger_con_Offset26 4
+    100404: Oicys_Death:pasted__Finger_con_Offset26 5
+    100406: Oicys_Death:Pelvice_Jnt
+    100408: Oicys_Death:R1_Clav_Offset
+    100410: Oicys_Death:R1_Clavicle_Jnt
+    100412: Oicys_Death:R1_Elbow_Jnt
+    100414: Oicys_Death:R1_Middle_01_Jnt
+    100416: Oicys_Death:R1_Middle_02_Jnt
+    100418: Oicys_Death:R1_Middle_03_Jnt
+    100420: Oicys_Death:R1_Middle_04_Jnt
+    100422: Oicys_Death:R1_Palm_Jnt
+    100424: Oicys_Death:R1_Pinky_01_Jnt
+    100426: Oicys_Death:R1_Pinky_02_Jnt
+    100428: Oicys_Death:R1_Pinky_03_Jnt
+    100430: Oicys_Death:R1_Pinky_04_Jnt
+    100432: Oicys_Death:R1_Pointer_01_Jnt
+    100434: Oicys_Death:R1_Pointer_02_Jnt
+    100436: Oicys_Death:R1_Pointer_03_Jnt
+    100438: Oicys_Death:R1_Pointer_04_Jnt
+    100440: Oicys_Death:R1_Ring_01_Jnt
+    100442: Oicys_Death:R1_Ring_02_Jnt
+    100444: Oicys_Death:R1_Ring_03_Jnt
+    100446: Oicys_Death:R1_Ring_04_Jnt
+    100448: Oicys_Death:R1_Shoulder_Jnt
+    100450: Oicys_Death:R1_Thumb_01_Jnt
+    100452: Oicys_Death:R1_Thumb_02_Jnt
+    100454: Oicys_Death:R1_Thumb_03_Jnt
+    100456: Oicys_Death:R1_Thumb_04_Jnt
+    100458: Oicys_Death:R1_Wrist_Jnt
+    100460: Oicys_Death:R2_Clavicle_Jnt
+    100462: Oicys_Death:R2_Elbow_Jnt
+    100464: Oicys_Death:R2_Middle_01_Jnt
+    100466: Oicys_Death:R2_Middle_02_Jnt
+    100468: Oicys_Death:R2_Middle_03_Jnt
+    100470: Oicys_Death:R2_Middle_04_Jnt
+    100472: Oicys_Death:R2_Palm_Jnt
+    100474: Oicys_Death:R2_Pinky_01_Jnt
+    100476: Oicys_Death:R2_Pinky_02_Jnt
+    100478: Oicys_Death:R2_Pinky_03_Jnt
+    100480: Oicys_Death:R2_Pinky_04_Jnt
+    100482: Oicys_Death:R2_Pointer_01_Jnt
+    100484: Oicys_Death:R2_Pointer_02_Jnt
+    100486: Oicys_Death:R2_Pointer_03_Jnt
+    100488: Oicys_Death:R2_Pointer_04_Jnt
+    100490: Oicys_Death:R2_Ring_01_Jnt
+    100492: Oicys_Death:R2_Ring_02_Jnt
+    100494: Oicys_Death:R2_Ring_03_Jnt
+    100496: Oicys_Death:R2_Ring_04_Jnt
+    100498: Oicys_Death:R2_Shoulder_Jnt
+    100500: Oicys_Death:R2_Wrist_01_Jnt
+    100502: Oicys_Death:R2_Wrist_02_Jnt
+    100504: Oicys_Death:R2_Wrist_03_Jnt
+    100506: Oicys_Death:R2_Wrist_04_Jnt
+    100508: Oicys_Death:R2_Wrist_Jnt
+    100510: Oicys_Death:R3_Clav_Offset
+    100512: Oicys_Death:R3_Clavicle_Jnt
+    100514: Oicys_Death:R3_Elbow_Jnt
+    100516: Oicys_Death:R3_Middle_01_Jnt
+    100518: Oicys_Death:R3_Middle_02_Jnt
+    100520: Oicys_Death:R3_Middle_03_Jnt
+    100522: Oicys_Death:R3_Middle_04_Jnt
+    100524: Oicys_Death:R3_Palm_Jnt
+    100526: Oicys_Death:R3_Pinky_01_Jnt
+    100528: Oicys_Death:R3_Pinky_02_Jnt
+    100530: Oicys_Death:R3_Pinky_03_Jnt
+    100532: Oicys_Death:R3_Pinky_04_Jnt
+    100534: Oicys_Death:R3_Pointer_01_Jnt
+    100536: Oicys_Death:R3_Pointer_02_Jnt
+    100538: Oicys_Death:R3_Pointer_03_Jnt
+    100540: Oicys_Death:R3_Pointer_04_Jnt
+    100542: Oicys_Death:R3_Ring_01_Jnt
+    100544: Oicys_Death:R3_Ring_02_Jnt
+    100546: Oicys_Death:R3_Ring_03_Jnt
+    100548: Oicys_Death:R3_Ring_04_Jnt
+    100550: Oicys_Death:R3_Shoulder_Jnt
+    100552: Oicys_Death:R3_Thumb_01_Jnt
+    100554: Oicys_Death:R3_Thumb_02_Jnt
+    100556: Oicys_Death:R3_Thumb_03_Jnt
+    100558: Oicys_Death:R3_Thumb_04_Jnt
+    100560: Oicys_Death:R3_Wrist_Jnt
+    100562: Oicys_Death:Root
+    100564: Oicys_Death:Shadow_Creature
+    100566: Oicys_Death:Spine_01_Jnt
+    100568: Oicys_Death:Spine_02_Jnt
+    100570: Oicys_Death:Spine_03_Jnt
+    100572: Oicys_Death:Spine_04_Jnt
+    100574: Oicys_Death:Spine_05_Jnt
+    100576: Oicys_Death:Spine_06_Jnt
+    100578: Oicys_Death:Spine_07_Jnt
+    100580: Oicys_Death:Spine_08_Jnt
+    100582: Oicys_Death:Spine_09_Jnt
+    100584: Oicys_Death:transform1
+    100586: Oicys_Death:transform3
+    100588: Oicys_Death:transform4
+    100590: Oicys_Death:transform5
     400000: //RootNode
     400002: Oicys_Death:Chin_Jnt
     400004: Oicys_Death:cluster1Handle
@@ -440,162 +441,166 @@ ModelImporter:
     400274: Oicys_Death:L3_Thumb_03_Jnt
     400276: Oicys_Death:L3_Thumb_04_Jnt
     400278: Oicys_Death:L3_Wrist_Jnt
-    400280: Oicys_Death:Neck_Jnt
-    400282: Oicys_Death:nurbsCircle1
-    400284: Oicys_Death:nurbsCircle1 1
-    400286: Oicys_Death:nurbsCircle1 10
-    400288: Oicys_Death:nurbsCircle1 11
-    400290: Oicys_Death:nurbsCircle1 2
-    400292: Oicys_Death:nurbsCircle1 3
-    400294: Oicys_Death:nurbsCircle1 4
-    400296: Oicys_Death:nurbsCircle1 5
-    400298: Oicys_Death:nurbsCircle1 6
-    400300: Oicys_Death:nurbsCircle1 7
-    400302: Oicys_Death:nurbsCircle1 8
-    400304: Oicys_Death:nurbsCircle1 9
-    400306: Oicys_Death:nurbsCircle2
-    400308: Oicys_Death:nurbsCircle2 1
-    400310: Oicys_Death:nurbsCircle2 2
-    400312: Oicys_Death:nurbsCircle2 3
-    400314: Oicys_Death:nurbsCircle2 4
-    400316: Oicys_Death:nurbsCircle2 5
-    400318: Oicys_Death:nurbsCircle3
-    400320: Oicys_Death:nurbsCircle3 1
-    400322: Oicys_Death:nurbsCircle3 2
-    400324: Oicys_Death:nurbsCircle3 3
-    400326: Oicys_Death:nurbsCircle3 4
-    400328: Oicys_Death:nurbsCircle4
-    400330: Oicys_Death:nurbsCircle5
-    400332: Oicys_Death:pasted__Finger_Con_01
-    400334: Oicys_Death:pasted__Finger_Con_01 1
-    400336: Oicys_Death:pasted__Finger_Con_01 10
-    400338: Oicys_Death:pasted__Finger_Con_01 11
-    400340: Oicys_Death:pasted__Finger_Con_01 12
-    400342: Oicys_Death:pasted__Finger_Con_01 13
-    400344: Oicys_Death:pasted__Finger_Con_01 14
-    400346: Oicys_Death:pasted__Finger_Con_01 15
-    400348: Oicys_Death:pasted__Finger_Con_01 16
-    400350: Oicys_Death:pasted__Finger_Con_01 17
-    400352: Oicys_Death:pasted__Finger_Con_01 2
-    400354: Oicys_Death:pasted__Finger_Con_01 3
-    400356: Oicys_Death:pasted__Finger_Con_01 4
-    400358: Oicys_Death:pasted__Finger_Con_01 5
-    400360: Oicys_Death:pasted__Finger_Con_01 6
-    400362: Oicys_Death:pasted__Finger_Con_01 7
-    400364: Oicys_Death:pasted__Finger_Con_01 8
-    400366: Oicys_Death:pasted__Finger_Con_01 9
-    400368: Oicys_Death:pasted__Finger_con_Offset24
-    400370: Oicys_Death:pasted__Finger_con_Offset24 1
-    400372: Oicys_Death:pasted__Finger_con_Offset24 2
-    400374: Oicys_Death:pasted__Finger_con_Offset24 3
-    400376: Oicys_Death:pasted__Finger_con_Offset24 4
-    400378: Oicys_Death:pasted__Finger_con_Offset24 5
-    400380: Oicys_Death:pasted__Finger_con_Offset25
-    400382: Oicys_Death:pasted__Finger_con_Offset25 1
-    400384: Oicys_Death:pasted__Finger_con_Offset25 2
-    400386: Oicys_Death:pasted__Finger_con_Offset25 3
-    400388: Oicys_Death:pasted__Finger_con_Offset25 4
-    400390: Oicys_Death:pasted__Finger_con_Offset25 5
-    400392: Oicys_Death:pasted__Finger_con_Offset26
-    400394: Oicys_Death:pasted__Finger_con_Offset26 1
-    400396: Oicys_Death:pasted__Finger_con_Offset26 2
-    400398: Oicys_Death:pasted__Finger_con_Offset26 3
-    400400: Oicys_Death:pasted__Finger_con_Offset26 4
-    400402: Oicys_Death:pasted__Finger_con_Offset26 5
-    400404: Oicys_Death:Pelvice_Jnt
-    400406: Oicys_Death:R1_Clav_Offset
-    400408: Oicys_Death:R1_Clavicle_Jnt
-    400410: Oicys_Death:R1_Elbow_Jnt
-    400412: Oicys_Death:R1_Middle_01_Jnt
-    400414: Oicys_Death:R1_Middle_02_Jnt
-    400416: Oicys_Death:R1_Middle_03_Jnt
-    400418: Oicys_Death:R1_Middle_04_Jnt
-    400420: Oicys_Death:R1_Palm_Jnt
-    400422: Oicys_Death:R1_Pinky_01_Jnt
-    400424: Oicys_Death:R1_Pinky_02_Jnt
-    400426: Oicys_Death:R1_Pinky_03_Jnt
-    400428: Oicys_Death:R1_Pinky_04_Jnt
-    400430: Oicys_Death:R1_Pointer_01_Jnt
-    400432: Oicys_Death:R1_Pointer_02_Jnt
-    400434: Oicys_Death:R1_Pointer_03_Jnt
-    400436: Oicys_Death:R1_Pointer_04_Jnt
-    400438: Oicys_Death:R1_Ring_01_Jnt
-    400440: Oicys_Death:R1_Ring_02_Jnt
-    400442: Oicys_Death:R1_Ring_03_Jnt
-    400444: Oicys_Death:R1_Ring_04_Jnt
-    400446: Oicys_Death:R1_Shoulder_Jnt
-    400448: Oicys_Death:R1_Thumb_01_Jnt
-    400450: Oicys_Death:R1_Thumb_02_Jnt
-    400452: Oicys_Death:R1_Thumb_03_Jnt
-    400454: Oicys_Death:R1_Thumb_04_Jnt
-    400456: Oicys_Death:R1_Wrist_Jnt
-    400458: Oicys_Death:R2_Clavicle_Jnt
-    400460: Oicys_Death:R2_Elbow_Jnt
-    400462: Oicys_Death:R2_Middle_01_Jnt
-    400464: Oicys_Death:R2_Middle_02_Jnt
-    400466: Oicys_Death:R2_Middle_03_Jnt
-    400468: Oicys_Death:R2_Middle_04_Jnt
-    400470: Oicys_Death:R2_Palm_Jnt
-    400472: Oicys_Death:R2_Pinky_01_Jnt
-    400474: Oicys_Death:R2_Pinky_02_Jnt
-    400476: Oicys_Death:R2_Pinky_03_Jnt
-    400478: Oicys_Death:R2_Pinky_04_Jnt
-    400480: Oicys_Death:R2_Pointer_01_Jnt
-    400482: Oicys_Death:R2_Pointer_02_Jnt
-    400484: Oicys_Death:R2_Pointer_03_Jnt
-    400486: Oicys_Death:R2_Pointer_04_Jnt
-    400488: Oicys_Death:R2_Ring_01_Jnt
-    400490: Oicys_Death:R2_Ring_02_Jnt
-    400492: Oicys_Death:R2_Ring_03_Jnt
-    400494: Oicys_Death:R2_Ring_04_Jnt
-    400496: Oicys_Death:R2_Shoulder_Jnt
-    400498: Oicys_Death:R2_Wrist_01_Jnt
-    400500: Oicys_Death:R2_Wrist_02_Jnt
-    400502: Oicys_Death:R2_Wrist_03_Jnt
-    400504: Oicys_Death:R2_Wrist_04_Jnt
-    400506: Oicys_Death:R2_Wrist_Jnt
-    400508: Oicys_Death:R3_Clav_Offset
-    400510: Oicys_Death:R3_Clavicle_Jnt
-    400512: Oicys_Death:R3_Elbow_Jnt
-    400514: Oicys_Death:R3_Middle_01_Jnt
-    400516: Oicys_Death:R3_Middle_02_Jnt
-    400518: Oicys_Death:R3_Middle_03_Jnt
-    400520: Oicys_Death:R3_Middle_04_Jnt
-    400522: Oicys_Death:R3_Palm_Jnt
-    400524: Oicys_Death:R3_Pinky_01_Jnt
-    400526: Oicys_Death:R3_Pinky_02_Jnt
-    400528: Oicys_Death:R3_Pinky_03_Jnt
-    400530: Oicys_Death:R3_Pinky_04_Jnt
-    400532: Oicys_Death:R3_Pointer_01_Jnt
-    400534: Oicys_Death:R3_Pointer_02_Jnt
-    400536: Oicys_Death:R3_Pointer_03_Jnt
-    400538: Oicys_Death:R3_Pointer_04_Jnt
-    400540: Oicys_Death:R3_Ring_01_Jnt
-    400542: Oicys_Death:R3_Ring_02_Jnt
-    400544: Oicys_Death:R3_Ring_03_Jnt
-    400546: Oicys_Death:R3_Ring_04_Jnt
-    400548: Oicys_Death:R3_Shoulder_Jnt
-    400550: Oicys_Death:R3_Thumb_01_Jnt
-    400552: Oicys_Death:R3_Thumb_02_Jnt
-    400554: Oicys_Death:R3_Thumb_03_Jnt
-    400556: Oicys_Death:R3_Thumb_04_Jnt
-    400558: Oicys_Death:R3_Wrist_Jnt
-    400560: Oicys_Death:Root
-    400562: Oicys_Death:Shadow_Creature
-    400564: Oicys_Death:Spine_01_Jnt
-    400566: Oicys_Death:Spine_02_Jnt
-    400568: Oicys_Death:Spine_03_Jnt
-    400570: Oicys_Death:Spine_04_Jnt
-    400572: Oicys_Death:Spine_05_Jnt
-    400574: Oicys_Death:Spine_06_Jnt
-    400576: Oicys_Death:Spine_07_Jnt
-    400578: Oicys_Death:Spine_08_Jnt
-    400580: Oicys_Death:Spine_09_Jnt
-    400582: Oicys_Death:transform1
-    400584: Oicys_Death:transform3
-    400586: Oicys_Death:transform4
-    400588: Oicys_Death:transform5
+    400280: Oicys_Death:Mask1
+    400282: Oicys_Death:Neck_Jnt
+    400284: Oicys_Death:nurbsCircle1
+    400286: Oicys_Death:nurbsCircle1 1
+    400288: Oicys_Death:nurbsCircle1 10
+    400290: Oicys_Death:nurbsCircle1 11
+    400292: Oicys_Death:nurbsCircle1 2
+    400294: Oicys_Death:nurbsCircle1 3
+    400296: Oicys_Death:nurbsCircle1 4
+    400298: Oicys_Death:nurbsCircle1 5
+    400300: Oicys_Death:nurbsCircle1 6
+    400302: Oicys_Death:nurbsCircle1 7
+    400304: Oicys_Death:nurbsCircle1 8
+    400306: Oicys_Death:nurbsCircle1 9
+    400308: Oicys_Death:nurbsCircle2
+    400310: Oicys_Death:nurbsCircle2 1
+    400312: Oicys_Death:nurbsCircle2 2
+    400314: Oicys_Death:nurbsCircle2 3
+    400316: Oicys_Death:nurbsCircle2 4
+    400318: Oicys_Death:nurbsCircle2 5
+    400320: Oicys_Death:nurbsCircle3
+    400322: Oicys_Death:nurbsCircle3 1
+    400324: Oicys_Death:nurbsCircle3 2
+    400326: Oicys_Death:nurbsCircle3 3
+    400328: Oicys_Death:nurbsCircle3 4
+    400330: Oicys_Death:nurbsCircle4
+    400332: Oicys_Death:nurbsCircle5
+    400334: Oicys_Death:pasted__Finger_Con_01
+    400336: Oicys_Death:pasted__Finger_Con_01 1
+    400338: Oicys_Death:pasted__Finger_Con_01 10
+    400340: Oicys_Death:pasted__Finger_Con_01 11
+    400342: Oicys_Death:pasted__Finger_Con_01 12
+    400344: Oicys_Death:pasted__Finger_Con_01 13
+    400346: Oicys_Death:pasted__Finger_Con_01 14
+    400348: Oicys_Death:pasted__Finger_Con_01 15
+    400350: Oicys_Death:pasted__Finger_Con_01 16
+    400352: Oicys_Death:pasted__Finger_Con_01 17
+    400354: Oicys_Death:pasted__Finger_Con_01 2
+    400356: Oicys_Death:pasted__Finger_Con_01 3
+    400358: Oicys_Death:pasted__Finger_Con_01 4
+    400360: Oicys_Death:pasted__Finger_Con_01 5
+    400362: Oicys_Death:pasted__Finger_Con_01 6
+    400364: Oicys_Death:pasted__Finger_Con_01 7
+    400366: Oicys_Death:pasted__Finger_Con_01 8
+    400368: Oicys_Death:pasted__Finger_Con_01 9
+    400370: Oicys_Death:pasted__Finger_con_Offset24
+    400372: Oicys_Death:pasted__Finger_con_Offset24 1
+    400374: Oicys_Death:pasted__Finger_con_Offset24 2
+    400376: Oicys_Death:pasted__Finger_con_Offset24 3
+    400378: Oicys_Death:pasted__Finger_con_Offset24 4
+    400380: Oicys_Death:pasted__Finger_con_Offset24 5
+    400382: Oicys_Death:pasted__Finger_con_Offset25
+    400384: Oicys_Death:pasted__Finger_con_Offset25 1
+    400386: Oicys_Death:pasted__Finger_con_Offset25 2
+    400388: Oicys_Death:pasted__Finger_con_Offset25 3
+    400390: Oicys_Death:pasted__Finger_con_Offset25 4
+    400392: Oicys_Death:pasted__Finger_con_Offset25 5
+    400394: Oicys_Death:pasted__Finger_con_Offset26
+    400396: Oicys_Death:pasted__Finger_con_Offset26 1
+    400398: Oicys_Death:pasted__Finger_con_Offset26 2
+    400400: Oicys_Death:pasted__Finger_con_Offset26 3
+    400402: Oicys_Death:pasted__Finger_con_Offset26 4
+    400404: Oicys_Death:pasted__Finger_con_Offset26 5
+    400406: Oicys_Death:Pelvice_Jnt
+    400408: Oicys_Death:R1_Clav_Offset
+    400410: Oicys_Death:R1_Clavicle_Jnt
+    400412: Oicys_Death:R1_Elbow_Jnt
+    400414: Oicys_Death:R1_Middle_01_Jnt
+    400416: Oicys_Death:R1_Middle_02_Jnt
+    400418: Oicys_Death:R1_Middle_03_Jnt
+    400420: Oicys_Death:R1_Middle_04_Jnt
+    400422: Oicys_Death:R1_Palm_Jnt
+    400424: Oicys_Death:R1_Pinky_01_Jnt
+    400426: Oicys_Death:R1_Pinky_02_Jnt
+    400428: Oicys_Death:R1_Pinky_03_Jnt
+    400430: Oicys_Death:R1_Pinky_04_Jnt
+    400432: Oicys_Death:R1_Pointer_01_Jnt
+    400434: Oicys_Death:R1_Pointer_02_Jnt
+    400436: Oicys_Death:R1_Pointer_03_Jnt
+    400438: Oicys_Death:R1_Pointer_04_Jnt
+    400440: Oicys_Death:R1_Ring_01_Jnt
+    400442: Oicys_Death:R1_Ring_02_Jnt
+    400444: Oicys_Death:R1_Ring_03_Jnt
+    400446: Oicys_Death:R1_Ring_04_Jnt
+    400448: Oicys_Death:R1_Shoulder_Jnt
+    400450: Oicys_Death:R1_Thumb_01_Jnt
+    400452: Oicys_Death:R1_Thumb_02_Jnt
+    400454: Oicys_Death:R1_Thumb_03_Jnt
+    400456: Oicys_Death:R1_Thumb_04_Jnt
+    400458: Oicys_Death:R1_Wrist_Jnt
+    400460: Oicys_Death:R2_Clavicle_Jnt
+    400462: Oicys_Death:R2_Elbow_Jnt
+    400464: Oicys_Death:R2_Middle_01_Jnt
+    400466: Oicys_Death:R2_Middle_02_Jnt
+    400468: Oicys_Death:R2_Middle_03_Jnt
+    400470: Oicys_Death:R2_Middle_04_Jnt
+    400472: Oicys_Death:R2_Palm_Jnt
+    400474: Oicys_Death:R2_Pinky_01_Jnt
+    400476: Oicys_Death:R2_Pinky_02_Jnt
+    400478: Oicys_Death:R2_Pinky_03_Jnt
+    400480: Oicys_Death:R2_Pinky_04_Jnt
+    400482: Oicys_Death:R2_Pointer_01_Jnt
+    400484: Oicys_Death:R2_Pointer_02_Jnt
+    400486: Oicys_Death:R2_Pointer_03_Jnt
+    400488: Oicys_Death:R2_Pointer_04_Jnt
+    400490: Oicys_Death:R2_Ring_01_Jnt
+    400492: Oicys_Death:R2_Ring_02_Jnt
+    400494: Oicys_Death:R2_Ring_03_Jnt
+    400496: Oicys_Death:R2_Ring_04_Jnt
+    400498: Oicys_Death:R2_Shoulder_Jnt
+    400500: Oicys_Death:R2_Wrist_01_Jnt
+    400502: Oicys_Death:R2_Wrist_02_Jnt
+    400504: Oicys_Death:R2_Wrist_03_Jnt
+    400506: Oicys_Death:R2_Wrist_04_Jnt
+    400508: Oicys_Death:R2_Wrist_Jnt
+    400510: Oicys_Death:R3_Clav_Offset
+    400512: Oicys_Death:R3_Clavicle_Jnt
+    400514: Oicys_Death:R3_Elbow_Jnt
+    400516: Oicys_Death:R3_Middle_01_Jnt
+    400518: Oicys_Death:R3_Middle_02_Jnt
+    400520: Oicys_Death:R3_Middle_03_Jnt
+    400522: Oicys_Death:R3_Middle_04_Jnt
+    400524: Oicys_Death:R3_Palm_Jnt
+    400526: Oicys_Death:R3_Pinky_01_Jnt
+    400528: Oicys_Death:R3_Pinky_02_Jnt
+    400530: Oicys_Death:R3_Pinky_03_Jnt
+    400532: Oicys_Death:R3_Pinky_04_Jnt
+    400534: Oicys_Death:R3_Pointer_01_Jnt
+    400536: Oicys_Death:R3_Pointer_02_Jnt
+    400538: Oicys_Death:R3_Pointer_03_Jnt
+    400540: Oicys_Death:R3_Pointer_04_Jnt
+    400542: Oicys_Death:R3_Ring_01_Jnt
+    400544: Oicys_Death:R3_Ring_02_Jnt
+    400546: Oicys_Death:R3_Ring_03_Jnt
+    400548: Oicys_Death:R3_Ring_04_Jnt
+    400550: Oicys_Death:R3_Shoulder_Jnt
+    400552: Oicys_Death:R3_Thumb_01_Jnt
+    400554: Oicys_Death:R3_Thumb_02_Jnt
+    400556: Oicys_Death:R3_Thumb_03_Jnt
+    400558: Oicys_Death:R3_Thumb_04_Jnt
+    400560: Oicys_Death:R3_Wrist_Jnt
+    400562: Oicys_Death:Root
+    400564: Oicys_Death:Shadow_Creature
+    400566: Oicys_Death:Spine_01_Jnt
+    400568: Oicys_Death:Spine_02_Jnt
+    400570: Oicys_Death:Spine_03_Jnt
+    400572: Oicys_Death:Spine_04_Jnt
+    400574: Oicys_Death:Spine_05_Jnt
+    400576: Oicys_Death:Spine_06_Jnt
+    400578: Oicys_Death:Spine_07_Jnt
+    400580: Oicys_Death:Spine_08_Jnt
+    400582: Oicys_Death:Spine_09_Jnt
+    400584: Oicys_Death:transform1
+    400586: Oicys_Death:transform3
+    400588: Oicys_Death:transform4
+    400590: Oicys_Death:transform5
+    2300000: Oicys_Death:Mask1
+    3300000: Oicys_Death:Mask1
     4300000: Oicys_Death:Shadow_Creature
+    4300002: Oicys_Death:Mask1
     7400000: Death
     9500000: //RootNode
     13700000: Oicys_Death:Shadow_Creature
@@ -623,7 +628,7 @@ ModelImporter:
       name: Death
       takeName: Take 001
       firstFrame: 0
-      lastFrame: 100
+      lastFrame: 125
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -1174,6 +1179,10 @@ ModelImporter:
       - path: Oicys_Death:group44/Oicys_Death:curve3/Oicys_Death:group43/Oicys_Death:nurbsCircle5/Oicys_Death:group33/Oicys_Death:nurbsCircle3
           1/Oicys_Death:group35/Oicys_Death:nurbsCircle3 2/Oicys_Death:group36/Oicys_Death:nurbsCircle3
           3/Oicys_Death:group37/Oicys_Death:nurbsCircle3 4/Oicys_Death:group42/Oicys_Death:nurbsCircle4/Oicys_Death:Neck_Jnt/Oicys_Death:Head_Jnt/Oicys_Death:Chin_Jnt
+        weight: 1
+      - path: Oicys_Death:group44/Oicys_Death:curve3/Oicys_Death:group43/Oicys_Death:nurbsCircle5/Oicys_Death:group33/Oicys_Death:nurbsCircle3
+          1/Oicys_Death:group35/Oicys_Death:nurbsCircle3 2/Oicys_Death:group36/Oicys_Death:nurbsCircle3
+          3/Oicys_Death:group37/Oicys_Death:nurbsCircle3 4/Oicys_Death:group42/Oicys_Death:nurbsCircle4/Oicys_Death:Neck_Jnt/Oicys_Death:Head_Jnt/Oicys_Death:Chin_Jnt/Oicys_Death:Mask1
         weight: 1
       - path: Oicys_Death:group44/Oicys_Death:curve3/Oicys_Death:group43/Oicys_Death:nurbsCircle5/Oicys_Death:group33/Oicys_Death:nurbsCircle3
           1/Oicys_Death:group35/Oicys_Death:nurbsCircle3 2/Oicys_Death:group36/Oicys_Death:nurbsCircle3
@@ -2031,7 +2040,7 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 0
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
@@ -2057,7 +2066,8 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: c8911217a9cb5b54d80fe10c6200ab7d,
+    type: 3}
   animationType: 2
   additionalBone: 0
   userData: 

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 9dd6795d71a6ecf45aaba0768abe495c
-timeCreated: 1456616345
+guid: 166a6c43edbc6564392c554e134f7a99
+timeCreated: 1456679009
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -2040,7 +2040,7 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 0
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
@@ -2066,7 +2066,8 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: c8911217a9cb5b54d80fe10c6200ab7d,
+    type: 3}
   animationType: 2
   additionalBone: 0
   userData: 

@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: d08cdb3b224bccc4588ce998b466627a
-timeCreated: 1456614276
+guid: c8911217a9cb5b54d80fe10c6200ab7d
+timeCreated: 1456679022
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -627,7 +627,7 @@ ModelImporter:
     - serializedVersion: 16
       name: Idle
       takeName: Take 001
-      firstFrame: 2
+      firstFrame: 1
       lastFrame: 48
       wrapMode: 0
       orientationOffsetY: 0
@@ -2040,7 +2040,7 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 0
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8

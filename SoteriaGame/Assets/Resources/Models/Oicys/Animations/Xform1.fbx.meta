@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: e750a20005ad30144a20f0e70cdcd91d
-timeCreated: 1456616353
+guid: 10a751e835e99524fac0b25c43e4bcbe
+timeCreated: 1456679007
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -627,8 +627,8 @@ ModelImporter:
     - serializedVersion: 16
       name: Xform1
       takeName: Take 001
-      firstFrame: 0
-      lastFrame: 73
+      firstFrame: 1
+      lastFrame: 75
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -2040,7 +2040,7 @@ ModelImporter:
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 0
+    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
     secondaryUVAngleDistortion: 8
@@ -2066,7 +2066,8 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: c8911217a9cb5b54d80fe10c6200ab7d,
+    type: 3}
   animationType: 2
   additionalBone: 0
   userData: 
