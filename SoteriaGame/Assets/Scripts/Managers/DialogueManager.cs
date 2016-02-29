@@ -102,6 +102,7 @@ public class DialogueManager : MonoBehaviour
 		if (this._currState == DialogueState.Standby)
 		{
 			AudioID aid = GameDirector.instance.getIDByName(txtname);
+			//GameDirector.instance.CollectAudioClipsForDialogue(txtname);
 			this._diagdata = new DialogueData(aid);
 
 			this._activeActor = inActor;

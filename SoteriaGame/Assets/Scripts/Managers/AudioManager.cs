@@ -98,12 +98,12 @@ public class AudioManager : MonoBehaviour
 	private void privCollectAudioClips (string resdir, AudioID inAID)
 	{
 		AudioSourceWrapper adsrc = this.FindAudioSrcbyID(inAID);
-		
+
 		foreach(AudioClip AC in Resources.LoadAll(resdir, typeof(AudioClip)))
 		{
 			adsrc.AddClip(AC);
 		}
-		//adsrc.Rewind();
+		adsrc.Rewind();
 	}
 	public bool isClipPlaying(AudioID inAid)
 	{
