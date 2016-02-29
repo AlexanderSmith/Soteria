@@ -14,13 +14,20 @@ public class CheckObservatoryDefeatedObjective : MonoBehaviour
 	
 	void Start()
 	{
-		if (!GameDirector.instance.IsMusicDefeated() || !GameDirector.instance.IsTheaterDefeated() || GameDirector.instance.IsObservatoryDefeated())
+		if (GameDirector.instance.GetCompass())
 		{
-			GameDirector.instance.ChangeObjective(this._portToHub);
+			if (!GameDirector.instance.IsMusicDefeated() || !GameDirector.instance.IsTheaterDefeated() || GameDirector.instance.IsObservatoryDefeated())
+			{
+				GameDirector.instance.ChangeObjective(this._portToHub);
+			}
+			else
+			{
+				GameDirector.instance.ChangeObjective(this._observatory);
+			}
 		}
 		else
 		{
-			GameDirector.instance.ChangeObjective(this._observatory);
+			GameDirector.instance.ChangeObjective(null);
 		}
 	}
 }

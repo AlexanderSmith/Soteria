@@ -51,17 +51,5 @@ public class CheckTheaterDefeatedObjective : MonoBehaviour
 		{
 			this._oMalleySewerProvoke.SetActive(true);
 		}
-
-//		if (!GameDirector.instance.IsMusicDefeated() || GameDirector.instance.IsTheaterDefeated())
-//		{
-//			GameDirector.instance.ChangeObjective(this._portToHub);
-//		}
-//		else
-//		{
-//			GameDirector.instance.ChangeObjective(this._puppetStore);
-//		}
-
-		// Hack for testing shadow creature spawner rates
-//		GameDirector.instance.SuitRemoved();
 	}
 }
