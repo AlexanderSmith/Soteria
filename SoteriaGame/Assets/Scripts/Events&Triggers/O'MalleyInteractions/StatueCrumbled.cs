@@ -29,12 +29,13 @@ public class StatueCrumbled : Reaction
 		GetBools();
 		if (this._failed)
 		{
-//			GameDirector.instance.SetupDialogue("AnaSoteriaPrayer1HUBp4", this.gameObject.transform.parent.gameObject);
-//			GameDirector.instance.SetupDialogue("OMalleySoteriaStatueGate", this.gameObject.transform.parent.gameObject);
-//			GameDirector.instance.StartDialogue();
-			GameDirector.instance.GetDialogueFromReaction("AnaSoteriaPrayerFail", this.gameObject.transform.parent.gameObject);
-			GameDirector.instance.SetupDialogueChoices("AnaSoteriaPrayer1HUBp4", "AnaSoteriaPrayer2HUBp4", "");
 			this.transform.root.GetComponent<PrayerBools>().ResetFailed();
+//			GameDirector.instance.SetupDialogue("AnaSoteriaPrayer1HUBp4", this.gameObject.transform.parent.gameObject);
+
+			GameDirector.instance.SetupDialogue("OMalleySoteriaStatueGate", this.gameObject.transform.parent.gameObject);
+			GameDirector.instance.StartDialogue();
+//			GameDirector.instance.GetDialogueFromReaction("AnaSoteriaPrayerFail", this.gameObject.transform.parent.gameObject);
+//			GameDirector.instance.SetupDialogueChoices("AnaSoteriaPrayer1HUBp4", "AnaSoteriaPrayer2HUBp4", "");
 		}
 		else if (this._success)
 		{

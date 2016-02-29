@@ -44,6 +44,11 @@ public class HubSuitObjective : MonoBehaviour
 
 	void Start ()
 	{
+		//Hacks for O'malley spawn at statue
+		GameDirector.instance.MusicPuzzleDefeated();
+		GameDirector.instance.TheaterPuzzleDefeated();
+		GameDirector.instance.ObservatoryPuzzleDefeated();
+
 		if (GameDirector.instance.GetGameState() == GameStates.Suit)
 		{
 			DetermineObjective();
