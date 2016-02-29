@@ -43,7 +43,7 @@ public class Hub3SceneStart : MonoBehaviour
 		GameDirector.instance.InitializePlayer();
 
 		// Testing statue final crumble code
-//		GameDirector.instance.StatueCrumbleTwo();
+		GameDirector.instance.StatueCrumbleThree();
 
 		switch(GameDirector.instance.GetStatueCrumble())
 		{
@@ -56,6 +56,7 @@ public class Hub3SceneStart : MonoBehaviour
 			sotStatueCrumble2.SetActive(false);
 			break;
 		case StatueCrumbleState.CRUMBLETWO:
+		case StatueCrumbleState.CRUMBLETHREE:
 			sotStatue.SetActive(false);
 			sotStatueCrumble1.SetActive(false);
 			crumble2Mats = sotStatueCrumble2.GetComponent<MeshRenderer>().materials;

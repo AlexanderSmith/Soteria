@@ -56,7 +56,7 @@ public class HubSuitObjective : MonoBehaviour
 				DeterminePass4Objective();
 			}
 
-			if (GameDirector.instance.GetStatueCrumble() == StatueCrumbleState.CRUMBLETHREE)
+			if (GameDirector.instance.IsMusicDefeated() && GameDirector.instance.IsTheaterDefeated() && GameDirector.instance.IsObservatoryDefeated())
 			{
 				this._oMalleyStatue.SetActive(true);
 			}
