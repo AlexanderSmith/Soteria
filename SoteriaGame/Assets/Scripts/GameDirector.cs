@@ -1279,6 +1279,11 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.StopAudio(inAID);
 	}
 
+	public void Rewind(AudioID inAID)
+	{
+		this._audioManager.Rewind(inAID);
+	}
+
 	public void ClearAudioList()
 	{
 		this._audioManager.ClearAudioList();

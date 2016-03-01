@@ -221,6 +221,7 @@ public class DialogueManager : MonoBehaviour
 	public void EndDialogue()
 	{
 		this.ChangeState (DialogueState.Standby);
+		GameDirector.instance.Rewind(this._diagdata.Aid);
 		GameDirector.instance.StopAudioClip(this._diagdata.Aid);
 		DeActivateGUI ();
 	}

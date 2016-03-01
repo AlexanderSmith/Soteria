@@ -103,7 +103,7 @@ public class AudioManager : MonoBehaviour
 		{
 			adsrc.AddClip(AC);
 		}
-		adsrc.Rewind();
+		//adsrc.Rewind();
 	}
 	public bool isClipPlaying(AudioID inAid)
 	{
@@ -119,6 +119,11 @@ public class AudioManager : MonoBehaviour
 	public void StopAudio(AudioID inAID)
 	{
 		FindAudioSrcbyID(inAID).stopClip();
+	}
+
+	public void Rewind(AudioID inAID)
+	{
+		FindAudioSrcbyID(inAID).Rewind();
 	}
 
 	// Before level loaded
@@ -401,6 +406,7 @@ public class AudioSourceWrapper
 //			this._audiosrc.time = 0.0f;
 //		}
 		this._audiosrc.clip = this._audioclips[0];
+		currindx = 0;
 //		foreach (AudioClip _clip in this._audioclips)
 //		{
 //			this._audiosrc.
