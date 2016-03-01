@@ -177,6 +177,7 @@ public class DialogueManager : MonoBehaviour
 	
 	public void LoadChoices()
 	{
+		Debug.Log (this._diagdata.Aid.ToString ());
 		if (_diagdata.hasChoices)
 		{
 			for (int i = 0; i < _diagdata.Choices.Count; ++i )
@@ -200,6 +201,7 @@ public class DialogueManager : MonoBehaviour
 		this.FirstChoiceSrc = fChoice;
 		this.SecondChoiceSrc = sChoice;
 		this.ThirdChoiceSrc = tChoice;
+		Debug.Log (this._diagdata.Aid.ToString ());
 	}
 	
 	//////////////////////////////////////////////////////////////////////////
@@ -245,6 +247,7 @@ public class DialogueManager : MonoBehaviour
 
 	public void GetDialogueFromChoice(int choice)
 	{
+		bool _npc = this.isNpcOn;
 		this.EndDialogue();
 		switch (choice)
 		{
@@ -269,6 +272,7 @@ public class DialogueManager : MonoBehaviour
 
 		this.StartDialogue();
 		this._diagdata.hasChoices = false;
+		this.isNpcOn = _npc;
 	}
 
 	public void GetDialogueFromReaction(string inFolderName, GameObject inActor)

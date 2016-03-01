@@ -26,21 +26,21 @@ public class StatueCrumbled : Reaction
 
 	void Update()
 	{
-		GetBools();
-		if (this._failed)
-		{
-			this.transform.root.GetComponent<PrayerBools>().ResetFailed();
-//			GameDirector.instance.SetupDialogue("AnaSoteriaPrayer1HUBp4", this.gameObject.transform.parent.gameObject);
-//			GameDirector.instance.GetDialogueFromReaction("OMalleySoteriaStatueGate", this.gameObject.transform.parent.gameObject);
-			GameDirector.instance.SetupDialogue("OMalleySoteriaStatueGate", this.gameObject.transform.parent.gameObject);
-			GameDirector.instance.StartDialogue();
+//		GetBools();
+//		if (this._failed)
+//		{
+//			this.transform.root.GetComponent<PrayerBools>().ResetFailed();
+////			GameDirector.instance.SetupDialogue("AnaSoteriaPrayer1HUBp4", this.gameObject.transform.parent.gameObject);
+////			GameDirector.instance.GetDialogueFromReaction("OMalleySoteriaStatueGate", this.gameObject.transform.parent.gameObject);
+////			GameDirector.instance.SetupDialogue("OMalleySoteriaStatueGate", this.gameObject.transform.parent.gameObject);
+////			GameDirector.instance.StartDialogue();
 //			GameDirector.instance.GetDialogueFromReaction("AnaSoteriaPrayerFail", this.gameObject.transform.parent.gameObject);
 //			GameDirector.instance.SetupDialogueChoices("AnaSoteriaPrayer1HUBp4", "AnaSoteriaPrayer2HUBp4", "");
-		}
-		else if (this._success)
-		{
-			GameDirector.instance.StatueCrumbled();
-		}
+//		}
+//		else if (this._success)
+//		{
+//			GameDirector.instance.StatueCrumbled();
+//		}
 //		if (statueSwitch.IsStarted())
 //		{
 //			if (statueSwitch.ElapsedTime() <= 5.0f)

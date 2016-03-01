@@ -350,9 +350,12 @@ public class AudioSourceWrapper
 		}
 		else 
 		{
-			if (!this._audiosrc.clip.Equals (this._audioclips [currindx]))
+			if (currindx < this._audioclips.Count)
 			{
-				Nextclip ();
+				if (!this._audiosrc.clip.Equals (this._audioclips [currindx]))
+				{
+					Nextclip ();
+				}
 			}
 		}
 		Debug.Log (this._audiosrc.clip.name);
