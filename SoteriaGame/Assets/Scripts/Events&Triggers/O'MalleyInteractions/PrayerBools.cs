@@ -44,6 +44,7 @@ public class PrayerBools : MonoBehaviour
 			else
 			{
 				statueSwitch.StopTimer();
+				Application.LoadLevel("Sewers");
 			}
 		}
 	}

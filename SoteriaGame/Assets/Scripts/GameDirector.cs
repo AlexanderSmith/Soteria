@@ -965,6 +965,8 @@ public class GameDirector : MonoBehaviour {
 		oicysController = inCont;
 		this._encounterManager.OicysEncounter();
 		this._stateManager.ChangeGameState (GameStates.Encounter);
+		this._HUDManager.EnableEncounterView();
+		this.SetClearStatus(false);
 		this._player.PlayerActionOicysEnc();
 	}
 
@@ -973,7 +975,8 @@ public class GameDirector : MonoBehaviour {
 		this._stateManager.ChangeGameState(GameStates.Normal);
 		this._HUDManager.DisableEncounterView();
 		this._player.PlayerActionNormal();
-
+		oicysController.EncounterWon();
+		this._HUDManager.DisableEncounterView();
 	}
 
 	public void StartEncounterMode()

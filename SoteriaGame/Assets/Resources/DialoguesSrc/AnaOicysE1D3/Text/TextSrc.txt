@@ -1,2 +1,2 @@
 <b>Ana: </b>Oicys! Show me fear.
-<trigger/>SewerController-Encounter2-
+<trigger/>SewerController-FightOicys-

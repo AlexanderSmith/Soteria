@@ -18,7 +18,8 @@ public enum TimersType
 	FadeIn,
 	FadeOut,
 	PuppetEyeTimer,
-	StatueSwitchTimer
+	StatueSwitchTimer,
+	OicysTimer
 }
 /// <summary>
 /// The Actual manager that takes care of the Timers.

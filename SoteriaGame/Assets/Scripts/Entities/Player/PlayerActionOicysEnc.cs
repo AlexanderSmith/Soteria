@@ -38,7 +38,6 @@ public class PlayerActionOicysEnc : IPlayerAction
 	
 	private void FightOicys()
 	{
-		GameDirector.instance.Overpower();
 		if (Input.GetKeyDown(KeyCode.Space))
 		{
 			if (!_lingering)
