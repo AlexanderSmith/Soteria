@@ -11,6 +11,7 @@ public class GetLantern : Reaction
 	{
 		dreams = GameObject.Find("DreamsDirectionDialogue");
 		_hubToMusic = GameObject.Find("HubToMusic");
+		_hubToMusic.SetActive(false);
 	}
 
 	public override void execute()
