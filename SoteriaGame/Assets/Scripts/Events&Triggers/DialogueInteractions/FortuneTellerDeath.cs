@@ -3,6 +3,8 @@ using System.Collections;
 
 public class FortuneTellerDeath : MonoBehaviour
 {
+	public Sprite NpcPortrait;
+
 	void Start()
 	{
 		if (!GameDirector.instance.GetToken())
@@ -17,6 +19,7 @@ public class FortuneTellerDeath : MonoBehaviour
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("FTAnaFailUsingTokenHAR");
+			GameDirector.instance.SetupDialogueNPC(this.NpcPortrait);
 			GameDirector.instance.StartDialogue();
 			this.gameObject.GetComponentInChildren<InspectFortuneTeller>().TurnOffInspect();
 		}

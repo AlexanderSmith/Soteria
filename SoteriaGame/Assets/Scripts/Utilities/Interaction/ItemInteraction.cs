@@ -3,7 +3,8 @@ using System.Collections;
 
 public class ItemInteraction : InteractionBase
 {	
-	private GameObject _npcportrait;
+	public Sprite NpcPortrait;
+	public bool IsNpcDialogue = true;
 	public string DialogueName;
 	public Reaction _reaction;
 	
@@ -42,6 +43,8 @@ public class ItemInteraction : InteractionBase
 					GameDirector.instance.GetPlayer().PlayerActionPause();
 					
 					GameDirector.instance.SetupDialogue(DialogueName);
+					if (this.IsNpcDialogue)
+						GameDirector.instance.SetupDialogueNPC(this.NpcPortrait);
 					GameDirector.instance.StartDialogue();
 					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 				}

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class  FortuneTellerTokenDialogue: MonoBehaviour
 {
-	private GameObject _npcportrait;
+	public Sprite NpcPortrait;
 	public Reaction _reaction;
 
 	void OnTriggerEnter(Collider player)
@@ -12,6 +12,7 @@ public class  FortuneTellerTokenDialogue: MonoBehaviour
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("FortuneTellerTokenDialogue");
+			GameDirector.instance.SetupDialogueNPC(this.NpcPortrait);
 			GameDirector.instance.StartDialogue();
 			this.gameObject.GetComponentInChildren<InspectFortuneTeller>().TurnOffInspect();
 		}
