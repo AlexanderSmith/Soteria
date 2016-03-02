@@ -958,6 +958,24 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.MusicPuzzleEncounter(enemy);
 	}
 
+	SewerController oicysController;
+
+	public void StartOicysEncounter(SewerController inCont)
+	{
+		oicysController = inCont;
+		this._encounterManager.OicysEncounter();
+		this._stateManager.ChangeGameState (GameStates.Encounter);
+		this._player.PlayerActionOicysEnc();
+	}
+
+	public void StopOicysEncounter()
+	{
+		this._stateManager.ChangeGameState(GameStates.Normal);
+		this._HUDManager.DisableEncounterView();
+		this._player.PlayerActionNormal();
+
+	}
+
 	public void StartEncounterMode()
 	{
 		if (this._stateManager.GameState() != GameStates.Encounter) 
@@ -1176,7 +1194,8 @@ public class GameDirector : MonoBehaviour {
 
 	public void PlayerOvercameOicys()
 	{
-
+		this._encounterManager.PlayerOvercameOicys();
+		this._stateManager.ChangeGameState(GameStates.Normal);
 	}
 
 	public void PuzzleOvercome()

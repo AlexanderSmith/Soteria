@@ -61,6 +61,23 @@ public class EncounterManager : MonoBehaviour
 		}
 	}
 
+	public void OicysEncounter()
+	{
+		if (this.currentState == EncounterState.INACTIVE)
+		{
+			this.currentState = EncounterState.ACTIVE;
+			GameDirector.instance.GetPlayer().gameObject.transform.LookAt(GameObject.FindGameObjectWithTag("Oicys").transform.position);
+			GameDirector.instance.GetPlayer().AddFear();
+		}
+	}
+
+	public void StopOicysEnc()
+	{
+		GameDirector.instance.GetPlayer().RemoveFear();
+		GameDirector.instance.StopOicysEncounter();
+		this.EncounterReset();
+	}
+
     public void StopEncounter()
     {
 		this.Cower();
@@ -149,6 +166,11 @@ public class EncounterManager : MonoBehaviour
 	public void PlayerOvercame()
 	{
 		this.StopEncounter();
+	}
+
+	public void PlayerOvercameOicys()
+	{
+		this.StopOicysEnc();
 	}
 
 	public void PuzzleOvercome()

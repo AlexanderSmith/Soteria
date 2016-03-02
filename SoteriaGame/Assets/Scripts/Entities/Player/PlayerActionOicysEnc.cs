@@ -50,3 +50,4 @@ public class PlayerActionOicysEnc : IPlayerAction
 			GameDirector.instance.EncounterClear();
 		}
 	}
+}
