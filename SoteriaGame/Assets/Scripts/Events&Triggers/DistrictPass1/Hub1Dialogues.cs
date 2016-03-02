@@ -15,6 +15,8 @@ public class Hub1Dialogues : MonoBehaviour
 	{
 		this._cart = GameDirector.instance.GetCompass();
 		this._pt = GameDirector.instance.GetLantern();
+		cartographer.SetActive(false);
+		pt.SetActive(false);
 	}
 
 	void Start()
@@ -24,16 +26,14 @@ public class Hub1Dialogues : MonoBehaviour
 
 		if (this._allDialogues)
 		{
-			return;
+			cartographer.SetActive(true);
+			pt.SetActive(false);
 		}
 
-		if (this._noCartDiaglogue)
+		else if (this._noCartDiaglogue)
 		{
 			cartographer.SetActive(false);
-			return;
+			pt.SetActive(true);
 		}
-
-		cartographer.SetActive(false);
-		pt.SetActive(false);
 	}
 }
