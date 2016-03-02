@@ -128,8 +128,8 @@ public class DialogueManager : MonoBehaviour
 		if (this.isNpcOn)
 		{
 			DialogueUISplashScreen.GetComponent<Image>().enabled = true;
-			DialogueUINpcPortrait.SetActive(true);
-			DialogueUIPlayerPortrait.SetActive(true);
+			DialogueUINpcPortrait.GetComponent<Image>().enabled = true;;
+			DialogueUIPlayerPortrait.GetComponent<Image>().enabled = true;;
 		}
 	}
 	
@@ -141,12 +141,12 @@ public class DialogueManager : MonoBehaviour
 		DialogueUISecondChoice.SetActive(false);
 		DialogueUIThirdChoice.SetActive(false);
 		DialogueUISplashScreen.GetComponent<Image>().enabled = false;
-		DialogueUINpcPortrait.SetActive(false);
-		DialogueUIPlayerPortrait.SetActive(false);
+		DialogueUINpcPortrait.GetComponent<Image>().enabled = false;;
+		DialogueUIPlayerPortrait.GetComponent<Image>().enabled = false;;
 
 		if (this.isNpcOn)
 		{
-			DialogueUINpcPortrait.GetComponent<Image>().sprite = null;
+			//DialogueUINpcPortrait.GetComponent<Image>().sprite = null;
 			isNpcOn = false;
 		}
 	}
