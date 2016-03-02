@@ -43,7 +43,7 @@ public class Hub3SceneStart : MonoBehaviour
 		GameDirector.instance.InitializePlayer();
 
 		// Testing statue final crumble code
-		GameDirector.instance.StatueCrumbleThree();
+		//GameDirector.instance.StatueCrumbleThree();
 
 		switch(GameDirector.instance.GetStatueCrumble())
 		{

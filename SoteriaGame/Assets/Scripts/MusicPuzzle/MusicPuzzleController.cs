@@ -217,6 +217,11 @@ public class MusicPuzzleController : MonoBehaviour
 		}
 	}
 
+	IEnumerator OrganTileDown()
+	{
+		yield return null;
+	}
+
 	public void PuzzleDefeated()
 	{
 		GameDirector.instance.MusicPuzzleDefeated();
