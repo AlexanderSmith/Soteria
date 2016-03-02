@@ -3,12 +3,13 @@ using System.Collections;
 
 public class GetCompass : Reaction
 {
-	GameObject ptLights;
+	public GameObject ptLights;
 	public Sprite SplashScreen;
 
 	void Start()
 	{
-		ptLights = GameObject.Find ("SoteriaPowerSystem_Lights");
+//		ptLights = GameObject.Find ("SoteriaPowerSystem_Lights");
+//		ptLights.SetActive(false);
 	}
 
 	public override void execute ()

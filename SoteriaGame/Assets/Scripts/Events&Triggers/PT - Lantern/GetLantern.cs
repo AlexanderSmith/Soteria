@@ -9,9 +9,9 @@ public class GetLantern : Reaction
 	
 	void Start()
 	{
-		dreams = GameObject.Find("DreamsDirectionDialogue");
-		_hubToMusic = GameObject.Find("HubToMusic");
-		_hubToMusic.SetActive(false);
+		//dreams = GameObject.Find("DreamsDirectionDialogue");
+//		_hubToMusic = GameObject.Find("HubToMusic");
+//		_hubToMusic.SetActive(false);
 	}
 
 	public override void execute()
@@ -22,5 +22,16 @@ public class GetLantern : Reaction
 		GameDirector.instance.StartItemInteraction(SplashScreen);
 		this.gameObject.transform.parent.gameObject.SetActive(false);
 		GameDirector.instance.GetPlayer().PlayerActionItemPickup();
+	}
+
+	public void SetHubToMusic(GameObject inGobj)
+	{
+		_hubToMusic = inGobj;
+		_hubToMusic.SetActive (false);
+	}
+
+	public void SetDreams(GameObject inDreams)
+	{
+		dreams = inDreams;
 	}
 }
