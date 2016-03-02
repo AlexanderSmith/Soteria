@@ -1,0 +1,4 @@
+<b>Choose:</b>
+<choice/>Will you never give up?!
+<choice/>Stop bullying me, Oicys.
+<choice/>What? That's it? Are you even trying to scare me?

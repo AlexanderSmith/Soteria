@@ -30,6 +30,7 @@ public class Player : MonoBehaviour
 	private IPlayerAction _puppetPuzzle = new PlayerActionPuppetPuzzle();
 	private IPlayerAction _obsPuzzle = new PlayerActionObsPuzzle();
 	private IPlayerAction _itemPickup = new PlayerActionItemPickup();
+	private IPlayerAction _oicysEnc = new PlayerActionOicysEnc();
 
 	public PlayerState  playerState;
 
@@ -126,6 +127,12 @@ public class Player : MonoBehaviour
 	public void PlayerActionItemPickup()
 	{
 		this.SwitchPlayerAction(_itemPickup);
+	}
+
+	public void PlayerActionOicysEnc()
+	{
+		this.SwitchPlayerAction(_oicysEnc);
+		this._oicysEnc.InitializeValues(this);
 	}
 
 	IEnumerator IntoHide()

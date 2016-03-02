@@ -19,16 +19,11 @@ public class SewerCamera : MonoBehaviour
 	
 	void Update () 
 	{
-		Vector3 targetposition = new Vector3 (this.target.transform.position.x, this.target.transform.position.y, this.target.position.z) + CameraOffset;
+		Vector3 targetposition = new Vector3 (0.0f, 0.0f, this.target.position.z) + CameraOffset;
 		if (targetposition.z <= minZ)
 		{
 			targetposition.z = minZ;
-		}
-//		if (targetposition.z >= maxZ)
-//		{
-//			targetposition.z = maxZ;
-//		}
-		
+		}		
 		this.transform.position = Vector3.Lerp (this.transform.position, targetposition, Time.deltaTime * smooth);
 	}
 }

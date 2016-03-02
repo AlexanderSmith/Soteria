@@ -1174,6 +1174,11 @@ public class GameDirector : MonoBehaviour {
 		this._stateManager.ChangeGameState(GameStates.Normal);
 	}
 
+	public void PlayerOvercameOicys()
+	{
+
+	}
+
 	public void PuzzleOvercome()
 	{
 		this._encounterManager.PuzzleOvercome();
