@@ -5,6 +5,7 @@ public class Hub1Dialogues : MonoBehaviour
 {
 	public GameObject cartographer;
 	public GameObject pt;
+	public GameObject _hubToMusic;
 
 	private bool _cart;
 	private bool _pt;

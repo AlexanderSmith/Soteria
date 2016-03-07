@@ -19,6 +19,7 @@ public class GetLantern : Reaction
 		GameDirector.instance.LanternTrue();
 		dreams.SetActive(true);
 		_hubToMusic.SetActive(true);
+		GameDirector.instance.ChangeObjective (_hubToMusic);
 		GameDirector.instance.StartItemInteraction(SplashScreen);
 		this.gameObject.transform.parent.gameObject.SetActive(false);
 		GameDirector.instance.GetPlayer().PlayerActionItemPickup();
@@ -27,7 +28,10 @@ public class GetLantern : Reaction
 	public void SetHubToMusic(GameObject inGobj)
 	{
 		_hubToMusic = inGobj;
-		_hubToMusic.SetActive (false);
+		if (!GameDirector.instance.GetLantern())
+		{
+			_hubToMusic.SetActive (false);
+		}
 	}
 
 	public void SetDreams(GameObject inDreams)
