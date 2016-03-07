@@ -15,14 +15,11 @@ public class ChangeObjNoCompass : MonoBehaviour
 		portToMusic = GameObject.Find("HubToMusic");
 		//ptLights = GameObject.Find ("SoteriaPowerSystem_Lights");
 		dreams = GameObject.Find("DreamsDirectionDialogue");
-	}
-	
-	void OnTriggerEnter(Collider player)
-	{
+
 		//ptLights.SetActive(false);
 		lantern.GetComponent<GetLantern> ().SetDreams (dreams);
 		dreams.SetActive(false);
-		if (player.gameObject.tag == "Player" && GameDirector.instance.GetCompass())
+		if (GameDirector.instance.GetCompass())
 		{
 			//ptLights.SetActive(true);
 			if (!GameDirector.instance.GetLantern())
@@ -38,6 +35,7 @@ public class ChangeObjNoCompass : MonoBehaviour
 				}
 			}
 		}
+
 		lantern.GetComponent<GetLantern> ().SetHubToMusic (portToMusic);
 	}
 }

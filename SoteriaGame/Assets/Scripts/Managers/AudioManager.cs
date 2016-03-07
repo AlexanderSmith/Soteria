@@ -373,10 +373,10 @@ public class AudioSourceWrapper
 			}
 		}
 		Debug.Log (this._audiosrc.clip.name);
-		if (this._audiosrc.time > 0.0f)
-		{
-			this._audiosrc.time = 0.0f;
-		}
+//		if (this._audiosrc.time > 0.0f)
+//		{
+//			this._audiosrc.time = 0.0f;
+//		}
 		this._audiosrc.Play();
 		
 		if (this._audioclips.Count > 1) 
