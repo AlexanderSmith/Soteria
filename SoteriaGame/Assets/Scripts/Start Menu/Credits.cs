@@ -11,12 +11,14 @@ public class Credits : MonoBehaviour {
 	void Update () {
 
         camera.transform.Translate(Vector3.down * Time.deltaTime * speed);
+
+        //StartCoroutine(waitFor());
 	}
 
     IEnumerator waitFor()
     {
 
-        yield return new WaitForSeconds(20);
+        yield return new WaitForSeconds(220);
         Application.LoadLevel(level);
     }
 }
