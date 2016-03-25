@@ -6,19 +6,32 @@ public class Credits : MonoBehaviour {
     public GameObject camera;
     public int speed = 1;
     public string level;
+    bool pauseTheRoll = false;
 
 	// Update is called once per frame
 	void Update () {
 
-        camera.transform.Translate(Vector3.down * Time.deltaTime * speed);
+        if (pauseTheRoll == false) {
 
-        //StartCoroutine(waitFor());
-	}
+            camera.transform.Translate(Vector3.down * Time.deltaTime * speed);
 
+        }
+        
+
+        StartCoroutine(waitFor());
+        
+    }
+
+    IEnumerator Pause()
+    {
+        pauseTheRoll = true;
+        yield return new WaitForSeconds(35);
+        Application.LoadLevel(level);
+    }
     IEnumerator waitFor()
     {
-
-        yield return new WaitForSeconds(220);
-        Application.LoadLevel(level);
+        
+        yield return new WaitForSeconds(235);
+        StartCoroutine(Pause());
     }
 }
