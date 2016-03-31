@@ -3,11 +3,11 @@ using System.Collections;
 
 public class MusicBossController : MonoBehaviour
 {
-	public float noPilesDefeatedVolume = .01f;
-	public float onePilesDefeatedVolume = .02f;
-	public float twoPilesDefeatedVOlume = .03f;
-	public float allPilesDefeatedVolume = .04f;
-	public float _rateOfVolumeIncrease = .03f;
+	public float noPilesDefeatedVolume;
+	public float onePilesDefeatedVolume;
+	public float twoPilesDefeatedVOlume;
+	public float allPilesDefeatedVolume;
+	static public float _rateOfVolumeIncrease;
 	private float _rateOfVolumeDecrease;
 	private int _musicPilesDefeated;
 
@@ -109,7 +109,7 @@ public class MusicBossController : MonoBehaviour
 
 	public void FightingBoss()
 	{
-		GameDirector.instance.AddVolumePuzzle(this._currentMusic, this._rateOfVolumeIncrease);
+		GameDirector.instance.AddVolumePuzzle(this._currentMusic, MusicBossController._rateOfVolumeIncrease);
 	}
 
 	public void Cower()
