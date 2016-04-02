@@ -6,13 +6,11 @@ public class GetLantern : Reaction
 	GameObject dreams;
 	private GameObject _hubToMusic;
 	public Sprite SplashScreen;
-	public string itemText;
+	private string itemText;
 
 	void Start()
 	{
-		//dreams = GameObject.Find("DreamsDirectionDialogue");
-//		_hubToMusic = GameObject.Find("HubToMusic");
-//		_hubToMusic.SetActive(false);
+		itemText = "-Produces flash of light\n-Stuns Shadow Creature(s) within area of effect\n-Pulses when Shadow Creature(s) within range of stun\n-Left mouse-click to activate\n-Disacharges after use\n-Recharges automatically in town center";
 	}
 
 	public override void execute()

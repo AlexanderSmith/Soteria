@@ -4,10 +4,10 @@ using System.Collections;
 public class GetToken : Reaction
 {
 	public Sprite SplashScreen;
-	public string itemText;
+	private string itemText;
 	void Start()
 	{
-		
+		itemText = "-Teleports you to town center\n-Left mouse-click to activate\n-Unlimited use";
 	}
 	
 	public override void execute ()

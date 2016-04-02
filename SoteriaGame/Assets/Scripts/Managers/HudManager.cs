@@ -493,7 +493,10 @@ public class HudManager : MonoBehaviour {
 		this._splashScreenItem.GetComponent<Image>().enabled = true;
 		this._ItemAccept.GetComponent<Text>().enabled = true;
 		if (itemtext != null)
+		{
 			this._ItemtextCaption.GetComponent<Text>().enabled = true;
+			this._ItemtextCaption.GetComponent<Text>().text = itemtext;
+		}
 	}
 
 	public void EndItemInteraction(bool inResponse)
@@ -502,6 +505,7 @@ public class HudManager : MonoBehaviour {
 		this._splashScreenItem.GetComponent<Image>().enabled = false;
 		this._ItemAccept.GetComponent<Text>().enabled = false;
 		this._ItemtextCaption.GetComponent<Text>().enabled = false;
+		this._ItemtextCaption.GetComponent<Text>().text = "";
 	}
 
 	public void StartCardInteraction(Sprite inSprite, int inDist, GameObject inCardObj)
