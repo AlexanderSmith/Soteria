@@ -16,7 +16,7 @@ public class GetSuit : Reaction
 
 
 		GameDirector.instance.GetPlayer().PlayerActionItemPickup();
-		GameDirector.instance.StartItemInteraction(SplashScreen , itemText);
+		GameDirector.instance.StartItemInteraction(SplashScreen);
 		this.gameObject.transform.parent.gameObject.SetActive(false);
 	}
 }

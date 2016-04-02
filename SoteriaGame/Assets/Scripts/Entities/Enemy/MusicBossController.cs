@@ -7,7 +7,7 @@ public class MusicBossController : MonoBehaviour
 	public float onePilesDefeatedVolume;
 	public float twoPilesDefeatedVOlume;
 	public float allPilesDefeatedVolume;
-	static public float _rateOfVolumeIncrease;
+	public float _rateOfVolumeIncrease;
 	private float _rateOfVolumeDecrease;
 	private int _musicPilesDefeated;
 
@@ -109,7 +109,7 @@ public class MusicBossController : MonoBehaviour
 
 	public void FightingBoss()
 	{
-		GameDirector.instance.AddVolumePuzzle(this._currentMusic, MusicBossController._rateOfVolumeIncrease);
+		GameDirector.instance.AddVolumePuzzle(this._currentMusic, this._rateOfVolumeIncrease);
 	}
 
 	public void Cower()

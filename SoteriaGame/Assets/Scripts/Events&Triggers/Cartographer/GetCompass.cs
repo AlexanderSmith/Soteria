@@ -5,12 +5,11 @@ public class GetCompass : Reaction
 {
 	public GameObject ptLights;
 	public Sprite SplashScreen;
-	public string itemText;
+	private string itemText;
 
 	void Start()
 	{
-//		ptLights = GameObject.Find ("SoteriaPowerSystem_Lights");
-//		ptLights.SetActive(false);
+		itemText = "-Keeps you oriented and on track\n-Compass Icon marks next goal\n-Arrow points in direction of goal\n-If no icon or arrow displayed, complete objective as you see fit";
 	}
 
 	public override void execute ()
