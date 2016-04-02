@@ -5,6 +5,7 @@ public class GetCompass : Reaction
 {
 	public GameObject ptLights;
 	public Sprite SplashScreen;
+	public string itemText;
 
 	void Start()
 	{
@@ -16,7 +17,7 @@ public class GetCompass : Reaction
 	{
 		GameDirector.instance.CompassTrue();
 		ptLights.SetActive(true);
-		GameDirector.instance.StartItemInteraction(SplashScreen);
+		GameDirector.instance.StartItemInteraction(SplashScreen, itemText);
 		this.gameObject.transform.parent.gameObject.SetActive(false);
 		GameDirector.instance.GetPlayer().PlayerActionItemPickup();
 	}

@@ -4,7 +4,7 @@ using System.Collections;
 public class GetToken : Reaction
 {
 	public Sprite SplashScreen;
-	
+	public string itemText;
 	void Start()
 	{
 		
@@ -14,7 +14,7 @@ public class GetToken : Reaction
 	{
 		GameDirector.instance.GetPlayer().PlayerActionItemPickup();
 		GameDirector.instance.TokenTrue();
-		GameDirector.instance.StartItemInteraction(SplashScreen);
+		GameDirector.instance.StartItemInteraction(SplashScreen, itemText);
 		this.gameObject.transform.parent.parent.gameObject.SetActive(false);
 	}
 }

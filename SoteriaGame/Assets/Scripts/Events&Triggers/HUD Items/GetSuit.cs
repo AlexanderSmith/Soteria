@@ -5,6 +5,7 @@ public class GetSuit : Reaction
 {
 
 	public Sprite SplashScreen;
+	public string itemText;
 
 	public override void execute()
 	{
@@ -15,7 +16,7 @@ public class GetSuit : Reaction
 
 
 		GameDirector.instance.GetPlayer().PlayerActionItemPickup();
-		GameDirector.instance.StartItemInteraction(SplashScreen);
+		GameDirector.instance.StartItemInteraction(SplashScreen , itemText);
 		this.gameObject.transform.parent.gameObject.SetActive(false);
 	}
 }

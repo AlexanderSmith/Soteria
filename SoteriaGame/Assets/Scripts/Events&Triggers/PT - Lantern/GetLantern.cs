@@ -6,7 +6,8 @@ public class GetLantern : Reaction
 	GameObject dreams;
 	private GameObject _hubToMusic;
 	public Sprite SplashScreen;
-	
+	public string itemText;
+
 	void Start()
 	{
 		//dreams = GameObject.Find("DreamsDirectionDialogue");
@@ -20,7 +21,7 @@ public class GetLantern : Reaction
 		dreams.SetActive(true);
 		_hubToMusic.SetActive(true);
 		GameDirector.instance.ChangeObjective (_hubToMusic);
-		GameDirector.instance.StartItemInteraction(SplashScreen);
+		GameDirector.instance.StartItemInteraction(SplashScreen , itemText);
 		this.gameObject.transform.parent.gameObject.SetActive(false);
 		GameDirector.instance.GetPlayer().PlayerActionItemPickup();
 	}

@@ -34,6 +34,7 @@ public class HudManager : MonoBehaviour {
 	private GameObject _dialogueSplashScreen;
 	private GameObject _splashScreenItem;
 	private GameObject _ItemAccept;
+	private GameObject _ItemtextCaption;
 	private GameObject _splashScreenCard;
 	private GameObject _noResponse;
 	private GameObject _yesResponse;
@@ -124,6 +125,8 @@ public class HudManager : MonoBehaviour {
 		this._noResponse.GetComponent<Text>().enabled = false;
 		this._yesResponse = GameObject.Find("Yes");
 		this._yesResponse.GetComponent<Text>().enabled = false;
+		this._ItemtextCaption = GameObject.Find ("ItemCaption");
+		this._ItemtextCaption.GetComponent<Text>().enabled = false;
 		
 		//Inventory item game object references
 		this._token = GameObject.Find("Coin");
@@ -483,12 +486,14 @@ public class HudManager : MonoBehaviour {
 		this.Objective = gObj;
 	}
 
-	public void StartItemInteraction(Sprite inSprite)
+	public void StartItemInteraction(Sprite inSprite, string itemtext)
 	{
 		this._dialogueSplashScreen.GetComponent<Image>().enabled = true;
 		this._splashScreenItem.GetComponent<Image>().sprite = inSprite;
 		this._splashScreenItem.GetComponent<Image>().enabled = true;
-		this._ItemAccept.GetComponent<Text>().enabled = true;	
+		this._ItemAccept.GetComponent<Text>().enabled = true;
+		if (itemtext != null)
+			this._ItemtextCaption.GetComponent<Text>().enabled = true;
 	}
 
 	public void EndItemInteraction(bool inResponse)
@@ -496,6 +501,7 @@ public class HudManager : MonoBehaviour {
 		this._dialogueSplashScreen.GetComponent<Image>().enabled = false;
 		this._splashScreenItem.GetComponent<Image>().enabled = false;
 		this._ItemAccept.GetComponent<Text>().enabled = false;
+		this._ItemtextCaption.GetComponent<Text>().enabled = false;
 	}
 
 	public void StartCardInteraction(Sprite inSprite, int inDist, GameObject inCardObj)

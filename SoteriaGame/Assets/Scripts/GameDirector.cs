@@ -775,9 +775,9 @@ public class GameDirector : MonoBehaviour {
 	}
 
 	/// Add Item SplashScreen
-	public void StartItemInteraction(Sprite inSprite)
+	public void StartItemInteraction(Sprite inSprite , string Itemtext = null)
 	{
-		this._HUDManager.StartItemInteraction(inSprite);
+		this._HUDManager.StartItemInteraction(inSprite, Itemtext);
 	}
 
 	public void EndItemInteraction(bool inResponse)
