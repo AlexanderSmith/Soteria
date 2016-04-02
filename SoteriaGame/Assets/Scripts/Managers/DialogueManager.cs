@@ -29,6 +29,9 @@ public class DialogueManager : MonoBehaviour
 	GameObject DialogueUIFirstChoice;
 	GameObject DialogueUISecondChoice;
 	GameObject DialogueUIThirdChoice;
+
+	// DAVID KIM //
+	GameObject SkipDialogueButton;
 	
 	string  UIText;
 	string FirstChoiceSrc;
@@ -70,6 +73,11 @@ public class DialogueManager : MonoBehaviour
 		DialogueUISecondChoice.SetActive(false);
 		DialogueUIThirdChoice = Choices.transform.FindChild("ThirdChoice").gameObject;
 		DialogueUIThirdChoice.SetActive(false);
+
+		
+		// DAVID KIM //
+		SkipDialogueButton = DialogueUI.transform.FindChild ("SkipDialogueOption").gameObject;
+		SkipDialogueButton.SetActive(false);
 	}
 	
 	public void OnLevelWasLoaded()
@@ -131,6 +139,9 @@ public class DialogueManager : MonoBehaviour
 			DialogueUINpcPortrait.GetComponent<Image>().enabled = true;;
 			DialogueUIPlayerPortrait.GetComponent<Image>().enabled = true;;
 		}
+		
+		// DAVID KIM //
+		SkipDialogueButton.SetActive (true);
 	}
 	
 	private void DeActivateGUI()
@@ -149,6 +160,9 @@ public class DialogueManager : MonoBehaviour
 			//DialogueUINpcPortrait.GetComponent<Image>().sprite = null;
 			isNpcOn = false;
 		}
+		
+		// DAVID KIM //
+		SkipDialogueButton.SetActive (false);
 	}
 
 	private void privLoadChoice(int indx)
