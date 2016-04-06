@@ -141,7 +141,7 @@ public class DialogueManager : MonoBehaviour
 		}
 		
 		// DAVID KIM //
-		SkipDialogueButton.SetActive (true);
+		//SkipDialogueButton.SetActive (true);
 	}
 	
 	private void DeActivateGUI()
@@ -162,7 +162,7 @@ public class DialogueManager : MonoBehaviour
 		}
 		
 		// DAVID KIM //
-		SkipDialogueButton.SetActive (false);
+		//SkipDialogueButton.SetActive (false);
 	}
 
 	private void privLoadChoice(int indx)
