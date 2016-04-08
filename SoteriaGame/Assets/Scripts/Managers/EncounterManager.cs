@@ -257,27 +257,30 @@ public class EncounterManager : MonoBehaviour
 	public void LanternUsed()
 	{
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
-		if (enemies[0].GetComponent<BasicEnemyController>() != null)
+		if (enemies.Length > 0)
 		{
-			foreach (GameObject enemy in enemies)
+			if (enemies[0].GetComponent<BasicEnemyController>() != null)
 			{
-				if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= enemy.GetComponent<BasicEnemyController>().lookAtDistance)
+				foreach (GameObject enemy in enemies)
 				{
-					enemy.GetComponent<BasicEnemyController>().Stun();
+					if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= enemy.GetComponent<BasicEnemyController>().lookAtDistance)
+					{
+						enemy.GetComponent<BasicEnemyController>().Stun();
+					}
 				}
 			}
-		}
-		else
-		{
-			foreach (GameObject enemy in enemies)
+			else
 			{
-				if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= enemy.GetComponent<EyeballShadowCreatureController>().lookAtDistance)
+				foreach (GameObject enemy in enemies)
 				{
-					enemy.GetComponent<EyeballShadowCreatureController>().Stun();
+					if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= enemy.GetComponent<EyeballShadowCreatureController>().lookAtDistance)
+					{
+						enemy.GetComponent<EyeballShadowCreatureController>().Stun();
+					}
 				}
 			}
+			this.StopEncounterFromItem();
 		}
-		this.StopEncounterFromItem();
 	}
 
 	public void TokenUsed()
