@@ -189,6 +189,11 @@ public class HudManager : MonoBehaviour {
 			LeftKey.SetActive(true);
 			CoinInv_1.SetActive(true);
 			CoinInv.SetActive(false);
+			GameDirector.instance.LeftKeyAcquired();
+			GameDirector.instance.EndTriggerState();
+//			GameDirector.instance.SetupDialogue("AnaDroppingItemAfterMusicPuzz", GameObject.Find ("OMalleyProvokeMusic"));
+//			GameDirector.instance.SetupDialogueNPC(Resources.Load ("GUI/Portraits/O'MalleyColor") as Sprite);
+//			GameDirector.instance.StartDialogue();
 			break;
 			
 		case InventorySwapChoice.Second:
@@ -217,6 +222,11 @@ public class HudManager : MonoBehaviour {
 			CoinInv.SetActive(false);
 			LeftKey.SetActive(true);
 			CoinInv_2.SetActive(true);
+			GameDirector.instance.LeftKeyAcquired();
+			GameDirector.instance.EndTriggerState();
+//			GameDirector.instance.SetupDialogue("AnaDroppingItemAfterMusicPuzz", GameObject.Find ("OMalleyProvokeMusic"));
+//			GameDirector.instance.SetupDialogueNPC(Resources.Load ("GUI/Portraits/O'MalleyColor") as Sprite);
+//			GameDirector.instance.StartDialogue();
 			break;
 			
 		case InventorySwapChoice.Second:
@@ -242,6 +252,11 @@ public class HudManager : MonoBehaviour {
 			case InventorySwapChoice.First:
 				CoinInv.SetActive(false);
 				LeftKey.SetActive(true);
+				GameDirector.instance.LeftKeyAcquired();
+			GameDirector.instance.EndTriggerState();
+//			GameDirector.instance.SetupDialogue("AnaDroppingItemAfterMusicPuzz", GameObject.Find ("OMalleyProvokeMusic"));
+//			GameDirector.instance.SetupDialogueNPC(Resources.Load ("GUI/Portraits/O'MalleyColor") as Sprite);
+//			GameDirector.instance.StartDialogue();
 			break;
 
 			case InventorySwapChoice.Second:

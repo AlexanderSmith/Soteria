@@ -7,7 +7,7 @@ public class MusicPuzzleReactions : Reaction
 	{
 		if (GameDirector.instance.GetLeftKey())
 		{
-			GameDirector.instance.GetDialogueFromReaction("AnaDroppingItemAfterMusicPuzz", this.gameObject.transform.parent.gameObject);
+			GameDirector.instance.GetPlayer().PlayerActionPause();
 		}
 	}
 }

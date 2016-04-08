@@ -2,3 +2,6 @@
 <b>Ana:</b> But all of these things are helpful! They protect me, show me the way. Why do I have to give them up?
 <b>O'Malley:</b> Still concerned with safety, aren't we? Still worshipping lady Soteria... Why am I wasting my breath? Here’s the deal: you either embrace feeling a bit unsafe or you won’t get your dreams. How's that for a trade-off?
 <trigger/>MusicPuzzleTriggers-LeftKeyPiece-
+<b>O'Malley:</b> Good. Now: do you want to rattle Oicys' cage? Let him know you're coming for him?
+<b>Ana:</b> What? No, not really!
+<b>O'Malley:</b> Accepting the fear is one thing. But if you really want to live your dreams, you need to choose to be afraid. Let's go to the sewer gate and say hi, get a little taste.

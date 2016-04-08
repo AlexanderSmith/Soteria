@@ -225,7 +225,14 @@ public class MusicPuzzleController : MonoBehaviour
 	public void PuzzleDefeated()
 	{
 		GameDirector.instance.MusicPuzzleDefeated();
-		StartCoroutine ("OvercamePuzzle");
+		//StartCoroutine ("OvercamePuzzle");
+		this.KillSuckOrganMusic();
+		this._oMalleyDefeated.SetActive(true);
+		StopAllCoroutines ();
+		GameDirector.instance.ChangeVolume(AudioID.BrassMusic, 1.0f);
+		GameDirector.instance.ChangeVolume(AudioID.WindMusic, 1.0f);
+		GameDirector.instance.ChangeVolume(AudioID.StringMusic, 1.0f);
+		GameDirector.instance.ChangeVolume(AudioID.OrganMusic, 1.0f);
 	}
 
 	IEnumerator OvercamePuzzle()
