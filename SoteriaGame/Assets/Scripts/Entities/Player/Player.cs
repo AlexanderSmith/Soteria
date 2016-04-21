@@ -220,6 +220,9 @@ public class Player : MonoBehaviour
 
 	public void Footstep()
 	{
-		GameDirector.instance.PlayAudioClip(AudioID.WoodFootsteps);
+		if (GameDirector.instance.GetGameState() != GameStates.Suit)
+		{
+			GameDirector.instance.PlayAudioClip(AudioID.WoodFootsteps);
+		}
 	}
 }
