@@ -226,6 +226,7 @@ public enum AudioID
 	BrassMusic,
 	StringMusic,
 	WindMusic,
+	Whispers,
 
 	//Dialogue
 	After_Ana_Gets_Overwhelmed_in_MusicHUBp2,
