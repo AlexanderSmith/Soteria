@@ -41,6 +41,10 @@ public class GameDirector : MonoBehaviour {
 	private bool _fromTheaterDistrict;
 	private bool _fromObservatoryDistrict;
 
+	// Dialogue heard bools
+	private bool _obsIntro;
+	private bool _theaterIntro;
+
 	// First time entering puzzle bools for O'Malley interactions
 	private bool _musicFirstTime;
 	private bool _theaterFirstTime;
@@ -422,6 +426,16 @@ public class GameDirector : MonoBehaviour {
 		return this._musicPass1;
 	}
 
+	public bool IsTheaterIntro()
+	{
+		return this._theaterIntro;
+	}
+
+	public void TheaterIntroHeard()
+	{
+		this._theaterIntro = true;
+	}
+
 	public void FirstTimeTheaterPuzzle()
 	{
 		this._theaterFirstTime = true;
@@ -446,6 +460,16 @@ public class GameDirector : MonoBehaviour {
 	public bool GetTheaterPass1()
 	{
 		return this._theaterPass1;
+	}
+
+	public bool IsObsIntro()
+	{
+		return this._obsIntro;
+	}
+
+	public void ObsIntroHeard()
+	{
+		this._obsIntro = true;
 	}
 
 	public void FirstTimeObservatoryPuzzle()

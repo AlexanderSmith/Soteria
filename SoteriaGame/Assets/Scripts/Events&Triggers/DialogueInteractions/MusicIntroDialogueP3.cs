@@ -21,7 +21,7 @@ public class MusicIntroDialogueP3 : MonoBehaviour
 			GameDirector.instance.MusicSuitIntroDone();
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("AnaDistEnterVOMUSICp3");
-			GameDirector.instance.StartDialogue();
+			GameDirector.instance.StartDialogue(true);
 		}
 	}
 	

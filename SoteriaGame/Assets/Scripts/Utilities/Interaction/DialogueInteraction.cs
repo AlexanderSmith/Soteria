@@ -16,9 +16,6 @@ public class DialogueInteraction : InteractionBase
 	[HideInInspector]
 	public bool EndsWithChoice = false;
 
-	// DAVID KIM //
-	public bool CanSkipDialogue = false;
-
 	// Use this for initialization
 	public override void Awake () 
 	{

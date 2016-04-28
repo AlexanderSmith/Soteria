@@ -73,7 +73,7 @@ public class MusicPuzzleController : MonoBehaviour
 			{
 				GameDirector.instance.GetPlayer().PlayerActionPause();
 				GameDirector.instance.SetupDialogue("AnaEnteringMusicPuzzWithSuit");
-				GameDirector.instance.StartDialogue();
+				GameDirector.instance.StartDialogue(true);
 			}
 			else
 			{
@@ -89,7 +89,7 @@ public class MusicPuzzleController : MonoBehaviour
 			this.windTile.transform.position = this.windDown.position;
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("AnaEnteringMusicPuzFirstTime");
-			GameDirector.instance.StartDialogue();
+			GameDirector.instance.StartDialogue(true);
 
 		}
 		boss.GetComponentInChildren<MusicBossController>().Initialize(this);

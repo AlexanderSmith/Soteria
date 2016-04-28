@@ -18,16 +18,5 @@ public class DialogueSkipController : MonoBehaviour
 	public void SkipDialogue()
 	{
 		GameDirector.instance.SkipLine ();
-//		imageScript.overrideSprite = this.regular_button_IMG;
 	}
-
-//	public void HighlightButton()
-//	{
-//		imageScript.overrideSprite = this.highlighted_button_IMG;
-//	}
-//
-//	public void RegularButton()
-//	{
-//		imageScript.overrideSprite = this.regular_button_IMG;
-//	}
 }
