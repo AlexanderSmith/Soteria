@@ -1537,9 +1537,9 @@ public class GameDirector : MonoBehaviour {
 		this._dialoguemanager.GetDialogueFromReaction(inFolderName, inActor);
 	}
 
-	public void StartDialogue()
+	public void StartDialogue( bool CanSkipDialogue = false)
 	{
-		this._dialoguemanager.StartDialogue();
+		this._dialoguemanager.StartDialogue( CanSkipDialogue );
 	}
 
 	public void EndDialogue()

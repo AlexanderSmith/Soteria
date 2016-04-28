@@ -32,6 +32,7 @@ public class DialogueManager : MonoBehaviour
 
 	// DAVID KIM //
 	GameObject SkipDialogueButton;
+	bool _skipDialogueOn;
 	
 	string  UIText;
 	string FirstChoiceSrc;
@@ -141,7 +142,8 @@ public class DialogueManager : MonoBehaviour
 		}
 		
 		// DAVID KIM //
-		//SkipDialogueButton.SetActive (true);
+		if( this._skipDialogueOn )
+			SkipDialogueButton.SetActive (true);
 	}
 	
 	private void DeActivateGUI()
@@ -162,7 +164,8 @@ public class DialogueManager : MonoBehaviour
 		}
 		
 		// DAVID KIM //
-		//SkipDialogueButton.SetActive (false);
+		if( this._skipDialogueOn )
+			SkipDialogueButton.SetActive (false);
 	}
 
 	private void privLoadChoice(int indx)
@@ -221,12 +224,14 @@ public class DialogueManager : MonoBehaviour
 	//////////////////////////////////////////////////////////////////////////
 	///////////////////////  DIALOGUE COMMAND CENTER /////////////////////////
 	//////////////////////////////////////////////////////////////////////////
-	public void StartDialogue()
+	public void StartDialogue( bool dialogueSkip = false )
 	{
 		if (this._diagdata.getDialogueCount() > 0)
 		{
 			this.ChangeState (DialogueState.Active);
-			
+
+			this._skipDialogueOn = dialogueSkip;
+
 			ActivateGUI ();
 			
 			GetNextLine();

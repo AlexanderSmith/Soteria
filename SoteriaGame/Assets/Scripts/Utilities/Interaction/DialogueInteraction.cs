@@ -16,6 +16,9 @@ public class DialogueInteraction : InteractionBase
 	[HideInInspector]
 	public bool EndsWithChoice = false;
 
+	// DAVID KIM //
+	public bool CanSkipDialogue = false;
+
 	// Use this for initialization
 	public override void Awake () 
 	{
@@ -57,7 +60,7 @@ public class DialogueInteraction : InteractionBase
 						GameDirector.instance.SetupDialogueNPC(this.NpcPortrait);
 					if (this.EndsWithChoice)
 						GameDirector.instance.SetupDialogueChoices(this.FirstChoice, this.SecondChoice, this.ThirdChoice);
-					GameDirector.instance.StartDialogue();
+					GameDirector.instance.StartDialogue(CanSkipDialogue);
 					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 				}
 			}
