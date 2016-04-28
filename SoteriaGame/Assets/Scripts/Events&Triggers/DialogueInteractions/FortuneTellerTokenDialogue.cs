@@ -13,7 +13,7 @@ public class  FortuneTellerTokenDialogue: MonoBehaviour
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("FortuneTellerTokenDialogue");
 			GameDirector.instance.SetupDialogueNPC(this.NpcPortrait);
-			GameDirector.instance.StartDialogue();
+			GameDirector.instance.StartDialogue(true);
 			this.gameObject.GetComponentInChildren<InspectFortuneTeller>().TurnOffInspect();
 		}
 	}

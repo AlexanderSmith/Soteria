@@ -21,13 +21,13 @@ public class DialogueSkipController : MonoBehaviour
 //		imageScript.overrideSprite = this.regular_button_IMG;
 	}
 
-	public void HighlightButton()
-	{
-		imageScript.overrideSprite = this.highlighted_button_IMG;
-	}
-
-	public void RegularButton()
-	{
-		imageScript.overrideSprite = this.regular_button_IMG;
-	}
+//	public void HighlightButton()
+//	{
+//		imageScript.overrideSprite = this.highlighted_button_IMG;
+//	}
+//
+//	public void RegularButton()
+//	{
+//		imageScript.overrideSprite = this.regular_button_IMG;
+//	}
 }
