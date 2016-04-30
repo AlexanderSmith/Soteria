@@ -4,7 +4,8 @@ using System.Collections;
 public enum PlayerState
 {
 	Normal,
-	Dialogue
+	Dialogue,
+	Hidden
 }
 
 [RequireComponent(typeof(Animator))]
@@ -87,6 +88,7 @@ public class Player : MonoBehaviour
 	public void PlayerActionHiding()
 	{
 		StartCoroutine("IntoHide");
+		playerState = PlayerState.Hidden;
 		this.SwitchPlayerAction(_hidingAction);
 	}
 

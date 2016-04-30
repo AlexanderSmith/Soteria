@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 8ac6cc77ab0fe974ba12c559cca722a7
-timeCreated: 1449332343
-licenseType: Free
+guid: 564b5f5e16dac2a4c8185749c2037750
+timeCreated: 1462050801
+licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
@@ -9,8 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: polySurface118
-    9500000: //RootNode
+    4300000: _ceiling_connection_a
   materials:
     importMaterials: 1
     materialName: 0
@@ -68,7 +67,7 @@ ModelImporter:
     feetSpacing: 0
     rootMotionBoneName: 
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
