@@ -10,6 +10,6 @@ public class StatueCrumbleTwo : Reaction
 		{
 			GameDirector.instance.ChangeObjective(GameObject.Find ("PortToHub"));
 		}
-		GameDirector.instance.GetDialogueFromReaction("OMalleyExitingObservPuzzSuccess", this.gameObject.transform.parent.gameObject);
+		GameDirector.instance.GetDialogueFromReaction("OMalleyHubp5BeforeObservatoryPuzzle", this.gameObject.transform.parent.gameObject);
 	}
 }

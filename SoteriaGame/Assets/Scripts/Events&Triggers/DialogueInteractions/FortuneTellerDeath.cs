@@ -20,7 +20,7 @@ public class FortuneTellerDeath : MonoBehaviour
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("FTAnaFailUsingTokenHAR");
 			GameDirector.instance.SetupDialogueNPC(this.NpcPortrait);
-			GameDirector.instance.StartDialogue();
+			GameDirector.instance.StartDialogue(true);
 			this.gameObject.GetComponentInChildren<InspectFortuneTeller>().TurnOffInspect();
 		}
 	}

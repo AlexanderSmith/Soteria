@@ -57,7 +57,7 @@ public class DialogueInteraction : InteractionBase
 						GameDirector.instance.SetupDialogueNPC(this.NpcPortrait);
 					if (this.EndsWithChoice)
 						GameDirector.instance.SetupDialogueChoices(this.FirstChoice, this.SecondChoice, this.ThirdChoice);
-					GameDirector.instance.StartDialogue();
+					GameDirector.instance.StartDialogue(CanSkipDialogue);
 					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 				}
 			}

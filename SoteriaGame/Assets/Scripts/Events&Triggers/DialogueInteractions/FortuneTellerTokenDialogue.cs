@@ -10,11 +10,11 @@ public class  FortuneTellerTokenDialogue: MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
+			this.gameObject.GetComponentInChildren<InspectFortuneTeller>().TurnOffInspect();
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("FortuneTellerTokenDialogue");
 			GameDirector.instance.SetupDialogueNPC(this.NpcPortrait);
-			GameDirector.instance.StartDialogue();
-			this.gameObject.GetComponentInChildren<InspectFortuneTeller>().TurnOffInspect();
+			GameDirector.instance.StartDialogue(true);
 		}
 	}
 

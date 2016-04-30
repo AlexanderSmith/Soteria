@@ -4,6 +4,8 @@ using System.Collections;
 public class InteractionBase : MonoBehaviour
 {
 	protected GameObject _interactionbutton;
+	// DAVID KIM //
+	public bool CanSkipDialogue = false;
 
 	// Use this for initialization
 	public virtual void Awake()

@@ -81,7 +81,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("AnaEnteringObservPuzzFirstTime");
-			GameDirector.instance.StartDialogue();
+			GameDirector.instance.StartDialogue(true);
 		}
 	}
 
@@ -216,7 +216,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 			GameDirector.instance.SetupDialogue("AnaObservPuzzAtDoorSuit");
 			GameDirector.instance.StartDialogue();
 		}
-		else if (this._timesFailed == 3 && GameDirector.instance.GetGameState() != GameStates.Suit)
+		else if (this._timesFailed == 3 && GameDirector.instance.GetGameState() != GameStates.Suit && GameDirector.instance.GetGamePhase() < 4)
 		{
 			this._oMalley.SetActive(true);
 		}
