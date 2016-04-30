@@ -8,11 +8,7 @@ public class  FortuneTellerTokenDialogue: MonoBehaviour
 
 	void OnTriggerEnter(Collider player)
 	{
-<<<<<<< HEAD
-		if ( player.GetType() == typeof( BoxCollider ) && player.gameObject.tag == "Player")
-=======
 		if (player.GetType() == typeof(BoxCollider) && player.gameObject.tag == "Player")
->>>>>>> refs/remotes/origin/WorkingBranch
 		{
 			//Debug.Log("collision");
 			this.gameObject.GetComponentInChildren<InspectFortuneTeller>().TurnOffInspect();
