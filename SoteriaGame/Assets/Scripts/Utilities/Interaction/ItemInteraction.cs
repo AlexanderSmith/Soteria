@@ -45,7 +45,7 @@ public class ItemInteraction : InteractionBase
 					GameDirector.instance.SetupDialogue(DialogueName);
 					if (this.IsNpcDialogue)
 						GameDirector.instance.SetupDialogueNPC(this.NpcPortrait);
-					GameDirector.instance.StartDialogue();
+					GameDirector.instance.StartDialogue(CanSkipDialogue);
 					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 				}
 			}
