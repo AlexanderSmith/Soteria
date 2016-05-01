@@ -4,6 +4,7 @@ using System.Collections;
 public class GetCompass : Reaction
 {
 	public GameObject ptLights;
+	public GameObject lantern;
 	public Sprite SplashScreen;
 	private string itemText;
 
@@ -16,6 +17,7 @@ public class GetCompass : Reaction
 	{
 		GameDirector.instance.CompassTrue();
 		ptLights.SetActive(true);
+		GameDirector.instance.ChangeObjective(lantern);
 		GameDirector.instance.StartItemInteraction(SplashScreen, itemText);
 		this.gameObject.transform.parent.gameObject.SetActive(false);
 		GameDirector.instance.GetPlayer().PlayerActionItemPickup();
