@@ -66,9 +66,7 @@ public class EncounterManager : MonoBehaviour
 		if (this.currentState == EncounterState.INACTIVE)
 		{
 			this.currentState = EncounterState.ACTIVE;
-			GameDirector.instance.GetPlayer().gameObject.transform.LookAt(new Vector3(GameObject.FindGameObjectWithTag("Oicys").transform.position.x,
-			                                                                          GameDirector.instance.GetPlayer().gameObject.transform.position.y,
-			                                                                          GameObject.FindGameObjectWithTag("Oicys").transform.position.z));
+			GameDirector.instance.GetPlayer().gameObject.transform.LookAt(new Vector3(7.0f, GameDirector.instance.GetPlayer().gameObject.transform.position.y, 160.0f));
 			GameDirector.instance.GetPlayer().AddFear();
 		}
 	}
