@@ -1302,7 +1302,9 @@ public class GameDirector : MonoBehaviour {
 		this.FindEnemies();
 		this.StopEncounterMode();
 		this.ClearAudioList();
-		if (!this.token)
+		// Player never spoke to Fortune teller to receive token -> punish and reset game
+		// || player gave up token for key piece (in phase 4 of game)
+		if (!this.token && this.GetGamePhase() != 4)
 		{
 			Application.LoadLevel("Harbor");
 		}

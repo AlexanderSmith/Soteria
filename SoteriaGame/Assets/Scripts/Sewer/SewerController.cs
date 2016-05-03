@@ -148,6 +148,6 @@ public class SewerController : MonoBehaviour
 
 	public void EndGame()
 	{
-		Application.LoadLevel("Harbor");
+		Application.LoadLevel("Credits");
 	}
 }

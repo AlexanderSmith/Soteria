@@ -8,7 +8,7 @@ public class CheckObservatoryDefeatedObjective : MonoBehaviour
 	
 	void Awake()
 	{
-		this._observatory = GameObject.Find("Observatory");
+		this._observatory = GameObject.Find("PortToPuzzle");
 		this._portToHub = GameObject.Find("PortToHub");
 	}
 	
