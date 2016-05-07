@@ -773,11 +773,6 @@ public class GameDirector : MonoBehaviour {
 //		this._HUDManager.HUDSceneStart(token, lantern);
 //	}
 
-	public void SetClearStatus(bool inStatus)
-	{
-		_HUDManager.isToClear = inStatus;	
-	}
-
 	public void EncounterClear()
 	{
 		this._HUDManager.EncounterClear();
@@ -990,7 +985,7 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.OicysEncounter();
 		this._stateManager.ChangeGameState (GameStates.Encounter);
 		this._HUDManager.EnableEncounterView();
-		this.SetClearStatus(false);
+		this._HUDManager.SetClearStatus(false);
 		this._player.PlayerActionOicysEnc();
 	}
 
@@ -1011,7 +1006,7 @@ public class GameDirector : MonoBehaviour {
 		}
 		
 		this._HUDManager.EnableEncounterView();
-		this.SetClearStatus(false);
+		this._HUDManager.SetClearStatus(false);
 		// Take away player's ability to fight shadow creatures until after getting rid of the suit pieces
 		if (this._canFight)
 		{
@@ -1040,7 +1035,7 @@ public class GameDirector : MonoBehaviour {
 			this._stateManager.ChangeGameState (GameStates.Encounter);
 		}
 		this._HUDManager.EnableEncounterView();
-		this.SetClearStatus(false);
+		this._HUDManager.SetClearStatus(false);
 		if (this._canFight)
 		{
 			this._player.PlayerActionMusicPuzzle();
@@ -1053,7 +1048,7 @@ public class GameDirector : MonoBehaviour {
 
 	public void PuppetPuzzleWhiteOut()
 	{
-		this.SetClearStatus(false);
+		this._HUDManager.SetClearStatus(false);
 		this._HUDManager.EnablePuppetPuzzleEncounterView();
 	}
 
@@ -1092,7 +1087,7 @@ public class GameDirector : MonoBehaviour {
 			this._stateManager.ChangeGameState (GameStates.Encounter);
 		}
 		this._HUDManager.EnableEncounterView();
-		this.SetClearStatus(false);
+		this._HUDManager.SetClearStatus(false);
 		if (this._canFight)
 		{
 			this._player.PlayerActionObsPuzzle();
@@ -1209,7 +1204,7 @@ public class GameDirector : MonoBehaviour {
 	public void ResetLinger()
 	{
 		this._player.ResetLinger();
-		this.SetClearStatus(false);
+		this._HUDManager.SetClearStatus(false);
 	}
 
 	public void PlayerOvercame()
