@@ -20,13 +20,10 @@ public enum EncounterState
 public class EncounterManager : MonoBehaviour
 {
 	private GameObject currentEnemy;
-
 	private float gameOverTimer = 15.0f;
 	private float hiddenTileDuration;
 	public float hiddenTileTimer = 5.0f;
-
 	private int overcomeCounter = 0;
-
 	private bool ableToOvercome = false;
 
 	EncounterState currentState;
@@ -40,10 +37,6 @@ public class EncounterManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-//		if (this.currentState == EncounterState.ACTIVE)
-//		{
-//			this.GameOverTimer();
-//		}
     }
 
     public void Initialize()

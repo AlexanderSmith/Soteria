@@ -759,7 +759,7 @@ public class GameDirector : MonoBehaviour {
 
 	public void ChangeGameState(GameStates state)
 	{
-		this._stateManager.ChangeGameState (state);
+		this._stateManager.ChangeGameState(state);
 	}
 
 	#endregion
@@ -966,6 +966,37 @@ public class GameDirector : MonoBehaviour {
 	///////////////////////////////////////////////////////////////////
 
     #region EncounterManager
+
+	public void SetEnemyActionNotVisible()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			enemy.GetComponent<BasicEnemyController>().NotVisibleAction();
+		}
+	}
+
+	public void SetEnemyActionHidden()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			enemy.GetComponent<BasicEnemyController>().HiddenAction();
+		}
+	}
+	
+	public void SetEnemyActionHiddenTile()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			enemy.GetComponent<BasicEnemyController>().HiddenTileAction();
+		}
+	}
+
+	public void SetEnemyActionSuit()
+	{
+	}
 
 	public EncounterState GetEncounterState()
 	{

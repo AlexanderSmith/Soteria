@@ -5,9 +5,9 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public GameObject player;
 	private NavMeshAgent _agent;
-	private float _distance = 0.0f;
+	public float distance = 0.0f;
 	private Animator _anim;
-	private bool _dead = false;
+	public bool dead = false;
 	private bool _stunned = false;
 	private int _opCounter = 1;
 
@@ -23,6 +23,12 @@ public class BasicEnemyController : MonoBehaviour {
 	public float lookAtDistance = 45.0f;
 	public float attackRange = 35.0f;
 	public float overwhelmRange = 15.0f;
+
+	private IEnemyAction _currentAction;
+	private IEnemyAction _notVisibleEA = new EnemyActionNotVisible();
+	private IEnemyAction _visibleEA = new EnemyActionVisible();
+	private IEnemyAction _hiddenEA = new EnemyActionHidden();
+	private IEnemyAction _hiddenTileEA = new EnemyActionHiddenTile();
 	
 	// Use this for initialization
 	public void Start()
@@ -34,59 +40,69 @@ public class BasicEnemyController : MonoBehaviour {
 		_agent = GetComponent<NavMeshAgent> ();
 		_anim = GetComponent<Animator> ();
 		this._stunDuration = this.stunTimer;
+//		normEC = this.GetComponentInChildren<EnemyControllerNormal>();
+//		hiddenEC = this.GetComponentInChildren<EnemyControllerNormal>();
+//		hiddenTileEC = this.GetComponentInChildren<EnemyControllerNormal>();
+		this._currentAction = this._notVisibleEA;
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if (this._stunned)
-		{
-			this._agent.Stop();
-			this.Stunned();
-		}
-		else if (GetComponent<EnemySight>().IsPlayerVisible() && GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
-		{
-			if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
-			{
-				this.LookAtPlayer();
-				GameDirector.instance.PlayerOnObservatoryTile();
-			}
-			else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
-			{
-				this.Unaware();
-			}
-			else if (!this._dead)
-			{
-				this._distance = Vector3.Distance(this.transform.position, player.transform.position);
-				if (this._distance <= this.overwhelmRange)
-				{
-					if (GameDirector.instance.GetGameState() != GameStates.Suit)
-					{
-						this.OverwhelmPlayer();
-						GameDirector.instance.Encounter(this.gameObject);
-					}
-					else
-					{
-						this.LookAtPlayer();
-					}
-				}
-				else if (this._distance <= this.attackRange)
-				{
-					this.ChasePlayer();
-				}
-				else
-				{
-					this.LookAtPlayer();
-				}
-			}
-		}
-		else
-		{
-			if (GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
-			{
-				this.Unaware();
-			}
-		}
+		this._currentAction.EnemyAction(this);
+//		if (this._stunned)
+//		{
+//			this._agent.Stop();
+//			this.Stunned();
+//		}
+//		else if (GetComponent<EnemySight>().IsPlayerVisible() && GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
+//		{
+//			if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
+//			{
+//				this.LookAtPlayer();
+//				GameDirector.instance.PlayerOnObservatoryTile();
+//			}
+//			else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
+//			{
+//				this.Unaware();
+//			}
+//			else if (!this._dead)
+//			{
+//				this._distance = Vector3.Distance(this.transform.position, player.transform.position);
+//				if (this._distance <= this.overwhelmRange)
+//				{
+//					if (GameDirector.instance.GetGameState() != GameStates.Suit)
+//					{
+//						this.OverwhelmPlayer();
+//						GameDirector.instance.Encounter(this.gameObject);
+//					}
+//					else
+//					{
+//						this.LookAtPlayer();
+//					}
+//				}
+//				else if (this._distance <= this.attackRange)
+//				{
+//					this.ChasePlayer();
+//				}
+//				else
+//				{
+//					this.LookAtPlayer();
+//				}
+//			}
+//		}
+//		else if (this._dead)
+//		{
+//			this._agent.Stop();
+//
+//		}
+//		else
+//		{
+//			if (GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
+//			{
+//				this.Unaware();
+//			}
+//		}
 	}
 	
 	public void LookAtPlayer()
@@ -110,6 +126,16 @@ public class BasicEnemyController : MonoBehaviour {
 	public void OverwhelmPlayer()
 	{
 		_agent.Stop();
+		this.ForceOverwhelmState();
+	}
+
+	void ForceOverwhelmState()
+	{
+		this.transform.LookAt(player.transform.position);
+		_anim.SetBool ("Alert", true);
+		_anim.SetBool ("Aggro", true);
+		_anim.SetBool ("Alert", false);
+		_anim.SetBool ("Moving", false);
 	}
 	
 	public void Unaware()
@@ -154,7 +180,7 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public float GetDistance()
 	{
-		return this._distance;
+		return this.distance;
 	}
 
 	public void Stun()
@@ -193,13 +219,15 @@ public class BasicEnemyController : MonoBehaviour {
 	public void Cower()
 	{
 		_anim.SetBool ("Cower", true);
-		_dead = true;
+		dead = true;
 		_opCounter = 1;
 	}
 
+	// Called from animation controller at end of Cower animation
 	public void DestroyMe()
 	{
-		GameDirector.instance.KillEnemy();
+		//GameDirector.instance.KillEnemy();
+		this.gameObject.SetActive(false);
 	}
 
 	public void NextOPStage()
@@ -221,5 +249,30 @@ public class BasicEnemyController : MonoBehaviour {
 	public NavMeshAgent GetAgent()
 	{
 		return this._agent;
+	}
+
+	void SwitchAction(IEnemyAction inAction)
+	{
+		this._currentAction = inAction;
+	}
+
+	public void NotVisibleAction()
+	{
+		SwitchAction(this._notVisibleEA);
+	}
+
+	public void VisibleAction()
+	{
+		SwitchAction(this._visibleEA);
+	}
+
+	public void HiddenAction()
+	{
+		SwitchAction(this._hiddenEA);
+	}
+
+	public void HiddenTileAction()
+	{
+		SwitchAction(this._hiddenTileEA);
 	}
 }
