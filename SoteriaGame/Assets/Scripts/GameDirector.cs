@@ -960,6 +960,11 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._HUDManager.ResumeScreenFade();
 	}
+
+	public void EndGameImageOn()
+	{
+		this._HUDManager.EndGameImageOn();
+	}
 	
 	///////////////////////////////////////////////////////////////////
 	////////////////// ENCOUNTER MANAGER FUNCTIONS ////////////////////

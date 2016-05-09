@@ -67,6 +67,8 @@ public class HudManager : MonoBehaviour {
 	GameObject CompassInv;
 	GameObject LanternInv;
 
+	private GameObject _endGame;
+
 	InventorySwapChoice currChoice;
 	enum InventorySwapChoice
 	{
@@ -171,6 +173,9 @@ public class HudManager : MonoBehaviour {
 		CoinInv_2.SetActive(false);
 		
 		currChoice = InventorySwapChoice.First;
+
+		this._endGame = GameObject.Find("EndGameImage");
+		this._endGame.GetComponent<Image>().enabled = false;
 	}
 
 	// Update is called once per frame
@@ -665,5 +670,10 @@ public class HudManager : MonoBehaviour {
 	public void ResumeScreenFade()
 	{
 		this._fadeinout.gameObject.SetActive(true);
+	}
+
+	public void EndGameImageOn()
+	{
+		this._endGame.GetComponent<Image>().enabled = true;
 	}
 }

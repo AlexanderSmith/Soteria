@@ -66,7 +66,8 @@ public class SewerController : MonoBehaviour
 				xformTimer.ResetTimer();
 				GameDirector.instance.EndDialogue();
 				GameDirector.instance.GetPlayer().PlayerActionPause();
-				GameDirector.instance.GetDialogueFromReaction("AnaFinal", this.transform.parent.gameObject);
+				Application.LoadLevel ("EndGameScene");
+				//GameDirector.instance.GetDialogueFromReaction("AnaFinal", this.transform.parent.gameObject);
 			}
 		}
 	}
@@ -146,8 +147,8 @@ public class SewerController : MonoBehaviour
 		_boss = boss3;
 	}
 
-	public void EndGame()
-	{
-		Application.LoadLevel("Credits");
-	}
+//	public void EndGame()
+//	{
+//		Application.LoadLevel("Credits");
+//	}
 }
