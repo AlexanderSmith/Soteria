@@ -1,23 +1,22 @@
 fileFormatVersion: 2
-guid: 6480076ef6c9dcb489f0855487351325
-timeCreated: 1446698928
-licenseType: Free
+guid: 20fd38b79613dd648938c34f2b6a0fbe
+timeCreated: 1462908933
+licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: FlowerShop_MeshPart0
-    100002: FlowerShop_MeshPart1
-    100004: //RootNode
-    400000: FlowerShop_MeshPart0
-    400002: FlowerShop_MeshPart1
-    400004: //RootNode
-    2300000: FlowerShop_MeshPart0
-    2300002: FlowerShop_MeshPart1
-    3300000: FlowerShop_MeshPart0
-    3300002: FlowerShop_MeshPart1
-    4300000: FlowerShop_MeshPart0
-    4300002: FlowerShop_MeshPart1
-    9500000: //RootNode
+    100000: //RootNode
+    100002: HUB_Bld_Flower_MeshPart0
+    100004: HUB_Bld_Flower_MeshPart1
+    400000: //RootNode
+    400002: HUB_Bld_Flower_MeshPart0
+    400004: HUB_Bld_Flower_MeshPart1
+    2300000: HUB_Bld_Flower_MeshPart0
+    2300002: HUB_Bld_Flower_MeshPart1
+    3300000: HUB_Bld_Flower_MeshPart0
+    3300002: HUB_Bld_Flower_MeshPart1
+    4300000: HUB_Bld_Flower_MeshPart0
+    4300002: HUB_Bld_Flower_MeshPart1
   materials:
     importMaterials: 1
     materialName: 0
@@ -74,10 +73,8 @@ ModelImporter:
     legStretch: .0500000007
     feetSpacing: 0
     rootMotionBoneName: 
-    hasTranslationDoF: 0
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
-  humanoidOversampling: 1
+  animationType: 0
   additionalBone: 0
   userData: 
   assetBundleName: 
