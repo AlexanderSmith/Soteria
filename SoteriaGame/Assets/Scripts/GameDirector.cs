@@ -1460,20 +1460,22 @@ public class GameDirector : MonoBehaviour {
 		switch(inType)
 		{
 			case ItemType.Token:
-				this._HUDManager.SwapTokenForKey();
+				//this._HUDManager.SwapTokenForKey();
 				this.token = false;
 			break;
 			
 			case ItemType.Compass:    
-				this._HUDManager.SwapCompassForKey();
+				//this._HUDManager.SwapCompassForKey();
 				this.compass = false;
 			break;
 			
 			case ItemType.Lantern:
-				this._HUDManager.SwapLanternForKey();
+				//this._HUDManager.SwapLanternForKey();
 				this.lantern = false;
 			break;
 		}
+		//Replacing all the commented out calls above. Happened in HUD manager port. 
+		this._HUDManager.SwapForKey (inType);
 	}
 
 	#endregion
