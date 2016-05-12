@@ -449,7 +449,7 @@ public class AudioSourceWrapper
 		{
 			GameDirector.instance.StopEncounterMode();
 			GameDirector.instance.GetPlayer().ResetEncounter();
-			GameDirector.instance.PlayerOvercame();
+			GameDirector.instance.PlayerOvercameMusic();
 		}
 	}
 	

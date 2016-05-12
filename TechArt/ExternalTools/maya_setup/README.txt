@@ -1,1 +1,0 @@
-Make sure to go through pipeline setup before setting up Maya.

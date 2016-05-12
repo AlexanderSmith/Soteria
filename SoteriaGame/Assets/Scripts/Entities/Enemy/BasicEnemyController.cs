@@ -4,7 +4,7 @@ using System.Collections;
 public class BasicEnemyController : MonoBehaviour {
 
 	public GameObject player;
-	private NavMeshAgent _agent;
+	public NavMeshAgent _agent;
 	public float distance = 0.0f;
 	private Animator _anim;
 	public bool dead = false;
@@ -24,11 +24,15 @@ public class BasicEnemyController : MonoBehaviour {
 	public float attackRange = 35.0f;
 	public float overwhelmRange = 15.0f;
 
+	public bool theaterEnemy;
+
 	private IEnemyAction _currentAction;
 	private IEnemyAction _notVisibleEA = new EnemyActionNotVisible();
 	private IEnemyAction _visibleEA = new EnemyActionVisible();
 	private IEnemyAction _hiddenEA = new EnemyActionHidden();
 	private IEnemyAction _hiddenTileEA = new EnemyActionHiddenTile();
+	private IEnemyAction _theaterEA = new EnemyActionTheater();
+	private IEnemyAction _stunnedEA = new EnemyActionStunned();
 	
 	// Use this for initialization
 	public void Start()
@@ -43,7 +47,14 @@ public class BasicEnemyController : MonoBehaviour {
 //		normEC = this.GetComponentInChildren<EnemyControllerNormal>();
 //		hiddenEC = this.GetComponentInChildren<EnemyControllerNormal>();
 //		hiddenTileEC = this.GetComponentInChildren<EnemyControllerNormal>();
-		this._currentAction = this._notVisibleEA;
+		if (!this.theaterEnemy)
+		{
+			this.NotVisibleAction();
+		}
+		else
+		{
+			this.TheaterAction();
+		}
 	}
 	
 	// Update is called once per frame
@@ -185,7 +196,8 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void Stun()
 	{
-		this._stunned = true;
+		//this._stunned = true;
+		this.StunnedAction();
 	}
 
 	public bool GetStunStatus()
@@ -235,14 +247,22 @@ public class BasicEnemyController : MonoBehaviour {
 		_opCounter++;
 	}
 
-	private void Stunned()
+	public void Stunned()
 	{
+		this._agent.Stop();
 		this._stunDuration -= Time.deltaTime;
 		if (this._stunDuration <= 0)
 		{
-			this._stunned = false;
+			//this._stunned = false;
 			this._stunDuration = stunTimer;
-			_agent.Resume();
+			if (this.theaterEnemy)
+			{
+				this.TheaterAction();
+			}
+			else
+			{
+				this.NotVisibleAction();
+			}
 		}
 	}
 
@@ -258,21 +278,33 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void NotVisibleAction()
 	{
-		SwitchAction(this._notVisibleEA);
+		_agent.Resume();
+		this.SwitchAction(this._notVisibleEA);
 	}
 
 	public void VisibleAction()
 	{
-		SwitchAction(this._visibleEA);
+		this.SwitchAction(this._visibleEA);
 	}
 
 	public void HiddenAction()
 	{
-		SwitchAction(this._hiddenEA);
+		this.SwitchAction(this._hiddenEA);
 	}
 
 	public void HiddenTileAction()
 	{
-		SwitchAction(this._hiddenTileEA);
+		this.SwitchAction(this._hiddenTileEA);
+	}
+
+	public void StunnedAction()
+	{
+		this.SwitchAction(this._stunnedEA);
+	}
+
+	public void TheaterAction()
+	{
+		_agent.Resume();
+		this.SwitchAction (this._theaterEA);
 	}
 }

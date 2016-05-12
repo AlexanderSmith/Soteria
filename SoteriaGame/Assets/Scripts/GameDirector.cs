@@ -1250,6 +1250,12 @@ public class GameDirector : MonoBehaviour {
 		this._stateManager.ChangeGameState(GameStates.Normal);
 	}
 
+	public void PlayerOvercameMusic()
+	{
+		this._encounterManager.PlayerOvercameMusic();
+		this._stateManager.ChangeGameState(GameStates.Normal);
+	}
+
 	public void PlayerOvercameOicys()
 	{
 		this._encounterManager.PlayerOvercameOicys();

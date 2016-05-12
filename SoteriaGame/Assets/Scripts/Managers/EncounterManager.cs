@@ -59,9 +59,7 @@ public class EncounterManager : MonoBehaviour
 		if (this.currentState == EncounterState.INACTIVE)
 		{
 			this.currentState = EncounterState.ACTIVE;
-			GameDirector.instance.GetPlayer().gameObject.transform.LookAt(new Vector3(GameObject.FindGameObjectWithTag("Oicys").transform.position.x,
-			                                                                          GameDirector.instance.GetPlayer().gameObject.transform.position.y,
-			                                                                          GameObject.FindGameObjectWithTag("Oicys").transform.position.z));
+			GameDirector.instance.GetPlayer().gameObject.transform.LookAt(new Vector3(7.0f, GameDirector.instance.GetPlayer().gameObject.transform.position.y, 160.0f));
 			GameDirector.instance.GetPlayer().AddFear();
 		}
 	}
@@ -80,6 +78,14 @@ public class EncounterManager : MonoBehaviour
 		GameDirector.instance.StopEncounterMode();
 		this.EncounterReset();
     }
+
+	public void StopEncounterMusic()
+	{
+		this.MusicCower();
+		GameDirector.instance.GetPlayer().RemoveFear();
+		GameDirector.instance.StopEncounterMode();
+		this.EncounterReset();
+	}
 
 	public void StopPuzzleEncounter()
 	{
@@ -163,6 +169,11 @@ public class EncounterManager : MonoBehaviour
 		this.StopEncounter();
 	}
 
+	public void PlayerOvercameMusic()
+	{
+		this.StopEncounterMusic();
+	}
+
 	public void PlayerOvercameOicys()
 	{
 		this.StopOicysEnc();
@@ -180,55 +191,59 @@ public class EncounterManager : MonoBehaviour
 
 	public void Overpower()
 	{
-		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
-		{
-			this.currentEnemy.GetComponent<BasicEnemyController>().Overpower();
-		}
-		else
-		{
-			this.currentEnemy.GetComponent<EyeballShadowCreatureController>().Overpower();
-		}
+//		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
+//		{
+//			this.currentEnemy.GetComponent<BasicEnemyController>().Overpower();
+//		}
+//		else
+//		{
+//			this.currentEnemy.GetComponent<EyeballShadowCreatureController>().Overpower();
+//		}
+		this.currentEnemy.GetComponent<BasicEnemyController>().Overpower();
 	}
 
 	public void ResetOverpower()
 	{
-		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
-		{
-			this.currentEnemy.GetComponent<BasicEnemyController>().Overpower();
-		}
-		else
-		{
-			this.currentEnemy.GetComponent<EyeballShadowCreatureController>().Overpower();
-		}
+//		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
+//		{
+//			this.currentEnemy.GetComponent<BasicEnemyController>().Overpower();
+//		}
+//		else
+//		{
+//			this.currentEnemy.GetComponent<EyeballShadowCreatureController>().Overpower();
+//		}
+		this.currentEnemy.GetComponent<BasicEnemyController>().ResetOverpower();
 	}
 
 	public void NextOPStage()
 	{
-		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
-		{
-			this.currentEnemy.GetComponent<BasicEnemyController>().NextOPStage();
-		}
-		else
-		{
-			this.currentEnemy.GetComponent<EyeballShadowCreatureController>().NextOPStage();
-		}
+//		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
+//		{
+//			this.currentEnemy.GetComponent<BasicEnemyController>().NextOPStage();
+//		}
+//		else
+//		{
+//			this.currentEnemy.GetComponent<EyeballShadowCreatureController>().NextOPStage();
+//		}
+		this.currentEnemy.GetComponent<BasicEnemyController>().NextOPStage();
 	}
 
 	public void Cower()
 	{
 		// Bad!!!!!!!!!!!!
-		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
-		{
-			this.currentEnemy.GetComponent<BasicEnemyController>().Cower();
-		}
-		else if (this.currentEnemy.GetComponent<EyeballShadowCreatureController>() != null)
-		{
-			this.currentEnemy.GetComponent<EyeballShadowCreatureController>().Cower();
-		}
-		else
-		{
-			this.MusicCower();
-		}
+//		if (this.currentEnemy.GetComponent<BasicEnemyController>() != null)
+//		{
+//			this.currentEnemy.GetComponent<BasicEnemyController>().Cower();
+//		}
+//		else if (this.currentEnemy.GetComponent<EyeballShadowCreatureController>() != null)
+//		{
+//			this.currentEnemy.GetComponent<EyeballShadowCreatureController>().Cower();
+//		}
+//		else
+//		{
+//			this.MusicCower();
+//		}
+		this.currentEnemy.GetComponent<BasicEnemyController>().Cower();
 	}
 
 	public void MusicCower()
@@ -252,26 +267,30 @@ public class EncounterManager : MonoBehaviour
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		if (enemies.Length > 0)
 		{
-			if (enemies[0].GetComponent<BasicEnemyController>() != null)
+			foreach (GameObject enemy in enemies)
 			{
-				foreach (GameObject enemy in enemies)
-				{
-					if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= enemy.GetComponent<BasicEnemyController>().lookAtDistance)
-					{
-						enemy.GetComponent<BasicEnemyController>().Stun();
-					}
-				}
+				enemy.GetComponent<BasicEnemyController>().Stun();
 			}
-			else
-			{
-				foreach (GameObject enemy in enemies)
-				{
-					if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= enemy.GetComponent<EyeballShadowCreatureController>().lookAtDistance)
-					{
-						enemy.GetComponent<EyeballShadowCreatureController>().Stun();
-					}
-				}
-			}
+//			if (enemies[0].GetComponent<BasicEnemyController>() != null)
+//			{
+//				foreach (GameObject enemy in enemies)
+//				{
+//					if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= enemy.GetComponent<BasicEnemyController>().lookAtDistance)
+//					{
+//						enemy.GetComponent<BasicEnemyController>().Stun();
+//					}
+//				}
+//			}
+//			else
+//			{
+//				foreach (GameObject enemy in enemies)
+//				{
+//					if (Vector3.Distance(enemy.transform.position, GameDirector.instance.GetPlayer().transform.position) <= enemy.GetComponent<EyeballShadowCreatureController>().lookAtDistance)
+//					{
+//						enemy.GetComponent<EyeballShadowCreatureController>().Stun();
+//					}
+//				}
+//			}
 			this.StopEncounterFromItem();
 		}
 	}
