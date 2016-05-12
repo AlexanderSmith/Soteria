@@ -61,9 +61,9 @@ public class HudManager : MonoBehaviour {
 	GameObject RightKey;
 	GameObject MidKey;
 	
-	GameObject CoinInv;
-	GameObject CoinInv_1;
-	GameObject CoinInv_2;
+	GameObject TokenInv;
+	GameObject TokenInv_1;
+	GameObject TokenInv_2;
 	GameObject CompassInv;
 	GameObject LanternInv;
 
@@ -161,16 +161,17 @@ public class HudManager : MonoBehaviour {
 		MidKey = GameObject.Find("MidKey");
 		MidKey.SetActive(false);
 		
-		CoinInv = GameObject.Find("Coin");
+		TokenInv = GameObject.Find("Coin");
 		CompassInv = GameObject.Find("Compass");
 		LanternInv = GameObject.Find("Lantern");
 
-		CoinInv_1 = GameObject.Find("Coin_1");
-		CoinInv_1.SetActive(false);
-		CoinInv_2 = GameObject.Find("Coin_2");
-		CoinInv_2.SetActive(false);
+		TokenInv_1 = GameObject.Find("Coin_1");
+		TokenInv_1.SetActive(false);
+		TokenInv_2 = GameObject.Find("Coin_2");
+		TokenInv_2.SetActive(false);
 		
 		currChoice = InventorySwapChoice.First;
+		StartKeySwapInteraction(null);
 	}
 
 	// Update is called once per frame
@@ -180,6 +181,106 @@ public class HudManager : MonoBehaviour {
 		UpdateIndicator();
 	}
 
+	//Working on consolidating the 3 functions below
+	public void SwapForKey(ItemType inType)
+	{
+		if (inType == ItemType.Token) 
+		{
+			SwapTokenForKey();
+		} 
+		else 
+		{
+			SwapItemForKey(inType);
+		}
+	}
+
+	public void SwapTokenForKey()
+	{
+		switch(currChoice)
+		{
+		case InventorySwapChoice.First:
+			TokenInv.SetActive(false);
+			LeftKey.SetActive(true);
+			GameDirector.instance.LeftKeyAcquired();
+			GameDirector.instance.EndTriggerState();
+			//			GameDirector.instance.SetupDialogue("AnaDroppingItemAfterMusicPuzz", GameObject.Find ("OMalleyProvokeMusic"));
+			//			GameDirector.instance.SetupDialogueNPC(Resources.Load ("GUI/Portraits/O'MalleyColor") as Sprite);
+			//			GameDirector.instance.StartDialogue();
+			break;
+			
+		case InventorySwapChoice.Second:
+			
+			if ( TokenInv_1.activeSelf)
+				TokenInv_1.SetActive(false);
+			if (TokenInv_2.activeSelf)
+				TokenInv_2.SetActive(false);
+			
+			RightKey.SetActive(true);
+			break;
+			
+		case InventorySwapChoice.Third:
+			
+			if ( TokenInv_1.activeSelf)
+				TokenInv_1.SetActive(false);
+			if (TokenInv_2.activeSelf)
+				TokenInv_2.SetActive(false);
+			
+			MidKey.SetActive(true);
+			break;
+		default:
+			break;
+		}
+		currChoice++;
+	}
+
+	public void SwapItemForKey(ItemType inType)
+	{
+		GameObject whatToSwap = null;
+		GameObject tokenDummy = null;
+		
+		if (inType == ItemType.Lantern) 
+		{
+			whatToSwap = LanternInv;
+			tokenDummy = TokenInv_1;
+		} 
+		else if (inType == ItemType.Compass) 
+		{
+			whatToSwap = CompassInv;
+			tokenDummy = TokenInv_2;
+		}
+		
+		switch(currChoice)
+		{
+		case InventorySwapChoice.First:
+			whatToSwap.SetActive(false);
+			LeftKey.SetActive(true);
+			tokenDummy.SetActive(true);
+			TokenInv.SetActive(false);
+			GameDirector.instance.LeftKeyAcquired();
+			GameDirector.instance.EndTriggerState();
+			//			GameDirector.instance.SetupDialogue("AnaDroppingItemAfterMusicPuzz", GameObject.Find ("OMalleyProvokeMusic"));
+			//			GameDirector.instance.SetupDialogueNPC(Resources.Load ("GUI/Portraits/O'MalleyColor") as Sprite);
+			//			GameDirector.instance.StartDialogue();
+			break;
+			
+		case InventorySwapChoice.Second:
+			whatToSwap.SetActive(false);
+			RightKey.SetActive(true);
+			break;
+			
+		case InventorySwapChoice.Third:
+			whatToSwap.SetActive(false);
+			MidKey.SetActive(true);
+			break;
+			
+		default:
+			break;
+		}
+		
+		currChoice++;
+	}
+
+	/*Depricated
 	public void SwapCompassForKey()
 	{
 		switch(currChoice)
@@ -187,8 +288,8 @@ public class HudManager : MonoBehaviour {
 		case InventorySwapChoice.First:
 			CompassInv.SetActive(false);
 			LeftKey.SetActive(true);
-			CoinInv_1.SetActive(true);
-			CoinInv.SetActive(false);
+			TokenInv_1.SetActive(true);
+			TokenInv.SetActive(false);
 			GameDirector.instance.LeftKeyAcquired();
 			GameDirector.instance.EndTriggerState();
 //			GameDirector.instance.SetupDialogue("AnaDroppingItemAfterMusicPuzz", GameObject.Find ("OMalleyProvokeMusic"));
@@ -219,9 +320,9 @@ public class HudManager : MonoBehaviour {
 		{
 		case InventorySwapChoice.First:
 			LanternInv.SetActive(false);
-			CoinInv.SetActive(false);
+			TokenInv.SetActive(false);
 			LeftKey.SetActive(true);
-			CoinInv_2.SetActive(true);
+			TokenInv_2.SetActive(true);
 			GameDirector.instance.LeftKeyAcquired();
 			GameDirector.instance.EndTriggerState();
 //			GameDirector.instance.SetupDialogue("AnaDroppingItemAfterMusicPuzz", GameObject.Find ("OMalleyProvokeMusic"));
@@ -243,47 +344,12 @@ public class HudManager : MonoBehaviour {
 			break;
 		}
 		currChoice++;
-	}
+	}*/
 
-	public void SwapTokenForKey()
-	{
-		switch(currChoice)
-		{
-			case InventorySwapChoice.First:
-				CoinInv.SetActive(false);
-				LeftKey.SetActive(true);
-				GameDirector.instance.LeftKeyAcquired();
-			GameDirector.instance.EndTriggerState();
-//			GameDirector.instance.SetupDialogue("AnaDroppingItemAfterMusicPuzz", GameObject.Find ("OMalleyProvokeMusic"));
-//			GameDirector.instance.SetupDialogueNPC(Resources.Load ("GUI/Portraits/O'MalleyColor") as Sprite);
-//			GameDirector.instance.StartDialogue();
-			break;
-
-			case InventorySwapChoice.Second:
-				
-				if ( CoinInv_1.activeSelf)
-					CoinInv_1.SetActive(false);
-				if (CoinInv_2.activeSelf)
-					CoinInv_2.SetActive(false);
-
-				RightKey.SetActive(true);
-			break;
-
-			case InventorySwapChoice.Third:
-
-				if ( CoinInv_1.activeSelf)
-					CoinInv_1.SetActive(false);
-				if (CoinInv_2.activeSelf)
-					CoinInv_2.SetActive(false);
-
-				MidKey.SetActive(true);
-			break;
-			default:
-			break;
-		}
-		currChoice++;
-	}
-
+	// The error with the indicator in this function is because the clipping of the camera unloads the objective object point if you walk too
+	// far behind it. Because of this the error has that weird flipping. However Unity doesn't provide an easy way to keep those objects alive
+	// realative to the screen, and therefore the camera, so we are temporarily leaving this as an outstanding bug until we can come up with a 
+	// working solution.
 	private void UpdateIndicator ()
 	{
 		if (Objective == null) 
@@ -327,17 +393,22 @@ public class HudManager : MonoBehaviour {
 			//Check if Y is out of bounds//
 			if (ObjectPosition.y > Screen.height)
 				y = Screen.height - offset;
-			else if (ObjectPosition.y < 0)
+			else if (ObjectPosition.y < 0) 
 				y = offset;
-			
+
+			//Debug.Log("Screen " + Screen.width + " ," + Screen.height;
+			//Debug.Log("ObjectPosition " + ObjectPosition.x + " ," + ObjectPosition.y);
+			//Debug.Log("Arrow Screen Pos " + x + " ," + y);
 			_offIndicator.transform.position = new Vector3 (x, y , 0);
 
+			Vector3 playerScreenPos = Camera.main.WorldToScreenPoint (GameDirector.instance.GetPlayer().gameObject.transform.position);
 			//Should also add rotation for the arrow to point at,
 			this._compassRotation = Quaternion.identity;
-			if (GameDirector.instance.GetPlayer().gameObject.transform.position.x < ObjectPosition.x /*|| GameDirector.instance.GetPlayer().gameObject.transform.position.z < ObjectPosition.z*/)
+
+			if (playerScreenPos.x < ObjectPosition.x /*|| GameDirector.instance.GetPlayer().gameObject.transform.position.z < ObjectPosition.z*/)
 			{
 				this._compassRotation.eulerAngles = new Vector3(0, 0, -Vector3.Angle(GameDirector.instance.GetPlayer().gameObject.transform.position - ObjectPosition, 
-			                                                                    GameDirector.instance.GetPlayer().gameObject.transform.forward));
+				                                                                     GameDirector.instance.GetPlayer().gameObject.transform.forward));
 			}
 			else
 			{
@@ -345,10 +416,15 @@ public class HudManager : MonoBehaviour {
 				                                                                    GameDirector.instance.GetPlayer().gameObject.transform.forward));
 			}
 			this._offIndicator.transform.rotation = this._compassRotation;
-
+			
 			/************************Still need below*********************/
 			//Add a second check if it's in the corner than rotate the arrow correctly.
 		}
+	}
+
+	public void SetClearStatus(bool status)
+	{
+		this.isToClear = status;
 	}
 
 	private void UpdateFade()
