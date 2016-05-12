@@ -88,11 +88,10 @@ using System;
 		CARD_3				= 0x00000040,
 //		SOMECARDSTUFF		= 0x00000080,
 
-//		0x1 0x2 x4 0x8 x10 0x20
-//		FROM_TOKEN			= 64,
-//		FROM_MUSIC			= 128,
-//		FROM_OBS			= 256,
-//		CLEAR_LOCators 		=
+		FROM_PUZZLE			= 0x00000100,
+		FROM_MUSIC			= 0x00000200,
+		FROM_THEATER		= 0x00000400,
+		FROM_OBS			= 0000000800,
 //		...
 //
 //	-Go to Hub
