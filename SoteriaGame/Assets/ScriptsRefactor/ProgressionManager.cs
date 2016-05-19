@@ -149,9 +149,9 @@ public class ProgressionManager : MonoBehaviour
 		_sceneState = SceneFlags.EMPTY_FLAG;
 		_worldState = WorldFlags.EMPTY_FLAG;
 	}	
+
 #region SINGLETON_STUFF
-	private static ProgressionManager _instance{get ; private set;}
-	/*
+	private static ProgressionManager _instance;
 	public static ProgressionManager instance
 	{
 		get
@@ -162,21 +162,24 @@ public class ProgressionManager : MonoBehaviour
 			}
 			return _instance;
 		}
+
 	}
-	*/
-	
-	void Awake()
+	private void Awake()
 	{
-		if( _instance && this != _instance )
+		if (_instance == null)
 		{
-			Destroy( this.gameObject );
+			_instance = this;            
+			DontDestroyOnLoad(this.gameObject); //Keep the instance going between scenes
+			_instance.Init();
 		}
-
-		_instance = this;
-
-		DontDestroyOnLoad(gameObject);
-
-		_instance.Init();
+		else
+		{
+			if (this != _instance)
+			{
+				DestroyImmediate(this.gameObject);
+				return;
+			}
+		}
 	}
 #endregion
 	

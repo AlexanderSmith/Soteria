@@ -5,5 +5,6 @@ public class Scene : MonoBehaviour
 {
 	protected SceneName sceneName;
 
-	protected abstract void InterpretSceneState();
+	// PROBABLY DEPRECATED
+//	protected abstract void InterpretSceneState();
 }
