@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
-namespace GameEnums
-{
+
 	//========================================================//
 	//	SCENES IN GAME										
 	//========================================================//
@@ -50,7 +50,7 @@ namespace GameEnums
 	//========================================================//
 	//	SCENE_STATE FLAGS										
 	//========================================================//
-	[System.Flags]
+	[Flags]
 	public enum SceneFlags
 	{
 		EMPTY_FLAG			= 0x00000000,
@@ -59,6 +59,9 @@ namespace GameEnums
 		FLAG_2				= 0x00000010,
 		FLAG_3				= 0x00000100,
 		FLAG_4				= 0x00001000,
+
+
+
 		FLAG_5				= 0x00010000,
 		FLAG_6				= 0x00100000,
 		FLAG_7				= 0x01000000,
@@ -70,26 +73,25 @@ namespace GameEnums
 	//========================================================//
 	//	WORLD_STATE FLAGS										
 	//========================================================//
-	[System.Flags]
+	[Flags]
 	public enum WorldFlags
 	{
 		EMPTY_FLAG			= 0x00000000,
 		
-		TOKEN				= 0x00000001,
-		LANTERN				= 0x00000002,
-		COMPASS				= 0x00000004,
-		SUIT				= 0x00000008,
+		ITEM_TOKEN			= 0x00000001,
+		ITEM_LANTERN		= 0x00000002,
+		ITEM_COMPASS		= 0x00000004,
+		ITEM_SUIT			= 0x00000008,
 
 		CARD_1				= 0x00000010,
 		CARD_2				= 0x00000020,
 		CARD_3				= 0x00000040,
 //		SOMECARDSTUFF		= 0x00000080,
 
-//		0x1 0x2 x4 0x8 x10 0x20
-//		FROM_TOKEN			= 64,
-//		FROM_MUSIC			= 128,
-//		FROM_OBS			= 256,
-//		CLEAR_LOCators 		=
+		FROM_PUZZLE			= 0x00000100,
+		FROM_MUSIC			= 0x00000200,
+		FROM_THEATER		= 0x00000400,
+		FROM_OBS			= 0000000800,
 //		...
 //
 //	-Go to Hub
@@ -100,4 +102,3 @@ namespace GameEnums
 
 		WF_FORCE_DWORD 		= 0x7FFFFFFF
 	};
-};
