@@ -23,8 +23,8 @@ public class AudioManager : MonoBehaviour
 		_audioSourceList = new List<AudioSourceWrapper>();
 		//TimerManager.instance.Attach(fadeTimer, TimersType.Puzzle);
 		// Not working
-//		fadeInTimer = TimerManager.instance.Attach(TimersType.FadeIn);
-//		fadeOutTimer = TimerManager.instance.Attach(TimersType.FadeOut);
+		fadeInTimer = TimerManager.instance.Attach(TimersType.FadeIn);
+		fadeOutTimer = TimerManager.instance.Attach(TimersType.FadeOut);
 	}
 
 	public void AddAudioSource(string inClipName, AudioID inAID, GameObject inGameObj)
@@ -173,16 +173,22 @@ public class AudioManager : MonoBehaviour
 		// lerp volume, don't call below
 		//FindAudioSrcbyID (inAID).fadeOut();
 		float volume = FindAudioSrcbyID (inAID).getVolume();
-		fadeOutTimer.StartTimer();
-		if (fadeOutTimer.ElapsedTime() <= 5.0f)
+		if (fadeOutTimer.IsStarted() && fadeOutTimer.ElapsedTime() <= 5.0f)
 		{
 			volume = Mathf.Lerp (volume, 0.0f, Time.deltaTime);
-			FadeOut(inAID);
+			ChangeVolume(inAID, volume);
+			Debug.Log("Fading Out" + inAID.ToString());
 		}
 		else
 		{
-			fadeOutTimer.ResetTimer();
+			fadeOutTimer.StopTimer();
 		}
+	}
+
+	public void StartFadeOutTimer()
+	{
+		fadeOutTimer.ResetTimer();
+		fadeOutTimer.StartTimer();
 	}
 
 	public void FadeIn(AudioID inAID)
@@ -191,16 +197,22 @@ public class AudioManager : MonoBehaviour
 		// lerp volume
 		//FindAudioSrcbyID (inAID).fadeIn();
 		float volume = FindAudioSrcbyID (inAID).getVolume();
-		fadeInTimer.StartTimer();
-		if (fadeInTimer.ElapsedTime() <= 5.0f)
+		if (fadeInTimer.IsStarted() && fadeInTimer.ElapsedTime() <= 5.0f)
 		{
 			volume = Mathf.Lerp (volume, 1.0f, Time.deltaTime);
-			FadeIn(inAID);
+			ChangeVolume(inAID, volume);
+			Debug.Log("Fading In" + inAID.ToString());
 		}
 		else
 		{
-			fadeInTimer.ResetTimer();
+			fadeInTimer.StopTimer();
 		}
+	}
+
+	public void StartFadeInTimer()
+	{
+		fadeInTimer.ResetTimer();
+		fadeInTimer.StartTimer();
 	}
 }
 

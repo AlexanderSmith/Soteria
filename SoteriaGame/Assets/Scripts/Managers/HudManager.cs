@@ -171,7 +171,7 @@ public class HudManager : MonoBehaviour {
 		TokenInv_2.SetActive(false);
 		
 		currChoice = InventorySwapChoice.First;
-		StartKeySwapInteraction(null);
+		//StartKeySwapInteraction(null);
 	}
 
 	// Update is called once per frame
