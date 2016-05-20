@@ -37,6 +37,7 @@ public class EnemySight : MonoBehaviour
 					if(hit.collider.gameObject.Equals(player.gameObject) && !GetComponent<BasicEnemyController>().GetStunStatus())
 					{
 						this._playerVisible = true;
+						this.GetComponent<BasicEnemyController>().VisibleAction();
 					}
 				}
 				//Debug.DrawRay(this.gameObject.transform.position + (eyeHeightOffset * this.gameObject.transform.up), direction, Color.white, 200, false);
@@ -49,6 +50,7 @@ public class EnemySight : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			this._playerVisible = false;
+			this.GetComponent<BasicEnemyController>().NotVisibleAction();
 		}
 	}
 

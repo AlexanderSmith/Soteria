@@ -66,16 +66,19 @@ public class StateManager : MonoBehaviour {
 	{
 
 		gameState = GameStates.Normal;
+		GameDirector.instance.SetEnemyActionNotVisible();
 	}
 
 	private void SwitchToHidden()
 	{
 		gameState = GameStates.Hidden;
+		GameDirector.instance.SetEnemyActionHidden();
 	}
 
 	private void SwitchToHiddenTile()
 	{
 		gameState = GameStates.HiddenTile;
+		GameDirector.instance.SetEnemyActionHiddenTile();
 	}
 
 	private void SwitchToPause()
