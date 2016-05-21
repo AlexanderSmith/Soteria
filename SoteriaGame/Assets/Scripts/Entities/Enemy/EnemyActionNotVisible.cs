@@ -21,7 +21,7 @@ public class EnemyActionNotVisible : IEnemyAction
 				
 				if(Physics.Raycast(inController.gameObject.transform.position + (inController.eyeHeightOffset * inController.gameObject.transform.up), direction, out hit, inController.sphereCollider.radius))
 				{
-					if(hit.collider.gameObject.Equals(GameDirector.instance.GetPlayer().gameObject) /*&& !inController.GetComponent<BasicEnemyController>().GetStunStatus()*/)
+					if(hit.collider.gameObject.Equals(GameDirector.instance.GetPlayer().gameObject))
 					{
 						inController.GetComponent<BasicEnemyController>().VisibleAction();
 					}

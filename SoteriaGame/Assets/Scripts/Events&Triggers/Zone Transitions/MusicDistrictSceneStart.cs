@@ -9,7 +9,7 @@ public class MusicDistrictSceneStart : MonoBehaviour
 
 	// Instantiate Player prefab based on progression using GameDirector
 	void Awake()
-	{
+	{		
 		if (GameDirector.instance.GetFromPuzzle())
 		{
 			GameObject player = Instantiate(playerPrefab, puzzleSpawnLoc.position, puzzleSpawnLoc.rotation) as GameObject;
@@ -22,6 +22,7 @@ public class MusicDistrictSceneStart : MonoBehaviour
 			GameObject player = Instantiate(playerPrefab, districtSpawnLoc.position, districtSpawnLoc.rotation) as GameObject;
 			GameDirector.instance.InitializePlayer();
 			GameDirector.instance.ResetFromMusicDistrict();
+			GameDirector.instance.SuitWorn();
 		}
 	}
 }

@@ -33,6 +33,7 @@ public class BasicEnemyController : MonoBehaviour {
 	private IEnemyAction _hiddenTileEA = new EnemyActionHiddenTile();
 	private IEnemyAction _theaterEA = new EnemyActionTheater();
 	private IEnemyAction _stunnedEA = new EnemyActionStunned();
+	private IEnemyAction _suitEA = new EnemyActionSuit();
 	
 	public bool playerVisible;
 	public float fieldOfVision = 125.0f;
@@ -52,7 +53,11 @@ public class BasicEnemyController : MonoBehaviour {
 //		normEC = this.GetComponentInChildren<EnemyControllerNormal>();
 //		hiddenEC = this.GetComponentInChildren<EnemyControllerNormal>();
 //		hiddenTileEC = this.GetComponentInChildren<EnemyControllerNormal>();
-		if (!this.theaterEnemy)
+		if (GameDirector.instance.GetGameState() == GameStates.Suit)
+		{
+			this.SuitAction();
+		}
+		else if (!this.theaterEnemy)
 		{
 			this.NotVisibleAction();
 		}
@@ -317,5 +322,10 @@ public class BasicEnemyController : MonoBehaviour {
 	{
 		_agent.Resume();
 		this.SwitchAction (this._theaterEA);
+	}
+
+	public void SuitAction()
+	{
+		this.SwitchAction(this._suitEA);
 	}
 }
