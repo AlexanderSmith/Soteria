@@ -27,6 +27,8 @@ public class ObservatoryPuzzleController : MonoBehaviour
 
 	private GameObject[] _lights;
 
+	private WorldFlags worldFlagState 	= WorldFlags.EMPTY_FLAG;
+
 	// Use this for initialization
 	void Awake()
 	{
@@ -34,6 +36,8 @@ public class ObservatoryPuzzleController : MonoBehaviour
 //		GameDirector.instance.SuitWorn();
 //		GameDirector.instance.ObsPuzzleActivated();
 //		GameDirector.instance.SuitRemoved();
+
+		worldFlagState = ProgressionManager.instance.Flags_World;
 
 		tileUp.GetComponentInChildren<Light>().enabled = false;
 		tileDown.GetComponentInChildren<Light>().enabled = false;
@@ -54,7 +58,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		this._oMalley.SetActive(false);
 		this._activated = false;
 
-		if (GameDirector.instance.GetGameState() == GameStates.Suit)
+		if (FlagTools.World_CheckFlag(worldFlagState, WorldFlags.ITEM_SUIT))
 		{
 			foreach (GameObject light in _lights)
 			{
@@ -78,7 +82,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 //		GameDirector.instance.ObsPuzzleActivated();
 //		GameDirector.instance.SuitRemoved();
 
-		if (!GameDirector.instance.GetObsActivated() && GameDirector.instance.GetGameState() != GameStates.Suit)
+		if (!FlagTools.World_CheckFlag(worldFlagState, WorldFlags.HUB_PHASE4) && !FlagTools.World_CheckFlag(worldFlagState, WorldFlags.ITEM_SUIT))
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("AnaEnteringObservPuzzFirstTime");
@@ -90,7 +94,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			if (!GameDirector.instance.isDialogueActive() && !GameDirector.instance.GetObsActivated())
+			if (!GameDirector.instance.isDialogueActive() && !FlagTools.World_CheckFlag(worldFlagState, WorldFlags.HUB_PHASE4))
 			{
 				GameDirector.instance.ObsPuzzleActivated();
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
@@ -201,7 +205,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 
 	public void TickFail()
 	{
-		if (GameDirector.instance.GetGameState() != GameStates.Suit)
+		if (!FlagTools.World_CheckFlag(worldFlagState, WorldFlags.ITEM_SUIT))
 		{
 			foreach(GameObject light in this._lights)
 			{
@@ -213,13 +217,13 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		this._doorEncountersWon = 0;
 		this._timesFailed++;
 		
-		if (this._timesFailed == 1 && GameDirector.instance.GetGameState() == GameStates.Suit)
+		if (this._timesFailed == 1 && FlagTools.World_CheckFlag(worldFlagState, WorldFlags.ITEM_SUIT))
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("AnaObservPuzzAtDoorSuit");
 			GameDirector.instance.StartDialogue();
 		}
-		else if (this._timesFailed == 3 && GameDirector.instance.GetGameState() != GameStates.Suit && GameDirector.instance.GetGamePhase() < 4)
+		else if (this._timesFailed == 3 && !FlagTools.World_CheckFlag(worldFlagState, WorldFlags.ITEM_SUIT) && GameDirector.instance.GetGamePhase() < 4)
 		{
 			this._oMalley.SetActive(true);
 		}

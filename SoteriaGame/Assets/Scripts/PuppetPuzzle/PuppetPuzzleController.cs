@@ -16,8 +16,12 @@ public class PuppetPuzzleController : MonoBehaviour
 	private GameObject _currentLight;
 	private bool _lastFight;
 
+	private WorldFlags worldFlagState 	= WorldFlags.EMPTY_FLAG;
+
 	void Awake()
 	{
+		worldFlagState = ProgressionManager.instance.Flags_World;
+
 		leftSpot.GetComponent<Light>().enabled = false;
 		leftSpot.GetComponent<SphereCollider>().enabled = false;
 		backSpot.GetComponent<Light>().enabled = false;
@@ -39,9 +43,9 @@ public class PuppetPuzzleController : MonoBehaviour
 //		GameDirector.instance.PuppetPuzzleActivated();
 //		GameDirector.instance.SuitRemoved();
 
-		if (!GameDirector.instance.IsTheaterDefeated())
+		if (!FlagTools.World_CheckFlag(worldFlagState, WorldFlags.THEATER_DEFEATED))
 		{
-			if (!GameDirector.instance.GetPuppetActivated())
+			if (!FlagTools.World_CheckFlag(worldFlagState, WorldFlags.HUB_PHASE3))
 			{
 				this._intro.SetActive(true);
 			}
