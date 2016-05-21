@@ -11,7 +11,6 @@ public class SceneHarbor : Scene
 	void Awake()
 	{
 		this.sceneName = SceneName.HARBOR;
-		ProgressionManager.LoadScene( this.sceneName );
 	}
 	
 	void Start()

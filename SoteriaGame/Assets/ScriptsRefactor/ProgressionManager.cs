@@ -7,64 +7,145 @@ public class ProgressionManager : MonoBehaviour
 {
 	private Dictionary< SceneName, string > 				dict_SceneToStr =	
 		new Dictionary< SceneName, string >();
-	private Dictionary< SceneName, SceneFlags >				dict_SceneToFlags =
-		new Dictionary< SceneName, SceneFlags >();
-
-	private SceneName	_curScene;
-	private SceneFlags	_sceneState;
 	
-	private WorldFlags	_worldState;
+	public SceneFlags Flags_MAIN_MENU;
+	public SceneFlags Flags_CREDITS;
+	
+	public SceneFlags Flags_HARBOR;
+	public SceneFlags Flags_HARBOR_RESPAWN;
+	
+	public SceneFlags Flags_HUB_1;
+	public SceneFlags Flags_HUB_2;
+	public SceneFlags Flags_HUB_3;
+	public SceneFlags Flags_HUB_4;
+	
+	public SceneFlags Flags_MUSIC_1;
+	public SceneFlags Flags_MUSIC_2;
+	public SceneFlags Flags_MUSIC_3;
+	public SceneFlags Flags_MUSIC_4;
+	public SceneFlags Flags_MUSIC_PUZZLE;
+	
+	public SceneFlags Flags_THEATER_1;
+	public SceneFlags Flags_THEATER_2;
+	public SceneFlags Flags_THEATER_3;
+	public SceneFlags Flags_THEATER_4;
+	public SceneFlags Flags_THEATER_PUZZLE;
+	
+	public SceneFlags Flags_OBS_1;
+	public SceneFlags Flags_OBS_2;
+	public SceneFlags Flags_OBS_3;
+	public SceneFlags Flags_OBS_4;
+	public SceneFlags Flags_OBS_PUZZLE;
+	
+	public SceneFlags Flags_SEWERS;
+	public SceneFlags Flags_TUTORIAL;
+
+
+	public SceneName	CurSceneName;
+	public WorldFlags	Flags_World;
 	
 	#region ACCESSORS/MUTATORS
-	public static bool LoadScene( SceneName sceneToLoad )
+	public static class AccessOther
 	{
-		if( _instance.dict_SceneToFlags.ContainsKey( sceneToLoad ) )
+		public static class HarborRespawn
 		{
-			// Save Current Scene's Flags
-			_instance.dict_SceneToFlags[ _instance._curScene ] = _instance._sceneState;
+			public static void ChangeSomeFlag()
+			{
 
-			// Set Current Scene as Scene to Load
-			_instance._curScene = sceneToLoad;
-
-			// Load *new* Current Scene
-			_instance._sceneState = _instance.dict_SceneToFlags[ _instance._curScene ]; 
-
-			return true;
-		}
-		else
-		{
-			Debug.Log( "*ERROR* ProgressionManager::LoadScene() : Can't find sceneName key in SceneToFlags Dictionary" );
-			//Assert//
-			return false;
+			}
 		}
 	}
 
-	public static SceneFlags	curSceneState
+	// RETURNED BY VALUE
+	public static SceneFlags GetSceneFlags( SceneName inName )
 	{
-		get
+		switch( inName )
 		{
-			return _instance._sceneState;
-		}
-		set
-		{
-			_instance._sceneState = curSceneState;
+		case SceneName.MAIN_MENU:
+			return instance.Flags_MAIN_MENU;
+			break;
+		case SceneName.CREDITS:
+			return instance.Flags_CREDITS;
+			break;
+		case SceneName.HARBOR:
+			return instance.Flags_HARBOR;
+			break;
+		case SceneName.HARBOR_RESPAWN:
+			return instance.Flags_HARBOR_RESPAWN;
+			break;
+		case SceneName.HUB_1:
+			return instance.Flags_HUB_1;
+			break;
+		case SceneName.HUB_2:
+			return instance.Flags_HUB_2;
+			break;
+		case SceneName.HUB_3:
+			return instance.Flags_HUB_3;
+			break;
+		case SceneName.HUB_4:
+			return instance.Flags_HUB_4;
+			break;
+		case SceneName.MUSIC_1:
+			return instance.Flags_MUSIC_1;
+			break;
+		case SceneName.MUSIC_2:
+			return instance.Flags_MUSIC_2;
+			break;
+		case SceneName.MUSIC_3:
+			return instance.Flags_MUSIC_3;
+			break;
+		case SceneName.MUSIC_4:
+			return instance.Flags_MUSIC_4;
+			break;
+		case SceneName.MUSIC_PUZZLE:
+			return instance.Flags_MUSIC_PUZZLE;
+			break;
+		case SceneName.THEATER_1:
+			return instance.Flags_THEATER_1;
+			break;
+		case SceneName.THEATER_2:
+			return instance.Flags_THEATER_2;
+			break;
+		case SceneName.THEATER_3:
+			return instance.Flags_THEATER_3;
+			break;
+		case SceneName.THEATER_4:
+			return instance.Flags_THEATER_4;
+			break;
+		case SceneName.THEATER_PUZZLE:
+			return instance.Flags_THEATER_PUZZLE;
+			break;
+		case SceneName.OBS_1:
+			return instance.Flags_OBS_1;
+			break;
+		case SceneName.OBS_2:
+			return instance.Flags_OBS_2;
+			break;
+		case SceneName.OBS_3:
+			return instance.Flags_OBS_3;
+			break;
+		case SceneName.OBS_4:
+			return instance.Flags_OBS_4;
+			break;
+		case SceneName.OBS_PUZZLE:
+			return instance.Flags_OBS_PUZZLE;
+			break;
+		case SceneName.SEWERS:
+			return instance.Flags_SEWERS;
+			break;
+		case SceneName.TUTORIAL:
+			return instance.Flags_TUTORIAL;
+			break;
+		default:
+			UnityEngine.Assertions.Assert.AreEqual(0,0);
+			break;
 		}
 	}
-	public static WorldFlags	curWorldState
-	{
-		get
-		{
-			return _instance._worldState;
-		}
-		set
-		{
-			_instance._worldState = curWorldState;
-		}
-	}
-#endregion
+
+	#endregion
 
 	// TEMPORARY - Did not know where to put init stuff for ProgMan
-	#region DICTIONARY_INIT
+	#region INIT_FUNCTIONS
 	private void InitSceneNameDict()
 	{
 		dict_SceneToStr.Add( SceneName.MAIN_MENU, "MainMenu" );
@@ -98,56 +179,50 @@ public class ProgressionManager : MonoBehaviour
 		dict_SceneToStr.Add( SceneName.SEWERS, "Sewers" );
 		dict_SceneToStr.Add( SceneName.TUTORIAL, "Tutorial" );
 	}
-	
-	private void InitSceneInfoDict()
+	private void InitSceneFlags()
 	{
-		dict_SceneToFlags.Add( SceneName.MAIN_MENU, SceneFlags.EMPTY_FLAG);
-		dict_SceneToFlags.Add( SceneName.CREDITS, SceneFlags.EMPTY_FLAG);
-		dict_SceneToFlags.Add( SceneName.HARBOR, SceneFlags.EMPTY_FLAG);
-		dict_SceneToFlags.Add( SceneName.HARBOR_RESPAWN,  SceneFlags.EMPTY_FLAG);
+		Flags_MAIN_MENU = SceneFlags.EMPTY_FLAG;
+		Flags_CREDITS = SceneFlags.EMPTY_FLAG;
 		
-		dict_SceneToFlags.Add( SceneName.HUB_1, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.HUB_2, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.HUB_3, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.HUB_4, SceneFlags.EMPTY_FLAG );
+		Flags_HARBOR = SceneFlags.EMPTY_FLAG;
+		Flags_HARBOR_RESPAWN = SceneFlags.EMPTY_FLAG;
 		
-		dict_SceneToFlags.Add( SceneName.MUSIC_1, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.MUSIC_2, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.MUSIC_3, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.MUSIC_4, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.MUSIC_PUZZLE, SceneFlags.EMPTY_FLAG );
+		Flags_HUB_1 = SceneFlags.EMPTY_FLAG;
+		Flags_HUB_2 = SceneFlags.EMPTY_FLAG;
+		Flags_HUB_3 = SceneFlags.EMPTY_FLAG;
+		Flags_HUB_4 = SceneFlags.EMPTY_FLAG;
 		
-		dict_SceneToFlags.Add( SceneName.THEATER_1, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.THEATER_2, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.THEATER_3, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.THEATER_4, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.THEATER_PUZZLE, SceneFlags.EMPTY_FLAG );
+		Flags_MUSIC_1 = SceneFlags.EMPTY_FLAG;
+		Flags_MUSIC_2 = SceneFlags.EMPTY_FLAG;
+		Flags_MUSIC_3 = SceneFlags.EMPTY_FLAG;
+		Flags_MUSIC_4 = SceneFlags.EMPTY_FLAG;
+		Flags_MUSIC_PUZZLE = SceneFlags.EMPTY_FLAG;
 		
-		dict_SceneToFlags.Add( SceneName.OBS_1, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.OBS_2, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.OBS_3, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.OBS_4, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.OBS_PUZZLE, SceneFlags.EMPTY_FLAG );
+		Flags_THEATER_1 = SceneFlags.EMPTY_FLAG;
+		Flags_THEATER_2 = SceneFlags.EMPTY_FLAG;
+		Flags_THEATER_3 = SceneFlags.EMPTY_FLAG;
+		Flags_THEATER_4 = SceneFlags.EMPTY_FLAG;
+		Flags_THEATER_PUZZLE = SceneFlags.EMPTY_FLAG;
 		
-		dict_SceneToFlags.Add( SceneName.SEWERS, SceneFlags.EMPTY_FLAG );
-		dict_SceneToFlags.Add( SceneName.TUTORIAL, SceneFlags.EMPTY_FLAG );
+		Flags_OBS_1 = SceneFlags.EMPTY_FLAG;
+		Flags_OBS_2 = SceneFlags.EMPTY_FLAG;
+		Flags_OBS_3 = SceneFlags.EMPTY_FLAG;
+		Flags_OBS_4 = SceneFlags.EMPTY_FLAG;
+		Flags_OBS_PUZZLE = SceneFlags.EMPTY_FLAG;
+		
+		Flags_SEWERS = SceneFlags.EMPTY_FLAG;
+		Flags_TUTORIAL = SceneFlags.EMPTY_FLAG;
 
-		
-		dict_SceneToFlags.Add( SceneName.NO_SCENE, SceneFlags.EMPTY_FLAG );
 	}
 	#endregion 
 	private void Init()
 	{
 		// Init Dictionaries
-		InitSceneInfoDict();
 		InitSceneNameDict();
 
-		// Init Scene Key
-		_curScene = SceneName.NO_SCENE;
-
-		// Init Scene States
-		_sceneState = SceneFlags.EMPTY_FLAG;
-		_worldState = WorldFlags.EMPTY_FLAG;
+		// Init 
+		CurSceneName = SceneName.NO_SCENE;
+		Flags_World = WorldFlags.EMPTY_FLAG;
 	}	
 
 #region SINGLETON_STUFF
