@@ -28,21 +28,21 @@ public class SceneHub3 : Scene
 	{
 		worldFlagState = ProgressionManager.instance.Flags_World;
 
-		if (FlagTools.World_CheckFlag(WorldFlags.ITEM_SUIT, worldFlagState)) 
+		if (FlagTools.World_CheckFlag(worldFlagState, WorldFlags.ITEM_SUIT)) 
 		{
-			if(FlagTools.World_CheckFlag(WorldFlags.MUSIC_WITH_SUIT, worldFlagState)) 
+			if(FlagTools.World_CheckFlag(worldFlagState, WorldFlags.MUSIC_WITH_SUIT)) 
 			{
 				GameDirector.instance.ChangeObjective(hubToMusic);
 				this._oMalleySuitOff.SetActive(false);
 				return;
 			}
-			else if(FlagTools.World_CheckFlag(WorldFlags.THEATER_WITH_SUIT, worldFlagState))
+			else if(FlagTools.World_CheckFlag(worldFlagState, WorldFlags.THEATER_WITH_SUIT))
 			{
 				GameDirector.instance.ChangeObjective(hubToTheater);
 				this._oMalleySuitOff.SetActive(false);
 				return;
 			}
-			else if(FlagTools.World_CheckFlag(WorldFlags.OBS_WITH_SUIT, worldFlagState))
+			else if(FlagTools.World_CheckFlag(worldFlagState, WorldFlags.OBS_WITH_SUIT))
 			{
 				GameDirector.instance.ChangeObjective(hubToObservatory);
 				this._oMalleySuitOff.SetActive(false);
@@ -52,21 +52,21 @@ public class SceneHub3 : Scene
 		else 
 		{
 			this._oMalleySuitOff.SetActive(false);
-			if (FlagTools.World_CheckFlag(WorldFlags.TUTORIAL_COMPLETE, worldFlagState))
+			if (FlagTools.World_CheckFlag(worldFlagState, WorldFlags.TUTORIAL_COMPLETE))
 			{
-				if(FlagTools.World_CheckFlag(WorldFlags.ITEM_COMPASS, worldFlagState))
+				if(FlagTools.World_CheckFlag(worldFlagState, WorldFlags.ITEM_COMPASS))
 				{
-					if(FlagTools.World_CheckFlag(WorldFlags.MUSIC_DEFEATED, worldFlagState))
+					if(FlagTools.World_CheckFlag(worldFlagState, WorldFlags.MUSIC_DEFEATED))
 					{
 						GameDirector.instance.ChangeObjective(hubToMusic);
 						return;
 					}
-					else if(FlagTools.World_CheckFlag(WorldFlags.THEATER_DEFEATED, worldFlagState))
+					else if(FlagTools.World_CheckFlag(worldFlagState, WorldFlags.THEATER_DEFEATED))
 					{
 						GameDirector.instance.ChangeObjective(hubToTheater);
 						return;
 					}
-					else if(FlagTools.World_CheckFlag(WorldFlags.OBS_DEFEATED, worldFlagState))
+					else if(FlagTools.World_CheckFlag(worldFlagState, WorldFlags.OBS_DEFEATED))
 					{
 						GameDirector.instance.ChangeObjective(hubToObservatory);
 						return;
@@ -76,7 +76,7 @@ public class SceneHub3 : Scene
 				GameDirector.instance.ChangeObjective(soteriaStatue);
 			}
 			
-			else if (FlagTools.World_CheckFlag(WorldFlags.MUSIC_DEFEATED, worldFlagState) && FlagTools.World_CheckFlag(WorldFlags.THEATER_DEFEATED, worldFlagState) && FlagTools.World_CheckFlag(WorldFlags.OBS_DEFEATED, worldFlagState))
+			else if (FlagTools.World_CheckFlag(worldFlagState, WorldFlags.MUSIC_DEFEATED) && FlagTools.World_CheckFlag(worldFlagState, WorldFlags.THEATER_DEFEATED) && FlagTools.World_CheckFlag(worldFlagState, WorldFlags.OBS_DEFEATED))
 			{
 				this._oMalleyStatue.SetActive(true);
 			}
