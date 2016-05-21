@@ -24,15 +24,17 @@ public class TailorInteraction : MonoBehaviour
 		this._tailorFirstDialogue = GameObject.Find("TailorFirstInteraction");
 		this._tailorCorrectCards = GameObject.Find("TailorCorrectCards");
 		this._tailorIncorrectCards = GameObject.Find("TailorIncorrectCards");
-		this._tailorFirstDialogue.SetActive(false);
+//		this._tailorFirstDialogue.SetActive(false);
 		this._tailorCorrectCards.SetActive(false);
 		this._tailorIncorrectCards.SetActive(false);
-		this.tailorLight = GameObject.Find("TailorLight");
-		tailorLight.GetComponent<Light>().enabled = false;
+		this.tailorLight = GameObject.Find("Tailor_Light");
+
 	}
 
 	void Start()
 	{
+		this._tailorFirstDialogue.SetActive(false);
+		tailorLight.GetComponent<Light>().enabled = false;
 //		GameDirector.instance.TailorSpokenTo();
 //		GameDirector.instance.MusicCardCollected (this._musicDistrictCard);
 //		GameDirector.instance.TheaterCardCollected (this._theaterDistrictCard);

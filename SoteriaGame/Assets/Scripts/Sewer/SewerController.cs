@@ -66,7 +66,8 @@ public class SewerController : MonoBehaviour
 				xformTimer.ResetTimer();
 				GameDirector.instance.EndDialogue();
 				GameDirector.instance.GetPlayer().PlayerActionPause();
-				GameDirector.instance.GetDialogueFromReaction("AnaFinal", this.transform.parent.gameObject);
+				Application.LoadLevel ("EndGameScene");
+				//GameDirector.instance.GetDialogueFromReaction("AnaFinal", this.transform.parent.gameObject);
 			}
 		}
 	}
@@ -108,11 +109,13 @@ public class SewerController : MonoBehaviour
 	{
 		GameDirector.instance.StartOicysEncounter(this);
 		GameDirector.instance.EndTriggerState();
+		GameDirector.instance.ChangeVolume(AudioID.Whispers, 0.5f);
 	}
 
 	public void EncounterWon()
 	{
 		this._encCounter++;
+		GameDirector.instance.ChangeVolume(AudioID.Whispers, 0);
 		switch (this._encCounter)
 		{
 		case 2:
@@ -146,8 +149,8 @@ public class SewerController : MonoBehaviour
 		_boss = boss3;
 	}
 
-	public void EndGame()
-	{
-		Application.LoadLevel("Harbor");
-	}
+//	public void EndGame()
+//	{
+//		Application.LoadLevel("Credits");
+//	}
 }

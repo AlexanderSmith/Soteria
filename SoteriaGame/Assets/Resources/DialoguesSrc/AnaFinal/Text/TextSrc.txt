@@ -1,2 +1,2 @@
 <b>Ana: </b>I paid with my dreams for a sense of safety. Now I know they are a currency too valuable to squander on Soteria's altar. There is life to be lived and my desire to live it fully helped me to embrace and overcome my fears. Time to leave this place.
-<trigger/>SewerController-EndGame-
+<trigger/>EndTrigger-EndGame-

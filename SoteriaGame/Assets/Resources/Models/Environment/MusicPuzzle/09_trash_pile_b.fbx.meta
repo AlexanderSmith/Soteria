@@ -1,7 +1,7 @@
 fileFormatVersion: 2
-guid: 6d3886a615537974eb5870b437fdb412
-timeCreated: 1449332343
-licenseType: Free
+guid: 62c63db402f7caf47902362877c35055
+timeCreated: 1462050830
+licenseType: Pro
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: polySurface104
+    4300000: trashpile_B
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -9,9 +9,9 @@ public class CheckTheaterDefeatedObjective : MonoBehaviour
 	
 	void Awake()
 	{
-		this._puppetStore = GameObject.Find("PuppetStore");
+		this._puppetStore = GameObject.Find("PortToPuzzle");
 		this._portToHub = GameObject.Find("PortToHub");
-		this._oMalleySewerProvoke = GameObject.Find("MalleyTheaterProvoke");
+		this._oMalleySewerProvoke = GameObject.Find("O'MalleyTheaterProvoke");
 		this._oMalleySewerProvoke.SetActive(false);
 
 		//Hacks for testing provoke
@@ -23,7 +23,7 @@ public class CheckTheaterDefeatedObjective : MonoBehaviour
 	{
 		if (GameDirector.instance.GetCompass())
 		{
-			if (GameDirector.instance.IsMusicDefeated())
+			if (GameDirector.instance.IsTheaterDefeated())
 			{
 				switch (GameDirector.instance.GetStatueCrumble())
 				{

@@ -33,6 +33,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 		//Hack for suit
 //		GameDirector.instance.SuitWorn();
 //		GameDirector.instance.ObsPuzzleActivated();
+//		GameDirector.instance.SuitRemoved();
 
 		tileUp.GetComponentInChildren<Light>().enabled = false;
 		tileDown.GetComponentInChildren<Light>().enabled = false;
@@ -161,6 +162,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 	{
 		this._offPath = true;
 		this.lastTile.GetComponent<BoxCollider>().enabled = false;
+		GameDirector.instance.ChangeVolume(AudioID.Whispers, 0.5f);
 	}
 
 	public bool GetOffPath()
@@ -188,6 +190,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 	public void DoorEncounterWon()
 	{
 		this._doorEncountersWon++;
+		GameDirector.instance.ChangeVolume(AudioID.Whispers, 0);
 		if (this._doorEncountersWon > 3)
 		{
 			this._reset.GetComponent<BoxCollider>().enabled = false;

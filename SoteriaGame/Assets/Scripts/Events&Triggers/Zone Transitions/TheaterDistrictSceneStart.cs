@@ -27,6 +27,7 @@ public class TheaterDistrictSceneStart : MonoBehaviour
 
 //	void Start()
 //	{
-//		GameDirector.instance.LanternTrue();
+//		GameDirector.instance.CompassTrue();
+//		GameDirector.instance.TheaterPuzzleDefeated();
 //	}
 }
