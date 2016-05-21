@@ -10,10 +10,10 @@ public static class FlagTools
 	public static SceneFlags Scene_MakeFlag( params SceneFlags[] flagsToAdd )
 	{
 		SceneFlags resultFlag = SceneFlags.EMPTY_FLAG;
-		
+
 		for( int i = 0; i < flagsToAdd.Length; i++ )
 		{
-			resultFlag = resultFlag | flagsToAdd[0];
+			resultFlag = resultFlag | flagsToAdd[i];
 		}
 		
 		return resultFlag;
@@ -41,7 +41,7 @@ public static class FlagTools
 		
 		for( int i = 0; i < flagsToAdd.Length; i++ )
 		{
-			resultFlag = resultFlag | flagsToAdd[0];
+			resultFlag = resultFlag | flagsToAdd[i];
 		}
 		
 		return resultFlag;
