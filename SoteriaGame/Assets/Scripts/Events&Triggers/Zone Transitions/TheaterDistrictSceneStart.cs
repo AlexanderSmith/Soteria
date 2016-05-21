@@ -24,4 +24,10 @@ public class TheaterDistrictSceneStart : MonoBehaviour
 			GameDirector.instance.ResetFromTheaterDistrict();
 		}
 	}
+
+//	void Start()
+//	{
+//		GameDirector.instance.CompassTrue();
+//		GameDirector.instance.TheaterPuzzleDefeated();
+//	}
 }
