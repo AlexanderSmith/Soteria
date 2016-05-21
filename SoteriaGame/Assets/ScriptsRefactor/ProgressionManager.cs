@@ -45,13 +45,34 @@ public class ProgressionManager : MonoBehaviour
 	public WorldFlags	Flags_World;
 	
 	#region ACCESSORS/MUTATORS
-	public static class AccessOther
+	public static class ProgressActions
 	{
-		public static class HarborRespawn
+		public static class DialogueActs
 		{
-			public static void ChangeSomeFlag()
+			/*
+			HARBOR_RESPAWN
+				const SceneFlags FailedObsDialogueExhausted			= SceneFlags.HEX_00000001;
+				const SceneFlags FailedTheaterDialogueExhausted  	= SceneFlags.HEX_00000010;
+				const SceneFlags FailedMusicDialogueExhausted		= SceneFlags.HEX_00000100;
+			*/
+			public static void FailedMusicDialogueExhausted()
 			{
+				FlagTools.Scene_AddFlag( ref ProgressionManager.instance.Flags_HARBOR_RESPAWN, SceneFlags.HEX_00000100);
+			//	FlagTools.Scene_AddFlag( instance.Flags_HUB_2, SceneFlags.HEX_00000100);
+				
+				GameDirector.instance.ChangeObjective(GameObject.Find("HubToTheater"));
+			}
+			public static void FailedTheaterDialogueExhausted()
+			{
+				FlagTools.Scene_AddFlag( ref ProgressionManager.instance.Flags_HARBOR_RESPAWN, SceneFlags.HEX_00000010);
+				//	FlagTools.Scene_AddFlag( instance.Flags_HUB_3, SceneFlags.HEX_00000100);
 
+				GameDirector.instance.ChangeObjective(GameObject.Find("HubToObservatory"));
+			}
+			public static void FailedObsDialogueExhausted()
+			{
+				FlagTools.Scene_AddFlag( ref ProgressionManager.instance.Flags_HARBOR_RESPAWN, SceneFlags.HEX_00000001);
+				//	FlagTools.Scene_AddFlag( instance.Flags_HUB_4, SceneFlags.HEX_00000100);
 			}
 		}
 	}
