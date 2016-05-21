@@ -34,8 +34,13 @@ public class BasicEnemyController : MonoBehaviour {
 	private IEnemyAction _theaterEA = new EnemyActionTheater();
 	private IEnemyAction _stunnedEA = new EnemyActionStunned();
 	
+	public bool playerVisible;
+	public float fieldOfVision = 125.0f;
+	public SphereCollider sphereCollider;
+	public float eyeHeightOffset;
+	
 	// Use this for initialization
-	public void Start()
+	void Start ()
 	{
 		if (player == null)
 		{
@@ -55,6 +60,7 @@ public class BasicEnemyController : MonoBehaviour {
 		{
 			this.TheaterAction();
 		}
+		this.sphereCollider = GetComponent<SphereCollider> ();
 	}
 	
 	// Update is called once per frame
