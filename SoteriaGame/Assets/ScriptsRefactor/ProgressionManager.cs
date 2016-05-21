@@ -138,6 +138,7 @@ public class ProgressionManager : MonoBehaviour
 			break;
 		default:
 			UnityEngine.Assertions.Assert.AreEqual(0,0);
+			return SceneFlags.EMPTY_FLAG;
 			break;
 		}
 	}
