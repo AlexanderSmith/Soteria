@@ -9,11 +9,17 @@ public class KillMusic : MonoBehaviour
 		{
 			if (Input.GetKeyDown(KeyCode.Space))
 			{
-				GameDirector.instance.ChangeVolume(AudioID.OrganMusic, 0.1f);
-				GameDirector.instance.ChangeVolume(AudioID.BrassMusic, 0.1f);
-				GameDirector.instance.ChangeVolume(AudioID.WindMusic, 0.1f);
-				GameDirector.instance.ChangeVolume(AudioID.StringMusic, 0.1f);
+				GameDirector.instance.StartFadeOutTimer ();
+				Debug.Log ("Starting Fade Out Timer");
 			}
 		}
+	}
+
+	public void Update()
+	{
+		GameDirector.instance.FadeOut (AudioID.OrganMusic);
+		GameDirector.instance.FadeOut (AudioID.BrassMusic);
+		GameDirector.instance.FadeOut (AudioID.WindMusic);
+		GameDirector.instance.FadeOut (AudioID.StringMusic);
 	}
 }

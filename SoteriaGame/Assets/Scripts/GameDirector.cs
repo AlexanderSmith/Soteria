@@ -1469,9 +1469,19 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.FadeIn(inAID);
 	}
 
+	public void StartFadeInTimer()
+	{
+		this._audioManager.StartFadeInTimer ();
+	}
+
 	public void FadeOut(AudioID inAID)
 	{
 		this._audioManager.FadeOut(inAID);
+	}
+
+	public void StartFadeOutTimer()
+	{
+		this._audioManager.StartFadeOutTimer ();
 	}
 	
 	#endregion

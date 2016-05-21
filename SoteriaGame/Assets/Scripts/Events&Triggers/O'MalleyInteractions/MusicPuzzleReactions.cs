@@ -8,6 +8,16 @@ public class MusicPuzzleReactions : Reaction
 		if (GameDirector.instance.GetLeftKey())
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.StartFadeInTimer ();
+			Debug.Log ("Starting Fade In Timer");
 		}
+	}
+
+	public void Update()
+	{
+		GameDirector.instance.FadeIn (AudioID.OrganMusic);
+		GameDirector.instance.FadeIn (AudioID.BrassMusic);
+		GameDirector.instance.FadeIn (AudioID.WindMusic);
+		GameDirector.instance.FadeIn (AudioID.StringMusic);
 	}
 }
