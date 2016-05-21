@@ -39,6 +39,7 @@ public class PuppetLightEncounter : MonoBehaviour
 			this.GetComponent<SphereCollider>().enabled = false;
 			WhisperDialogueSetup(_thisLight);
 			this._active = true;
+			GameDirector.instance.ChangeVolume(AudioID.Whispers, 0.5f);
 //			GameDirector.instance.PuppetPuzzleEncounter();
 //			this._controller.GetComponent<PuppetPuzzleController>().LightEncounter(_nextLight);
 //			this.GetComponent<SphereCollider>().enabled = false;
@@ -99,6 +100,7 @@ public class PuppetLightEncounter : MonoBehaviour
 	public void LightDefeated()
 	{
 		this._defeated = true;
+		GameDirector.instance.ChangeVolume(AudioID.Whispers, 0);
 		GameDirector.instance.NewWhiteOut();
 	}
 }

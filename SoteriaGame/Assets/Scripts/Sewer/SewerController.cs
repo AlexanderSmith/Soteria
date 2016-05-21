@@ -109,11 +109,13 @@ public class SewerController : MonoBehaviour
 	{
 		GameDirector.instance.StartOicysEncounter(this);
 		GameDirector.instance.EndTriggerState();
+		GameDirector.instance.ChangeVolume(AudioID.Whispers, 0.5f);
 	}
 
 	public void EncounterWon()
 	{
 		this._encCounter++;
+		GameDirector.instance.ChangeVolume(AudioID.Whispers, 0);
 		switch (this._encCounter)
 		{
 		case 2:

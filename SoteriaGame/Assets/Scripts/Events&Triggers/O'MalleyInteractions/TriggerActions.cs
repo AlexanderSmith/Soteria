@@ -24,6 +24,7 @@ public class TriggerActions : MonoBehaviour
 		this._oMalley = this.transform.parent.FindChild("pCube42").gameObject;
 		this._SC = this.transform.parent.FindChild("Enemy").gameObject;
 		this._SC.SetActive (false);
+		GameDirector.instance.ChangeVolume(AudioID.Whispers, 0);
 		lingerTimer = TimerManager.instance.Attach(TimersType.TutorialLinger);
 		eventTimer = TimerManager.instance.Attach(TimersType.TutorialEvent);
 	}
@@ -66,6 +67,7 @@ public class TriggerActions : MonoBehaviour
 	{
 		this._oMalley.SetActive(false);
 		this._SC.SetActive(true);
+		GameDirector.instance.ChangeVolume(AudioID.Whispers, 1);
 		GameDirector.instance.EndTriggerState();
 	}
 
@@ -75,6 +77,7 @@ public class TriggerActions : MonoBehaviour
 		ClearScreen();
 		this._oMalley.SetActive(true);
 		this._SC.SetActive(false);
+		GameDirector.instance.ChangeVolume(AudioID.Whispers, 0);
 		GameDirector.instance.EndTriggerState();
 	}
 

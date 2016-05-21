@@ -12,6 +12,7 @@ public class DoorEncounters : MonoBehaviour
 //			GameDirector.instance.ObsPuzzleEncounter();
 //			this.GetComponent<BoxCollider>().enabled = false;
 			ObsPuzzleWhisperSetup();
+			GameDirector.instance.ChangeVolume(AudioID.Whispers, 0.5f);
 		}
 	}
 
