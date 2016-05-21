@@ -196,7 +196,7 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void Stun()
 	{
-		//this._stunned = true;
+		this._stunned = true;
 		this.StunnedAction();
 	}
 
@@ -253,7 +253,7 @@ public class BasicEnemyController : MonoBehaviour {
 		this._stunDuration -= Time.deltaTime;
 		if (this._stunDuration <= 0)
 		{
-			//this._stunned = false;
+			this._stunned = false;
 			this._stunDuration = stunTimer;
 			if (this.theaterEnemy)
 			{
@@ -274,6 +274,11 @@ public class BasicEnemyController : MonoBehaviour {
 	void SwitchAction(IEnemyAction inAction)
 	{
 		this._currentAction = inAction;
+	}
+
+	public IEnemyAction GetCurrentAction()
+	{
+		return this._currentAction;
 	}
 
 	public void NotVisibleAction()

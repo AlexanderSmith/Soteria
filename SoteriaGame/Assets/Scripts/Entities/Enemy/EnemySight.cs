@@ -21,7 +21,7 @@ public class EnemySight : MonoBehaviour
 
 	void OnTriggerStay(Collider player)
 	{
-		if (player.gameObject.tag == "Player")
+		if (player.gameObject.tag == "Player" && !this.GetComponent<BasicEnemyController>().GetStunStatus())
 		{
 			this._playerVisible = false;
 			
