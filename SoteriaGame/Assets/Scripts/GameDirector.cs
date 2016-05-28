@@ -100,7 +100,7 @@ public class GameDirector : MonoBehaviour {
 	public float flashBangDistance = 3.0f;
 
 	private ParticleSystem beam;
-	public float beamLife = 3.0f;
+	public float beamLife = 4.0f;
 	public Vector3 beamHeight = new Vector3 (0, 35.0f, 0);
 
     #region Managers
