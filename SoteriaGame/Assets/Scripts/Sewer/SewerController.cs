@@ -74,6 +74,7 @@ public class SewerController : MonoBehaviour
 
 	public void StartEncounter()
 	{
+		GameDirector.instance.StopAudioClip(AudioID.BackgroundSewer);
 		GameDirector.instance.GetPlayer().PlayerActionPause();
 		GameDirector.instance.SetupDialogue("AnaOicysE1Choices", this.transform.parent.gameObject);
 		GameDirector.instance.SetupDialogueChoices("AnaOicysE1D1", "AnaOicysE1D2", "AnaOicysE1D3");
@@ -116,6 +117,7 @@ public class SewerController : MonoBehaviour
 	{
 		this._encCounter++;
 		GameDirector.instance.ChangeVolume(AudioID.Whispers, 0);
+		GameDirector.instance.PlayAudioClip(AudioID.OicysScream);
 		switch (this._encCounter)
 		{
 		case 2:
