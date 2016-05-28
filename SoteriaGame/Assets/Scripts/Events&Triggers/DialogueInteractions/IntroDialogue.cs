@@ -17,11 +17,12 @@ public class IntroDialogue : MonoBehaviour
 	{
 		if (player.gameObject.tag == "Player")
 		{
-			if (!GameDirector.instance.isDialogueActive())
+			if (Input.GetKeyDown(KeyCode.Space))
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
 				GameDirector.instance.StopAudioClip(AudioID.BackgroundIntro);
 				GameDirector.instance.ChangeVolume(AudioID.BackgroundHarbor, 1f);
+				GameDirector.instance.TurnOffWASD();
 //				GameDirector.instance.FadeOut(AudioID.BackgroundIntro);
 //				GameDirector.instance.FadeIn(AudioID.BackgroundHarbor);
 				GameDirector.instance.GetPlayer().PlayerActionNormal();

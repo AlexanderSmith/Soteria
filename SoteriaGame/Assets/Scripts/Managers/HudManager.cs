@@ -69,6 +69,8 @@ public class HudManager : MonoBehaviour {
 
 	private GameObject _endGame;
 
+	private GameObject _WASDText;
+
 	InventorySwapChoice currChoice;
 	enum InventorySwapChoice
 	{
@@ -176,6 +178,9 @@ public class HudManager : MonoBehaviour {
 
 		this._endGame = GameObject.Find("EndGameImage");
 		this._endGame.GetComponent<Image>().enabled = false;
+
+		this._WASDText = GameObject.Find("WASD");
+		this._WASDText.GetComponent<Text>().enabled = false;
 	}
 
 	// Update is called once per frame
@@ -675,5 +680,17 @@ public class HudManager : MonoBehaviour {
 	public void EndGameImageOn()
 	{
 		this._endGame.GetComponent<Image>().enabled = true;
+	}
+
+	public void WASDSetup()
+	{
+		this._keySplashScreen.GetComponent<Image>().enabled = true;
+		this._WASDText.GetComponent<Text>().enabled = true;
+	}
+
+	public void TurnOffWASD()
+	{
+		this._keySplashScreen.GetComponent<Image>().enabled = false;
+		this._WASDText.GetComponent<Text>().enabled = false;
 	}
 }

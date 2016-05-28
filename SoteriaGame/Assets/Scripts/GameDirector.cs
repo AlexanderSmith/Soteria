@@ -965,6 +965,16 @@ public class GameDirector : MonoBehaviour {
 	{
 		this._HUDManager.EndGameImageOn();
 	}
+
+	public void WASDSetup()
+	{
+		this._HUDManager.WASDSetup();
+	}
+
+	public void TurnOffWASD()
+	{
+		this._HUDManager.TurnOffWASD();
+	}
 	
 	///////////////////////////////////////////////////////////////////
 	////////////////// ENCOUNTER MANAGER FUNCTIONS ////////////////////
