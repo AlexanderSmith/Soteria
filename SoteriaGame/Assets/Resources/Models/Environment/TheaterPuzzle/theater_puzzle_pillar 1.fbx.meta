@@ -6,10 +6,15 @@ ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
     100000: //RootNode
+    100002: pillar3
     400000: //RootNode
+    400002: pillar3
     2300000: //RootNode
+    2300002: pillar3
     3300000: //RootNode
+    3300002: pillar3
     4300000: group165_pCylinder5
+    4300002: pillar3
     9500000: //RootNode
   materials:
     importMaterials: 1

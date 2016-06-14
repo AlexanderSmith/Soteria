@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: EyeBallLamp_Top5
     100002: //RootNode
+    100004: EyeBallLamp_Top8
     400000: EyeBallLamp_Top5
     400002: //RootNode
+    400004: EyeBallLamp_Top8
     2300000: EyeBallLamp_Top5
+    2300002: EyeBallLamp_Top8
     3300000: EyeBallLamp_Top5
+    3300002: EyeBallLamp_Top8
     4300000: EyeBallLamp_Top5
+    4300002: EyeBallLamp_Top8
     9500000: //RootNode
   materials:
     importMaterials: 1

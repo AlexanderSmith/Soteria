@@ -24,8 +24,11 @@ ModelImporter:
     400014: transform4
     400016: transform5
     2300000: pSphere30
+    2300002: //RootNode
     3300000: pSphere30
+    3300002: //RootNode
     4300000: pSphere30
+    4300002: boss_eye_open
     9500000: //RootNode
   materials:
     importMaterials: 1

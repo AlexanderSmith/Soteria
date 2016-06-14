@@ -13,10 +13,13 @@ ModelImporter:
     400004: //RootNode
     2300000: pSphere719_MeshPart0
     2300002: pSphere719_MeshPart1
+    2300004: //RootNode
     3300000: pSphere719_MeshPart0
     3300002: pSphere719_MeshPart1
+    3300004: //RootNode
     4300000: pSphere719_MeshPart0
     4300002: pSphere719_MeshPart1
+    4300004: pSphere1348
     9500000: //RootNode
   materials:
     importMaterials: 1

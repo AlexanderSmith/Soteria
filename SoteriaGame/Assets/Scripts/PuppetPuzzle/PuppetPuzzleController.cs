@@ -103,7 +103,7 @@ public class PuppetPuzzleController : MonoBehaviour
 
 	public void OpenBossEye()
 	{
-		this.boss.GetComponent<OpenBossEye>().ShowOpenEye();
+		//this.boss.GetComponent<OpenBossEye>().ShowOpenEye();
 	}
 
 	public void SpawnOMalleyAfterPuzzleDefeated()
