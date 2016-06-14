@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: pPipe2
+    100004: platfrom
     400000: //RootNode
     400002: pPipe2
+    400004: platfrom
     2300000: pPipe2
+    2300002: platfrom
     3300000: pPipe2
+    3300002: platfrom
     4300000: pPipe2
+    4300002: platfrom
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: pCube53
+    100004: studs
     400000: //RootNode
     400002: pCube53
+    400004: studs
     2300000: pCube53
+    2300002: studs
     3300000: pCube53
+    3300002: studs
     4300000: pCube53
+    4300002: studs
     9500000: //RootNode
   materials:
     importMaterials: 1

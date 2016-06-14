@@ -7,11 +7,16 @@ ModelImporter:
   fileIDToRecycleName:
     100000: //RootNode
     100002: polySurface297
+    100004: telescope
     400000: //RootNode
     400002: polySurface297
+    400004: telescope
     2300000: polySurface297
+    2300002: telescope
     3300000: polySurface297
+    3300002: telescope
     4300000: polySurface297
+    4300002: telescope
     9500000: //RootNode
   materials:
     importMaterials: 1
