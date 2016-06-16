@@ -1,0 +1,224 @@
+fileFormatVersion: 2
+guid: 534bb831e847dbf438b146c3bac1d9d9
+timeCreated: 1444879991
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: Env_Harbor_Prop_Pier_01:Pier_01
+    100004: Env_Harbor_Prop_Pier_01:polySurface1
+    100006: Env_Harbor_Prop_Pier_01:polySurface1 1
+    100008: Env_Harbor_Prop_Pier_01:polySurface2
+    100010: Env_Harbor_Prop_Pier_01:polySurface24
+    100012: Env_Harbor_Prop_Pier_01:polySurface3
+    100014: Env_Harbor_Prop_Pier_01:polySurface30
+    100016: Env_Harbor_Prop_Pier_01:polySurface31
+    100018: Env_Harbor_Prop_Pier_01:polySurface33
+    100020: Env_Harbor_Prop_Pier_01:polySurface34
+    100022: Env_Harbor_Prop_Pier_01:polySurface36
+    100024: Env_Harbor_Prop_Pier_01:polySurface37
+    100026: Env_Harbor_Prop_Pier_01:polySurface38
+    100028: Env_Harbor_Prop_Pier_01:polySurface39
+    100030: Env_Harbor_Prop_Pier_01:polySurface4
+    100032: Env_Harbor_Prop_Pier_01:polySurface40
+    100034: Env_Harbor_Prop_Pier_01:polySurface41
+    100036: Env_Harbor_Prop_Pier_01:polySurface42
+    100038: Env_Harbor_Prop_Pier_01:polySurface43
+    100040: Env_Harbor_Prop_Pier_01:polySurface44
+    100042: Env_Harbor_Prop_Pier_01:polySurface45
+    100044: Env_Harbor_Prop_Pier_01:polySurface46
+    100046: Env_Harbor_Prop_Pier_01:polySurface47
+    100048: Env_Harbor_Prop_Pier_01:polySurface48
+    100050: Env_Harbor_Prop_Pier_01:polySurface49
+    100052: Env_Harbor_Prop_Pier_01:polySurface5
+    100054: Env_Harbor_Prop_Pier_01:polySurface50
+    100056: Env_Harbor_Prop_Pier_01:polySurface51
+    100058: Env_Harbor_Prop_Pier_01:polySurface52
+    100060: Env_Harbor_Prop_Pier_01:polySurface53
+    100062: Env_Harbor_Prop_Pier_01:polySurface54
+    100064: Env_Harbor_Prop_Pier_01:polySurface55
+    100066: Env_Harbor_Prop_Pier_01:polySurface56
+    100068: Env_Harbor_Prop_Pier_01:polySurface57
+    100070: Env_Harbor_Prop_Pier_01:polySurface6
+    100072: Env_Harbor_Prop_Pier_01:polySurface7
+    100074: Env_Harbor_Prop_Pier_01:polySurface8
+    100076: Env_Harbor_Prop_Pier_01:transform1
+    100078: Env_Harbor_Prop_Pier_01:transform10
+    100080: Env_Harbor_Prop_Pier_01:transform11
+    100082: Env_Harbor_Prop_Pier_01:transform12
+    100084: Env_Harbor_Prop_Pier_01:transform13
+    100086: Env_Harbor_Prop_Pier_01:transform14
+    100088: Env_Harbor_Prop_Pier_01:transform15
+    100090: Env_Harbor_Prop_Pier_01:transform16
+    100092: Env_Harbor_Prop_Pier_01:transform17
+    100094: Env_Harbor_Prop_Pier_01:transform18
+    100096: Env_Harbor_Prop_Pier_01:transform19
+    100098: Env_Harbor_Prop_Pier_01:transform2
+    100100: Env_Harbor_Prop_Pier_01:transform20
+    100102: Env_Harbor_Prop_Pier_01:transform21
+    100104: Env_Harbor_Prop_Pier_01:transform22
+    100106: Env_Harbor_Prop_Pier_01:transform23
+    100108: Env_Harbor_Prop_Pier_01:transform24
+    100110: Env_Harbor_Prop_Pier_01:transform25
+    100112: Env_Harbor_Prop_Pier_01:transform26
+    100114: Env_Harbor_Prop_Pier_01:transform27
+    100116: Env_Harbor_Prop_Pier_01:transform28
+    100118: Env_Harbor_Prop_Pier_01:transform29
+    100120: Env_Harbor_Prop_Pier_01:transform3
+    100122: Env_Harbor_Prop_Pier_01:transform30
+    100124: Env_Harbor_Prop_Pier_01:transform31
+    100126: Env_Harbor_Prop_Pier_01:transform32
+    100128: Env_Harbor_Prop_Pier_01:transform33
+    100130: Env_Harbor_Prop_Pier_01:transform34
+    100132: Env_Harbor_Prop_Pier_01:transform35
+    100134: Env_Harbor_Prop_Pier_01:transform36
+    100136: Env_Harbor_Prop_Pier_01:transform4
+    100138: Env_Harbor_Prop_Pier_01:transform5
+    100140: Env_Harbor_Prop_Pier_01:transform6
+    100142: Env_Harbor_Prop_Pier_01:transform7
+    100144: Env_Harbor_Prop_Pier_01:transform8
+    100146: Env_Harbor_Prop_Pier_01:transform9
+    400000: //RootNode
+    400002: Env_Harbor_Prop_Pier_01:Pier_01
+    400004: Env_Harbor_Prop_Pier_01:polySurface1
+    400006: Env_Harbor_Prop_Pier_01:polySurface1 1
+    400008: Env_Harbor_Prop_Pier_01:polySurface2
+    400010: Env_Harbor_Prop_Pier_01:polySurface24
+    400012: Env_Harbor_Prop_Pier_01:polySurface3
+    400014: Env_Harbor_Prop_Pier_01:polySurface30
+    400016: Env_Harbor_Prop_Pier_01:polySurface31
+    400018: Env_Harbor_Prop_Pier_01:polySurface33
+    400020: Env_Harbor_Prop_Pier_01:polySurface34
+    400022: Env_Harbor_Prop_Pier_01:polySurface36
+    400024: Env_Harbor_Prop_Pier_01:polySurface37
+    400026: Env_Harbor_Prop_Pier_01:polySurface38
+    400028: Env_Harbor_Prop_Pier_01:polySurface39
+    400030: Env_Harbor_Prop_Pier_01:polySurface4
+    400032: Env_Harbor_Prop_Pier_01:polySurface40
+    400034: Env_Harbor_Prop_Pier_01:polySurface41
+    400036: Env_Harbor_Prop_Pier_01:polySurface42
+    400038: Env_Harbor_Prop_Pier_01:polySurface43
+    400040: Env_Harbor_Prop_Pier_01:polySurface44
+    400042: Env_Harbor_Prop_Pier_01:polySurface45
+    400044: Env_Harbor_Prop_Pier_01:polySurface46
+    400046: Env_Harbor_Prop_Pier_01:polySurface47
+    400048: Env_Harbor_Prop_Pier_01:polySurface48
+    400050: Env_Harbor_Prop_Pier_01:polySurface49
+    400052: Env_Harbor_Prop_Pier_01:polySurface5
+    400054: Env_Harbor_Prop_Pier_01:polySurface50
+    400056: Env_Harbor_Prop_Pier_01:polySurface51
+    400058: Env_Harbor_Prop_Pier_01:polySurface52
+    400060: Env_Harbor_Prop_Pier_01:polySurface53
+    400062: Env_Harbor_Prop_Pier_01:polySurface54
+    400064: Env_Harbor_Prop_Pier_01:polySurface55
+    400066: Env_Harbor_Prop_Pier_01:polySurface56
+    400068: Env_Harbor_Prop_Pier_01:polySurface57
+    400070: Env_Harbor_Prop_Pier_01:polySurface6
+    400072: Env_Harbor_Prop_Pier_01:polySurface7
+    400074: Env_Harbor_Prop_Pier_01:polySurface8
+    400076: Env_Harbor_Prop_Pier_01:transform1
+    400078: Env_Harbor_Prop_Pier_01:transform10
+    400080: Env_Harbor_Prop_Pier_01:transform11
+    400082: Env_Harbor_Prop_Pier_01:transform12
+    400084: Env_Harbor_Prop_Pier_01:transform13
+    400086: Env_Harbor_Prop_Pier_01:transform14
+    400088: Env_Harbor_Prop_Pier_01:transform15
+    400090: Env_Harbor_Prop_Pier_01:transform16
+    400092: Env_Harbor_Prop_Pier_01:transform17
+    400094: Env_Harbor_Prop_Pier_01:transform18
+    400096: Env_Harbor_Prop_Pier_01:transform19
+    400098: Env_Harbor_Prop_Pier_01:transform2
+    400100: Env_Harbor_Prop_Pier_01:transform20
+    400102: Env_Harbor_Prop_Pier_01:transform21
+    400104: Env_Harbor_Prop_Pier_01:transform22
+    400106: Env_Harbor_Prop_Pier_01:transform23
+    400108: Env_Harbor_Prop_Pier_01:transform24
+    400110: Env_Harbor_Prop_Pier_01:transform25
+    400112: Env_Harbor_Prop_Pier_01:transform26
+    400114: Env_Harbor_Prop_Pier_01:transform27
+    400116: Env_Harbor_Prop_Pier_01:transform28
+    400118: Env_Harbor_Prop_Pier_01:transform29
+    400120: Env_Harbor_Prop_Pier_01:transform3
+    400122: Env_Harbor_Prop_Pier_01:transform30
+    400124: Env_Harbor_Prop_Pier_01:transform31
+    400126: Env_Harbor_Prop_Pier_01:transform32
+    400128: Env_Harbor_Prop_Pier_01:transform33
+    400130: Env_Harbor_Prop_Pier_01:transform34
+    400132: Env_Harbor_Prop_Pier_01:transform35
+    400134: Env_Harbor_Prop_Pier_01:transform36
+    400136: Env_Harbor_Prop_Pier_01:transform4
+    400138: Env_Harbor_Prop_Pier_01:transform5
+    400140: Env_Harbor_Prop_Pier_01:transform6
+    400142: Env_Harbor_Prop_Pier_01:transform7
+    400144: Env_Harbor_Prop_Pier_01:transform8
+    400146: Env_Harbor_Prop_Pier_01:transform9
+    2300000: //RootNode
+    2300002: Env_Harbor_Prop_Pier_01:polySurface1
+    3300000: //RootNode
+    3300002: Env_Harbor_Prop_Pier_01:polySurface1
+    4300000: Pier_01
+    4300002: Env_Harbor_Prop_Pier_01:polySurface1
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

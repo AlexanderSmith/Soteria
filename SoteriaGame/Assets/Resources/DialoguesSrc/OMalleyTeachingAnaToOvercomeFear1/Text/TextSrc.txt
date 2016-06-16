@@ -1,0 +1,12 @@
+<b>Ana:</b> I must be crazy to do this.
+<b>O'Malley:</b> It's the only way, Ana.
+<trigger/>TriggerActions-OMalleyOffSCOn-
+<trigger/>TriggerActions-FadeScreen-
+<trigger/>TriggerActions-FearPlayer-
+<trigger/>TriggerActions-ShadowCreatureOP-
+<b>Ana:</b> What are you doing?? Did you trick me? You tricked me!
+<b>O'Malley:</b> Don’t fight the fear.
+<b>Ana:</b> Are you crazy?...I can't handle this!...
+<trigger/>TriggerActions-ResumeFade-
+<trigger/>TriggerActions-ShadowCreatureOP2-
+<b>O'Malley:</b> Just let it happen. Accept the fear.

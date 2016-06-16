@@ -1,0 +1,4 @@
+<b>Choose:</b>
+<choice/>Just go away.
+<choice/>Haven't I been through enough?
+<choice/>Is that all you've got? Come on, put some effort into it!

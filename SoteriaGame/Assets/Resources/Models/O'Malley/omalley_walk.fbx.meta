@@ -1,0 +1,203 @@
+fileFormatVersion: 2
+guid: 978786e94c9b86a4d928ebe828c42e76
+timeCreated: 1446744528
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: CC_global
+    100002: head_jnt
+    100004: head_tip_jnt
+    100006: hips
+    100008: joints1
+    100010: left_back_jnt
+    100012: left_back_jnt_1
+    100014: left_back_jnt_2
+    100016: left_front_jnt
+    100018: left_front_jnt_1
+    100020: left_front_jnt_2
+    100022: neck_jnt
+    100024: //RootNode
+    100026: pCube42
+    100028: right_back_jnt
+    100030: right_back_jnt_1
+    100032: right_back_jnt_2
+    100034: right_front_jnt
+    100036: right_front_jnt_1
+    100038: right_front_jnt_3
+    100040: root_jnt
+    100042: spine_jnt
+    100044: tail_jnt
+    100046: tail_jnt_1
+    100048: tail_jnt_2
+    100050: tail_tip
+    400000: CC_global
+    400002: head_jnt
+    400004: head_tip_jnt
+    400006: hips
+    400008: joints1
+    400010: left_back_jnt
+    400012: left_back_jnt_1
+    400014: left_back_jnt_2
+    400016: left_front_jnt
+    400018: left_front_jnt_1
+    400020: left_front_jnt_2
+    400022: neck_jnt
+    400024: //RootNode
+    400026: pCube42
+    400028: right_back_jnt
+    400030: right_back_jnt_1
+    400032: right_back_jnt_2
+    400034: right_front_jnt
+    400036: right_front_jnt_1
+    400038: right_front_jnt_3
+    400040: root_jnt
+    400042: spine_jnt
+    400044: tail_jnt
+    400046: tail_jnt_1
+    400048: tail_jnt_2
+    400050: tail_tip
+    4300000: pCube42
+    7400000: Walk
+    9500000: //RootNode
+    13700000: pCube42
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Walk
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 59
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: CC_global
+        weight: 1
+      - path: CC_global/joints1
+        weight: 1
+      - path: CC_global/joints1/root_jnt
+        weight: 1
+      - path: CC_global/joints1/root_jnt/hips
+        weight: 1
+      - path: CC_global/joints1/root_jnt/hips/left_back_jnt
+        weight: 1
+      - path: CC_global/joints1/root_jnt/hips/left_back_jnt/left_back_jnt_1
+        weight: 1
+      - path: CC_global/joints1/root_jnt/hips/left_back_jnt/left_back_jnt_1/left_back_jnt_2
+        weight: 1
+      - path: CC_global/joints1/root_jnt/hips/right_back_jnt
+        weight: 1
+      - path: CC_global/joints1/root_jnt/hips/right_back_jnt/right_back_jnt_1
+        weight: 1
+      - path: CC_global/joints1/root_jnt/hips/right_back_jnt/right_back_jnt_1/right_back_jnt_2
+        weight: 1
+      - path: CC_global/joints1/root_jnt/hips/tail_jnt
+        weight: 1
+      - path: CC_global/joints1/root_jnt/hips/tail_jnt/tail_jnt_1
+        weight: 1
+      - path: CC_global/joints1/root_jnt/hips/tail_jnt/tail_jnt_1/tail_jnt_2
+        weight: 1
+      - path: CC_global/joints1/root_jnt/hips/tail_jnt/tail_jnt_1/tail_jnt_2/tail_tip
+        weight: 1
+      - path: CC_global/joints1/root_jnt/spine_jnt
+        weight: 1
+      - path: CC_global/joints1/root_jnt/spine_jnt/left_front_jnt
+        weight: 1
+      - path: CC_global/joints1/root_jnt/spine_jnt/left_front_jnt/left_front_jnt_1
+        weight: 1
+      - path: CC_global/joints1/root_jnt/spine_jnt/left_front_jnt/left_front_jnt_1/left_front_jnt_2
+        weight: 1
+      - path: CC_global/joints1/root_jnt/spine_jnt/neck_jnt
+        weight: 1
+      - path: CC_global/joints1/root_jnt/spine_jnt/neck_jnt/head_jnt
+        weight: 1
+      - path: CC_global/joints1/root_jnt/spine_jnt/neck_jnt/head_jnt/head_tip_jnt
+        weight: 1
+      - path: CC_global/joints1/root_jnt/spine_jnt/right_front_jnt
+        weight: 1
+      - path: CC_global/joints1/root_jnt/spine_jnt/right_front_jnt/right_front_jnt_1
+        weight: 1
+      - path: CC_global/joints1/root_jnt/spine_jnt/right_front_jnt/right_front_jnt_1/right_front_jnt_3
+        weight: 1
+      - path: pCube42
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

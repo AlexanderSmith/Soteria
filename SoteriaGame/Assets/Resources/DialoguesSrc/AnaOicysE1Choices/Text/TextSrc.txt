@@ -1,0 +1,4 @@
+<b>Choose:</b>
+<choice/>Please, release my dreams, Oicys.
+<choice/>I'm here Oicys.
+<choice/>Oicys! Show me fear.
