@@ -1133,31 +1133,32 @@ public class GameDirector : MonoBehaviour {
 
 			string level;
 
-			/*Teleport to town center*/
-			switch (_hubPhase)
-			{
-			case 5:
-				level = "HUBPass3";
-				StartCoroutine(BeamLevel(level, beamLife));
-				break;
-			case 1:
-				level = "HUBPass1";
-				StartCoroutine(BeamLevel(level, beamLife));
-				break;
-			case 2:
-				level = "HUBPass2";
-				StartCoroutine(BeamLevel(level, beamLife));
-				break;
-			case 3:
-				level = "HUBPass3";
-				StartCoroutine(BeamLevel(level, beamLife));
-				break;
-			case 4:
-				level = "HUBPass4";
-				StartCoroutine(BeamLevel(level, beamLife));
-				break;
-			}
+//			
+//			switch (_hubPhase)
+//			{
+//			case 5:
+//				level = "HUBPass3";
+//				StartCoroutine(BeamLevel(level, beamLife));
+//				break;
+//			case 1:
+//				level = "HUBPass1";
+//				StartCoroutine(BeamLevel(level, beamLife));
+//				break;
+//			case 2:
+//				level = "HUBPass2";
+//				StartCoroutine(BeamLevel(level, beamLife));
+//				break;
+//			case 3:
+//				level = "HUBPass3";
+//				StartCoroutine(BeamLevel(level, beamLife));
+//				break;
+//			case 4:
+//				level = "HUBPass4";
+//
+//				break;
+//			}
 
+			StartCoroutine(BeamLevel("HUBPass1", beamLife));
 			Destroy(soteriaBeam, beamLife);
 		}
 	}
@@ -1319,14 +1320,14 @@ public class GameDirector : MonoBehaviour {
 		this.ClearAudioList();
 		// Player never spoke to Fortune teller to receive token -> punish and reset game
 		// || player gave up token for key piece (in phase 4 of game)
-		if (!this.token && this.GetGamePhase() != 4)
-		{
+//		if (!this.token && this.GetGamePhase() != 4)
+//		{
 			Application.LoadLevel("Harbor");
-		}
-		else
-		{
-			Application.LoadLevel("HarborRespawn");
-		}
+//		}
+//		else
+//		{
+//			Application.LoadLevel("HarborRespawn");
+//		}
 	}
 
     #endregion

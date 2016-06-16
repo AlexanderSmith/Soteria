@@ -9,25 +9,7 @@ public class PortToHub : MonoBehaviour
 		{
 			GameDirector.instance.CheckLantern();
 			GameDirector.instance.ClearAudioList();
-			GameDirector.instance.SetFromMusicDistrict();
-			switch (GameDirector.instance.GetHubPhase())
-			{
-			case 5:
-				Application.LoadLevel("HUBPass3");
-				break;
-			case 1:
-				Application.LoadLevel("HUBPass1");
-				break;
-			case 2:
-				Application.LoadLevel("HUBPass2");
-				break;
-			case 3:
-				Application.LoadLevel("HUBPass3");
-				break;
-			case 4:
-				Application.LoadLevel("HUBPass4");
-				break;
-			}
+			Application.LoadLevel("HUBPass1");
 		}
 	}
 }

@@ -9,21 +9,22 @@ public class MusicPuzzleToDistrict : MonoBehaviour
 		{
 			GameDirector.instance.ClearAudioList();
 			GameDirector.instance.SetFromPuzzle();
-			switch (GameDirector.instance.GetGamePhase())
-			{
-			case 1:
-				Application.LoadLevel("MusicPass1");
-				break;
-			case 2:
-				Application.LoadLevel("MusicPass2");
-				break;
-			case 3:
-				Application.LoadLevel("MusicPass3");
-				break;
-			case 4:
-				Application.LoadLevel("MusicPass4");
-				break;
-			}
+			Application.LoadLevel("MusicPass1");
+			//			switch (GameDirector.instance.GetGamePhase())
+			//			{
+			//			case 1:
+			//				Application.LoadLevel("MusicPass1");
+			//				break;
+			//			case 2:
+			//				Application.LoadLevel("MusicPass2");
+			//				break;
+			//			case 3:
+			//				Application.LoadLevel("MusicPass3");
+			//				break;
+			//			case 4:
+			//				Application.LoadLevel ("MusicPass4");
+			//				break;
+			//			}
 		}
 	}
 }

@@ -21,7 +21,7 @@ public class OMalleyTutorialReactions : Reaction
 			GameDirector.instance.CheckLantern();
 			GameDirector.instance.SuitRemoved();
 			GameDirector.instance.TutorialCompleted();
-			Application.LoadLevel("HubPass3");
+			Application.LoadLevel("HubPass1");
 		}
 		else if (_failed)
 		{

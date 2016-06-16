@@ -10,8 +10,15 @@ public class ObservatoryDistrictCards : MonoBehaviour
 	private GameObject _backpackCard;
 	private GameObject _trainCard;
 	private GameObject _starCard;
+
+	public GameObject portToPuzzle;
+
+	void Start()
+	{
+		portToPuzzle.SetActive(false);
+	}
 	
-	void OnTriggerEnter(Collider player)
+	void Awake()/*OnTriggerEnter(Collider player)*/
 	{
 		this._backpackCard = GameObject.Find("BackpackAndJournal");
 		this._backpackCard.transform.position = this.backpack.position;

@@ -11,8 +11,15 @@ public class MusicDistrictCards : MonoBehaviour
 	private GameObject _handDollCard;
 	private GameObject _eggShellsCard;
 
+	public GameObject portToPuzzle;
+
+	void Start()
+	{
+		portToPuzzle.SetActive(false);
+	}
+
 	//void OnTriggerEnter(Collider player)
-	void Awake()
+	void Awake()/*OnTriggerEnter(Collider player)*/
 	{
 		this._whistleCard = GameObject.Find("Whistle");
 		this._whistleCard.transform.position = this.whistle.position;

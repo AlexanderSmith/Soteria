@@ -7,6 +7,6 @@ public class PortToHubReaction : Reaction
 	{
 		GameDirector.instance.ClearAudioList();
 		GameDirector.instance.CheckLantern();
-		Application.LoadLevel("HubPass3");
+		Application.LoadLevel("HubPass1");
 	}
 }

@@ -10,8 +10,15 @@ public class TheaterDistrictCards : MonoBehaviour
 	private GameObject _pearlsCard;
 	private GameObject _hatCard;
 	private GameObject _chameleonCard;
+
+	public GameObject portToPuzzle;
+
+	void Start()
+	{
+		portToPuzzle.SetActive(false);
+	}
 	
-	void OnTriggerEnter(Collider player)
+	void Awake()/*OnTriggerEnter(Collider player)*/
 	{
 		this._pearlsCard = GameObject.Find("StringOfPearls");
 		this._pearlsCard.transform.position = this.pearls.position;

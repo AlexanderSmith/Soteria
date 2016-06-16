@@ -9,21 +9,22 @@ public class ObsPuzzleToDistrict : MonoBehaviour
 		{
 			GameDirector.instance.ClearAudioList();
 			GameDirector.instance.SetFromPuzzle();
-			switch (GameDirector.instance.GetGamePhase())
-			{
-			case 1:
-				Application.LoadLevel("ObservatoryPass1");
-				break;
-			case 2:
-				Application.LoadLevel("ObservatoryPass2");
-				break;
-			case 3:
-				Application.LoadLevel("ObservatoryPass3");
-				break;
-			case 4:
-				Application.LoadLevel("ObservatoryPass4");
-				break;
-			}
+			Application.LoadLevel("ObservatoryPass1");
+			//			switch (GameDirector.instance.GetGamePhase())
+			//			{
+			//			case 1:
+			//				Application.LoadLevel("ObservatoryPass1");
+			//				break;
+			//			case 2:
+			//				Application.LoadLevel("ObservatoryPass2");
+			//				break;
+			//			case 3:
+			//				Application.LoadLevel("ObservatoryPass3");
+			//				break;
+			//			case 4:
+			//				Application.LoadLevel ("ObservatoryPass4");
+			//				break;
+			//			}
 		}
 	}
 }
