@@ -3,6 +3,13 @@ using System.Collections;
 
 public class IntroDialogue : MonoBehaviour
 {
+	void Start()
+	{
+		GameDirector.instance.PlayAudioClip(AudioID.BackgroundIntro);
+		GameDirector.instance.PlayAudioClip(AudioID.BackgroundHarbor);
+		GameDirector.instance.ChangeVolume(AudioID.BackgroundHarbor, 0.0f);
+	}
+
 	void OnTriggerEnter(Collider player)
 	{
 		if (player.gameObject.tag == "Player")
