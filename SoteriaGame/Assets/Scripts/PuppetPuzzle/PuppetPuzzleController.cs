@@ -28,7 +28,7 @@ public class PuppetPuzzleController : MonoBehaviour
 		finalSpot.GetComponent<SphereCollider>().enabled = false;
 		this._intro = GameObject.Find("PuppetPuzzleIntro");
 		this._intro.SetActive(false);
-		keyPiece.GetComponentInChildren<SphereCollider>().enabled = false;
+		keyPiece.GetComponentInChildren<BoxCollider>().enabled = false;
 		this._oMalleyPuppetDefeated = GameObject.Find("O'MalleyPuppetPuzzleDefeated");
 		this._oMalleyPuppetDefeated.SetActive(false);
 	}
@@ -81,7 +81,7 @@ public class PuppetPuzzleController : MonoBehaviour
 		if (this._lastFight)
 		{
 			GameDirector.instance.TheaterPuzzleDefeated();
-			this.keyPiece.GetComponentInChildren<SphereCollider>().enabled = true;
+			this.keyPiece.GetComponentInChildren<BoxCollider>().enabled = true;
 			this.KillLights();
 		}
 	}
