@@ -428,6 +428,11 @@ public class HudManager : MonoBehaviour {
 		}
 	}
 
+	public void ResetWhiteSpeed()
+	{
+		this.whiteSpeed = .05f;
+	}
+
 	public void NewWhiteOut()
 	{
 		if (this.whiteSpeed < .1f)

@@ -793,6 +793,11 @@ public class GameDirector : MonoBehaviour {
 		this._HUDManager.NewWhiteOut();
 	}
 
+	public void ResetWhiteSpeed()
+	{
+		this._HUDManager.ResetWhiteSpeed();
+	}
+
 	public void ChangeObjective(GameObject gObj)
 	{
 		this._HUDManager.ChangeObjective(gObj);

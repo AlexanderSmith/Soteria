@@ -50,6 +50,8 @@ public class PuppetPuzzleController : MonoBehaviour
 				this.LeftLightOn();
 			}
 		}
+
+		GameDirector.instance.ResetWhiteSpeed();
 	}
 
 	public void LeftLightOn()
