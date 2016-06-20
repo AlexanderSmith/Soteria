@@ -4,10 +4,10 @@ using System.Collections;
 public class BasicEnemyController : MonoBehaviour {
 
 	public GameObject player;
-	private NavMeshAgent _agent;
-	private float _distance = 0.0f;
+	public NavMeshAgent _agent;
+	public float distance = 0.0f;
 	private Animator _anim;
-	private bool _dead = false;
+	public bool dead = false;
 	private bool _stunned = false;
 	private int _opCounter = 1;
 
@@ -23,9 +23,25 @@ public class BasicEnemyController : MonoBehaviour {
 	public float lookAtDistance = 45.0f;
 	public float attackRange = 35.0f;
 	public float overwhelmRange = 15.0f;
+
+	public bool theaterEnemy;
+
+	private IEnemyAction _currentAction;
+	private IEnemyAction _notVisibleEA = new EnemyActionNotVisible();
+	private IEnemyAction _visibleEA = new EnemyActionVisible();
+	private IEnemyAction _hiddenEA = new EnemyActionHidden();
+	private IEnemyAction _hiddenTileEA = new EnemyActionHiddenTile();
+	private IEnemyAction _theaterEA = new EnemyActionTheater();
+	private IEnemyAction _stunnedEA = new EnemyActionStunned();
+	private IEnemyAction _suitEA = new EnemyActionSuit();
+	
+	public bool playerVisible;
+	public float fieldOfVision = 125.0f;
+	public SphereCollider sphereCollider;
+	public float eyeHeightOffset;
 	
 	// Use this for initialization
-	public void Start()
+	void Start ()
 	{
 		if (player == null)
 		{
@@ -34,59 +50,81 @@ public class BasicEnemyController : MonoBehaviour {
 		_agent = GetComponent<NavMeshAgent> ();
 		_anim = GetComponent<Animator> ();
 		this._stunDuration = this.stunTimer;
+//		normEC = this.GetComponentInChildren<EnemyControllerNormal>();
+//		hiddenEC = this.GetComponentInChildren<EnemyControllerNormal>();
+//		hiddenTileEC = this.GetComponentInChildren<EnemyControllerNormal>();
+		if (GameDirector.instance.GetGameState() == GameStates.Suit)
+		{
+			this.SuitAction();
+		}
+		else if (!this.theaterEnemy)
+		{
+			this.NotVisibleAction();
+		}
+		else
+		{
+			this.TheaterAction();
+		}
+		this.sphereCollider = GetComponent<SphereCollider> ();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		if (this._stunned)
-		{
-			this._agent.Stop();
-			this.Stunned();
-		}
-		else if (GetComponent<EnemySight>().IsPlayerVisible() && GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
-		{
-			if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
-			{
-				this.LookAtPlayer();
-				GameDirector.instance.PlayerOnObservatoryTile();
-			}
-			else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
-			{
-				this.Unaware();
-			}
-			else if (!this._dead)
-			{
-				this._distance = Vector3.Distance(this.transform.position, player.transform.position);
-				if (this._distance <= this.overwhelmRange)
-				{
-					if (GameDirector.instance.GetGameState() != GameStates.Suit)
-					{
-						this.OverwhelmPlayer();
-						GameDirector.instance.Encounter(this.gameObject);
-					}
-					else
-					{
-						this.LookAtPlayer();
-					}
-				}
-				else if (this._distance <= this.attackRange)
-				{
-					this.ChasePlayer();
-				}
-				else
-				{
-					this.LookAtPlayer();
-				}
-			}
-		}
-		else
-		{
-			if (GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
-			{
-				this.Unaware();
-			}
-		}
+		this._currentAction.EnemyAction(this);
+//		if (this._stunned)
+//		{
+//			this._agent.Stop();
+//			this.Stunned();
+//		}
+//		else if (GetComponent<EnemySight>().IsPlayerVisible() && GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
+//		{
+//			if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
+//			{
+//				this.LookAtPlayer();
+//				GameDirector.instance.PlayerOnObservatoryTile();
+//			}
+//			else if (GameDirector.instance.GetGameState() == GameStates.Hidden)
+//			{
+//				this.Unaware();
+//			}
+//			else if (!this._dead)
+//			{
+//				this._distance = Vector3.Distance(this.transform.position, player.transform.position);
+//				if (this._distance <= this.overwhelmRange)
+//				{
+//					if (GameDirector.instance.GetGameState() != GameStates.Suit)
+//					{
+//						this.OverwhelmPlayer();
+//						GameDirector.instance.Encounter(this.gameObject);
+//					}
+//					else
+//					{
+//						this.LookAtPlayer();
+//					}
+//				}
+//				else if (this._distance <= this.attackRange)
+//				{
+//					this.ChasePlayer();
+//				}
+//				else
+//				{
+//					this.LookAtPlayer();
+//				}
+//			}
+//		}
+//		else if (this._dead)
+//		{
+//			this._agent.Stop();
+//
+//		}
+//		else
+//		{
+//			if (GameDirector.instance.GetPlayer().GetPlayerState() != PlayerState.Dialogue)
+//			{
+//				this.Unaware();
+//			}
+//		}
 	}
 	
 	public void LookAtPlayer()
@@ -110,6 +148,16 @@ public class BasicEnemyController : MonoBehaviour {
 	public void OverwhelmPlayer()
 	{
 		_agent.Stop();
+		this.ForceOverwhelmState();
+	}
+
+	void ForceOverwhelmState()
+	{
+		this.transform.LookAt(player.transform.position);
+		_anim.SetBool ("Alert", true);
+		_anim.SetBool ("Aggro", true);
+		_anim.SetBool ("Alert", false);
+		_anim.SetBool ("Moving", false);
 	}
 	
 	public void Unaware()
@@ -154,12 +202,13 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public float GetDistance()
 	{
-		return this._distance;
+		return this.distance;
 	}
 
 	public void Stun()
 	{
 		this._stunned = true;
+		this.StunnedAction();
 	}
 
 	public bool GetStunStatus()
@@ -193,13 +242,15 @@ public class BasicEnemyController : MonoBehaviour {
 	public void Cower()
 	{
 		_anim.SetBool ("Cower", true);
-		_dead = true;
+		dead = true;
 		_opCounter = 1;
 	}
 
+	// Called from animation controller at end of Cower animation
 	public void DestroyMe()
 	{
-		GameDirector.instance.KillEnemy();
+		//GameDirector.instance.KillEnemy();
+		this.gameObject.SetActive(false);
 	}
 
 	public void NextOPStage()
@@ -207,19 +258,74 @@ public class BasicEnemyController : MonoBehaviour {
 		_opCounter++;
 	}
 
-	private void Stunned()
+	public void Stunned()
 	{
+		this._agent.Stop();
 		this._stunDuration -= Time.deltaTime;
 		if (this._stunDuration <= 0)
 		{
 			this._stunned = false;
 			this._stunDuration = stunTimer;
-			_agent.Resume();
+			if (this.theaterEnemy)
+			{
+				this.TheaterAction();
+			}
+			else
+			{
+				this.NotVisibleAction();
+			}
 		}
 	}
 
 	public NavMeshAgent GetAgent()
 	{
 		return this._agent;
+	}
+
+	void SwitchAction(IEnemyAction inAction)
+	{
+		this._currentAction = inAction;
+	}
+
+	public IEnemyAction GetCurrentAction()
+	{
+		return this._currentAction;
+	}
+
+	public void NotVisibleAction()
+	{
+		_agent.Resume();
+		this.SwitchAction(this._notVisibleEA);
+	}
+
+	public void VisibleAction()
+	{
+		this.SwitchAction(this._visibleEA);
+	}
+
+	public void HiddenAction()
+	{
+		this.SwitchAction(this._hiddenEA);
+	}
+
+	public void HiddenTileAction()
+	{
+		this.SwitchAction(this._hiddenTileEA);
+	}
+
+	public void StunnedAction()
+	{
+		this.SwitchAction(this._stunnedEA);
+	}
+
+	public void TheaterAction()
+	{
+		_agent.Resume();
+		this.SwitchAction (this._theaterEA);
+	}
+
+	public void SuitAction()
+	{
+		this.SwitchAction(this._suitEA);
 	}
 }

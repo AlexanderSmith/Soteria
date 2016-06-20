@@ -759,7 +759,7 @@ public class GameDirector : MonoBehaviour {
 
 	public void ChangeGameState(GameStates state)
 	{
-		this._stateManager.ChangeGameState (state);
+		this._stateManager.ChangeGameState(state);
 	}
 
 	#endregion
@@ -772,11 +772,6 @@ public class GameDirector : MonoBehaviour {
 //	{
 //		this._HUDManager.HUDSceneStart(token, lantern);
 //	}
-
-	public void SetClearStatus(bool inStatus)
-	{
-		_HUDManager.isToClear = inStatus;	
-	}
 
 	public void EncounterClear()
 	{
@@ -987,6 +982,37 @@ public class GameDirector : MonoBehaviour {
 
     #region EncounterManager
 
+	public void SetEnemyActionNotVisible()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			enemy.GetComponent<BasicEnemyController>().NotVisibleAction();
+		}
+	}
+
+	public void SetEnemyActionHidden()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			enemy.GetComponent<BasicEnemyController>().HiddenAction();
+		}
+	}
+	
+	public void SetEnemyActionHiddenTile()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			enemy.GetComponent<BasicEnemyController>().HiddenTileAction();
+		}
+	}
+
+	public void SetEnemyActionSuit()
+	{
+	}
+
 	public EncounterState GetEncounterState()
 	{
 		return this._encounterManager.GetState();
@@ -1010,7 +1036,7 @@ public class GameDirector : MonoBehaviour {
 		this._encounterManager.OicysEncounter();
 		this._stateManager.ChangeGameState (GameStates.Encounter);
 		this._HUDManager.EnableEncounterView();
-		this.SetClearStatus(false);
+		this._HUDManager.SetClearStatus(false);
 		this._player.PlayerActionOicysEnc();
 	}
 
@@ -1031,7 +1057,7 @@ public class GameDirector : MonoBehaviour {
 		}
 		
 		this._HUDManager.EnableEncounterView();
-		this.SetClearStatus(false);
+		this._HUDManager.SetClearStatus(false);
 		// Take away player's ability to fight shadow creatures until after getting rid of the suit pieces
 		if (this._canFight)
 		{
@@ -1060,7 +1086,7 @@ public class GameDirector : MonoBehaviour {
 			this._stateManager.ChangeGameState (GameStates.Encounter);
 		}
 		this._HUDManager.EnableEncounterView();
-		this.SetClearStatus(false);
+		this._HUDManager.SetClearStatus(false);
 		if (this._canFight)
 		{
 			this._player.PlayerActionMusicPuzzle();
@@ -1073,7 +1099,7 @@ public class GameDirector : MonoBehaviour {
 
 	public void PuppetPuzzleWhiteOut()
 	{
-		this.SetClearStatus(false);
+		this._HUDManager.SetClearStatus(false);
 		this._HUDManager.EnablePuppetPuzzleEncounterView();
 	}
 
@@ -1112,7 +1138,7 @@ public class GameDirector : MonoBehaviour {
 			this._stateManager.ChangeGameState (GameStates.Encounter);
 		}
 		this._HUDManager.EnableEncounterView();
-		this.SetClearStatus(false);
+		this._HUDManager.SetClearStatus(false);
 		if (this._canFight)
 		{
 			this._player.PlayerActionObsPuzzle();
@@ -1230,13 +1256,19 @@ public class GameDirector : MonoBehaviour {
 	public void ResetLinger()
 	{
 		this._player.ResetLinger();
-		this.SetClearStatus(false);
+		this._HUDManager.SetClearStatus(false);
 	}
 
 	public void PlayerOvercame()
 	{
 		//GetPlayer().GetComponent<Player>().Overcome();
 		this._encounterManager.PlayerOvercame();
+		this._stateManager.ChangeGameState(GameStates.Normal);
+	}
+
+	public void PlayerOvercameMusic()
+	{
+		this._encounterManager.PlayerOvercameMusic();
 		this._stateManager.ChangeGameState(GameStates.Normal);
 	}
 
@@ -1460,9 +1492,19 @@ public class GameDirector : MonoBehaviour {
 		this._audioManager.FadeIn(inAID);
 	}
 
+	public void StartFadeInTimer()
+	{
+		this._audioManager.StartFadeInTimer ();
+	}
+
 	public void FadeOut(AudioID inAID)
 	{
 		this._audioManager.FadeOut(inAID);
+	}
+
+	public void StartFadeOutTimer()
+	{
+		this._audioManager.StartFadeOutTimer ();
 	}
 	
 	#endregion
@@ -1488,20 +1530,22 @@ public class GameDirector : MonoBehaviour {
 		switch(inType)
 		{
 			case ItemType.Token:
-				this._HUDManager.SwapTokenForKey();
+				//this._HUDManager.SwapTokenForKey();
 				this.token = false;
 			break;
 			
 			case ItemType.Compass:    
-				this._HUDManager.SwapCompassForKey();
+				//this._HUDManager.SwapCompassForKey();
 				this.compass = false;
 			break;
 			
 			case ItemType.Lantern:
-				this._HUDManager.SwapLanternForKey();
+				//this._HUDManager.SwapLanternForKey();
 				this.lantern = false;
 			break;
 		}
+		//Replacing all the commented out calls above. Happened in HUD manager port. 
+		this._HUDManager.SwapForKey (inType);
 	}
 
 	#endregion
