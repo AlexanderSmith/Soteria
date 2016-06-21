@@ -10,6 +10,7 @@ public class HubStartUp : MonoBehaviour
 
 	void Awake()
 	{
+
 		switch (GameDirector.instance.GetHubPhase())
 		{
 		case 5:

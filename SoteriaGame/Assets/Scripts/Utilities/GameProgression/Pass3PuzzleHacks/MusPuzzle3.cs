@@ -3,9 +3,9 @@ using System.Collections;
 
 public class MusPuzzle3 : MonoBehaviour
 {
-	void OnTriggerEnter(Collider player)
+	void Start()
 	{
-		if (player.gameObject.tag == "Player")
+		if (GameDirector.instance.GetGameState() == GameStates.Suit)
 		{
 			GameDirector.instance.MusicPuzzleVisitedSuit();
 		}

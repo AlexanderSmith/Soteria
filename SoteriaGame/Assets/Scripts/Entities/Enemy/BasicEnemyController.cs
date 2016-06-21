@@ -34,6 +34,7 @@ public class BasicEnemyController : MonoBehaviour {
 	private IEnemyAction _theaterEA = new EnemyActionTheater();
 	private IEnemyAction _stunnedEA = new EnemyActionStunned();
 	private IEnemyAction _suitEA = new EnemyActionSuit();
+	private IEnemyAction _interactionEA = new EnemyActionInteraction();
 	
 	public bool playerVisible;
 	public float fieldOfVision = 125.0f;
@@ -305,7 +306,14 @@ public class BasicEnemyController : MonoBehaviour {
 
 	public void HiddenAction()
 	{
-		this.SwitchAction(this._hiddenEA);
+		if (!this.theaterEnemy)
+		{
+			this.SwitchAction(this._hiddenEA);
+		}
+		else
+		{
+			this.KillTheaterEnemy();
+		}
 	}
 
 	public void HiddenTileAction()
@@ -321,11 +329,21 @@ public class BasicEnemyController : MonoBehaviour {
 	public void TheaterAction()
 	{
 		_agent.Resume();
-		this.SwitchAction (this._theaterEA);
+		this.SwitchAction(this._theaterEA);
 	}
 
 	public void SuitAction()
 	{
 		this.SwitchAction(this._suitEA);
+	}
+
+	public void InteractionAction()
+	{
+		this.SwitchAction(this._interactionEA);
+	}
+
+	public void KillTheaterEnemy()
+	{
+		this.gameObject.SetActive(false);
 	}
 }

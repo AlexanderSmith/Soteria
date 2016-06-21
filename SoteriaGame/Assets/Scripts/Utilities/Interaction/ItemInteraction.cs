@@ -34,6 +34,7 @@ public class ItemInteraction : InteractionBase
 				if (!GameDirector.instance.isDialogueActive())
 				{
 					this._reaction.execute();
+					GameDirector.instance.SetEnemyActionNotVisible();
 				}
 			}
 			else
@@ -41,7 +42,8 @@ public class ItemInteraction : InteractionBase
 				if (Input.GetKeyDown(KeyCode.Space))
 				{
 					GameDirector.instance.GetPlayer().PlayerActionPause();
-					
+					GameDirector.instance.SetEnemyActionInteraction();
+
 					GameDirector.instance.SetupDialogue(DialogueName);
 					if (this.IsNpcDialogue)
 						GameDirector.instance.SetupDialogueNPC(this.NpcPortrait);

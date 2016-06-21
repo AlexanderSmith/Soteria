@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿	using UnityEngine;
 using System.Collections;
 
 public class CardInteraction : InteractionBase
@@ -50,6 +50,7 @@ public class CardInteraction : InteractionBase
 				if (!GameDirector.instance.isDialogueActive())
 				{
 					this._reaction.execute();
+					GameDirector.instance.SetEnemyActionNotVisible();
 				}
 			}
 			else
@@ -57,6 +58,7 @@ public class CardInteraction : InteractionBase
 				if (Input.GetKeyDown(KeyCode.Space))
 				{
 					GameDirector.instance.GetPlayer().PlayerActionPause();
+					GameDirector.instance.SetEnemyActionInteraction();
 										// Convert tag string to int for district check to inform Game Director which district card belongs to
 					char dist = this.gameObject.tag[0];
 					this._district = dist - 48;

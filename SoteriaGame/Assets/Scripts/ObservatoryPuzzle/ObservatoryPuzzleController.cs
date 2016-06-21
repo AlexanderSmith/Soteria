@@ -95,6 +95,8 @@ public class ObservatoryPuzzleController : MonoBehaviour
 				GameDirector.instance.ObsPuzzleActivated();
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
 				GameDirector.instance.GetPlayer().PlayerActionNormal();
+				GameDirector.instance.HubPhase4();
+				GameDirector.instance.AddGamePhase();
 			}
 			if (!GameDirector.instance.isDialogueActive() && this._timesFailed == 1)
 			{

@@ -45,6 +45,7 @@ public class DialogueInteraction : InteractionBase
 					this.gameObject.transform.parent.GetComponent<SphereCollider>().enabled = false;
 					this._interactionbutton.GetComponent<Animator>().SetBool("Show", false);
 					GameDirector.instance.GetPlayer().PlayerActionNormal();
+					GameDirector.instance.SetEnemyActionNotVisible();
 				}
 			}
 			else
@@ -52,6 +53,7 @@ public class DialogueInteraction : InteractionBase
 				if (Input.GetKeyDown(KeyCode.Space))
 				{
 					GameDirector.instance.GetPlayer().PlayerActionPause();
+					GameDirector.instance.SetEnemyActionInteraction();
 					GameDirector.instance.SetupDialogue(DialogueName, this.transform.parent.gameObject);
 					if (this.IsNpcDialogue)
 						GameDirector.instance.SetupDialogueNPC(this.NpcPortrait);

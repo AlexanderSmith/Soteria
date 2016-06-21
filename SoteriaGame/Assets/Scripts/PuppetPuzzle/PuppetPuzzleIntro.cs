@@ -4,10 +4,15 @@ using System.Collections;
 public class PuppetPuzzleIntro : MonoBehaviour
 {
 	private GameObject _controller;
+	public GameObject portToDistrict;
 
 	void Start()
 	{
 		this._controller = GameObject.Find("PuppetPuzzleController");
+		if (!GameDirector.instance.GetPuppetActivated())
+		{
+			portToDistrict.SetActive (false);
+		}
 	}
 
 	void OnTriggerEnter(Collider player)
@@ -19,6 +24,7 @@ public class PuppetPuzzleIntro : MonoBehaviour
 			GameDirector.instance.SetupDialogue("AnaEnteringTheaterPuzzFirstTime");
 			GameDirector.instance.StartDialogue(true);
 			GameDirector.instance.PuppetPuzzleActivated();
+			GameDirector.instance.HubPhase3();
 		}
 	}
 

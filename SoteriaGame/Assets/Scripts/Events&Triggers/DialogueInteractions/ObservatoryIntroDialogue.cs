@@ -9,6 +9,7 @@ public class ObservatoryIntroDialogue : MonoBehaviour
 		{
 			GameDirector.instance.ObsIntroHeard();
 			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetEnemyActionInteraction();
 			GameDirector.instance.SetupDialogue("AnaDistEnterVOOBSERp1");
 			GameDirector.instance.StartDialogue(true);
 		}
@@ -22,6 +23,7 @@ public class ObservatoryIntroDialogue : MonoBehaviour
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
 				GameDirector.instance.GetPlayer().PlayerActionNormal();
+				GameDirector.instance.SetEnemyActionNotVisible();
 			}
 		}
 	}

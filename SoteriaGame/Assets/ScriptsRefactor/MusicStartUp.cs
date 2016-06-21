@@ -10,6 +10,8 @@ public class MusicStartUp : MonoBehaviour
 
 	void Awake()
 	{
+//		GameDirector.instance.AddGamePhase ();
+//		GameDirector.instance.AddGamePhase ();
 		switch (GameDirector.instance.GetGamePhase())
 		{
 		case 1:

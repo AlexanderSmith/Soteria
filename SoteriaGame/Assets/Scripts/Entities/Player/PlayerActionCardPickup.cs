@@ -10,12 +10,14 @@ public class PlayerActionCardPickup : IPlayerAction
 			// Pick up this card
 			GameDirector.instance.EndCardInteraction(true);
 			GameDirector.instance.GetPlayer().PlayerActionNormal();
+			GameDirector.instance.SetEnemyActionNotVisible();
 		}
 		else if (Input.GetKeyDown(KeyCode.N))
 		{
 			// Don't pick up this card
 			GameDirector.instance.EndCardInteraction(false);
 			GameDirector.instance.GetPlayer().PlayerActionNormal();
+			GameDirector.instance.SetEnemyActionNotVisible();
 		}
 	}
 

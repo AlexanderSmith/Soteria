@@ -10,6 +10,7 @@ public class PlayerActionItemPickup : IPlayerAction
 			// Pick up this card
 			GameDirector.instance.EndItemInteraction(true);
 			GameDirector.instance.GetPlayer().PlayerActionNormal();
+			GameDirector.instance.SetEnemyActionNotVisible();
 		}
 	}
 	

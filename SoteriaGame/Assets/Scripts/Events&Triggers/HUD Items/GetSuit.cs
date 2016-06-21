@@ -14,7 +14,6 @@ public class GetSuit : Reaction
 		GameDirector.instance.HubPhase5();
 		GameDirector.instance.AddGamePhase();
 
-
 		GameDirector.instance.GetPlayer().PlayerActionItemPickup();
 		GameDirector.instance.StartItemInteraction(SplashScreen);
 		this.gameObject.transform.parent.gameObject.SetActive(false);

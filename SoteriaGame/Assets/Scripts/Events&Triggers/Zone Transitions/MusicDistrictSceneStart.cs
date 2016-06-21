@@ -22,7 +22,7 @@ public class MusicDistrictSceneStart : MonoBehaviour
 			GameObject player = Instantiate(playerPrefab, districtSpawnLoc.position, districtSpawnLoc.rotation) as GameObject;
 			GameDirector.instance.InitializePlayer();
 			GameDirector.instance.ResetFromMusicDistrict();
-			GameDirector.instance.SuitWorn();
+//			GameDirector.instance.SuitWorn();
 		}
 	}
 }

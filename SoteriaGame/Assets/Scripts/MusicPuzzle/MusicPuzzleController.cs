@@ -115,6 +115,7 @@ public class MusicPuzzleController : MonoBehaviour
 	void PrivatePuzzleActivated()
 	{
 		GameDirector.instance.MusicPuzzleActivated();
+		GameDirector.instance.HubPhase2();
 		StartCoroutine("ActivatePuzzle");
 	}
 

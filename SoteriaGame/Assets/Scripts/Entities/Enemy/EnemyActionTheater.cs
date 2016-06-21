@@ -5,6 +5,11 @@ public class EnemyActionTheater : IEnemyAction
 {
 	public void EnemyAction(BasicEnemyController inController)
 	{
+		if (GameDirector.instance.GetGameState() == GameStates.Hidden)
+		{
+			inController.KillTheaterEnemy();
+		}
+
 		inController.distance = Vector3.Distance(inController.transform.position, GameDirector.instance.GetPlayer().transform.position);
 
 		if (inController.distance <= inController.overwhelmRange)

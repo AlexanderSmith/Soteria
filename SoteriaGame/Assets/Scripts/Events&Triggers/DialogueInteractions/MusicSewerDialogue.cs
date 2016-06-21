@@ -17,6 +17,7 @@ public class MusicSewerDialogue : MonoBehaviour
 		if (player.gameObject.tag == "Player")
 		{
 			GameDirector.instance.GetPlayer().PlayerActionPause();
+			GameDirector.instance.SetEnemyActionInteraction();
 			GameDirector.instance.SetupDialogue("AnaTriesGateMUSICp1");
 			GameDirector.instance.StartDialogue();
 			this.gameObject.GetComponentInChildren<InspectMusicSewer>().TurnOffInspect();
@@ -37,6 +38,7 @@ public class MusicSewerDialogue : MonoBehaviour
 				GameDirector.instance.ChangeObjective(_oMalleyPrefab);
 				GameDirector.instance.PlayAudioClip(AudioID.OMalleyMeow);
 				GameDirector.instance.GetPlayer().PlayerActionNormal();
+				GameDirector.instance.SetEnemyActionNotVisible();
 			}
 		}
 	}

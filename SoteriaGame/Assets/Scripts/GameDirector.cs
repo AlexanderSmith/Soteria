@@ -987,7 +987,10 @@ public class GameDirector : MonoBehaviour {
 		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
 		foreach (GameObject enemy in enemies)
 		{
-			enemy.GetComponent<BasicEnemyController>().NotVisibleAction();
+			if (enemy.GetComponent<BasicEnemyController>() != null)
+			{
+				enemy.GetComponent<BasicEnemyController>().NotVisibleAction();
+			}
 		}
 	}
 
@@ -1011,6 +1014,23 @@ public class GameDirector : MonoBehaviour {
 
 	public void SetEnemyActionSuit()
 	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			enemy.GetComponent<BasicEnemyController>().SuitAction();
+		}
+	}
+
+	public void SetEnemyActionInteraction()
+	{
+		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+		foreach (GameObject enemy in enemies)
+		{
+			if (enemy.GetComponent<BasicEnemyController>() != null)
+			{
+				enemy.GetComponent<BasicEnemyController>().InteractionAction();
+			}
+		}
 	}
 
 	public EncounterState GetEncounterState()

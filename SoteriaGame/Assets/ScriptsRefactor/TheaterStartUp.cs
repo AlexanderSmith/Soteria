@@ -10,6 +10,7 @@ public class TheaterStartUp : MonoBehaviour
 	
 	void Awake()
 	{
+//		GameDirector.instance.AddGamePhase();
 		switch (GameDirector.instance.GetGamePhase())
 		{
 		case 1:
