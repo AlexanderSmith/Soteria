@@ -6,6 +6,6 @@ public class StatueCrumbled : Reaction
 	public override void execute()
 	{
 		//GameDirector.instance.StatueCrumbled();
-		this.transform.root.GetComponent<PrayerBools>().StartTimer();
+		this.transform.parent.parent.GetComponent<PrayerBools>().StartTimer();
 	}
 }

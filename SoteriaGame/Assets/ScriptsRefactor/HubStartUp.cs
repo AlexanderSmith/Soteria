@@ -10,6 +10,8 @@ public class HubStartUp : MonoBehaviour
 
 	void Awake()
 	{
+//		GameDirector.instance.HubPhase5 ();
+//		GameDirector.instance.StatueCrumbleThree ();
 
 		switch (GameDirector.instance.GetHubPhase())
 		{

@@ -40,6 +40,10 @@ public class HubSuitObjective : MonoBehaviour
 
 		// Testing statue final crumble code
 //		GameDirector.instance.StatueCrumbleTwo();
+//		GameDirector.instance.TutorialCompleted ();
+//		GameDirector.instance.MusicPuzzleDefeated ();
+//		GameDirector.instance.TheaterPuzzleDefeated ();
+//		GameDirector.instance.ObservatoryPuzzleDefeated ();
 	}
 
 	void Start ()

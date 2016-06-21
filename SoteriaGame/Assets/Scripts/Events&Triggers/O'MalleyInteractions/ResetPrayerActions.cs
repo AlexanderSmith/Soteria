@@ -14,7 +14,7 @@ public class ResetPrayerActions : MonoBehaviour
 
 	public void Success()
 	{
-		this.transform.root.GetComponent<PrayerBools>().Success();
+		this.transform.parent.GetComponent<PrayerBools>().Success();
 		GameDirector.instance.EndTriggerState();
 	}
 }
