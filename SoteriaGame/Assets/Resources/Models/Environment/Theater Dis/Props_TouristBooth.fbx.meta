@@ -79,6 +79,7 @@ ModelImporter:
     2300042: pPipe13
     2300044: pPipe8
     2300046: pPipe9
+    2300048: //RootNode
     3300000: pCube22
     3300002: pCube23
     3300004: pCube24
@@ -103,6 +104,7 @@ ModelImporter:
     3300042: pPipe13
     3300044: pPipe8
     3300046: pPipe9
+    3300048: //RootNode
     4300000: pCube22
     4300002: pCube23
     4300004: pCube24
@@ -127,11 +129,12 @@ ModelImporter:
     4300042: pPipe11
     4300044: pPipe12
     4300046: pPipe13
+    4300048: pCube302
     9500000: //RootNode
   materials:
     importMaterials: 1
-    materialName: 0
-    materialSearch: 1
+    materialName: 1
+    materialSearch: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
