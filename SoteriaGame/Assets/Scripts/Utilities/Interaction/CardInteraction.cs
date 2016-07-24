@@ -50,7 +50,7 @@ public class CardInteraction : InteractionBase
 				if (!GameDirector.instance.isDialogueActive())
 				{
 					this._reaction.execute();
-					GameDirector.instance.SetEnemyActionNotVisible();
+					//GameDirector.instance.SetEnemyActionNotVisible();
 				}
 			}
 			else
