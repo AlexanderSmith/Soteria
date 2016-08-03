@@ -60,7 +60,15 @@ public class BasicEnemyController : MonoBehaviour {
 		}
 		else if (!this.theaterEnemy)
 		{
-			this.NotVisibleAction();
+			if (GameDirector.instance.GetGameState() == GameStates.HiddenTile)
+			{
+				this.HiddenTileAction();
+				//GameDirector.instance.ChangeGameState(GameStates.HiddenTile);
+			}
+			else
+			{
+				this.NotVisibleAction();
+			}
 		}
 		else
 		{

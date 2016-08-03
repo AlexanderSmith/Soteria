@@ -14,7 +14,7 @@ public class Player : MonoBehaviour
 	public float moveSpeed = 5.0f;
 	public float rotationSpeed = 20.0f;
 	public float MoveAngleCorrection = 45.0f;
-	public float hideDelay = 1f;
+	public float hideDelay = 0.5f;
 	public bool encounterVariables = false;
 
 	private Animator _animator;

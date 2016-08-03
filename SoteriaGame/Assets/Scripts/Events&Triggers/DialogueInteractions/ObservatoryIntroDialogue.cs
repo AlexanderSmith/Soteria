@@ -23,7 +23,7 @@ public class ObservatoryIntroDialogue : MonoBehaviour
 			{
 				this.gameObject.GetComponent<BoxCollider>().enabled = false;
 				GameDirector.instance.GetPlayer().PlayerActionNormal();
-				GameDirector.instance.SetEnemyActionNotVisible();
+				GameDirector.instance.SetEnemyActionHiddenTile();
 			}
 		}
 	}
