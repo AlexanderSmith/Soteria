@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class ObservatoryPuzzleController : MonoBehaviour
 {
+	public GameObject keyPiece;
+
 	private GameObject _doorEncounter1;
 	private GameObject _doorEncounter2;
 	private GameObject _doorEncounter3;
@@ -70,6 +72,7 @@ public class ObservatoryPuzzleController : MonoBehaviour
 
 		// Testing
 		//GameDirector.instance.SuitRemoved();
+		GameDirector.instance.ChangeObjective(keyPiece);
 	}
 
 	public void Initialize()

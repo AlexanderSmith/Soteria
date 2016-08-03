@@ -214,6 +214,16 @@ public class AudioManager : MonoBehaviour
 		fadeInTimer.ResetTimer();
 		fadeInTimer.StartTimer();
 	}
+
+	public void PauseAudio(AudioID inAID)
+	{
+		FindAudioSrcbyID(inAID).pauseAudio();
+	}
+
+	public void UnpauseAudio(AudioID inAID)
+	{
+		FindAudioSrcbyID(inAID).unpauseAudio();
+	}
 }
 
 // Requires separtate script for future stuffies
@@ -491,6 +501,16 @@ public class AudioSourceWrapper
 	public float getVolume()
 	{
 		return this._audiosrc.volume;
+	}
+
+	public void pauseAudio()
+	{
+		this._audiosrc.Pause();
+	}
+
+	public void unpauseAudio()
+	{
+		this._audiosrc.UnPause();
 	}
 
 	public void fadeOut()

@@ -17,7 +17,7 @@ public class PuppetPuzzleIntro : MonoBehaviour
 
 	void OnTriggerEnter(Collider player)
 	{
-		if (player.gameObject.tag == "Player")
+		if (player.GetType() == typeof(BoxCollider) && player.gameObject.tag == "Player")
 		{
 			//this._controller.GetComponent<PuppetPuzzleController>().OpenBossEye();
 			GameDirector.instance.GetPlayer().PlayerActionPause();

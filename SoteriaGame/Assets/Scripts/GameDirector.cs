@@ -991,6 +991,7 @@ public class GameDirector : MonoBehaviour {
 			{
 				enemy.GetComponent<BasicEnemyController>().NotVisibleAction();
 			}
+			this.UnpauseAudio(AudioID.Whispers);
 		}
 	}
 
@@ -1030,6 +1031,7 @@ public class GameDirector : MonoBehaviour {
 			{
 				enemy.GetComponent<BasicEnemyController>().InteractionAction();
 			}
+			this.PauseAudio(AudioID.Whispers);
 		}
 	}
 
@@ -1525,6 +1527,16 @@ public class GameDirector : MonoBehaviour {
 	public void StartFadeOutTimer()
 	{
 		this._audioManager.StartFadeOutTimer ();
+	}
+
+	public void PauseAudio(AudioID inAID)
+	{
+		this._audioManager.PauseAudio(inAID);
+	}
+
+	public void UnpauseAudio(AudioID inAID)
+	{
+		this._audioManager.UnpauseAudio(inAID);
 	}
 	
 	#endregion

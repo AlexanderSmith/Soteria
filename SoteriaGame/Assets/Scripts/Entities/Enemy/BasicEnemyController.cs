@@ -78,7 +78,7 @@ public class BasicEnemyController : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () 
+	void FixedUpdate () 
 	{
 		this._currentAction.EnemyAction(this);
 //		if (this._stunned)
