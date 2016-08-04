@@ -12,6 +12,7 @@ public class HubStartUp : MonoBehaviour
 	{
 //		GameDirector.instance.HubPhase5 ();
 //		GameDirector.instance.StatueCrumbleThree ();
+		GameDirector.instance.ClearAudioList();
 
 		switch (GameDirector.instance.GetHubPhase())
 		{
