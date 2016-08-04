@@ -7,8 +7,11 @@ public class TriggerTailorLight : MonoBehaviour
 
 	public void TurnOn()
 	{
-		//this.tailorLight = GameObject.Find("TailorLight");
-		this.tailorLight.GetComponent<Light>().enabled = true;
+		if (tailorLight != null)
+		{
+			//this.tailorLight = GameObject.Find("TailorLight");
+			this.tailorLight.GetComponent<Light>().enabled = true;
+		}
 		GameDirector.instance.EndTriggerState();
 	}
 }

@@ -64,9 +64,11 @@ public class StateManager : MonoBehaviour {
 
 	private void SwitchToNormal()
 	{
-
+		if (gameState != GameStates.Encounter)
+		{
+			GameDirector.instance.SetEnemyActionNotVisible();
+		}
 		gameState = GameStates.Normal;
-		GameDirector.instance.SetEnemyActionNotVisible();
 	}
 
 	private void SwitchToHidden()
