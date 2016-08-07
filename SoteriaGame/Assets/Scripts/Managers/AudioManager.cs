@@ -52,6 +52,12 @@ public class AudioManager : MonoBehaviour
 			AudioSource AudioSrc = inGameObj.GetComponent<AudioSource>() as AudioSource;
 			this._audioSourceList.Add (new AudioSourceWrapper(inGameObj, AudioSrc, aID));
 		}
+        else
+        {
+            AudioSourceWrapper ASrc = this.FindAudioSrcbyID(aID);
+            if (ASrc.isSrcNull())
+                ASrc.FixNullSrc(inGameObj);
+        }
 	}
 		
 
@@ -380,11 +386,25 @@ public class AudioSourceWrapper
 	public AudioID getAID()
 	{
 		return this._aID;
-	}
+    }
 	
+    public void FixNullSrc (GameObject inGameObj)
+    {
+        if (this._audiosrc == null)
+            this._audiosrc = inGameObj.GetComponent<AudioSource>();
+    }   
+
+    public bool isSrcNull ()
+    {
+        if (this._audiosrc == null)
+            return true;
+        return false;
+    }
+    
 	public void playClip()
 	{
-		if (this._audiosrc.clip == null)
+        Debug.Log("Pre Play: " + this._aID);
+        if (this._audiosrc.clip == null)
 		{
 			if (_audioclips.Count > 0)
 				this._audiosrc.clip = this._audioclips [0];
@@ -399,7 +419,7 @@ public class AudioSourceWrapper
 				}
 			}
 		}
-		Debug.Log (this._audiosrc.clip.name);
+	//	Debug.Log (this._audiosrc.clip.name);
 //		if (this._audiosrc.time > 0.0f)
 //		{
 //			this._audiosrc.time = 0.0f;
