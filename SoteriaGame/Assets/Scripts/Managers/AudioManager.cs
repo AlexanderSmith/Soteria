@@ -403,7 +403,7 @@ public class AudioSourceWrapper
     
 	public void playClip()
 	{
-        Debug.Log("Pre Play: " + this._aID);
+       // Debug.Log("Pre Play: " + this._aID);
         if (this._audiosrc.clip == null)
 		{
 			if (_audioclips.Count > 0)

@@ -25,7 +25,8 @@ public class FailedObservatory : MonoBehaviour
 		else
 		{
 			_oMalleyPrefab.SetActive(false);
-			//GameDirector.instance.ChangeObjective(GameObject.Find("TailorDialogueLocation"));
+            if (GameObject.Find("TailorFirstInteraction").activeInHierarchy)
+			    GameDirector.instance.ChangeObjective(GameObject.Find("TailorDialogueLocation"));
 		}
 	}
 }
