@@ -35,6 +35,7 @@ public class BasicEnemyController : MonoBehaviour {
 	private IEnemyAction _stunnedEA = new EnemyActionStunned();
 	private IEnemyAction _suitEA = new EnemyActionSuit();
 	private IEnemyAction _interactionEA = new EnemyActionInteraction();
+	private IEnemyAction _deadEA = new EnemyActionDead();
 	
 	public bool playerVisible;
 	public float fieldOfVision = 125.0f;
@@ -252,7 +253,13 @@ public class BasicEnemyController : MonoBehaviour {
 	{
 		_anim.SetBool ("Cower", true);
 		dead = true;
+		this.DeadAction();
 		_opCounter = 1;
+	}
+
+	public void Dead()
+	{
+
 	}
 
 	// Called from animation controller at end of Cower animation
@@ -353,5 +360,10 @@ public class BasicEnemyController : MonoBehaviour {
 	public void KillTheaterEnemy()
 	{
 		this.gameObject.SetActive(false);
+	}
+
+	public void DeadAction()
+	{
+		this.SwitchAction(this._deadEA);
 	}
 }

@@ -12,6 +12,8 @@ public class MusicStartUp : MonoBehaviour
 	{
 //		GameDirector.instance.AddGamePhase ();
 //		GameDirector.instance.AddGamePhase ();
+//		GameDirector.instance.AddGamePhase ();
+//		GameDirector.instance.CanFightTrue ();
 		switch (GameDirector.instance.GetGamePhase())
 		{
 		case 1:

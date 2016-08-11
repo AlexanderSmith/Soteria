@@ -360,6 +360,11 @@ public class GameDirector : MonoBehaviour {
 		return this._canFight;
 	}
 
+	public void CanFightTrue()
+	{
+		this._canFight = true;
+	}
+
 	public int GetHubPhase()
 	{
 		return this._hubPhase;
@@ -1093,12 +1098,15 @@ public class GameDirector : MonoBehaviour {
 
 	public void StopEncounterMode()
 	{
-		if (this.GetGameState() != GameStates.Suit)
+		if (GameDirector.instance.GetGameState() != GameStates.Normal)
 		{
-			this._stateManager.ChangeGameState(GameStates.Normal);
+			if (this.GetGameState() != GameStates.Suit)
+			{
+				this._stateManager.ChangeGameState(GameStates.Normal);
+			}
+			this._HUDManager.DisableEncounterView();
+			this._player.PlayerActionNormal();
 		}
-		this._HUDManager.DisableEncounterView();
-		this._player.PlayerActionNormal();
 	}
 
 	public void StartMusicPuzzleEncounter()
