@@ -192,17 +192,17 @@ public class HudManager : MonoBehaviour {
 	}
 
 	//Working on consolidating the 3 functions below
-	public void SwapForKey(ItemType inType)
-	{
-		if (inType == ItemType.Token) 
-		{
-			SwapTokenForKey();
-		} 
-		else 
-		{
-			SwapItemForKey(inType);
-		}
-	}
+//	public void SwapForKey(ItemType inType)
+//	{
+//		if (inType == ItemType.Token) 
+//		{
+//			SwapTokenForKey();
+//		} 
+//		else 
+//		{
+//			SwapItemForKey(inType);
+//		}
+//	}
 
 	public void SwapTokenForKey()
 	{
@@ -243,54 +243,54 @@ public class HudManager : MonoBehaviour {
 		currChoice++;
 	}
 
-	public void SwapItemForKey(ItemType inType)
-	{
-		GameObject whatToSwap = null;
-		GameObject tokenDummy = null;
-		
-		if (inType == ItemType.Lantern) 
-		{
-			whatToSwap = LanternInv;
-			tokenDummy = TokenInv_1;
-		} 
-		else if (inType == ItemType.Compass) 
-		{
-			whatToSwap = CompassInv;
-			tokenDummy = TokenInv_2;
-		}
-		
-		switch(currChoice)
-		{
-		case InventorySwapChoice.First:
-			whatToSwap.SetActive(false);
-			LeftKey.SetActive(true);
-			tokenDummy.SetActive(true);
-			TokenInv.SetActive(false);
-			GameDirector.instance.LeftKeyAcquired();
-			GameDirector.instance.EndTriggerState();
-			//			GameDirector.instance.SetupDialogue("AnaDroppingItemAfterMusicPuzz", GameObject.Find ("OMalleyProvokeMusic"));
-			//			GameDirector.instance.SetupDialogueNPC(Resources.Load ("GUI/Portraits/O'MalleyColor") as Sprite);
-			//			GameDirector.instance.StartDialogue();
-			break;
-			
-		case InventorySwapChoice.Second:
-			whatToSwap.SetActive(false);
-			RightKey.SetActive(true);
-			break;
-			
-		case InventorySwapChoice.Third:
-			whatToSwap.SetActive(false);
-			MidKey.SetActive(true);
-			break;
-			
-		default:
-			break;
-		}
-		
-		currChoice++;
-	}
+//	public void SwapItemForKey(ItemType inType)
+//	{
+//		GameObject whatToSwap = null;
+//		GameObject tokenDummy = null;
+//		
+//		if (inType == ItemType.Lantern) 
+//		{
+//			whatToSwap = LanternInv;
+//			tokenDummy = TokenInv_1;
+//		} 
+//		else if (inType == ItemType.Compass) 
+//		{
+//			whatToSwap = CompassInv;
+//			tokenDummy = TokenInv_2;
+//		}
+//		
+//		switch(currChoice)
+//		{
+//		case InventorySwapChoice.First:
+//			whatToSwap.SetActive(false);
+//			LeftKey.SetActive(true);
+//			tokenDummy.SetActive(true);
+//			TokenInv.SetActive(false);
+//			GameDirector.instance.LeftKeyAcquired();
+//			GameDirector.instance.EndTriggerState();
+//			//			GameDirector.instance.SetupDialogue("AnaDroppingItemAfterMusicPuzz", GameObject.Find ("OMalleyProvokeMusic"));
+//			//			GameDirector.instance.SetupDialogueNPC(Resources.Load ("GUI/Portraits/O'MalleyColor") as Sprite);
+//			//			GameDirector.instance.StartDialogue();
+//			break;
+//			
+//		case InventorySwapChoice.Second:
+//			whatToSwap.SetActive(false);
+//			RightKey.SetActive(true);
+//			break;
+//			
+//		case InventorySwapChoice.Third:
+//			whatToSwap.SetActive(false);
+//			MidKey.SetActive(true);
+//			break;
+//			
+//		default:
+//			break;
+//		}
+//		
+//		currChoice++;
+//	}
 
-	/*Depricated
+	//Depricated
 	public void SwapCompassForKey()
 	{
 		switch(currChoice)
@@ -354,7 +354,7 @@ public class HudManager : MonoBehaviour {
 			break;
 		}
 		currChoice++;
-	}*/
+	}
 
 	// The error with the indicator in this function is because the clipping of the camera unloads the objective object point if you walk too
 	// far behind it. Because of this the error has that weird flipping. However Unity doesn't provide an easy way to keep those objects alive

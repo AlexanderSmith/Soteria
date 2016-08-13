@@ -113,6 +113,8 @@ public class GameDirector : MonoBehaviour {
 	private DialogueManager 	_dialoguemanager;
 	private LevelManager		_levelManager;
 
+	public StatueCrumbleState _crumbleSate;
+
     #endregion
 
 	///////////////////////////////////////////////////////////////////
@@ -172,6 +174,7 @@ public class GameDirector : MonoBehaviour {
 		this._puppetPuzzleActivated = false;
 		this._observatoryPuzzleActivated = false;
 		this._tutorial = false;
+		this._crumbleSate = StatueCrumbleState.WHOLE;
 	}
 	
 	private void InitializeManagers()
@@ -1570,22 +1573,23 @@ public class GameDirector : MonoBehaviour {
 		switch(inType)
 		{
 			case ItemType.Token:
-				//this._HUDManager.SwapTokenForKey();
+				this._HUDManager.SwapTokenForKey();
 				this.token = false;
 			break;
 			
 			case ItemType.Compass:    
-				//this._HUDManager.SwapCompassForKey();
+				this._HUDManager.SwapCompassForKey();
 				this.compass = false;
 			break;
 			
 			case ItemType.Lantern:
-				//this._HUDManager.SwapLanternForKey();
+				this._HUDManager.SwapLanternForKey();
 				this.lantern = false;
 			break;
 		}
+		/* Below no longer working, reverting to original code <FML> */
 		//Replacing all the commented out calls above. Happened in HUD manager port. 
-		this._HUDManager.SwapForKey (inType);
+		//this._HUDManager.SwapForKey (inType);
 	}
 
 	#endregion
@@ -1597,8 +1601,6 @@ public class GameDirector : MonoBehaviour {
 	#region Statue Crumble Functions
 
 	private bool _statueCrumbled;
-
-	public StatueCrumbleState _crumbleSate;
 
 	public StatueCrumbleState GetStatueCrumble()
 	{
