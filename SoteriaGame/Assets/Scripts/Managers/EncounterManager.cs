@@ -243,7 +243,14 @@ public class EncounterManager : MonoBehaviour
 //		{
 //			this.MusicCower();
 //		}
+//		GameObject[] enemies = GameObject.FindGameObjectsWithTag ("Enemy");
+//		foreach (GameObject enemy in enemies)
+//		{
+//			if (enemy.GetComponent<BasicEnemyController>().dead)
+//			{
 		this.currentEnemy.GetComponent<BasicEnemyController>().Cower();
+//			}
+//		}
 	}
 
 	public void MusicCower()

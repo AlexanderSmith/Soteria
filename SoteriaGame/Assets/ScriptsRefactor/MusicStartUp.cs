@@ -10,10 +10,12 @@ public class MusicStartUp : MonoBehaviour
 
 	void Awake()
 	{
-//		GameDirector.instance.AddGamePhase ();
-//		GameDirector.instance.AddGamePhase ();
-//		GameDirector.instance.AddGamePhase ();
-//		GameDirector.instance.CanFightTrue ();
+//		GameDirector.instance.AddGamePhase();
+//		GameDirector.instance.AddGamePhase();
+//		GameDirector.instance.MusicPuzzleDefeated();
+//		GameDirector.instance.CanFightTrue();
+//		GameDirector.instance.CompassTrue();
+
 		switch (GameDirector.instance.GetGamePhase())
 		{
 		case 1:

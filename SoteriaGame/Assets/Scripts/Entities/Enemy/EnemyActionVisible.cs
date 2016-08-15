@@ -7,7 +7,7 @@ public class EnemyActionVisible : IEnemyAction
 	{
 		inController.distance = Vector3.Distance(inController.transform.position, GameDirector.instance.GetPlayer().transform.position);
 		
-		if (inController.distance <= inController.overwhelmRange)
+		if (inController.distance <= inController.overwhelmRange && GameDirector.instance.GetGameState() != GameStates.Encounter)
 		{
 			inController.OverwhelmPlayer();
 			GameDirector.instance.Encounter(inController.gameObject);

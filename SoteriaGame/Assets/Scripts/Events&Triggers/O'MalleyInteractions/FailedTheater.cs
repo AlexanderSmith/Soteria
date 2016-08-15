@@ -5,6 +5,7 @@ public class FailedTheater : MonoBehaviour
 {
 	private GameObject _oMalleyPrefab;
 	public Transform oMalleySpawnLoc;
+	public GameObject nextObjective;
 	
 	void Awake()
 	{
@@ -25,7 +26,7 @@ public class FailedTheater : MonoBehaviour
 			{
 				if (GameDirector.instance.GetGameState() != GameStates.Suit && !GameDirector.instance.IsTutorialComplete())
 				{
-					GameDirector.instance.ChangeObjective(GameObject.Find("HubToObservatory"));
+					GameDirector.instance.ChangeObjective(nextObjective);
 				}
 			}
 		}

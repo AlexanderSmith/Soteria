@@ -81,7 +81,10 @@ public class BasicEnemyController : MonoBehaviour {
 	// Update is called once per frame
 	void FixedUpdate () 
 	{
-		this._currentAction.EnemyAction(this);
+		if (!this.dead)
+		{
+			this._currentAction.EnemyAction(this);
+		}
 //		if (this._stunned)
 //		{
 //			this._agent.Stop();
@@ -157,6 +160,7 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void OverwhelmPlayer()
 	{
+		this._agent.stoppingDistance = 15;
 		_agent.Stop();
 		this.ForceOverwhelmState();
 	}
@@ -172,6 +176,7 @@ public class BasicEnemyController : MonoBehaviour {
 	
 	public void Unaware()
 	{
+		this._agent.stoppingDistance = 1;
 		_agent.Resume();
 		_anim.SetBool ("Aggro", false);
 		_anim.SetBool ("Alert", false);

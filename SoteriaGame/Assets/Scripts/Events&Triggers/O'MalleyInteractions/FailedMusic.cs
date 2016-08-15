@@ -5,6 +5,7 @@ public class FailedMusic : MonoBehaviour
 {
 	private GameObject _oMalleyPrefab;
 	public Transform oMalleySpawnLoc;
+	public GameObject nextObjective;
 
 	void Awake()
 	{
@@ -21,7 +22,7 @@ public class FailedMusic : MonoBehaviour
 		else
 		{
 			_oMalleyPrefab.SetActive(false);
-			GameDirector.instance.ChangeObjective(GameObject.Find("HubToTheater"));
+			GameDirector.instance.ChangeObjective(nextObjective);
 		}
 	}
 }

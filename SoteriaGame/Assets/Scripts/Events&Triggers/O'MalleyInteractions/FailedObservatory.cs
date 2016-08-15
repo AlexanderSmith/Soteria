@@ -6,6 +6,7 @@ public class FailedObservatory : MonoBehaviour
 	private GameObject _oMalleyPrefab;
 	public Transform oMalleySpawnLoc;
 	//public GameObject tailorLight;
+	public GameObject nextObjective;
 	
 	void Awake()
 	{
@@ -25,8 +26,10 @@ public class FailedObservatory : MonoBehaviour
 		else
 		{
 			_oMalleyPrefab.SetActive(false);
-            if (GameObject.Find("TailorFirstInteraction").activeInHierarchy)
-			    GameDirector.instance.ChangeObjective(GameObject.Find("TailorDialogueLocation"));
+			if (Application.loadedLevelName != "HUBPass1")
+			{
+				GameDirector.instance.ChangeObjective(nextObjective);
+			}
 		}
 	}
 }

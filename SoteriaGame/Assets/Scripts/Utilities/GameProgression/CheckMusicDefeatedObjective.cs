@@ -46,7 +46,7 @@ public class CheckMusicDefeatedObjective : MonoBehaviour
 			GameDirector.instance.ChangeObjective(null);
 		}
 
-		if (GameDirector.instance.IsMusicDefeated())
+		if (GameDirector.instance.IsMusicDefeated() && (int)GameDirector.instance.GetStatueCrumble() < 1)
 		{
 			this._oMalleySewerProvoke.SetActive(true);
 		}
