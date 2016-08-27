@@ -15,14 +15,17 @@ public class FailedMusic : MonoBehaviour
 
 	void Start()
 	{
-		if (GameDirector.instance.GetFirstTimeMusic())
+		if (GameDirector.instance.GetGamePhase() < 4)
 		{
-			GameDirector.instance.OMalleyMusicPuzzleDone();
-		}
-		else
-		{
-			_oMalleyPrefab.SetActive(false);
-			GameDirector.instance.ChangeObjective(nextObjective);
+			if (GameDirector.instance.GetFirstTimeMusic())
+			{
+				GameDirector.instance.OMalleyMusicPuzzleDone();
+			}
+			else
+			{
+				_oMalleyPrefab.SetActive(false);
+				GameDirector.instance.ChangeObjective(nextObjective);
+			}
 		}
 	}
 }

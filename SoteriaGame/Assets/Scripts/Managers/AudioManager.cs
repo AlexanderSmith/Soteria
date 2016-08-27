@@ -22,7 +22,13 @@ public class AudioManager : MonoBehaviour
 		this.enabled = false;
 		_audioSourceList = new List<AudioSourceWrapper>();
 		//TimerManager.instance.Attach(fadeTimer, TimersType.Puzzle);
-		// Not working
+//		// Not working
+//		fadeInTimer = TimerManager.instance.Attach(TimersType.FadeIn);
+//		fadeOutTimer = TimerManager.instance.Attach(TimersType.FadeOut);
+	}
+
+	void Start()
+	{
 		fadeInTimer = TimerManager.instance.Attach(TimersType.FadeIn);
 		fadeOutTimer = TimerManager.instance.Attach(TimersType.FadeOut);
 	}
