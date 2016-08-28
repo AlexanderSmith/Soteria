@@ -15,6 +15,7 @@ public class TailorInteraction : MonoBehaviour
 	public Transform tailorPrefabLocation;
 
 	GameObject tailorLight;
+	private GameObject tailorDiagLoc;
 
 	void Awake()
 	{
@@ -33,6 +34,7 @@ public class TailorInteraction : MonoBehaviour
 
 	void Start()
 	{
+		tailorDiagLoc = GameObject.Find ("TailorDialogueLocation");
 		this._tailorFirstDialogue.SetActive(false);
 		tailorLight.GetComponent<Light>().enabled = false;
 //		GameDirector.instance.TailorSpokenTo();
@@ -43,12 +45,14 @@ public class TailorInteraction : MonoBehaviour
 		{
 			this._tailorFirstDialogue.SetActive(true);
 			GameDirector.instance.TailorSpokenTo();
+			GameDirector.instance.ChangeObjective(tailorDiagLoc);
+			tailorLight.GetComponent<Light>().enabled = false;
 		}
 		else
 		{
 			if (GameDirector.instance.CardsHeld() == 3)
 			{
-				GameDirector.instance.ChangeObjective(GameObject.Find("TailorDialogueLocation"));
+				GameDirector.instance.ChangeObjective(tailorDiagLoc);
 				this._cardsCorrect = GameDirector.instance.CheckCards(this._musicDistrictCard, this._theaterDistrictCard, this._observatoryDistrictCard);
 				tailorLight.GetComponent<Light>().enabled = true;
 				if (this._cardsCorrect)

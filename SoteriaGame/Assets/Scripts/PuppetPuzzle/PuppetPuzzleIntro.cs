@@ -25,6 +25,7 @@ public class PuppetPuzzleIntro : MonoBehaviour
 			GameDirector.instance.StartDialogue(true);
 			GameDirector.instance.PuppetPuzzleActivated();
 			GameDirector.instance.HubPhase3();
+			GameDirector.instance.FirstTimeTheaterPuzzle();
 		}
 	}
 

@@ -93,6 +93,7 @@ public class MusicPuzzleController : MonoBehaviour
 
 		}
 		boss.GetComponentInChildren<MusicBossController>().Initialize(this);
+		GameDirector.instance.ChangeObjective(keyPiece);
 	}
 
 	void OnTriggerStay(Collider player)
@@ -116,6 +117,7 @@ public class MusicPuzzleController : MonoBehaviour
 	{
 		GameDirector.instance.MusicPuzzleActivated();
 		GameDirector.instance.HubPhase2();
+		GameDirector.instance.FirstTimeMusicPuzzle();
 		StartCoroutine("ActivatePuzzle");
 	}
 

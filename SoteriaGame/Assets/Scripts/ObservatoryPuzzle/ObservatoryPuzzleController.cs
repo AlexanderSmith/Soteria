@@ -72,7 +72,6 @@ public class ObservatoryPuzzleController : MonoBehaviour
 
 		// Testing
 		//GameDirector.instance.SuitRemoved();
-		GameDirector.instance.ChangeObjective(keyPiece);
 	}
 
 	public void Initialize()
@@ -86,7 +85,9 @@ public class ObservatoryPuzzleController : MonoBehaviour
 			GameDirector.instance.GetPlayer().PlayerActionPause();
 			GameDirector.instance.SetupDialogue("AnaEnteringObservPuzzFirstTime");
 			GameDirector.instance.StartDialogue(true);
+			GameDirector.instance.FirstTimeObservatoryPuzzle();
 		}
+		GameDirector.instance.ChangeObjective(keyPiece);
 	}
 
 	void OnTriggerStay(Collider player)

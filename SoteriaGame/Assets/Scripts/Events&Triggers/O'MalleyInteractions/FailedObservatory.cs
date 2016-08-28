@@ -19,20 +19,13 @@ public class FailedObservatory : MonoBehaviour
 	
 	void Start()
 	{
-		if (GameDirector.instance.GetGamePhase() < 4)
+		if (GameDirector.instance.GetGamePhase() < 4 && GameDirector.instance.GetFirstTimeObservatory())
 		{
-			if (GameDirector.instance.GetFirstTimeObservatory())
-			{
-				GameDirector.instance.OMalleyObservatoryPuzzleDone();
-			}
-			else
-			{
-				_oMalleyPrefab.SetActive(false);
-				if (Application.loadedLevelName != "HUBPass1")
-				{
-					GameDirector.instance.ChangeObjective(nextObjective);
-				}
-			}
+			GameDirector.instance.OMalleyObservatoryPuzzleDone();
+		}
+		else
+		{
+			_oMalleyPrefab.SetActive(false);
 		}
 	}
 }

@@ -31,8 +31,6 @@ public class PuppetPuzzleController : MonoBehaviour
 		keyPiece.GetComponentInChildren<BoxCollider>().enabled = false;
 		this._oMalleyPuppetDefeated = GameObject.Find("O'MalleyPuppetPuzzleDefeated");
 		this._oMalleyPuppetDefeated.SetActive(false);
-
-		GameDirector.instance.ChangeObjective(keyPiece);
 	}
 
 	public void Initialize()
@@ -54,6 +52,7 @@ public class PuppetPuzzleController : MonoBehaviour
 		}
 
 		GameDirector.instance.ResetWhiteSpeed();
+		GameDirector.instance.ChangeObjective(keyPiece);
 	}
 
 	public void LeftLightOn()

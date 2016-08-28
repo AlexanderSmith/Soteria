@@ -15,21 +15,18 @@ public class FailedTheater : MonoBehaviour
 	
 	void Start()
 	{
-		if (GameDirector.instance.GetGamePhase() < 4)
+		if (GameDirector.instance.GetGamePhase() < 4 && GameDirector.instance.GetFirstTimeTheater())
 		{
-			if (GameDirector.instance.GetFirstTimeTheater())
+			GameDirector.instance.OMalleyTheaterPuzzleDone();
+		}
+		else
+		{
+			_oMalleyPrefab.SetActive(false);
+			if (GameDirector.instance.GetCompass())
 			{
-				GameDirector.instance.OMalleyTheaterPuzzleDone();
-			}
-			else
-			{
-				_oMalleyPrefab.SetActive(false);
-				if (GameDirector.instance.GetCompass())
+				if (GameDirector.instance.GetGameState() != GameStates.Suit && !GameDirector.instance.IsTutorialComplete())
 				{
-					if (GameDirector.instance.GetGameState() != GameStates.Suit && !GameDirector.instance.IsTutorialComplete())
-					{
-						GameDirector.instance.ChangeObjective(nextObjective);
-					}
+					GameDirector.instance.ChangeObjective(nextObjective);
 				}
 			}
 		}
