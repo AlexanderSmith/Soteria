@@ -21,16 +21,16 @@ public class AudioManager : MonoBehaviour
 	{
 		this.enabled = false;
 		_audioSourceList = new List<AudioSourceWrapper>();
-		//TimerManager.instance.Attach(fadeTimer, TimersType.Puzzle);
-//		// Not working
-//		fadeInTimer = TimerManager.instance.Attach(TimersType.FadeIn);
-//		fadeOutTimer = TimerManager.instance.Attach(TimersType.FadeOut);
-	}
+        //TimerManager.instance.Attach(fadeTimer, TimersType.Puzzle);
+        //		// Not working
+        fadeInTimer = TimerManager.instance.Attach(TimersType.FadeIn);
+        fadeOutTimer = TimerManager.instance.Attach(TimersType.FadeOut);
+    }
 
 	void Start()
 	{
-		fadeInTimer = TimerManager.instance.Attach(TimersType.FadeIn);
-		fadeOutTimer = TimerManager.instance.Attach(TimersType.FadeOut);
+		//fadeInTimer = TimerManager.instance.Attach(TimersType.FadeIn);
+		//fadeOutTimer = TimerManager.instance.Attach(TimersType.FadeOut);
 	}
 
 	public void AddAudioSource(string inClipName, AudioID inAID, GameObject inGameObj)

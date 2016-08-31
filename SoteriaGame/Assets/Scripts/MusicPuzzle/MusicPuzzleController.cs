@@ -57,12 +57,12 @@ public class MusicPuzzleController : MonoBehaviour
 
 	public void Initialize()
 	{
-		// Gameplay hacks to test puzzle fight
-//		GameDirector.instance.MusicPuzzleActivated();
-//		GameDirector.instance.SuitWorn();
-//		GameDirector.instance.SuitRemoved();
+        // Gameplay hacks to test puzzle fight
+        //GameDirector.instance.MusicPuzzleActivated();
+        //GameDirector.instance.SuitWorn();
+        //GameDirector.instance.SuitRemoved();
 
-		if (GameDirector.instance.GetMusicActivated())
+        if (GameDirector.instance.GetMusicActivated())
 		{
 			this.organTile.transform.position = this.organDown.position;
 			this.brassTile.transform.position = this.brassUp.position;
